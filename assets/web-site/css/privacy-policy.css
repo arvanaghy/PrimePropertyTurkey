@@ -1,0 +1,41 @@
+#theme-background #privacy-policy-BG{
+    background-image: url('../images/base/theme-banners/banner.jpg');
+}
+#content-privacy-policy{
+    background-color: #fafafa;
+}
+#content-privacy-policy .content .card{
+    border-radius: 20px;
+}
+#content-privacy-policy .content .card-body{
+    padding: 0 !important;
+    border-radius: 20px;
+}
+#content-privacy-policy .side{
+    background-color: #EFEFEF;
+    border-radius: 20px;
+}
+#content-privacy-policy .card-title{
+    font-size: 1.5rem;
+}
+#content-privacy-policy .border{
+    content: "";
+    width: 70%;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #cf142b;
+    justify-content: center;
+    text-align: center;
+    margin: 1% auto;
+    border: 0px solid darkred !important;
+}
+#content-privacy-policy .contact img, #content-privacy-policy .content img{
+    width: 100%;
+    border-radius: 0.25rem;
+}
+#content-privacy-policy .content p , #content-privacy-policy .content h4 , #content-privacy-policy .content img {
+    padding: 15px 50px !important;
+}
+#content-privacy-policy .content ul{
+    padding: 15px 70px !important;
+}

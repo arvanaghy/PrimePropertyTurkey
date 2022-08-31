@@ -1,0 +1,57 @@
+#theme-background .header-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin-top: -30px;
+    padding-top: 36px;
+}
+
+#theme-background .header-image-wrapper .bg {
+    width: 110%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#theme-background .header-image-wrapper .mask {
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#theme-background .header-image-wrapper .header-image-content.offset-bottom {
+    padding-top: 40px;
+    padding-bottom: 80px;
+    min-height: 200px;
+}
+
+#theme-background .header-image-wrapper .header-image-content {
+    position: relative;
+    min-height: 150px;
+    color: #fff;
+    z-index: 1;
+    box-sizing: border-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+#theme-background .header-image-wrapper .header-image-content.offset-bottom .title {
+    font-size: 30px;
+    text-transform: unset;
+    line-height: 30px;
+}

@@ -1,0 +1,49 @@
+#theme-background #contact-us-BG{
+    background-image: url('../images/base/theme-banners/connect us banner.jpg');
+}
+#contact-us {
+    background-color: #FAFAFA;
+}
+#contact-us .info-card {
+    border-radius: 30px;
+    background: #efefef;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+}
+#contact-us .info-card .ico{
+    font-size: 2rem;
+    font-weight: bolder;
+}
+#contact-us .info-card .title{
+    font-size: 1.3rem;
+    font-weight: bolder;
+}
+#contact-us .border{
+    content: "";
+    width: 70%;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #cf142b;
+    justify-content: center;
+    text-align: center;
+    margin: 1% auto;
+}
+#contact-us .contact-card{
+    border-radius: 30px;
+    box-shadow: 0 1px 2px 2px rgb(0 0 0 / 16%);
+}
+#contact-us .contact-card img{
+    border-radius: 0.25rem;
+    width: 100%;
+}
+#contact-us .contact-card .title{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#contact-us .map-card iframe{
+    border-radius: 30px;
+    box-shadow: 0 1px 2px 2px rgb(0 0 0 / 16%);
+
+}
+
+

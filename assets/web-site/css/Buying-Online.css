@@ -1,0 +1,39 @@
+#theme-background #Buying-Online-BG{
+    background-image: url('../images/base/theme-banners/property-banner.jpg');
+}
+#content-buy-online{
+    background-color: #fafafa;
+}
+#content-buy-online .content .card{
+    border-radius: 20px;
+}
+#content-buy-online .content .card-body{
+    padding: 0 !important;
+    border-radius: 20px;
+}
+#content-buy-online .content .card-body img{
+    border-radius: 20px;
+}
+#content-buy-online .side{
+    background-color: #EFEFEF;
+    border-radius: 20px;
+}
+#content-buy-online .card-title{
+    font-size: 1.5rem;
+}
+#content-buy-online .border{
+    content: "";
+    width: 70%;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #cf142b;
+    justify-content: center;
+    text-align: center;
+    margin: 1% auto;
+    border: 0px solid darkred !important;
+
+}
+#content-buy-online .contact img{
+    width: 100%;
+    border-radius: 0.25rem;
+}

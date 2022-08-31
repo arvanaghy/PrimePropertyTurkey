@@ -1,0 +1,21 @@
+#theme-background #area-guide-BG{
+    background-image: url('../images/base/theme-banners/connect us banner (1).jpg');
+}
+#content-buy-online .content .card-body img{
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#content-buy-online .content .card-body p{
+    padding-bottom: 0;
+}
+#content-buy-online .content .card-body {
+    font-size: 0.9rem;
+}
+#content-buy-online .content .card-body .title {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+#content-buy-online .content .card-body .link {
+    font-weight: bold;
+}

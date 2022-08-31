@@ -1,0 +1,36 @@
+body {
+    background-image: url("https://t.dksst.co.ir/assets/web-site/images/base/404 back.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.box-footer {
+    padding: 1%;
+}
+.box-footer h3 {
+    padding: 1%;
+    color: #cf142b !important;
+    font-weight: bold;
+}
+p{
+    padding: 1%;
+}
+img {
+    width: 100% !important;
+}
+a {
+    color: #cf142b !important;
+    font-weight: bold;
+    text-decoration: none;
+}
+a:hover{
+    color: black !important;
+    transition: 0.8s;
+    padding: 1%;
+}
+.box-footer{
+    background-color: white;
+    opacity: 0.9;
+    border-radius: 30px;
+}

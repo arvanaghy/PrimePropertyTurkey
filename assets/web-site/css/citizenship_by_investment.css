@@ -1,0 +1,37 @@
+#theme-background #Citizenship-by-investment-BG{
+    background-image: url('../images/base/theme-banners/property-banner.jpg');
+}
+#Citizenship-by-investment-content {
+    background-color: #fafafa
+}
+#Citizenship-by-investment-content #accordion .card .card-header {
+    background-color: #eaeaea;
+    border-bottom: none;
+}
+#Citizenship-by-investment-content #accordion .card .card-header button span::after {
+    font-family:"Font Awesome 5 Duotone";
+    font-weight: 900;
+    content: "\10f103";
+    position: absolute;
+    right: 16px;
+    color: black;
+    transition: 2s;
+}
+#Citizenship-by-investment-content #accordion .card .card-header button[aria-expanded="true"] span::after {
+    font-family:"Font Awesome 5 Duotone";
+    font-weight: 900;
+    content: "\10f102";
+    position: absolute;
+    right: 16px;
+    color: black;
+    transition: 2s;
+}
+#Citizenship-by-investment-content #accordion .card .card-header button{
+    text-decoration: none;
+}
+#Citizenship-by-investment-content #accordion .card .card-body {
+    background-color: #eaeaea;
+}
+#Citizenship-by-investment-content #accordion .card .card-body img {
+    border-radius: 10px;
+}

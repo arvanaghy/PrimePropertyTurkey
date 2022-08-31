@@ -1,0 +1,22 @@
+#login .card-title {
+    font-size: 2rem;
+}
+#login .sign-alternative{
+    font-size: 0.8rem !important;
+}
+#login form img {
+    width: 100% !important;
+    border-radius: 0.25rem;
+}
+#login form a{
+    border: 0;
+    background: none;
+    cursor : pointer;
+    text-decoration: none;
+}
+#login form #show_hide_password a {
+    color:#333
+}
+#login form #show_hide_password a:hover {
+    color:#333
+}

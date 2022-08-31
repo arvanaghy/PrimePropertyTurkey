@@ -1,0 +1,118 @@
+#theme-background #about-us-BG{
+    background-image: url('../images/base/theme-banners/about-us-banner.jpg');
+}
+#content-about-us {
+    background-color: #FAFAFA;
+}
+#content-about-us .card {
+    border-top: 7px solid #cf142b;
+}
+#content-about-us .border{
+    content: "";
+    width: 70%;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #cf142b;
+    justify-content: center;
+    text-align: center;
+    margin: 1% auto;
+}
+#content-about-us .content img {
+    border-radius: 30px;
+    box-shadow: 0 1px 2px 2px rgb(0 0 0 / 16%);
+    display: block;
+    margin: 10px auto;
+}
+
+#masters{
+    background-color: #FAFAFA;
+}
+#masters .member:first-child {
+    margin-top: 50px;
+}
+#masters .member {
+    border-radius: 40px;
+    background: #fff;
+    display: flex;
+    margin-bottom: 25px;
+    box-shadow: 0 12px 30px 0 rgb(133 143 148 / 15%);
+    margin-left: 70px;
+    margin-top: 100px;
+}
+#masters .member .image {
+    border-radius: 40px;
+    overflow: hidden;
+    width: 320px;
+    min-width: 320px;
+    min-height: 320px;
+    max-height: 320px;
+    margin-top: -50px;
+    margin-left: -70px;
+    max-height: 320px;
+}
+#masters  .member .image img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    max-height: 100%;
+}
+#masters  .member .content {
+    padding: 40px 60px 40px 50px;
+    text-align: left;
+}
+#masters  .member .content h4 {
+    color: #000;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+#masters  .member .content p {
+    font-weight: 300;
+    opacity: .8;
+    font-size: 15px;
+    line-height: 25px;
+    color: #000;
+    margin-bottom: 35px;
+}
+#masters .member .content h4 small {
+    color: #001e3d;
+    display: block;
+    font-size: 16px;
+}
+#masters  .member .content p {
+    font-weight: 300;
+    opacity: .8;
+    font-size: 15px;
+    line-height: 25px;
+    color: #000;
+    margin-bottom: 35px;
+}
+@media screen and (max-width: 767px) {
+    #masters  .member:first-child {
+        margin-top: 20px;
+    }
+    #masters .member {
+        display: inline-block;
+        width: 100%;
+        max-width: calc(100% - 20px);
+        margin-left: 20px;
+    }
+    #masters .member .image {
+        width: 100%;
+        min-width: 100%;
+        min-height: 260px;
+        max-height: 260px;
+        margin-top: -40px;
+        margin-left: -20px;
+        max-height: 260px;
+    }
+    #masters .member .content {
+        padding: 30px 30px 30px 30px;
+    }
+    #masters .member .content p {
+        font-size: 15px;
+        line-height: 22px;
+        margin-bottom: 30px;
+    }
+}

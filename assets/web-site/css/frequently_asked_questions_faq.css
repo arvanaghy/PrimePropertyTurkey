@@ -1,0 +1,35 @@
+#content-buy-online .content .accordion button {
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+#content-buy-online .content .accordion .card-header {
+    background-color: #eaeaea;
+    border-bottom: none;
+}
+#content-buy-online .content .accordion .card {
+    background-color: #eaeaea;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+}
+#content-buy-online .content .accordion .card-body {
+    font-size: 0.8rem;
+}
+
+#content-buy-online .content .accordion button::after {
+    font-family:"Font Awesome 5 Duotone";
+    font-weight: 900;
+    content: "\10f103";
+    position: absolute;
+    right: 16px;
+    color: black;
+    transition: 0.8s;
+}
+#content-buy-online .content .accordion button[aria-expanded="true"]::after {
+    font-family:"Font Awesome 5 Duotone";
+    font-weight: 900;
+    content: "\10f102";
+    position: absolute;
+    right: 16px;
+    color: black;
+    transition: 0.8s;
+}

@@ -1,0 +1,36 @@
+.iti{
+    width: 100%;
+}
+.iti__country-list{
+    background-color: #efefef;
+    color: black !important;
+}
+@media screen and (max-width: 320px) {
+    .iti__country-list {
+        width: 245px;
+    }
+}
+@media screen and (max-width: 375px) {
+    .iti__country-list {
+        width: 300px;
+    }
+}
+@media screen and (max-width: 425px) {
+    .iti__country-list {
+        width: 350px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .iti__country-list {
+        width: 250px;
+    }
+}
+@media screen and (max-width: 1440px) {
+    .iti__country-list {
+        width: 305px;
+    }
+}
+.iti--separate-dial-code .iti__selected-flag {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: black;
+}

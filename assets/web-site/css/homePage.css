@@ -1,0 +1,117 @@
+#main-top-cover .container-fluid{
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://www.primepropertyturkey.com/assets/web-site/images/base/kopya5.webp');
+    min-height: 600px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#main-top-cover ul {
+    margin-bottom: 0;
+    padding-left: 0;
+    line-height: 2.4rem;
+    text-align: center;
+    list-style: none;
+}
+#main-top-cover .card {
+    opacity: 0.8;
+    border-radius: 1rem;
+    border-top: 10px solid darkorange;
+}
+#main-top-cover button{
+    animation: MoveUpDown 1.5s linear infinite;
+    position: relative;
+    font-weight: bold;
+}
+@keyframes MoveUpDown {
+    0%, 100% {
+        bottom: 0px;
+    }
+    50% {
+        bottom: 5px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+
+
+    #main-top-cover .container-fluid{
+        justify-content: center;
+        align-items: center;
+        background-image: url('https://www.primepropertyturkey.com/assets/web-site/images/base/mob.webp');
+        min-height: 475px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    #main-top-cover ul{
+        padding-left: 0;
+        margin-left: 0;
+    }
+    #main-top-cover li{
+        font-size: 0.7rem;
+    }
+    #topEnquireModal {
+        z-index: 1050 !important;
+    }
+    #main-top-cover .iti__country-list {
+        z-index: 9999999 !important;
+    }
+    .iti-mobile .iti__country-list{
+        max-width: 250px;
+    }
+    .iti-mobile .iti--container{
+        left: 70px !important;
+    }
+    #main-top-cover .card-body{
+        padding: 1.25rem 0.25rem;
+    }
+
+    #main-top-cover button{
+        animation: MoveUpDown 1.5s linear infinite;
+        position: relative;
+        bottom: 20px;
+        right: 0;
+        left: 0;
+        font-weight: bold;
+        opacity: 0.8;
+    }
+    @keyframes MoveUpDown {
+        0%, 100% {
+            bottom: 20px;
+        }
+        50% {
+            bottom: 25px;
+        }
+    }
+}
+#tops{
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: 700;
+    color: #F4470B;
+    text-shadow: 1px 1px 3px black;
+    line-height: 30px;
+}
+#tops p{
+    margin-bottom: 0 ;
+}
+
+#YouTubeVideos .card-body{
+    padding: 0 !important;
+}
+#YouTubeVideos .card-body a i{
+    position: absolute;
+    bottom: 80px;
+    left: 40%;
+    font-size: 65px;
+    text-shadow: 1px 1px 2px black;
+}
+#YouTubeVideos .card-body a{
+    color: red !important;
+}
+#YouTubeVideos .card-body a:hover{
+    color: white !important;
+}
+
