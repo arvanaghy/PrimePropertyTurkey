@@ -1,0 +1,193 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+$route['default_controller'] = 'home';
+$route['404_override'] = 'custom404';
+$route['translate_uri_dashes'] = FALSE;
+$route['landing_page'] = 'Landing_Page';
+$route['citizenship_by_investment'] = 'citizenship_by_investment_in_turkey';
+$route['Citizenship_by_investment'] = 'citizenship_by_investment_in_turkey';
+$route['Citizenship-by-investment-in-turkey'] = 'Citizenship_by_investment_in_turkey';
+$route['buyer-guide'] = 'buyer_guide';
+$route['Buyer-guide'] = 'buyer_guide';
+$route['Buying_online'] = 'buying_online';
+$route['Buying-online'] = 'buying_online';
+$route['buying-online'] = 'buying_online';
+$route['blog/(:any)'] = 'blog/details/$1';
+$route['news/(:any)'] = 'news/details/$1';
+$route['about-us'] = 'about_us';
+$route['About-us'] = 'about_us';
+$route['contact-us'] = 'contact_us';
+$route['Contact-us'] = 'contact_us';
+$route['privacy-policy'] = 'privacy_policy';
+$route['area-guide'] = 'area_guide';
+$route['short-term-residency-extension'] = 'short_term_residency_extension';
+$route['frequently-asked-questions-faq'] = 'frequently_asked_questions_faq';
+$route['after-sales'] = 'after_sales';
+$route['short-term-residency-permit'] = 'short_term_residency_permit';
+$route['properties/(:any)'] = 'properties/details/$1';
+$route['property/(:any)'] = 'properties/details/$1';
+$route['properties/Istanbul/(:any)'] = 'properties/Istanbul/$1';
+$route['properties/Fethiye/(:any)'] = 'properties/Fethiye/$1';
+$route['properties/Bursa/(:any)'] = 'properties/Bursa/$1';
+$route['properties/Kalkan/(:any)'] = 'properties/Kalkan/$1';
+$route['properties/Kas/(:any)'] = 'properties/Kas/$1';
+$route['properties/Gocek/(:any)'] = 'properties/Gocek/$1';
+$route['properties/Izmir/(:any)'] = 'properties/Izmir/$1';
+$route['properties/Apartment/(:any)'] = 'properties/Apartment/$1';
+$route['properties/Bungalow/(:any)'] = 'properties/Bungalow/$1';
+$route['properties/Hotel/(:any)'] = 'properties/Hotel/$1';
+$route['properties/Duplex/(:any)'] = 'properties/Duplex/$1';
+$route['properties/Mansion/(:any)'] = 'properties/Mansion/$1';
+$route['properties/Land_for_sale/(:any)'] = 'properties/Land_for_sale/$1';
+$route['properties/Penthouse/(:any)'] = 'properties/Penthouse/$1';
+$route['properties/Villa/(:any)'] = 'properties/Villa/$1';
+$route['properties/Commercial/(:any)'] = 'properties/Commercial/$1';
+$route['properties/Search/(:any)'] = 'properties/Search/$1';
+$route['properties/Featured/(:any)'] = 'properties/Featured/$1';
+$route['PrintPreview/setPrintView/(:any)'] = 'PrintPreview/setPrintView/$1';
+//$route['PrintPreview/setResalePrintView/(:any)'] = 'PrintPreview/setResalePrintView/$1';
+
+// Istanbul Ilce
+$route['properties/Adalar/(:any)'] = 'properties/Adalar/$1';
+$route['properties/Arnavutkoy/(:any)'] = 'properties/Arnavutkoy/$1';
+$route['properties/Atasehir/(:any)'] = 'properties/Atasehir/$1';
+$route['properties/Avcilar/(:any)'] = 'properties/Avcilar/$1';
+$route['properties/Bagcilar/(:any)'] = 'properties/Bagcilar/$1';
+$route['properties/Bahcelievler/(:any)'] = 'properties/Bahcelievler/$1';
+$route['properties/Bakirkoy/(:any)'] = 'properties/Bakirkoy/$1';
+$route['properties/Basaksehir/(:any)'] = 'properties/Basaksehir/$1';
+$route['properties/Bayrampasa/(:any)'] = 'properties/Bayrampasa/$1';
+$route['properties/Besiktas/(:any)'] = 'properties/Besiktas/$1';
+$route['properties/Beykoz/(:any)'] = 'properties/Beykoz/$1';
+$route['properties/Beylikduzu/(:any)'] = 'properties/Beylikduzu/$1';
+$route['properties/Beyoglu/(:any)'] = 'properties/Beyoglu/$1';
+$route['properties/Buyukcekmece/(:any)'] = 'properties/Buyukcekmece/$1';
+$route['properties/Catalca/(:any)'] = 'properties/Catalca/$1';
+$route['properties/Cekmekoy/(:any)'] = 'properties/Cekmekoy/$1';
+$route['properties/Esenler/(:any)'] = 'properties/Esenler/$1';
+$route['properties/Esenyurt/(:any)'] = 'properties/Esenyurt/$1';
+$route['properties/Eyup/(:any)'] = 'properties/Eyup/$1';
+$route['properties/Fatih/(:any)'] = 'properties/Fatih/$1';
+$route['properties/Gaziosmanpasa/(:any)'] = 'properties/Gaziosmanpasa/$1';
+$route['properties/Gungoren/(:any)'] = 'properties/Gungoren/$1';
+$route['properties/Kadikoy/(:any)'] = 'properties/Kadikoy/$1';
+$route['properties/Kagithane/(:any)'] = 'properties/Kagithane/$1';
+$route['properties/Kartal/(:any)'] = 'properties/Kartal/$1';
+$route['properties/Kucukcekmece/(:any)'] = 'properties/Kucukcekmece/$1';
+$route['properties/Maltepe/(:any)'] = 'properties/Maltepe/$1';
+$route['properties/Pendik/(:any)'] = 'properties/Pendik/$1';
+$route['properties/Sancaktepe/(:any)'] = 'properties/Sancaktepe/$1';
+$route['properties/Sariyer/(:any)'] = 'properties/Sariyer/$1';
+$route['properties/Sile/(:any)'] = 'properties/Sile/$1';
+$route['properties/Sisli/(:any)'] = 'properties/Sisli/$1';
+$route['properties/Sultanbeyli/(:any)'] = 'properties/Sultanbeyli/$1';
+$route['properties/Sultangazi/(:any)'] = 'properties/Sultangazi/$1';
+$route['properties/Tuzla/(:any)'] = 'properties/Tuzla/$1';
+$route['properties/Umraniye/(:any)'] = 'properties/Umraniye/$1';
+$route['properties/Silivri/(:any)'] = 'properties/Silivri/$1';
+$route['properties/Uskudar/(:any)'] = 'properties/Uskudar/$1';
+$route['properties/Zeytinburnu/(:any)'] = 'properties/Zeytinburnu/$1';
+
+// route old site to new one
+$route['Prime'] = 'home';
+$route['Prime/area_guide'] = 'Area_guide';
+$route['Prime/buyer_guide'] = 'Buyer_guide';
+$route['How-To-Buy-Property-In-Turkey'] = 'Buyer_guide';
+$route['Prime/buying_online'] = 'Buying_online';
+$route['Prime/about_us'] = 'About_us';
+$route['Prime/contact_us'] = 'Contact_us';
+$route['Prime/login'] = 'Login';
+$route['Prime/registers'] = 'User_register';
+$route['Prime/citizenship_by_investment'] = 'Citizenship_by_investment_in_turkey';
+$route['Prime/short_term_residency_permit'] = 'Short_term_residency_permit';
+$route['Prime/short_term_residency_extension'] = 'Short_term_residency_extension';
+$route['Prime/frequently_asked_questions_faq'] = 'Frequently_asked_questions_faq';
+$route['Prime/privacy-policy'] = 'Privacy_policy';
+
+$route['blog/blogs/(:any)'] = 'blog';
+$route['Blog/(:any)'] = 'blog/details/$1';
+$route['News/news/(:any)'] = 'news';
+$route['News/(:any)'] = 'news/details/$1';
+
+$route['city'] = 'properties';
+$route['city/Istanbul'] = 'properties/Istanbul';
+$route['city/Fethiye'] = 'properties/Fethiye';
+$route['city/Kalkan'] = 'properties/Kalkan';
+$route['city/Kas'] = 'properties/Kas';
+$route['city/Bodrum'] = 'properties/Bodrum';
+$route['city/Bursa'] = 'properties/Bursa';
+
+$route['city/Istanbul/(:any)'] = 'properties/Istanbul';
+$route['city/Fethiye/(:any)'] = 'properties/Fethiye';
+$route['city/Kalkan/(:any)'] = 'properties/Kalkan';
+$route['city/Kas/(:any)'] = 'properties/Kas';
+$route['city/Bodrum/(:any)'] = 'properties/Bodrum';
+$route['city/Bursa/(:any)'] = 'properties/Bursa';
+
+$route['Real_estate/properties/(:any)'] ='properties/details/$1';
+$route['Real_estate/property/(:any)'] ='properties';
+
+$route['Real_estate/(:any)'] ='properties';
+
+$route['Admin/Delete_Property/(:any)'] ='Admin/Delete_Property/$1';
+$route['Admin/Delete_Blog/(:any)'] ='Admin/Delete_Blog/$1';
+$route['Admin/Delete_Videos/(:any)'] ='Admin/Delete_Videos/$1';
+$route['Admin/Delete_News/(:any)'] ='Admin/Delete_News/$1';
+
+$route['Admin/Publish_Property/(:any)'] ='Admin/Publish_Property/$1';
+$route['Admin/Publish_News/(:any)'] ='Admin/Publish_News/$1';
+$route['Admin/Publish_Videos/(:any)'] ='Admin/Publish_Videos/$1';
+$route['Admin/Publish_Blog/(:any)'] ='Admin/Publish_Blog/$1';
+
+$route['Admin/Edit_News/(:any)'] ='Admin/Edit_News/$1';
+$route['Admin/Edit_Blog/(:any)'] ='Admin/Edit_Blog/$1';
+$route['Admin/Edit_Videos/(:any)'] ='Admin/Edit_Videos/$1';
+$route['Admin/Edit_Property/(:any)'] ='Admin/Edit_Property/$1';
+$route['Admin/Delete_Property_Gallery/(:any)'] ='Admin/Delete_Property_Gallery/$1';
+
+
+$route['Admin/Show_Blog_Comments/(:any)'] ='Admin/Show_Blog_Comments/$1';
+$route['Admin/Show_News_Comments/(:any)'] ='Admin/Show_News_Comments/$1';
+
+$route['Admin/Delete_Blog_Comment/(:any)'] ='Admin/Delete_Blog_Comment/$1';
+$route['Admin/Delete_News_Comment/(:any)'] ='Admin/Delete_News_Comment/$1';
+
+$route['Admin/Publish_Blog_Comment/(:any)'] ='Admin/Publish_Blog_Comment/$1';
+$route['Admin/Publish_News_Comment/(:any)'] ='Admin/Publish_News_Comment/$1';
+
+$route['Admin/DeleteForEver_Property/(:any)'] ='Admin/DeleteForEver_Property/$1';
+$route['Admin/DeleteForEver_Blog/(:any)'] ='Admin/DeleteForEver_Blog/$1';
+$route['Admin/DeleteForEver_News/(:any)'] ='Admin/DeleteForEver_News/$1';
+$route['Admin/DeleteForEver_Videos/(:any)'] ='Admin/DeleteForEver_Videos/$1';
+
+$route['Admin/Change_Job/(:any)'] ='Admin/Change_Job/$1';
+
+$route['Admin/Publish/(:any)'] ='Admin/Publish/$1';
+$route['Admin/UnPublish/(:any)'] ='Admin/UnPublish/$1';
+//$route['Resale/(:any)'] = 'Resale/details/$1';
+
+$route['User/Delete_Property/(:any)'] = 'User/Delete_Property/$1';
+$route['User/Edit_Property/(:any)'] = 'User/Edit_Property/$1';
+
+
+$route['Verification/userRegister/(:any)'] ='Verification/userRegister/$1';
+$route['Verification/passwordReset/(:any)'] ='Verification/passwordReset/$1';
+$route['Signup/Verification/(:any)'] ='Signup/Verification/$1';
+
+$route['Turkey/(:any)/(:any)/(:any)/(:any)'] = 'Turkey/index/$1_$2_$3_$4';
+$route['Turkey/(:any)/(:any)/(:any)/(:any)/(:any)'] = 'Turkey/pagination/$1_$2_$3_$4_$5';
+
+$route['ru/blog/Турция-становится-безопасным-раем-для-российских-инвесторов'] = 'Ru/Blog/$1';
+
+$route['BlogFind/(:any)'] = 'BlogFind/details/$1';
+
+$route['prime-videos/(:any)'] = 'Prime_Videos/details/$1';
+
+$route['Like/blog/(:any)'] = 'Like/blog/$1';
+$route['Dislike/blog/(:any)'] = 'Dislike/blog/$1';
+
+$route['Like/news/(:any)'] = 'Like/news/$1';
+$route['Dislike/news/(:any)'] = 'Dislike/news/$1';
+
+$route['seo/sitemap\.xml'] = "seo/sitemap";
