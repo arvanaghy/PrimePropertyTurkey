@@ -36,7 +36,7 @@
             <div class="bg" id="area-guide-BG"></div>
             <div class="mask"></div>
             <div class="header-image-content offset-bottom">
-                <h1 class="title text-center px-1 font-weight-bold">Resale Properties</h1>
+                <h1 class="title text-center px-1 font-weight-bold">Resale Your Properties With Prime Property Turkey</h1>
                 <p class="text-center px-1"> Upload your apartments, duplexes, villas, mansions, and various other
                     property types you want to sell on our user-friendly portal. </p>
             </div>
