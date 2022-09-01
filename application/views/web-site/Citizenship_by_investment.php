@@ -1042,27 +1042,27 @@ Asia and Europe and access to the markets in both regions">
 <script type="text/javascript">
     $('#Link1').on('click', function () {
         $([document.documentElement, document.body]).animate({
-            scrollTop: $("#anchor1").offset().top
+            scrollTop: $("#anchor1").offset().top -100
         }, 2000);
     });
     $('#Link2').on('click', function () {
         $([document.documentElement, document.body]).animate({
-            scrollTop: $("#anchor2").offset().top
+            scrollTop: $("#anchor2").offset().top -100
         }, 2000);
     });
     $('#Link3').on('click', function () {
         $([document.documentElement, document.body]).animate({
-            scrollTop: $("#anchor3").offset().top
+            scrollTop: $("#anchor3").offset().top -100
         }, 2000);
     });
     $('#Link4').on('click', function () {
         $([document.documentElement, document.body]).animate({
-            scrollTop: $("#anchor4").offset().top
+            scrollTop: $("#anchor4").offset().top -100
         }, 2000);
     });
     $('#Link5').on('click', function () {
         $([document.documentElement, document.body]).animate({
-            scrollTop: $("#anchor5").offset().top
+            scrollTop: $("#anchor5").offset().top -100
         }, 2000);
     });
 </script>

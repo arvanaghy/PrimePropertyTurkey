@@ -2,7 +2,15 @@
 <?php $this->load->view('web-site/includes/head-load'); ?>
 <link rel="stylesheet" href="<?= base_url();?>assets/web-site/css/blog.css">
 <title><?= $result->News_Meta_Title; ?></title>
-
+<? $image_name = str_replace('assets/news/', '', $result->News_Image);
+$image_name_webp = substr($image_name,0,strpos($image_name,'.jpg')).".webp";
+if ($image_name_webp==''){
+    $image_name_webp = substr($image_name,0,strpos($image_name,'.png')).".webp";
+}
+if ($image_name_webp==''){
+    $image_name_webp = substr($image_name,0,strpos($image_name,'.jpeg')).".webp";
+}
+?>
 <meta name="keywords" content="<?= $result->News_Meta_Keyword; ?>">
 <meta name="description" content="<?= $result->News_Meta_Description; ?>">
 
@@ -11,7 +19,7 @@
 <meta property="og:url" content="<?= base_url();?>news/<?= $result->url_slug; ?>">
 <meta property="og:title" content="<?= $result->News_Meta_Title; ?>">
 <meta property="og:description" content="<?= $result->News_Meta_Description; ?>">
-<meta property="og:image" content="<?= base_url();?><?= "assets/web-site/images/news/old/whatsapp/".str_replace('assets/news/', '', $result->News_Image); ?>">
+<meta property="og:image" content="<?= base_url();?><?= "assets/web-site/images/news/whatsapp/".$image_name_webp; ?>">
 <meta property="og:image:width" content="300" />
 <meta property="og:image:height" content="300" />
 
@@ -21,7 +29,7 @@
 <meta name="twitter:image:alt" content="<?= $result->News_Meta_Title; ?>">
 <meta name="twitter:title" content="<?= $result->News_Meta_Title; ?>">
 <meta name="twitter:description" content="<?= $result->News_Meta_Description; ?>">
-<meta name="twitter:image" content="<?= base_url();?><?= "assets/web-site/images/news/old/original/".str_replace('assets/news/', '', $result->News_Image); ?>">
+<meta name="twitter:image" content="<?= base_url();?><?= "assets/web-site/images/news/whatsapp/".$image_name_webp; ?>">
 <link rel="canonical" href="<?= base_url();?>news/<?= $result->url_slug; ?>"/>
 <script src="https://www.google.com/recaptcha/api.js" ></script>
 <link
@@ -92,15 +100,7 @@
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>
 <main>
-    <? $image_name = str_replace('assets/news/', '', $result->News_Image);
-    $image_name_webp = substr($image_name,0,strpos($image_name,'.jpg')).".webp";
-    if ($image_name_webp==''){
-        $image_name_webp = substr($image_name,0,strpos($image_name,'.png')).".webp";
-    }
-    if ($image_name_webp==''){
-        $image_name_webp = substr($image_name,0,strpos($image_name,'.jpeg')).".webp";
-    }
-    ?>
+
     <section id="bread-crumbs">
         <div class="container">
             <div class="row">
