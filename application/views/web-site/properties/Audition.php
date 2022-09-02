@@ -13,6 +13,15 @@ foreach ($property_result as $value) {
     $data_array = $value;
 }
 ?>
+<? $image_name = str_replace('assets/thumbnail/', '', $data_array->Property_thumbnail);
+$image_name_webp = substr($image_name, 0, strpos($image_name, '.jpg')) . ".webp";
+if ($image_name_webp == '') {
+    $image_name_webp = substr($image_name, 0, strpos($image_name, '.png')) . ".webp";
+}
+if ($image_name_webp == '') {
+    $image_name_webp = substr($image_name, 0, strpos($image_name, '.jpeg')) . ".webp";
+}
+?>
 <script src="https://www.google.com/recaptcha/api.js" ></script>
 <title><?= $data_array->Property_title; ?></title>
 <meta name="keywords" content="<?= $data_array->Property_Meta_Keyword; ?>">
@@ -25,7 +34,7 @@ foreach ($property_result as $value) {
 <meta property="og:description" content="<?= $data_array->Property_Meta_Description; ?>">
 <meta property="og:image:width" content="300" />
 <meta property="og:image:height" content="300" />
-<meta property="og:image" content="https://www.primepropertyturkey.com/assets/web-site/images/properties/old/P_Thumb/<?= str_replace('assets/thumbnail/', '', $data_array->Property_thumbnail); ?>">
+<meta property="og:image" content="https://www.primepropertyturkey.com/assets/web-site/images/properties/P_Thumb/<?= $image_name_webp; ?>">
 <meta property="og:image:width" content="300" />
 <meta property="og:image:height" content="300" />
 
@@ -35,7 +44,7 @@ foreach ($property_result as $value) {
 <meta name="twitter:image:alt" content="<?= $data_array->Property_title; ?>">
 <meta name="twitter:title" content="<?= $data_array->Property_title; ?>">
 <meta name="twitter:description" content="<?= $data_array->Property_Meta_Description; ?>">
-<meta name="twitter:image" content="https://www.primepropertyturkey.com/assets/web-site/images/properties/old/P_Thumb/<?= str_replace('assets/thumbnail/', '', $data_array->Property_thumbnail); ?>">
+<meta name="twitter:image" content="https://www.primepropertyturkey.com/assets/web-site/images/properties/P_Thumb/<?= $image_name_webp; ?>">
 <meta property="twitter:image:width" content="300" />
 <meta property="twitter:image:height" content="300" />
 <style type="text/css">
@@ -541,7 +550,7 @@ foreach ($property_result as $value) {
                     </div>
                     <? } ?>
                     <? if ($data_array->Property_description){ ?>
-                        <div class="card my-2 d-none d-md-block">
+                        <div class="card my-2 d-md-block">
                             <div class="card-body">
                                 <div class="row align-items-center">
                                     <div class="col-md-2 font-weight-bold text-center" >
@@ -557,29 +566,7 @@ foreach ($property_result as $value) {
                                 </div>
                             </div>
                         </div>
-                        <div class="more-details my-2 mb-5 d-md-none">
-                            <button id="more-details"> More Details</button>
-                        </div>
-                        <div id="show-more" style="display: none">
-                            <div class="card my-2 ">
-                                <div class="card-body">
-                                    <div class="row align-items-center">
-                                        <div class="col-md-2 font-weight-bold text-center">
-                                            More Details
-                                        </div>
-                                        <div class="col-md-10 P_desc content-font" id="inner_content" style="text-align: justify !important;">
-                                            <p class="p-1 " style="text-align: justify !important;">
-                                                <?= $data_array->Property_description; ?>
-                                            </p>
-                                            <div class="d-none d-md-block vertical-separate"></div>
-                                            <div class="d-md-none horizontal-separate"></div>
 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
                     <? } ?>
                 </div>
                 <div class="col-lg-4">
@@ -595,20 +582,13 @@ foreach ($property_result as $value) {
             <div class="row justify-content-center">
                 <h4 class="text-center blue-text font-weight-bold">
                     <? if ($Recommended_Neighborhood_Properties) {?>
-                        <div class="d-md-block d-none">
+                        <div class="d-md-block">
                             Neighborhood Recommendations
                         </div>
-                        <div class="d-block d-md-none">
-                            Neighborhood <br>
-                            Recommendations <br>
-                        </div>
+
                     <?} else {?>
-                        <div class="d-md-block d-none">
+                        <div class="d-md-block">
                             Recently Added Properties
-                        </div>
-                        <div class="d-block d-md-none">
-                            Recently <br>
-                            Added Properties <br>
                         </div>
                     <? } ?>
                 </h4>

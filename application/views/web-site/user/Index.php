@@ -64,6 +64,12 @@
                     <div class="card-body text-left">
                         <div class="row my-3 justify-content-center align-items-center ">
                             <div class="col-12 text-justify my-4 mx-2">
+                                <p>
+                                    973559371491-c75lb617d1djrm0nnh6j7pg848d88rva.apps.googleusercontent.com
+                                </p>
+                                <p>
+                                    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
+                                </p>
                                 Prime Property Turkey is here to give you an opportunity to advertise and sell your
                                 property. We are an acclaimed property consultancy that has sold hundreds of new and
                                 resale properties around Turkey. Upload your apartments, duplexes, villas, mansions, and

@@ -117,7 +117,7 @@
                                             </p>
                                         </div>
                                         <div class="row justify-content-end align-items-center my-2 buttons">
-                                            <a href="<?= base_url();?>blog/<?= $value->url_slug;?>" target="_blank"
+                                            <a href="<?= base_url();?>blog/<?= $value->url_slug;?>"
                                                class="d-flex my-1 mx-1 red-text font-weight-bold">
                                                 Read More
                                             </a>
