@@ -3,12 +3,35 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class User_Model extends CI_Model
 {
+    public function Is_user_already_register($data)
+    {
+        $this->db->where('login_oauth_uid', $data);
+        $query = $this->db->get('user');
+        if($query->num_rows() > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public function Update_user_login_data($data,$id)
+    {
+        $this->db->where('login_oauth_uid', $id);
+        $this->db->update('user', $data);
+    }
+    public function Insert_user_login_data($data)
+    {
+        $this->db->insert('user', $data);
+    }
+    
     public function Add_Property_Submit_Model($data)
     {
         $this->db->insert('resale', $data);
         return $this->db->insert_id();
     }
-
     public function submitGalleryImagesModel($id,$filename,$order)
     {
         $data=array(
@@ -18,7 +41,6 @@ class User_Model extends CI_Model
         );
         $this->db->insert('resale_image', $data);
     }
-
     public function FetchResaleProperties($where)
     {
         $this->db->where($where);
@@ -30,7 +52,6 @@ class User_Model extends CI_Model
             return false;
         }
     }
-
     public function updateProfile($data)
     {
         $this->db->set('fullname',$data['fullname']);
@@ -38,7 +59,6 @@ class User_Model extends CI_Model
         $this->db->where('id',$this->session->userdata('userID'));
         $this->db->update('user');
     }
-
     public function FetchResaleUsers()
     {
         $this->db->where('id',$this->session->userdata('userID'));
@@ -49,7 +69,6 @@ class User_Model extends CI_Model
             return false;
         }
     }
-
     public function deleteProperty($data)
     {
         $this->db->where('userID',$this->session->userdata('userID'));
@@ -66,7 +85,6 @@ class User_Model extends CI_Model
         }
         return false;
     }
-
     public function getResalePropertyTitle($value)
     {
         $this->db->select('id');
@@ -78,5 +96,4 @@ class User_Model extends CI_Model
             return $data['id'] = null;
         }
     }
-
 }

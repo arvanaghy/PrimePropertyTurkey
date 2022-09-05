@@ -144,7 +144,7 @@
                     </span>
                     <? }else{ ?>
                         <span class="user-top-login mx-1">
-                        <a href="<?= base_url();?>login" rel="nofollow" class="">
+                        <a href="<?= base_url();?>User/UserLogin" rel="nofollow" class="">
                             <i class="fas fa-users"></i>
                             <span class="d-none d-md-inline">
                                     Login / Register
@@ -204,7 +204,6 @@
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon text-white"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto mr-md-5">
             <li class="nav-item active">
@@ -253,8 +252,6 @@
                     <a class="dropdown-item" href="<?= base_url();?>How-To-Buy-Property-In-Turkey">Buyer Guide</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="<?= base_url();?>area-guide">Area Guide</a>
-<!--                    <div class="dropdown-divider"></div>-->
-<!--                    <a class="dropdown-item" href="--><?//= base_url();?><!--after-sales">After Sales</a>-->
                 </div>
             </li>
             <li class="nav-item">

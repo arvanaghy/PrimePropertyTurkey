@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class User extends CI_Controller {
 
     protected function checkUser(){
-        if ($this->session->has_userdata('username') and $this->session->has_userdata('user_info') and $this->session->has_userdata('userID')){
+        if ($this->session->has_userdata('username') and $this->session->has_userdata('user_info') and $this->session->has_userdata('access_token')){
             return true;
         }
         return false;
@@ -106,9 +106,75 @@ class User extends CI_Controller {
     public function index()
     {
         if ($this->checkUser()){
-            $this->load->view('web-site/user/Index');
+           $this->load->view('web-site/user/Index');
         }else{
             redirect(base_url());
+        }
+    }
+
+    public function UserLogin()
+    {
+        $this->load->Model('User_Model');
+        require_once APPPATH . "libraries/vendor/autoload.php";
+        $google_client = new Google_client();
+        $google_client->setClientId('973559371491-161jnuetpcj7akgai3q98canv9of8jpk.apps.googleusercontent.com');
+        $google_client->setClientSecret('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');
+        $google_client->setRedirectUri('https://www.primepropertyturkey.com/User/UserLogin');
+        $google_client->addScope('email');
+        $google_client->addScope('profile');
+        if (isset($_GET['code'])){
+            $token = $google_client->fetchAccessTokenWithAuthCode($_GET['code']);
+            if (!isset($token['error'])){
+                $google_client->setAccessToken($token['access_token']);
+                $this->session->set_userdata('access_token', $token['access_token']);
+                $google_service = new Google_Service_Oauth2($google_client);
+                $data = $google_service->userinfo->get();
+                $current_datetime = date('Y-m-d H:i:s');
+                if($this->User_Model->Is_user_already_register($data['id']))
+                {
+                    $user_data = array(
+                        'fullname' => $data['given_name'].' '.$data['family_name'],
+                        'email' => $data['email'],
+                        'profile_picture'=> $data['picture'],
+                        'update_date' => $current_datetime
+                    );
+
+                    $this->User_Model->Update_user_login_data($user_data, $data['id']);
+                }
+                else
+                {
+                    $user_data = array(
+                        'login_oauth_uid' => $data['id'],
+                        'fullname' => $data['given_name'].' '.$data['family_name'],
+                        'email'  => $data['email'],
+                        'profile_picture' => $data['picture'],
+                        'registerDate'  => $current_datetime
+                    );
+
+                    $this->User_Model->Insert_user_login_data($user_data);
+                }
+                $this->session->set_userdata('username', $data['email']);
+                $this->session->set_userdata('user_info', $data['given_name'].' '.$data['family_name']);
+            }
+        }
+        $login_button = '';
+        if(!$this->session->has_userdata('access_token'))
+        {
+            $login_button = '<a href="'.$google_client->createAuthUrl().'" class="text-center btn btn-light btn-lg">
+         <span class="mx-1 text-primary">
+                   <i class="fab fa-google"></i>
+        </span>
+        <span>
+            Sign in Google
+        </span>
+        </span>
+        </a>';
+            $data['login_button'] = $login_button;
+            $this->load->view('web-site/login', $data);
+        }
+        else
+        {
+            redirect(base_url().'User');
         }
     }
 
@@ -252,7 +318,9 @@ class User extends CI_Controller {
 
     public function logout()
     {
-        $this->session->unset_userdata('username','user_info','userID');
+        $this->session->unset_userdata('access_token');
+        $this->session->unset_userdata('username');
+        $this->session->unset_userdata('user_info');
         $this->session->set_flashdata('message', "<div id='toast_message' class='success'>  logout Successfully  </div>");
         redirect(base_url());
     }

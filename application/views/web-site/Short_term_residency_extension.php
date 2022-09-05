@@ -9,7 +9,7 @@
 />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <link rel="stylesheet" href="<?= base_url();?>assets/web-site/css/phone-input.css">
-<title>Short-Term Residency Extension</title>
+<title>Short-Term Residency Extension in turkey</title>
 <meta name="description" content="Applications for an extension of the residence permit may be made to Governors’ Offices
                                 within sixty days prior to its expiration, but under no circumstances should this be
                                 done after the expiry date.">

@@ -9,22 +9,21 @@
 />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/phone-input.css">
-<title>Short-Term Residency Permit</title>
-<meta name="description" content="To apply for a short-term residence permit, foreigners who own real estate in Turkey or
-                                intend to establish a business or business connections in Turkey must submit the
-                                following documents to the relevant Provincial Directorate of Immigration Administration
-                                (Göçİdaresi). Once an application is submitted through the e-residence system.">
+<title>Short-Term Residency Permit in turkey</title>
+<meta name="description"
+      content="short-term residence permits are issued for a maximum of two years as a principle. (Note: A residence permit is invalidated if it is not used within six months.)">
 <style type="text/css">
-    h2{
+    h2 {
         font-size: 1.3rem;
         font-weight: 800;
     }
+
     .side-recommended-owl .item .card img {
         border-top-left-radius: 20px !important;
         border-top-right-radius: 20px !important;
     }
 </style>
-<link rel="canonical" href="https://www.primepropertyturkey.com/short-term-residency-permit" />
+<link rel="canonical" href="https://www.primepropertyturkey.com/short-term-residency-permit"/>
 </head>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>
@@ -86,32 +85,38 @@
                                 <li> Foreigners who transfer for a family residence permit
                                 </li>
                             </ul>
-                            <h2  class="content-tile pt-4 pb-2 px-4">
+                            <h2 class="content-tile pt-4 pb-2 px-4">
                                 How to apply for a Turkish Residence Permit?
                             </h2>
                             <p class="p-4 text-justify">
-                                    To apply, research what paperwork is required and gather it before you begin the online
-                                    process on the E-ikamet website, <a href="https://e-ikamet.goc.gov.tr" target="_blank">https://e-ikamet.goc.gov.tr</a> The site will not allow you
-                                    to go further if you do not have required items like your biometric digital passport photo
-                                    ready. Double-check all of your documentation including spellings, it will prevent
-                                    problems during the process and for future renewals. Having private health insurance is
-                                    a requirement to stay more than 90 days in Turkey and there are many good policies
-                                    available from agents across the country.
-                                    <br>
-                                    Once the system has accepted your application you will receive a time, date, and location
-                                    for your appointment via text message or email from the Goc Idaresi (Migration
-                                    Office). This will have your application number and state where you will submit your
-                                    paperwork to a provincial immigration agent at a local office. There is a fee for a residency
-                                    permit that depends on your nationality and card. They will inform you if anything is
-                                    missing which you will be expected to provide within a given time.
-                                </p>
-                            <h2  class="content-tile pt-4 pb-2 px-4">
+                                To apply, research what paperwork is required and gather it before you begin the online
+                                process on the E-ikamet website, <a href="https://e-ikamet.goc.gov.tr" target="_blank">https://e-ikamet.goc.gov.tr</a>
+                                The site will not allow you
+                                to go further if you do not have required items like your biometric digital passport
+                                photo
+                                ready. Double-check all of your documentation including spellings, it will prevent
+                                problems during the process and for future renewals. Having private health insurance is
+                                a requirement to stay more than 90 days in Turkey and there are many good policies
+                                available from agents across the country.
+                                <br>
+                                Once the system has accepted your application you will receive a time, date, and
+                                location
+                                for your appointment via text message or email from the Goc Idaresi (Migration
+                                Office). This will have your application number and state where you will submit your
+                                paperwork to a provincial immigration agent at a local office. There is a fee for a
+                                residency
+                                permit that depends on your nationality and card. They will inform you if anything is
+                                missing which you will be expected to provide within a given time.
+                            </p>
+                            <h2 class="content-tile pt-4 pb-2 px-4">
                                 Collecting your Residence Permit
                             </h2>
                             <p class="p-4 text-justify">
-                                Upon a successful application, you will receive a text message from the Goc Idaresi letting
+                                Upon a successful application, you will receive a text message from the Goc Idaresi
+                                letting
                                 you know you have been approved. They will assign you a foreigner’s identification
-                                number starting with 99 and send your identity card via the postal service to the address
+                                number starting with 99 and send your identity card via the postal service to the
+                                address
                                 you provided on your application. If there are any problems you can contact the
                                 Directorate of Migration Management by calling 157, the service has options for Arabic,
                                 English, Farsi, German, Russian and Turkish speakers.
@@ -122,8 +127,16 @@
                         <div class="card-body">
                             <div class="useful px-4 py-2">
                                 <strong> Did You Find This Useful ? </strong>
-                                <a href="<?= base_url();?>Like/permit" <? if(is_permitDisliked()){?>style="pointer-events: none;"<?}?>  rel="nofollow"><? if(is_permitLiked()){?><span class="pl-2"><i class="fas fa-thumbs-up"></i></span><?}else{?><span class="pl-2"><i class="far fa-thumbs-up"></i></span><?}?></a>
-                                <a href="<?= base_url();?>Dislike/permit" <? if(is_permitLiked()){?>style="pointer-events: none;"<?}?> rel="nofollow" ><? if (is_permitDisliked()){ ?><span class="pl-2"  ><i class="fas fa-thumbs-down"></i></span><?} ?><span class="pl-2"  ><i class="far fa-thumbs-down"></i></span></a>
+                                <a href="<?= base_url(); ?>Like/permit"
+                                   <? if (is_permitDisliked()){ ?>style="pointer-events: none;"<? } ?>
+                                   rel="nofollow"><? if (is_permitLiked()) { ?><span class="pl-2"><i
+                                                class="fas fa-thumbs-up"></i></span><? } else { ?><span class="pl-2"><i
+                                                class="far fa-thumbs-up"></i></span><? } ?></a>
+                                <a href="<?= base_url(); ?>Dislike/permit"
+                                   <? if (is_permitLiked()){ ?>style="pointer-events: none;"<? } ?>
+                                   rel="nofollow"><? if (is_permitDisliked()) { ?><span class="pl-2"><i
+                                                class="fas fa-thumbs-down"></i></span><? } ?><span class="pl-2"><i
+                                                class="far fa-thumbs-down"></i></span></a>
                             </div>
                         </div>
                     </div>
@@ -131,8 +144,8 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="card my-3">
-                        <? $passed_data['type']='permit'; ?>
-                        <? $this->load->view('web-site/includes/suitable-citizenship',$passed_data); ?>
+                        <? $passed_data['type'] = 'permit'; ?>
+                        <? $this->load->view('web-site/includes/suitable-citizenship', $passed_data); ?>
                     </div>
                     <div class="card side contact my-2" id="side-contact-us">
                         <?php $this->load->view('web-site/includes/side-contact-us'); ?>
@@ -153,13 +166,15 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form method="post" action="<?= base_url(); ?>Post/enquire" id="enquiry" onsubmit="return ModalEnquireFormValidation();">
+                <form method="post" action="<?= base_url(); ?>Post/enquire" id="enquiry"
+                      onsubmit="return ModalEnquireFormValidation();">
                     <div class="row align-items-center">
                         <div class="col-md-12">
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Full Name" required form="enquiry"
-                                       name="info"  id="modalEnquireForm_info">
-                                <span id="modalEnquireForm_info_error" style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
+                                       name="info" id="modalEnquireForm_info">
+                                <span id="modalEnquireForm_info_error"
+                                      style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
                                       class="vision">
                                    Please enter your first and last name separated by a space (e.g. Jane Miller)
                                 </span>
@@ -169,7 +184,8 @@
                             <div class="form-group">
                                 <input type="text" id="modal_phone" class="form-control" placeholder="Phone"
                                        name="phone[main]" form="enquiry" required>
-                                <span id="modalEnquireForm_phone_error" style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
+                                <span id="modalEnquireForm_phone_error"
+                                      style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
                                       class="vision">
                                       Please Write Your Full PhoneNumber
                                 </span>
@@ -216,7 +232,7 @@
     });
 </script>
 <script type="text/javascript">
-    function ModalEnquireFormValidation(){
+    function ModalEnquireFormValidation() {
         let modalEnquireFormFlag = true;
         let modalEnquireForm_info_error = document.getElementById('modalEnquireForm_info_error');
         let modalEnquireForm_phone_error = document.getElementById('modalEnquireForm_phone_error');
@@ -237,10 +253,15 @@
         }
         return modalEnquireFormFlag;
     }
+
     const phoneInputFieldModalPROVal = document.querySelector("#modal_phone");
     const phoneInputModalPROVal = window.intlTelInput(phoneInputFieldModalPROVal, {
         separateDialCode: true,
-        preferredCountries:["<? if (isset($geolocation)){echo $geolocation;}else{echo 'us';} ?>"],
+        preferredCountries: ["<? if (isset($geolocation)) {
+            echo $geolocation;
+        } else {
+            echo 'us';
+        } ?>"],
         hiddenInput: "full",
         utilsScript:
             "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",

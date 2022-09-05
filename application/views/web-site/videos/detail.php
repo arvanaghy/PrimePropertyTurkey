@@ -4,7 +4,13 @@
 <title><?= $result->title; ?></title>
 
 <meta name="keywords" content="<?= $result->title; ?>">
-<meta name="description" content="<?= strip_tags($result->description); ?>">
+<meta name="description" content="
+  <? if ($this->uri->segment(2) == "Turkish-Citizenship-by-Real-Estate-Investment-Prime-Talks-Ep4"): ?>
+    The Turkish government has recently made changes to the Turkish Citizenship by Investment Program, by changing the minimum amount of investment from $250,000 USD to $400,000 USD in Turkish Real Estate.
+  <? else:
+    echo strip_tags($result->description);
+  endif; ?>
+">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
@@ -163,7 +169,9 @@
                                             Citizenship By Investment In Turkey</a>
                                         <br>
                                         <br>
-                                        This episode was filmed in <strong>Prime Property Turkey’s Istanbul office</strong> and is presented by <strong> Justin Mays </strong>, Co-founder of Prime Property Turkey.
+                                        This episode was filmed in <strong>Prime Property Turkey’s Istanbul
+                                            office</strong> and is presented by <strong> Justin
+                                            Mays </strong>, Co-founder of Prime Property Turkey.
                                         <br>
                                         Justin gives you the basic tips for a safe and secure purchase, as well as including Rules, Regulations, Eligibility Criteria, Required Documentation and some of the pitfalls when buying a property with Turkish Citizenship as the main priority.
                                     <? else : ?>
