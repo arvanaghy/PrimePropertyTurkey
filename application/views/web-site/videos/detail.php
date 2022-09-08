@@ -84,7 +84,7 @@
                         <i class="fas fa-home"></i>
                     </span>
                     <span class="mx-2">
-                        <a href="<?= base_url(); ?>blog" class="red-text" rel="nofollow">
+                        <a href="<?= base_url(); ?>prime-videos" class="red-text" rel="nofollow">
                            Videos
                         </a>
                     </span>
@@ -184,7 +184,6 @@
                 </div>
                 <div class="col-lg-4">
                     <?php $this->load->view('web-site/includes/side-prime-talk'); ?>
-                    <?php $this->load->view('web-site/includes/side-prime-walks'); ?>
                 </div>
             </div>
         </div>

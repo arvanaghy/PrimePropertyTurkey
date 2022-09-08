@@ -57,35 +57,64 @@
                                     <label style="padding:5px;" class="control-label">
                                         <small>
                                             <strong>
-                                                URL
+                                                URL <span class="text-danger">(NOT 'https://youtube.com/embed/' )</span>
                                             </strong>
                                         </small>
                                     </label>
                                     <input name="url" placeholder="Url" class="form-control" required>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="form-group col-sm-12">
-                                    <label style="margin-top:10px;padding:5px;" class="control-label">
-                                        <small>
-                                            <strong>
-                                                Video Description
-                                            </strong>
-                                        </small>
-                                    </label>
-                                    <textarea name="video_description" placeholder="Video Description" required class="form-control summernote"></textarea>
-                                </div>
+                        <div class="row">
+                            <div class="form-group col-sm-4">
+                                <label for="Cover-image">
+                                    <small>
+                                        <b>Cover Image</b>
+                                    </small>
+                                </label>
+                                <input type="file" name="Cover-image" id="Cover-image" class="form-control" accept=".jpg">
                             </div>
-                            <div class="row">
-                                <div class="col-sm-12 text-right">
-                                    <button type="reset" name="submitBtn" class="btn btn-warning ">
-                                        Reset Form
-                                    </button>
-                                    <button type="submit" name="submitBtn" class="btn btn-primary ">
-                                        Add Video
-                                    </button>
-                                </div>
+                            <div class="form-group col-sm-4">
+                                <label for="type">
+                                    <small>
+                                        <b>Type</b>
+                                    </small>
+                                </label>
+                                <select name="type" id="type" class="form-control">
+                                    <option value="1">Prime Talks</option>
+                                    <option value="2">Prime Walks</option>
+                                    <option value="3">Weekly Report</option>
+                                    <option value="4">Prime Project</option>
+                                </select>
                             </div>
+                            <div class="form-group col-sm-4">
+                                <label for="Sequence">
+                                    <small><b>Sequence</b></small>
+                                </label>
+                                <input type="nuber" name="Sequence" id="Sequence" class="form-control">
+                            </div>
+                        </div>
+                         <div class="row">
+                            <div class="form-group col-sm-12">
+                                <label style="margin-top:10px;padding:5px;" class="control-label">
+                                    <small>
+                                        <strong>
+                                            Video Description
+                                        </strong>
+                                    </small>
+                                </label>
+                                <textarea name="video_description" placeholder="Video Description" required class="form-control summernote"></textarea>
+                            </div>
+                        </div>
+                         <div class="row">
+                            <div class="col-sm-12 text-right">
+                                <button type="reset" name="submitBtn" class="btn btn-warning ">
+                                    Reset Form
+                                </button>
+                                <button type="submit" name="submitBtn" class="btn btn-primary ">
+                                    Add Video
+                                </button>
+                            </div>
+                        </div>
                         </form>
                     </div>
                 </div>
@@ -93,20 +122,17 @@
         </div>
     </div>
 </section>
-
 <?php $this->load->view('admin/include/footer'); ?>
 <?php $this->load->view('admin/include/foot-load'); ?>
-
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
-
-<script>
+<script type="text/javascript">
     $(document).ready(function() {
         $('.summernote').summernote({
-            height: 200,                 // set editor height
-            minHeight: null,             // set minimum height of editor
-            maxHeight: null,             // set maximum height of editor
-            focus: false                 // set focus to editable area after initializing summernote
+            height: 200,
+            minHeight: null,
+            maxHeight: null,
+            focus: false
         });
     });
     var postForm = function() {

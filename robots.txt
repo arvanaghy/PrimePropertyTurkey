@@ -1,3 +1,5 @@
 User-Agent: *
-Disallow:
+Disallow:/Real_estate/
+Disallow:/city/
+Disallow:/Prime/
 Sitemap: https://www.primepropertyturkey.com/seo/sitemap.xml

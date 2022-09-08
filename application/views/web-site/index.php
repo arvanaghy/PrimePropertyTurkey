@@ -1063,7 +1063,7 @@
         <div class="container-fluid my-3 ">
             <div class="row justify-content-center">
                 <h4 class="text-center blue-text font-weight-bold">
-                    YouTube - Prime Talks
+                    YouTube - Prime Videos
                 </h4>
             </div>
             <div class="row mt-3 mt-md-5 justify-content-around">

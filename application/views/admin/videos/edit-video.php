@@ -45,7 +45,7 @@
                     <div class="card-body">
                         <?php echo form_open_multipart(base_url() . 'Admin/Video_Content_Update_Submit'); ?>
                         <div class="row">
-                            <div class="form-group col-sm-4">
+                            <div class="form-group col-sm-8">
                                 <label style="padding:5px;" class="control-label">
                                     <small>
                                         <strong>
@@ -56,7 +56,7 @@
                                 <input name="title" type="text" class="form-control" required
                                        value="<?= $results->title; ?>">
                             </div>
-                            <div class="form-group col-sm-6">
+                            <div class="form-group col-sm-4">
                                 <label style="padding:5px;" class="control-label">
                                     <small>
                                         <strong>
@@ -67,8 +67,24 @@
                                 <input name="url" class="form-control" required type="text"
                                        value="<?= $results->url; ?>">
                             </div>
-                            <div class="form-group col-sm-2">
-                                <label style="padding:5px;" class="control-label">
+
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="form-group col-sm-5">
+                                <label for="type">
+                                    <small>
+                                        <b>Type</b>
+                                    </small>
+                                </label>
+                                <select name="type" id="type" class="form-control">
+                                    <option value="1" <? if ($results->primeType == 1){ echo 'selected';} ?> >Prime Talks</option>
+                                    <option value="2" <? if ($results->primeType == 2){ echo 'selected';} ?> >Prime Walks</option>
+                                    <option value="3" <? if ($results->primeType == 3){ echo 'selected';} ?> >Weekly Report</option>
+                                    <option value="4" <? if ($results->primeType == 4){ echo 'selected';} ?> >Prime Project</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-3">
+                                <label >
                                     <small>
                                         <strong>
                                             Sequence
@@ -78,7 +94,6 @@
                                 <input name="sequence" class="form-control" required type="number"
                                        value="<?= $results->sequence; ?>">
                             </div>
-
                         </div>
                         <div class="row">
                             <div class="form-group col-sm-12">
@@ -120,6 +135,26 @@
                                 allowfullscreen></iframe>
                     </div>
                 </div>
+                <div class="card my-3">
+                    <div class="card-body">
+                        <div class="card-title text-center font-weight-bold">
+                            Cover Image Preview
+                        </div>
+                        <img src="<?= base_url();?>assets/web-site/images/youtube-cover/<?= $results->cover_image;?>" alt="" class="img-fluid">
+                        <?php echo form_open_multipart(base_url() . 'Admin/Video_Cover_Update_Submit'); ?>
+                            <div class="row">
+                                <div class="form-group col-12">
+                                    <label for="Cover-image"></label>
+                                    <input type="file" name="Cover-image" id="Cover-image" class="form-control">
+                                    <input type="hidden" name="id" value="<?= $results->id; ?>">
+                                </div>
+                                <div class="form-group col-12">
+                                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Update Cover Image">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -134,10 +169,10 @@
 <script>
     $(document).ready(function () {
         $('.summernote').summernote({
-            height: 200,                 // set editor height
-            minHeight: null,             // set minimum height of editor
-            maxHeight: null,             // set maximum height of editor
-            focus: false                 // set focus to editable area after initializing summernote
+            height: 200,
+            minHeight: null,
+            maxHeight: null,
+            focus: false
         });
     });
     var postForm = function () {

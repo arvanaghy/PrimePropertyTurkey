@@ -827,10 +827,38 @@ class Admin extends CI_Controller
         $this->checkUser();
         $postData = array(
             'url'=>	strip_tags($this->input->post('url')),
+            'url_slug'=> url_title($this->input->post('title'),"-",True),
             'description'=> $this->input->post('video_description'),
             'title'=> strip_tags($this->input->post('title')),
             'status'=> 2,
+            'primeType'=> $this->input->post('type'),
+            'sequence'=> $this->input->post('Sequence'),
         );
+
+        $config['upload_path']          = './assets/web-site/images/youtube-cover/Original/';
+        $config['allowed_types']        = 'jpg';
+        $config['max_size']             = 2048;
+        $config['max_width']            = 2000;
+        $config['max_height']           = 2000;
+        $config['remove_spaces']        = TRUE;
+        $this->load->library('upload', $config);
+        if ( ! $this->upload->do_upload('Cover-image')){
+            $file_name = null;
+        }else {
+            $file_name = $this->upload->data()['file_name'];
+
+            header('Content-Type: image/WebP');
+            $name = pathinfo($file_name, PATHINFO_FILENAME);
+            $source_image = imagecreatefromjpeg($config['upload_path'].$file_name);
+            imagepalettetotruecolor($source_image);
+            imagealphablending($source_image, true);
+            imagesavealpha($source_image, true);
+
+            imagewebp($source_image,'./assets/web-site/images/youtube-cover/'.$name.".webp",60);
+            imagedestroy($source_image);
+            $file_name = $name.".webp";
+        }
+        $postData['cover_image'] = $file_name;
 
         $this->load->model('Admin_model');
         $this->Admin_model->insertVideos($postData);
@@ -875,18 +903,58 @@ class Admin extends CI_Controller
         $id = strip_tags($this->input->post('id'));
         $title = strip_tags($this->input->post('title'));
         $url = strip_tags($this->input->post('url'));
+        $type = strip_tags($this->input->post('type'));
         $sequence = strip_tags($this->input->post('sequence'));
         $video_description = $this->input->post('video_description');
         $data =array(
             'title' => $title,
             'url' => $url,
             'description' => $video_description,
-            'sequence' => $sequence
+            'sequence' => $sequence,
+            'primeType' => $type,
         );
         $this->load->model('Admin_model');
         $this->Admin_model->Videos_Update($id,$data);
         $this->load->library('user_agent');
         redirect($this->agent->referrer());
+    }
+
+    public function Video_Cover_Update_Submit()
+    {
+        $this->checkUser();
+        $id = strip_tags($this->input->post('id'));
+        $config['upload_path']          = './assets/web-site/images/youtube-cover/Original/';
+        $config['allowed_types']        = 'jpg';
+        $config['max_size']             = 2048;
+        $config['max_width']            = 2000;
+        $config['max_height']           = 2000;
+        $config['remove_spaces']        = TRUE;
+        $this->load->library('upload', $config);
+        if ( ! $this->upload->do_upload('Cover-image')){
+            $file_name = null;
+        }else {
+            $file_name = $this->upload->data()['file_name'];
+
+            header('Content-Type: image/WebP');
+            $name = pathinfo($file_name, PATHINFO_FILENAME);
+            $source_image = imagecreatefromjpeg($config['upload_path'].$file_name);
+            imagepalettetotruecolor($source_image);
+            imagealphablending($source_image, true);
+            imagesavealpha($source_image, true);
+
+            imagewebp($source_image,'./assets/web-site/images/youtube-cover/'.$name.".webp",60);
+            imagedestroy($source_image);
+            $file_name = $name.".webp";
+        }
+
+        $data =array(
+            'cover_image' => $file_name
+        );
+        $this->load->model('Admin_model');
+        $this->Admin_model->Videos_Update($id,$data);
+        $this->load->library('user_agent');
+        redirect($this->agent->referrer());
+
     }
     public function DeleteForEver_Videos($passed_url = '')
     {

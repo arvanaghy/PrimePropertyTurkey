@@ -2320,5 +2320,37 @@ class User_Model extends CI_Model
 		$result=$query->row();
 		return $result;
 	}
-		
+
+    public function countNormalLeads()
+    {
+        $this->db->distinct();
+        $this->db->select('DISTINCT(email)');
+        $this->db->where('source_of_enquiry!=','dubai_pool');
+        $query = $this->db->get('crm_leads');
+        return $query->num_rows();
+    }
+    public function countDubaiLeads()
+    {
+        $this->db->distinct();
+        $this->db->select('DISTINCT(email)');
+        $this->db->where('source_of_enquiry','dubai_pool');
+        $query = $this->db->get('crm_leads');
+        return $query->num_rows();
+    }
+
+    public function GetNewsLettersInfo($type)
+    {
+        $this->db->select('DISTINCT(email),first_name,second_name,mobile');
+        if ($type=='Dubai'){
+            $this->db->where('source_of_enquiry','dubai_pool');
+        }elseif ($type=='Normal'){
+            $this->db->where('source_of_enquiry!=','dubai_pool');
+        }
+        $this->db->order_by('email','DESC');
+        $query = $this->db->get('crm_leads');
+
+        return $query->result();
+
+    }
+
 }

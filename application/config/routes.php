@@ -182,6 +182,7 @@ $route['ru/blog/Турция-становится-безопасным-раем-
 
 $route['BlogFind/(:any)'] = 'BlogFind/details/$1';
 
+$route['prime-videos'] = 'Prime_Videos/index/';
 $route['prime-videos/(:any)'] = 'Prime_Videos/details/$1';
 
 $route['Like/blog/(:any)'] = 'Like/blog/$1';

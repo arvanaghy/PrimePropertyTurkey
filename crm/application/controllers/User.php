@@ -26,7 +26,7 @@ class User extends CI_Controller
 
     public function assign_user_lead()
     {
-        $data = array('Lead_Assign_User_id' => $this->input->post('assign_user_id'),"lead_type"=>0);
+        $data = array('Lead_Assign_User_id' => $this->input->post('assign_user_id'), "lead_type" => 0);
         $where_data = array('Lead_id' => $this->input->post('lead_id'));
         $this->db->update("crm_leads", $data, $where_data);
         $this->session->set_flashdata('message', "<div class='alert alert-success'>Lead Assigned Successfully</div>");
@@ -111,6 +111,7 @@ class User extends CI_Controller
             return redirect(base_url('User/login'));
         }
     }
+
     public function dashboard_high()
     {
         if ($this->session->userdata('id') != "" and $this->session->userdata('status') == "1") {
@@ -145,6 +146,7 @@ class User extends CI_Controller
             return redirect(base_url('User/login'));
         }
     }
+
     public function dashboard_low()
     {
         if ($this->session->userdata('id') != "" and $this->session->userdata('status') == "1") {
@@ -183,19 +185,61 @@ class User extends CI_Controller
     public function manage_news_letter()
     {
         if ($this->session->userdata('id') != "" and $this->session->userdata('status') == "1" and $this->session->userdata('type') == "1") {
-            $config = array();
-            $config["base_url"] = base_url() . "User/manage_news_letter";
-            $config["total_rows"] = $this->User_Model->get_all_lead_countt();
-            $config['per_page'] = 20;
-            $config['uri_segment'] = '3';
-            $this->pagination->initialize($config);
-            $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-            $data["total_lead"] = $config;
-            $data["all_links"] = $this->pagination->create_links();
-            $data['all_leads'] = $this->User_Model->get_all_lead($config["per_page"], $page);
+            $data = array();
+            $this->load->helper('form');
+            $data['normalLeadsCount']= $this->User_Model->countNormalLeads();
+            $data['DubaiLeadsCount']= $this->User_Model->countDubaiLeads();
             $this->load->view('admin/news_letter/index', $data);
         } else {
             return redirect(base_url('User/login'));
+        }
+    }
+
+    public function SendNewsLetterSubmit()
+    {
+        $this->load->library('email');
+        $data = array();
+        $SourceEnquiry = $this->input->post('SourceEnquiry');
+        $subject = $this->input->post('subject');
+        $comment = $this->input->post('comment');
+        switch ($SourceEnquiry):
+            case 'Dubai':
+                $data['Clients'] = $this->User_Model->GetNewsLettersInfo('Dubai');
+                break;
+            case 'All':
+                $data['Clients'] = $this->User_Model->GetNewsLettersInfo('All');
+                break;
+            case 'Normal':
+                $data['Clients'] = $this->User_Model->GetNewsLettersInfo('Normal');
+                break;
+        endswitch;
+//        $config['upload_path']          =  './uploads/mailAttachment/';
+//        $config['remove_spaces']        = TRUE;
+//        $config['allowed_types']        = 'jpg|png|pdf|doc|txt';
+//        $config['max_size']             = 2048;
+//        $this->upload->initialize($config);
+//        $this->load->library('upload', $config);
+//        if (!$this->upload->do_upload('attachment_file'))
+//        {
+//            $data['attachment_file']= null;
+//        }else{
+//            $data['attachment_file'] = $this->upload->data()['file_name'];
+//        }
+//
+//        $this->email->clear(TRUE);
+//        if ($data['attachment_file']){
+//            $this->email->attach('./uploads/mailAttachment/'.$data['attachment_file']);
+//        }
+//        $this->email->to('arvanaghy@gmail.com');
+//        $this->email->from('info@primepropertyturkey.com');
+//        $this->email->subject($subject);
+//        $this->email->message($comment);
+//        $this->email->set_mailtype("html");
+//        $this->email->send();
+        $i = 1;
+        foreach ($data['Clients'] as $dataRow) {
+            echo $dataRow->email . '<br />';
+
         }
     }
 
@@ -514,8 +558,8 @@ class User extends CI_Controller
         $this->db->insert("crm_call_history", $data);
 
         $user_lead_type = 0;
-        if ($this->input->post('user_lead_type')==1){
-            $user_lead_type= 1;
+        if ($this->input->post('user_lead_type') == 1) {
+            $user_lead_type = 1;
         }
         $data = array(
             'client_category' => $this->input->post('source_category'),
@@ -650,6 +694,7 @@ class User extends CI_Controller
             return redirect(base_url('User/login'));
         }
     }
+
     public function dubai_pool_low()
     {
 
@@ -692,7 +737,7 @@ class User extends CI_Controller
         if ($this->session->userdata('id') != "" and $this->session->userdata('status') == "1") {
             if ($this->session->userdata('type') == 1) {
                 $config = array();
-                $data=array();
+                $data = array();
                 $config["base_url"] = base_url() . "User/uninterested_pool";
                 $config["total_rows"] = $this->User_Model->get_uninterested_pool_lead_count();
                 $config['per_page'] = 10;
@@ -705,7 +750,7 @@ class User extends CI_Controller
             }
             if ($this->session->userdata('type') != 1) {
                 $config = array();
-                $data=array();
+                $data = array();
                 $config["base_url"] = base_url() . "User/uninterested_pool";
                 $config["total_rows"] = $this->User_Model->get_user_uninterested_pool_lead_count();
                 $config['per_page'] = 10;
@@ -755,6 +800,7 @@ class User extends CI_Controller
             return redirect(base_url('User/login'));
         }
     }
+
     public function today_call_list_high()
     {
         if ($this->session->userdata('id') != "" and $this->session->userdata('status') == "1") {
@@ -788,6 +834,7 @@ class User extends CI_Controller
             return redirect(base_url('User/login'));
         }
     }
+
     public function today_call_list_low()
     {
         if ($this->session->userdata('id') != "" and $this->session->userdata('status') == "1") {
@@ -856,6 +903,7 @@ class User extends CI_Controller
             return redirect(base_url('User/login'));
         }
     }
+
     public function today_call_list_dubai_low()
     {
         if ($this->session->userdata('id') != "" and $this->session->userdata('status') == "1") {
@@ -925,6 +973,7 @@ class User extends CI_Controller
             return redirect(base_url('User/login'));
         }
     }
+
     public function new_lead_high()
     {
         if ($this->session->userdata('id') != "" and $this->session->userdata('status') == "1") {
@@ -959,6 +1008,7 @@ class User extends CI_Controller
             return redirect(base_url('User/login'));
         }
     }
+
     public function new_lead_low()
     {
         if ($this->session->userdata('id') != "" and $this->session->userdata('status') == "1") {
@@ -1028,6 +1078,7 @@ class User extends CI_Controller
             return redirect(base_url('User/login'));
         }
     }
+
     public function new_lead_dubai_low()
     {
         if ($this->session->userdata('id') != "" and $this->session->userdata('status') == "1") {
@@ -1097,6 +1148,7 @@ class User extends CI_Controller
             return redirect(base_url('User/login'));
         }
     }
+
     public function future_next_call_high()
     {
         if ($this->session->userdata('id') != "" and $this->session->userdata('status') == "1") {
@@ -1131,6 +1183,7 @@ class User extends CI_Controller
             return redirect(base_url('User/login'));
         }
     }
+
     public function future_next_call_low()
     {
         if ($this->session->userdata('id') != "" and $this->session->userdata('status') == "1") {
@@ -1200,6 +1253,7 @@ class User extends CI_Controller
             return redirect(base_url('User/login'));
         }
     }
+
     public function future_next_call_dubai_low()
     {
         if ($this->session->userdata('id') != "" and $this->session->userdata('status') == "1") {
@@ -1270,6 +1324,7 @@ class User extends CI_Controller
             return redirect(base_url('User/login'));
         }
     }
+
     public function previous_next_call_high()
     {
         if ($this->session->userdata('id') != "" and $this->session->userdata('status') == "1") {
@@ -1305,6 +1360,7 @@ class User extends CI_Controller
             return redirect(base_url('User/login'));
         }
     }
+
     public function previous_next_call_low()
     {
         if ($this->session->userdata('id') != "" and $this->session->userdata('status') == "1") {
@@ -1374,6 +1430,7 @@ class User extends CI_Controller
             return redirect(base_url('User/login'));
         }
     }
+
     public function previous_next_call_dubai_low()
     {
         if ($this->session->userdata('id') != "" and $this->session->userdata('status') == "1") {
@@ -2094,13 +2151,13 @@ class User extends CI_Controller
             $search_phone = $this->input->post('phone');
             $search_email = $this->input->post('email');
             $search_date = $this->input->post('date');
-            if ($this->input->post("dubai_pool")== 'Yes'){
-                $pool_type =  'dubai_pool';
-            }else{
-                $pool_type =  'normal';
+            if ($this->input->post("dubai_pool") == 'Yes') {
+                $pool_type = 'dubai_pool';
+            } else {
+                $pool_type = 'normal';
             }
             $priority = 'low';
-            if ($this->input->post("Priority")== 'high'){
+            if ($this->input->post("Priority") == 'high') {
                 $priority = 'high';
             }
 
@@ -2151,10 +2208,10 @@ class User extends CI_Controller
         }
 
         // All records count
-        $allCount = $this->User_Model->getRecordCount($search_Lead_id, $search_name_phrase, $search_phone, $search_email, $search_date,$pool_type);
+        $allCount = $this->User_Model->getRecordCount($search_Lead_id, $search_name_phrase, $search_phone, $search_email, $search_date, $pool_type);
 
         // Get records
-        $users_record = $this->User_Model->getData($row_no, $row_per_page, $search_Lead_id, $search_name_phrase, $search_phone, $search_email, $search_date,$pool_type,$priority);
+        $users_record = $this->User_Model->getData($row_no, $row_per_page, $search_Lead_id, $search_name_phrase, $search_phone, $search_email, $search_date, $pool_type, $priority);
 
         // Pagination Configuration
         $config['base_url'] = base_url("User/loadSearchRecord");
@@ -2177,6 +2234,7 @@ class User extends CI_Controller
         $data['Priority'] = $priority;
         $this->load->view('admin/filter-record', $data);
     }
+
     public function loadSearchRecordUninterested($row_no = 0)
     {
         if (isset($_POST['submit'])) {

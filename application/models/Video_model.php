@@ -11,11 +11,11 @@ class Video_model extends CI_Model
         return $query->row();
     }
 
-    public function fetchSideVideos($data)
+    public function fetchSideVideos($limit = '')
     {
-        $this->db->where('primeType',$data);
         $this->db->where('status',2);
-        $query = $this->db->get('youtubeVideos');
+        $this->db->order_by('insertDate','DESC');
+        $query = $this->db->get('youtubeVideos',$limit);
         return $query->result();
     }
 }

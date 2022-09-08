@@ -749,7 +749,7 @@ header('Cache-Control: no cache'); //disable validation of form by the browser
                                     the family while creating lifetime memories.
                                 </p>
                                 <p>
-                                    Visit our <a href="<?= base_url(); ?>" target="_blank">Prime Property Turkey </a>
+                                    Visit our Prime Property Turkey
                                     website to view villas for sale and contact us for more information about our sale
                                     and after-sell services.
                                 </p>
@@ -842,7 +842,7 @@ header('Cache-Control: no cache'); //disable validation of form by the browser
                                     luxury living with the benefits of access to nature.
                                 </p>
                                 <p>
-                                    Visit our <a href="<?= base_url(); ?>" target="_blank">Prime Property Turkey </a>
+                                    Visit our Prime Property Turkey
                                     website to view villas for sale and contact us for more information about our sale
                                     and after-sell services.
                                 </p>
@@ -923,7 +923,7 @@ header('Cache-Control: no cache'); //disable validation of form by the browser
                                     facilities are part of the villa lifestyle in Istanbul.
                                 </p>
                                 <p>
-                                    Visit our <a href="<?= base_url(); ?>" target="_blank">Prime Property Turkey </a>
+                                    Visit our Prime Property Turkey
                                     website to view villas for sale and contact us for more information about our sale
                                     and after-sell services.
                                 </p>
@@ -1013,7 +1013,7 @@ header('Cache-Control: no cache'); //disable validation of form by the browser
                                     to discover all within a short distance of the town.
                                 </p>
                                 <p>
-                                    Visit our <a href="<?= base_url(); ?>" target="_blank">Prime Property Turkey </a>
+                                    Visit our Prime Property Turkey
                                     website to view villas for sale and contact us for more information about our sale
                                     and after-sell services.
                                 </p>
@@ -1117,7 +1117,7 @@ header('Cache-Control: no cache'); //disable validation of form by the browser
                                     options has been beckoning people from around the world for centuries.
                                 </p>
                                 <p>
-                                    Visit our <a href="<?= base_url(); ?>" target="_blank">Prime Property Turkey </a>
+                                    Visit our Prime Property Turkey
                                     website to view villas for sale and contact us for more information about our sale
                                     and after-sell services.
                                 </p>

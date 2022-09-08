@@ -1,6 +1,13 @@
+<style type="text/css">
+    #bottom-video-card{
+        margin-top: -5px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+</style>
 <div class="card side latest-news my-2">
     <div class="card-title my-3 text-center font-weight-bold">
-        Prime Talks
+        Prime Videos
     </div>
     <div class="border"></div>
     <div class="card-body">
@@ -12,7 +19,7 @@
                         <img class="img-fluid"
                              src="<?= base_url();?>assets/web-site/images/youtube-cover/<?= $data->cover_image;?>"
                              alt="<?= $data->title; ?>"/>
-                        <div class="card flex-row">
+                        <div class="card flex-row" id="bottom-video-card">
                             <div class="card-body" style="background-color: white !important;">
                                 <div id="recent-blog-header">
                                     <?= $data->title; ?>
