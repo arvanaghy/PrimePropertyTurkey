@@ -17,6 +17,17 @@ class Resale_Model extends CI_Model
         return $this->db->count_all_results();
     }
 
+    public function getResaleImageName($data)
+    {
+        $this->db->select('id,image,sort_priority');
+        $this->db->order_by('sort_priority', 'DESC');
+        $this->db->where('property',$data);
+        $query = $this->db->get('resale_image');
+        if ($query->result()){
+            return $query->result();
+        }
+        return false;
+    }
     public function findResaleAudition($find)
     {
         $this->db->where($find);
@@ -24,6 +35,28 @@ class Resale_Model extends CI_Model
         $this->db->order_by('id', 'DESC');
         $query = $this->db->get('resale');
         return $query->result();
+    }
+    public function getResaleByRef($data)
+    {
+        $this->db->where('referenceID', $data);
+        $query = $this->db->get('resale');
+        if ($query->result()){
+            return $query->row();
+        }
+        else{
+            return null;
+        }
+    }
+    public function getResaleByRefPropertyTBL($data)
+    {
+        $this->db->where('ReferenceLink', $data);
+        $query = $this->db->get('property');
+        if ($query->result()){
+            return $query->row();
+        }
+        else{
+            return null;
+        }
     }
     public function get_resale_gallery($data,$limit=null){
         $this->db->select('*');

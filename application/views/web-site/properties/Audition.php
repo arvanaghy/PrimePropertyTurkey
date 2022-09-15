@@ -23,7 +23,7 @@ if ($image_name_webp == '') {
 }
 ?>
 <script src="https://www.google.com/recaptcha/api.js" ></script>
-<title><?= $data_array->Property_title; ?></title>
+<title><?= $data_array->Property_Meta_Title; ?></title>
 <meta name="keywords" content="<?= $data_array->Property_Meta_Keyword; ?>">
 <meta name="description" content="<?= $data_array->Property_Meta_Description; ?>">
 <link rel="canonical" href="https://www.primepropertyturkey.com/properties/<?= $data_array->url_slug;?>" />
@@ -164,7 +164,12 @@ if ($image_name_webp == '') {
         <div class="container">
             <div class="row">
                 <div class="col-md-9 text-center text-md-left py-2">
-                    <div class="head text-center text-md-left py-2">
+                    <div class="head text-center text-md-left py-2 d-flex align-items-center">
+                        <? if ($data_array->UserID!='admins'){ ?>
+                            <span style="margin-right: 20px;padding: 5px;background-color: darkblue;color: white;border-radius: 5px">
+                            Resale
+                        </span>
+                        <? } ?>
                     <h1><?= $data_array->Property_title; ?></h1>
                     </div>
                     <div class="sub-head text-center text-md-left">
@@ -613,7 +618,7 @@ if ($image_name_webp == '') {
                                             }
                                             ?>
                                         <img class="card-img-top img-fluid"
-                                             src="<?= base_url(); ?><? if ($Neighborhood_Properties->ReferenceLink!='0'){ echo "assets/web-site/images/resales/webps/"; }else{ echo "assets/web-site/images/properties/P_Thumb/";} ?><?=  $image_name_webp; ?>"
+                                             src="<?= base_url(); ?>assets/web-site/images/properties/P_Thumb/<?=  $image_name_webp; ?>"
                                              alt="<?= $Neighborhood_Properties->Property_title; ?>" loading="lazy" >
                                         </a>
                                         <div class="card-body">
@@ -735,7 +740,7 @@ if ($image_name_webp == '') {
                                             }
                                             ?>
                                             <img class="card-img-top img-fluid"
-                                                 src="<?= base_url(); ?><? if ($Neighborhood_Properties->ReferenceLink!='0'){ echo "assets/web-site/images/resales/webps/"; }else{ echo "assets/web-site/images/properties/P_Thumb/";} ?><?=  $image_name_webp; ?>"
+                                                 src="<?= base_url(); ?>assets/web-site/images/properties/P_Thumb/<?=  $image_name_webp; ?>"
                                                  alt="<?= $Neighborhood_Properties->Property_title; ?>" loading="lazy" >
                                         </a>
                                         <div class="card-body">
@@ -857,7 +862,7 @@ if ($image_name_webp == '') {
                                             }
                                             ?>
                                         <img class="card-img-top img-fluid"
-                                             src="<?= base_url(); ?><? if ($recently_properties->ReferenceLink!='0'){ echo "assets/web-site/images/resales/webps/"; }else{ echo "assets/web-site/images/properties/P_Thumb/";} ?><?=  $image_name_webp; ?>"
+                                             src="<?= base_url(); ?>assets/web-site/images/properties/P_Thumb/<?=  $image_name_webp; ?>"
                                              alt="<?= $recently_properties->Property_title; ?>" loading="lazy" >
                                         </a>
                                         <div class="card-body">

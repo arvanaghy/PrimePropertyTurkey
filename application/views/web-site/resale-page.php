@@ -7,8 +7,6 @@
 <title>Resale Property | Prime Property Turkey</title>
 <meta name="description"
       content="Prime Property Turkey is here to give you an opportunity to advertise and sell your property. We are an acclaimed property consultancy that has sold hundreds of new and resale properties around Turkey.">
-
-
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="<?= current_url(); ?>">
@@ -16,7 +14,6 @@
 <meta property="og:description"
       content="Prime Property Turkey is here to give you an opportunity to advertise and sell your property. We are an acclaimed property consultancy that has sold hundreds of new and resale properties around Turkey.">
 <meta property="og:image" content="<?= base_url(); ?>assets/web-site/images/base/resale.webp">
-
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="<?= current_url(); ?>">
@@ -25,8 +22,6 @@
       content="Prime Property Turkey is here to give you an opportunity to advertise and sell your property. We are an acclaimed property consultancy that has sold hundreds of new and resale properties around Turkey.">
 <meta property="og:image" content="<?= base_url(); ?>assets/web-site/images/base/resale.webp">
 <link rel="canonical" href="https://www.primepropertyturkey.com/Resale"/>
-
-
 </head>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>
@@ -92,15 +87,14 @@
                 <div class="col-lg-4">
                     <div class="card side contact my-2" style="position: sticky;top: 100px;">
                         <div class="card-body">
-                            <img src="<?= base_url(); ?>assets/web-site/images/base/XaoQn8W15jyT.jpeg
-"
+                            <img src="<?= base_url(); ?>assets/web-site/images/base/XaoQn8W15jyT.jpeg"
                                  alt="buyers guide Prime"
                                  class="img-fluid">
                             <p class="text-center px-1 mt-4">
                                 <? if ($this->session->has_userdata('username') && $this->session->has_userdata('user_info')) { ?>
-                                    <a href="https://www.primepropertyturkey.com/user" class="btn red-button pulse-animation-high-blue"> Go to Your Panel </a>
+                                    <a href="https://www.primepropertyturkey.com/User" class="btn red-button pulse-animation-high-blue"> Go to Your Panel </a>
                                 <? } else { ?>
-                                    <a href="<?= base_url(); ?>user_register" class="btn red-button pulse-animation-high-blue">
+                                    <a href="<?= base_url(); ?>User/UserLogin" class="btn red-button pulse-animation-high-blue">
                                         Start Advertise & Sell Property </a>
                                 <? } ?>
                             </p>

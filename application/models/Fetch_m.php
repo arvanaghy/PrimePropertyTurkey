@@ -108,6 +108,14 @@ class Fetch_m extends CI_Model
         }
         return $data;
     }
+    public function findPropertyExact($find_array, $limit = null, $offset = null)
+    {
+        $this->db->where($find_array);
+        $this->db->where('status > ', 1);
+        $this->db->order_by('Property_id', 'DESC');
+        $query = $this->db->get('property', $limit, $offset);
+        return $query->result();
+    }
     public function findProperty($find_array, $limit = null, $offset = null)
     {
         $this->db->like($find_array);

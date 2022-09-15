@@ -89,16 +89,9 @@
                                     <input type="submit" class="btn red-button btn-block" value="REGISTER">
                                 </div>
                             </form>
-                            <div class="row justify-content-center">
+                            <div class="row justify-content-center my-2">
                                 <div class="col-md-12 text-center justify-content-center my-2">
-                                    <a href="" class="text-center btn btn-light btn-lg"  aria-disabled="true" style="pointer-events: none;">
-                                        <span class="mx-1 text-primary">
-                                           <i class="fab fa-google"></i>
-                                        </span>
-                                        <span>
-                                            Register with Google
-                                        </span>
-                                    </a>
+                                    <?= $Register_button; ?>
                                 </div>
                             </div>
                         </div>

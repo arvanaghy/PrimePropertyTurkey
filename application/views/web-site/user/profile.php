@@ -62,7 +62,6 @@
     }
 
 </style>
-
 </head>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>
@@ -70,7 +69,6 @@
     <div class="container my-5">
         <div class="row justify-content-center">
             <?php $this->load->view('web-site/user/user-menu'); ?>
-
             <div class="col-md-8 text-center">
                 <div class="card">
                     <div class="card-body">

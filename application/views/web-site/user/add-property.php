@@ -2,7 +2,7 @@
 <?php $this->load->view('web-site/includes/head-load'); ?>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/header-image-wrapper.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/about-us.css">
-<title>User dashboard</title>
+<title>User dashboard | Add property</title>
 <style type="text/css">
     #my_map {
         height: 300px;
@@ -75,8 +75,19 @@
 <main>
     <div class="container my-5">
         <div class="row justify-content-center">
+            <div class="col-md-12">
+                <? if ($userLevel <9){ ?>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong><?= $this->session->userdata('user_info');  ?></strong> Your email is not activated.
+                        <br>
+                        please go to your email and click on verification link
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <? } ?>
+            </div>
             <?php $this->load->view('web-site/user/user-menu'); ?>
-
             <div class="col-md-8 text-center my-2">
                 <div class="card">
                     <div class="card-body">
@@ -87,6 +98,7 @@
                             You can add your Property for sale with submit this form
                         </div>
                         <hr width="75%">
+                        <? if ($userLevel == 9){ ?>
                         <?php echo form_open_multipart(base_url() . 'User/Add_Property_Submit',array('onsubmit' => 'return AddProperty();')); ?>
                             <div class="row">
                                 <div class="col-md-6 form-group text-left">
@@ -331,6 +343,15 @@
                                 </div>
                             </div>
                         </form>
+                        <? }else{ ?>
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>Sorry, This section is unavailable for your account</strong>
+                                <br>
+                                Your email is not activated.
+                                <br>
+                                Please go to your email and click on verification link
+                            </div>
+                         <? } ?>
                     </div>
                 </div>
             </div>
@@ -380,7 +401,6 @@
                         $("#submit").prop("disabled",true);
 
                     });
-
                 }
             });
         });
@@ -401,7 +421,7 @@
         let fileUpload = document.getElementById("property_images");
         let images_cont = fileUpload.files.length;
         for (let i = 0; i < images_cont; i++) {
-            if ((fileUpload.files[i].size/1024).toFixed(0)>2024){
+            if ((fileUpload.files[i].size/1024).toFixed(0)>2048){
                 document.getElementById('property_images_error').innerText='image size is more than 2 MB, please reduce your image size';
                 document.getElementById('property_images').focus();
                 correctFlag = false;
@@ -412,8 +432,8 @@
                 var image = new Image();
                 image.src = e.target.result;
                 image.onload = function () {
-                    if (this.width > 1200 || this.height > 720){
-                        document.getElementById('property_images_error').innerText='image dimensions are bigger than 1200 * 720  pixel';
+                    if (this.width > 4800 || this.height > 2880){
+                        document.getElementById('property_images_error').innerText='image dimensions are bigger than 4800 * 2880  pixel';
                         document.getElementById('property_images').focus();
                         correctFlag = false;
                     }
@@ -425,6 +445,5 @@
         return correctFlag;
     }
 </script>
-
 </body>
 </html>

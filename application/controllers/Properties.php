@@ -80,7 +80,7 @@ class Properties extends CI_Controller
             $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
 
             $find_array = array('url_slug' => urldecode(strip_tags($passed_url)));
-            $data['property_result'] = $this->Fetch_m->findProperty($find_array);
+            $data['property_result'] = $this->Fetch_m->findPropertyExact($find_array);
             if ($data['property_result']) {
                 foreach ($data['property_result'] as $result){
                     $data['property_image_gallery'] = $this->Fetch_m->get_gallery($result->Property_id);

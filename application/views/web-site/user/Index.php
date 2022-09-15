@@ -57,6 +57,25 @@
 <main>
     <div class="container my-5">
         <div class="row justify-content-center">
+            <div class="col-md-12">
+                <? if ($userLevel==9){ ?>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong><?= $this->session->userdata('user_info');  ?></strong> Your account is full activated
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <? }elseif($userLevel==1){ ?>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong><?= $this->session->userdata('user_info');  ?></strong> Your email is not activated.
+                        <br>
+                        please go to your email and click on verification link
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <? } ?>
+            </div>
             <?php $this->load->view('web-site/user/user-menu'); ?>
             <div class="col-md-8 text-center">
                 <div class="card">

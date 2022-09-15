@@ -9,13 +9,25 @@ class Post_m extends CI_Model
         return $this->db->insert($table, $data);
     }
 
+    public function getUserType($email){
+        $this->db->select('user_type');
+        $this->db->where('email',$email);
+        $query = $this->db->get('user');
+        if ($query->result()){
+            return $query->row();
+        }else{
+            return False;
+        }
+    }
+
     public function login($data)
     {
         $password = sha1($data['password']);
         $this->db->select('id,fullname,email');
         $this->db->where('email',$data['email']);
         $this->db->where('password',$password);
-        $this->db->where('status',2);
+        $this->db->where('user_type',1);
+        $this->db->where('status >=',1);
         $query = $this->db->get('user');
         if ($query->result()){
             return $query->row();
@@ -27,7 +39,9 @@ class Post_m extends CI_Model
     public function register($data)
     {
         $table = 'user';
-        return $this->db->insert($table, $data);
+        $this->db->insert($table, $data);
+        return $this->db->insert_id();
+
     }
 
     public function verification($hsCode)
@@ -35,12 +49,12 @@ class Post_m extends CI_Model
         $hsCode = "https://www.primepropertyturkey.com/Verification/userRegister/".$hsCode;
         $this->db->select('id');
         $this->db->where('hashCode',$hsCode);
-        $this->db->where('status',0);
+//        $this->db->where('status',1);
         $query = $this->db->get('user');
         if ($query->result()){
             $data = $query->row();
             $this->db->where('id',$data->id);
-            $this->db->set('status',2);
+            $this->db->set('status',9);
             $this->db->update('user');
             return True;
         }else{

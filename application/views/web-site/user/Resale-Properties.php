@@ -86,8 +86,19 @@
 <main>
     <div class="container my-5">
         <div class="row justify-content-center">
+            <div class="col-md-12">
+                <? if ($userLevel <9){ ?>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong><?= $this->session->userdata('user_info');  ?></strong> Your email is not activated.
+                        <br>
+                        please go to your email and click on verification link
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <? } ?>
+            </div>
             <?php $this->load->view('web-site/user/user-menu'); ?>
-
             <div class="col-md-8 text-center">
                 <div class="card">
                     <div class="card-body">
@@ -132,11 +143,19 @@
                                                 <span class="caret"></span>
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a href="<?= base_url("Resale/$row->url_slug"); ?>" class="dropdown-item" target="_blank">Show</a>
+                                                <? if ($type=='Pending'){ ?>
+                                                    <a href="<?= base_url("Resale/Preview/$row->referenceID"); ?>" class="dropdown-item" target="_blank">Show</a>
+                                                <? }else{ ?>
+                                                    <a href="<?= base_url("Resale/PreviewPublishedResale/$row->referenceID"); ?>" class="dropdown-item" target="_blank">Show Property</a>
+                                                <? } ?>
                                                 <? if ($type=='Pending'){ ?>
                                                     <a href="<?= base_url("User/Edit_Property/$row->id"); ?>" class="dropdown-item">Edit</a>
                                                 <? } ?>
-                                                <a href="<?= base_url("User/Delete_Property/$row->id"); ?>" class="dropdown-item">Delete</a>
+                                                <? if ($type=='Pending'){ ?>
+                                                    <a href="<?= base_url("User/Delete_Property/$row->id"); ?>" class="dropdown-item">Delete</a>
+                                                <? }else{ ?>
+                                                    <a href="<?= base_url("User/Delete_Published_Property/$row->id"); ?>" class="dropdown-item">Delete</a>
+                                                <? } ?>
                                             </div>
                                         </div>
                                     </td>
@@ -147,7 +166,9 @@
                                     <td><?= $row->bedroom; ?></td>
                                     <td><?= $row->bathroom; ?></td>
                                     <td><?= $row->living_space; ?></td>
-                                    <td><?= $row->pool; ?></td>
+                                    <td>
+                                        <? if ($row->pool==1){ echo 'Yes';}else{echo 'No';}?>
+                                    </td>
                                     <td>
                                         <? $unix_time= mysql_to_unix($row->created);
                                         $date_string = '%d %M %Y';

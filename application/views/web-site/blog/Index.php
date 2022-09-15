@@ -113,7 +113,9 @@
                                         </div>
                                         <div class="row my-2">
                                             <p class="text-justify mx-3 px-3 blog-summarize">
-                                                <?= substr(strip_tags($value->Blog_Content), 0 ,300); ?>...
+                                                <b>By Justin Mays:</b> <br>
+                                                <?= str_replace('By. Justin Mays','',str_replace('By Justin Mays', '', str_replace('By Justin Mays:', '', substr(strip_tags($value->Blog_Content), 0, 300)))); ?>
+                                                ...
                                             </p>
                                         </div>
                                         <div class="row justify-content-end align-items-center my-2 buttons">
@@ -161,7 +163,9 @@
                                             </div>
                                             <div class="row my-2">
                                                 <p class="text-justify mx-3 px-3 blog-summarize">
-                                                    <?= substr(strip_tags($value->Blog_Content), 0 ,300); ?>...
+                                                    <b>By Justin Mays:</b> <br>
+                                                    <?= str_replace('By. Justin Mays','',str_replace('By Justin Mays', '', str_replace('By Justin Mays:', '', substr(strip_tags($value->Blog_Content), 0, 300)))); ?>
+                                                    ...
                                                 </p>
                                             </div>
                                             <div class="row justify-content-end align-items-center my-2 buttons">
@@ -305,8 +309,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <script type="text/javascript">
     $('#quickEnquireModal').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget); // Button that triggered the modal
-        var recipient = button.data('whatever'); // Extract info from data-* attributes
+        var button = $(event.relatedTarget);
+        var recipient = button.data('whatever');
         var modal = $(this);
         modal.find('#modal_reference_id').val(recipient)
     });

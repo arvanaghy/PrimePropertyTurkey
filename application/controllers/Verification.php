@@ -10,10 +10,10 @@ class Verification extends CI_Controller
             $result = $this->Post_m->verification(strip_tags($passedUrl));
             if ($result){
                 $this->session->set_flashdata('message', "<div id='toast_message' class='success'>Dear <b> User </b> your account verify successfully </div>");
-                redirect(base_url()."Login");
+                redirect(base_url()."User/UserLogin");
             }else{
                 $this->session->set_flashdata('message', "<div id='toast_message' class='danger'>Dear <b> User </b> your account verification casus some Error </div>");
-                redirect(base_url()."user_register");
+                redirect(base_url()."User/UserRegister");
             }
         }
     }

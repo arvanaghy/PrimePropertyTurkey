@@ -29,6 +29,7 @@
                 </div>
             </div>
         </div>
+        <? if ($results): ?>
         <div class="row pt-2 pb-5">
             <div class="col-12">
                 <div class="card">
@@ -64,13 +65,17 @@
                                                 <span class="caret"></span>
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a href="<?= base_url("Resale/$row->url_slug"); ?>" class="dropdown-item">Show Property</a>
+                                                <? if ($row->status==3){ ?>
+                                                <a href="<?= base_url("Resale/Preview/$row->referenceID"); ?>" class="dropdown-item" target="_blank">Show Property</a>
+                                                <? }elseif ($row->status==5) { ?>
+                                                    <a href="<?= base_url("Resale/PreviewPublishedResale/$row->referenceID"); ?>" class="dropdown-item" target="_blank">Show Property</a>
+                                                <? } ?>
                                                 <? if ($row->status==3){ ?>
                                                     <a href="<?= base_url("Admin/PublishResale/$row->referenceID"); ?>" class="dropdown-item">Publish</a>
-                                                <? }elseif($row->status==5){ ?>
-                                                    <a href="<?= base_url("Admin/UnPublishResale/$row->referenceID"); ?>" class="dropdown-item">UnPublish</a>
                                                 <? } ?>
-                                                <a href="<?= base_url("Admin/Delete_Audition/$row->referenceID"); ?>" class="dropdown-item">Delete ForEver</a>
+                                                <? if ($row->status==3){ ?>
+                                                    <a href="<?= base_url("Admin/Delete_Audition/$row->id"); ?>" class="dropdown-item">Delete ForEver</a>
+                                                <? } ?>
                                             </div>
                                         </div>
                                     </td>
@@ -98,6 +103,7 @@
                 </div>
             </div>
         </div>
+        <? endif; ?>
     </div>
 </section>
 

@@ -162,43 +162,30 @@ class Post extends CI_Controller
                 $data['password'] = strip_tags($this->input->post('password'));
                 $data['email'] = strip_tags($this->input->post('email'));
                 $this->load->model('Post_m');
-                $result = $this->Post_m->login($data);
-                if($result){
-                    $user_data_session = array('username'=>$result->email,'user_info'=>$result->fullname,'userID'=>$result->id);
-                    $this->session->set_userdata($user_data_session);
-                    $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Dear ".$user_data_session['user_info']." Welcome.  </div>");
-                    redirect(base_url() . 'User');
+                if ($this->Post_m->getUserType($data['email']) and $this->Post_m->getUserType($data['email'])->user_type == 1){
+                    $result = $this->Post_m->login($data);
+                    if($result){
+                        $user_data_session = array('username'=>$result->email,'user_info'=>$result->fullname,'access_token'=>md5($result->id));
+                        $this->session->set_userdata($user_data_session);
+                        $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Dear ".$user_data_session['user_info']." Welcome.  </div>");
+                        redirect(base_url() . 'User');
+                    }else{
+                        $this->session->unset_userdata('username','user_info','access_token');
+                        $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Username Or Password Is Incorrect  </div>");
+                        redirect(base_url() . 'User/UserLogin');
+                    }
                 }else{
-                    $this->session->unset_userdata('username','user_info','userID');
-                    $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> According to the following Errors
-                                                        <br>
-                                                        " . validation_errors() . "
-                                                        <br>
-                                                       
-                                                        <br>
-                                                        unfortunately login <b>failed</b>  </div>");
-                    redirect(base_url() . 'Login');
+                    $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Your Account Validate With Google Please Try Google Sign in Button </div>");
+                    redirect(base_url() . 'User/UserLogin');
                 }
             }else{
-                $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> According to the following Errors
-                                                        <br>
-                                                        " . validation_errors() . "
-                                                        <br>
-                                                        
-                                                        <br>
-                                                        unfortunately login <b>failed</b>  </div>");
-                redirect(base_url() . 'Login');
+                $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Invalid Captcha  </div>");
+                redirect(base_url() . 'User/UserLogin');
             }
 
             } else {
-            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> According to the following Errors
-                                                        <br>
-                                                        " . validation_errors() . "
-                                                        <br>
-                                                       
-                                                        <br>
-                                                        unfortunately login <b>failed</b>  </div>");
-            redirect(base_url() . 'Login');
+            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Something Goes Wrong  </div>");
+            redirect(base_url() . 'User/UserLogin');
         }
     }
 
@@ -210,11 +197,14 @@ class Post extends CI_Controller
         $captcha_response = trim($this->input->post('g-recaptcha-response'));
         if ($this->form_validation->run('register') != FALSE and $captcha_response!='') {
             if ($this->reCaptcha_Curl($this->input->post('g-recaptcha-response'))){
+
                 $data['phone'] = strip_tags($this->input->post('phone')['full']);
                 $data['email'] = strip_tags($this->input->post('email'));
                 $data['fullname'] = $this->input->post('info');
                 $data['hashCode'] = "https://www.primepropertyturkey.com/Verification/userRegister/".sha1($this->input->post('email'));
                 $data['password'] = sha1($this->input->post('password'));
+                $data['status'] = 1;
+
                 $this->load->model('Post_m');
                 $result = $this->Post_m->register($data);
                 if ($result){
@@ -241,42 +231,26 @@ class Post extends CI_Controller
                     $this->email->send();
                     $this->email->clear(TRUE);
 
+                    $user_data_session = array('username'=>$data['email'],'user_info'=>$data['fullname'],'access_token'=>md5($result));
+                    $this->session->set_userdata($user_data_session);
                     $this->session->set_flashdata('message', "<div id='toast_message' class='success'>
-                                                           Dear  <b>" . $data['fullname'] . "</b> your Sign UP successfully
+                                                            Dear <b>" . $data['fullname'] . "</b> your Sign UP successfully
                                                             <br>
                                                             Activation email was went to your email address 
                                                             </div>");
-                    redirect(base_url() . 'Login');
+                    redirect(base_url() . 'User');
                 }else{
-                    $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> According to the following Errors
-                                                        <br>
-                                                        " . validation_errors() . "
-                                                        <br>
-                                                        
-                                                        <br>
-                                                        unfortunately Sign Up <b>failed</b>  </div>");
-                    redirect(base_url() . 'User_register');
+                    $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Your Registration Request Was Failed, Maybe This Email Used Before  </div>");
+                    redirect(base_url() . 'User/UserRegister');
                 }
             }else{
-                $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> According to the following Errors
-                                                        <br>
-                                                        " . validation_errors() . "
-                                                        <br>
-                                                        
-                                                        <br>
-                                                        unfortunately Sign Up <b>failed</b>  </div>");
-                redirect(base_url() . 'User_register');
+                $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Wrong Captcha ! </div>");
+                redirect(base_url() . 'User/UserRegister');
             }
 
             } else {
-            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> According to the following Errors
-                                                        <br>
-                                                        " . validation_errors() . "
-                                                        <br>
-                                                        
-                                                        <br>
-                                                        unfortunately Sign Up <b>failed</b>  </div>");
-            redirect(base_url() . 'User_register');
+            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Something Went Wrong Please Try Again  </div>");
+            redirect(base_url() . 'User/UserRegister');
         }
     }
 

@@ -17,6 +17,13 @@ class Seo_Model extends CI_Model
         $query = $this->db->get('blog');
         return $query->result();
     }
+    public function listVideoUrl()
+    {
+        $this->db->select('url_slug');
+        $this->db->where('status',2);
+        $query = $this->db->get('youtubeVideos');
+        return $query->result();
+    }
     public function listPropertiesUrl()
     {
         $this->db->select('url_slug');

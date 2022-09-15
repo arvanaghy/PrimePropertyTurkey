@@ -165,10 +165,14 @@ $route['Admin/Change_Job/(:any)'] ='Admin/Change_Job/$1';
 
 $route['Admin/Publish/(:any)'] ='Admin/Publish/$1';
 $route['Admin/UnPublish/(:any)'] ='Admin/UnPublish/$1';
-//$route['Resale/(:any)'] = 'Resale/details/$1';
+$route['Resale/Preview/(:any)'] = 'Resale/Preview/$1';
+$route['Resale/PreviewPublishedResale/(:any)'] = 'Resale/PreviewPublishedResale/$1';
 
 $route['User/Delete_Property/(:any)'] = 'User/Delete_Property/$1';
 $route['User/Edit_Property/(:any)'] = 'User/Edit_Property/$1';
+$route['User/Delete_Published_Property/(:any)'] = 'User/Delete_Published_Property/$1';
+
+$route['User/Delete_Resale_Image/(:any)'] = 'User/Delete_Resale_Image/$1';
 
 
 $route['Verification/userRegister/(:any)'] ='Verification/userRegister/$1';

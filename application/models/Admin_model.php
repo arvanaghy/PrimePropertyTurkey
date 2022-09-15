@@ -20,7 +20,6 @@ class Admin_model extends CI_Model
             return False;
         }
     }
-
     public function changePassword($data)
     {
         $current = sha1($data['OldPassword']);
@@ -37,7 +36,6 @@ class Admin_model extends CI_Model
         }
         return False;
     }
-
     public function fetchContactUs()
     {
         $this->db->order_by('id', 'DESC');
@@ -340,9 +338,13 @@ class Admin_model extends CI_Model
     }
     public function Delete_Audition($id)
     {
-        $data=array('status'=>1);
         $this->db->where('id',$id);
-        $this->db->update('resale',$data);
+        $this->db->delete('resale');
+    }
+    public function delete_Audition_image($id)
+    {
+        $this->db->where('id',$id);
+        $this->db->delete('resale_image');
     }
 
     public function fetchResalesByReference($data)
@@ -368,7 +370,7 @@ class Admin_model extends CI_Model
     }
     public function getResaleImageName($data)
     {
-        $this->db->select('image,sort_priority');
+        $this->db->select('id,image,sort_priority');
         $this->db->order_by('sort_priority', 'DESC');
         $this->db->where('property',$data);
         $query = $this->db->get('resale_image');
@@ -377,14 +379,10 @@ class Admin_model extends CI_Model
         }
         return false;
     }
-
-    public function statistics()
+    public function deleteResaleProperty($id)
     {
-        $query = $this->db->get('contentLikes');
-        if ($query->result()){
-            return $query->row();
-        }
-        return false;
+        $this->db->where('referenceID', $id);
+        $this->db->delete('resale');
     }
     public function getResalePropertyTitle($value)
     {
@@ -396,6 +394,15 @@ class Admin_model extends CI_Model
         }else{
             return $data['Property_id'] = null;
         }
+    }
+
+    public function statistics()
+    {
+        $query = $this->db->get('contentLikes');
+        if ($query->result()){
+            return $query->row();
+        }
+        return false;
     }
 
     public function countNewComments($id,$type)

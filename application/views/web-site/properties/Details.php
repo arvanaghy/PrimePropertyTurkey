@@ -86,6 +86,21 @@
         top: 9%;
         left: 3%;
     }
+    .resale-badge{
+        background: #012169;
+        color: white;
+
+        border-radius: 10px;
+        display: block;
+        position: absolute;
+
+        opacity: 0.95;
+        font-weight: bold;
+        font-size: 0.8rem;
+        padding: 5px 10px;
+        top: 9%;
+        right: 3%;
+    }
     #price-section .col {
         padding-left: 5px;
         padding-right: 5px;
@@ -335,6 +350,11 @@
                                               Commercial
                                             </span>
                                                     <?}?>
+                                                    <? if ($value->UserID!='admins'){ ?>
+                                                        <span class="resale-badge">
+                                                      Resale
+                                                    </span>
+                                                    <? } ?>
                                                     <span class="card-favorite">
                                                 <? if (is_favored($value->Property_id)) { ?>
                                                     <a href="<?= base_url(); ?>Favorite/del_favorite/<?= $value->Property_id; ?>"

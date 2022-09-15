@@ -40,7 +40,7 @@
                             </div>
                             <div class="row justify-content-center sign-alternative">
                                 <div class="col-md-6  text-center justify-content-center my-2">
-                                    <a href="user_register" class="text-center text-reset">
+                                    <a href="<?= base_url();?>User/UserRegister" class="text-center text-reset">
                                         <span class="mx-1">
                                             <i class="fas fa-user-plus"></i>
                                         </span>
@@ -53,7 +53,7 @@
                                     </a>
                                 </div>
                                 <div class="col-md-6 text-center justify-content-center my-2">
-                                    <a href="forget_password" class="text-reset" >
+                                    <a href="<?= base_url();?>User/forget_password" class="text-reset" >
                                         <span class="mx-1">
                                             <i class="fas fa-key"></i>
                                         </span>

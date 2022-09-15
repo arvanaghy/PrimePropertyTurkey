@@ -206,4 +206,16 @@
             <priority>1.0</priority>
         </url>
     <? } ?>
+    <url>
+        <loc><?= base_url();?>prime-videos</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <? foreach($Videos as $url) { ?>
+        <url>
+            <loc><?= base_url().'prime-videos/'.$url->url_slug; ?></loc>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
+        </url>
+    <? } ?>
 </urlset>

@@ -30,6 +30,23 @@
 />
 <link rel="stylesheet" href="<?= base_url();?>assets/web-site/css/phone-input.css">
 <link rel="stylesheet" href="<?= base_url();?>assets/web-site/css/homePage.css">
+<style type="text/css">
+    .resale-badge{
+        background: #012169;
+        color: white;
+
+        border-radius: 10px;
+        display: block;
+        position: absolute;
+
+        opacity: 0.95;
+        font-weight: bold;
+        font-size: 0.8rem;
+        padding: 5px 10px;
+        top: 9%;
+        right: 3%;
+    }
+</style>
 </head>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>
@@ -1347,6 +1364,11 @@
                                             <span class="card-type-badge">
                                                  <?= $recently_properties->Property_type; ?>
                                             </span>
+                                                <? if ($recently_properties->UserID!='admins'){ ?>
+                                                    <span class="resale-badge">
+                                                      Resale
+                                                    </span>
+                                                <? } ?>
                                                 <span class="card-favorite">
                                                 <? if (is_favored($recently_properties->Property_id)) { ?>
                                                     <a href="<?= base_url(); ?>Favorite/del_favorite/<?= $recently_properties->Property_id; ?>"
@@ -1359,7 +1381,7 @@
                                                         <i class="far fa-heart"></i>
                                                     </a>
                                                 <? } ?>
-                                           </span>
+                                                </span>
                                                 <div id="item-card-title">
                                                     <a href="<?= base_url(); ?>properties/<?= $recently_properties->url_slug; ?>"
                                                        class="text-reset font-weight-bold blue-text"

@@ -10,29 +10,33 @@
 } ?>
 <meta name="description"
       content="Read latest news by Prime Property Turkey, find exciting news and updates from Turkish Real estate market, newest properties for sale and much more. ">
-<link rel="canonical" href="https://www.primepropertyturkey.com/News/<? if ($page_id!=0){ echo $page_id.'/';} ?>"/>
+<link rel="canonical" href="https://www.primepropertyturkey.com/News/<? if ($page_id != 0) {
+    echo $page_id . '/';
+} ?>"/>
 <style type="text/css">
     .Find-Your-Property .find-title {
         width: 40%;
         margin-right: 1%;
         margin-left: 1%;
     }
+
     .Find-Your-Property .find-form {
         width: 55%;
         margin-right: 1%;
     }
-    .Find-Your-Property > .container >.row {
+
+    .Find-Your-Property > .container > .row {
         border-radius: 30px;
         background: #efefef;
         border-top: 5px solid #cf1717;
     }
 </style>
-<script src="https://www.google.com/recaptcha/api.js" ></script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
 <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
 />
-<link rel="stylesheet" href="<?= base_url();?>assets/web-site/css/phone-input.css">
+<link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/phone-input.css">
 </head>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>
@@ -43,7 +47,8 @@
             <div class="mask"></div>
             <div class="header-image-content offset-bottom">
                 <h1 class="title text-center font-weight-bold px-1">Latest Turkish Properties News</h1>
-                <h4 class="text-center my-2 px-1">Read all recent news about Turkish properties lifestyle and leisure</h4>
+                <h4 class="text-center my-2 px-1">Read all recent news about Turkish properties lifestyle and
+                    leisure</h4>
             </div>
         </div>
     </section>
@@ -53,18 +58,18 @@
                 <div class="col-lg-8 content">
                     <? foreach ($news as $value) { ?>
                         <? $image_name = str_replace('assets/news/', '', $value->News_Image);
-                        $image_name_webp = substr($image_name,0,strpos($image_name,'.jpg')).".webp";
-                        if ($image_name_webp==''){
-                            $image_name_webp = substr($image_name,0,strpos($image_name,'.png')).".webp";
+                        $image_name_webp = substr($image_name, 0, strpos($image_name, '.jpg')) . ".webp";
+                        if ($image_name_webp == '') {
+                            $image_name_webp = substr($image_name, 0, strpos($image_name, '.png')) . ".webp";
                         }
-                        if ($image_name_webp==''){
-                            $image_name_webp = substr($image_name,0,strpos($image_name,'.jpeg')).".webp";
+                        if ($image_name_webp == '') {
+                            $image_name_webp = substr($image_name, 0, strpos($image_name, '.jpeg')) . ".webp";
                         }
                         ?>
                         <div class="item mt-2 mb-4">
                             <div class="card d-md-none feature-sm-back">
                                 <img class="card-img-top img-fluid"
-                                     src="<?= base_url();?><?= "assets/web-site/images/news/thumb/".$image_name_webp; ?>"
+                                     src="<?= base_url(); ?><?= "assets/web-site/images/news/thumb/" . $image_name_webp; ?>"
                                      alt="<?= $value->News_Image_Alt; ?>"
                                 >
                                 <div class="card-body">
@@ -74,7 +79,7 @@
                                                     <i class="far fa-clock"></i>
                                                 </span>
                                             <span class="blue-text">
-                                               <? $unix_time= mysql_to_unix($value->News_Created_date);
+                                               <? $unix_time = mysql_to_unix($value->News_Created_date);
                                                $date_string = '%d %M %Y';
                                                echo mdate($date_string, $unix_time);
                                                ?>
@@ -88,7 +93,9 @@
                                         </div>
                                         <div class="row my-2">
                                             <p class="text-justify mx-3 px-3 blog-summarize">
-                                                <?= substr(strip_tags($value->News_Content), 0 ,300); ?>...
+                                                <b>By Justin Mays:</b> <br>
+                                                <?= str_replace('By. Justin Mays','',str_replace('By Justin Mays', '', str_replace('By Justin Mays:', '', substr(strip_tags($value->News_Content), 0, 300)))); ?>
+                                                ...
                                             </p>
                                         </div>
                                         <div class="row justify-content-end align-items-center my-2 buttons">
@@ -105,9 +112,9 @@
                                     <div class="row justify-content-around">
                                         <div class="col-5 d-flex">
                                             <img
-                                                    src="<?= base_url();?><?= "assets/web-site/images/news/thumb/".$image_name_webp ?>"
+                                                    src="<?= base_url(); ?><?= "assets/web-site/images/news/thumb/" . $image_name_webp ?>"
                                                     alt="<?= $value->News_Image_Alt; ?>"
-                                                 class="img-fluid" >
+                                                    class="img-fluid">
                                         </div>
                                         <div class="col-7">
                                             <div class="date">
@@ -115,7 +122,7 @@
                                                         <i class="far fa-clock"></i>
                                                     </span>
                                                 <span class="blue-text">
-                                                   <? $unix_time= mysql_to_unix($value->News_Created_date);
+                                                   <? $unix_time = mysql_to_unix($value->News_Created_date);
                                                    $date_string = '%d %M %Y';
                                                    echo mdate($date_string, $unix_time);
                                                    ?>
@@ -129,7 +136,9 @@
                                             </div>
                                             <div class="row my-2">
                                                 <p class="text-justify mx-3 px-3 blog-summarize">
-                                                    <?= substr(strip_tags($value->News_Content), 0 ,300); ?>...
+                                                    <b>By Justin Mays:</b> <br>
+                                                    <?= str_replace('By. Justin Mays','',str_replace('By Justin Mays', '', str_replace('By Justin Mays:', '', substr(strip_tags($value->News_Content), 0, 300)))); ?>
+                                                    ...
                                                 </p>
                                             </div>
                                             <div class="row justify-content-end align-items-center my-2 buttons">
@@ -149,13 +158,15 @@
                             <nav aria-label="Page navigation example">
                                 <ul class="pagination justify-content-center">
                                     <li class="page-item">
-                                        <a rel="nofollow" class="page-link" href="<?= base_url(); ?>news" tabindex="-1" title="FIRST"> <i
+                                        <a rel="nofollow" class="page-link" href="<?= base_url(); ?>news" tabindex="-1"
+                                           title="FIRST"> <i
                                                     class="fas fa-angle-double-left"></i> </a>
                                     </li>
                                     <? if ($page_id < 2) { ?>
-                                        <? for ($i = 0; $i <= $page_id+3; $i++) { ?>
+                                        <? for ($i = 0; $i <= $page_id + 3; $i++) { ?>
                                             <? if ((int)$page_id == $i) { ?>
-                                                <li class="page-item text-danger"><a rel="nofollow" class="page-link text-danger"
+                                                <li class="page-item text-danger"><a rel="nofollow"
+                                                                                     class="page-link text-danger"
                                                                                      href="<?= base_url(); ?>news/<?= $i; ?>"><?= $i + 1; ?></a>
                                                 </li>
                                             <? } else { ?>
@@ -164,33 +175,36 @@
                                                 </li>
                                             <? } ?>
                                         <? } ?>
-                                    <? }elseif ($page_id > $pages-2){ ?>
-                                    <? for ($i = (int)$page_id-2; $i <= $pages; $i++) { ?>
-                                        <? if ((int)$page_id == $i) { ?>
-                                            <li class="page-item text-danger"><a rel="nofollow" class="page-link text-danger"
-                                                                                 href="<?= base_url(); ?>news/<?= $i; ?>"><?= $i + 1; ?></a>
-                                            </li>
-                                        <? } else { ?>
-                                            <li class="page-item"><a rel="nofollow" class="page-link"
-                                                                     href="<?= base_url(); ?>news/<?= $i; ?>"><?= $i + 1; ?></a>
-                                            </li>
-                                        <? } ?>
-                                    <? } ?>
-                                    <? } else {?>
-                                        <? for ($i = (int)$page_id-2; $i <= $page_id+2; $i++) { ?>
+                                    <? } elseif ($page_id > $pages - 2) { ?>
+                                        <? for ($i = (int)$page_id - 2; $i <= $pages; $i++) { ?>
                                             <? if ((int)$page_id == $i) { ?>
-                                                <li class="page-item text-danger"><a rel="nofollow" class="page-link text-danger"
+                                                <li class="page-item text-danger"><a rel="nofollow"
+                                                                                     class="page-link text-danger"
                                                                                      href="<?= base_url(); ?>news/<?= $i; ?>"><?= $i + 1; ?></a>
                                                 </li>
                                             <? } else { ?>
-                                                <li class="page-item"><a  rel="nofollow" class="page-link"
+                                                <li class="page-item"><a rel="nofollow" class="page-link"
+                                                                         href="<?= base_url(); ?>news/<?= $i; ?>"><?= $i + 1; ?></a>
+                                                </li>
+                                            <? } ?>
+                                        <? } ?>
+                                    <? } else { ?>
+                                        <? for ($i = (int)$page_id - 2; $i <= $page_id + 2; $i++) { ?>
+                                            <? if ((int)$page_id == $i) { ?>
+                                                <li class="page-item text-danger"><a rel="nofollow"
+                                                                                     class="page-link text-danger"
+                                                                                     href="<?= base_url(); ?>news/<?= $i; ?>"><?= $i + 1; ?></a>
+                                                </li>
+                                            <? } else { ?>
+                                                <li class="page-item"><a rel="nofollow" class="page-link"
                                                                          href="<?= base_url(); ?>news/<?= $i; ?>"><?= $i + 1; ?></a>
                                                 </li>
                                             <? } ?>
                                         <? } ?>
                                     <? } ?>
                                     <li class="page-item">
-                                        <a class="page-link" rel="nofollow" href="<?= base_url(); ?>news/<?= $pages; ?>" title="LAST"> <i
+                                        <a class="page-link" rel="nofollow" href="<?= base_url(); ?>news/<?= $pages; ?>"
+                                           title="LAST"> <i
                                                     class="fas fa-angle-double-right"></i> </a>
                                     </li>
                                 </ul>
@@ -201,7 +215,7 @@
                 <div class="col-lg-4">
                     <? $this->load->view('web-site/includes/side-recommended-properties'); ?>
                     <? $this->load->view('web-site/includes/side-popular-post'); ?>
-                    <? if ($page_id!=0){ ?>
+                    <? if ($page_id != 0) { ?>
                         <? $this->load->view('web-site/includes/side-latest-news'); ?>
                     <? } ?>
                 </div>
@@ -220,13 +234,15 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form method="post" action="<?= base_url(); ?>Post/enquire" id="enquiry" onsubmit="return ModalEnquireFormValidation();">
+                <form method="post" action="<?= base_url(); ?>Post/enquire" id="enquiry"
+                      onsubmit="return ModalEnquireFormValidation();">
                     <div class="row align-items-center">
                         <div class="col-md-12">
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Full Name" required form="enquiry"
-                                       name="info"  id="modalEnquireForm_info">
-                                <span id="modalEnquireForm_info_error" style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
+                                       name="info" id="modalEnquireForm_info">
+                                <span id="modalEnquireForm_info_error"
+                                      style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
                                       class="vision">
                                    Please enter your first and last name separated by a space (e.g. Jane Miller)
                                 </span>
@@ -236,7 +252,8 @@
                             <div class="form-group">
                                 <input type="text" id="modal_phone" class="form-control" placeholder="Phone"
                                        name="phone[main]" form="enquiry" required>
-                                <span id="modalEnquireForm_phone_error" style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
+                                <span id="modalEnquireForm_phone_error"
+                                      style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
                                       class="vision">
                                       Please Write Your Full PhoneNumber
                                 </span>
@@ -282,7 +299,7 @@
     });
 </script>
 <script type="text/javascript">
-    function ModalEnquireFormValidation(){
+    function ModalEnquireFormValidation() {
         let modalEnquireFormFlag = true;
         let modalEnquireForm_info_error = document.getElementById('modalEnquireForm_info_error');
         let modalEnquireForm_phone_error = document.getElementById('modalEnquireForm_phone_error');
@@ -303,10 +320,15 @@
         }
         return modalEnquireFormFlag;
     }
+
     const phoneInputFieldModalPROVal = document.querySelector("#modal_phone");
     const phoneInputModalPROVal = window.intlTelInput(phoneInputFieldModalPROVal, {
         separateDialCode: true,
-        preferredCountries:["<? if (isset($geolocation)){echo $geolocation;}else{echo 'us';} ?>"],
+        preferredCountries: ["<? if (isset($geolocation)) {
+            echo $geolocation;
+        } else {
+            echo 'us';
+        } ?>"],
         hiddenInput: "full",
         utilsScript:
             "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",

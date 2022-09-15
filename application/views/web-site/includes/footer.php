@@ -66,7 +66,9 @@
         }
 
         #brandpush-trust-badge {
-        } </style>
+        }
+    </style>
+</div>
     <div id="brandpush-trust-badge"
          style="position: relative;width:100%;background:#fff;border-radius:10px;min-height:180px;margin-left: auto;margin-right: auto;">
         <div style="text-align:center;padding:30px 5px 15px 5px;font-size: 18px;font-family: sans-serif;font-weight: 600;letter-spacing: 8px;">
@@ -226,6 +228,12 @@
                             <i class="fas fa-chevron-right red-text mx-1"></i>
                             <a href="<?= base_url(); ?>career">
                                 Careers
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fas fa-chevron-right red-text mx-1"></i>
+                            <a href="<?= base_url(); ?>prime-videos">
+                                Prime Videos
                             </a>
                         </li>
                     </ul>
@@ -405,3 +413,8 @@
                 height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
+<!-- Start of EngageBay Embed Code -->
+<script type="text/javascript" >
+    var EhAPI = EhAPI || {}; EhAPI.after_load = function(){ EhAPI.set_account('l41v33b5rr5pfd5fnjju0b7e0j', 'primepropertyturkey'); EhAPI.execute('rules');};(function(d,s,f) { var sc=document.createElement(s);sc.type='text/javascript'; sc.async=true;sc.src=f;var m=document.getElementsByTagName(s)[0]; m.parentNode.insertBefore(sc,m); })(document, 'script', '//d2p078bqz5urf7.cloudfront.net/jsapi/ehform.js');
+</script>
+<!-- End of EngageBay Embed Code -->
