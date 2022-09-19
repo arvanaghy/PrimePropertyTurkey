@@ -169,13 +169,13 @@ class Admin extends CI_Controller
     protected function uploadPictures($data, $type = '')
     {
         $this->checkUser();
-        $config['upload_path'] = $data['path'];
-        $config['allowed_types'] = 'jpg';
-        $config['max_size'] = 2000;
-        $config['max_width'] = 1200;
-        $config['max_height'] = 720;
-        $config['remove_spaces'] = TRUE;
-        $this->load->library('upload', $config);
+        $config2['upload_path'] = $data['path'];
+        $config2['allowed_types'] = 'jpg';
+        $config2['max_size'] = 2000;
+        $config2['max_width'] = 1200;
+        $config2['max_height'] = 720;
+        $config2['remove_spaces'] = TRUE;
+        $this->load->library('upload', $config2);
         if (!is_dir($data['path'])) {
             mkdir($data['path'], 0777, TRUE);
         }
@@ -213,10 +213,10 @@ class Admin extends CI_Controller
             mkdir($target_path, 0777, TRUE);
         }
         header('Content-Type: image/jpeg');
-        $source_image = imagecreatefromjpeg($source . $filename);
+        $source_image2 = imagecreatefromjpeg($source . $filename);
         list($width, $height) = getimagesize($source . $filename);
         $thumb = imagecreatetruecolor(450, 350);
-        imagecopyresampled($thumb, $source_image, 0, 0, 0, 0, 450, 350, $width, $height);
+        imagecopyresampled($thumb, $source_image2, 0, 0, 0, 0, 450, 350, $width, $height);
         imagejpeg($thumb, $target_path . $filename);
         imagedestroy($thumb);
         switch ($type) {
@@ -266,17 +266,43 @@ class Admin extends CI_Controller
         $this->createWebp($target_path, $file_name, $type, 'whatsapp');
 
     }
+    protected function CreateWhatsapp($source, $file_name)
+    {
+        $filename = $source . $file_name;
+        $target_path = $_SERVER['DOCUMENT_ROOT'] . '/assets/web-site/images/properties/whatsapp/';
+
+        if (!is_dir($target_path)) {
+            mkdir($target_path, 0777, TRUE);
+        }
+        $config_whats = array(
+            'image_library' => 'gd2',
+            'source_image' => $filename,
+            'new_image' => $target_path,
+            'maintain_ratio' => False,
+            'width' => 300,
+            'height' => 300
+        );
+        $this->load->library('image_lib', $config_whats);
+        $this->image_lib->initialize($config_whats);
+
+        if (!$this->image_lib->resize()) {
+            echo $this->image_lib->display_errors();
+        }
+        $this->image_lib->clear();
+        $this->createWebp($target_path, $file_name, 'Property', 'whatsapp');
+
+    }
     protected function uploadGalleryImages($files)
     {
 
-        $config['upload_path'] = './assets/web-site/images/properties/old/original/';
-        $config['allowed_types'] = 'jpg';
-        $config['max_size'] = 2000;
-        $config['max_width'] = 1200;
-        $config['max_height'] = 720;
-        $config['remove_spaces'] = TRUE;
+        $config1['upload_path'] = './assets/web-site/images/properties/old/original/';
+        $config1['allowed_types'] = 'jpg';
+        $config1['max_size'] = 2000;
+        $config1['max_width'] = 1200;
+        $config1['max_height'] = 720;
+        $config1['remove_spaces'] = TRUE;
 
-        $this->load->library('upload', $config);
+        $this->load->library('upload', $config1);
         $images = array();
         foreach ($files['name'] as $key => $image) {
             $_FILES['property_images[]']['name'] = $files['name'][$key];
@@ -288,7 +314,7 @@ class Admin extends CI_Controller
             $images[] = $image;
             $config['file_name'] = $image;
 
-            $this->upload->initialize($config);
+            $this->upload->initialize($config1);
 
             if ($this->upload->do_upload('property_images[]')) {
                 $filename = $this->upload->data()['file_name'];
@@ -307,15 +333,15 @@ class Admin extends CI_Controller
             mkdir($target_path, 0777, TRUE);
         }
         $this->load->library('image_lib');
-        $config['source_image'] = $source . $filename;
-        $config['new_image'] = $target_path;
-        $config['wm_type'] = 'overlay';
-        $config['wm_overlay_path'] = $_SERVER['DOCUMENT_ROOT'] . '/assets/web-site/images/base/over.png';
-        $config['wm_opacity'] = '100';
-        $config['wm_vrt_alignment'] = 'bottom';
-        $config['wm_hor_alignment'] = 'center';
-        $config['wm_padding'] = '0';
-        $this->image_lib->initialize($config);
+        $config3['source_image'] = $source . $filename;
+        $config3['new_image'] = $target_path;
+        $config3['wm_type'] = 'overlay';
+        $config3['wm_overlay_path'] = $_SERVER['DOCUMENT_ROOT'] . '/assets/web-site/images/base/over.png';
+        $config3['wm_opacity'] = '100';
+        $config3['wm_vrt_alignment'] = 'bottom';
+        $config3['wm_hor_alignment'] = 'center';
+        $config3['wm_padding'] = '0';
+        $this->image_lib->initialize($config3);
         $this->image_lib->watermark();
         if (!$this->image_lib->watermark()) {
             echo $this->image_lib->display_errors();
@@ -328,11 +354,11 @@ class Admin extends CI_Controller
     {
 
         header('Content-Type: image/WebP');
-        $name = pathinfo($file_name, PATHINFO_FILENAME);
-        $source_image = imagecreatefromjpeg($source . $file_name);
-        imagepalettetotruecolor($source_image);
-        imagealphablending($source_image, true);
-        imagesavealpha($source_image, true);
+        $name1 = pathinfo($file_name, PATHINFO_FILENAME);
+        $source_image1 = imagecreatefromjpeg($source . $file_name);
+        imagepalettetotruecolor($source_image1);
+        imagealphablending($source_image1, true);
+        imagesavealpha($source_image1, true);
 
         switch ($type) {
             case "Blog":
@@ -350,8 +376,8 @@ class Admin extends CI_Controller
                 $output = "./uploads/";
                 break;
         }
-        imagewebp($source_image, $output . $name . ".webp", 60);
-        imagedestroy($source_image);
+        imagewebp($source_image1, $output . $name1 . ".webp", 60);
+        imagedestroy($source_image1);
     }
     protected function insert_gallery_images($id, $filename, $order)
     {
@@ -982,11 +1008,36 @@ class Admin extends CI_Controller
     {
         $this->checkUser();
         $this->load->model('Admin_model');
+        $data = $this->Admin_model->fetchResalesByID($passed_url);
+
+        $this->load->library('email');
+        $this->email->from('contact@primepropertyturkey.com', 'Delete Resale Ads');
+        $this->email->to($data->UserName);
+        $this->email->to($data->UserName);
+        $this->email->subject(' Delete Resale Ads ' . $data->UserName);
+        $message = "<div style='background-color: beige ; padding: 40px;text-align: justify'>" .
+            "<br/>".
+            "<div style='background-color: #012169; padding: 10px;'>
+                        <img src='https://www.primepropertyturkey.com/assets/web-site/images/base/logo-new.png'>
+                    </div>".
+            "<br/>".
+            date('l jS \of F Y h:i:s A').
+            "<br/><br/>".
+            " Dear <b> " .$data->UserName . " User </b> <br /> <br/>" .
+            " Unfortunately Your ". $data->title. " Resale Ads Deleted By Prime Property Turkey Admin <BR /> <br/>" .
+            "Thanks Regards <br />" .
+            "</div>";
+        $this->email->set_mailtype("html");
+        $this->email->message($message);
+        $this->email->send();
+        $this->email->clear(TRUE);
+
         $images = $this->getResaleImageName($passed_url);
         foreach ($images as $image) {
             $this->Admin_model->delete_Audition_image($image['id']);
         }
         $this->Admin_model->delete_Audition($passed_url);
+
         redirect(base_url() . 'Admin/Manage_Resales');
     }
     protected function getResaleImageName($data)
@@ -1052,12 +1103,35 @@ class Admin extends CI_Controller
                 $image_name = $imageRow['image'];
             }
             copy('./assets/web-site/images/resales/resized/'.$imageRow['image'],'./assets/web-site/images/properties/old/original/'.$image_name);
-            $this->whatsapp('./assets/web-site/images/properties/old/original/',$image_name,'Property');
+            $this->CreateWhatsapp('./assets/web-site/images/properties/old/original/',$image_name);
             $this->waterMark('./assets/web-site/images/properties/old/original/',$image_name);
             $this->insert_gallery_images($insert_id,$image_name,$imageRow['sort']);
         }
         $set_array = array('status' => 5);
         $this->Admin_model->AuditionPublish($data->id, $set_array);
+
+        $this->load->library('email');
+        $this->email->from('contact@primepropertyturkey.com', 'Publish Resale Ads');
+        $this->email->to($data->UserName);
+        $this->email->subject(' Publish Resale Ads ' . $data->UserName);
+        $message = "<div style='background-color: beige ; padding: 40px;text-align: justify'>" .
+            "<br/>".
+            "<div style='background-color: #012169; padding: 10px;'>
+                        <img src='https://www.primepropertyturkey.com/assets/web-site/images/base/logo-new.png'>
+                    </div>".
+            "<br/>".
+            date('l jS \of F Y h:i:s A').
+            "<br/><br/>".
+            " Dear <b> " .$data->UserName . " User </b> <br /> <br/>" .
+            " Your Resale Ads Published By Prime Property Turkey Admin <BR /> <br/>" .
+            " You can see your property ads in  : <a href='https://www.primepropertyturkey.com/properties/".$roll['url_slug']."' target='_blank'> " . $data->title . " </a> <br/> <br/> <br/> " .
+            "Thanks Regards <br />" .
+            "</div>";
+        $this->email->set_mailtype("html");
+        $this->email->message($message);
+        $this->email->send();
+        $this->email->clear(TRUE);
+
         redirect(base_url() . 'Admin/Manage_Resales');
     }
     protected function MakeNewReferenceID($data)

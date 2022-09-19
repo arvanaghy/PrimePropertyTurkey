@@ -76,11 +76,17 @@
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <? if ($userLevel <9){ ?>
+                <? if ($userLevel != 9){ ?>
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                         <strong><?= $this->session->userdata('user_info');  ?></strong> Your email is not activated.
                         <br>
                         please go to your email and click on verification link
+                        <br>
+                        <hr>
+                        <strong>
+                            Didn't Get Email
+                        </strong>
+                        <a href="<?= base_url(); ?>User/ResendActivateEmail">Click To Resend Activation Email </a>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -271,7 +277,8 @@
 
                                     </label>
                                     <input type="text" class="form-control" name="title" id="title" required>
-                                    <div id="title_error" class="text-danger"></div>
+                                    <div id="title_duplicate_error" class="text-danger"></div>
+                                    <div id="title_length_error" class="text-danger"></div>
                                 </div>
                                 <div class="form-group col-md-4 text-left">
                                     <label for="price" style="padding-top:20px;padding-bottom:5px;" class="control-label">
@@ -283,6 +290,7 @@
                                         <span class="required text-danger">*</span>
                                     </label>
                                     <input type="number" class="form-control" name="price" id="price" required>
+                                    <div class="mx-1 font-weight-bold" id="price_comma"></div>
                                 </div>
                             </div>
                             <div class="row">
@@ -389,7 +397,8 @@
         $('#title').change(function(){
             $("#submit").prop("disabled",false);
             let value_data = $(this).val();
-            $('#title_error').text('');
+            $('#title_duplicate_error').text('');
+            $('#title_length_error').text('');
             $.ajax({
                 url:'<?= base_url(); ?>User/propertyTitleCheck',
                 method: 'POST',
@@ -397,13 +406,26 @@
                 dataType: 'json',
                 success: function(response){
                     $.each(response, function (i, item) {
-                        $('#title_error').text('this title is used , please choose another one');
+                        $('#title_duplicate_error').text('this title is used , please choose another one');
                         $("#submit").prop("disabled",true);
 
                     });
                 }
             });
+            if (value_data.length > 50 ){
+                $('#title_length_error').text('this title is too long');
+                $("#submit").prop("disabled",true);
+            }
         });
+        $('#price').keyup(function () {
+            let x = $(this).val();
+            $('#price_comma').text('$'+addCommas(x));
+        });
+        function addCommas(x) {
+            var parts = x.toString().split(".");
+            parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            return parts.join(".");
+        }
     });
 </script>
 <script type="text/javascript">

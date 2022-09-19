@@ -19,9 +19,9 @@
 </head>
 <body class="vh-100">
 	<?php $this->load->view('admin/include/top-menu');?>
-    <section id="main" class="h-75 d-flex align-items-center"  >
+    <section id="main" class="d-flex vh-100" >
         <div class="container">
-            <div class="row justify-content-around">
+            <div class="row mt-5 justify-content-around">
                 <div class="card col-md-3 m-2 p-2 text-center">
                     <div class="card-body">
                         <div class="title">

@@ -14,7 +14,7 @@
 </head>
 <body>
 <?php $this->load->view('admin/include/top-menu');?>
-<section id="main" >
+<section id="main" class="vh-100">
     <div class="container pt-2">
         <div class="row">
             <div class="card col-12">
@@ -37,7 +37,6 @@
                             <thead>
                             <tr>
                                 <th>S.No.</th>
-                                <th>Action</th>
                                 <th>Full Name</th>
                                 <th>Email</th>
                                 <th>Phone</th>
@@ -52,22 +51,10 @@
                                     <td class="sorting_1">
                                         <?= $count ; $count++; ?>
                                     </td>
-                                    <td class="td-actions">
-                                        <div class="dropdown">
-                                            <button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton">
-                                                Action
-                                                <span class="caret"></span>
-                                            </button>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a href="<?= base_url("Admin/Show_Auditions/$row->id"); ?>" class="dropdown-item">Show Properties</a>
-<!--                                                <a href="--><?//= base_url("Admin/Delete_Property/$row->id"); ?><!--" class="dropdown-item">Delete</a>-->
-                                            </div>
-                                        </div>
-                                    </td>
                                     <td><?= $row->fullname; ?></td>
                                     <td><?= $row->email; ?></td>
                                     <td><?= $row->phone; ?></td>
-                                    <td><? if($row->status==2){ echo 'Registered Complete';}else{echo 'Pending';}; ?></td>
+                                    <td><? if($row->status > 2){ echo 'Registered Complete';}else{echo 'Pending';}; ?></td>
                                     <td>
                                         <? $unix_time= mysql_to_unix($row->registerDate);
                                         $date_string = '%d %M %Y';

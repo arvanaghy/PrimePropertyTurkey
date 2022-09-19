@@ -5,4 +5,11 @@ Disallow:/Prime/
 Disallow:/Like/
 Disallow:/Dislike/
 Disallow:/Favorite/
+Disallow:/Custom404/
+Disallow:/career/
+Disallow:/signup/
+Disallow:/user_register/
+Disallow:/login/
+Disallow:/forget_password/
+Disallow:/User/
 Sitemap: https://www.primepropertyturkey.com/seo/sitemap.xml

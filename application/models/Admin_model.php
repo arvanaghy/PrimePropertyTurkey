@@ -357,6 +357,16 @@ class Admin_model extends CI_Model
         }
         return false;
     }
+    public function fetchResalesByID($data)
+    {
+        $this->db->order_by('id', 'DESC');
+        $this->db->where('id ',$data);
+        $query = $this->db->get('resale');
+        if ($query->result()){
+            return $query->row();
+        }
+        return false;
+    }
     public function getLastResaleReferenceIDModel()
     {
         $this->db->select('Property_referenceID');

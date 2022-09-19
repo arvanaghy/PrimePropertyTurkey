@@ -29,7 +29,12 @@ class User extends CI_Controller
     {
         $username = $this->session->userdata('username');
         $this->load->Model('User_Model');
-        return $this->User_Model->userLevel($username)->status;
+        $result = $this->User_Model->userLevel($username);
+        if ($result){
+            return $this->User_Model->userLevel($username)->status;
+        }else{
+            return null;
+        }
     }
 
     public function UserLogin()
@@ -51,7 +56,8 @@ class User extends CI_Controller
                 $data = $google_service->userinfo->get();
                 $is_user_email_exist = $this->User_Model->Is_user_email_exist($data['email']);
                 $current_datetime = date('Y-m-d H:i:s');
-                if ($is_user_email_exist->user_type = 2 and $this->User_Model->Is_user_already_register($data['id'])) {
+                $is_google_user = $this->User_Model->Is_user_already_register($data['id']);
+                if ($is_user_email_exist and $is_user_email_exist->user_type = 2 and $is_google_user) {
                     $user_data = array(
                         'fullname' => $data['given_name'] . ' ' . $data['family_name'],
                         'profile_picture' => $data['picture'],
@@ -59,7 +65,7 @@ class User extends CI_Controller
                     );
                     $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Dear  <b>" . $user_data['fullname'] . "</b> Your Sign in successfully </div>");
                     $this->User_Model->Update_user_login_data_by_uid($user_data, $data['id']);
-                } elseif ($is_user_email_exist->user_type = 1) {
+                } elseif ($is_user_email_exist and $is_user_email_exist->user_type = 1) {
                     $user_data = array(
                         'profile_picture' => $data['picture'],
                         'update_date' => $current_datetime
@@ -72,7 +78,6 @@ class User extends CI_Controller
                         'fullname' => $data['given_name'] . ' ' . $data['family_name'],
                         'email' => $data['email'],
                         'profile_picture' => $data['picture'],
-                        'registerDate' => $current_datetime,
                         'user_type' => 2,
                         'status' => 9
                     );
@@ -120,7 +125,8 @@ class User extends CI_Controller
                 $data = $google_service->userinfo->get();
                 $is_user_email_exist = $this->User_Model->Is_user_email_exist($data['email']);
                 $current_datetime = date('Y-m-d H:i:s');
-                if ($is_user_email_exist->user_type = 2 and $this->User_Model->Is_user_already_register($data['id'])) {
+                $is_google_user = $this->User_Model->Is_user_already_register($data['id']);
+                if ($is_user_email_exist and $is_user_email_exist->user_type = 2 and $is_google_user) {
                     $user_data = array(
                         'fullname' => $data['given_name'] . ' ' . $data['family_name'],
                         'profile_picture' => $data['picture'],
@@ -128,7 +134,7 @@ class User extends CI_Controller
                     );
                     $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Dear User, You Registered Before, So We Redirect To Your User Panel</div>");
                     $this->User_Model->Update_user_login_data_by_uid($user_data, $data['id']);
-                } elseif ($is_user_email_exist->user_type = 1) {
+                } elseif ($is_user_email_exist and $is_user_email_exist->user_type = 1) {
                     $user_data = array(
                         'profile_picture' => $data['picture'],
                         'update_date' => $current_datetime
@@ -141,7 +147,6 @@ class User extends CI_Controller
                         'fullname' => $data['given_name'] . ' ' . $data['family_name'],
                         'email' => $data['email'],
                         'profile_picture' => $data['picture'],
-                        'registerDate' => $current_datetime,
                         'user_type' => 2,
                         'status' => 9
                     );
@@ -523,6 +528,43 @@ class User extends CI_Controller
                 $this->load->view('web-site/user/profile', $data);
                 $this->session->set_flashdata('message', "<div id='toast_message' class='success'>Dear <b> USER </b> Your Profile Changed Successfully </div>");
             }
+            redirect(base_url() . 'User');
+        } else {
+            redirect(base_url());
+        }
+    }
+
+    public function ResendActivateEmail()
+    {
+        if ($this->checkUser()) {
+            $this->load->Model('User_Model');
+            $username = $this->session->userdata('username');
+            $result = $this->User_Model->getUserInfo($username);
+            if ($result){
+                $this->load->library('email');
+                $this->email->from('contact@primepropertyturkey.com', 'User Register Verification');
+                $this->email->to($username);
+                $this->email->subject(' User Register Verification ');
+                $message = "<div style='background-color: beige ; padding: 40px;text-align: justify'>" .
+                    "<br/>".
+                    "<div style='background-color: #012169; padding: 10px;'>
+                        <img src='https://www.primepropertyturkey.com/assets/web-site/images/base/logo-new.png'>
+                    </div>".
+                    "<br/>".
+                    date('l jS \of F Y h:i:s A').
+                    "<br/><br/>".
+                    " Dear <b> " .$username . "</b> User <br /> <br/>" .
+                    " Thank you for Registration <BR /> <br/>" .
+                    "Verification Link : <a href='".$result->hashCode."' target='_blank'> " . $result->hashCode . " </a> <br/> <br/> <br/> " .
+                    "Please click link to verify your account <br />" .
+                    "This link expire after 24 hour , if in that period account not activated , you should register again  <br />" .
+                    "</div>";
+                $this->email->set_mailtype("html");
+                $this->email->message($message);
+                $this->email->send();
+                $this->email->clear(TRUE);
+            }
+            $this->session->set_flashdata('message', "<div id='toast_message' class='success'>Dear <b> USER </b> Your Activate Email Resend Successfully </div>");
             redirect(base_url() . 'User');
         } else {
             redirect(base_url());

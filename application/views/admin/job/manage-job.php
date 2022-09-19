@@ -14,7 +14,7 @@
 </head>
 <body>
 <?php $this->load->view('admin/include/top-menu');?>
-<section id="main" >
+<section id="main" class="vh-100">
     <div class="container pt-2">
         <div class="row">
             <div class="card col-12">

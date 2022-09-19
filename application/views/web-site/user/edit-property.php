@@ -268,7 +268,8 @@
                                         <span class="required text-danger">*</span>
                                     </label>
                                     <input type="text" class="form-control" name="title" id="title" required  value="<?= $results->title; ?>">
-                                    <div id="title_error" class="text-danger"></div>
+                                    <div id="title_duplicate_error" class="text-danger"></div>
+                                    <div id="title_length_error" class="text-danger"></div>
                                 </div>
                                 <div class="form-group col-md-4 text-left">
                                     <label for="price" style="padding-top:20px;padding-bottom:5px;" class="control-label">
@@ -280,6 +281,7 @@
                                         <span class="required text-danger">*</span>
                                     </label>
                                     <input type="number" class="form-control" name="price" id="price" required  value="<?= $results->price; ?>">
+                                    <div class="mx-1 font-weight-bold" id="price_comma"></div>
                                 </div>
                             </div>
                             <input type="hidden" name="latit" id="latit">
@@ -347,10 +349,13 @@
 </script>
 <script type="text/javascript">
     $(document).ready(function(){
+        let price_comma = $('#price').val();
+        $('#price_comma').text('$'+addCommas(price_comma));
         $('#title').change(function(){
             $("#submit").prop("disabled",false);
             let value_data = $(this).val();
-            $('#title_error').text('');
+            $('#title_duplicate_error').text('');
+            $('#title_length_error').text('');
             $.ajax({
                 url:'<?= base_url(); ?>User/propertyTitleCheck',
                 method: 'POST',
@@ -358,13 +363,26 @@
                 dataType: 'json',
                 success: function(response){
                     $.each(response, function (i, item) {
-                        $('#title_error').text('this title is used , please choose another one');
+                        $('#title_duplicate_error').text('this title is used , please choose another one');
                         $("#submit").prop("disabled",true);
 
                     });
                 }
             });
+            if (value_data.length > 50 ){
+                $('#title_length_error').text('this title is too long');
+                $("#submit").prop("disabled",true);
+            }
         });
+        $('#price').keyup(function () {
+            let x = $(this).val();
+            $('#price_comma').text('$'+addCommas(x));
+        });
+        function addCommas(x) {
+            var parts = x.toString().split(".");
+            parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            return parts.join(".");
+        }
     });
 </script>
 <script type="text/javascript">

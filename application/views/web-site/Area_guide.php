@@ -62,7 +62,7 @@
                         <div class="card-body px-4 pt-4 pb-1">
                             <p class="px-4 pt-4 mb-0 pb-1 text-justify">
                                 Napoleon once stated, <b>“if earth was a single state, then Istanbul would be its
-                                    capital.”</b>Napoleon’s words ring even truer today for those who have visited or
+                                    capital.”</b> Napoleon’s words ring even truer today for those who have visited or
                                 lived in
                                 Istanbul. Positioned on the European and Asian continents, Istanbul is divided by the
                                 famous, romantic, and sometimes tragic Bosphorus Strait, hence why many novelists have
@@ -319,7 +319,7 @@
                                             Profile: Zeytinburnu</a>
                                     </li>
                                     <li>
-                                        <a href="https://www.primepropertyturkey.com/blog/the-neighborhoods-of-sisli-mix-old-and-new-with-style" target="_blank">Neighborhood
+                                        <a href="https://www.primepropertyturkey.com/blog/neighborhoods-sisli" target="_blank">Neighborhood
                                             Profile: Sisli</a>
                                     </li>
                                     <li>

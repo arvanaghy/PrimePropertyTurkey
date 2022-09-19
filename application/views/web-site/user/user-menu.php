@@ -18,7 +18,9 @@
                         <? endforeach; ?>
                     <? endif; ?>
                 </ul>
-                <?php echo form_open_multipart(base_url().'User/Resale_Images_Update_Submit');?>
+                <?php
+                $condition = array('onsubmit'=>'return EditResaleImageUpload();');
+                echo form_open_multipart(base_url().'User/Resale_Images_Update_Submit',$condition);?>
                 <div class="col form-group">
                     <label for="New_images">
                         <small>
@@ -28,6 +30,7 @@
                         </small>
                     </label>
                     <input type="file" id="New_images" name="New_images[]"  multiple="true" class="form-control" required accept=".jpg" >
+                    <div id="property_images_error" class="text-danger"></div>
                 </div>
                 <div class="col-12 form-group">
                     <input type="submit" class="btn btn-primary btn-block" value="Submit">
@@ -36,6 +39,37 @@
                 </form>
             </div>
         </div>
+        <script type="text/javascript">
+            function EditResaleImageUpload() {
+                document.getElementById('property_images_error').innerText='';
+                let correctFlag = true;
+                let fileUpload = document.getElementById("New_images");
+                let images_cont = fileUpload.files.length;
+                for (let i = 0; i < images_cont; i++) {
+                    if ((fileUpload.files[i].size/1024).toFixed(0)>2048){
+                        document.getElementById('property_images_error').innerText='image size is more than 2 MB, please reduce your image size';
+                        document.getElementById('New_images').focus();
+                        correctFlag = false;
+                    }
+                    let reader = new FileReader();
+                    reader.readAsDataURL(fileUpload.files[i]);
+                    reader.onload = function (e) {
+                        var image = new Image();
+                        image.src = e.target.result;
+                        image.onload = function () {
+                            if (this.width > 4800 || this.height > 2880){
+                                document.getElementById('property_images_error').innerText='image dimensions are bigger than 4800 * 2880  pixel';
+                                document.getElementById('New_images').focus();
+                                correctFlag = false;
+                            }
+                        };
+                        delete image;
+                    }
+                    delete reader;
+                }
+                return correctFlag;
+            }
+        </script>
     <? endif; ?>
     <div class="card" style="position: sticky !important;top: 100px;">
         <div class="card-body">

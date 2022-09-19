@@ -14,7 +14,7 @@
 </head>
 <body>
 <?php $this->load->view('admin/include/top-menu');?>
-<section id="main" >
+<section id="main" class="vh-100" >
     <div class="container pt-2">
         <div class="row">
             <div class="card col-12">
@@ -80,13 +80,14 @@
                                         </div>
                                     </td>
                                     <td><?= $row->title; ?></td>
-                                    <td><?= $row->price; ?></td>
+                                    <td>$<?= number_format($row->price); ?></td>
                                     <td><?= $row->kind; ?></td>
                                     <td><?= $row->location; ?></td>
                                     <td><?= $row->bedroom; ?></td>
                                     <td><?= $row->bathroom; ?></td>
                                     <td><?= $row->living_space; ?></td>
-                                    <td><?= $row->pool; ?></td>
+                                    <td>
+                                        <? if ($row->pool==1): echo 'Yes'; else: echo 'No'; endif;?>
                                     <td>
                                         <? $unix_time= mysql_to_unix($row->created);
                                         $date_string = '%d %M %Y';
@@ -99,6 +100,18 @@
                             <?}?>
                             </tbody>
                         </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <? else: ?>
+        <div class="row pt-2 pb-5 ">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <p>
+                            There Is nothing To Show.
+                        </p>
                     </div>
                 </div>
             </div>

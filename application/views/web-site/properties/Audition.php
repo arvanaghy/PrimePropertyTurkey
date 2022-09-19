@@ -310,32 +310,6 @@ if ($image_name_webp == '') {
                             <!-- Sorry! Lightbox doesn't work - yet. -->
                             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                                 <div class="carousel-inner">
-                                    <? if ($data_array->ReferenceLink!='0'){ ?>
-                                        <? $i=0; ?>
-                                        <? foreach ($property_image_gallery as $image_gallery){ ?>
-                                            <? $image_name = str_replace('assets/uploads/', '', $IIG[$i]);
-                                            $image_name_webp = substr($image_name,0,strpos($image_name,'.jpg')).".webp";
-                                            if ($image_name_webp==''){
-                                                $image_name_webp = substr($image_name,0,strpos($image_name,'.png')).".webp";
-                                            }
-                                            if ($image_name_webp==''){
-                                                $image_name_webp = substr($image_name,0,strpos($image_name,'.jpeg')).".webp";
-                                            }
-                                            ?>
-                                            <div class="carousel-item <? if($i==0){ echo 'active'; } ?>" data-slide-number="<?= $i; ?>">
-                                                <img alt="<?= $data_array->Property_title.' '.$i; ?>"
-
-                                                     src="<?= base_url(); ?><?= "assets/web-site/images/resales/webps/".$image_name_webp; ?>"
-
-
-                                                     class="d-block w-100"
-                                                     data-remote="https://source.unsplash.com/Pn6iimgM-wo/" data-type="image"
-                                                     data-toggle="lightbox" data-gallery="example-gallery" loading="lazy">
-                                            </div>
-                                            <?
-                                            $i++;
-                                        } ?>
-                                    <? }else{ ?>
                                         <? $i=0; ?>
                                         <? foreach ($property_image_gallery as $image_gallery){ ?>
                                             <? $image_name = str_replace('assets/uploads/', '', $IIG[$i]);
@@ -360,7 +334,6 @@ if ($image_name_webp == '') {
                                         <?
                                             $i++;
                                         } ?>
-                                    <? } ?>
                                 </div>
                                 <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -379,32 +352,6 @@ if ($image_name_webp == '') {
                                     $gallery_image_chunk =  array_chunk($gallery_image_array,6);
                                 ?>
                                 <div class="carousel-inner">
-                                    <? if ($data_array->ReferenceLink!='0'){ ?>
-                                        <? foreach ($gallery_image_chunk as $key=> $value ){ ?>
-                                            <div class="carousel-item <? if ($key==0){echo 'active';} ?>">
-                                                <div class="row mx-0 justify-content-center">
-                                                    <?foreach ($value as $v){ ?>
-                                                        <? $image_name = str_replace('assets/uploads/', '', $IIG[$v]);
-                                                        $image_name_webp = substr($image_name,0,strpos($image_name,'.jpg')).".webp";
-                                                        if ($image_name_webp==''){
-                                                            $image_name_webp = substr($image_name,0,strpos($image_name,'.png')).".webp";
-                                                        }
-                                                        if ($image_name_webp==''){
-                                                            $image_name_webp = substr($image_name,0,strpos($image_name,'.jpeg')).".webp";
-                                                        }
-                                                        ?>
-                                                        <div id="carousel-selector-<?= $v; ?>" class="thumb col-4 col-sm-2 py-2 px-2 "
-                                                             data-target="#myCarousel" data-slide-to="<?= $v; ?>">
-                                                            <img alt="<?= $data_array->Property_title.' '.$v; ?>"
-                                                                 src="<?= base_url(); ?><?= "assets/web-site/images/resales/webps/".$image_name_webp; ?>"
-                                                                 class="img-fluid" loading="lazy">
-                                                        </div>
-                                                    <? } ?>
-                                                </div>
-                                            </div>
-                                        <? } ?>
-
-                                    <?}else {?>
                                         <? foreach ($gallery_image_chunk as $key=> $value ){ ?>
                                         <div class="carousel-item <? if ($key==0){echo 'active';} ?>">
                                                 <div class="row mx-0 justify-content-center">
@@ -428,7 +375,6 @@ if ($image_name_webp == '') {
                                                 </div>
                                         </div>
                                     <? } ?>
-                                    <? }?>
                                 </div>
                                 <a class="carousel-control-prev" href="#carousel-thumbs" role="button" data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

@@ -59,7 +59,21 @@ class User_Model extends CI_Model
             return false;
         }
     }
-    
+    public function getUserInfo($data)
+    {
+        $this->db->select('hashCode');
+        $this->db->where('email', $data);
+        $query = $this->db->get('user');
+        if($query->result())
+        {
+            return $query->row();
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public function Add_Property_Submit_Model($data)
     {
         $this->db->insert('resale', $data);

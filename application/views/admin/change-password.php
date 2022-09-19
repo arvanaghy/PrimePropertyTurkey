@@ -9,7 +9,7 @@
 </head>
 <body class="vh-100">
 <?php $this->load->view('admin/include/top-menu');?>
-<section id="main" class="h-75 d-flex align-items-center"  >
+<section id="main" class="d-flex pt-5 vh-100"  >
     <div class="container">
         <div class="row">
             <div class="card col-12">

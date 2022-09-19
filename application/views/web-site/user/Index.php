@@ -65,11 +65,17 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                <? }elseif($userLevel==1){ ?>
-                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <? }else{ ?>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
                         <strong><?= $this->session->userdata('user_info');  ?></strong> Your email is not activated.
                         <br>
                         please go to your email and click on verification link
+                        <br>
+                        <hr>
+                        <strong>
+                            Didn't Get Email
+                        </strong>
+                        <a href="<?= base_url(); ?>User/ResendActivateEmail">Click To Resend Activation Email </a>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>

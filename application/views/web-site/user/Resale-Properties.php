@@ -87,11 +87,17 @@
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <? if ($userLevel <9){ ?>
+                <? if ($userLevel !=9){ ?>
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                         <strong><?= $this->session->userdata('user_info');  ?></strong> Your email is not activated.
                         <br>
                         please go to your email and click on verification link
+                        <br>
+                        <hr>
+                        <strong>
+                            Didn't Get Email
+                        </strong>
+                        <a href="<?= base_url(); ?>User/ResendActivateEmail">Click To Resend Activation Email </a>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -160,7 +166,7 @@
                                         </div>
                                     </td>
                                     <td><?= $row->title; ?></td>
-                                    <td><?= $row->price; ?></td>
+                                    <td>$<?= number_format($row->price); ?></td>
                                     <td><?= $row->kind; ?></td>
                                     <td><?= $row->location; ?></td>
                                     <td><?= $row->bedroom; ?></td>
