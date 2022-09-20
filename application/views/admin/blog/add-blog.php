@@ -117,15 +117,28 @@
 
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<script src="<?= base_url();?>assets/summernote-image-attributes.js"></script>
 
 <script>
     $(document).ready(function() {
         $('.summernote').summernote({
+            imageTitle: {
+                specificAltField: true,
+            },
             height: 200,
             minHeight: null,
             maxHeight: null,
             focus: false,
             fontSizes: ['10', '11', '12', '14', '15','16','17','18', '24', '36', '48'],
+            popover: {
+                image: [
+                    ['image', ['resizeFull', 'resizeHalf', 'resizeNone']],
+                    ['float', ['floatLeft', 'floatRight', 'floatNone']],
+                    ['remove', ['removeMedia']],
+                    ['custom', ['imageTitle']],
+                ],
+            },
+            lang: 'en-US',
             toolbar: [
                 ['style', ['style']],
                 ['font', ['bold', 'underline', 'clear']],

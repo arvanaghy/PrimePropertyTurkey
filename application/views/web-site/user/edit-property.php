@@ -133,77 +133,77 @@
                                         <option value="Agiri" <? if ($results->location=="Agiri"){ echo "selected";} ?> >Ağrı</option>
                                         <option value="Amasya" <? if ($results->location=="Amasya"){ echo "selected";} ?> >Amasya</option>
                                         <option value="Antalya" <? if ($results->location=="Antalya"){ echo "selected";} ?> >Antalya</option>
-                                        <option value="Artvin" <? if ($results->location=="Artvin"){ echo "selected";} ?> >Artvin</option>
-                                        <option value="Aydin" <? if ($results->location=="Aydin"){ echo "selected";} ?> >Aydın</option>
-                                        <option value="Balikesir" <? if ($results->location=="Balikesir"){ echo "selected";} ?> >Balıkesir</option>
-                                        <option value="Bilecik" <? if ($results->location=="Bilecik"){ echo "selected";} ?> >Bilecik</option>
-                                        <option value="Bingol" <? if ($results->location=="Bingol"){ echo "selected";} ?> >Bingöl</option>
-                                        <option value="Bitlis" <? if ($results->location=="Bitlis"){ echo "selected";} ?> >Bitlis</option>
-                                        <option value="Bolu" <? if ($results->location=="Bolu"){ echo "selected";} ?> >Bolu</option>
-                                        <option value="Burdur" <? if ($results->location=="Burdur"){ echo "selected";} ?> >Burdur</option>
-                                        <option value="Bursa" <? if ($results->location=="Bursa"){ echo "selected";} ?> >Bursa</option>
-                                        <option value="Canakkale" <? if ($results->location=="Canakkale"){ echo "selected";} ?> >Çanakkale</option>
-                                        <option value="Cankiri" <? if ($results->location=="Cankiri"){ echo "selected";} ?> >Çankırı</option>
-                                        <option value="Corum" <? if ($results->location=="Corum"){ echo "selected";} ?> >Çorum</option>
-                                        <option value="Denizli" <? if ($results->location=="Denizli"){ echo "selected";} ?> >Denizli</option>
-                                        <option value="Diyarbakir" <? if ($results->location=="Diyarbakir"){ echo "selected";} ?> >Diyarbakır</option>
-                                        <option value="Edirne" <? if ($results->location=="Edirne"){ echo "selected";} ?> >Edirne</option>
-                                        <option value="Elazig" <? if ($results->location=="Elazig"){ echo "selected";} ?> >Elâzığ</option>
-                                        <option value="Erzincan" <? if ($results->location=="Erzincan"){ echo "selected";} ?> >Erzincan</option>
-                                        <option value="Erzurum" <? if ($results->location=="Erzurum"){ echo "selected";} ?> >Erzurum</option>
-                                        <option value="Eskisehir" <? if ($results->location=="Eskisehir"){ echo "selected";} ?> >Eskişehir</option>
-                                        <option value="Gaziantep" <? if ($results->location=="Gaziantep"){ echo "selected";} ?> >Gaziantep</option>
-                                        <option value="Giresun" <? if ($results->location=="Giresun"){ echo "selected";} ?> >Giresun</option>
-                                        <option value="Gumushane" <? if ($results->location=="Gumushane"){ echo "selected";} ?> >Gümüşhane</option>
-                                        <option value="Hakkari" <? if ($results->location=="Hakkari"){ echo "selected";} ?> >Hakkâri</option>
-                                        <option value="Hatay" <? if ($results->location=="Hatay"){ echo "selected";} ?> >Hatay</option>
-                                        <option value="Isparta" <? if ($results->location=="Isparta"){ echo "selected";} ?> >Isparta</option>
-                                        <option value="Mersin" <? if ($results->location=="Mersin"){ echo "selected";} ?> >Mersin</option>
-                                        <option value="Kars" <? if ($results->location=="Kars"){ echo "selected";} ?> >Kars</option>
-                                        <option value="Kastamonu" <? if ($results->location=="Kastamonu"){ echo "selected";} ?> >Kastamonu</option>
-                                        <option value="Kayseri">Kayseri</option>
-                                        <option value="Kirklareli">Kırklareli</option>
-                                        <option value="Kirsehir">Kırşehir</option>
-                                        <option value="Kocaeli">Kocaeli</option>
-                                        <option value="Konya">Konya</option>
-                                        <option value="Kutahya">Kütahya</option>
-                                        <option value="Malatya">Malatya</option>
-                                        <option value="Manisa">Manisa</option>
-                                        <option value="Kahramanmaraş">Kahramanmaraş</option>
-                                        <option value="Mardin">Mardin</option>
-                                        <option value="Mus">Muş</option>
-                                        <option value="Nevsehir">Nevşehir</option>
-                                        <option value="Nigde">Niğde</option>
-                                        <option value="Ordu">Ordu</option>
-                                        <option value="Rize">Rize</option>
-                                        <option value="Sakarya">Sakarya</option>
-                                        <option value="Samsun">Samsun</option>
-                                        <option value="Siirt">Siirt</option>
-                                        <option value="Sinop">Sinop</option>
-                                        <option value="Sivas">Sivas</option>
-                                        <option value="Tekirdag">Tekirdağ</option>
-                                        <option value="Tokat">Tokat</option>
-                                        <option value="Trabzon">Trabzon</option>
-                                        <option value="Tunceli">Tunceli</option>
-                                        <option value="Sanliurfa">Şanlıurfa</option>
-                                        <option value="Usak">Uşak</option>
-                                        <option value="Van">Van</option>
-                                        <option value="Yozgat">Yozgat</option>
-                                        <option value="Zonguldak">Zonguldak</option>
-                                        <option value="Aksaray">Aksaray</option>
-                                        <option value="Bayburt">Bayburt</option>
-                                        <option value="Karaman">Karaman</option>
-                                        <option value="Kirikkale">Kırıkkale</option>
-                                        <option value="Batman">Batman</option>
-                                        <option value="Sirnak">Şırnak</option>
-                                        <option value="Bartın">Bartın</option>
-                                        <option value="Ardahan">Ardahan</option>
-                                        <option value="Igdir">Iğdır</option>
-                                        <option value="Yalova">Yalova</option>
-                                        <option value="Karabuk">Karabük</option>
-                                        <option value="Kilis">Kilis</option>
-                                        <option value="Osmaniye">Osmaniye</option>
-                                        <option value="Duzce">Düzce</option>
+                                        <option value="Artvin"  <? if ($results->location=="Artvin"){ echo "selected";} ?> >Artvin</option>
+                                        <option value="Aydin"  <? if ($results->location=="Aydin"){ echo "selected";} ?> >Aydın</option>
+                                        <option value="Balikesir"  <? if ($results->location=="Balikesir"){ echo "selected";} ?> >Balıkesir</option>
+                                        <option value="Bilecik"  <? if ($results->location=="Bilecik"){ echo "selected";} ?> >Bilecik</option>
+                                        <option value="Bingol"  <? if ($results->location=="Bingol"){ echo "selected";} ?> >Bingöl</option>
+                                        <option value="Bitlis"  <? if ($results->location=="Bitlis"){ echo "selected";} ?> >Bitlis</option>
+                                        <option value="Bolu"  <? if ($results->location=="Bolu"){ echo "selected";} ?> >Bolu</option>
+                                        <option value="Burdur"  <? if ($results->location=="Burdur"){ echo "selected";} ?> >Burdur</option>
+                                        <option value="Bursa"  <? if ($results->location=="Bursa"){ echo "selected";} ?> >Bursa</option>
+                                        <option value="Canakkale"  <? if ($results->location=="Canakkale"){ echo "selected";} ?> >Çanakkale</option>
+                                        <option value="Cankiri"  <? if ($results->location=="Cankiri"){ echo "selected";} ?> >Çankırı</option>
+                                        <option value="Corum"  <? if ($results->location=="Corum"){ echo "selected";} ?> >Çorum</option>
+                                        <option value="Denizli"  <? if ($results->location=="Denizli"){ echo "selected";} ?> >Denizli</option>
+                                        <option value="Diyarbakir"  <? if ($results->location=="Diyarbakir"){ echo "selected";} ?> >Diyarbakır</option>
+                                        <option value="Edirne"  <? if ($results->location=="Edirne"){ echo "selected";} ?> >Edirne</option>
+                                        <option value="Elazig"  <? if ($results->location=="Elazig"){ echo "selected";} ?> >Elâzığ</option>
+                                        <option value="Erzincan"  <? if ($results->location=="Erzincan"){ echo "selected";} ?> >Erzincan</option>
+                                        <option value="Erzurum"  <? if ($results->location=="Erzurum"){ echo "selected";} ?> >Erzurum</option>
+                                        <option value="Eskisehir"  <? if ($results->location=="Eskisehir"){ echo "selected";} ?> >Eskişehir</option>
+                                        <option value="Gaziantep"  <? if ($results->location=="Gaziantep"){ echo "selected";} ?> >Gaziantep</option>
+                                        <option value="Giresun"  <? if ($results->location=="Giresun"){ echo "selected";} ?> >Giresun</option>
+                                        <option value="Gumushane"  <? if ($results->location=="Gumushane"){ echo "selected";} ?> >Gümüşhane</option>
+                                        <option value="Hakkari"  <? if ($results->location=="Hakkari"){ echo "selected";} ?> >Hakkâri</option>
+                                        <option value="Hatay"  <? if ($results->location=="Hatay"){ echo "selected";} ?> >Hatay</option>
+                                        <option value="Isparta"  <? if ($results->location=="Isparta"){ echo "selected";} ?> >Isparta</option>
+                                        <option value="Mersin"  <? if ($results->location=="Mersin"){ echo "selected";} ?> >Mersin</option>
+                                        <option value="Kars"  <? if ($results->location=="Kars"){ echo "selected";} ?> >Kars</option>
+                                        <option value="Kastamonu"  <? if ($results->location=="Kastamonu"){ echo "selected";} ?> >Kastamonu</option>
+                                        <option value="Kayseri" <? if ($results->location=="Kayseri"){ echo "selected";} ?>>Kayseri</option>
+                                        <option value="Kirklareli" <? if ($results->location=="Kirklareli"){ echo "selected";} ?>>Kırklareli</option>
+                                        <option value="Kirsehir" <? if ($results->location=="Kirsehir"){ echo "selected";} ?>>Kırşehir</option>
+                                        <option value="Kocaeli" <? if ($results->location=="Kocaeli"){ echo "selected";} ?>>Kocaeli</option>
+                                        <option value="Konya" <? if ($results->location=="Konya"){ echo "selected";} ?>>Konya</option>
+                                        <option value="Kutahya" <? if ($results->location=="Kutahya"){ echo "selected";} ?>>Kütahya</option>
+                                        <option value="Malatya" <? if ($results->location=="Malatya"){ echo "selected";} ?>>Malatya</option>
+                                        <option value="Manisa" <? if ($results->location=="Manisa"){ echo "selected";} ?>>Manisa</option>
+                                        <option value="Kahramanmaraş" <? if ($results->location=="Kahramanmaraş"){ echo "selected";} ?>>Kahramanmaraş</option>
+                                        <option value="Mardin" <? if ($results->location=="Mardin"){ echo "selected";} ?>>Mardin</option>
+                                        <option value="Mus" <? if ($results->location=="Mus"){ echo "selected";} ?>>Muş</option>
+                                        <option value="Nevsehir" <? if ($results->location=="Nevsehir"){ echo "selected";} ?>>Nevşehir</option>
+                                        <option value="Nigde" <? if ($results->location=="Nigde"){ echo "selected";} ?>>Niğde</option>
+                                        <option value="Ordu" <? if ($results->location=="Ordu"){ echo "selected";} ?>>Ordu</option>
+                                        <option value="Rize" <? if ($results->location=="Rize"){ echo "selected";} ?>>Rize</option>
+                                        <option value="Sakarya" <? if ($results->location=="Sakarya"){ echo "selected";} ?>>Sakarya</option>
+                                        <option value="Samsun" <? if ($results->location=="Samsun"){ echo "selected";} ?>>Samsun</option>
+                                        <option value="Siirt" <? if ($results->location=="Siirt"){ echo "selected";} ?>>Siirt</option>
+                                        <option value="Sinop" <? if ($results->location=="Sinop"){ echo "selected";} ?>>Sinop</option>
+                                        <option value="Sivas" <? if ($results->location=="Sivas"){ echo "selected";} ?>>Sivas</option>
+                                        <option value="Tekirdag" <? if ($results->location=="Tekirdag"){ echo "selected";} ?>>Tekirdağ</option>
+                                        <option value="Tokat" <? if ($results->location=="Tokat"){ echo "selected";} ?>>Tokat</option>
+                                        <option value="Trabzon" <? if ($results->location=="Trabzon"){ echo "selected";} ?>>Trabzon</option>
+                                        <option value="Tunceli" <? if ($results->location=="Tunceli"){ echo "selected";} ?>>Tunceli</option>
+                                        <option value="Sanliurfa" <? if ($results->location=="Sanliurfa"){ echo "selected";} ?>>Şanlıurfa</option>
+                                        <option value="Usak" <? if ($results->location=="Usak"){ echo "selected";} ?>>Uşak</option>
+                                        <option value="Van"  <? if ($results->location=="Van"){ echo "selected";} ?>>Van</option>
+                                        <option value="Yozgat" <? if ($results->location=="Yozgat"){ echo "selected";} ?>>Yozgat</option>
+                                        <option value="Zonguldak" <? if ($results->location=="Zonguldak"){ echo "selected";} ?>>Zonguldak</option>
+                                        <option value="Aksaray" <? if ($results->location=="Aksaray"){ echo "selected";} ?>>Aksaray</option>
+                                        <option value="Bayburt" <? if ($results->location=="Bayburt"){ echo "selected";} ?>>Bayburt</option>
+                                        <option value="Karaman" <? if ($results->location=="Karaman"){ echo "selected";} ?>>Karaman</option>
+                                        <option value="Kirikkale" <? if ($results->location=="Kirikkale"){ echo "selected";} ?>>Kırıkkale</option>
+                                        <option value="Batman" <? if ($results->location=="Batman"){ echo "selected";} ?>>Batman</option>
+                                        <option value="Sirnak" <? if ($results->location=="Sirnak"){ echo "selected";} ?>>Şırnak</option>
+                                        <option value="Bartın" <? if ($results->location=="Bartın"){ echo "selected";} ?>>Bartın</option>
+                                        <option value="Ardahan" <? if ($results->location=="Ardahan"){ echo "selected";} ?>>Ardahan</option>
+                                        <option value="Igdir" <? if ($results->location=="Igdir"){ echo "selected";} ?>>Iğdır</option>
+                                        <option value="Yalova" <? if ($results->location=="Yalova"){ echo "selected";} ?>>Yalova</option>
+                                        <option value="Karabuk" <? if ($results->location=="Karabuk"){ echo "selected";} ?>>Karabük</option>
+                                        <option value="Kilis" <? if ($results->location=="Kilis"){ echo "selected";} ?>>Kilis</option>
+                                        <option value="Osmaniye" <? if ($results->location=="Osmaniye"){ echo "selected";} ?>>Osmaniye</option>
+                                        <option value="Duzce" <? if ($results->location=="Duzce"){ echo "selected";} ?>>Düzce</option>
                                     </select>
                                 </div>
                             </div>
@@ -248,7 +248,7 @@
                                 </div>
                                 <div class="form-group col-md-3 text-left mt-md-5 pt-md-1">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="1" id="pool" name="pool" style="width: 30px;height: 30px" <? if ($results->pool==1){ echo "checked='checked'";} ?> >
+                                        <input class="form-check-input" type="checkbox" value="1" id="pool" name="pool" style="width: 30px;height: 30px"  <? if ($results->pool==1){ echo "checked='checked'";} ?> >
                                         <label class="form-check-label ml-md-4 mt-md-2  ml-3 mt-2 " for="pool">
                                             <strong>
                                                 POOL

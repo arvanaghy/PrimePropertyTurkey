@@ -61,7 +61,8 @@
         font-weight: 500;
         margin: 2%;
     }
-    .menu_activated{
+
+    .menu_activated {
         background-color: #eaeaea !important;
     }
 
@@ -69,6 +70,8 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
       integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
       crossorigin=""/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
 </head>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>
@@ -76,9 +79,9 @@
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <? if ($userLevel != 9){ ?>
+                <? if ($userLevel != 9) { ?>
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <strong><?= $this->session->userdata('user_info');  ?></strong> Your email is not activated.
+                        <strong><?= $this->session->userdata('user_info'); ?></strong> Your email is not activated.
                         <br>
                         please go to your email and click on verification link
                         <br>
@@ -104,8 +107,8 @@
                             You can add your Property for sale with submit this form
                         </div>
                         <hr width="75%">
-                        <? if ($userLevel == 9){ ?>
-                        <?php echo form_open_multipart(base_url() . 'User/Add_Property_Submit',array('onsubmit' => 'return AddProperty();')); ?>
+                        <? if ($userLevel == 9) { ?>
+                            <?php echo form_open_multipart(base_url() . 'User/Add_Property_Submit', array('onsubmit' => 'return AddProperty();')); ?>
                             <div class="row">
                                 <div class="col-md-6 form-group text-left">
                                     <label for="kind">
@@ -139,7 +142,7 @@
                                         </small>
                                         <span class="required text-danger">*</span>
                                     </label>
-                                    <select name="location" id="location"  class="form-control" required >
+                                    <select name="location" id="location" data-live-search="true" class="form-control" required>
                                         <option value="0">Property City</option>
                                         <option value="Istanbul">Istanbul</option>
                                         <option value="Ankara">Ankara</option>
@@ -267,7 +270,8 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-8 text-left">
-                                    <label for="title" style="padding-top:20px;padding-bottom:5px;" class="control-label">
+                                    <label for="title" style="padding-top:20px;padding-bottom:5px;"
+                                           class="control-label">
                                         <small>
                                             <strong>
                                                 Title
@@ -281,7 +285,8 @@
                                     <div id="title_length_error" class="text-danger"></div>
                                 </div>
                                 <div class="form-group col-md-4 text-left">
-                                    <label for="price" style="padding-top:20px;padding-bottom:5px;" class="control-label">
+                                    <label for="price" style="padding-top:20px;padding-bottom:5px;"
+                                           class="control-label">
                                         <small>
                                             <strong>
                                                 Price (In US Dollar)
@@ -306,13 +311,16 @@
                                         </small>
                                         <span class="required text-danger">*</span>
                                     </label>
-                                    <input type="file" name="property_images[]" id="property_images" multiple="true" accept=".jpg"
+                                    <input type="file" name="property_images[]" id="property_images" multiple="true"
+                                           accept=".jpg"
                                            class="form-control" required/>
-                                    <div id="property_images_error" class="text-danger text-left font-weight-bold my-3"></div>
+                                    <div id="property_images_error"
+                                         class="text-danger text-left font-weight-bold my-3"></div>
                                 </div>
                                 <div class="form-group col-md-3 text-left mt-md-5 pt-md-1">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="1" id="pool" name="pool" style="width: 30px;height: 30px">
+                                        <input class="form-check-input" type="checkbox" value="1" id="pool" name="pool"
+                                               style="width: 30px;height: 30px">
                                         <label class="form-check-label ml-md-4 mt-md-2  ml-3 mt-2 " for="pool">
                                             <strong>
                                                 POOL
@@ -339,19 +347,21 @@
                                                 </strong>
                                             </small>
                                         </label>
-                                        <textarea name="description" id="description" class="form-control" rows="6"></textarea>
+                                        <textarea name="description" id="description" class="form-control"
+                                                  rows="6"></textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="row justify-content-end">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="submit" class="btn btn-block btn-primary" value="Submit Property" id="submit">
+                                        <input type="submit" class="btn btn-block btn-primary" value="Submit Property"
+                                               id="submit">
                                     </div>
                                 </div>
                             </div>
-                        </form>
-                        <? }else{ ?>
+                            </form>
+                        <? } else { ?>
                             <div class="alert alert-warning alert-dismissible fade show" role="alert">
                                 <strong>Sorry, This section is unavailable for your account</strong>
                                 <br>
@@ -359,7 +369,7 @@
                                 <br>
                                 Please go to your email and click on verification link
                             </div>
-                         <? } ?>
+                        <? } ?>
                     </div>
                 </div>
             </div>
@@ -371,6 +381,12 @@
 <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
         integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
         crossorigin=""></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
+
 <script type="text/javascript">
     var map = L.map('my_map').setView([38.9637, 35.2433], 5.5);
 
@@ -393,58 +409,61 @@
     });
 </script>
 <script type="text/javascript">
-    $(document).ready(function(){
-        $('#title').change(function(){
-            $("#submit").prop("disabled",false);
+    $(document).ready(function () {
+        $('#title').change(function () {
+            $("#submit").prop("disabled", false);
             let value_data = $(this).val();
             $('#title_duplicate_error').text('');
             $('#title_length_error').text('');
             $.ajax({
-                url:'<?= base_url(); ?>User/propertyTitleCheck',
+                url: '<?= base_url(); ?>User/propertyTitleCheck',
                 method: 'POST',
                 data: {value_data: value_data},
                 dataType: 'json',
-                success: function(response){
+                success: function (response) {
                     $.each(response, function (i, item) {
                         $('#title_duplicate_error').text('this title is used , please choose another one');
-                        $("#submit").prop("disabled",true);
+                        $("#submit").prop("disabled", true);
 
                     });
                 }
             });
-            if (value_data.length > 50 ){
+            if (value_data.length > 50) {
                 $('#title_length_error').text('this title is too long');
-                $("#submit").prop("disabled",true);
+                $("#submit").prop("disabled", true);
             }
         });
         $('#price').keyup(function () {
             let x = $(this).val();
-            $('#price_comma').text('$'+addCommas(x));
+            $('#price_comma').text('$' + addCommas(x));
         });
+
         function addCommas(x) {
             var parts = x.toString().split(".");
             parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             return parts.join(".");
         }
+        $('#location').selectpicker();
+
     });
 </script>
 <script type="text/javascript">
-    function AddProperty(){
-        document.getElementById('my_map_error').innerText='';
-        document.getElementById('property_images_error').innerText='';
+    function AddProperty() {
+        document.getElementById('my_map_error').innerText = '';
+        document.getElementById('property_images_error').innerText = '';
         let correctFlag = true;
         let lat = document.getElementById("latit");
         let long = document.getElementById("longit");
-        if (!lat.value && !long.value ){
+        if (!lat.value && !long.value) {
             correctFlag = false;
-            document.getElementById('my_map_error').innerText='Please select your property location on the map';
+            document.getElementById('my_map_error').innerText = 'Please select your property location on the map';
             document.getElementById('my_map').focus();
         }
         let fileUpload = document.getElementById("property_images");
         let images_cont = fileUpload.files.length;
         for (let i = 0; i < images_cont; i++) {
-            if ((fileUpload.files[i].size/1024).toFixed(0)>2048){
-                document.getElementById('property_images_error').innerText='image size is more than 2 MB, please reduce your image size';
+            if ((fileUpload.files[i].size / 1024).toFixed(0) > 2048) {
+                document.getElementById('property_images_error').innerText = 'image size is more than 2 MB, please reduce your image size';
                 document.getElementById('property_images').focus();
                 correctFlag = false;
             }
@@ -454,8 +473,8 @@
                 var image = new Image();
                 image.src = e.target.result;
                 image.onload = function () {
-                    if (this.width > 4800 || this.height > 2880){
-                        document.getElementById('property_images_error').innerText='image dimensions are bigger than 4800 * 2880  pixel';
+                    if (this.width > 4800 || this.height > 2880) {
+                        document.getElementById('property_images_error').innerText = 'image dimensions are bigger than 4800 * 2880  pixel';
                         document.getElementById('property_images').focus();
                         correctFlag = false;
                     }

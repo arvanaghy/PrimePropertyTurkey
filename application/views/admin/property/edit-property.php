@@ -107,6 +107,7 @@
                                 </label>
                                 <input type="number" name="USD" id="USD" placeholder="Price" required class="form-control" value="<?= $results->Property_price; ?>">
                                 <input type="hidden" name="property_id"  required  value="<?= $results->Property_id; ?>">
+                                <div class="mx-1 font-weight-bold" id="price_comma"></div>
                             </div>
                             <div class="form-group col-sm-3">
                                 <label style="padding:5px;" class="control-label">
@@ -173,7 +174,6 @@
                                     <option value="Trabzon" <?php if($results->Property_location=="Trabzon"){ echo"selected"; } ?>> Trabzon</option>
                                     <option value="Yalova" <?php if($results->Property_location=="Yalova"){ echo"selected"; } ?>> Yalova</option>
                                     <option value="Bodrum" <?php if($results->Property_location=="Bodrum"){ echo"selected"; } ?>> Bodrum</option>
-
                                 </select>
                             </div>
                         </div>
@@ -582,6 +582,15 @@
     });
     var postForm = function() {
         var content = $('textarea[name="content"]').html($('.summernote').code());
+    }
+    $('#USD').keyup(function () {
+        let x = $(this).val();
+        $('#price_comma').text('$' + addCommas(x));
+    });
+    function addCommas(x) {
+        var parts = x.toString().split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return parts.join(".");
     }
 </script>
 

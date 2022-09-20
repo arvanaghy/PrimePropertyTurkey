@@ -81,6 +81,7 @@
                                         </small>
                                     </label>
                                     <input type="text" name="USD" id="USD" placeholder="Price" required class="form-control">
+                                    <div class="mx-1 font-weight-bold" id="price_comma"></div>
                                 </div>
                                 <div class="form-group col-sm-3">
                                     <label style="padding:5px;" class="control-label">
@@ -350,6 +351,16 @@
     var postForm = function() {
         var content = $('textarea[name="content"]').html($('.summernote').code());
     }
+
+    $('#USD').keyup(function () {
+        let x = $(this).val();
+        $('#price_comma').text('$' + addCommas(x));
+    });
+    function addCommas(x) {
+        var parts = x.split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return parts.join(".");
+    }
 </script>
 <script type="text/javascript">
     $(document).ready(function(){
@@ -385,6 +396,7 @@
                   manipulate = title;
             }
             title = manipulate;
+
             if(title.includes(city)){
                  manipulate =  title.replace(city,'');
             }else{
@@ -420,9 +432,10 @@
             }
             title = manipulate;
 
-            let showed_text = title + ' '+type+' for sale '+city+' '+reference;
+            let showed_text = type +' '+ city +' '+ reference;
+            let showed_other_text = type +' '+ city +' '+ title;
             $('#url_suggest_info').css('display','inline-block');
-            $('#url_suggest').html("<br>"+showed_text);
+            $('#url_suggest').html("<br>"+showed_text+"<br>"+showed_other_text);
 
         })
     });
