@@ -12,7 +12,7 @@ class Seo extends CI_Controller
     public function sitemap()
     {
         $data = array();
-        $data['price_array'] = array(100000,200000,300000,400000,500000,1000000);
+        $data['price_array'] = array(100000, 200000, 300000, 400000, 500000, 1000000);
         $data['Properties'] = $this->Seo_Model->listPropertiesUrl();
         $data['Property_ILCE'] = array(
             'Zeytinburnu',
@@ -64,21 +64,21 @@ class Seo extends CI_Controller
         $data['Property_Bedrooms'] = $this->Seo_Model->listPropertyBedroomsUrl();
         $data['Property_City_Type_Filters'] = $this->Seo_Model->listPropertyCityTypeFiltersUrl();
         $data['Property_City_Bedroom_Filters'] = $this->Seo_Model->listPropertyCityBedroomFiltersUrl();
-        foreach ($data['price_array'] as $price){
-            $data['Property_City_Price_'.$price.'_Filters'] = $this->Seo_Model->listPropertyCityPriceFiltersUrl($price);
+        foreach ($data['price_array'] as $price) {
+            $data['Property_City_Price_' . $price . '_Filters'] = $this->Seo_Model->listPropertyCityPriceFiltersUrl($price);
         }
         $data['Property_Type_Bedroom_Filters'] = $this->Seo_Model->listPropertyTypeBedroomFiltersUrl();
-        foreach ($data['price_array'] as $price){
-            $data['Property_Type_Bedroom_Price_'.$price.'_Filters'] = $this->Seo_Model->listPropertyTypeBedroomPriceFiltersUrl($price);
+        foreach ($data['price_array'] as $price) {
+            $data['Property_Type_Bedroom_Price_' . $price . '_Filters'] = $this->Seo_Model->listPropertyTypeBedroomPriceFiltersUrl($price);
         }
         $data['Property_City_Type_Bedroom_Filters'] = $this->Seo_Model->listPropertyCityTypeBedroomFiltersUrl();
-        foreach ($data['price_array'] as $price){
-            $data['Property_City_Type_Bedroom_price_'.$price.'_Filters'] = $this->Seo_Model->listPropertyCityTypeBedroomPriceFiltersUrl($price);
+        foreach ($data['price_array'] as $price) {
+            $data['Property_City_Type_Bedroom_price_' . $price . '_Filters'] = $this->Seo_Model->listPropertyCityTypeBedroomPriceFiltersUrl($price);
         }
-        foreach ($data['price_array'] as $price){
-            $data['Property_Bedroom_price_'.$price.'_Filters'] = $this->Seo_Model->listPropertyBedroomPriceFiltersUrl($price);
+        foreach ($data['price_array'] as $price) {
+            $data['Property_Bedroom_price_' . $price . '_Filters'] = $this->Seo_Model->listPropertyBedroomPriceFiltersUrl($price);
         }
         header("Content-Type: text/xml;charset=iso-8859-1");
-        $this->load->view("web-site/sitemap",$data);
+        $this->load->view("web-site/sitemap", $data);
     }
 }

@@ -1067,7 +1067,7 @@
                         all for free as a Turkish Citizen. Contact us today to find out how you can be apart of Turkey's
                         future.
                     </p>
-                    <a href="<?= base_url(); ?>Citizenship_by_investment" class="btn red-button mb-1 mt-md-3"> READ MORE </a>
+                    <a href="<?= base_url(); ?>citizenship-by-investment-in-turkey" class="btn red-button mb-1 mt-md-3"> READ MORE </a>
                 </div>
                 <div class="col-md-4 text-center d-flex">
                     <img src="<?= base_url(); ?>assets/web-site/images/base/masters/PASSAPORT.webp"
@@ -1316,7 +1316,7 @@
                         of your home. In six simple steps, you can become a property owner and have the option to become
                         a Turkish citizen by investment in a property in a matter of a few clicks.
                     </p>
-                    <a href="<?= base_url(); ?>Buying_online" class="btn red-button"
+                    <a href="<?= base_url(); ?>buying-online" class="btn red-button"
                        style="display: block;width: 175px;text-align: center;border-radius: 20px;margin-bottom: 30px;">
                         Get to know more </a>
 

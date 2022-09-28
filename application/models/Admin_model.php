@@ -135,6 +135,7 @@ class Admin_model extends CI_Model
         $this->db->order_by('Blog_ID', 'DESC');
         $this->db->group_start();
         $this->db->where('status',0);
+        $this->db->or_where('status',3);
         $this->db->group_end();
         $query = $this->db->get('blog');
         if ($query->result()){
@@ -189,6 +190,27 @@ class Admin_model extends CI_Model
     {
         $this->db->delete('blog', array('Blog_ID' => $id));
     }
+    public function getBlogTitleAjax($value)
+    {
+        $this->db->select('Blog_ID');
+        $this->db->where('url_slug',$value);
+        $query = $this->db->get('blog');
+        if ($query->result()){
+            return $query->result_array();
+        }else{
+            return $data['Blog_ID'] = null;
+        }
+    }
+    public function publishBlogPostOnDate($date)
+    {
+        $this->db->set('status',0);
+        $this->db->group_start();
+        $this->db->where('publish_date',$date);
+        $this->db->where('status',3);
+        $this->db->group_end();
+        $this->db->update('blog');
+    }
+
 
     public function fetchnews()
     {

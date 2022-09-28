@@ -90,7 +90,14 @@
 
                                     </td>
                                     <td><?= substr(strip_tags($row->Blog_Content),0,200); ?></td>
-                                    <td><?= $row->Blog_Created_date; ?></td>
+                                    <td>
+                                        <? if ($row->status ==3) {
+                                                 echo $row->publish_date;
+                                            }elseif($row->status ==0){
+                                                echo $row->Blog_Created_date;
+                                            }
+                                        ?>
+                                    </td>
                                     <td><?= $row->likeCount; ?></td>
                                     <td><?= $row->dislikeCount; ?></td>
                                     <td><?= $row->dislikeCount + $row->likeCount; ?></td>

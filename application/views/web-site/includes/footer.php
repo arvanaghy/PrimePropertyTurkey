@@ -184,7 +184,7 @@
                     <ul>
                         <li>
                             <i class="fas fa-chevron-right red-text mx-1"></i>
-                            <a href="<?= base_url(); ?>About-us">
+                            <a href="<?= base_url(); ?>about-us">
                                 About Us
                             </a>
                         </li>
@@ -196,13 +196,13 @@
                         </li>
                         <li>
                             <i class="fas fa-chevron-right red-text mx-1"></i>
-                            <a href="<?= base_url(); ?>Blog">
+                            <a href="<?= base_url(); ?>blog">
                                 Blog
                             </a>
                         </li>
                         <li>
                             <i class="fas fa-chevron-right red-text mx-1"></i>
-                            <a href="<?= base_url(); ?>News">
+                            <a href="<?= base_url(); ?>news">
                                 News
                             </a>
                         </li>

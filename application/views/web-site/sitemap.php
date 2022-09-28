@@ -51,7 +51,7 @@
         <priority>0.1</priority>
     </url>
     <url>
-        <loc><?= base_url();?>Buying-online</loc>
+        <loc><?= base_url();?>buying-online</loc>
         <changefreq>monthly</changefreq>
         <priority>0.1</priority>
     </url>
@@ -194,14 +194,14 @@
     <? } ?>
     <? foreach($News as $url) { ?>
         <url>
-            <loc><?= base_url().'News/'.$url->url_slug; ?></loc>
+            <loc><?= base_url().'news/'.$url->url_slug; ?></loc>
             <changefreq>daily</changefreq>
             <priority>1.0</priority>
         </url>
     <? } ?>
     <? foreach($Blog as $url) { ?>
         <url>
-            <loc><?= base_url().'Blog/'.$url->url_slug; ?></loc>
+            <loc><?= base_url().'blog/'.$url->url_slug; ?></loc>
             <changefreq>daily</changefreq>
             <priority>1.0</priority>
         </url>

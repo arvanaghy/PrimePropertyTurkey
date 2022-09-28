@@ -10,7 +10,7 @@
 } ?>
 <meta name="description"
       content="Read latest news by Prime Property Turkey, find exciting news and updates from Turkish Real estate market, newest properties for sale and much more. ">
-<link rel="canonical" href="https://www.primepropertyturkey.com/News/<? if ($page_id != 0) {
+<link rel="canonical" href="https://www.primepropertyturkey.com/news/<? if ($page_id != 0) {
     echo $page_id . '/';
 } ?>"/>
 <style type="text/css">

@@ -16,7 +16,8 @@ class PrintPreview extends CI_Controller
             $this->load->view('web-site/properties/PrintPreview',$data);
 
         }else{
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
     public function setResalePrintView($passed_url=''){
@@ -32,7 +33,8 @@ class PrintPreview extends CI_Controller
             $this->load->view('web-site/resale/PrintResalePreview',$data);
 
         }else{
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
 }

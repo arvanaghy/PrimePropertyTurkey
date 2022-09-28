@@ -11,7 +11,7 @@
 <title>Buying Online</title>
 <meta name="description" content="In the twenty-first century where the internet provides us with direct access,
                                 purchasing a property overseas and becoming a property owner has become much easier.">
-<link rel="canonical" href="https://www.primepropertyturkey.com/Buying-online"/>
+<link rel="canonical" href="https://www.primepropertyturkey.com/buying-online"/>
 
 </head>
 <body>

@@ -2,31 +2,62 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['default_controller'] = 'home';
-$route['404_override'] = 'custom404';
+$route['404_override'] = 'Custom404';
 $route['translate_uri_dashes'] = FALSE;
-$route['landing_page'] = 'Landing_Page';
-$route['citizenship_by_investment'] = 'citizenship_by_investment_in_turkey';
-$route['Citizenship_by_investment'] = 'citizenship_by_investment_in_turkey';
+
+
+$route['citizenship_by_investment'] = 'Custom404';
+$route['Citizenship_by_investment'] = 'Custom404';
+$route['citizenship-by-investment-in-turkey'] = 'Citizenship_by_investment_in_turkey';
 $route['Citizenship-by-investment-in-turkey'] = 'Citizenship_by_investment_in_turkey';
-$route['buyer-guide'] = 'buyer_guide';
-$route['Buyer-guide'] = 'buyer_guide';
-$route['Buying_online'] = 'buying_online';
-$route['Buying-online'] = 'buying_online';
+
+$route['buyer-guide'] = 'Custom404';
+$route['Buyer-guide'] = 'Custom404';
+$route['Buying_online'] = 'Custom404';
+$route['Buying-online'] = 'Custom404';
 $route['buying-online'] = 'buying_online';
+
 $route['blog/(:any)'] = 'blog/details/$1';
+$route['Blog/(:any)'] = 'blog/details/$1';
 $route['news/(:any)'] = 'news/details/$1';
+$route['News/(:any)'] = 'news/details/$1';
+$route['Like/blog/(:any)'] = 'Like/blog/$1';
+$route['Dislike/blog/(:any)'] = 'Dislike/blog/$1';
+$route['Like/news/(:any)'] = 'Like/news/$1';
+$route['Dislike/news/(:any)'] = 'Dislike/news/$1';
+$route['ru/blog/Турция-становится-безопасным-раем-для-российских-инвесторов'] = 'Ru/Blog/$1';
+$route['BlogFind/(:any)'] = 'BlogFind/details/$1';
+
 $route['about-us'] = 'about_us';
-$route['About-us'] = 'about_us';
+$route['About-us'] = 'Custom404';
 $route['contact-us'] = 'contact_us';
-$route['Contact-us'] = 'contact_us';
+$route['Contact-us'] = 'Custom404';
 $route['privacy-policy'] = 'privacy_policy';
 $route['area-guide'] = 'area_guide';
+$route['How-To-Buy-Property-In-Turkey'] = 'Buyer_guide';
 $route['short-term-residency-extension'] = 'short_term_residency_extension';
 $route['frequently-asked-questions-faq'] = 'frequently_asked_questions_faq';
-$route['after-sales'] = 'after_sales';
 $route['short-term-residency-permit'] = 'short_term_residency_permit';
+$route['after-sales'] = 'after_sales';
+
+$route['Resale/Preview/(:any)'] = 'Resale/Preview/$1';
+$route['Resale/PreviewPublishedResale/(:any)'] = 'Resale/PreviewPublishedResale/$1';
+
+$route['Verification/userRegister/(:any)'] ='Verification/userRegister/$1';
+$route['Verification/passwordReset/(:any)'] ='Verification/passwordReset/$1';
+$route['Signup/Verification/(:any)'] ='Signup/Verification/$1';
+
+$route['Turkey/(:any)/(:any)/(:any)/(:any)'] = 'Turkey/index/$1_$2_$3_$4';
+$route['Turkey/(:any)/(:any)/(:any)/(:any)/(:any)'] = 'Turkey/pagination/$1_$2_$3_$4_$5';
+
+$route['prime-videos'] = 'Prime_Videos/index/';
+$route['prime-videos/(:any)'] = 'Prime_Videos/details/$1';
+
+$route['seo/sitemap\.xml'] = "seo/sitemap";
+
+// properties routes
 $route['properties/(:any)'] = 'properties/details/$1';
-$route['property/(:any)'] = 'properties/details/$1';
+$route['property/(:any)'] = 'Custom404';
 $route['properties/Istanbul/(:any)'] = 'properties/Istanbul/$1';
 $route['properties/Fethiye/(:any)'] = 'properties/Fethiye/$1';
 $route['properties/Bursa/(:any)'] = 'properties/Bursa/$1';
@@ -46,9 +77,8 @@ $route['properties/Commercial/(:any)'] = 'properties/Commercial/$1';
 $route['properties/Search/(:any)'] = 'properties/Search/$1';
 $route['properties/Featured/(:any)'] = 'properties/Featured/$1';
 $route['PrintPreview/setPrintView/(:any)'] = 'PrintPreview/setPrintView/$1';
-//$route['PrintPreview/setResalePrintView/(:any)'] = 'PrintPreview/setResalePrintView/$1';
 
-// Istanbul Ilce
+// Istanbul Ilce routes
 $route['properties/Adalar/(:any)'] = 'properties/Adalar/$1';
 $route['properties/Arnavutkoy/(:any)'] = 'properties/Arnavutkoy/$1';
 $route['properties/Atasehir/(:any)'] = 'properties/Atasehir/$1';
@@ -89,47 +119,27 @@ $route['properties/Silivri/(:any)'] = 'properties/Silivri/$1';
 $route['properties/Uskudar/(:any)'] = 'properties/Uskudar/$1';
 $route['properties/Zeytinburnu/(:any)'] = 'properties/Zeytinburnu/$1';
 
+
 // route old site to new one
-$route['Prime'] = 'home';
-$route['Prime/area_guide'] = 'Area_guide';
-$route['Prime/buyer_guide'] = 'Buyer_guide';
-$route['How-To-Buy-Property-In-Turkey'] = 'Buyer_guide';
-$route['Prime/buying_online'] = 'Buying_online';
-$route['Prime/about_us'] = 'About_us';
-$route['Prime/contact_us'] = 'Contact_us';
-$route['Prime/login'] = 'Login';
-$route['Prime/registers'] = 'User_register';
-$route['Prime/citizenship_by_investment'] = 'Citizenship_by_investment_in_turkey';
-$route['Prime/short_term_residency_permit'] = 'Short_term_residency_permit';
-$route['Prime/short_term_residency_extension'] = 'Short_term_residency_extension';
-$route['Prime/frequently_asked_questions_faq'] = 'Frequently_asked_questions_faq';
-$route['Prime/privacy-policy'] = 'Privacy_policy';
+$route['Prime'] = 'Custom404';
+$route['Prime/(:any)'] = 'Custom404';
 
-$route['blog/blogs/(:any)'] = 'blog';
-$route['Blog/(:any)'] = 'blog/details/$1';
-$route['News/news/(:any)'] = 'news';
-$route['News/(:any)'] = 'news/details/$1';
+$route['blog/blogs/(:any)'] = 'Custom404';
+$route['News/news/(:any)'] = 'Custom404';
 
-$route['city'] = 'properties';
-$route['city/Istanbul'] = 'properties/Istanbul';
-$route['city/Fethiye'] = 'properties/Fethiye';
-$route['city/Kalkan'] = 'properties/Kalkan';
-$route['city/Kas'] = 'properties/Kas';
-$route['city/Bodrum'] = 'properties/Bodrum';
-$route['city/Bursa'] = 'properties/Bursa';
+$route['city'] = 'Custom404';
+$route['city/(:any)'] = 'Custom404';
 
-$route['city/Istanbul/(:any)'] = 'properties/Istanbul';
-$route['city/Fethiye/(:any)'] = 'properties/Fethiye';
-$route['city/Kalkan/(:any)'] = 'properties/Kalkan';
-$route['city/Kas/(:any)'] = 'properties/Kas';
-$route['city/Bodrum/(:any)'] = 'properties/Bodrum';
-$route['city/Bursa/(:any)'] = 'properties/Bursa';
+$route['Real_estate'] ='Custom404';
+$route['Real_estate/(:any)'] ='Custom404';
 
-$route['Real_estate/properties/(:any)'] ='properties/details/$1';
-$route['Real_estate/property/(:any)'] ='properties';
+//route user functions
+$route['User/Delete_Property/(:any)'] = 'User/Delete_Property/$1';
+$route['User/Edit_Property/(:any)'] = 'User/Edit_Property/$1';
+$route['User/Delete_Published_Property/(:any)'] = 'User/Delete_Published_Property/$1';
+$route['User/Delete_Resale_Image/(:any)'] = 'User/Delete_Resale_Image/$1';
 
-$route['Real_estate/(:any)'] ='properties';
-
+//route admin functions
 $route['Admin/Delete_Property/(:any)'] ='Admin/Delete_Property/$1';
 $route['Admin/Delete_Blog/(:any)'] ='Admin/Delete_Blog/$1';
 $route['Admin/Delete_Videos/(:any)'] ='Admin/Delete_Videos/$1';
@@ -145,7 +155,6 @@ $route['Admin/Edit_Blog/(:any)'] ='Admin/Edit_Blog/$1';
 $route['Admin/Edit_Videos/(:any)'] ='Admin/Edit_Videos/$1';
 $route['Admin/Edit_Property/(:any)'] ='Admin/Edit_Property/$1';
 $route['Admin/Delete_Property_Gallery/(:any)'] ='Admin/Delete_Property_Gallery/$1';
-
 
 $route['Admin/Show_Blog_Comments/(:any)'] ='Admin/Show_Blog_Comments/$1';
 $route['Admin/Show_News_Comments/(:any)'] ='Admin/Show_News_Comments/$1';
@@ -165,34 +174,3 @@ $route['Admin/Change_Job/(:any)'] ='Admin/Change_Job/$1';
 
 $route['Admin/Publish/(:any)'] ='Admin/Publish/$1';
 $route['Admin/UnPublish/(:any)'] ='Admin/UnPublish/$1';
-$route['Resale/Preview/(:any)'] = 'Resale/Preview/$1';
-$route['Resale/PreviewPublishedResale/(:any)'] = 'Resale/PreviewPublishedResale/$1';
-
-$route['User/Delete_Property/(:any)'] = 'User/Delete_Property/$1';
-$route['User/Edit_Property/(:any)'] = 'User/Edit_Property/$1';
-$route['User/Delete_Published_Property/(:any)'] = 'User/Delete_Published_Property/$1';
-
-$route['User/Delete_Resale_Image/(:any)'] = 'User/Delete_Resale_Image/$1';
-
-
-$route['Verification/userRegister/(:any)'] ='Verification/userRegister/$1';
-$route['Verification/passwordReset/(:any)'] ='Verification/passwordReset/$1';
-$route['Signup/Verification/(:any)'] ='Signup/Verification/$1';
-
-$route['Turkey/(:any)/(:any)/(:any)/(:any)'] = 'Turkey/index/$1_$2_$3_$4';
-$route['Turkey/(:any)/(:any)/(:any)/(:any)/(:any)'] = 'Turkey/pagination/$1_$2_$3_$4_$5';
-
-$route['ru/blog/Турция-становится-безопасным-раем-для-российских-инвесторов'] = 'Ru/Blog/$1';
-
-$route['BlogFind/(:any)'] = 'BlogFind/details/$1';
-
-$route['prime-videos'] = 'Prime_Videos/index/';
-$route['prime-videos/(:any)'] = 'Prime_Videos/details/$1';
-
-$route['Like/blog/(:any)'] = 'Like/blog/$1';
-$route['Dislike/blog/(:any)'] = 'Dislike/blog/$1';
-
-$route['Like/news/(:any)'] = 'Like/news/$1';
-$route['Dislike/news/(:any)'] = 'Dislike/news/$1';
-
-$route['seo/sitemap\.xml'] = "seo/sitemap";

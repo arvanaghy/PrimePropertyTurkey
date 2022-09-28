@@ -10,7 +10,7 @@ class Properties extends CI_Controller
         $this->load->helper('geolocation_helper');
         $this->load->helper('favorite');
     }
-    
+
     public function index()
     {
         $find_array = array('Property_location' => '');
@@ -21,79 +21,81 @@ class Properties extends CI_Controller
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
         $this->load->view('web-site/properties/Index', $data);
     }
+
     public function details($passed_url = '')
     {
         $this->load->helper('form');
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
-        if (strtoupper($passed_url) == 'INDEX' OR $passed_url=='') {
+        if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
             redirect(base_url() . 'properties');
         }
         if (preg_match("/^\d+$/", $passed_url)) {
 
             $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-            
+
             $data['page_id'] = (int)$passed_url;
             $data['all'] = $this->Fetch_m->record_count('property');
             $pages = (int)ceil($data['all'] / 20);
             $data['pages'] = $pages - 1;
 
             if ((int)$passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             } else {
                 $find_array = array('Property_location' => '');
                 $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
-                $data['geolocation']=fetch_geolocation();
+                $data['geolocation'] = fetch_geolocation();
                 $this->load->view('web-site/properties/Index', $data);
             }
         } else {
             $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-
             $find_array = array('url_slug' => urldecode(strip_tags($passed_url)));
             $data['property_result'] = $this->Fetch_m->findPropertyExact($find_array);
             if ($data['property_result']) {
-                foreach ($data['property_result'] as $result){
+                foreach ($data['property_result'] as $result) {
                     $data['property_image_gallery'] = $this->Fetch_m->get_gallery($result->Property_id);
-                    $data['Recommended_Neighborhood_Properties'] = $this->Fetch_m->get_Neighborhood_Properties($result->Property_location_city,$result->Property_id);
+                    $data['Recommended_Neighborhood_Properties'] = $this->Fetch_m->get_Neighborhood_Properties($result->Property_location_city, $result->Property_id);
                 }
-                if (!$data['Recommended_Neighborhood_Properties']){
+                if (!$data['Recommended_Neighborhood_Properties']) {
                     $find_array = array('Property_location' => '');
                     $data['recently_added'] = $this->Fetch_m->findProperty($find_array, 6);
                 }
-                $data['geolocation']=fetch_geolocation();
+                $data['geolocation'] = fetch_geolocation();
                 $this->load->view('web-site/properties/Audition', $data);
             } else {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
         }
     }
@@ -120,43 +122,46 @@ class Properties extends CI_Controller
             $favorite_count = count($favorite_array);
             $pages = (int)ceil($favorite_count / 20);
             if ($this->uri->segment(3, null) > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['pages'] = $pages - 1;
             $data['page_id'] = $this->uri->segment(3, null);
             $data['property_result'] = $this->Fetch_m->getFavorites(get_cookie('favorite'), 20, $data['page_id'] * 20);
-            $data['geolocation']=fetch_geolocation();
+            $data['geolocation'] = fetch_geolocation();
             $this->load->view('web-site/properties/Favorite', $data);
         } elseif ($this->uri->segment(3, null) == null) {
             $data['property_result'] = $this->Fetch_m->getFavorites(get_cookie('favorite'));
-            $data['geolocation']=fetch_geolocation();
+            $data['geolocation'] = fetch_geolocation();
             $this->load->view('web-site/properties/Favorite', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Istanbul($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
 
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location' => 'Istanbul');
@@ -171,44 +176,47 @@ class Properties extends CI_Controller
         if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20);
             $this->load->view('web-site/properties/Details', $data);
-        }elseif(strtoupper($passed_url) == 'APARTMENT'){
-            $find_array = array('Property_location' => $data['cityValue'],'Property_type'=>'Apartment');
+        } elseif (strtoupper($passed_url) == 'APARTMENT') {
+            $find_array = array('Property_location' => $data['cityValue'], 'Property_type' => 'Apartment');
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20);
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Fethiye($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
 
 
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
 
@@ -227,37 +235,40 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Bursa($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
 
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location' => 'Bursa');
@@ -275,38 +286,41 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Kalkan($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
 
 
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
 
         $data['city_description_show'] = True;
 
@@ -325,37 +339,40 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Kas($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
 
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
 
         $data['city_description_show'] = True;
 
@@ -374,36 +391,39 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Bodrum($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
 
         $data['city_description_show'] = True;
 
@@ -421,37 +441,40 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Gocek($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
 
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location' => 'Gocek');
@@ -469,38 +492,41 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Izmir($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
 
 
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location' => 'Izmir');
@@ -518,33 +544,36 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Antalya($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
 
 
@@ -567,33 +596,36 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Yalova($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
 
 
@@ -616,33 +648,36 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Trabzon($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
 
 
@@ -665,38 +700,41 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Apartment($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
 
 
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
 
         $where_array = array('Property_type' => 'Apartment');
         $data['all'] = $this->Fetch_m->record_count('property', $where_array);
@@ -712,36 +750,39 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Bungalow($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
 
         $where_array = array('Property_type' => 'Bungalow');
         $data['all'] = $this->Fetch_m->record_count('property', $where_array);
@@ -757,38 +798,41 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Hotel($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
 
 
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
 
         $where_array = array('Property_type' => 'Hotel');
         $data['all'] = $this->Fetch_m->record_count('property', $where_array);
@@ -804,37 +848,40 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Land_for_sale($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
 
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
 
         $where_array = array('Property_type' => 'Land_for_sale');
         $data['all'] = $this->Fetch_m->record_count('property', $where_array);
@@ -850,37 +897,40 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Penthouse($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
 
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
 
         $where_array = array('Property_type' => 'Penthouse');
         $data['all'] = $this->Fetch_m->record_count('property', $where_array);
@@ -896,37 +946,40 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Villa($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
 
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
 
         $where_array = array('Property_type' => 'Villa');
         $data['all'] = $this->Fetch_m->record_count('property', $where_array);
@@ -942,37 +995,40 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Duplex($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
 
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
 
         $where_array = array('Property_type' => 'Duplex');
         $data['all'] = $this->Fetch_m->record_count('property', $where_array);
@@ -988,37 +1044,40 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Mansion($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
 
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
 
         $where_array = array('Property_type' => 'Mansion');
         $data['all'] = $this->Fetch_m->record_count('property', $where_array);
@@ -1034,36 +1093,39 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Commercial($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
 
         $data['all'] = $this->Fetch_m->record_count_commercial('property');
         $pages = (int)ceil($data['all'] / 20);
@@ -1077,40 +1139,43 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findPropertyCommercial(20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Search($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
-        if (!$this->input->post('search') and !$this->session->has_userdata('search_phrase')){
+        if (!$this->input->post('search') and !$this->session->has_userdata('search_phrase')) {
             redirect(base_url());
         }
 
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
 
         if ($this->input->post('search')) {
             $this->session->set_userdata('search_phrase', $this->input->post('search'));
@@ -1136,13 +1201,15 @@ class Properties extends CI_Controller
                     $this->load->view('web-site/properties/Details', $data);
                 } elseif (preg_match("/^\d+$/", $passed_url)) {
                     if ($passed_url > $data['pages']) {
-                        redirect(base_url() . 'Custom404');
+                        $this->output->set_status_header('404');
+                        $this->load->view('web-site/Custom404');
                     }
                     $data['page_id'] = (int)$passed_url;
                     $data['property_result'] = $this->Fetch_m->search($data['search'], 20, $data['page_id'] * 20);
                     $this->load->view('web-site/properties/Details', $data);
                 } else {
-                    redirect(base_url() . 'Custom404');
+                    $this->output->set_status_header('404');
+                    $this->load->view('web-site/Custom404');
                 }
             } else {
                 $this->session->set_flashdata('message', "<div id='toast_message' class='warning'> Your Search Has No Result </div>");
@@ -1157,28 +1224,29 @@ class Properties extends CI_Controller
             redirect($this->agent->referrer());
         }
     }
+
     public function Find($passed_url = '')
     {
         $data = array();
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
 
         $data['cityValue'] = 'Find';
         $data['city_description_show'] = False;
@@ -1202,7 +1270,7 @@ class Properties extends CI_Controller
             $data['all'] = $this->Fetch_m->record_count_find($this->session->userdata('find_phrase'));
             $pages = (int)ceil($data['all'] / 20);
             $data['pages'] = $pages - 1;
-            $data['SEO_BAR']=$this->session->userdata('find_phrase');
+            $data['SEO_BAR'] = $this->session->userdata('find_phrase');
             if ($data['all']) {
                 if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
                     $data['property_result'] = $this->Fetch_m->searchProperty($this->session->userdata('find_phrase'));
@@ -1210,44 +1278,48 @@ class Properties extends CI_Controller
                     $this->load->view('web-site/properties/Details', $data);
                 } elseif (preg_match("/^\d+$/", $passed_url)) {
                     if ($passed_url > $data['pages']) {
-                        redirect(base_url() . 'Custom404');
+                        $this->output->set_status_header('404');
+                        $this->load->view('web-site/Custom404');
                     }
                     $data['page_id'] = (int)$passed_url;
                     $data['property_result'] = $this->Fetch_m->searchProperty($this->session->userdata('find_phrase'), 20, $data['page_id'] * 20);
 
                     $this->load->view('web-site/properties/Details', $data);
                 } else {
-                    redirect(base_url() . 'Custom404');
+                    $this->output->set_status_header('404');
+                    $this->load->view('web-site/Custom404');
                 }
             } else {
                 $this->session->set_flashdata('message', "<div id='toast_message' class='warning'> Your Search Has No Result </div>");
                 redirect(base_url());
             }
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Featured($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = False;
 
         $data['all'] = $this->Fetch_m->countFeaturedProperty();
@@ -1261,37 +1333,39 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findFeaturedProperty(20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
 
     public function Adalar($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Adalar');
@@ -1309,39 +1383,42 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Arnavutkoy($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
-        $where_array = array('Arnavutkoy','hamidkoy');
+        $where_array = array('Arnavutkoy', 'hamidkoy');
         $data['all'] = $this->Fetch_m->record_count_ilce('property', $where_array);
         $pages = (int)ceil($data['all'] / 20);
         $data['pages'] = $pages - 1;
@@ -1349,43 +1426,46 @@ class Properties extends CI_Controller
         $data['cityValue'] = 'Istanbul';
         $find_array = array('Property_location' => $data['cityValue']);
         $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Istanbul');
-        $find_array = array('Arnavutkoy','hamidkoy');
+        $find_array = array('Arnavutkoy', 'hamidkoy');
 
         if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
             $data['property_result'] = $this->Fetch_m->findProperty_ilce($find_array, 20);
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty_ilce($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Atasehir($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Atasehir');
@@ -1403,36 +1483,39 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Avcilar($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Avcilar');
@@ -1450,36 +1533,39 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Bagcilar($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Bagcilar');
@@ -1497,36 +1583,39 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Bahcelievler($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Bahcelievler');
@@ -1544,39 +1633,42 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Bakirkoy($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
-        $where_array = array('Bakirkoy','atakoy');
+        $where_array = array('Bakirkoy', 'atakoy');
         $data['all'] = $this->Fetch_m->record_count_ilce('property', $where_array);
         $pages = (int)ceil($data['all'] / 20);
         $data['pages'] = $pages - 1;
@@ -1584,46 +1676,49 @@ class Properties extends CI_Controller
         $data['cityValue'] = 'Istanbul';
         $find_array = array('Property_location' => $data['cityValue']);
         $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Istanbul');
-        $find_array = array('Bakirkoy','atakoy');
+        $find_array = array('Bakirkoy', 'atakoy');
 
         if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
             $data['property_result'] = $this->Fetch_m->findProperty_ilce($find_array, 20);
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty_ilce($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Basaksehir($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
-        $where_array = array('Basaksehir','bahcesehir','ispartakule');
+        $where_array = array('Basaksehir', 'bahcesehir', 'ispartakule');
         $data['all'] = $this->Fetch_m->record_count_ilce('property', $where_array);
         $pages = (int)ceil($data['all'] / 20);
         $data['pages'] = $pages - 1;
@@ -1631,43 +1726,46 @@ class Properties extends CI_Controller
         $data['cityValue'] = 'Istanbul';
         $find_array = array('Property_location' => $data['cityValue']);
         $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Istanbul');
-        $find_array =  array('Basaksehir','bahcesehir','ispartakule');
+        $find_array = array('Basaksehir', 'bahcesehir', 'ispartakule');
 
         if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
             $data['property_result'] = $this->Fetch_m->findProperty_ilce($find_array, 20);
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty_ilce($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Bayrampasa($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Bayrampasa');
@@ -1685,39 +1783,42 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Besiktas($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
-        $where_array = array('Besiktas','levent');
+        $where_array = array('Besiktas', 'levent');
         $data['all'] = $this->Fetch_m->record_count_ilce('property', $where_array);
         $pages = (int)ceil($data['all'] / 20);
         $data['pages'] = $pages - 1;
@@ -1725,43 +1826,46 @@ class Properties extends CI_Controller
         $data['cityValue'] = 'Istanbul';
         $find_array = array('Property_location' => $data['cityValue']);
         $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Istanbul');
-        $find_array = array('Besiktas','levent');
+        $find_array = array('Besiktas', 'levent');
 
         if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
             $data['property_result'] = $this->Fetch_m->findProperty_ilce($find_array, 20);
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty_ilce($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Beykoz($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Beykoz');
@@ -1779,36 +1883,39 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Beylikduzu($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Beylikduzu');
@@ -1826,39 +1933,42 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Beyoglu($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
-        $where_array = array('Beyoglu','taksim');
+        $where_array = array('Beyoglu', 'taksim');
         $data['all'] = $this->Fetch_m->record_count_ilce('property', $where_array);
         $pages = (int)ceil($data['all'] / 20);
         $data['pages'] = $pages - 1;
@@ -1866,43 +1976,46 @@ class Properties extends CI_Controller
         $data['cityValue'] = 'Istanbul';
         $find_array = array('Property_location' => $data['cityValue']);
         $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Istanbul');
-        $find_array = array('Beyoglu','taksim');
+        $find_array = array('Beyoglu', 'taksim');
 
         if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
             $data['property_result'] = $this->Fetch_m->findProperty_ilce($find_array, 20);
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty_ilce($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Buyukcekmece($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Buyukcekmece');
@@ -1920,36 +2033,39 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Catalca($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Catalca');
@@ -1967,36 +2083,39 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Cekmekoy($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Cekmekoy');
@@ -2014,36 +2133,39 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Esenler($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Esenler');
@@ -2061,36 +2183,39 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Esenyurt($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Esenyurt');
@@ -2108,39 +2233,42 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Eyup($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
-        $where_array = array('Eyup','Kemerburgaz');
+        $where_array = array('Eyup', 'Kemerburgaz');
         $data['all'] = $this->Fetch_m->record_count_ilce('property', $where_array);
         $pages = (int)ceil($data['all'] / 20);
         $data['pages'] = $pages - 1;
@@ -2148,46 +2276,49 @@ class Properties extends CI_Controller
         $data['cityValue'] = 'Istanbul';
         $find_array = array('Property_location' => $data['cityValue']);
         $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Istanbul');
-        $find_array =array('Eyup','Kemerburgaz');
+        $find_array = array('Eyup', 'Kemerburgaz');
 
         if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
             $data['property_result'] = $this->Fetch_m->findProperty_ilce($find_array, 20);
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty_ilce($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Fatih($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
-        $where_array = array('Fatih','topkapi');
+        $where_array = array('Fatih', 'topkapi');
         $data['all'] = $this->Fetch_m->record_count_ilce('property', $where_array);
         $pages = (int)ceil($data['all'] / 20);
         $data['pages'] = $pages - 1;
@@ -2195,43 +2326,46 @@ class Properties extends CI_Controller
         $data['cityValue'] = 'Istanbul';
         $find_array = array('Property_location' => $data['cityValue']);
         $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Istanbul');
-        $find_array = array('Fatih','topkapi');
+        $find_array = array('Fatih', 'topkapi');
 
         if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
             $data['property_result'] = $this->Fetch_m->findProperty_ilce($find_array, 20);
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Gaziosmanpasa($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Gaziosmanpasa');
@@ -2249,36 +2383,39 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Gungoren($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Gungoren');
@@ -2296,39 +2433,42 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Kadikoy($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
-        $where_array = array('Kadikoy','Fikirtepe','kozyatagi','kosuyolu');
+        $where_array = array('Kadikoy', 'Fikirtepe', 'kozyatagi', 'kosuyolu');
         $data['all'] = $this->Fetch_m->record_count_ilce('property', $where_array);
         $pages = (int)ceil($data['all'] / 20);
         $data['pages'] = $pages - 1;
@@ -2336,43 +2476,46 @@ class Properties extends CI_Controller
         $data['cityValue'] = 'Istanbul';
         $find_array = array('Property_location' => $data['cityValue']);
         $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Istanbul');
-        $find_array = array('Kadikoy','Fikirtepe','kozyatagi','kosuyolu');
+        $find_array = array('Kadikoy', 'Fikirtepe', 'kozyatagi', 'kosuyolu');
 
         if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
             $data['property_result'] = $this->Fetch_m->findProperty_ilce($find_array, 20);
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty_ilce($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Kagithane($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Kagithane');
@@ -2390,36 +2533,39 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Kartal($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Kartal');
@@ -2437,36 +2583,39 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Kucukcekmece($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Kucukcekmece');
@@ -2484,36 +2633,39 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Maltepe($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Maltepe');
@@ -2531,36 +2683,39 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Pendik($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Pendik');
@@ -2578,36 +2733,39 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Sancaktepe($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Sancaktepe');
@@ -2625,39 +2783,42 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Sariyer($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
-        $where_array = array('Sariyer','maslak','emirgan','zekeriyakoy');
+        $where_array = array('Sariyer', 'maslak', 'emirgan', 'zekeriyakoy');
         $data['all'] = $this->Fetch_m->record_count_ilce('property', $where_array);
         $pages = (int)ceil($data['all'] / 20);
         $data['pages'] = $pages - 1;
@@ -2665,43 +2826,46 @@ class Properties extends CI_Controller
         $data['cityValue'] = 'Istanbul';
         $find_array = array('Property_location' => $data['cityValue']);
         $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Istanbul');
-        $find_array = array('Sariyer','maslak','emirgan','zekeriyakoy');
+        $find_array = array('Sariyer', 'maslak', 'emirgan', 'zekeriyakoy');
 
         if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
             $data['property_result'] = $this->Fetch_m->findProperty_ilce($find_array, 20);
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty_ilce($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Sile($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Sile');
@@ -2719,39 +2883,42 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Sisli($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
-        $where_array = array('Sisli','Mecidiyekoy','Bomonti','Nisantasi');
+        $where_array = array('Sisli', 'Mecidiyekoy', 'Bomonti', 'Nisantasi');
         $data['all'] = $this->Fetch_m->record_count_ilce('property', $where_array);
         $pages = (int)ceil($data['all'] / 20);
         $data['pages'] = $pages - 1;
@@ -2759,43 +2926,46 @@ class Properties extends CI_Controller
         $data['cityValue'] = 'Istanbul';
         $find_array = array('Property_location' => $data['cityValue']);
         $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Istanbul');
-        $find_array = array('Sisli','Mecidiyekoy','Bomonti','Nisantasi');
+        $find_array = array('Sisli', 'Mecidiyekoy', 'Bomonti', 'Nisantasi');
 
         if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
             $data['property_result'] = $this->Fetch_m->findProperty_ilce($find_array, 20);
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty_ilce($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Sultanbeyli($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Sultanbeyli');
@@ -2813,36 +2983,39 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Sultangazi($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Sultangazi');
@@ -2860,36 +3033,39 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Tuzla($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Tuzla');
@@ -2907,36 +3083,39 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Umraniye($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Umraniye');
@@ -2954,36 +3133,39 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Silivri($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Silivri');
@@ -3001,36 +3183,39 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Uskudar($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Uskudar');
@@ -3048,36 +3233,39 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
+
     public function Zeytinburnu($passed_url = '')
     {
-        $data['geolocation']=fetch_geolocation();
+        $data['geolocation'] = fetch_geolocation();
 
         $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames']=array();
-        foreach ($cityNames as $value){
-            array_push($data['cityNames'],$value["Property_location"]);
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
         }
         $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType']=array();
-        foreach ($ProType as $value){
-            array_push($data['ProType'],$value["Property_type"]);
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
         }
         $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed']=array();
-        foreach ($proBed as $value){
-            array_push($data['proBed'],$value["Property_Bedrooms"]);
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
         }
         $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-        
+
         $data['city_description_show'] = True;
 
         $where_array = array('Property_location_city' => 'Zeytinburnu');
@@ -3095,13 +3283,15 @@ class Properties extends CI_Controller
             $this->load->view('web-site/properties/Details', $data);
         } elseif (preg_match("/^\d+$/", $passed_url)) {
             if ($passed_url > $data['pages']) {
-                redirect(base_url() . 'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
             $data['page_id'] = (int)$passed_url;
             $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
             $this->load->view('web-site/properties/Details', $data);
         } else {
-            redirect(base_url() . 'Custom404');
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
         }
     }
 }

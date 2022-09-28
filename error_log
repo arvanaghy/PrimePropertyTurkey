@@ -1,0 +1,5 @@
+[27-Sep-2022 16:48:56 UTC] PHP Fatal error:  Uncaught Error: Object of class DOMAttr could not be converted to string in /home/nu1k5sii5jqz/public_html/crawl-site-links.php:44
+Stack trace:
+#0 /home/nu1k5sii5jqz/public_html/crawl-site-links.php(52): crawl_page('https://www.pri...', 2)
+#1 {main}
+  thrown in /home/nu1k5sii5jqz/public_html/crawl-site-links.php on line 44

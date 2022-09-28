@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/phone-input.css">
 <title>Contact prime Property Turkey - Property Turkey</title>
 <meta name="description" content="Contact Us, Having more than 10+ years of real estate experience, Prime Property Turkey delivers knowledge and expertise second to none in Turkey's ever evolving market.">
-<link rel="canonical" href="https://www.primepropertyturkey.com/Contact-us"/>
+<link rel="canonical" href="https://www.primepropertyturkey.com/contact-us"/>
 <script src="https://www.google.com/recaptcha/api.js" ></script>
 
 <style type="text/css">

@@ -498,11 +498,11 @@
                                                 <? if ($i>$pages){ break; } ?>
                                                 <? if ((int)$page_id == $i) { ?>
                                                     <li class="page-item text-danger"><a class="page-link text-danger" rel="nofollow"
-                                                                                         href="<?= base_url(); ?>Properties/<?= $cityValue; ?>/<?= $i; ?>"><?= $i + 1; ?></a>
+                                                                                         href="<?= base_url(); ?>properties/<?= $cityValue; ?>/<?= $i; ?>"><?= $i + 1; ?></a>
                                                     </li>
                                                 <? } else { ?>
                                                     <li class="page-item"><a class="page-link" rel="nofollow"
-                                                                             href="<?= base_url(); ?>Properties/<?= $cityValue; ?>/<?= $i; ?>"><?= $i + 1; ?></a>
+                                                                             href="<?= base_url(); ?>properties/<?= $cityValue; ?>/<?= $i; ?>"><?= $i + 1; ?></a>
                                                     </li>
                                                 <? } ?>
                                             <? } ?>
@@ -521,7 +521,7 @@
                                             <? } ?>
                                         <? } ?>
                                         <li class="page-item">
-                                            <a class="page-link" rel="nofollow" href="<?= base_url(); ?>Properties/<?= $cityValue; ?>/<?= $pages; ?>" title="LAST"> <i
+                                            <a class="page-link" rel="nofollow" href="<?= base_url(); ?>properties/<?= $cityValue; ?>/<?= $pages; ?>" title="LAST"> <i
                                                         class="fas fa-angle-double-right"></i> </a>
                                         </li>
                                     </ul>

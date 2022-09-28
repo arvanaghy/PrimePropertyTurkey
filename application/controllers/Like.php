@@ -14,8 +14,9 @@ class Like extends CI_Controller
         if (preg_match($pattern, $url)):
             redirect($url);
         else:
-            redirect(base_url()."Custom404");
-        endif;
+            $this->output->set_status_header('404');
+            $this->load->view('web-site/Custom404');
+            endif;
     }
 
     public function blog($passed_url)

@@ -88,7 +88,6 @@ class Turkey extends CI_Controller
                     redirect(base_url());
                 }
             }
-
             } else {
                 $this->session->set_flashdata('message', "<div id='toast_message' class='warning'> Your Search Has No Result </div>");
                 redirect(base_url());

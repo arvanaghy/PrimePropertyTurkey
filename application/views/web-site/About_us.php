@@ -4,9 +4,7 @@
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/about-us.css">
 <title>About Prime Property Turkey - Property Turkey</title>
 <meta name="description" content=" Prime Property Turkey is an online real estate with a sincere and direct approach and you can Find your perfect property in Turkey, search a wide range of properties for sale in Turkey.">
-<link rel="canonical" href="https://www.primepropertyturkey.com/About-us"/>
-
-
+<link rel="canonical" href="https://www.primepropertyturkey.com/about-us"/>
 </head>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>

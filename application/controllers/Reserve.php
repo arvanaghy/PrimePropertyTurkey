@@ -70,7 +70,6 @@ class Reserve extends CI_Controller
         $this->load->library('form_validation');
         $captcha_response = trim($this->input->post('g-recaptcha-response'));
         if ($this->form_validation->run('reserve') != FALSE AND $captcha_response!='') {
-
             if ($this->reCaptcha_Curl($this->input->post('g-recaptcha-response'))){
                 $property_refID = $this->input->post('property_refID');
                 $property_title = $this->input->post('property_title');
@@ -189,7 +188,6 @@ class Reserve extends CI_Controller
                 $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Captcha is invalid </div>");
                 redirect($this->agent->referrer());
             }
-
             } else {
             $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> According to the following Errors
                                                         <br>

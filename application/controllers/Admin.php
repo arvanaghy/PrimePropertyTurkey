@@ -567,10 +567,14 @@ class Admin extends CI_Controller
     public function Add_Blog_Submit()
     {
         $this->checkUser();
+        if ($this->input->post('publish_date') == date('Y-m-d')){
+            $status = 0;
+        }else{
+            $status = 3;
+        }
         $upload_data['path'] = './assets/web-site/images/blog/old/original/';
         $upload_data['input'] = 'user_file';
         $picture_filename = $this->uploadPictures($upload_data, 'Blog');
-
         $postData = array(
             'Blog_Title' => strip_tags($this->input->post('blog_title')),
             'Blog_Content' => $this->input->post('blog_description'),
@@ -578,10 +582,11 @@ class Admin extends CI_Controller
             'Blog_Image_Alt' => strip_tags($this->input->post('image_alt')),
             'Blog_Meta_Title' => strip_tags($this->input->post('meta_title')),
             'Blog_Meta_Keyword' => strip_tags($this->input->post('meta_keyword')),
-            'Blog_Meta_Description' => strip_tags($this->input->post('meta_description'))
+            'Blog_Meta_Description' => strip_tags($this->input->post('meta_description')),
+            'publish_date' => strip_tags($this->input->post('publish_date')),
+            'status' => $status
         );
-
-        $postData['url_slug'] = url_title($postData['Blog_Title'], "-", True);
+        $postData['url_slug'] = url_title(strip_tags($this->input->post('URL')), "-", True);
         $this->load->model('Admin_model');
         $this->Admin_model->insertBlog($postData);
         redirect("Admin/Manage_Blog");
@@ -628,7 +633,7 @@ class Admin extends CI_Controller
         $meta_description = strip_tags($this->input->post('meta_description'));
         $image_alt = strip_tags($this->input->post('image_alt'));
         $blog_title = strip_tags($this->input->post('blog_title'));
-        $blog_content = $this->input->post('blog_description');
+        $blog_content = strip_tags($_POST['blog_description'],["p","a","b","u","h2","h3","h4","h5","img","ul","ol"]);
         $data = array(
             'Blog_Title' => $blog_title,
             'Blog_Content' => $blog_content,
@@ -692,6 +697,22 @@ class Admin extends CI_Controller
         $this->load->library('user_agent');
         redirect($this->agent->referrer());
     }
+    public function blogUrlCheck()
+    {
+        $value_data = $this->input->post('value_data_posted');
+        if ($value_data != '') {
+            $posted_data = url_title(strip_tags(str_replace('-', '', $value_data)), "-", True);
+            $this->load->model('Admin_model');
+            echo json_encode($this->Admin_model->getBlogTitleAjax($posted_data));
+        }
+    }
+    public function PublishBlogByDate()
+    {
+        $this->load->model('Admin_model');
+        $date = date('Y-m-d');
+        $this->Admin_model->publishBlogPostOnDate($date);
+    }
+
 
     public function Manage_News()
     {

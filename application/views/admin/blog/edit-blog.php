@@ -12,10 +12,21 @@
     .note-icon-caret{
         display: none !important;
     }
+    .show_site_details{
+        text-decoration: none !important;
+        border: 1px solid blue;
+        padding: 5px;
+        text-align: center !important;
+        margin: 0;
+        border-radius: 5px;
+        display: inline-block;
+        align-content: center !important;
+    }
 </style>
 </head>
 <body>
 <?php $this->load->view('admin/include/top-menu');?>
+<? if ($results): ?>
 <section id="main" >
     <div class="container pt-2">
         <div class="row">
@@ -23,6 +34,11 @@
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="page-title col-md-6">
+                             <span class="mx-2">
+                                <a href="<?= base_url();?>blog/<?= $results->url_slug; ?>" target="_blank" class="show_site_details" >
+                                      <i class="fas fa-eye"></i>
+                                </a>
+                            </span>
                             <b>
                                 Edit Blog
                             </b>
@@ -175,10 +191,9 @@
         </div>
     </div>
 </section>
-
+<? endif; ?>
 <?php $this->load->view('admin/include/footer'); ?>
 <?php $this->load->view('admin/include/foot-load'); ?>
-
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <script src="<?= base_url();?>assets/summernote-image-attributes.js"></script>
@@ -198,7 +213,7 @@
                     ['image', ['resizeFull', 'resizeHalf', 'resizeNone']],
                     ['float', ['floatLeft', 'floatRight', 'floatNone']],
                     ['remove', ['removeMedia']],
-                    ['custom', ['imageTitle']],
+                    ['custom', ['imageTitle']]
                 ],
             },
             lang: 'en-US',
@@ -209,8 +224,7 @@
                 ['color', ['color']],
                 ['para', ['ul', 'ol', 'paragraph']],
                 ['table', ['table']],
-                ['insert', ['link', 'picture', 'video']],
-                ['view', ['fullscreen', 'codeview', 'help']],
+                ['insert', ['link', 'picture']],
                 ['fontsize', ['fontsize']],
             ]
         });

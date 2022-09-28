@@ -107,12 +107,12 @@ class Blog_model extends CI_Model
     }
     public function fetch_post_by_url_BN($table, $url)
     {
-        $old_url = str_replace('_','-',$url);
-        $this->db->group_start();
         $this->db->where('url_slug', $url);
-        $this->db->or_where('url_slug', $old_url);
-        $this->db->group_end();
+        $this->db->group_start();
         $this->db->where('status', 0);
+        $this->db->or_where('status', 3);
+        $this->db->group_end();
+
         $query = $this->db->get($table);
         return $query->row();
     }

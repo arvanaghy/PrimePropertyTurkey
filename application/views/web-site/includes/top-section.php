@@ -105,7 +105,7 @@
                         </div>
                     </div>
                     <span class="top-Buying mx-1 d-block d-md-none">
-                        <a href="<?= base_url();?>Buying-online" class="btn red-button">
+                        <a href="<?= base_url();?>buying-online" class="btn red-button">
                         BUYING ONLINE
                         </a>
                     </span>
@@ -176,7 +176,7 @@
                     </div>
 
                     <span class="top-Buying d-none d-md-inline mx-1">
-                        <a href="<?= base_url();?>Buying-online" class="btn red-button">
+                        <a href="<?= base_url();?>buying-online" class="btn red-button">
                         BUYING ONLINE
                         </a>
                     </span>
@@ -261,10 +261,10 @@
                 <a class="nav-link" href="<?= base_url();?>Resale">Resale</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url();?>Blog">Blog</a>
+                <a class="nav-link" href="<?= base_url();?>blog">Blog</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url();?>News">News</a>
+                <a class="nav-link" href="<?= base_url();?>news">News</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" rel="nofollow" role="button" data-toggle="dropdown"

@@ -83,7 +83,8 @@ class Career extends CI_Controller
             if ($this->agent->is_referral()){
                 redirect($this->agent->referrer());
             }else{
-                redirect(base_url().'Custom404');
+                $this->output->set_status_header('404');
+                $this->load->view('web-site/Custom404');
             }
         }
     }
