@@ -20,7 +20,7 @@ $route['buying-online'] = 'buying_online';
 $route['blog/(:any)'] = 'blog/details/$1';
 $route['Blog/(:any)'] = 'blog/details/$1';
 $route['news/(:any)'] = 'news/details/$1';
-$route['News/(:any)'] = 'news/details/$1';
+$route['News/(:any)'] = 'Custom404';
 $route['Like/blog/(:any)'] = 'Like/blog/$1';
 $route['Dislike/blog/(:any)'] = 'Dislike/blog/$1';
 $route['Like/news/(:any)'] = 'Like/news/$1';
@@ -125,7 +125,9 @@ $route['Prime'] = 'Custom404';
 $route['Prime/(:any)'] = 'Custom404';
 
 $route['blog/blogs/(:any)'] = 'Custom404';
+$route['blog/blogs/'] = 'Custom404';
 $route['News/news/(:any)'] = 'Custom404';
+$route['News/news/'] = 'Custom404';
 
 $route['city'] = 'Custom404';
 $route['city/(:any)'] = 'Custom404';

@@ -13,7 +13,6 @@
     }
 </style>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-
 </head>
 <body>
 <?php $this->load->view('admin/include/top-menu');?>

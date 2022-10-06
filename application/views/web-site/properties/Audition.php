@@ -89,11 +89,11 @@ if ($image_name_webp == '') {
         font-size: 14px !important;
         text-align: justify;
     }
-   .content-font p span b, .content-font p b,.content-font b{
+    .content-font p span b, .content-font p b,.content-font b{
         font-family: 'Open Sans' !important;
         font-size: 16px !important;
     }
-   #enquire-gradiant{
+    #enquire-gradiant{
        color: white;
        background-image: linear-gradient(140deg,#466ad8,#012169);
        border: none;
@@ -122,16 +122,69 @@ if ($image_name_webp == '') {
     .thumb img {
         height: 100px !important;
     }
+
+    @media screen and (min-width: 1400px){
+        .slider {
+            height:600px !important;
+        }
+        .slider #myCarousel {
+            height: 450px !important;
+        }
+        #carousel-thumbs {
+            position: absolute;
+            bottom: -130px;
+        }
+        #RecentlyAddedProperties {
+            height: 750px !important;
+        }
+        #RecentlyAddedProperties .item a > img{
+           height: 300px !important;
+        }
+        .g-recaptcha{
+            height: 80px !important;
+        }
+    }
+    @media screen and (min-width: 1200px) and (max-width:1399px){
+        .slider {
+            height:600px !important;
+        }
+        .slider #myCarousel {
+            height: 450px !important;
+        }
+        #carousel-thumbs {
+            position: absolute;
+            bottom: -130px;
+        }
+        #RecentlyAddedProperties {
+            height: 750px !important;
+        }
+        #RecentlyAddedProperties .item a > img{
+            height: 250px !important;
+        }
+        .g-recaptcha{
+            height: 80px !important;
+        }
+    }
+    @media screen and (min-width: 992px) and (max-width:1199px){
+
+    }
+    @media screen and (min-width: 768px) and (max-width:991px){
+
+    }
+    @media screen and (min-width: 576px) and (max-width:766px){
+
+    }
+    @media screen and (max-width:575px){
+
+    }
 </style>
 </head>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>
-<main>
     <?
     $IIG = array();
     foreach ($property_image_gallery as $key=>$image_in_gallery) {
-        $IIG[$key]=$image_in_gallery->gallery_image;
-    }
+        $IIG[$key]=$image_in_gallery->gallery_image; }
     ?>
     <section id="bread-crumbs">
         <div class="container">
@@ -305,35 +358,34 @@ if ($image_name_webp == '') {
         <div class="container my-3">
             <div class="row justify-content-center">
                 <div class="col-lg-8 details">
-                    <div class="slider mb-4">
+                    <div class="slider mb-2">
                         <div class="carousel-container position-relative row">
                             <!-- Sorry! Lightbox doesn't work - yet. -->
                             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                                 <div class="carousel-inner">
-                                        <? $i=0; ?>
-                                        <? foreach ($property_image_gallery as $image_gallery){ ?>
-                                            <? $image_name = str_replace('assets/uploads/', '', $IIG[$i]);
-                                            $image_name_webp = substr($image_name,0,strpos($image_name,'.jpg')).".webp";
-                                            if ($image_name_webp==''){
-                                                $image_name_webp = substr($image_name,0,strpos($image_name,'.png')).".webp";
-                                            }
-                                            if ($image_name_webp==''){
-                                                $image_name_webp = substr($image_name,0,strpos($image_name,'.jpeg')).".webp";
-                                            }
-                                            ?>
-                                            <div class="carousel-item <? if($i==0){ echo 'active'; } ?>" data-slide-number="<?= $i; ?>">
-                                                <img alt="<?= $data_array->Property_title.' '.$i; ?>"
+                                    <? $i=0; ?>
+                                    <? foreach ($property_image_gallery as $image_gallery){ ?>
+                                        <? $image_name = str_replace('assets/uploads/', '', $IIG[$i]);
+                                        $image_name_webp = substr($image_name,0,strpos($image_name,'.jpg')).".webp";
+                                        if ($image_name_webp==''){
+                                            $image_name_webp = substr($image_name,0,strpos($image_name,'.png')).".webp";
+                                        }
+                                        if ($image_name_webp==''){
+                                            $image_name_webp = substr($image_name,0,strpos($image_name,'.jpeg')).".webp";
+                                        }
+                                        ?>
+                                        <div class="carousel-item <? if($i==0){ echo 'active'; } ?>" data-slide-number="<?= $i; ?>">
+                                            <img alt="<?= $data_array->Property_title.' '.$i; ?>"
+                                                 src="<?= base_url(); ?><?= "assets/web-site/images/properties/watermark/".$image_name_webp; ?>"
 
-                                                        src="<?= base_url(); ?><?= "assets/web-site/images/properties/watermark/".$image_name_webp; ?>"
 
-
-                                                     class="d-block w-100"
-                                                     data-remote="https://source.unsplash.com/Pn6iimgM-wo/" data-type="image"
-                                                     data-toggle="lightbox" data-gallery="example-gallery" loading="lazy">
-                                            </div>
+                                                 class="d-block w-100"
+                                                 data-remote="https://source.unsplash.com/Pn6iimgM-wo/" data-type="image"
+                                                 data-toggle="lightbox" data-gallery="example-gallery">
+                                        </div>
                                         <?
-                                            $i++;
-                                        } ?>
+                                        $i++;
+                                    } ?>
                                 </div>
                                 <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -347,32 +399,32 @@ if ($image_name_webp == '') {
                             <!-- Carousel Navigation -->
                             <div id="carousel-thumbs" class="carousel slide" data-ride="carousel">
                                 <?
-                                    $gallery_image_count = count($property_image_gallery)-1;
-                                    $gallery_image_array = range(0,$gallery_image_count);
-                                    $gallery_image_chunk =  array_chunk($gallery_image_array,6);
+                                $gallery_image_count = count($property_image_gallery)-1;
+                                $gallery_image_array = range(0,$gallery_image_count);
+                                $gallery_image_chunk =  array_chunk($gallery_image_array,6);
                                 ?>
                                 <div class="carousel-inner">
-                                        <? foreach ($gallery_image_chunk as $key=> $value ){ ?>
+                                    <? foreach ($gallery_image_chunk as $key=> $value ){ ?>
                                         <div class="carousel-item <? if ($key==0){echo 'active';} ?>">
-                                                <div class="row mx-0 justify-content-center">
-                                                    <?foreach ($value as $v){ ?>
-                                                        <? $image_name = str_replace('assets/uploads/', '', $IIG[$v]);
-                                                        $image_name_webp = substr($image_name,0,strpos($image_name,'.jpg')).".webp";
-                                                        if ($image_name_webp==''){
-                                                            $image_name_webp = substr($image_name,0,strpos($image_name,'.png')).".webp";
-                                                        }
-                                                        if ($image_name_webp==''){
-                                                            $image_name_webp = substr($image_name,0,strpos($image_name,'.jpeg')).".webp";
-                                                        }
-                                                        ?>
-                                                        <div id="carousel-selector-<?= $v; ?>" class="thumb col-4 col-sm-2 py-2 px-2 "
-                                                             data-target="#myCarousel" data-slide-to="<?= $v; ?>">
-                                                           <img alt="<?= $data_array->Property_title.' '.$v; ?>"
-                                                                   src="<?= base_url(); ?><?= "assets/web-site/images/properties/whatsapp/".$image_name_webp; ?>"
-                                                                   class="img-fluid" loading="lazy">
-                                                        </div>
-                                                    <? } ?>
-                                                </div>
+                                            <div class="row mx-0 justify-content-center">
+                                                <?foreach ($value as $v){ ?>
+                                                    <? $image_name = str_replace('assets/uploads/', '', $IIG[$v]);
+                                                    $image_name_webp = substr($image_name,0,strpos($image_name,'.jpg')).".webp";
+                                                    if ($image_name_webp==''){
+                                                        $image_name_webp = substr($image_name,0,strpos($image_name,'.png')).".webp";
+                                                    }
+                                                    if ($image_name_webp==''){
+                                                        $image_name_webp = substr($image_name,0,strpos($image_name,'.jpeg')).".webp";
+                                                    }
+                                                    ?>
+                                                    <div id="carousel-selector-<?= $v; ?>" class="thumb col-4 col-sm-2 py-2 px-2 "
+                                                         data-target="#myCarousel" data-slide-to="<?= $v; ?>">
+                                                        <img alt="<?= $data_array->Property_title.' '.$v; ?>"
+                                                             src="<?= base_url(); ?><?= "assets/web-site/images/properties/whatsapp/".$image_name_webp; ?>"
+                                                             class="img-fluid" loading="lazy">
+                                                    </div>
+                                                <? } ?>
+                                            </div>
                                         </div>
                                     <? } ?>
                                 </div>
@@ -918,7 +970,6 @@ if ($image_name_webp == '') {
             </div>
         </div>
     </section>
-</main>
 <div class="modal fade" id="reserveModal" tabindex="-1" aria-labelledby="share-modal-label" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
@@ -1143,93 +1194,16 @@ if ($image_name_webp == '') {
 <? $whatsapp_passed['property_title'] = $data_array->Property_title; ?>
 <?php $this->load->view('web-site/includes/footer',$whatsapp_passed); ?>
 <?php $this->load->view('web-site/includes/foot-load'); ?>
-<script type="text/javascript"
-        src="<?= base_url(); ?>assets/web-site/js/property-details-carousal.js"></script>
-<script type="text/javascript" src="<?= base_url(); ?>assets/web-site/js/property-more-details.js"></script>
+<!--<script type="text/javascript" src="--><?//= base_url(); ?><!--assets/web-site/js/property-more-details.js"></script>-->
 <script type="text/javascript">
     $(document).ready(function (){
         setTimeout(function (){
             $('#reserveModal').modal('show');
         }, 17000);
-
         $('#reformRunner').on('click',function () {
             $('#reserveModal').modal('hide');
             $('#ReformModalModal').modal('show');
         });
-    });
-</script>
-<script type="text/javascript">
-    $('#quickEnquireModal').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget); // Button that triggered the modal
-        var recipient = button.data('whatever'); // Extract info from data-* attributes
-        var modal = $(this);
-        modal.find('#modal_reference_id').val(recipient)
-    });
-</script>
-<script type="text/javascript">
-    function ReservationEnquireFormValidation(){
-        let ReservationEnquireFormFlag = true;
-        let ReservationEnquireForm_info_error = document.getElementById('ReservationEnquireForm_info_error');
-        let ReservationEnquireForm_phone_error = document.getElementById('ReservationEnquireForm_phone_error');
-        ReservationEnquireForm_info_error.style.display = 'none';
-        ReservationEnquireForm_phone_error.style.display = 'none';
-        let ReservationEnquireForm_info = document.getElementById('full-name').value;
-        let ReservationEnquireForm_phone = document.getElementById('reserve_phone_number').value;
-        let ReservationEnquireForm_info_regex = new RegExp(/^\w+\s+\w+/i);
-        let ReservationEnquireForm_phone_regex = new RegExp(/\d{5,20}/g);
-
-        if (ReservationEnquireForm_info_regex.test(ReservationEnquireForm_info) != true) {
-            ReservationEnquireFormFlag = false;
-            ReservationEnquireForm_info_error.style.display = 'block';
-        }
-        if (ReservationEnquireForm_phone_regex.test(ReservationEnquireForm_phone) != true) {
-            ReservationEnquireFormFlag = false;
-            ReservationEnquireForm_phone_error.style.display = 'block';
-        }
-        return ReservationEnquireFormFlag;
-    }
-    const phoneInputFieldModalReserveVal = document.querySelector("#reserve_phone_number");
-    const phoneInputModalReserveVal = window.intlTelInput(phoneInputFieldModalReserveVal, {
-        separateDialCode: true,
-        preferredCountries:["<? if (isset($geolocation)){echo $geolocation;}else{echo 'us';} ?>"],
-        hiddenInput: "full",
-        utilsScript:
-            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-    });
-</script>
-<script type="text/javascript">
-    function ModalEnquireFormValidation(){
-        let modalEnquireFormFlag = true;
-        let modalEnquireForm_info_error = document.getElementById('modalEnquireForm_info_error');
-        let modalEnquireForm_phone_error = document.getElementById('modalEnquireForm_phone_error');
-        modalEnquireForm_info_error.style.display = 'none';
-        modalEnquireForm_phone_error.style.display = 'none';
-        let modalEnquireForm_info = document.getElementById('modalEnquireForm_info').value;
-        let modalEnquireForm_phone = document.getElementById('modal_phone').value;
-        let modalEnquireForm_info_regex = new RegExp(/^\w+\s+\w+/i);
-        let modalEnquireForm_phone_regex = new RegExp(/\d{5,20}/g);
-
-        if (modalEnquireForm_info_regex.test(modalEnquireForm_info) != true) {
-            modalEnquireFormFlag = false;
-            modalEnquireForm_info_error.style.display = 'block';
-        }
-        if (modalEnquireForm_phone_regex.test(modalEnquireForm_phone) != true) {
-            modalEnquireFormFlag = false;
-            modalEnquireForm_phone_error.style.display = 'block';
-        }
-        return modalEnquireFormFlag;
-    }
-    const phoneInputFieldModalPROVal = document.querySelector("#modal_phone");
-    const phoneInputModalPROVal = window.intlTelInput(phoneInputFieldModalPROVal, {
-        separateDialCode: true,
-        preferredCountries:["<? if (isset($geolocation)){echo $geolocation;}else{echo 'us';} ?>"],
-        hiddenInput: "full",
-        utilsScript:
-            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-    });
-</script>
-<script type="text/javascript">
-    $(document).ready(function () {
         $(".recently-owl").owlCarousel({
             loop: !0,
             margin: 10,
@@ -1245,6 +1219,70 @@ if ($image_name_webp == '') {
             responsiveClass: !0,
             responsive: {0: {items: 1}, 600: {items: 2}, 1000: {items: 4}}
         })
+        $('#quickEnquireModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Button that triggered the modal
+            var recipient = button.data('whatever'); // Extract info from data-* attributes
+            var modal = $(this);
+            modal.find('#modal_reference_id').val(recipient)
+        });
+        function ModalEnquireFormValidation(){
+            let modalEnquireFormFlag = true;
+            let modalEnquireForm_info_error = document.getElementById('modalEnquireForm_info_error');
+            let modalEnquireForm_phone_error = document.getElementById('modalEnquireForm_phone_error');
+            modalEnquireForm_info_error.style.display = 'none';
+            modalEnquireForm_phone_error.style.display = 'none';
+            let modalEnquireForm_info = document.getElementById('modalEnquireForm_info').value;
+            let modalEnquireForm_phone = document.getElementById('modal_phone').value;
+            let modalEnquireForm_info_regex = new RegExp(/^\w+\s+\w+/i);
+            let modalEnquireForm_phone_regex = new RegExp(/\d{5,20}/g);
+
+            if (modalEnquireForm_info_regex.test(modalEnquireForm_info) != true) {
+                modalEnquireFormFlag = false;
+                modalEnquireForm_info_error.style.display = 'block';
+            }
+            if (modalEnquireForm_phone_regex.test(modalEnquireForm_phone) != true) {
+                modalEnquireFormFlag = false;
+                modalEnquireForm_phone_error.style.display = 'block';
+            }
+            return modalEnquireFormFlag;
+        }
+        const phoneInputFieldModalPROVal = document.querySelector("#modal_phone");
+        const phoneInputModalPROVal = window.intlTelInput(phoneInputFieldModalPROVal, {
+            separateDialCode: true,
+            preferredCountries:["<? if (isset($geolocation)){echo $geolocation;}else{echo 'us';} ?>"],
+            hiddenInput: "full",
+            utilsScript:
+                "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        });
+        function ReservationEnquireFormValidation(){
+            let ReservationEnquireFormFlag = true;
+            let ReservationEnquireForm_info_error = document.getElementById('ReservationEnquireForm_info_error');
+            let ReservationEnquireForm_phone_error = document.getElementById('ReservationEnquireForm_phone_error');
+            ReservationEnquireForm_info_error.style.display = 'none';
+            ReservationEnquireForm_phone_error.style.display = 'none';
+            let ReservationEnquireForm_info = document.getElementById('full-name').value;
+            let ReservationEnquireForm_phone = document.getElementById('reserve_phone_number').value;
+            let ReservationEnquireForm_info_regex = new RegExp(/^\w+\s+\w+/i);
+            let ReservationEnquireForm_phone_regex = new RegExp(/\d{5,20}/g);
+
+            if (ReservationEnquireForm_info_regex.test(ReservationEnquireForm_info) != true) {
+                ReservationEnquireFormFlag = false;
+                ReservationEnquireForm_info_error.style.display = 'block';
+            }
+            if (ReservationEnquireForm_phone_regex.test(ReservationEnquireForm_phone) != true) {
+                ReservationEnquireFormFlag = false;
+                ReservationEnquireForm_phone_error.style.display = 'block';
+            }
+            return ReservationEnquireFormFlag;
+        }
+        const phoneInputFieldModalReserveVal = document.querySelector("#reserve_phone_number");
+        const phoneInputModalReserveVal = window.intlTelInput(phoneInputFieldModalReserveVal, {
+            separateDialCode: true,
+            preferredCountries:["<? if (isset($geolocation)){echo $geolocation;}else{echo 'us';} ?>"],
+            hiddenInput: "full",
+            utilsScript:
+                "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        });
     });
 </script>
 </body>

@@ -45,9 +45,14 @@
                                     <?= $blog->Blog_Title; ?>
                                 </div>
                                 <div id="recent-blog-time"><i class="fas fa-calendar-alt"></i>
-                                    <? $unix_time = mysql_to_unix($blog->Blog_Created_date);
-                                    $date_string = '%d %M %Y';
-                                    echo mdate($date_string, $unix_time);
+                                    <? if ($blog->publish_date and $blog->publish_date!='0000-00-00') {
+                                        $date_string = '%d %M %Y';
+                                        echo mdate($date_string, strtotime($blog->publish_date));
+                                    }elseif($blog->status ==0){
+                                        $unix_time = mysql_to_unix($blog->Blog_Created_date);
+                                        $date_string = '%d %M %Y';
+                                        echo mdate($date_string, $unix_time);
+                                    }
                                     ?>
                                 </div>
                             </div>

@@ -28,7 +28,7 @@
 <meta property="twitter:title" content="Properties For Sale <?= $cityValue; ?> - Prime Property Turkey">
 <meta property="twitter:description" content="the best suggestion about Property in  <?= $cityValue; ?> for sale in prime property turkey, pick your future real estate with Prime Property Turkey">
 <meta property="og:image" content="https://www.primepropertyturkey.com/assets/web-site/images/base/Prime-Property-Turkey-build-logo.jpg">
-<link rel="canonical" href="https://www.primepropertyturkey.com/Properties/<?= $this->uri->segment(2); ?>/<? if ($page_id!=0){ echo $page_id.'/';}?>"/>
+<link rel="canonical" href="https://www.primepropertyturkey.com/Properties/<?= $this->uri->segment(2); ?><? if ($page_id!=0){ echo '/'.$page_id;}?>"/>
 <script src="https://www.google.com/recaptcha/api.js" ></script>
 <style type="text/css">
     svg {

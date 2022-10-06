@@ -89,8 +89,6 @@
     .Popular-Recommended .card-favorite{
         background-color: black;
     }
-
-
 </style>
 <div class="card side Popular-Recommended my-2">
     <div class="card-title my-3 text-center font-weight-bold">
@@ -112,7 +110,8 @@
                         }
                         ?>
                         <div class="item">
-                            <div class="card">
+                            <div class="slide-owl-wrap">
+                                <div class="card">
                                 <a href="<?= base_url(); ?>properties/<?= $recommended_property->url_slug; ?>" title="<?= $recommended_property->Property_Bedrooms.' Bedroom '.$recommended_property->Property_type.' For Sale In '.$recommended_property->Property_location; ?>">
 
                                     <img class="card-img-top img-fluid"
@@ -224,6 +223,7 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                             </div>
                         </div>
                     <? } ?>

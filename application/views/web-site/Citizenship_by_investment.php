@@ -206,8 +206,7 @@ Asia and Europe and access to the markets in both regions">
 </head>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>
-<main>
-    <section id="theme-background">
+<section id="theme-background">
         <div class="header-image-wrapper">
             <div class="bg" id="Citizenship-by-investment-BG"></div>
             <div class="mask"></div>
@@ -219,7 +218,7 @@ Asia and Europe and access to the markets in both regions">
             </div>
         </div>
     </section>
-    <section id="Citizenship-by-investment-content">
+<section id="Citizenship-by-investment-content">
         <div class="container py-4">
             <div class="row">
                 <div class="col-lg-8">
@@ -237,6 +236,41 @@ Asia and Europe and access to the markets in both regions">
                             <div class="embed-responsive embed-responsive-16by9 mb-3">
                                 <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/2--d9PGVfuI"
                                         allowfullscreen loading="lazy"
+                                        srcdoc="
+                                             <style>
+                                                  * {
+                                                  padding: 0;
+                                                  margin: 0;
+                                                  overflow: hidden;
+                                                  }
+
+                                                  body, html {
+                                                    height: 100%;
+                                                  }
+
+                                                  img, svg {
+                                                    position: absolute;
+                                                    width: 100%;
+                                                    top: 0;
+                                                    bottom: 0;
+                                                    margin: auto;
+                                                  }
+
+                                                  svg {
+                                                    filter: drop-shadow(1px 1px 10px hsl(206.5, 70.7%, 8%));
+                                                    transition: all 250ms ease-in-out;
+                                                  }
+
+                                                  body:hover svg {
+                                                    filter: drop-shadow(1px 1px 10px hsl(206.5, 0%, 10%));
+                                                    transform: scale(1.2);
+                                                  }
+                                         </style>
+                                                 <a href='https://www.youtube.com/embed/2--d9PGVfuI?autoplay=1'>
+                                                  <img src='https://img.youtube.com/vi/2--d9PGVfuI/hqdefault.jpg' alt='Citizenship By Investment In Turkey'>
+                                                  <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='#ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-play-circle'><circle cx='12' cy='12' r='10'></circle><polygon points='10 8 16 12 10 16 10 8'></polygon></svg>
+                                                </a>
+                                        "
                                         title="Turkish Citizenship by Real Estate Investment | Prime Talks Ep.4"></iframe>
                             </div>
                             <div class="scroll-links my-3">
@@ -972,7 +1006,6 @@ Asia and Europe and access to the markets in both regions">
             </div>
         </div>
     </section>
-</main>
 <div class="modal fade" id="quickEnquireModal" tabindex="-1" aria-labelledby="quickEnquireModalLabel"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -1039,78 +1072,7 @@ Asia and Europe and access to the markets in both regions">
 </div>
 <?php $this->load->view('web-site/includes/footer'); ?>
 <?php $this->load->view('web-site/includes/foot-load'); ?>
-<script type="text/javascript">
-    $('#Link1').on('click', function () {
-        $([document.documentElement, document.body]).animate({
-            scrollTop: $("#anchor1").offset().top -100
-        }, 2000);
-    });
-    $('#Link2').on('click', function () {
-        $([document.documentElement, document.body]).animate({
-            scrollTop: $("#anchor2").offset().top -100
-        }, 2000);
-    });
-    $('#Link3').on('click', function () {
-        $([document.documentElement, document.body]).animate({
-            scrollTop: $("#anchor3").offset().top -100
-        }, 2000);
-    });
-    $('#Link4').on('click', function () {
-        $([document.documentElement, document.body]).animate({
-            scrollTop: $("#anchor4").offset().top -100
-        }, 2000);
-    });
-    $('#Link5').on('click', function () {
-        $([document.documentElement, document.body]).animate({
-            scrollTop: $("#anchor5").offset().top -100
-        }, 2000);
-    });
-</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-<script type="text/javascript">
-    $('#quickEnquireModal').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget); // Button that triggered the modal
-        var recipient = button.data('whatever'); // Extract info from data-* attributes
-        var modal = $(this);
-        modal.find('#modal_reference_id').val(recipient)
-    });
-</script>
-<script type="text/javascript">
-    function ModalEnquireFormValidation() {
-        let modalEnquireFormFlag = true;
-        let modalEnquireForm_info_error = document.getElementById('modalEnquireForm_info_error');
-        let modalEnquireForm_phone_error = document.getElementById('modalEnquireForm_phone_error');
-        modalEnquireForm_info_error.style.display = 'none';
-        modalEnquireForm_phone_error.style.display = 'none';
-        let modalEnquireForm_info = document.getElementById('modalEnquireForm_info').value;
-        let modalEnquireForm_phone = document.getElementById('modal_phone').value;
-        let modalEnquireForm_info_regex = new RegExp(/^\w+\s+\w+/i);
-        let modalEnquireForm_phone_regex = new RegExp(/\d{5,20}/g);
-
-        if (modalEnquireForm_info_regex.test(modalEnquireForm_info) != true) {
-            modalEnquireFormFlag = false;
-            modalEnquireForm_info_error.style.display = 'block';
-        }
-        if (modalEnquireForm_phone_regex.test(modalEnquireForm_phone) != true) {
-            modalEnquireFormFlag = false;
-            modalEnquireForm_phone_error.style.display = 'block';
-        }
-        return modalEnquireFormFlag;
-    }
-
-    const phoneInputFieldModalPROVal = document.querySelector("#modal_phone");
-    const phoneInputModalPROVal = window.intlTelInput(phoneInputFieldModalPROVal, {
-        separateDialCode: true,
-        preferredCountries: ["<? if (isset($geolocation)) {
-            echo $geolocation;
-        } else {
-            echo 'us';
-        } ?>"],
-        hiddenInput: "full",
-        utilsScript:
-            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-    });
-</script>
 <script type="text/javascript">
     $(document).ready(function () {
         $(".side-recommended-owl").owlCarousel({
@@ -1121,6 +1083,70 @@ Asia and Europe and access to the markets in both regions">
             responsiveClass: !0,
             responsive: {0: {items: 1}, 600: {items: 1}, 1000: {items: 1}}
         })
+        $('#Link1').on('click', function () {
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#anchor1").offset().top -100
+            }, 2000);
+        });
+        $('#Link2').on('click', function () {
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#anchor2").offset().top -100
+            }, 2000);
+        });
+        $('#Link3').on('click', function () {
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#anchor3").offset().top -100
+            }, 2000);
+        });
+        $('#Link4').on('click', function () {
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#anchor4").offset().top -100
+            }, 2000);
+        });
+        $('#Link5').on('click', function () {
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#anchor5").offset().top -100
+            }, 2000);
+        });
+        $('#quickEnquireModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Button that triggered the modal
+            var recipient = button.data('whatever'); // Extract info from data-* attributes
+            var modal = $(this);
+            modal.find('#modal_reference_id').val(recipient)
+        });
+        function ModalEnquireFormValidation() {
+            let modalEnquireFormFlag = true;
+            let modalEnquireForm_info_error = document.getElementById('modalEnquireForm_info_error');
+            let modalEnquireForm_phone_error = document.getElementById('modalEnquireForm_phone_error');
+            modalEnquireForm_info_error.style.display = 'none';
+            modalEnquireForm_phone_error.style.display = 'none';
+            let modalEnquireForm_info = document.getElementById('modalEnquireForm_info').value;
+            let modalEnquireForm_phone = document.getElementById('modal_phone').value;
+            let modalEnquireForm_info_regex = new RegExp(/^\w+\s+\w+/i);
+            let modalEnquireForm_phone_regex = new RegExp(/\d{5,20}/g);
+
+            if (modalEnquireForm_info_regex.test(modalEnquireForm_info) != true) {
+                modalEnquireFormFlag = false;
+                modalEnquireForm_info_error.style.display = 'block';
+            }
+            if (modalEnquireForm_phone_regex.test(modalEnquireForm_phone) != true) {
+                modalEnquireFormFlag = false;
+                modalEnquireForm_phone_error.style.display = 'block';
+            }
+            return modalEnquireFormFlag;
+        }
+        const phoneInputFieldModalPROVal = document.querySelector("#modal_phone");
+        const phoneInputModalPROVal = window.intlTelInput(phoneInputFieldModalPROVal, {
+            separateDialCode: true,
+            preferredCountries: ["<? if (isset($geolocation)) {
+                echo $geolocation;
+            } else {
+                echo 'us';
+            } ?>"],
+            hiddenInput: "full",
+            utilsScript:
+                "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        });
     });
 </script>
 </body>

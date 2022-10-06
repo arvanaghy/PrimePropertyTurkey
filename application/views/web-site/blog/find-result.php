@@ -100,11 +100,15 @@
                                                     <i class="far fa-clock"></i>
                                                 </span>
                                             <span class="blue-text">
-                                                   <? $unix_time= mysql_to_unix($value->Blog_Created_date);
-                                                   $date_string = '%d %M %Y';
-                                                   echo mdate($date_string, $unix_time);
-                                                   ?>
-                                            </span>
+                                              <? if ($value->publish_date and $value->publish_date!='0000-00-00') {
+                                                  $date_string = '%d %M %Y';
+                                                  echo mdate($date_string, strtotime($value->publish_date));
+                                              }elseif($value->status ==0){
+                                                  $unix_time = mysql_to_unix($value->Blog_Created_date);
+                                                  $date_string = '%d %M %Y';
+                                                  echo mdate($date_string, $unix_time);
+                                              }
+                                              ?>
                                         </div>
                                         <div class="row mt-2 mx-3 mb-4 justify-content-center">
                                             <a href="<?= base_url();?>blog/<?= $value->url_slug;?>" class="text-reset font-weight-bold">
@@ -150,10 +154,15 @@
                                                         <i class="far fa-clock"></i>
                                                     </span>
                                                 <span class="blue-text">
-                                                      <? $unix_time= mysql_to_unix($value->Blog_Created_date);
-                                                      $date_string = '%d %M %Y';
-                                                      echo mdate($date_string, $unix_time);
-                                                      ?>
+                                                       <? if ($value->publish_date and $value->publish_date!='0000-00-00') {
+                                                           $date_string = '%d %M %Y';
+                                                           echo mdate($date_string, strtotime($value->publish_date));
+                                                       }elseif($value->status ==0){
+                                                           $unix_time = mysql_to_unix($value->Blog_Created_date);
+                                                           $date_string = '%d %M %Y';
+                                                           echo mdate($date_string, $unix_time);
+                                                       }
+                                                       ?>
                                                 </span>
                                             </div>
                                             <div class="row mt-5 mb-4 justify-content-start p-1">

@@ -454,7 +454,7 @@ class Fetch_m extends CI_Model
         $this->db->where('Property_id != ',$propertyID);
         $this->db->where('status > ', 1);
         $this->db->order_by('Property_id', 'DESC');
-        $query = $this->db->get('property', 6, 0);
+        $query = $this->db->get('property', 4, 0);
         if ($query->result()){
             return $query->result();
         }else{

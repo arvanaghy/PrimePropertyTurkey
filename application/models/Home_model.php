@@ -61,7 +61,7 @@ class Home_model extends CI_Model
         $this->db->where('status > ', 1);
         $this->db->where('recommended', 2);
         $this->db->order_by('recommended_sort', 'ASC');
-        $query = $this->db->get('property', 4);
+        $query = $this->db->get('property', 1);
         if ($query->result()) {
             $data['istanbul'] = $query->result();
         } else {
@@ -72,7 +72,7 @@ class Home_model extends CI_Model
         $this->db->where('recommended', 2);
         $this->db->where('status > ', 1);
         $this->db->order_by('recommended_sort', 'ASC');
-        $query = $this->db->get('property', 4);
+        $query = $this->db->get('property', 1);
         if ($query->result()) {
             $data['gocek'] = $query->result();
         } else {
@@ -83,7 +83,7 @@ class Home_model extends CI_Model
         $this->db->where('recommended', 2);
         $this->db->where('status > ', 1);
         $this->db->order_by('recommended_sort', 'ASC');
-        $query = $this->db->get('property', 4);
+        $query = $this->db->get('property', 1);
         if ($query->result()) {
             $data['kas'] = $query->result();
         } else {
@@ -94,7 +94,7 @@ class Home_model extends CI_Model
         $this->db->where('recommended', 2);
         $this->db->where('status > ', 1);
         $this->db->order_by('recommended_sort', 'ASC');
-        $query = $this->db->get('property', 4);
+        $query = $this->db->get('property', 1);
         if ($query->result()) {
             $data['kalkan'] = $query->result();
         } else {
@@ -105,7 +105,7 @@ class Home_model extends CI_Model
         $this->db->where('recommended', 2);
         $this->db->where('status > ', 1);
         $this->db->order_by('recommended_sort', 'ASC');
-        $query = $this->db->get('property', 4);
+        $query = $this->db->get('property', 1);
         if ($query->result()) {
             $data['fethiye'] = $query->result();
         } else {

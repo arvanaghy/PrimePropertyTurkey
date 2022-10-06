@@ -1,89 +1,13 @@
-#main-top-cover .container-fluid{
-    justify-content: center;
-    align-items: center;
-    background-image: url('https://www.primepropertyturkey.com/assets/web-site/images/base/kopya5.webp');
-    min-height: 600px;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-#main-top-cover ul {
-    margin-bottom: 0;
-    padding-left: 0;
-    line-height: 2.4rem;
-    text-align: center;
-    list-style: none;
-}
-#main-top-cover .card {
-    opacity: 0.8;
-    border-radius: 1rem;
-    border-top: 10px solid darkorange;
-}
-#main-top-cover button{
-    animation: MoveUpDown 1.5s linear infinite;
-    position: relative;
-    font-weight: bold;
-}
-@keyframes MoveUpDown {
-    0%, 100% {
-        bottom: 0px;
-    }
-    50% {
-        bottom: 5px;
-    }
-}
-
 @media screen and (max-width: 430px) {
 
-
-    #main-top-cover .container-fluid{
-        justify-content: center;
-        align-items: center;
-        background-image: url('https://www.primepropertyturkey.com/assets/web-site/images/base/mob.webp');
-        min-height: 475px;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-    #main-top-cover ul{
-        padding-left: 0;
-        margin-left: 0;
-    }
-    #main-top-cover li{
-        font-size: 0.7rem;
-    }
     #topEnquireModal {
         z-index: 1050 !important;
-    }
-    #main-top-cover .iti__country-list {
-        z-index: 9999999 !important;
     }
     .iti-mobile .iti__country-list{
         max-width: 250px;
     }
     .iti-mobile .iti--container{
         left: 70px !important;
-    }
-    #main-top-cover .card-body{
-        padding: 1.25rem 0.25rem;
-    }
-
-    #main-top-cover button{
-        animation: MoveUpDown 1.5s linear infinite;
-        position: relative;
-        bottom: 20px;
-        right: 0;
-        left: 0;
-        font-weight: bold;
-        opacity: 0.8;
-    }
-    @keyframes MoveUpDown {
-        0%, 100% {
-            bottom: 20px;
-        }
-        50% {
-            bottom: 25px;
-        }
     }
 }
 #tops{
@@ -114,4 +38,39 @@
 #YouTubeVideos .card-body a:hover{
     color: white !important;
 }
+.resale-badge{
+    background: #012169;
+    color: white;
 
+    border-radius: 10px;
+    display: block;
+    position: absolute;
+
+    opacity: 0.95;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    top: 9%;
+    right: 3%;
+}
+#home-top-slider .carousel-caption button{
+    animation: MoveUpDown 1.5s linear infinite;
+    position: relative;
+    font-weight: bold;
+}
+@keyframes MoveUpDown {
+    0%, 100% {
+        bottom: 0px;
+    }
+    50% {
+        bottom: 5px;
+    }
+}
+#home-top-slider .carousel-caption {
+    bottom: 5% !important;
+}
+#home-top-slider .carousel-caption h3{
+    font-weight: 800;
+    color: darkblue !important;
+    text-shadow: rgb(255, 255, 255) 2px 0px 0px, rgb(255, 255, 255) 1.75517px 0.958851px 0px, rgb(255, 255, 255) 1.0806px 1.68294px 0px, rgb(255, 255, 255) 0.141474px 1.99499px 0px, rgb(255, 255, 255) -0.832294px 1.81859px 0px, rgb(255, 255, 255) -1.60229px 1.19694px 0px, rgb(255, 255, 255) -1.97998px 0.28224px 0px, rgb(255, 255, 255) -1.87291px -0.701566px 0px, rgb(255, 255, 255) -1.30729px -1.5136px 0px, rgb(255, 255, 255) -0.421592px -1.95506px 0px, rgb(255, 255, 255) 0.567324px -1.91785px 0px, rgb(255, 255, 255) 1.41734px -1.41108px 0px, rgb(255, 255, 255) 1.92034px -0.558831px 0px;
+}

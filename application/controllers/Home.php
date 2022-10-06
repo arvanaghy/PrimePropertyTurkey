@@ -26,7 +26,7 @@ class Home extends CI_Controller
             array_push($data['proBed'],$value["Property_Bedrooms"]);
         }
         $find_array = array('Property_location' => '');
-        $data['recently_added'] = $this->Home_model->findProperty($find_array, 4);
+//        $data['recently_added'] = $this->Home_model->findProperty($find_array, 4);
         $data['recommended_properties'] = $this->Home_model->recommendedProperties();
         $data['currency_exchange_data'] = $this->Home_model->currencyExchange();
         $data['YoutubeVideos'] = $this->Home_model->YoutubeVideos();

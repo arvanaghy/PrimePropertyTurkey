@@ -30,76 +30,81 @@
 />
 <link rel="stylesheet" href="<?= base_url();?>assets/web-site/css/phone-input.css">
 <link rel="stylesheet" href="<?= base_url();?>assets/web-site/css/homePage.css">
+</head>
 <style type="text/css">
-    .resale-badge{
-        background: #012169;
-        color: white;
+    @media screen and (min-width: 1400px){
+        #home-top-slider {
+            height: 650px !important;
+        }
+        #PRIME-Property-Turkey .col-12 {
+            height: 300px !important;
+        }
+        #Recommended-Properties {
+            height: 750px !important;
+        }
+        #Recommended-Properties .item a > img{
+            height: 250px !important;
+        }
+    }
+    @media screen and (min-width: 1200px) and (max-width:1399px){
+        #home-top-slider {
+            height: 520px !important;
+        }
+        #PRIME-Property-Turkey .col-12{
+            height: 300px !important;
+        }
+        #Recommended-Properties {
+            height: 750px !important;
+        }
+        #Recommended-Properties .item a > img{
+            height: 200px !important;
+        }
+    }
+    @media screen and (min-width: 992px) and (max-width:1199px){
 
-        border-radius: 10px;
-        display: block;
-        position: absolute;
+    }
+    @media screen and (min-width: 768px) and (max-width:991px){
 
-        opacity: 0.95;
-        font-weight: bold;
-        font-size: 0.8rem;
-        padding: 5px 10px;
-        top: 9%;
-        right: 3%;
+    }
+    @media screen and (min-width: 576px) and (max-width:766px){
+
+    }
+    @media screen and (max-width:575px){
+
     }
 </style>
-</head>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>
-<main>
-    <section id="main-top-cover" class="main-top-cover">
-        <div class="container-fluid">
-            <div class="row justify-content-center d-md-none">
-                <div class="col text-center" id="tops">
-                    <p>ENJOY LIVING &</p>
-                    <p>INVESTING IN TURKEY</p>
+    <section id="home-top-slider">
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators d-none d-md-flex">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="<?= base_url(); ?>assets/web-site/images/istanbul-slider.webp" class="d-block w-100" alt="Istanbul"   >
+                    <div class="carousel-caption d-block">
+                        <h3>Istanbul</h3>
+                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" rel="nofollow">ENQUIRE NOW ! </button>
+                    </div>
                 </div>
-            </div>
-            <div class="row justify-content-end pt-5" id="slogan-box">
-                <div class="col-md-5 mt-5 ">
-                    <div class="card mt-5">
-                        <div class="card-body">
-                            <ul class="font-weight-bold">
-                                <li class="li-small-font">
-                                    <i class="fas fa-circle mx-md-2 mx-1"></i>
-                                    WIDE & UPDATED REAL ESTATE PORTFOLIO
-                                    <i class="fas fa-circle mx-md-2 mx-1"></i>
-                                </li>
-                                <li class="li-small-font">
-                                    <i class="fas fa-circle mx-md-2 mx-1"></i>
-                                    ORIGINAL PROJECT NAMES & EXACT LOCATIONS
-                                    <i class="fas fa-circle mx-md-2 mx-1"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-circle mx-md-2 mx-1"></i>
-                                    BEST TERMS AND PRICES
-                                    <i class="fas fa-circle mx-md-2 mx-1"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-circle mx-md-2 mx-1"></i>
-                                    ONLINE BUYING OPTIONS
-                                    <i class="fas fa-circle mx-md-2 mx-1"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-circle mx-md-2 mx-1"></i>
-                                    VIRTUAL TOURS
-                                    <i class="fas fa-circle mx-md-2 mx-1"></i>
-                                </li>
-                            </ul>
-                        </div>
+                <div class="carousel-item">
+                    <img src="<?= base_url(); ?>assets/web-site/images/fethiye-slider.webp" class="d-block w-100" alt="Fethiye"  >
+                    <div class="carousel-caption d-block">
+                        <h3>Fethiye</h3>
+                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" rel="nofollow">ENQUIRE NOW ! </button>
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center mt-5" id="implement-button">
-                <div class="col-md-3 col-7">
-                    <button class="btn red-button btn-block" id="topCover"
-                            data-toggle="modal" data-target="#topEnquireModal" rel="nofollow">ENQUIRE NOW ! </button>
-                </div>
-            </div>
+            <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </button>
         </div>
     </section>
     <section id="Find-Your-Property" class="Find-Your-Property m-3">
@@ -214,33 +219,33 @@
                     Recommended Turkish Properties
                 </h2>
             </div>
-            <div class="row my-5 justify-content-center align-items-center">
-                <a class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('all')" id="btn_all"
-                   rel="nofollow">
-                    All
-                </a>
-                <a class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('istanbul')" id="btn_ist"
-                   rel="nofollow">
-                    Istanbul
-                </a>
-                <a class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('kalkan')" id="btn_kal"
-                   rel="nofollow">
-                    Kalkan
-                </a>
-                <a class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('fethiye')" id="btn_feth"
-                   rel="nofollow">
-                    Fethiye
-                </a>
-                <a class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('kas')" id="btn_kas"
-                   rel="nofollow">
-                    Kas
-                </a>
-                <a class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('gocek')" id="btn_goc"
-                   rel="nofollow">
-                    Gocek
-                </a>
-            </div>
-            <div id="all_recommended">
+<!--            <div class="row my-5 justify-content-center align-items-center">-->
+<!--                <a class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('all')" id="btn_all"-->
+<!--                   rel="nofollow">-->
+<!--                    All-->
+<!--                </a>-->
+<!--                <a class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('istanbul')" id="btn_ist"-->
+<!--                   rel="nofollow">-->
+<!--                    Istanbul-->
+<!--                </a>-->
+<!--                <a class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('kalkan')" id="btn_kal"-->
+<!--                   rel="nofollow">-->
+<!--                    Kalkan-->
+<!--                </a>-->
+<!--                <a class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('fethiye')" id="btn_feth"-->
+<!--                   rel="nofollow">-->
+<!--                    Fethiye-->
+<!--                </a>-->
+<!--                <a class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('kas')" id="btn_kas"-->
+<!--                   rel="nofollow">-->
+<!--                    Kas-->
+<!--                </a>-->
+<!--                <a class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('gocek')" id="btn_goc"-->
+<!--                   rel="nofollow">-->
+<!--                    Gocek-->
+<!--                </a>-->
+<!--            </div>-->
+            <div id="all_recommended" class="mt-4">
                 <div class="row justify-content-center">
                     <div class="col-11">
                         <div class="recommended-owl owl-carousel owl-theme">
@@ -255,7 +260,8 @@
                                 }
                                 ?>
                                 <div class="item">
-                                    <div class="card">
+                                    <div class="slide-owl-wrap">
+                                        <div class="card">
                                         <a href="<?= base_url(); ?>properties/<?= $city->url_slug; ?>">
                                             <img class="card-img-top img-fluid"
                                                  src="<?= base_url(); ?><?= "assets/web-site/images/properties/P_Thumb/" . $image_name_webp; ?>"
@@ -366,139 +372,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            <? } ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="istanbul_recommended" style="display: none;">
-                <div class="row justify-content-center">
-                    <div class="col-11">
-                        <div class="recommended-owl owl-carousel owl-theme">
-                            <? foreach ($recommended_properties['istanbul'] as $city) { ?>
-                                <? $image_name = str_replace('assets/thumbnail/', '', $city->Property_thumbnail);
-                                $image_name_webp = substr($image_name, 0, strpos($image_name, '.jpg')) . ".webp";
-                                if ($image_name_webp == '') {
-                                    $image_name_webp = substr($image_name, 0, strpos($image_name, '.png')) . ".webp";
-                                }
-                                if ($image_name_webp == '') {
-                                    $image_name_webp = substr($image_name, 0, strpos($image_name, '.jpeg')) . ".webp";
-                                }
-                                ?>
-                                <div class="item">
-                                    <div class="card">
-                                        <a href="<?= base_url(); ?>properties/<?= $city->url_slug; ?>">
-
-                                            <img class="card-img-top img-fluid" title="<?= $city->Property_title; ?>"
-                                                 src="<?= base_url(); ?><?= "assets/web-site/images/properties/P_Thumb/" . $image_name_webp; ?>"
-                                                 alt="<?= $city->Property_title; ?>"
-                                            >
-                                        </a>
-                                        <div class="card-body">
-                                            <div class="container-fluid">
-                                                <div class="card-title text-center">
-                                            <span class="card-type-badge">
-                                                 <?= $city->Property_type; ?>
-
-                                            </span>
-                                                    <span class="card-favorite">
-                                                <? if (is_favored($city->Property_id)) { ?>
-                                                    <a href="<?= base_url(); ?>Favorite/del_favorite/<?= $city->Property_id; ?>"
-                                                       class="red-text" rel="nofollow">
-                                                        <i class="fas fa-heart red-text"></i>
-                                                    </a>
-                                                <? } else { ?>
-                                                    <a href="<?= base_url(); ?>Favorite/set_favorite/<?= $city->Property_id; ?>"
-                                                       class="text-reset" rel="nofollow">
-                                                        <i class="far fa-heart"></i>
-                                                    </a>
-                                                <? } ?>
-                                           </span>
-                                                    <div id="item-card-title">
-                                                        <a href="<?= base_url(); ?>properties/<?= $city->url_slug; ?>"
-                                                           class="text-reset font-weight-bold">
-                                                            <?= $city->Property_title; ?>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="row my-2 justify-content-around align-items-center"
-                                                     id="card-speciality">
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp"
-                                                             alt=""
-                                                             class="img-fluid">
-                                                        <span class="mx-1"><?= $city->Property_location; ?></span>
-                                                    </div>
-                                                    <div class="d-flex align-items-center ">
-                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico3.webp"
-                                                             alt=""
-                                                             class="img-fluid">
-                                                        <span class="mx-1"><?= $city->Property_Bedrooms; ?></span>
-                                                    </div>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp"
-                                                             alt=""
-                                                             class="img-fluid">
-                                                        <span class="mx-1"><?= $city->Property_Bathrooms; ?></span>
-                                                    </div>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp"
-                                                             alt="" class="img-fluid"
-                                                        >
-                                                        <span class="mx-1"><?= $city->Property_living_space; ?></span>
-                                                    </div>
-                                                </div>
-                                                <div class="row my-2">
-                                                    <p class="text-justify item-card-description">
-                                                        <?= substr(strip_tags($city->Property_overview), 0, 100) . "...."; ?>
-                                                    </p>
-                                                </div>
-                                                <div class="row justify-content-around align-items-center mx-1"
-                                                     style="font-size: 1.2rem">
-                                             <span class="red-text font-weight-bold">
-                                                <? if (!$city->SoldOut and $city->Property_price != 0) { ?>
-                                                    <? if ($this->session->has_userdata('currency')) {
-                                                        switch ($this->session->userdata('currency')) {
-                                                            case 'USD': ?>
-                                                                <i class="fas fa-dollar-sign"></i>
-                                                                <?= number_format($city->Property_price); ?>
-                                                                <?
-                                                                break;
-                                                            case 'TRY': ?>
-                                                                <i class="fas fa-lira-sign"></i>
-                                                                <?= number_format($city->Property_price * $currency_exchange_data->try); ?>
-
-                                                                <?
-                                                                break;
-                                                            case 'EUR': ?>
-                                                                <i class="fas fa-euro-sign"></i>
-                                                                <?= number_format($city->Property_price * $currency_exchange_data->euro); ?>
-                                                                <?
-                                                                break;
-                                                            case 'GBP': ?>
-                                                                <i class="fas fa-pound-sign"></i>
-                                                                <?= number_format($city->Property_price * $currency_exchange_data->gpt); ?>
-                                                                <?
-                                                                break;
-                                                        }
-                                                    } else { ?>
-                                                        <i class="fas fa-dollar-sign"></i>
-                                                        <?= number_format($city->Property_price); ?>
-                                                    <? }
-                                                } else { ?>
-                                                    Contact US
-                                                <? } ?>
-                                            </span>
-                                                    <a class="btn btn-danger btn-sm d-flex font-weight-bold"
-                                                       data-toggle="modal"
-                                                       data-whatever="<?= $city->Property_referenceID; ?>"
-                                                       data-target="#quickEnquireModal" rel="nofollow">
-                                                        Quick Enquiry
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             <? } ?>
@@ -506,538 +379,140 @@
                     </div>
                 </div>
             </div>
-            <div id="fethiye_recommended" style="display: none;">
-                <div class="row justify-content-center">
-                    <div class="col-11">
-                        <div class="recommended-owl owl-carousel owl-theme">
-                            <? foreach ($recommended_properties['fethiye'] as $city) { ?>
-                                <? $image_name = str_replace('assets/thumbnail/', '', $city->Property_thumbnail);
-                                $image_name_webp = substr($image_name, 0, strpos($image_name, '.jpg')) . ".webp";
-                                if ($image_name_webp == '') {
-                                    $image_name_webp = substr($image_name, 0, strpos($image_name, '.png')) . ".webp";
-                                }
-                                if ($image_name_webp == '') {
-                                    $image_name_webp = substr($image_name, 0, strpos($image_name, '.jpeg')) . ".webp";
-                                }
-                                ?>
-                                <div class="item">
-                                    <div class="card">
-                                        <a href="<?= base_url(); ?>properties/<?= $city->url_slug; ?>">
-
-                                            <img class="card-img-top img-fluid" title="<?= $city->Property_title; ?>"
-                                                 src="<?= base_url(); ?><?= "assets/web-site/images/properties/P_Thumb/" . $image_name_webp; ?>"
-                                                 alt="<?= $city->Property_title; ?>"
-                                            >
-                                        </a>
-                                        <div class="card-body">
-                                            <div class="container-fluid">
-                                                <div class="card-title text-center">
-                                            <span class="card-type-badge">
-                                                 <?= $city->Property_type; ?>
-
-                                            </span>
-                                                    <span class="card-favorite">
-                                                <? if (is_favored($city->Property_id)) { ?>
-                                                    <a href="<?= base_url(); ?>Favorite/del_favorite/<?= $city->Property_id; ?>"
-                                                       class="red-text" rel="nofollow">
-                                                        <i class="fas fa-heart red-text"></i>
-                                                    </a>
-                                                <? } else { ?>
-                                                    <a href="<?= base_url(); ?>Favorite/set_favorite/<?= $city->Property_id; ?>"
-                                                       class="text-reset" rel="nofollow">
-                                                        <i class="far fa-heart"></i>
-                                                    </a>
-                                                <? } ?>
-                                           </span>
-                                                    <div id="item-card-title">
-                                                        <a href="<?= base_url(); ?>properties/<?= $city->url_slug; ?>"
-                                                           class="text-reset font-weight-bold">
-                                                            <?= $city->Property_title; ?>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="row my-2 justify-content-around align-items-center"
-                                                     id="card-speciality">
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp"
-                                                             alt=""
-                                                             class="img-fluid">
-                                                        <span class="mx-1"><?= $city->Property_location; ?></span>
-                                                    </div>
-                                                    <div class="d-flex align-items-center ">
-                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico3.webp"
-                                                             alt=""
-                                                             class="img-fluid">
-                                                        <span class="mx-1"><?= $city->Property_Bedrooms; ?></span>
-                                                    </div>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp"
-                                                             alt=""
-                                                             class="img-fluid">
-                                                        <span class="mx-1"><?= $city->Property_Bathrooms; ?></span>
-                                                    </div>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp"
-                                                             alt="" class="img-fluid"
-                                                        >
-                                                        <span class="mx-1"><?= $city->Property_living_space; ?></span>
-                                                    </div>
-                                                </div>
-                                                <div class="row my-2">
-                                                    <p class="text-justify item-card-description">
-                                                        <?= substr(strip_tags($city->Property_overview), 0, 100) . "...."; ?>
-                                                    </p>
-                                                </div>
-                                                <div class="row justify-content-around align-items-center mx-1"
-                                                     style="font-size: 1.2rem">
-                                             <span class="red-text font-weight-bold">
-                                                <? if (!$city->SoldOut and $city->Property_price != 0) { ?>
-                                                    <? if ($this->session->has_userdata('currency')) {
-                                                        switch ($this->session->userdata('currency')) {
-                                                            case 'USD': ?>
-                                                                <i class="fas fa-dollar-sign"></i>
-                                                                <?= number_format($city->Property_price); ?>
-                                                                <?
-                                                                break;
-                                                            case 'TRY': ?>
-                                                                <i class="fas fa-lira-sign"></i>
-                                                                <?= number_format($city->Property_price * $currency_exchange_data->try); ?>
-
-                                                                <?
-                                                                break;
-                                                            case 'EUR': ?>
-                                                                <i class="fas fa-euro-sign"></i>
-                                                                <?= number_format($city->Property_price * $currency_exchange_data->euro); ?>
-                                                                <?
-                                                                break;
-                                                            case 'GBP': ?>
-                                                                <i class="fas fa-pound-sign"></i>
-                                                                <?= number_format($city->Property_price * $currency_exchange_data->gpt); ?>
-                                                                <?
-                                                                break;
-                                                        }
-                                                    } else { ?>
-                                                        <i class="fas fa-dollar-sign"></i>
-                                                        <?= number_format($city->Property_price); ?>
-                                                    <? }
-                                                } else { ?>
-                                                    Contact US
-                                                <? } ?>
-                                            </span>
-                                                    <a class="btn btn-danger btn-sm d-flex font-weight-bold"
-                                                       data-toggle="modal"
-                                                       data-whatever="<?= $city->Property_referenceID; ?>"
-                                                       data-target="#quickEnquireModal" rel="nofollow">
-                                                        Quick Enquiry
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            <? } ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="kas_recommended" style="display: none;">
-                <div class="row justify-content-center">
-                    <div class="col-11">
-                        <div class="recommended-owl owl-carousel owl-theme">
-                            <? foreach ($recommended_properties['kas'] as $city) { ?>
-                                <? $image_name = str_replace('assets/thumbnail/', '', $city->Property_thumbnail);
-                                $image_name_webp = substr($image_name, 0, strpos($image_name, '.jpg')) . ".webp";
-                                if ($image_name_webp == '') {
-                                    $image_name_webp = substr($image_name, 0, strpos($image_name, '.png')) . ".webp";
-                                }
-                                if ($image_name_webp == '') {
-                                    $image_name_webp = substr($image_name, 0, strpos($image_name, '.jpeg')) . ".webp";
-                                }
-                                ?>
-                                <div class="item">
-                                    <div class="card">
-                                        <img class="card-img-top img-fluid" title="<?= $city->Property_title; ?>"
-                                             src="<?= base_url(); ?><?= "assets/web-site/images/properties/P_Thumb/" . $image_name_webp; ?>"
-                                             alt="<?= $city->Property_title; ?>"
-                                        >
-                                        <div class="card-body">
-                                            <div class="container-fluid">
-                                                <div class="card-title text-center">
-                                            <span class="card-type-badge">
-                                                 <?= $city->Property_type; ?>
-
-                                            </span>
-                                                    <span class="card-favorite">
-                                                <? if (is_favored($city->Property_id)) { ?>
-                                                    <a href="<?= base_url(); ?>Favorite/del_favorite/<?= $city->Property_id; ?>"
-                                                       class="red-text" rel="nofollow">
-                                                        <i class="fas fa-heart red-text"></i>
-                                                    </a>
-                                                <? } else { ?>
-                                                    <a href="<?= base_url(); ?>Favorite/set_favorite/<?= $city->Property_id; ?>"
-                                                       class="text-reset" rel="nofollow">
-                                                        <i class="far fa-heart"></i>
-                                                    </a>
-                                                <? } ?>
-                                           </span>
-                                                    <div id="item-card-title">
-                                                        <a href="<?= base_url(); ?>properties/<?= $city->url_slug; ?>"
-                                                           class="text-reset font-weight-bold">
-                                                            <?= $city->Property_title; ?>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="row my-2 justify-content-around align-items-center"
-                                                     id="card-speciality">
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp"
-                                                             alt=""
-                                                             class="img-fluid">
-                                                        <span class="mx-1"><?= $city->Property_location; ?></span>
-                                                    </div>
-                                                    <div class="d-flex align-items-center ">
-                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico3.webp"
-                                                             alt=""
-                                                             class="img-fluid">
-                                                        <span class="mx-1"><?= $city->Property_Bedrooms; ?></span>
-                                                    </div>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp"
-                                                             alt=""
-                                                             class="img-fluid">
-                                                        <span class="mx-1"><?= $city->Property_Bathrooms; ?></span>
-                                                    </div>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp"
-                                                             alt="" class="img-fluid"
-                                                        >
-                                                        <span class="mx-1"><?= $city->Property_living_space; ?></span>
-                                                    </div>
-                                                </div>
-                                                <div class="row my-2">
-                                                    <p class="text-justify item-card-description">
-                                                        <?= substr(strip_tags($city->Property_overview), 0, 100) . "...."; ?>
-                                                    </p>
-                                                </div>
-                                                <div class="row justify-content-around align-items-center mx-1"
-                                                     style="font-size: 1.2rem">
-                                             <span class="red-text font-weight-bold">
-                                            <? if (!$city->SoldOut and $city->Property_price != 0) { ?>
-                                                <? if ($this->session->has_userdata('currency')) {
-                                                    switch ($this->session->userdata('currency')) {
-                                                        case 'USD': ?>
-                                                            <i class="fas fa-dollar-sign"></i>
-                                                            <?= number_format($city->Property_price); ?>
-                                                            <?
-                                                            break;
-                                                        case 'TRY': ?>
-                                                            <i class="fas fa-lira-sign"></i>
-                                                            <?= number_format($city->Property_price * $currency_exchange_data->try); ?>
-
-                                                            <?
-                                                            break;
-                                                        case 'EUR': ?>
-                                                            <i class="fas fa-euro-sign"></i>
-                                                            <?= number_format($city->Property_price * $currency_exchange_data->euro); ?>
-                                                            <?
-                                                            break;
-                                                        case 'GBP': ?>
-                                                            <i class="fas fa-pound-sign"></i>
-                                                            <?= number_format($city->Property_price * $currency_exchange_data->gpt); ?>
-                                                            <?
-                                                            break;
-                                                    }
-                                                } else { ?>
-                                                    <i class="fas fa-dollar-sign"></i>
-                                                    <?= number_format($city->Property_price); ?>
-                                                <? }
-                                            } else { ?>
-                                                Contact US
-                                            <? } ?>
-                                            </span>
-                                                    <a class="btn btn-danger btn-sm d-flex font-weight-bold"
-                                                       data-toggle="modal"
-                                                       data-whatever="<?= $city->Property_referenceID; ?>"
-                                                       data-target="#quickEnquireModal" rel="nofollow">
-                                                        Quick Enquiry
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            <? } ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="kalkan_recommended" style="display: none;">
-                <div class="row justify-content-center">
-                    <div class="col-11">
-                        <div class="recommended-owl owl-carousel owl-theme">
-                            <? foreach ($recommended_properties['kalkan'] as $city) { ?>
-                                <? $image_name = str_replace('assets/thumbnail/', '', $city->Property_thumbnail);
-                                $image_name_webp = substr($image_name, 0, strpos($image_name, '.jpg')) . ".webp";
-                                if ($image_name_webp == '') {
-                                    $image_name_webp = substr($image_name, 0, strpos($image_name, '.png')) . ".webp";
-                                }
-                                if ($image_name_webp == '') {
-                                    $image_name_webp = substr($image_name, 0, strpos($image_name, '.jpeg')) . ".webp";
-                                }
-                                ?>
-                                <div class="item">
-                                    <div class="card">
-                                        <a href="<?= base_url(); ?>properties/<?= $city->url_slug; ?>">
-
-                                            <img class="card-img-top img-fluid" title="<?= $city->Property_title; ?>"
-                                                 src="<?= base_url(); ?><?= "assets/web-site/images/properties/P_Thumb/" . $image_name_webp; ?>"
-                                                 alt="<?= $city->Property_title; ?>"
-                                            >
-                                        </a>
-                                        <div class="card-body">
-                                            <div class="container-fluid">
-                                                <div class="card-title text-center">
-                                            <span class="card-type-badge">
-                                                 <?= $city->Property_type; ?>
-
-                                            </span>
-                                                    <span class="card-favorite">
-                                                <? if (is_favored($city->Property_id)) { ?>
-                                                    <a href="<?= base_url(); ?>Favorite/del_favorite/<?= $city->Property_id; ?>"
-                                                       class="red-text" rel="nofollow">
-                                                        <i class="fas fa-heart red-text"></i>
-                                                    </a>
-                                                <? } else { ?>
-                                                    <a href="<?= base_url(); ?>Favorite/set_favorite/<?= $city->Property_id; ?>"
-                                                       class="text-reset" rel="nofollow">
-                                                        <i class="far fa-heart"></i>
-                                                    </a>
-                                                <? } ?>
-                                           </span>
-                                                    <div id="item-card-title">
-                                                        <a href="<?= base_url(); ?>properties/<?= $city->url_slug; ?>"
-                                                           class="text-reset font-weight-bold">
-                                                            <?= $city->Property_title; ?>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="row my-2 justify-content-around align-items-center"
-                                                     id="card-speciality">
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp"
-                                                             alt=""
-                                                             class="img-fluid">
-                                                        <span class="mx-1"><?= $city->Property_location; ?></span>
-                                                    </div>
-                                                    <div class="d-flex align-items-center ">
-                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico3.webp"
-                                                             alt=""
-                                                             class="img-fluid">
-                                                        <span class="mx-1"><?= $city->Property_Bedrooms; ?></span>
-                                                    </div>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp"
-                                                             alt=""
-                                                             class="img-fluid">
-                                                        <span class="mx-1"><?= $city->Property_Bathrooms; ?></span>
-                                                    </div>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp"
-                                                             alt="" class="img-fluid"
-                                                        >
-                                                        <span class="mx-1"><?= $city->Property_living_space; ?></span>
-                                                    </div>
-                                                </div>
-                                                <div class="row my-2">
-                                                    <p class="text-justify item-card-description">
-                                                        <?= substr(strip_tags($city->Property_overview), 0, 100) . "...."; ?>
-                                                    </p>
-                                                </div>
-                                                <div class="row justify-content-around align-items-center mx-1"
-                                                     style="font-size: 1.2rem">
-                                             <span class="red-text font-weight-bold">
-                                                <? if (!$city->SoldOut and $city->Property_price != 0) { ?>
-                                                    <? if ($this->session->has_userdata('currency')) {
-                                                        switch ($this->session->userdata('currency')) {
-                                                            case 'USD': ?>
-                                                                <i class="fas fa-dollar-sign"></i>
-                                                                <?= number_format($city->Property_price); ?>
-                                                                <?
-                                                                break;
-                                                            case 'TRY': ?>
-                                                                <i class="fas fa-lira-sign"></i>
-                                                                <?= number_format($city->Property_price * $currency_exchange_data->try); ?>
-
-                                                                <?
-                                                                break;
-                                                            case 'EUR': ?>
-                                                                <i class="fas fa-euro-sign"></i>
-                                                                <?= number_format($city->Property_price * $currency_exchange_data->euro); ?>
-                                                                <?
-                                                                break;
-                                                            case 'GBP': ?>
-                                                                <i class="fas fa-pound-sign"></i>
-                                                                <?= number_format($city->Property_price * $currency_exchange_data->gpt); ?>
-                                                                <?
-                                                                break;
-                                                        }
-                                                    } else { ?>
-                                                        <i class="fas fa-dollar-sign"></i>
-                                                        <?= number_format($city->Property_price); ?>
-                                                    <? }
-                                                } else { ?>
-                                                    Contact US
-                                                <? } ?>
-                                            </span>
-                                                    <a class="btn btn-danger btn-sm d-flex font-weight-bold"
-                                                       data-toggle="modal"
-                                                       data-whatever="<?= $city->Property_referenceID; ?>"
-                                                       data-target="#quickEnquireModal" rel="nofollow">
-                                                        Quick Enquiry
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            <? } ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="gocek_recommended" style="display: none;">
-                <div class="row justify-content-center">
-                    <div class="col-11">
-                        <div class="recommended-owl owl-carousel owl-theme">
-                            <? foreach ($recommended_properties['gocek'] as $city) { ?>
-                                <? $image_name = str_replace('assets/thumbnail/', '', $city->Property_thumbnail);
-                                $image_name_webp = substr($image_name, 0, strpos($image_name, '.jpg')) . ".webp";
-                                if ($image_name_webp == '') {
-                                    $image_name_webp = substr($image_name, 0, strpos($image_name, '.png')) . ".webp";
-                                }
-                                if ($image_name_webp == '') {
-                                    $image_name_webp = substr($image_name, 0, strpos($image_name, '.jpeg')) . ".webp";
-                                }
-                                ?>
-                                <div class="item">
-                                    <div class="card">
-                                        <a href="<?= base_url(); ?>properties/<?= $city->url_slug; ?>">
-                                            <img class="card-img-top img-fluid" title="<?= $city->Property_title; ?>"
-                                                 src="<?= base_url(); ?><?= "assets/web-site/images/properties/P_Thumb/" . $image_name_webp; ?>"
-                                                 alt="<?= $city->Property_title; ?>"
-                                            >
-                                        </a>
-                                        <div class="card-body">
-                                            <div class="container-fluid">
-                                                <div class="card-title text-center">
-                                            <span class="card-type-badge">
-                                                 <?= $city->Property_type; ?>
-
-                                            </span>
-                                                    <span class="card-favorite">
-                                                <? if (is_favored($city->Property_id)) { ?>
-                                                    <a href="<?= base_url(); ?>Favorite/del_favorite/<?= $city->Property_id; ?>"
-                                                       class="red-text" rel="nofollow">
-                                                        <i class="fas fa-heart red-text"></i>
-                                                    </a>
-                                                <? } else { ?>
-                                                    <a href="<?= base_url(); ?>Favorite/set_favorite/<?= $city->Property_id; ?>"
-                                                       class="text-reset" rel="nofollow">
-                                                        <i class="far fa-heart"></i>
-                                                    </a>
-                                                <? } ?>
-                                           </span>
-                                                    <div id="item-card-title">
-                                                        <a href="<?= base_url(); ?>properties/<?= $city->url_slug; ?>"
-                                                           class="text-reset font-weight-bold">
-                                                            <?= $city->Property_title; ?>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="row my-2 justify-content-around align-items-center"
-                                                     id="card-speciality">
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp"
-                                                             alt=""
-                                                             class="img-fluid">
-                                                        <span class="mx-1"><?= $city->Property_location; ?></span>
-                                                    </div>
-                                                    <div class="d-flex align-items-center ">
-                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico3.webp"
-                                                             alt=""
-                                                             class="img-fluid">
-                                                        <span class="mx-1"><?= $city->Property_Bedrooms; ?></span>
-                                                    </div>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp"
-                                                             alt=""
-                                                             class="img-fluid">
-                                                        <span class="mx-1"><?= $city->Property_Bathrooms; ?></span>
-                                                    </div>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp"
-                                                             alt="" class="img-fluid"
-                                                        >
-                                                        <span class="mx-1"><?= $city->Property_living_space; ?></span>
-                                                    </div>
-                                                </div>
-                                                <div class="row my-2">
-                                                    <p class="text-justify item-card-description">
-                                                        <?= substr(strip_tags($city->Property_overview), 0, 100) . "...."; ?>
-                                                    </p>
-                                                </div>
-                                                <div class="row justify-content-around align-items-center mx-1"
-                                                     style="font-size: 1.2rem">
-                                             <span class="red-text font-weight-bold">
-                                                    <? if (!$city->SoldOut and $city->Property_price != 0) { ?>
-                                                        <? if ($this->session->has_userdata('currency')) {
-                                                            switch ($this->session->userdata('currency')) {
-                                                                case 'USD': ?>
-                                                                    <i class="fas fa-dollar-sign"></i>
-                                                                    <?= number_format($city->Property_price); ?>
-                                                                    <?
-                                                                    break;
-                                                                case 'TRY': ?>
-                                                                    <i class="fas fa-lira-sign"></i>
-                                                                    <?= number_format($city->Property_price * $currency_exchange_data->try); ?>
-
-                                                                    <?
-                                                                    break;
-                                                                case 'EUR': ?>
-                                                                    <i class="fas fa-euro-sign"></i>
-                                                                    <?= number_format($city->Property_price * $currency_exchange_data->euro); ?>
-                                                                    <?
-                                                                    break;
-                                                                case 'GBP': ?>
-                                                                    <i class="fas fa-pound-sign"></i>
-                                                                    <?= number_format($city->Property_price * $currency_exchange_data->gpt); ?>
-                                                                    <?
-                                                                    break;
-                                                            }
-                                                        } else { ?>
-                                                            <i class="fas fa-dollar-sign"></i>
-                                                            <?= number_format($city->Property_price); ?>
-                                                        <? }
-                                                    } else { ?>
-                                                        Contact US
-                                                    <? } ?>
-                                            </span>
-                                                    <a class="btn btn-danger btn-sm d-flex font-weight-bold"
-                                                       data-toggle="modal"
-                                                       data-whatever="<?= $city->Property_referenceID; ?>"
-                                                       data-target="#quickEnquireModal" rel="nofollow">
-                                                        Quick Enquiry
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            <? } ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!--            <div id="istanbul_recommended" style="display: none;">-->
+<!--                <div class="row justify-content-center">-->
+<!--                    <div class="col-11">-->
+<!--                        <div class="recommended-owl owl-carousel owl-theme">-->
+<!--                            --><?// foreach ($recommended_properties['istanbul'] as $city) { ?>
+<!--                                --><?// $image_name = str_replace('assets/thumbnail/', '', $city->Property_thumbnail);
+//                                $image_name_webp = substr($image_name, 0, strpos($image_name, '.jpg')) . ".webp";
+//                                if ($image_name_webp == '') {
+//                                    $image_name_webp = substr($image_name, 0, strpos($image_name, '.png')) . ".webp";
+//                                }
+//                                if ($image_name_webp == '') {
+//                                    $image_name_webp = substr($image_name, 0, strpos($image_name, '.jpeg')) . ".webp";
+//                                }
+//                                ?>
+<!--                                <div class="item">-->
+<!--                                    <div class="card">-->
+<!--                                        <a href="--><?//= base_url(); ?><!--properties/--><?//= $city->url_slug; ?><!--">-->
+<!---->
+<!--                                            <img class="card-img-top img-fluid" title="--><?//= $city->Property_title; ?><!--"-->
+<!--                                                 src="--><?//= base_url(); ?><!----><?//= "assets/web-site/images/properties/P_Thumb/" . $image_name_webp; ?><!--"-->
+<!--                                                 alt="--><?//= $city->Property_title; ?><!--"-->
+<!--                                            >-->
+<!--                                        </a>-->
+<!--                                        <div class="card-body">-->
+<!--                                            <div class="container-fluid">-->
+<!--                                                <div class="card-title text-center">-->
+<!--                                            <span class="card-type-badge">-->
+<!--                                                 --><?//= $city->Property_type; ?>
+<!---->
+<!--                                            </span>-->
+<!--                                                    <span class="card-favorite">-->
+<!--                                                --><?// if (is_favored($city->Property_id)) { ?>
+<!--                                                    <a href="--><?//= base_url(); ?><!--Favorite/del_favorite/--><?//= $city->Property_id; ?><!--"-->
+<!--                                                       class="red-text" rel="nofollow">-->
+<!--                                                        <i class="fas fa-heart red-text"></i>-->
+<!--                                                    </a>-->
+<!--                                                --><?// } else { ?>
+<!--                                                    <a href="--><?//= base_url(); ?><!--Favorite/set_favorite/--><?//= $city->Property_id; ?><!--"-->
+<!--                                                       class="text-reset" rel="nofollow">-->
+<!--                                                        <i class="far fa-heart"></i>-->
+<!--                                                    </a>-->
+<!--                                                --><?// } ?>
+<!--                                           </span>-->
+<!--                                                    <div id="item-card-title">-->
+<!--                                                        <a href="--><?//= base_url(); ?><!--properties/--><?//= $city->url_slug; ?><!--"-->
+<!--                                                           class="text-reset font-weight-bold">-->
+<!--                                                            --><?//= $city->Property_title; ?>
+<!--                                                        </a>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                <div class="row my-2 justify-content-around align-items-center"-->
+<!--                                                     id="card-speciality">-->
+<!--                                                    <div class="d-flex align-items-center">-->
+<!--                                                        <img src="--><?//= base_url(); ?><!--assets/web-site/images/base/audition-svg/ico2.webp"-->
+<!--                                                             alt=""-->
+<!--                                                             class="img-fluid">-->
+<!--                                                        <span class="mx-1">--><?//= $city->Property_location; ?><!--</span>-->
+<!--                                                    </div>-->
+<!--                                                    <div class="d-flex align-items-center ">-->
+<!--                                                        <img src="--><?//= base_url(); ?><!--assets/web-site/images/base/audition-svg/ico3.webp"-->
+<!--                                                             alt=""-->
+<!--                                                             class="img-fluid">-->
+<!--                                                        <span class="mx-1">--><?//= $city->Property_Bedrooms; ?><!--</span>-->
+<!--                                                    </div>-->
+<!--                                                    <div class="d-flex align-items-center">-->
+<!--                                                        <img src="--><?//= base_url(); ?><!--assets/web-site/images/base/audition-svg/ico4.webp"-->
+<!--                                                             alt=""-->
+<!--                                                             class="img-fluid">-->
+<!--                                                        <span class="mx-1">--><?//= $city->Property_Bathrooms; ?><!--</span>-->
+<!--                                                    </div>-->
+<!--                                                    <div class="d-flex align-items-center">-->
+<!--                                                        <img src="--><?//= base_url(); ?><!--assets/web-site/images/base/audition-svg/ico1.webp"-->
+<!--                                                             alt="" class="img-fluid"-->
+<!--                                                        >-->
+<!--                                                        <span class="mx-1">--><?//= $city->Property_living_space; ?><!--</span>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                <div class="row my-2">-->
+<!--                                                    <p class="text-justify item-card-description">-->
+<!--                                                        --><?//= substr(strip_tags($city->Property_overview), 0, 100) . "...."; ?>
+<!--                                                    </p>-->
+<!--                                                </div>-->
+<!--                                                <div class="row justify-content-around align-items-center mx-1"-->
+<!--                                                     style="font-size: 1.2rem">-->
+<!--                                             <span class="red-text font-weight-bold">-->
+<!--                                                --><?// if (!$city->SoldOut and $city->Property_price != 0) { ?>
+<!--                                                    --><?// if ($this->session->has_userdata('currency')) {
+//                                                        switch ($this->session->userdata('currency')) {
+//                                                            case 'USD': ?>
+<!--                                                                <i class="fas fa-dollar-sign"></i>-->
+<!--                                                                --><?//= number_format($city->Property_price); ?>
+<!--                                                                --><?//
+//                                                                break;
+//                                                            case 'TRY': ?>
+<!--                                                                <i class="fas fa-lira-sign"></i>-->
+<!--                                                                --><?//= number_format($city->Property_price * $currency_exchange_data->try); ?>
+<!---->
+<!--                                                                --><?//
+//                                                                break;
+//                                                            case 'EUR': ?>
+<!--                                                                <i class="fas fa-euro-sign"></i>-->
+<!--                                                                --><?//= number_format($city->Property_price * $currency_exchange_data->euro); ?>
+<!--                                                                --><?//
+//                                                                break;
+//                                                            case 'GBP': ?>
+<!--                                                                <i class="fas fa-pound-sign"></i>-->
+<!--                                                                --><?//= number_format($city->Property_price * $currency_exchange_data->gpt); ?>
+<!--                                                                --><?//
+//                                                                break;
+//                                                        }
+//                                                    } else { ?>
+<!--                                                        <i class="fas fa-dollar-sign"></i>-->
+<!--                                                        --><?//= number_format($city->Property_price); ?>
+<!--                                                    --><?// }
+//                                                } else { ?>
+<!--                                                    Contact US-->
+<!--                                                --><?// } ?>
+<!--                                            </span>-->
+<!--                                                    <a class="btn btn-danger btn-sm d-flex font-weight-bold"-->
+<!--                                                       data-toggle="modal"-->
+<!--                                                       data-whatever="--><?//= $city->Property_referenceID; ?><!--"-->
+<!--                                                       data-target="#quickEnquireModal" rel="nofollow">-->
+<!--                                                        Quick Enquiry-->
+<!--                                                    </a>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            --><?// } ?>
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
         </div>
     </section>
     <section id="Turkish-Citizenship" class="Turkish-Citizenship">
@@ -1088,13 +563,15 @@
                     <div class="youtube-owl owl-carousel owl-theme">
                         <? foreach ($YoutubeVideos as $Video) { ?>
                             <div class="item">
-                                <div class="card">
+                                <div class="slide-owl-wrap">
+                                    <div class="card">
                                     <div class="card-body">
                                         <a href="<?= base_url();?>prime-videos/<?= $Video->url_slug;?>" title="<?= strip_tags($Video->description); ?>">
                                             <img src="<?= base_url();?>assets/web-site/images/youtube-cover/<?= $Video->cover_image;?>" alt="<?= $Video->title;?>">
                                             <i class="fas fa-play-circle"></i>
                                         </a>
                                     </div>
+                                </div>
                                 </div>
                             </div>
                         <? } ?>
@@ -1329,153 +806,6 @@
             </div>
         </div>
     </section>
-    <section class="RecentlyAddedProperties" id="RecentlyAddedProperties">
-        <div class="container-fluid py-2 my-2 mt-md-5 pt-md-5">
-            <div class="row justify-content-center">
-                <h4 class="text-center blue-text font-weight-bold">
-                    Recently Added Properties
-                </h4>
-            </div>
-            <div class="row mt-3 mt-md-5 justify-content-around">
-                <div class="col-11">
-                    <div class="recently-owl owl-carousel owl-theme">
-                        <? foreach ($recently_added as $recently_properties) { ?>
-                            <? $image_name = str_replace('assets/thumbnail/', '', $recently_properties->Property_thumbnail);
-                            $image_name_webp = substr($image_name, 0, strpos($image_name, '.jpg')) . ".webp";
-                            if ($image_name_webp == '') {
-                                $image_name_webp = substr($image_name, 0, strpos($image_name, '.png')) . ".webp";
-                            }
-                            if ($image_name_webp == '') {
-                                $image_name_webp = substr($image_name, 0, strpos($image_name, '.jpeg')) . ".webp";
-                            }
-                            ?>
-                            <div class="item">
-                                <div class="card">
-                                    <a href="<?= base_url(); ?>properties/<?= $recently_properties->url_slug; ?>" title="<?= $recently_properties->Property_Bedrooms.' Bedroom '.$recently_properties->Property_type.' For Sale In '.$recently_properties->Property_location; ?>">
-
-                                        <img class="card-img-top img-fluid"
-
-                                             src="<?= base_url(); ?><?= "assets/web-site/images/properties/P_Thumb/" . $image_name_webp; ?>"
-                                             alt="<?= $recently_properties->Property_title; ?>">
-                                    </a>
-                                    <div class="card-body">
-                                        <div class="container-fluid">
-                                            <div class="card-title text-center">
-                                            <span class="card-type-badge">
-                                                 <?= $recently_properties->Property_type; ?>
-                                            </span>
-                                                <? if ($recently_properties->UserID!='admins'){ ?>
-                                                    <span class="resale-badge">
-                                                      Resale
-                                                    </span>
-                                                <? } ?>
-                                                <span class="card-favorite">
-                                                <? if (is_favored($recently_properties->Property_id)) { ?>
-                                                    <a href="<?= base_url(); ?>Favorite/del_favorite/<?= $recently_properties->Property_id; ?>"
-                                                       class="red-text" rel="nofollow">
-                                                        <i class="fas fa-heart red-text"></i>
-                                                    </a>
-                                                <? } else { ?>
-                                                    <a href="<?= base_url(); ?>Favorite/set_favorite/<?= $recently_properties->Property_id; ?>"
-                                                       class="text-reset" rel="nofollow">
-                                                        <i class="far fa-heart"></i>
-                                                    </a>
-                                                <? } ?>
-                                                </span>
-                                                <div id="item-card-title">
-                                                    <a href="<?= base_url(); ?>properties/<?= $recently_properties->url_slug; ?>"
-                                                       class="text-reset font-weight-bold blue-text"
-                                                       title="<?= $recently_properties->Property_Bedrooms; ?> Bedroom <?= $recently_properties->Property_type; ?> For Sale In <?= $recently_properties->Property_location_city; ?>, <?= $recently_properties->Property_location; ?>, Turkey"
-                                                    >
-                                                        <?= $recently_properties->Property_title; ?>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="row my-2 justify-content-around align-items-center"
-                                                 id="card-speciality">
-                                                <div class="d-flex align-items-center">
-                                                    <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp"
-                                                         alt=""
-                                                         class="img-fluid">
-                                                    <span class="mx-1"><?= $recently_properties->Property_location; ?></span>
-                                                </div>
-                                                <div class="d-flex align-items-center ">
-                                                    <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico3.webp"
-                                                         alt=""
-                                                         class="img-fluid">
-                                                    <span class="mx-1"><?= $recently_properties->Property_Bedrooms; ?></span>
-                                                </div>
-                                                <div class="d-flex align-items-center">
-                                                    <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp"
-                                                         alt=""
-                                                         class="img-fluid">
-                                                    <span class="mx-1"><?= $recently_properties->Property_Bathrooms; ?></span>
-                                                </div>
-                                                <div class="d-flex align-items-center">
-                                                    <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp"
-                                                         alt="" class="img-fluid"
-                                                    >
-                                                    <span class="mx-1"><?= $recently_properties->Property_living_space; ?></span>
-                                                </div>
-                                            </div>
-                                            <div class="row my-2">
-                                                <p class="text-justify item-card-description">
-                                                    <?= substr(strip_tags($recently_properties->Property_overview), 0, 100) . "...."; ?>
-                                                </p>
-                                            </div>
-                                            <div class="row justify-content-around align-items-center mx-1"
-                                                 style="font-size: 1.2rem">
-                                             <span class="red-text font-weight-bold">
-                                               <? if (!$recently_properties->SoldOut and $recently_properties->Property_price != 0) { ?>
-                                                   <? if ($this->session->has_userdata('currency')) {
-                                                       switch ($this->session->userdata('currency')) {
-                                                           case 'USD': ?>
-                                                               <i class="fas fa-dollar-sign"></i>
-                                                               <?= number_format($recently_properties->Property_price); ?>
-                                                               <?
-                                                               break;
-                                                           case 'TRY': ?>
-                                                               <i class="fas fa-lira-sign"></i>
-                                                               <?= number_format($recently_properties->Property_price * $currency_exchange_data->try); ?>
-
-                                                               <?
-                                                               break;
-                                                           case 'EUR': ?>
-                                                               <i class="fas fa-euro-sign"></i>
-                                                               <?= number_format($recently_properties->Property_price * $currency_exchange_data->euro); ?>
-                                                               <?
-                                                               break;
-                                                           case 'GBP': ?>
-                                                               <i class="fas fa-pound-sign"></i>
-                                                               <?= number_format($recently_properties->Property_price * $currency_exchange_data->gpt); ?>
-                                                               <?
-                                                               break;
-                                                       }
-                                                   } else { ?>
-                                                       <i class="fas fa-dollar-sign"></i>
-                                                       <?= number_format($recently_properties->Property_price); ?>
-                                                   <? }
-                                               } else { ?>
-                                                   Contact US
-                                               <? } ?>
-                                            </span>
-                                                <a class="btn btn-danger btn-sm d-flex font-weight-bold"
-                                                   data-toggle="modal" data-target="#quickEnquireModal"
-                                                   data-whatever="<?= $recently_properties->Property_referenceID; ?>"
-                                                   rel="nofollow">
-                                                    Quick Enquiry
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        <? } ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <section class="recent" id="recent">
         <div class="container-fluid py-2 my-2 mb-md-4 pb-md-4">
             <div class="row mx-2 mx-md-5 px-1 px-md-3">
@@ -1567,7 +897,6 @@
             </div>
         </div>
     </section>
-</main>
 <div class="modal fade" id="quickEnquireModal" tabindex="-1" aria-labelledby="quickEnquireModalLabel"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -1694,14 +1023,6 @@
 <?php $this->load->view('web-site/includes/foot-load'); ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <script type="text/javascript" src="<?= base_url(); ?>assets/web-site/js/main-page.js"></script>
-<script type="text/javascript">
-    $('#quickEnquireModal').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget); // Button that triggered the modal
-        var recipient = button.data('whatever'); // Extract info from data-* attributes
-        var modal = $(this);
-        modal.find('#modal_reference_id').val(recipient)
-    });
-</script>
 <script type="text/javascript">
     $(document).ready(function () {
         $('#city_value').change(function () {
@@ -1857,67 +1178,70 @@
                 }
             }
         });
-    });
-</script>
-<script type="text/javascript">
-    function ModalEnquireFormValidation(){
-        let modalEnquireFormFlag = true;
-        let modalEnquireForm_info_error = document.getElementById('modalEnquireForm_info_error');
-        let modalEnquireForm_phone_error = document.getElementById('modalEnquireForm_phone_error');
-        modalEnquireForm_info_error.style.display = 'none';
-        modalEnquireForm_phone_error.style.display = 'none';
-        let modalEnquireForm_info = document.getElementById('modalEnquireForm_info').value;
-        let modalEnquireForm_phone = document.getElementById('modal_phone').value;
-        let modalEnquireForm_info_regex = new RegExp(/^\w+\s+\w+/i);
-        let modalEnquireForm_phone_regex = new RegExp(/\d{5,20}/g);
+        $('#quickEnquireModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Button that triggered the modal
+            var recipient = button.data('whatever'); // Extract info from data-* attributes
+            var modal = $(this);
+            modal.find('#modal_reference_id').val(recipient)
+        });
+        function ModalEnquireFormValidation(){
+            let modalEnquireFormFlag = true;
+            let modalEnquireForm_info_error = document.getElementById('modalEnquireForm_info_error');
+            let modalEnquireForm_phone_error = document.getElementById('modalEnquireForm_phone_error');
+            modalEnquireForm_info_error.style.display = 'none';
+            modalEnquireForm_phone_error.style.display = 'none';
+            let modalEnquireForm_info = document.getElementById('modalEnquireForm_info').value;
+            let modalEnquireForm_phone = document.getElementById('modal_phone').value;
+            let modalEnquireForm_info_regex = new RegExp(/^\w+\s+\w+/i);
+            let modalEnquireForm_phone_regex = new RegExp(/\d{5,20}/g);
 
-        if (modalEnquireForm_info_regex.test(modalEnquireForm_info) != true) {
-            modalEnquireFormFlag = false;
-            modalEnquireForm_info_error.style.display = 'block';
+            if (modalEnquireForm_info_regex.test(modalEnquireForm_info) != true) {
+                modalEnquireFormFlag = false;
+                modalEnquireForm_info_error.style.display = 'block';
+            }
+            if (modalEnquireForm_phone_regex.test(modalEnquireForm_phone) != true) {
+                modalEnquireFormFlag = false;
+                modalEnquireForm_phone_error.style.display = 'block';
+            }
+            return modalEnquireFormFlag;
         }
-        if (modalEnquireForm_phone_regex.test(modalEnquireForm_phone) != true) {
-            modalEnquireFormFlag = false;
-            modalEnquireForm_phone_error.style.display = 'block';
-        }
-        return modalEnquireFormFlag;
-    }
-    const phoneInputFieldModalPROVal = document.querySelector("#modal_phone");
-    const phoneInputModalPROVal = window.intlTelInput(phoneInputFieldModalPROVal, {
-        separateDialCode: true,
-        preferredCountries:["<? if (isset($geolocation)){echo $geolocation;}else{echo 'us';} ?>"],
-        hiddenInput: "full",
-        utilsScript:
-            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-    });
+        const phoneInputFieldModalPROVal = document.querySelector("#modal_phone");
+        const phoneInputModalPROVal = window.intlTelInput(phoneInputFieldModalPROVal, {
+            separateDialCode: true,
+            preferredCountries:["<? if (isset($geolocation)){echo $geolocation;}else{echo 'us';} ?>"],
+            hiddenInput: "full",
+            utilsScript:
+                "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        });
+        function TopEnquireFormValidation(){
+            let TopEnquireFormFlag = true;
+            let TopEnquireForm_info_error = document.getElementById('TopEnquireForm_info_error');
+            let TopEnquireForm_phone_error = document.getElementById('TopEnquireForm_phone_error');
+            TopEnquireForm_info_error.style.display = 'none';
+            TopEnquireForm_phone_error.style.display = 'none';
+            let TopEnquireForm_info = document.getElementById('TopEnquireForm_info').value;
+            let TopEnquireForm_phone = document.getElementById('modal_phone_cover').value;
+            let TopEnquireForm_info_regex = new RegExp(/^\w+\s+\w+/i);
+            let TopEnquireForm_phone_regex = new RegExp(/\d{5,20}/g);
 
-    function TopEnquireFormValidation(){
-        let TopEnquireFormFlag = true;
-        let TopEnquireForm_info_error = document.getElementById('TopEnquireForm_info_error');
-        let TopEnquireForm_phone_error = document.getElementById('TopEnquireForm_phone_error');
-        TopEnquireForm_info_error.style.display = 'none';
-        TopEnquireForm_phone_error.style.display = 'none';
-        let TopEnquireForm_info = document.getElementById('TopEnquireForm_info').value;
-        let TopEnquireForm_phone = document.getElementById('modal_phone_cover').value;
-        let TopEnquireForm_info_regex = new RegExp(/^\w+\s+\w+/i);
-        let TopEnquireForm_phone_regex = new RegExp(/\d{5,20}/g);
-
-        if (TopEnquireForm_info_regex.test(TopEnquireForm_info) != true) {
-            TopEnquireFormFlag = false;
-            TopEnquireForm_info_error.style.display = 'block';
+            if (TopEnquireForm_info_regex.test(TopEnquireForm_info) != true) {
+                TopEnquireFormFlag = false;
+                TopEnquireForm_info_error.style.display = 'block';
+            }
+            if (TopEnquireForm_phone_regex.test(TopEnquireForm_phone) != true) {
+                TopEnquireFormFlag = false;
+                TopEnquireForm_phone_error.style.display = 'block';
+            }
+            return TopEnquireFormFlag;
         }
-        if (TopEnquireForm_phone_regex.test(TopEnquireForm_phone) != true) {
-            TopEnquireFormFlag = false;
-            TopEnquireForm_phone_error.style.display = 'block';
-        }
-        return TopEnquireFormFlag;
-    }
-    const phoneInputFieldModalCoverVal = document.querySelector("#modal_phone_cover");
-    const phoneInputModalCoverVal = window.intlTelInput(phoneInputFieldModalCoverVal, {
-        separateDialCode: true,
-        preferredCountries:["<? if (isset($geolocation)){echo $geolocation;}else{echo 'us';} ?>"],
-        hiddenInput: "full",
-        utilsScript:
-            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        const phoneInputFieldModalCoverVal = document.querySelector("#modal_phone_cover");
+        const phoneInputModalCoverVal = window.intlTelInput(phoneInputFieldModalCoverVal, {
+            separateDialCode: true,
+            preferredCountries:["<? if (isset($geolocation)){echo $geolocation;}else{echo 'us';} ?>"],
+            hiddenInput: "full",
+            utilsScript:
+                "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        });
     });
 </script>
 </body>

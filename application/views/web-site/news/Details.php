@@ -42,6 +42,9 @@ if ($image_name_webp==''){
         border: none;
         padding: 2%;
     }
+    #content .details img{
+        width: 100% !important;
+    }
     #blog_detail_content img {
         width: 100% !important;
     }

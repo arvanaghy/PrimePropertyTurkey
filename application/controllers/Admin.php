@@ -740,10 +740,9 @@ class Admin extends CI_Controller
             'News_Image_Alt' => strip_tags($this->input->post('image_alt')),
             'News_Meta_Title' => strip_tags($this->input->post('meta_title')),
             'News_Meta_Keyword' => strip_tags($this->input->post('meta_keyword')),
-            'News_Meta_Description' => strip_tags($this->input->post('meta_description'))
+            'News_Meta_Description' => strip_tags($this->input->post('meta_description')),
+            'url_slug' => url_title(strip_tags($this->input->post('URL')),"-",True)
         );
-
-        $postData['url_slug'] = url_title($postData['News_Title'], "-", True);
         $this->load->model('Admin_model');
         $this->Admin_model->insertNews($postData);
         redirect("Admin/Manage_News");
@@ -854,6 +853,16 @@ class Admin extends CI_Controller
         $this->load->library('user_agent');
         redirect($this->agent->referrer());
     }
+    public function newsUrlCheck()
+    {
+        $value_data = $this->input->post('value_data_posted');
+        if ($value_data != '') {
+            $posted_data = url_title(strip_tags(str_replace('-', '', $value_data)), "-", True);
+            $this->load->model('Admin_model');
+            echo json_encode($this->Admin_model->getNewsTitleAjax($posted_data));
+        }
+    }
+
 
     public function Manage_Videos()
     {

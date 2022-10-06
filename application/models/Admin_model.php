@@ -211,7 +211,6 @@ class Admin_model extends CI_Model
         $this->db->update('blog');
     }
 
-
     public function fetchnews()
     {
         $this->db->order_by('News_ID', 'DESC');
@@ -270,6 +269,17 @@ class Admin_model extends CI_Model
     public function DeleteNewsForEver($id)
     {
         $this->db->delete('news', array('News_ID' => $id));
+    }
+    public function getNewsTitleAjax($value)
+    {
+        $this->db->select('News_ID');
+        $this->db->where('url_slug',$value);
+        $query = $this->db->get('news');
+        if ($query->result()){
+            return $query->result_array();
+        }else{
+            return $data['News_ID'] = null;
+        }
     }
 
     public function fetchVideos()

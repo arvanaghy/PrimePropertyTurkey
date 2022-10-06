@@ -1,6 +1,6 @@
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N243V5Z"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!--<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N243V5Z"-->
+<!--                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>-->
 <!-- End Google Tag Manager (noscript) -->
 <section id="top-bar">
     <div class="container-fluid">
@@ -31,79 +31,79 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="language d-md-inline d-none ">
-                        <div class="btn-group">
-                            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                                <img src="<?= base_url();?>assets/web-site/images/languages-icon/languages.png" alt="languages" class="">
-                                Languages
-                            </button>
-                            <div class="dropdown-menu">
-                                <a rel="nofollow" class="dropdown-item lang-select lang-en" href="#googtrans(en|en)"  data-lang="en">
-                                    <img src="<?= base_url();?>assets/web-site/images/languages-icon/en.png" alt="english" class="">
-                                    <span>ENGLISH</span>
-                                </a>
-                                <a rel="nofollow" class="dropdown-item lang-select lang-de" href="#googtrans(en|de)" data-lang="de" >
-                                    <img src="<?= base_url();?>assets/web-site/images/languages-icon/de.png" alt="GERMAN" class="">
-                                    <span>GERMAN</span>
-
-                                </a>
-                                <a rel="nofollow" class="dropdown-item lang-select lang-fr" href="#googtrans(en|fr)" data-lang="fr">
-                                    <img src="<?= base_url();?>assets/web-site/images/languages-icon/fr.png" alt="FRENCH" class="">
-                                    <span>FRENCH</span>
-                                </a>
-                                <a rel="nofollow" class="dropdown-item lang-select lang-tr" href="#googtrans(en|tr)" data-lang="tr">
-                                    <img src="<?= base_url();?>assets/web-site/images/languages-icon/tr.png" alt="TURKISH" class="">
-                                    <span>TURKISH</span>
-
-                                </a>
-                                <a rel="nofollow" class="dropdown-item lang-select lang-ar" href="#googtrans(en|ar)" data-lang="ar">
-                                    <img src="<?= base_url();?>assets/web-site/images/languages-icon/ar.png" alt="العربیه"
-                                         class="">
-                                    <span>عربي</span>
-
-                                </a>
-                                <a rel="nofollow" class="dropdown-item lang-select lang-ru" href="#googtrans(en|ru)" data-lang="ru">
-                                    <img src="<?= base_url();?>assets/web-site/images/languages-icon/ru.png" alt="RUSSIAN" class="">
-                                    <span>RUSSIAN</span>
-                                </a>
-                                <a rel="nofollow" class="dropdown-item lang-select lang-fa" href="#googtrans(en|fa)" data-lang="fa">
-                                    <img src="<?= base_url();?>assets/web-site/images/languages-icon/iran.png" alt="فارسی" class="">
-                                    <span>فارسی</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="language d-inline d-md-none " id="mobile-language-menu">
-                        <div class="btn-group">
-                            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                                <img src="<?= base_url();?>assets/web-site/images/languages-icon/languages.png" alt="languages" class="">
-                            </button>
-                            <div class="dropdown-menu">
-                                <a rel="nofollow" class="dropdown-item lang-select lang-en text-reset" href="#googtrans(en|en)" data-lang="en">
-                                    <img src="<?= base_url();?>assets/web-site/images/languages-icon/en.png" alt="english" class="" width="25" height="25">
-                                </a>
-                                <a rel="nofollow" class="dropdown-item lang-select lang-de" href="#googtrans(en|de)" data-lang="de">
-                                    <img src="<?= base_url();?>assets/web-site/images/languages-icon/de.png" alt="GERMAN" class="">
-                                </a>
-                                <a rel="nofollow" class="dropdown-item lang-select lang-fr" href="#googtrans(en|fr)" data-lang="fr">
-                                    <img src="<?= base_url();?>assets/web-site/images/languages-icon/fr.png" alt="FRENCH" class="">
-                                </a>
-                                <a rel="nofollow" class="dropdown-item lang-select lang-tr" href="#googtrans(en|tr)" data-lang="tr">
-                                    <img src="<?= base_url();?>assets/web-site/images/languages-icon/tr.png" alt="TURKISH" class="">
-                                </a>
-                                <a rel="nofollow" class="dropdown-item lang-select lang-ar" href="#googtrans(en|ar)" data-lang="ar">
-                                    <img src="<?= base_url();?>assets/web-site/images/languages-icon/ar.png" alt="ARABIC"
-                                         class="">
-                                </a>
-                                <a rel="nofollow" class="dropdown-item lang-select lang-ru" href="#googtrans(en|ru)" data-lang="ru">
-                                    <img src="<?= base_url();?>assets/web-site/images/languages-icon/ru.png" alt="RUSSIAN" class="">
-                                </a>
-                                <a rel="nofollow" class="dropdown-item lang-select lang-fa" href="#googtrans(en|fa)" data-lang="fa">
-                                    <img src="<?= base_url();?>assets/web-site/images/languages-icon/iran.png" alt="iran" class="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+<!--                    <div class="language d-md-inline d-none ">-->
+<!--                        <div class="btn-group">-->
+<!--                            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">-->
+<!--                                <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/languages.png" alt="languages" class="">-->
+<!--                                Languages-->
+<!--                            </button>-->
+<!--                            <div class="dropdown-menu">-->
+<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-en" href="#googtrans(en|en)"  data-lang="en">-->
+<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/en.png" alt="english" class="">-->
+<!--                                    <span>ENGLISH</span>-->
+<!--                                </a>-->
+<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-de" href="#googtrans(en|de)" data-lang="de" >-->
+<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/de.png" alt="GERMAN" class="">-->
+<!--                                    <span>GERMAN</span>-->
+<!---->
+<!--                                </a>-->
+<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-fr" href="#googtrans(en|fr)" data-lang="fr">-->
+<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/fr.png" alt="FRENCH" class="">-->
+<!--                                    <span>FRENCH</span>-->
+<!--                                </a>-->
+<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-tr" href="#googtrans(en|tr)" data-lang="tr">-->
+<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/tr.png" alt="TURKISH" class="">-->
+<!--                                    <span>TURKISH</span>-->
+<!---->
+<!--                                </a>-->
+<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-ar" href="#googtrans(en|ar)" data-lang="ar">-->
+<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/ar.png" alt="العربیه"-->
+<!--                                         class="">-->
+<!--                                    <span>عربي</span>-->
+<!---->
+<!--                                </a>-->
+<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-ru" href="#googtrans(en|ru)" data-lang="ru">-->
+<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/ru.png" alt="RUSSIAN" class="">-->
+<!--                                    <span>RUSSIAN</span>-->
+<!--                                </a>-->
+<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-fa" href="#googtrans(en|fa)" data-lang="fa">-->
+<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/iran.png" alt="فارسی" class="">-->
+<!--                                    <span>فارسی</span>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="language d-inline d-md-none " id="mobile-language-menu">-->
+<!--                        <div class="btn-group">-->
+<!--                            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">-->
+<!--                                <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/languages.png" alt="languages" class="">-->
+<!--                            </button>-->
+<!--                            <div class="dropdown-menu">-->
+<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-en text-reset" href="#googtrans(en|en)" data-lang="en">-->
+<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/en.png" alt="english" class="" width="25" height="25">-->
+<!--                                </a>-->
+<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-de" href="#googtrans(en|de)" data-lang="de">-->
+<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/de.png" alt="GERMAN" class="">-->
+<!--                                </a>-->
+<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-fr" href="#googtrans(en|fr)" data-lang="fr">-->
+<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/fr.png" alt="FRENCH" class="">-->
+<!--                                </a>-->
+<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-tr" href="#googtrans(en|tr)" data-lang="tr">-->
+<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/tr.png" alt="TURKISH" class="">-->
+<!--                                </a>-->
+<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-ar" href="#googtrans(en|ar)" data-lang="ar">-->
+<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/ar.png" alt="ARABIC"-->
+<!--                                         class="">-->
+<!--                                </a>-->
+<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-ru" href="#googtrans(en|ru)" data-lang="ru">-->
+<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/ru.png" alt="RUSSIAN" class="">-->
+<!--                                </a>-->
+<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-fa" href="#googtrans(en|fa)" data-lang="fa">-->
+<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/iran.png" alt="iran" class="">-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                     <span class="top-Buying mx-1 d-block d-md-none">
                         <a href="<?= base_url();?>buying-online" class="btn red-button">
                         BUYING ONLINE

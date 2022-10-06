@@ -89,7 +89,7 @@ class Properties extends CI_Controller
                 }
                 if (!$data['Recommended_Neighborhood_Properties']) {
                     $find_array = array('Property_location' => '');
-                    $data['recently_added'] = $this->Fetch_m->findProperty($find_array, 6);
+                    $data['recently_added'] = $this->Fetch_m->findProperty($find_array, 4);
                 }
                 $data['geolocation'] = fetch_geolocation();
                 $this->load->view('web-site/properties/Audition', $data);

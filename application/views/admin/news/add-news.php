@@ -107,7 +107,21 @@
                                     <input name="news_title" type="text" placeholder="Title" required class="form-control">
                                 </div>
                             </div>
-                            <div class="row">
+                        <div class="row">
+                            <div class="form-group col-sm-12">
+                                <label for="URL">
+                                    <small>
+                                        <strong>
+                                            URL
+                                        </strong>
+                                    </small>
+                                </label>
+                                <input type="text" name="URL" id="URL" class="form-control" required>
+                                <div id="URL_Duplicate_Error" class="text-danger"></div>
+                                <div id="url_length_error" class="text-danger"></div>
+                            </div>
+                        </div>
+                         <div class="row">
                                 <div class="form-group col-sm-12">
                                     <label style="margin-top:10px;padding:5px;" class="control-label">
                                         <small>
@@ -163,6 +177,29 @@
                 ['fontsize', ['fontsize']],
             ]
         });
+        $('#URL').change(function(){
+            $("#submitBtn").prop("disabled",false);
+            let valued_data = $(this).val();
+            $('#URL_Duplicate_Error').text('');
+            $('#url_length_error').text('');
+            $.ajax({
+                url:'<?= base_url(); ?>Admin/newsUrlCheck',
+                method: 'POST',
+                data: {value_data_posted: valued_data},
+                dataType: 'json',
+                success: function(response){
+                    $.each(response, function (i, item) {
+                        $('#URL_Duplicate_Error').text('this url is used , please choose another one');
+                        $("#submitBtn").prop("disabled",true);
+                    });
+                }
+            });
+            if (valued_data.length > 50) {
+                $('#url_length_error').html('<br /> this url is too long');
+                $("#submitBtn").prop("disabled", true);
+            }
+        });
+
     });
     var postForm = function() {
         var content = $('textarea[name="content"]').html($('.summernote').code());
