@@ -16,42 +16,54 @@ class  Favorite extends CI_Controller{
             $this->load->view('web-site/Custom404');
         endif;
     }
-    public function set_favorite()
+    public function del_favorite()
     {
-        if (!empty($this->uri->segment('3'))){
+        $value = strip_tags($this->input->post('send_value'));
+        if ($value!=''){
             $prev_favorite_list = get_cookie('favorite');
             if ($prev_favorite_list!=null){
                 $prev_favorite_list_array = explode(',',$prev_favorite_list);
-                if (in_array($this->uri->segment('3'),$prev_favorite_list_array)){
-                    $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Property already in list </div>");
-                    return $this->FavoriteRefer();
-                }else{
+                if (($key = array_search($value, $prev_favorite_list_array)) !== false) {
+                    unset($prev_favorite_list_array[$key]);
                     $prev_favorite_list = implode(',',$prev_favorite_list_array);
+                    set_cookie('favorite',$prev_favorite_list,'2592000');
+                    $this->session->set_flashdata('message', "<div id='toast_message' class='success'>Property remove from favorite list successfully </div>");
+                    echo True;
+                }else{
+                    $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Something went wrong </div>");
+                    echo False;
                 }
-            }
-            set_cookie('favorite',$prev_favorite_list.','.$this->uri->segment('3'),'2592000');
-            $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Property added to favorite list successfully </div>");
-            return $this->FavoriteRefer();
-        }else{
+                }else{
+                    $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Something went wrong </div>");
+                    echo False;
+                }
+        }else {
+            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Something went wrong </div>");
             return $this->FavoriteRefer();
         }
     }
-    public function del_favorite()
+
+    public function set_favorite()
     {
-        if (!empty($this->uri->segment('3'))){
+        $value = strip_tags($this->input->post('send_value'));
+        if ($value!=''){
             $prev_favorite_list = get_cookie('favorite');
             if ($prev_favorite_list!=null){
                 $prev_favorite_list_array = explode(',',$prev_favorite_list);
-                if (($key = array_search($this->uri->segment('3'), $prev_favorite_list_array)) !== false) {
-                    unset($prev_favorite_list_array[$key]);
+                if (in_array($value,$prev_favorite_list_array)){
+                    $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Property already in list </div>");
+                    echo false;
+                }else{
+                    set_cookie('favorite',$prev_favorite_list.','.$value,'2592000');
+                    $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Property added to favorite list successfully </div>");
+                    echo True;
                 }
-                $prev_favorite_list = implode(',',$prev_favorite_list_array);
+            }else{
+                set_cookie('favorite',$prev_favorite_list.','.$value,'2592000');
+                $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Property added to favorite list successfully </div>");
+                echo True;
             }
-            set_cookie('favorite',$prev_favorite_list,'2592000');
-            $this->session->set_flashdata('message', "<div id='toast_message' class='success'>Property remove from favorite list successfully </div>");
-            return $this->FavoriteRefer();
         }else{
-            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Something went wrong </div>");
             return $this->FavoriteRefer();
         }
     }

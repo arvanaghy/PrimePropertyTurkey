@@ -11,6 +11,8 @@ if ( ! function_exists('is_favored'))
             }else{
                 return False;
             }
+        }else{
+            return False;
         }
     }
 }

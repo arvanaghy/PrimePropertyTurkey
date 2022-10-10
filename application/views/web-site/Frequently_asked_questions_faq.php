@@ -1,18 +1,18 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php $this->load->view('web-site/includes/head-load'); ?>
-<link rel="stylesheet" href="<?= base_url();?>assets/web-site/css/header-image-wrapper.css">
-<link rel="stylesheet" href="<?= base_url();?>assets/web-site/css/short_term_residency_permit.css">
-<link rel="stylesheet" href="<?= base_url();?>assets/web-site/css/frequently_asked_questions_faq.css">
+<link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/header-image-wrapper.css">
+<link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/short_term_residency_permit.css">
+<link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/frequently_asked_questions_faq.css">
 <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
 />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-<link rel="stylesheet" href="<?= base_url();?>assets/web-site/css/phone-input.css">
+<link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/phone-input.css">
 <title>Frequently Asked Questions-FAQ's</title>
 <meta name="description" content="Can I apply for Turkish citizenship with a preliminary contract for
                                                 sale">
-<link rel="canonical" href="https://www.primepropertyturkey.com/frequently-asked-questions-faq" />
+<link rel="canonical" href="https://www.primepropertyturkey.com/frequently-asked-questions-faq"/>
 <style type="text/css">
     .content .card-title {
         font-size: 1rem !important;
@@ -38,7 +38,7 @@
                 <div class="col-lg-8 content">
                     <div class="card my-2">
                         <div class="card-body py-4">
-                            <img src="<?= base_url();?>assets/web-site/images/kizkulesi.webp"
+                            <img src="<?= base_url(); ?>assets/web-site/images/kizkulesi.webp"
                                  alt="Frequently Asked Questions-FAQ's"
                                  class="img-fluid p-3">
                             <div class="card mx-3" style="background-color: #eaeaea">
@@ -128,7 +128,8 @@
                                     <b>Answer: </b>
                                     The appraisal report shall be obtained from the appraisal organizations
                                     posted on the web page of the Board of Capital Markets (SPK)
-                                    <a href="http://www.spk.gov.tr/SiteApps/SirketIletisim/List/g ds" target="_blank" rel="nofollow">
+                                    <a href="http://www.spk.gov.tr/SiteApps/SirketIletisim/List/g ds" target="_blank"
+                                       rel="nofollow">
                                         (http://www.spk.gov.tr/SiteApps/SirketIletisim/List/gds)
                                     </a>. It is valid for
                                     three months beginning from the date of issue. It shall be considered
@@ -141,8 +142,17 @@
                         <div class="card-body">
                             <div class="useful px-4 py-2">
                                 <strong> Did You Find This Useful ? </strong>
-                                <a href="<?= base_url();?>Like/faq" <? if(is_faqDisliked()){?>style="pointer-events: none;"<?}?>  rel="nofollow" ><? if(is_faqLiked()){?><span class="pl-2"><i class="fas fa-thumbs-up"></i></span><?}else{?><span class="pl-2"><i class="far fa-thumbs-up"></i></span><?}?></a>
-                                <a href="<?= base_url();?>Dislike/faq" <? if(is_faqLiked()){?>style="pointer-events: none;"<?}?>  rel="nofollow" ><? if (is_faqDisliked()){ ?><span class="pl-2"  ><i class="fas fa-thumbs-down"></i></span><?} ?><span class="pl-2"  ><i class="far fa-thumbs-down"></i></span></a>
+                                <button id="like_button"
+                                        <? if (is_faqDisliked()){ ?>style="pointer-events: none;border: 0;background-color: transparent;"
+                                        <? }else{ ?>style="border: 0;background-color: transparent;" <?}?>
+                                    ><? if (is_faqLiked()) { ?><span class="pl-2"><i
+                                                class="fas fa-thumbs-up"></i></span><? } else { ?><span class="pl-2"><i
+                                                class="far fa-thumbs-up"></i></span><? } ?></button>
+                                <button id="Dislike_button"
+                                        <? if (is_faqLiked()){ ?>style="pointer-events: none;border: 0;background-color: transparent;"
+                                        <? }else{ ?>style="border: 0;background-color: transparent;"<?}?> ><? if (is_faqDisliked()) { ?>
+                                        <span class="pl-2"><i class="fas fa-thumbs-down"></i></span><? }else{ ?><span
+                                            class="pl-2"><i class="far fa-thumbs-down"></i></span><?}?></button>
                             </div>
                         </div>
                     </div>
@@ -158,7 +168,40 @@
 </main>
 <?php $this->load->view('web-site/includes/footer'); ?>
 <?php $this->load->view('web-site/includes/foot-load'); ?>
-<script type="text/javascript" src="<?= base_url();?>assets/web-site/js/phone-input.js"></script>
+<script type="text/javascript" src="<?= base_url(); ?>assets/web-site/js/phone-input.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#like_button").on("click", function () {
+            $.ajax({
+                url: '<?= base_url(); ?>Like/faq',
+                method: 'POST',
+                data: {value_data_posted: 'fag'},
+                dataType: 'json',
+                success: function (response) {
+                    if (response) {
+                        location.reload();
+                    } else {
+                        location.reload();
+                    }
+                }
+            });
+        });
+        $("#Dislike_button").on("click", function () {
+            $.ajax({
+                url: '<?= base_url();?>Dislike/faq',
+                method: 'POST',
+                data: {value_data_posted: 'fag'},
+                dataType: 'json',
+                success: function (response) {
+                    if (response) {
+                        location.reload();
+                    } else {
+                        location.reload();
+                    }
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>
-

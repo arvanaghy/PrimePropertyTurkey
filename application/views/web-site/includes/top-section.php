@@ -31,79 +31,6 @@
                             </li>
                         </ul>
                     </div>
-<!--                    <div class="language d-md-inline d-none ">-->
-<!--                        <div class="btn-group">-->
-<!--                            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">-->
-<!--                                <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/languages.png" alt="languages" class="">-->
-<!--                                Languages-->
-<!--                            </button>-->
-<!--                            <div class="dropdown-menu">-->
-<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-en" href="#googtrans(en|en)"  data-lang="en">-->
-<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/en.png" alt="english" class="">-->
-<!--                                    <span>ENGLISH</span>-->
-<!--                                </a>-->
-<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-de" href="#googtrans(en|de)" data-lang="de" >-->
-<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/de.png" alt="GERMAN" class="">-->
-<!--                                    <span>GERMAN</span>-->
-<!---->
-<!--                                </a>-->
-<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-fr" href="#googtrans(en|fr)" data-lang="fr">-->
-<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/fr.png" alt="FRENCH" class="">-->
-<!--                                    <span>FRENCH</span>-->
-<!--                                </a>-->
-<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-tr" href="#googtrans(en|tr)" data-lang="tr">-->
-<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/tr.png" alt="TURKISH" class="">-->
-<!--                                    <span>TURKISH</span>-->
-<!---->
-<!--                                </a>-->
-<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-ar" href="#googtrans(en|ar)" data-lang="ar">-->
-<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/ar.png" alt="العربیه"-->
-<!--                                         class="">-->
-<!--                                    <span>عربي</span>-->
-<!---->
-<!--                                </a>-->
-<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-ru" href="#googtrans(en|ru)" data-lang="ru">-->
-<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/ru.png" alt="RUSSIAN" class="">-->
-<!--                                    <span>RUSSIAN</span>-->
-<!--                                </a>-->
-<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-fa" href="#googtrans(en|fa)" data-lang="fa">-->
-<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/iran.png" alt="فارسی" class="">-->
-<!--                                    <span>فارسی</span>-->
-<!--                                </a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="language d-inline d-md-none " id="mobile-language-menu">-->
-<!--                        <div class="btn-group">-->
-<!--                            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">-->
-<!--                                <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/languages.png" alt="languages" class="">-->
-<!--                            </button>-->
-<!--                            <div class="dropdown-menu">-->
-<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-en text-reset" href="#googtrans(en|en)" data-lang="en">-->
-<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/en.png" alt="english" class="" width="25" height="25">-->
-<!--                                </a>-->
-<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-de" href="#googtrans(en|de)" data-lang="de">-->
-<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/de.png" alt="GERMAN" class="">-->
-<!--                                </a>-->
-<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-fr" href="#googtrans(en|fr)" data-lang="fr">-->
-<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/fr.png" alt="FRENCH" class="">-->
-<!--                                </a>-->
-<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-tr" href="#googtrans(en|tr)" data-lang="tr">-->
-<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/tr.png" alt="TURKISH" class="">-->
-<!--                                </a>-->
-<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-ar" href="#googtrans(en|ar)" data-lang="ar">-->
-<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/ar.png" alt="ARABIC"-->
-<!--                                         class="">-->
-<!--                                </a>-->
-<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-ru" href="#googtrans(en|ru)" data-lang="ru">-->
-<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/ru.png" alt="RUSSIAN" class="">-->
-<!--                                </a>-->
-<!--                                <a rel="nofollow" class="dropdown-item lang-select lang-fa" href="#googtrans(en|fa)" data-lang="fa">-->
-<!--                                    <img src="--><?//= base_url();?><!--assets/web-site/images/languages-icon/iran.png" alt="iran" class="">-->
-<!--                                </a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
                     <span class="top-Buying mx-1 d-block d-md-none">
                         <a href="<?= base_url();?>buying-online" class="btn red-button">
                         BUYING ONLINE
@@ -135,7 +62,7 @@
                 <div class="row justify-content-md-end justify-content-center align-items-center">
                     <? if ($this->session->has_userdata('username') && $this->session->has_userdata('user_info'))   { ?>
                     <span class="user-top-login mx-1">
-                        <a href="<?= base_url();?>user" rel="nofollow" class="">
+                        <a href="<?= base_url();?>user" class="">
                             <i class="fas fa-users"></i>
                             <span class="d-none d-md-inline">
                                     <?= $this->session->userdata('user_info');  ?>
@@ -144,7 +71,7 @@
                     </span>
                     <? }else{ ?>
                         <span class="user-top-login mx-1">
-                        <a href="<?= base_url();?>User/UserLogin" rel="nofollow" class="">
+                        <a href="<?= base_url();?>User/UserLogin" class="">
                             <i class="fas fa-users"></i>
                             <span class="d-none d-md-inline">
                                     Login / Register
@@ -155,17 +82,17 @@
                     <div class="crypto d-md-none d-inline mx-1  ">
                         <ul class="list-group list-group-horizontal">
                             <li class="list-group-item text-warning">
-                                <a  class="text-reset" rel="nofollow">
+                                <a  class="text-reset" >
                                     <img src="<?= base_url();?>assets/web-site/images/base/currency/3838998_bitcoin_cryptocurrency_currency_money_finance_icon.webp" alt="bitcoin" class="img-fluid" width="17px">
                                 </a>
                             </li>
                             <li class="list-group-item">
-                                <a  class="text-reset" rel="nofollow">
+                                <a  class="text-reset" >
                                     <img src="<?= base_url();?>assets/web-site/images/base/currency/4373172_ethereum_logo_logos_icon.webp" alt="ethereum" class="img-fluid" width="17px">
                                 </a>
                             </li>
                             <li class="list-group-item">
-                                <a rel="nofollow">
+                                <a >
                                     <img src="<?= base_url();?>assets/web-site/images/base/currency/2785456_blockchain_litecoin_icon.webp" alt="litecoin" class="img-fluid" width="17px">
                                 </a>
                             </li>
@@ -181,7 +108,7 @@
                         </a>
                     </span>
                     <span class="top-search mx-1">
-                        <button rel="nofollow" class="btn" id="searchToggle">
+                        <button class="btn" id="searchToggle">
                             <i class="fas fa-search"></i>
                         </button>
                         <span id="toggle-search">
@@ -197,7 +124,7 @@
     </div>
 </section>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark main-menu sticky-top">
-    <a class="navbar-brand ml-md-5" href="<?= base_url();?>" rel="nofollow">
+    <a class="navbar-brand ml-md-5" href="<?= base_url();?>" >
         <img src="<?= base_url();?>assets/web-site/images/base/masters/logonew.webp" class="img-fluid" alt="Prime Property Turkey">
     </a>
     <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -207,12 +134,12 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto mr-md-5">
             <li class="nav-item active">
-                <a class="nav-link" href="<?= base_url();?>" rel="nofollow" >Home
+                <a class="nav-link" href="<?= base_url();?>" >Home
                     <span class="sr-only">(current)</span>
                 </a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="" rel="nofollow" id="navbarDropdown" role="button" data-toggle="dropdown"
+                <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown"
                    aria-expanded="false">
                     Properties
                 </a>
@@ -229,7 +156,7 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" rel="nofollow" role="button" data-toggle="dropdown"
+                <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown"
                    aria-expanded="false">
                     Turkish Citizenship
                 </a>
@@ -244,7 +171,7 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" rel="nofollow" role="button" data-toggle="dropdown"
+                <a class="nav-link dropdown-toggle" id="navbarDropdown"  role="button" data-toggle="dropdown"
                    aria-expanded="false">
                     Guides
                 </a>
@@ -267,7 +194,7 @@
                 <a class="nav-link" href="<?= base_url();?>news">News</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" rel="nofollow" role="button" data-toggle="dropdown"
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
                    aria-expanded="false">
                     Contact
                 </a>

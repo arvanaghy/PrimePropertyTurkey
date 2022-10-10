@@ -19,45 +19,55 @@ class Like extends CI_Controller
             endif;
     }
 
-    public function blog($passed_url)
+    public function blog()
     {
-        if ($passed_url){
+        $value_data = $this->input->post('value_data_posted');
+        if ($value_data != ''){
             $prev_like_blog = get_cookie('like_blog');
             if ($prev_like_blog!=null){
                 $prev_blogLike_list_array = explode(',',$prev_like_blog);
-                if (in_array(strip_tags($passed_url),$prev_blogLike_list_array)){
+                if (in_array(strip_tags($value_data),$prev_blogLike_list_array)){
                     $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> You Voted This Blog Before </div>");
-                    return $this->likeRefer();
+                    echo json_encode(false);
                 }else{
-                    $prev_like_blog = implode(',',$prev_blogLike_list_array);
+                    $this->Like_model->doLike('blog',strip_tags($value_data));
+                    set_cookie('like_blog',$prev_like_blog.','.strip_tags($value_data),'2592000');
+                    $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
+                    echo json_encode(true);
                 }
+            }else{
+                $this->Like_model->doLike('blog',strip_tags($value_data));
+                set_cookie('like_blog',$prev_like_blog.','.strip_tags($value_data),'2592000');
+                $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
+                echo json_encode(true);
             }
-            $this->Like_model->doLike('blog',strip_tags($passed_url));
-            set_cookie('like_blog',$prev_like_blog.','.strip_tags($passed_url),'2592000');
-            $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
-            return $this->likeRefer();
         }else{
             $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Something went wrong </div>");
             return $this->likeRefer();
         }
     }
-    public function news($passed_url)
+    public function news()
     {
-        if ($passed_url){
-            $prev_like_news = get_cookie('like_news');
-            if ($prev_like_news!=null){
-                $prev_newsLike_list_array = explode(',',$prev_like_news);
-                if (in_array(strip_tags($passed_url),$prev_newsLike_list_array)){
+        $value_data = $this->input->post('value_data_posted');
+        if ($value_data != ''){
+            $prev_like_blog = get_cookie('like_news');
+            if ($prev_like_blog!=null){
+                $prev_blogLike_list_array = explode(',',$prev_like_blog);
+                if (in_array(strip_tags($value_data),$prev_blogLike_list_array)){
                     $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> You Voted This News Before </div>");
-                    return $this->likeRefer();
+                    echo json_encode(false);
                 }else{
-                    $prev_like_news = implode(',',$prev_newsLike_list_array);
+                    $this->Like_model->doLike('news',strip_tags($value_data));
+                    set_cookie('like_news',$prev_like_blog.','.strip_tags($value_data),'2592000');
+                    $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
+                    echo json_encode(true);
                 }
+            }else{
+                $this->Like_model->doLike('news',strip_tags($value_data));
+                set_cookie('like_news',$prev_like_blog.','.strip_tags($value_data),'2592000');
+                $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
+                echo json_encode(true);
             }
-            $this->Like_model->doLike('news',strip_tags($passed_url));
-            set_cookie('like_news',$prev_like_news.','.strip_tags($passed_url),'2592000');
-            $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
-            return $this->likeRefer();
         }else{
             $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Something went wrong </div>");
             return $this->likeRefer();
@@ -150,26 +160,41 @@ class Like extends CI_Controller
     }
     public function extension()
     {
-        $prev_like = get_cookie('like_extension');
-        if ($prev_like!=null and $prev_like=='True'){
-            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> You Voted This Blog Before </div>");
+        $value_data = $this->input->post('value_data_posted');
+        if ($value_data != '') {
+            $prev_like = get_cookie('like_extension');
+            if ($prev_like!=null and $prev_like=='True'){
+                echo json_encode(false);
+                $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> You Voted This Blog Before </div>");
+            }else{
+                echo json_encode(true);
+                set_cookie('like_extension','True','2592000');
+                $this->Like_model->doLikeContent('extension');
+                $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
+            }
+        }else{
+            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Something went Wrong </div>");
             return $this->likeRefer();
         }
-        set_cookie('like_extension','True','2592000');
-        $this->Like_model->doLikeContent('extension');
-        $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
-        return $this->likeRefer();
+
     }
     public function faq()
     {
-        $prev_like = get_cookie('like_faq');
-        if ($prev_like!=null and $prev_like=='True'){
-            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> You Voted This Blog Before </div>");
+        $value_data = $this->input->post('value_data_posted');
+        if ($value_data != '') {
+            $prev_like = get_cookie('like_faq');
+            if ($prev_like!=null and $prev_like=='True'){
+                echo json_encode(false);
+                $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> You Voted This Blog Before </div>");
+            }else{
+                echo json_encode(true);
+                set_cookie('like_faq','True','2592000');
+                $this->Like_model->doLikeContent('faq');
+                $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
+            }
+        }else{
+            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Something went Wrong </div>");
             return $this->likeRefer();
         }
-        set_cookie('like_faq','True','2592000');
-        $this->Like_model->doLikeContent('faq');
-        $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
-        return $this->likeRefer();
     }
 }

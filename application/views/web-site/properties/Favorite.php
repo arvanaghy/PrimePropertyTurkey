@@ -46,7 +46,6 @@
 } ?>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>
-<main>
     <section id="theme-background">
         <div class="header-image-wrapper">
             <div class="bg" id="search-property-BG"></div>
@@ -76,8 +75,7 @@
 
                                 <img class="card-img-top img-fluid"
                                      src="<?= base_url(); ?><?= "assets/web-site/images/properties/P_Thumb/".$image_name_webp; ?>"
-                                     alt="<?= $value->Property_title; ?>"
-                                     >
+                                     alt="<?= $value->Property_title; ?>" >
                                 </a>
                                 <div class="card-body">
                                     <div class="container-fluid">
@@ -91,16 +89,11 @@
                                                     </span>
                                             <?}?>
                                             <span class="card-favorite">
-                                                <? if (is_favored($value->Property_id)){ ?>
-                                                    <a href="<?= base_url();?>Favorite/del_favorite/<?= $value->Property_id; ?>" class="red-text">
-                                                        <i class="fas fa-heart red-text" ></i>
-                                                    </a>
-                                                <?}else{?>
-                                                    <a href="<?= base_url();?>Favorite/set_favorite/<?= $value->Property_id; ?>" class="text-reset">
-                                                        <i class="far fa-heart"></i>
-                                                    </a>
-                                                <? } ?>
-                                        </span>
+                                               <button onclick="delete_favorite_sm('<?= $value->Property_id; ?>');" style="z-index:9999;border:0 !important; ;background-color: transparent !important;padding: 0"
+                                                                                      class="red-text" >
+                                                    <i class="fas fa-heart red-text"></i>
+                                               </button>
+                                            </span>
                                             <a href="<?= base_url(); ?>properties/<?= $value->url_slug; ?>" class="text-reset font-weight-bold px-2 py-2 d-block">
                                                 <?= $value->Property_title; ?>
                                             </a>
@@ -205,15 +198,10 @@
                                                 </div>
                                             <?}?>
                                             <div class="favorite">
-                                                <? if (is_favored($value->Property_id)){ ?>
-                                                    <a href="<?= base_url();?>Favorite/del_favorite/<?= $value->Property_id; ?>" class="red-text">
-                                                        <i class="fas fa-heart red-text" ></i>
-                                                    </a>
-                                                <?}else{?>
-                                                    <a href="<?= base_url();?>Favorite/set_favorite/<?= $value->Property_id; ?>" class="text-reset">
-                                                        <i class="far fa-heart"></i>
-                                                    </a>
-                                                <? } ?>
+                                                <button onclick="delete_favorite('<?= $value->Property_id; ?>');" style="z-index:9999;border:0 !important; ;background-color: transparent !important;padding: 0"
+                                                        class="red-text" >
+                                                    <i class="fas fa-heart red-text"></i>
+                                                </button>
                                             </div>
                                         </div>
                                         <div class="col-7">
@@ -297,10 +285,10 @@
                                                    class="btn btn-outline-danger d-flex my-1 mx-1">
                                                     View Details
                                                 </a>
-                                                <a class="btn btn-outline-danger d-flex my-1 mx-3" data-toggle="modal"
-                                                   data-whatever="<?= $value->Property_referenceID; ?>" data-target="#quickEnquireModal" rel="nofollow">
+                                                <button class="btn btn-danger text-white d-flex my-1 mx-3" data-toggle="modal"
+                                                   data-whatever="<?= $value->Property_referenceID; ?>" data-target="#quickEnquireModal">
                                                     Quick Enquiry
-                                                </a>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -375,7 +363,6 @@
             </div>
         </div>
     </section>
-</main>
 <!-- Modal -->
 <div class="modal fade" id="quickEnquireModal" tabindex="-1" aria-labelledby="quickEnquireModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -433,10 +420,10 @@
         </div>
     </div>
 </div>
-
 <?php $this->load->view('web-site/includes/footer'); ?>
 <?php $this->load->view('web-site/includes/foot-load'); ?>
 <script type="text/javascript" src="/<?= base_url();?>assets/web-site/js/phone-input.js"></script>
+
 <script type="text/javascript">
     $(document).ready(function(){
         $("#read-more").click(function(){
@@ -448,47 +435,65 @@
                 }
             });
         });
-    });
-</script>
-<script type="text/javascript">
-    $('#quickEnquireModal').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget); // Button that triggered the modal
-        var recipient = button.data('whatever'); // Extract info from data-* attributes
-        var modal = $(this);
-        modal.find('#modal_reference_id').val(recipient)
-    });
+        $('#quickEnquireModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Button that triggered the modal
+            var recipient = button.data('whatever'); // Extract info from data-* attributes
+            var modal = $(this);
+            modal.find('#modal_reference_id').val(recipient)
+        });
+        function ModalEnquireFormValidation(){
+            let modalEnquireFormFlag = true;
+            let modalEnquireForm_info_error = document.getElementById('modalEnquireForm_info_error');
+            let modalEnquireForm_phone_error = document.getElementById('modalEnquireForm_phone_error');
+            modalEnquireForm_info_error.style.display = 'none';
+            modalEnquireForm_phone_error.style.display = 'none';
+            let modalEnquireForm_info = document.getElementById('modalEnquireForm_info').value;
+            let modalEnquireForm_phone = document.getElementById('modal_phone').value;
+            let modalEnquireForm_info_regex = new RegExp(/^\w+\s+\w+/i);
+            let modalEnquireForm_phone_regex = new RegExp(/\d{5,20}/g);
 
-</script>
-<script type="text/javascript">
-    function ModalEnquireFormValidation(){
-        let modalEnquireFormFlag = true;
-        let modalEnquireForm_info_error = document.getElementById('modalEnquireForm_info_error');
-        let modalEnquireForm_phone_error = document.getElementById('modalEnquireForm_phone_error');
-        modalEnquireForm_info_error.style.display = 'none';
-        modalEnquireForm_phone_error.style.display = 'none';
-        let modalEnquireForm_info = document.getElementById('modalEnquireForm_info').value;
-        let modalEnquireForm_phone = document.getElementById('modal_phone').value;
-        let modalEnquireForm_info_regex = new RegExp(/^\w+\s+\w+/i);
-        let modalEnquireForm_phone_regex = new RegExp(/\d{5,20}/g);
+            if (modalEnquireForm_info_regex.test(modalEnquireForm_info) != true) {
+                modalEnquireFormFlag = false;
+                modalEnquireForm_info_error.style.display = 'block';
+            }
+            if (modalEnquireForm_phone_regex.test(modalEnquireForm_phone) != true) {
+                modalEnquireFormFlag = false;
+                modalEnquireForm_phone_error.style.display = 'block';
+            }
+            return modalEnquireFormFlag;
+        }
+        const phoneInputFieldModalPROVal = document.querySelector("#modal_phone");
+        const phoneInputModalPROVal = window.intlTelInput(phoneInputFieldModalPROVal, {
+            separateDialCode: true,
+            preferredCountries:["<? if (isset($geolocation)){echo $geolocation;}else{echo 'us';} ?>"],
+            hiddenInput: "full",
+            utilsScript:
+                "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        });
 
-        if (modalEnquireForm_info_regex.test(modalEnquireForm_info) != true) {
-            modalEnquireFormFlag = false;
-            modalEnquireForm_info_error.style.display = 'block';
+    });
+    function delete_favorite(value){
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            if (this.responseText){
+                location.reload();
+            }
         }
-        if (modalEnquireForm_phone_regex.test(modalEnquireForm_phone) != true) {
-            modalEnquireFormFlag = false;
-            modalEnquireForm_phone_error.style.display = 'block';
-        }
-        return modalEnquireFormFlag;
+        xhttp.open("POST", "<?= base_url();?>Favorite/del_favorite");
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("send_value="+value);
     }
-    const phoneInputFieldModalPROVal = document.querySelector("#modal_phone");
-    const phoneInputModalPROVal = window.intlTelInput(phoneInputFieldModalPROVal, {
-        separateDialCode: true,
-        preferredCountries:["<? if (isset($geolocation)){echo $geolocation;}else{echo 'us';} ?>"],
-        hiddenInput: "full",
-        utilsScript:
-            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-    });
+    function delete_favorite_sm(value){
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            if (this.responseText){
+                location.reload();
+            }
+        }
+        xhttp.open("POST", "<?= base_url();?>Favorite/del_favorite");
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("send_value="+value);
+    }
 </script>
 </body>
 </html>

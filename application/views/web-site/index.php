@@ -80,20 +80,25 @@
             <ol class="carousel-indicators d-none d-md-flex">
                 <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="<?= base_url(); ?>assets/web-site/images/istanbul-slider.webp" class="d-block w-100" alt="Istanbul"   >
+                    <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_41_43.webp" class="d-block w-100" alt="Istanbul"   >
                     <div class="carousel-caption d-block">
-                        <h3>Istanbul</h3>
-                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" rel="nofollow">ENQUIRE NOW ! </button>
+                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW ! </button>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="<?= base_url(); ?>assets/web-site/images/fethiye-slider.webp" class="d-block w-100" alt="Fethiye"  >
+                    <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_41_57.webp" class="d-block w-100" alt="Fethiye"  >
                     <div class="carousel-caption d-block">
-                        <h3>Fethiye</h3>
-                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" rel="nofollow">ENQUIRE NOW ! </button>
+                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW ! </button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_42_09.webp" class="d-block w-100" alt="Fethiye"  >
+                    <div class="carousel-caption d-block">
+                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW ! </button>
                     </div>
                 </div>
             </div>
@@ -219,32 +224,32 @@
                     Recommended Turkish Properties
                 </h2>
             </div>
-<!--            <div class="row my-5 justify-content-center align-items-center">-->
-<!--                <a class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('all')" id="btn_all"-->
-<!--                   rel="nofollow">-->
+            <div class="row my-5 justify-content-center align-items-center">
+<!--                <button class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('all')" id="btn_all"-->
+<!--                   >-->
 <!--                    All-->
-<!--                </a>-->
-<!--                <a class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('istanbul')" id="btn_ist"-->
-<!--                   rel="nofollow">-->
+<!--                </button>-->
+<!--                <button class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('istanbul')" id="btn_ist"-->
+<!--                   >-->
 <!--                    Istanbul-->
-<!--                </a>-->
-<!--                <a class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('kalkan')" id="btn_kal"-->
-<!--                   rel="nofollow">-->
+<!--                </button>-->
+<!--                <button class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('kalkan')" id="btn_kal"-->
+<!--                   >-->
 <!--                    Kalkan-->
-<!--                </a>-->
-<!--                <a class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('fethiye')" id="btn_feth"-->
-<!--                   rel="nofollow">-->
+<!--                </button>-->
+<!--                <button class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('fethiye')" id="btn_feth"-->
+<!--                   >-->
 <!--                    Fethiye-->
-<!--                </a>-->
-<!--                <a class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('kas')" id="btn_kas"-->
-<!--                   rel="nofollow">-->
+<!--                </button>-->
+<!--                <button class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('kas')" id="btn_kas"-->
+<!--                   >-->
 <!--                    Kas-->
-<!--                </a>-->
-<!--                <a class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('gocek')" id="btn_goc"-->
-<!--                   rel="nofollow">-->
+<!--                </button>-->
+<!--                <button class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('gocek')" id="btn_goc"-->
+<!--                   >-->
 <!--                    Gocek-->
-<!--                </a>-->
-<!--            </div>-->
+<!--                </button>-->
+            </div>
             <div id="all_recommended" class="mt-4">
                 <div class="row justify-content-center">
                     <div class="col-11">
@@ -274,19 +279,19 @@
                                             <span class="card-type-badge">
                                                  <?= $city->Property_type; ?>
                                             </span>
-                                                    <span class="card-favorite">
-                                                <? if (is_favored($city->Property_id)) { ?>
-                                                    <a href="<?= base_url(); ?>Favorite/del_favorite/<?= $city->Property_id; ?>"
-                                                       class="red-text" rel="nofollow">
-                                                        <i class="fas fa-heart red-text"></i>
-                                                    </a>
-                                                <? } else { ?>
-                                                    <a href="<?= base_url(); ?>Favorite/set_favorite/<?= $city->Property_id; ?>"
-                                                       class="text-reset" rel="nofollow">
-                                                        <i class="far fa-heart"></i>
-                                                    </a>
-                                                <? } ?>
-                                           </span>
+                                            <span class="card-favorite">
+                                            <? if (is_favored($city->Property_id)) { ?>
+                                                <button onclick="delete_favorite('<?= $city->Property_id; ?>');" style="border:0;background-color: transparent !important;padding: 0"
+                                                    class="red-text" >
+                                                    <i class="fas fa-heart red-text"></i>
+                                                </button>
+                                            <? } else { ?>
+                                                <button onclick="set_favorite('<?= $city->Property_id; ?>');" style="border:0;background-color: transparent !important;padding: 0"
+                                                    class="text-reset">
+                                                    <i class="far fa-heart"></i>
+                                                </button>
+                                            <? } ?>
+                                          </span>
                                                     <div id="item-card-title">
                                                         <a href="<?= base_url(); ?>properties/<?= $city->url_slug; ?>"
                                                            class="text-reset font-weight-bold blue-text">
@@ -362,12 +367,12 @@
                                                    Contact US
                                                <? } ?>
                                             </span>
-                                                    <a class="btn btn-danger d-flex font-weight-bold btn-sm"
+                                                    <button class="btn btn-danger d-flex font-weight-bold btn-sm"
                                                        data-toggle="modal"
                                                        data-whatever="<?= $city->Property_referenceID; ?>"
-                                                       data-target="#quickEnquireModal" rel="nofollow">
+                                                       data-target="#quickEnquireModal">
                                                         Quick Enquiry
-                                                    </a>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -412,12 +417,12 @@
 <!--                                                    <span class="card-favorite">-->
 <!--                                                --><?// if (is_favored($city->Property_id)) { ?>
 <!--                                                    <a href="--><?//= base_url(); ?><!--Favorite/del_favorite/--><?//= $city->Property_id; ?><!--"-->
-<!--                                                       class="red-text" rel="nofollow">-->
+<!--                                                       class="red-text" >-->
 <!--                                                        <i class="fas fa-heart red-text"></i>-->
 <!--                                                    </a>-->
 <!--                                                --><?// } else { ?>
 <!--                                                    <a href="--><?//= base_url(); ?><!--Favorite/set_favorite/--><?//= $city->Property_id; ?><!--"-->
-<!--                                                       class="text-reset" rel="nofollow">-->
+<!--                                                       class="text-reset" >-->
 <!--                                                        <i class="far fa-heart"></i>-->
 <!--                                                    </a>-->
 <!--                                                --><?// } ?>
@@ -500,7 +505,7 @@
 <!--                                                    <a class="btn btn-danger btn-sm d-flex font-weight-bold"-->
 <!--                                                       data-toggle="modal"-->
 <!--                                                       data-whatever="--><?//= $city->Property_referenceID; ?><!--"-->
-<!--                                                       data-target="#quickEnquireModal" rel="nofollow">-->
+<!--                                                       data-target="#quickEnquireModal" >-->
 <!--                                                        Quick Enquiry-->
 <!--                                                    </a>-->
 <!--                                                </div>-->
@@ -1243,6 +1248,28 @@
                 "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
         });
     });
+    function set_favorite(value){
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            if (this.responseText){
+                location.reload();
+            }
+        }
+        xhttp.open("POST", "<?= base_url();?>Favorite/set_favorite");
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("send_value="+value);
+    }
+    function delete_favorite(value){
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            if (this.responseText){
+                location.reload();
+            }
+        }
+        xhttp.open("POST", "<?= base_url();?>Favorite/del_favorite");
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("send_value="+value);
+    }
 </script>
 </body>
 </html>

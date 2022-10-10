@@ -23,7 +23,6 @@
 </head>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>
-<main>
     <section id="theme-background">
         <div class="header-image-wrapper">
             <div class="bg" id="short_term_residency-BG"></div>
@@ -99,8 +98,17 @@
                         <div class="card-body">
                             <div class="useful px-4 py-2">
                                 <strong> Did You Find This Useful ? </strong>
-                                <a href="<?= base_url();?>Like/extension" <? if(is_extensionDisliked()){?>style="pointer-events: none;"<?}?>  rel="nofollow" ><? if(is_extensionLiked()){?><span class="pl-2"><i class="fas fa-thumbs-up"></i></span><?}else{?><span class="pl-2"><i class="far fa-thumbs-up"></i></span><?}?></a>
-                                <a href="<?= base_url();?>Dislike/extension" <? if(is_extensionLiked()){?>style="pointer-events: none;"<?}?>  rel="nofollow" ><? if (is_extensionDisliked()){ ?><span class="pl-2"  ><i class="fas fa-thumbs-down"></i></span><?} ?><span class="pl-2"  ><i class="far fa-thumbs-down"></i></span></a>
+                                <button id="like_button"
+                                        <? if (is_extensionDisliked()){ ?>style="pointer-events: none;border: 0;background-color: transparent;"
+                                        <? }else{ ?>style="border: 0;background-color: transparent;" <?}?>
+                                ><? if (is_extensionLiked()) { ?><span class="pl-2"><i
+                                                class="fas fa-thumbs-up"></i></span><? } else { ?><span class="pl-2"><i
+                                                class="far fa-thumbs-up"></i></span><? } ?></button>
+                                <button id="Dislike_button"
+                                        <? if (is_extensionLiked()){ ?>style="pointer-events: none;border: 0;background-color: transparent;"
+                                        <? }else{ ?>style="border: 0;background-color: transparent;"<?}?> ><? if (is_extensionDisliked()) { ?>
+                                        <span class="pl-2"><i class="fas fa-thumbs-down"></i></span><? }else{ ?><span
+                                            class="pl-2"><i class="far fa-thumbs-down"></i></span><? } ?></button>
                             </div>
                         </div>
                     </div>
@@ -118,7 +126,6 @@
             </div>
         </div>
     </section>
-</main>
 <div class="modal fade" id="quickEnquireModal" tabindex="-1" aria-labelledby="quickEnquireModalLabel"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -185,45 +192,6 @@
 <script type="text/javascript" src="<?= base_url(); ?>assets/web-site/js/phone-input.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <script type="text/javascript">
-    $('#quickEnquireModal').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget); // Button that triggered the modal
-        var recipient = button.data('whatever'); // Extract info from data-* attributes
-        var modal = $(this);
-        modal.find('#modal_reference_id').val(recipient)
-    });
-</script>
-<script type="text/javascript">
-    function ModalEnquireFormValidation(){
-        let modalEnquireFormFlag = true;
-        let modalEnquireForm_info_error = document.getElementById('modalEnquireForm_info_error');
-        let modalEnquireForm_phone_error = document.getElementById('modalEnquireForm_phone_error');
-        modalEnquireForm_info_error.style.display = 'none';
-        modalEnquireForm_phone_error.style.display = 'none';
-        let modalEnquireForm_info = document.getElementById('modalEnquireForm_info').value;
-        let modalEnquireForm_phone = document.getElementById('modal_phone').value;
-        let modalEnquireForm_info_regex = new RegExp(/^\w+\s+\w+/i);
-        let modalEnquireForm_phone_regex = new RegExp(/\d{5,20}/g);
-
-        if (modalEnquireForm_info_regex.test(modalEnquireForm_info) != true) {
-            modalEnquireFormFlag = false;
-            modalEnquireForm_info_error.style.display = 'block';
-        }
-        if (modalEnquireForm_phone_regex.test(modalEnquireForm_phone) != true) {
-            modalEnquireFormFlag = false;
-            modalEnquireForm_phone_error.style.display = 'block';
-        }
-        return modalEnquireFormFlag;
-    }
-    const phoneInputFieldModalPROVal = document.querySelector("#modal_phone");
-    const phoneInputModalPROVal = window.intlTelInput(phoneInputFieldModalPROVal, {
-        separateDialCode: true,
-        preferredCountries:["<? if (isset($geolocation)){echo $geolocation;}else{echo 'us';} ?>"],
-        hiddenInput: "full",
-        utilsScript:
-            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-    });
-</script>
-<script type="text/javascript">
     $(document).ready(function () {
         $(".side-recommended-owl").owlCarousel({
             loop: !0,
@@ -233,6 +201,71 @@
             responsiveClass: !0,
             responsive: {0: {items: 1}, 600: {items: 1}, 1000: {items: 1}}
         })
+        $('#quickEnquireModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Button that triggered the modal
+            var recipient = button.data('whatever'); // Extract info from data-* attributes
+            var modal = $(this);
+            modal.find('#modal_reference_id').val(recipient)
+        });
+        function ModalEnquireFormValidation(){
+            let modalEnquireFormFlag = true;
+            let modalEnquireForm_info_error = document.getElementById('modalEnquireForm_info_error');
+            let modalEnquireForm_phone_error = document.getElementById('modalEnquireForm_phone_error');
+            modalEnquireForm_info_error.style.display = 'none';
+            modalEnquireForm_phone_error.style.display = 'none';
+            let modalEnquireForm_info = document.getElementById('modalEnquireForm_info').value;
+            let modalEnquireForm_phone = document.getElementById('modal_phone').value;
+            let modalEnquireForm_info_regex = new RegExp(/^\w+\s+\w+/i);
+            let modalEnquireForm_phone_regex = new RegExp(/\d{5,20}/g);
+
+            if (modalEnquireForm_info_regex.test(modalEnquireForm_info) != true) {
+                modalEnquireFormFlag = false;
+                modalEnquireForm_info_error.style.display = 'block';
+            }
+            if (modalEnquireForm_phone_regex.test(modalEnquireForm_phone) != true) {
+                modalEnquireFormFlag = false;
+                modalEnquireForm_phone_error.style.display = 'block';
+            }
+            return modalEnquireFormFlag;
+        }
+        const phoneInputFieldModalPROVal = document.querySelector("#modal_phone");
+        const phoneInputModalPROVal = window.intlTelInput(phoneInputFieldModalPROVal, {
+            separateDialCode: true,
+            preferredCountries:["<? if (isset($geolocation)){echo $geolocation;}else{echo 'us';} ?>"],
+            hiddenInput: "full",
+            utilsScript:
+                "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        });
+        $("#like_button").on("click", function () {
+            $.ajax({
+                url: '<?= base_url();?>Like/extension',
+                method: 'POST',
+                data: {value_data_posted: 'fag'},
+                dataType: 'json',
+                success: function (response) {
+                    if (response) {
+                        location.reload();
+                    } else {
+                        location.reload();
+                    }
+                }
+            });
+        });
+        $("#Dislike_button").on("click", function () {
+            $.ajax({
+                url: '<?= base_url();?>Dislike/extension',
+                method: 'POST',
+                data: {value_data_posted: 'fag'},
+                dataType: 'json',
+                success: function (response) {
+                    if (response) {
+                        location.reload();
+                    } else {
+                        location.reload();
+                    }
+                }
+            });
+        });
     });
 </script>
 </body>

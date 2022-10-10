@@ -60,16 +60,6 @@
         <changefreq>yearly</changefreq>
         <priority>0.1</priority>
     </url>
-    <url>
-        <loc><?= base_url();?>blog</loc>
-        <changefreq>daily</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc><?= base_url();?>news</loc>
-        <changefreq>daily</changefreq>
-        <priority>0.5</priority>
-    </url>
     <? foreach($Property_pages as $url) { ?>
         <url>
             <loc><?= base_url().'Properties/'.$url->Property_location; ?></loc>

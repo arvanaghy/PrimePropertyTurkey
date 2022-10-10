@@ -33,22 +33,10 @@
         .header-image-wrapper {
             height: 300px !important;
         }
-        #content-buy-online{
-            height: 4700px !important;
-        }
-        .col-lg-8 .content {
-            height: 4650 !important;
-        }
     }
     @media screen and (min-width: 1200px) and (max-width:1399px){
         .header-image-wrapper {
             height: 250px !important;
-        }
-        #content-buy-online{
-            height: 4700px !important;
-        }
-        .col-lg-8 .content {
-            height: 4650 !important;
         }
 
     }
@@ -103,7 +91,7 @@
                             1 to completion. We will include the time necessary to spend with us during your search
                             and the time with the attorneys and notary public
                         </p>
-                        <img src="<?= base_url(); ?>assets/web-site/images/base/buyer-guide.jpg"
+                        <img src="<?= base_url(); ?>assets/web-site/images/base/buyerguide.jpg"
                              alt="buyer guide"
                              class="img-fluid px-3">
                         <p class="px-4 text-left py-3" style="line-height: 1.7rem!important;">

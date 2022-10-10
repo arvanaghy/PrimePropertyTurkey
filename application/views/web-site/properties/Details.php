@@ -9,7 +9,7 @@
 />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/phone-input.css">
-<title>Property For Sale In <?= $this->uri->segment(2); ?><? if ($this->uri->segment(2)!='Istanbul' and $cityValue == 'Istanbul' ): ?>, Istanbul <? endif; ?> - <?= $this->uri->segment(2); ?><? if ($this->uri->segment(2)!='Istanbul' and $cityValue == 'Istanbul' ): ?>, Istanbul <? endif; ?> Real Estate</title>
+<title>Property For Sale In <?= $this->uri->segment(2); ?> - <?= $this->uri->segment(2); ?> Real Estate</title>
 <meta name="description" content="the best suggestion about Properties for sale in  <?= $this->uri->segment(2); ?><? if ($this->uri->segment(2)!='Istanbul' and $cityValue == 'Istanbul' ): ?>, Istanbul <? endif; ?> in prime property turkey, pick your future real estate with Prime Property Turkey">
 <? if (isset($page_id)) {
     $page_id = $page_id;

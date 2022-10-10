@@ -5,39 +5,25 @@ $route['default_controller'] = 'home';
 $route['404_override'] = 'Custom404';
 $route['translate_uri_dashes'] = FALSE;
 
-
-$route['citizenship_by_investment'] = 'Custom404';
-$route['Citizenship_by_investment'] = 'Custom404';
-$route['citizenship-by-investment-in-turkey'] = 'Citizenship_by_investment_in_turkey';
-$route['Citizenship-by-investment-in-turkey'] = 'Citizenship_by_investment_in_turkey';
-
-$route['buyer-guide'] = 'Custom404';
-$route['Buyer-guide'] = 'Custom404';
-$route['Buying_online'] = 'Custom404';
-$route['Buying-online'] = 'Custom404';
-$route['buying-online'] = 'buying_online';
-
 $route['blog/(:any)'] = 'blog/details/$1';
-$route['Blog/(:any)'] = 'blog/details/$1';
 $route['news/(:any)'] = 'news/details/$1';
-$route['News/(:any)'] = 'Custom404';
-$route['Like/blog/(:any)'] = 'Like/blog/$1';
-$route['Dislike/blog/(:any)'] = 'Dislike/blog/$1';
-$route['Like/news/(:any)'] = 'Like/news/$1';
-$route['Dislike/news/(:any)'] = 'Dislike/news/$1';
+//$route['Like/blog/(:any)'] = 'Like/blog/$1';
+//$route['Dislike/blog/(:any)'] = 'Dislike/blog/$1';
+//$route['Like/news/(:any)'] = 'Like/news/$1';
+//$route['Dislike/news/(:any)'] = 'Dislike/news/$1';
 $route['ru/blog/Турция-становится-безопасным-раем-для-российских-инвесторов'] = 'Ru/Blog/$1';
 $route['BlogFind/(:any)'] = 'BlogFind/details/$1';
 
 $route['about-us'] = 'about_us';
-$route['About-us'] = 'Custom404';
 $route['contact-us'] = 'contact_us';
-$route['Contact-us'] = 'Custom404';
+$route['buying-online'] = 'buying_online';
 $route['privacy-policy'] = 'privacy_policy';
 $route['area-guide'] = 'area_guide';
 $route['How-To-Buy-Property-In-Turkey'] = 'Buyer_guide';
+$route['Citizenship-by-investment-in-turkey'] = 'Citizenship_by_investment_in_turkey';
+$route['short-term-residency-permit'] = 'short_term_residency_permit';
 $route['short-term-residency-extension'] = 'short_term_residency_extension';
 $route['frequently-asked-questions-faq'] = 'frequently_asked_questions_faq';
-$route['short-term-residency-permit'] = 'short_term_residency_permit';
 $route['after-sales'] = 'after_sales';
 
 $route['Resale/Preview/(:any)'] = 'Resale/Preview/$1';
@@ -119,10 +105,7 @@ $route['properties/Silivri/(:any)'] = 'properties/Silivri/$1';
 $route['properties/Uskudar/(:any)'] = 'properties/Uskudar/$1';
 $route['properties/Zeytinburnu/(:any)'] = 'properties/Zeytinburnu/$1';
 
-
 // route old site to new one
-$route['Prime'] = 'Custom404';
-$route['Prime/(:any)'] = 'Custom404';
 
 $route['blog/blogs/(:any)'] = 'Custom404';
 $route['blog/blogs/'] = 'Custom404';

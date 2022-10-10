@@ -9,7 +9,6 @@ class Dislike extends CI_Controller
         $this->load->model('Like_model');
         $this->load->library('user_agent');
     }
-
     protected function DislikeRefer()
     {
         $url = $this->agent->referrer();
@@ -22,49 +21,59 @@ class Dislike extends CI_Controller
         endif;
     }
 
-    public function blog($passed_url)
+    public function blog()
     {
-        if ($passed_url) {
-            $prev_dislike_blog = get_cookie('dislike_blog');
-            if ($prev_dislike_blog != null) {
-                $prev_blogDislike_list_array = explode(',', $prev_dislike_blog);
-                if (in_array(strip_tags($passed_url), $prev_blogDislike_list_array)) {
+        $value_data = $this->input->post('value_data_posted');
+        if ($value_data != ''){
+            $prev_like_blog = get_cookie('dislike_blog');
+            if ($prev_like_blog!=null){
+                $prev_blogLike_list_array = explode(',',$prev_like_blog);
+                if (in_array(strip_tags($value_data),$prev_blogLike_list_array)){
                     $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> You Voted This Blog Before </div>");
-                    return $this->DislikeRefer();
-                } else {
-                    $prev_dislike_blog = implode(',', $prev_blogDislike_list_array);
+                    echo json_encode(false);
+                }else{
+                    $this->Like_model->doDislike('blog',strip_tags($value_data));
+                    set_cookie('dislike_blog',$prev_like_blog.','.strip_tags($value_data),'2592000');
+                    $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
+                    echo json_encode(true);
                 }
+            }else{
+                $this->Like_model->doDislike('blog',strip_tags($value_data));
+                set_cookie('dislike_blog',$prev_like_blog.','.strip_tags($value_data),'2592000');
+                $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
+                echo json_encode(true);
             }
-            $this->Like_model->doDislike('blog', strip_tags($passed_url));
-            set_cookie('dislike_blog', $prev_dislike_blog . ',' . strip_tags($passed_url), '2592000');
-            $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
-            return $this->DislikeRefer();
-        } else {
+        }else{
             $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Something went wrong </div>");
-            return $this->DislikeRefer();
+            return $this->likeRefer();
         }
     }
 
-    public function news($passed_url)
+    public function news()
     {
-        if ($passed_url) {
-            $prev_dislike_news = get_cookie('dislike_news');
-            if ($prev_dislike_news != null) {
-                $prev_newsDislike_list_array = explode(',', $prev_dislike_news);
-                if (in_array(strip_tags($passed_url), $prev_newsDislike_list_array)) {
-                    $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> You Voted This Blog Before </div>");
-                    return $this->DislikeRefer();
-                } else {
-                    $prev_dislike_news = implode(',', $prev_newsDislike_list_array);
+        $value_data = $this->input->post('value_data_posted');
+        if ($value_data != ''){
+            $prev_like_blog = get_cookie('dislike_news');
+            if ($prev_like_blog!=null){
+                $prev_blogLike_list_array = explode(',',$prev_like_blog);
+                if (in_array(strip_tags($value_data),$prev_blogLike_list_array)){
+                    $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> You Voted This News Before </div>");
+                    echo json_encode(false);
+                }else{
+                    $this->Like_model->doDislike('news',strip_tags($value_data));
+                    set_cookie('dislike_news',$prev_like_blog.','.strip_tags($value_data),'2592000');
+                    $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
+                    echo json_encode(true);
                 }
+            }else{
+                $this->Like_model->doDislike('news',strip_tags($value_data));
+                set_cookie('dislike_news',$prev_like_blog.','.strip_tags($value_data),'2592000');
+                $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
+                echo json_encode(true);
             }
-            set_cookie('dislike_news', $prev_dislike_news . ',' . strip_tags($passed_url), '2592000');
-            $this->Like_model->doDislike('news', strip_tags($passed_url));
-            $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
-            return $this->DislikeRefer();
-        } else {
+        }else{
             $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Something went wrong </div>");
-            return $this->DislikeRefer();
+            return $this->likeRefer();
         }
     }
 
@@ -161,27 +170,41 @@ class Dislike extends CI_Controller
 
     public function extension()
     {
-        $prev_dislike = get_cookie('dislike_extension');
-        if ($prev_dislike != null and $prev_dislike = 'True') {
-            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> You Voted This Blog Before </div>");
+        $value_data = $this->input->post('value_data_posted');
+        if ($value_data != '') {
+            $prev_dislike = get_cookie('dislike_extension');
+            if ($prev_dislike != null and $prev_dislike = 'True') {
+                $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> You Voted This Blog Before </div>");
+                echo json_encode(false);
+            } else {
+                echo json_encode(true);
+                set_cookie('dislike_extension', 'True', '2592000');
+                $this->Like_model->doDislikeContent('extension');
+                $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
+            }
+        } else {
+            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Something went Wrong </div>");
             return $this->DislikeRefer();
         }
-        set_cookie('dislike_extension', 'True', '2592000');
-        $this->Like_model->doDislikeContent('extension');
-        $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
-        return $this->DislikeRefer();
     }
 
     public function faq()
     {
-        $prev_dislike = get_cookie('dislike_faq');
-        if ($prev_dislike != null and $prev_dislike = 'True') {
-            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> You Voted This Blog Before </div>");
+        $value_data = $this->input->post('value_data_posted');
+        if ($value_data != '') {
+            $prev_dislike = get_cookie('dislike_faq');
+            if ($prev_dislike != null and $prev_dislike = 'True') {
+                $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> You Voted This Blog Before </div>");
+                echo json_encode(false);
+            } else {
+                echo json_encode(true);
+                set_cookie('dislike_faq', 'True', '2592000');
+                $this->Like_model->doDislikeContent('faq');
+                $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
+            }
+        } else {
+            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Something went Wrong </div>");
             return $this->DislikeRefer();
         }
-        set_cookie('dislike_faq', 'True', '2592000');
-        $this->Like_model->doDislikeContent('faq');
-        $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
-        return $this->DislikeRefer();
     }
 }
