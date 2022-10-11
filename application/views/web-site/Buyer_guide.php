@@ -65,7 +65,7 @@
             <p class="text-center px-1"> Process to Buy Property in Turkey </p>
             <p class="text-center px-1">
                 <? if ($this->session->has_userdata('username') && $this->session->has_userdata('user_info')) { ?>
-                    <a href="" class="btn red-button pulse-animation-high-white"> Download Buyer Guide PDF </a>
+                    <a  href="<?= base_url();?>assets/web-site/pdfs/basliksiz.pdf" download="PrimePropertyTurkey_buyersGuide" class="btn red-button pulse-animation-high-white"> Download Buyer Guide PDF </a>
                 <? } else { ?>
                     <a href="<?= base_url(); ?>signup" class="btn red-button pulse-animation-high-white"> Download
                         Buyer Guide PDF </a>
@@ -370,7 +370,7 @@
                              class="img-fluid">
                         <p class="text-center px-1 mt-4">
                             <? if ($this->session->has_userdata('username') && $this->session->has_userdata('user_info')) { ?>
-                                <a href="" class="btn red-button pulse-animation-high-blue"> Download Buyer Guide
+                                <a  href="<?= base_url();?>assets/web-site/pdfs/basliksiz.pdf" download="PrimePropertyTurkey_buyersGuide" class="btn red-button pulse-animation-high-blue"> Download Buyer Guide
                                     PDF </a>
                             <? } else { ?>
                                 <a href="<?= base_url(); ?>signup" class="btn red-button pulse-animation-high-blue">

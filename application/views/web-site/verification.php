@@ -17,7 +17,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-3 col-md-9">
                     <div class="card">
-                        <a href="<?= base_url();?>assets/web-site/pdfs/finalimsi4.pdf" download="PrimePropertyTurkey_buyersGuide">
+                        <a href="<?= base_url();?>assets/web-site/pdfs/basliksiz.pdf" download="PrimePropertyTurkey_buyersGuide">
                             <img src="<?= base_url();?>assets/web-site/images/base/ezgifc.webp" alt="buyers guide Prime" class="card-img-top">
                         </a>
 
@@ -35,7 +35,7 @@
 <script type="text/javascript">
     $(document).ready(function() {
         document.getElementById('down_button').click()
-    });
+    );
 </script>
 
 </body>

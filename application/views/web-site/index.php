@@ -33,28 +33,17 @@
 </head>
 <style type="text/css">
     @media screen and (min-width: 1400px){
-        #home-top-slider {
-            height: 650px !important;
-        }
         #PRIME-Property-Turkey .col-12 {
             height: 300px !important;
-        }
-        #Recommended-Properties {
-            height: 750px !important;
         }
         #Recommended-Properties .item a > img{
             height: 250px !important;
         }
     }
     @media screen and (min-width: 1200px) and (max-width:1399px){
-        #home-top-slider {
-            height: 520px !important;
-        }
+
         #PRIME-Property-Turkey .col-12{
             height: 300px !important;
-        }
-        #Recommended-Properties {
-            height: 750px !important;
         }
         #Recommended-Properties .item a > img{
             height: 200px !important;
@@ -84,19 +73,25 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_41_43.webp" class="d-block w-100" alt="Istanbul"   >
+                    <a href="https://www.primepropertyturkey.com/properties/luxury-living-homes-move-in-ready-in-uskudar">
+                        <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_41_43.webp" class="d-block w-100" alt="Istanbul"   >
+                    </a>
                     <div class="carousel-caption d-block">
                         <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW ! </button>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_41_57.webp" class="d-block w-100" alt="Fethiye"  >
+                    <a href="https://www.primepropertyturkey.com/properties/Five-star-apartments-Istanbul">
+                        <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_41_57.webp" class="d-block w-100" alt="Fethiye"  >
+                    </a>
                     <div class="carousel-caption d-block">
                         <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW ! </button>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_42_09.webp" class="d-block w-100" alt="Fethiye"  >
+                    <a href="https://www.primepropertyturkey.com/properties/duplexes-therra-park">
+                        <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_42_09.webp" class="d-block w-100" alt="Fethiye"  >
+                    </a>
                     <div class="carousel-caption d-block">
                         <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW ! </button>
                     </div>
@@ -854,7 +849,7 @@
                         <? } ?>
                     </div>
                     <div class="row justify-content-center">
-                        <a href="<?= base_url(); ?>Blog" class="btn red-button"> VIEW ALL </a>
+                        <a href="<?= base_url(); ?>blog" class="btn red-button"> VIEW ALL </a>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -896,7 +891,7 @@
                         <? } ?>
                     </div>
                     <div class="row justify-content-center">
-                        <a href="<?= base_url(); ?>News" class="btn red-button"> VIEW ALL </a>
+                        <a href="<?= base_url(); ?>news" class="btn red-button"> VIEW ALL </a>
                     </div>
                 </div>
             </div>
