@@ -1,5 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php $this->load->view('web-site/includes/head-load'); ?>
+<meta name="robots" content="noindex, nofollow">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/header-image-wrapper.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/short_term_residency_permit.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/frequently_asked_questions_faq.css">

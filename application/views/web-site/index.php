@@ -2,7 +2,7 @@
 <?php $this->load->view('web-site/includes/head-load'); ?>
 <title>Prime Property for Sale in Turkey | Prime Property Turkey</title>
 <meta name="description"
-      content="Find your perfect property in Turkey at Prime Property Turkey. We have a wide range of properties for sale in Turkey. If you are looking for or have property for sale Istanbul, Altinkum, Bodrum, Fethiye, Kalkan in Turkey, then call us on (+90) 552 754 44 93.">
+      content="Find your perfect property in Turkey at Prime Property Turkey. We have a wide range of properties for sale in Turkey. If you are looking for or have property for sale Istanbul, Altinkum, Bodrum, Fethiye, Kalkan in Turkey.">
 <meta name="keywords"
       content="Property for Sale in Turkey, Buy Property in Turkey, Citizenship By Investments in Turkey, Citizenship By Investments Program for Turkish citizenship.">
 <link rel="canonical" href="https://www.primepropertyturkey.com/"/>
@@ -12,7 +12,7 @@
 <meta property="og:url" content="https://www.primepropertyturkey.com/">
 <meta property="og:title" content="Prime Property for Sale in Turkey | Prime Property Turkey">
 <meta property="og:description"
-      content="Find your perfect property in Turkey at Prime Property Turkey. We have a wide range of properties for sale in Turkey. If you are looking for or have property for sale Istanbul, Altinkum, Bodrum, Fethiye, Kalkan in Turkey, then call us on (+90) 552 754 44 93.">
+      content="Find your perfect property in Turkey at Prime Property Turkey. We have a wide range of properties for sale in Turkey. If you are looking for or have property for sale Istanbul, Altinkum, Bodrum, Fethiye, Kalkan in Turkey.">
 <meta property="og:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="https://www.primepropertyturkey.com/">
@@ -21,7 +21,7 @@
 <meta name="twitter:title"
       content="Prime Property for Sale in Turkey | Prime Property Turkey">
 <meta name="twitter:description"
-      content="Find your perfect property in Turkey at Prime Property Turkey. We have a wide range of properties for sale in Turkey. If you are looking for or have property for sale Istanbul, Altinkum, Bodrum, Fethiye, Kalkan in Turkey, then call us on (+90) 552 754 44 93.">
+      content="Find your perfect property in Turkey at Prime Property Turkey. We have a wide range of properties for sale in Turkey. If you are looking for or have property for sale Istanbul, Altinkum, Bodrum, Fethiye, Kalkan in Turkey.">
 <meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
 <script src="https://www.google.com/recaptcha/api.js" ></script>
 <link
@@ -219,32 +219,6 @@
                     Recommended Turkish Properties
                 </h2>
             </div>
-            <div class="row my-5 justify-content-center align-items-center">
-<!--                <button class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('all')" id="btn_all"-->
-<!--                   >-->
-<!--                    All-->
-<!--                </button>-->
-<!--                <button class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('istanbul')" id="btn_ist"-->
-<!--                   >-->
-<!--                    Istanbul-->
-<!--                </button>-->
-<!--                <button class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('kalkan')" id="btn_kal"-->
-<!--                   >-->
-<!--                    Kalkan-->
-<!--                </button>-->
-<!--                <button class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('fethiye')" id="btn_feth"-->
-<!--                   >-->
-<!--                    Fethiye-->
-<!--                </button>-->
-<!--                <button class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('kas')" id="btn_kas"-->
-<!--                   >-->
-<!--                    Kas-->
-<!--                </button>-->
-<!--                <button class="btn btn-outline-danger mx-1 my-1" onclick="show_recommended('gocek')" id="btn_goc"-->
-<!--                   >-->
-<!--                    Gocek-->
-<!--                </button>-->
-            </div>
             <div id="all_recommended" class="mt-4">
                 <div class="row justify-content-center">
                     <div class="col-11">
@@ -276,8 +250,7 @@
                                             </span>
                                             <span class="card-favorite">
                                             <? if (is_favored($city->Property_id)) { ?>
-                                                <button onclick="delete_favorite('<?= $city->Property_id; ?>');" style="border:0;background-color: transparent !important;padding: 0"
-                                                    class="red-text" >
+                                                <button onclick="delete_favorite('<?= $city->Property_id; ?>');" style="border:0;background-color: transparent !important;padding: 0" class="red-text">
                                                     <i class="fas fa-heart red-text"></i>
                                                 </button>
                                             <? } else { ?>
@@ -379,140 +352,6 @@
                     </div>
                 </div>
             </div>
-<!--            <div id="istanbul_recommended" style="display: none;">-->
-<!--                <div class="row justify-content-center">-->
-<!--                    <div class="col-11">-->
-<!--                        <div class="recommended-owl owl-carousel owl-theme">-->
-<!--                            --><?// foreach ($recommended_properties['istanbul'] as $city) { ?>
-<!--                                --><?// $image_name = str_replace('assets/thumbnail/', '', $city->Property_thumbnail);
-//                                $image_name_webp = substr($image_name, 0, strpos($image_name, '.jpg')) . ".webp";
-//                                if ($image_name_webp == '') {
-//                                    $image_name_webp = substr($image_name, 0, strpos($image_name, '.png')) . ".webp";
-//                                }
-//                                if ($image_name_webp == '') {
-//                                    $image_name_webp = substr($image_name, 0, strpos($image_name, '.jpeg')) . ".webp";
-//                                }
-//                                ?>
-<!--                                <div class="item">-->
-<!--                                    <div class="card">-->
-<!--                                        <a href="--><?//= base_url(); ?><!--properties/--><?//= $city->url_slug; ?><!--">-->
-<!---->
-<!--                                            <img class="card-img-top img-fluid" title="--><?//= $city->Property_title; ?><!--"-->
-<!--                                                 src="--><?//= base_url(); ?><!----><?//= "assets/web-site/images/properties/P_Thumb/" . $image_name_webp; ?><!--"-->
-<!--                                                 alt="--><?//= $city->Property_title; ?><!--"-->
-<!--                                            >-->
-<!--                                        </a>-->
-<!--                                        <div class="card-body">-->
-<!--                                            <div class="container-fluid">-->
-<!--                                                <div class="card-title text-center">-->
-<!--                                            <span class="card-type-badge">-->
-<!--                                                 --><?//= $city->Property_type; ?>
-<!---->
-<!--                                            </span>-->
-<!--                                                    <span class="card-favorite">-->
-<!--                                                --><?// if (is_favored($city->Property_id)) { ?>
-<!--                                                    <a href="--><?//= base_url(); ?><!--Favorite/del_favorite/--><?//= $city->Property_id; ?><!--"-->
-<!--                                                       class="red-text" >-->
-<!--                                                        <i class="fas fa-heart red-text"></i>-->
-<!--                                                    </a>-->
-<!--                                                --><?// } else { ?>
-<!--                                                    <a href="--><?//= base_url(); ?><!--Favorite/set_favorite/--><?//= $city->Property_id; ?><!--"-->
-<!--                                                       class="text-reset" >-->
-<!--                                                        <i class="far fa-heart"></i>-->
-<!--                                                    </a>-->
-<!--                                                --><?// } ?>
-<!--                                           </span>-->
-<!--                                                    <div id="item-card-title">-->
-<!--                                                        <a href="--><?//= base_url(); ?><!--properties/--><?//= $city->url_slug; ?><!--"-->
-<!--                                                           class="text-reset font-weight-bold">-->
-<!--                                                            --><?//= $city->Property_title; ?>
-<!--                                                        </a>-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                                <div class="row my-2 justify-content-around align-items-center"-->
-<!--                                                     id="card-speciality">-->
-<!--                                                    <div class="d-flex align-items-center">-->
-<!--                                                        <img src="--><?//= base_url(); ?><!--assets/web-site/images/base/audition-svg/ico2.webp"-->
-<!--                                                             alt=""-->
-<!--                                                             class="img-fluid">-->
-<!--                                                        <span class="mx-1">--><?//= $city->Property_location; ?><!--</span>-->
-<!--                                                    </div>-->
-<!--                                                    <div class="d-flex align-items-center ">-->
-<!--                                                        <img src="--><?//= base_url(); ?><!--assets/web-site/images/base/audition-svg/ico3.webp"-->
-<!--                                                             alt=""-->
-<!--                                                             class="img-fluid">-->
-<!--                                                        <span class="mx-1">--><?//= $city->Property_Bedrooms; ?><!--</span>-->
-<!--                                                    </div>-->
-<!--                                                    <div class="d-flex align-items-center">-->
-<!--                                                        <img src="--><?//= base_url(); ?><!--assets/web-site/images/base/audition-svg/ico4.webp"-->
-<!--                                                             alt=""-->
-<!--                                                             class="img-fluid">-->
-<!--                                                        <span class="mx-1">--><?//= $city->Property_Bathrooms; ?><!--</span>-->
-<!--                                                    </div>-->
-<!--                                                    <div class="d-flex align-items-center">-->
-<!--                                                        <img src="--><?//= base_url(); ?><!--assets/web-site/images/base/audition-svg/ico1.webp"-->
-<!--                                                             alt="" class="img-fluid"-->
-<!--                                                        >-->
-<!--                                                        <span class="mx-1">--><?//= $city->Property_living_space; ?><!--</span>-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                                <div class="row my-2">-->
-<!--                                                    <p class="text-justify item-card-description">-->
-<!--                                                        --><?//= substr(strip_tags($city->Property_overview), 0, 100) . "...."; ?>
-<!--                                                    </p>-->
-<!--                                                </div>-->
-<!--                                                <div class="row justify-content-around align-items-center mx-1"-->
-<!--                                                     style="font-size: 1.2rem">-->
-<!--                                             <span class="red-text font-weight-bold">-->
-<!--                                                --><?// if (!$city->SoldOut and $city->Property_price != 0) { ?>
-<!--                                                    --><?// if ($this->session->has_userdata('currency')) {
-//                                                        switch ($this->session->userdata('currency')) {
-//                                                            case 'USD': ?>
-<!--                                                                <i class="fas fa-dollar-sign"></i>-->
-<!--                                                                --><?//= number_format($city->Property_price); ?>
-<!--                                                                --><?//
-//                                                                break;
-//                                                            case 'TRY': ?>
-<!--                                                                <i class="fas fa-lira-sign"></i>-->
-<!--                                                                --><?//= number_format($city->Property_price * $currency_exchange_data->try); ?>
-<!---->
-<!--                                                                --><?//
-//                                                                break;
-//                                                            case 'EUR': ?>
-<!--                                                                <i class="fas fa-euro-sign"></i>-->
-<!--                                                                --><?//= number_format($city->Property_price * $currency_exchange_data->euro); ?>
-<!--                                                                --><?//
-//                                                                break;
-//                                                            case 'GBP': ?>
-<!--                                                                <i class="fas fa-pound-sign"></i>-->
-<!--                                                                --><?//= number_format($city->Property_price * $currency_exchange_data->gpt); ?>
-<!--                                                                --><?//
-//                                                                break;
-//                                                        }
-//                                                    } else { ?>
-<!--                                                        <i class="fas fa-dollar-sign"></i>-->
-<!--                                                        --><?//= number_format($city->Property_price); ?>
-<!--                                                    --><?// }
-//                                                } else { ?>
-<!--                                                    Contact US-->
-<!--                                                --><?// } ?>
-<!--                                            </span>-->
-<!--                                                    <a class="btn btn-danger btn-sm d-flex font-weight-bold"-->
-<!--                                                       data-toggle="modal"-->
-<!--                                                       data-whatever="--><?//= $city->Property_referenceID; ?><!--"-->
-<!--                                                       data-target="#quickEnquireModal" >-->
-<!--                                                        Quick Enquiry-->
-<!--                                                    </a>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            --><?// } ?>
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
         </div>
     </section>
     <section id="Turkish-Citizenship" class="Turkish-Citizenship">
@@ -527,13 +366,9 @@
                              by Investment Programme
                         </span>
                     </h3>
-
-                    <!--                    <div class="m-1 text-center text-danger" style="font-size: 1.5rem;"> Update! <span class="strikediag withpadding">$250.000</span> <i class="fas fa-arrow-alt-right"></i>  $400.000 <span style="font-size: 1.1rem"> (Changes to be implemented soon)</span> </div>-->
                     <div class="m-1 mx-md-5 text-center text-danger" style="font-size: 1.5rem;">Acquire Real estate
                         Investment worth at least $400.000 and get the benefit of obtaining the Turkish Citizenship
                     </div>
-                    <!--                    <div class="m-1 text-center text-danger" style="font-size: 1.3rem;"> Buy Now and take Advantage of Present Rule before its too late.</div>-->
-                    <!--                    <div class="m-1 text-center text-danger" id="blow" style="font-size: 1.3rem;" > Contact Us Today </div>-->
                     <p class="mx-1 px-1 mx-md-5 px-md-5 my-md-3 my-2 py-2 text-justify">
                         Turkish Citizenship is an advantageous option for those looking to invest $400K or more in
                         Turkey. Rather investing or buying your dream home along Turkey's Turquoise Coast, the

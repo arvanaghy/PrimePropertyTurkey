@@ -25,18 +25,9 @@ class Home extends CI_Controller
         foreach ($proBed as $value){
             array_push($data['proBed'],$value["Property_Bedrooms"]);
         }
-        $find_array = array('Property_location' => '');
-//        $data['recently_added'] = $this->Home_model->findProperty($find_array, 4);
-        $data['recommended_properties'] = $this->Home_model->recommendedProperties();
+        $data['recommended_properties_all'] = $this->Home_model->recommendedProperties();
         $data['currency_exchange_data'] = $this->Home_model->currencyExchange();
         $data['YoutubeVideos'] = $this->Home_model->YoutubeVideos();
-        $data['recommended_properties_all']= array(
-            $data['recommended_properties']['istanbul'][0],
-            $data['recommended_properties']['fethiye'][0],
-            $data['recommended_properties']['kas'][0],
-            $data['recommended_properties']['kalkan'][0],
-            $data['recommended_properties']['gocek'][0]
-        );
         $this->load->view('web-site/index',$data);
     }
 }

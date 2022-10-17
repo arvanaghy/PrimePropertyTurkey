@@ -205,7 +205,7 @@ if ($image_name_webp == '') {
                         <i class="fas fa-chevron-right"></i>
                     </span>
                     <span class="mx-2">
-                        <a class="red-text" rel="nofollow">
+                        <a class="red-text" >
                             <?= $data_array->Property_title; ?>
                         </a>
                     </span>
@@ -316,27 +316,27 @@ if ($image_name_webp == '') {
                                 </div>
                             </a>
                         </div>
-                        <div class="col">
+                        <div class="col" style="text-align: center;font-size: 0.8rem">
                             <? if (is_favored($data_array->Property_id)) { ?>
-                                <a href="<?= base_url(); ?>Favorite/del_favorite/<?= $data_array->Property_id; ?>"
-                                   class="text-center" rel="nofollow">
+                                <button onclick="delete_favorite('<?= $data_array->Property_id; ?>');" style="background-color: transparent !important;padding: 0; border: 0"
+                                   class="text-center">
                                 <span class="ico d-block">
                                    <i class="fas fa-heart fa-2x red-text"></i>
                                 </span>
                                     <span class="text d-block">
                                     Favorite
                                 </span>
-                                </a>
+                                </button>
                             <? } else { ?>
-                                <a href="<?= base_url(); ?>Favorite/set_favorite/<?= $data_array->Property_id; ?>"
-                                   class="text-center" rel="nofollow">
+                                <button onclick="set_favorite('<?= $data_array->Property_id; ?>');" style="background-color: transparent !important;padding: 0;border: 0"
+                                   class="text-center" >
                                 <span class="ico d-block">
                                    <i class="far fa-heart fa-2x"></i>
                                 </span>
                                     <span class="text d-block">
                                     Favorite
                                 </span>
-                                </a>
+                                </button>
                             <? } ?>
                         </div>
                         <div class="col" style="cursor: pointer">
@@ -377,8 +377,6 @@ if ($image_name_webp == '') {
                                         <div class="carousel-item <? if($i==0){ echo 'active'; } ?>" data-slide-number="<?= $i; ?>">
                                             <img alt="<?= $data_array->Property_title.' '.$i; ?>"
                                                  src="<?= base_url(); ?><?= "assets/web-site/images/properties/watermark/".$image_name_webp; ?>"
-
-
                                                  class="d-block w-100"
                                                  data-remote="https://source.unsplash.com/Pn6iimgM-wo/" data-type="image"
                                                  data-toggle="lightbox" data-gallery="example-gallery">
@@ -1284,6 +1282,30 @@ if ($image_name_webp == '') {
                 "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
         });
     });
+</script>
+<script type="text/javascript">
+    function set_favorite(value){
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            if (this.responseText){
+                location.reload();
+            }
+        }
+        xhttp.open("POST", "<?= base_url();?>Favorite/set_favorite");
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("send_value="+value);
+    }
+    function delete_favorite(value){
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            if (this.responseText){
+                location.reload();
+            }
+        }
+        xhttp.open("POST", "<?= base_url();?>Favorite/del_favorite");
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("send_value="+value);
+    }
 </script>
 </body>
 </html>

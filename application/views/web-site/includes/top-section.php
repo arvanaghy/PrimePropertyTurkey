@@ -1,7 +1,3 @@
-<!-- Google Tag Manager (noscript) -->
-<!--<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N243V5Z"-->
-<!--                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>-->
-<!-- End Google Tag Manager (noscript) -->
 <section id="top-bar">
     <div class="container-fluid">
         <div class="row py-2">
@@ -10,24 +6,24 @@
                     <div class="currency d-inline pl-md-3 mx-1">
                         <ul class="list-group list-group-horizontal">
                             <li class="list-group-item">
-                                <a rel="nofollow" href="<?php echo base_url("Currency/set_session/USD"); ?>" class="<?php if($this->session->userdata('currency')=="USD"){ echo "red-text"; }else{ echo "text-reset";} ?>" >
+                                <button style="border: 0; padding: 0;background-color: transparent" onclick="Change_Currency('USD');"  class="<?php if($this->session->userdata('currency')=="USD"){ echo "red-text"; }else{ echo "text-reset";} ?>" >
                                     <i class="fas fa-dollar-sign <?php if($this->session->userdata('currency')=="USD"){ echo "red-text"; }else{ echo "text-reset";} ?>"></i>
-                                </a>
+                                </button>
                             </li>
                             <li class="list-group-item">
-                                <a rel="nofollow" class="<?php if($this->session->userdata('currency')=="EUR"){ echo "red-text"; }else{ echo "text-reset";} ?>" href="<?php echo base_url("Currency/set_session/EUR"); ?>" >
+                                <button style="border: 0; padding: 0;background-color: transparent" onclick="Change_Currency('EUR');"  class="<?php if($this->session->userdata('currency')=="EUR"){ echo "red-text"; }else{ echo "text-reset";} ?>" href="<?php echo base_url("Currency/set_session/EUR"); ?>" >
                                     <i class="fas fa-euro-sign <?php if($this->session->userdata('currency')=="EUR"){ echo "red-text"; }else{ echo "text-reset";} ?>"></i>
-                                </a>
+                                </button>
                             </li>
                             <li class="list-group-item">
-                                <a rel="nofollow" class="<?php if($this->session->userdata('currency')=="GBP"){ echo "red-text"; }else{ echo "text-reset";} ?>" href="<?php echo base_url("Currency/set_session/GBP"); ?>" >
+                                <button style="border: 0; padding: 0;background-color: transparent" onclick="Change_Currency('GBP');"  class="<?php if($this->session->userdata('currency')=="GBP"){ echo "red-text"; }else{ echo "text-reset";} ?>" href="<?php echo base_url("Currency/set_session/GBP"); ?>" >
                                     <i class="fas fa-pound-sign <?php if($this->session->userdata('currency')=="GBP"){ echo "red-text"; }else{ echo "text-reset";} ?>"></i>
-                                </a>
+                                </button>
                             </li>
                             <li class="list-group-item">
-                                <a rel="nofollow" class="<?php if($this->session->userdata('currency')=="TRY"){ echo "red-text"; }else{ echo "text-reset";} ?>" href="<?php echo base_url("Currency/set_session/TRY"); ?>" >
+                                <button style="border: 0; padding: 0;background-color: transparent" onclick="Change_Currency('TRY');" class="<?php if($this->session->userdata('currency')=="TRY"){ echo "red-text"; }else{ echo "text-reset";} ?>" href="<?php echo base_url("Currency/set_session/TRY"); ?>" >
                                     <i class="fas fa-lira-sign <?php if($this->session->userdata('currency')=="TRY"){ echo "red-text"; }else{ echo "text-reset";} ?>"></i>
-                                </a>
+                                </button>
                             </li>
                         </ul>
                     </div>
@@ -40,7 +36,7 @@
             </div>
             <div class="col-md-4 justify-content-center text-center d-none d-md-inline">
                 <div class="row mb-2 mb-md-0  justify-content-center" style="display: inline-flex">
-                    <div class="crypto d-md-inline d-none mx-1  ">
+                    <div class="crypto d-md-inline d-none mx-1">
                         <ul class="list-group list-group-horizontal">
                             <li class="list-group-item text-warning">
                                     <img src="<?= base_url();?>assets/web-site/images/base/currency/3838998_bitcoin_cryptocurrency_currency_money_finance_icon.webp" alt="bitcoin" class="img-fluid" width="17px">
@@ -79,7 +75,7 @@
                         </a>
                     </span>
                    <? } ?>
-                    <div class="crypto d-md-none d-inline mx-1  ">
+                    <div class="crypto d-md-none d-inline mx-1">
                         <ul class="list-group list-group-horizontal">
                             <li class="list-group-item text-warning">
                                 <a  class="text-reset" >
@@ -92,7 +88,7 @@
                                 </a>
                             </li>
                             <li class="list-group-item">
-                                <a >
+                                <a>
                                     <img src="<?= base_url();?>assets/web-site/images/base/currency/2785456_blockchain_litecoin_icon.webp" alt="litecoin" class="img-fluid" width="17px">
                                 </a>
                             </li>
@@ -215,4 +211,18 @@
 <?php
     if ($this->session->flashdata('googleSuccess')=='OK'){ ?>
         <div id="toast_message_success"></div>
-<?php } ?>
+<?php }
+?>
+<script type="text/javascript">
+    function Change_Currency(value){
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            if (this.responseText){
+                location.reload();
+            }
+        }
+        xhttp.open("POST", "<?= base_url();?>Currency/set_session");
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("send_value="+value);
+    }
+</script>

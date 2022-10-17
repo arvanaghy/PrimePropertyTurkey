@@ -19,11 +19,16 @@ class  Currency extends CI_Controller{
 
     public function set_session()
     {
-        $this->load->library('user_agent');
-        if($this->uri->segment('3')=="USD" or $this->uri->segment('3')=="TRY" or $this->uri->segment('3')=="EUR" or $this->uri->segment('3')=="GBP"){
-            $this->session->set_userdata('currency', $this->uri->segment('3'));
-            $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Currency changed successfully </div>");
-            $this->CurrencyRefer();
+        $value_data = $this->input->post('send_value');
+        if ($value_data != ''){
+            if($value_data=="USD" or $value_data=="TRY" or $value_data=="EUR" or $value_data=="GBP") {
+                echo json_encode(true);
+                $this->session->set_userdata('currency', $value_data);
+                $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Currency changed successfully </div>");
+            }else{
+                $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Something went wrong </div>");
+                echo json_encode(false);
+            }
         }else{
             $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Something went wrong </div>");
             $this->CurrencyRefer();

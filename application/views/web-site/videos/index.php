@@ -100,7 +100,6 @@
 </head>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>
-<main>
     <section id="theme-background">
         <div class="header-image-wrapper">
             <div class="bg" id="search-property-BG"></div>
@@ -157,7 +156,6 @@
             </div>
         </div>
     </section>
-</main>
 <?php $this->load->view('web-site/includes/footer'); ?>
 <?php $this->load->view('web-site/includes/foot-load'); ?>
 </body>

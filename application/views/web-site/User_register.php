@@ -1,4 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
+<meta name="robots" content="noindex, nofollow">
 <?php $this->load->view('web-site/includes/head-load'); ?>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/login.css">
 <link

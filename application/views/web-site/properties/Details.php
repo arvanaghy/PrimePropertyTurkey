@@ -134,7 +134,6 @@
 </head>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>
-<main>
     <section id="Find-Your-Property" class="Find-Your-Property m-3">
             <div class="container-fluid">
                 <div class="row justify-content-center align-items-center my-2 py-3">
@@ -356,17 +355,17 @@
                                                     </span>
                                                     <? } ?>
                                                     <span class="card-favorite">
-                                                <? if (is_favored($value->Property_id)) { ?>
-                                                    <a href="<?= base_url(); ?>Favorite/del_favorite/<?= $value->Property_id; ?>"
-                                                       class="red-text" rel="nofollow">
+                                                          <? if (is_favored($value->Property_id)) { ?>
+                                                              <button onclick="delete_favorite('<?= $value->Property_id; ?>');" style="background-color: transparent !important;padding: 0; border: 0"
+                                                                      class="red-text" >
                                                         <i class="fas fa-heart red-text"></i>
-                                                    </a>
-                                                <? } else { ?>
-                                                    <a href="<?= base_url(); ?>Favorite/set_favorite/<?= $value->Property_id; ?>"
-                                                       class="text-reset" rel="nofollow">
+                                                    </button>
+                                                          <? } else { ?>
+                                                              <button onclick="set_favorite('<?= $value->Property_id; ?>');" style="background-color: transparent !important;padding: 0;border: 0"
+                                                                      class="text-reset">
                                                         <i class="far fa-heart"></i>
-                                                    </a>
-                                                <? } ?>
+                                                    </button>
+                                                          <? } ?>
                                             </span>
                                                 </div>
                                                 <div id="title-section">
@@ -447,12 +446,12 @@
                                                        class="btn btn-outline-danger btn-sm  d-flex my-1">
                                                         View Details
                                                     </a>
-                                                    <a class="btn btn-danger btn-sm d-flex font-weight-bold my-1"
+                                                    <button class="btn btn-danger btn-sm d-flex font-weight-bold my-1"
                                                        data-toggle="modal"
                                                        data-whatever="<?= $value->Property_referenceID; ?>"
-                                                       data-target="#quickEnquireModal" rel="nofollow">
+                                                       data-target="#quickEnquireModal">
                                                         Quick Enquiry
-                                                    </a>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -546,8 +545,6 @@
             </div>
         </div>
     </section>
-</main>
-<!-- Modal -->
 <div class="modal fade" id="quickEnquireModal" tabindex="-1" aria-labelledby="quickEnquireModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
@@ -841,6 +838,30 @@
             }, 2000);
         }
     });
+</script>
+<script type="text/javascript">
+    function set_favorite(value){
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            if (this.responseText){
+                location.reload();
+            }
+        }
+        xhttp.open("POST", "<?= base_url();?>Favorite/set_favorite");
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("send_value="+value);
+    }
+    function delete_favorite(value){
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            if (this.responseText){
+                location.reload();
+            }
+        }
+        xhttp.open("POST", "<?= base_url();?>Favorite/del_favorite");
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("send_value="+value);
+    }
 </script>
 </body>
 </html>

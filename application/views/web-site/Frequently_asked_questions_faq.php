@@ -22,7 +22,6 @@
 </head>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>
-<main>
     <section id="theme-background">
         <div class="header-image-wrapper">
             <div class="bg" id="short_term_residency-BG"></div>
@@ -147,12 +146,14 @@
                                         <? }else{ ?>style="border: 0;background-color: transparent;" <?}?>
                                     ><? if (is_faqLiked()) { ?><span class="pl-2"><i
                                                 class="fas fa-thumbs-up"></i></span><? } else { ?><span class="pl-2"><i
-                                                class="far fa-thumbs-up"></i></span><? } ?></button>
+                                                class="far fa-thumbs-up"></i></span><? } ?>
+                                </button>
                                 <button id="Dislike_button"
                                         <? if (is_faqLiked()){ ?>style="pointer-events: none;border: 0;background-color: transparent;"
                                         <? }else{ ?>style="border: 0;background-color: transparent;"<?}?> ><? if (is_faqDisliked()) { ?>
                                         <span class="pl-2"><i class="fas fa-thumbs-down"></i></span><? }else{ ?><span
-                                            class="pl-2"><i class="far fa-thumbs-down"></i></span><?}?></button>
+                                            class="pl-2"><i class="far fa-thumbs-down"></i></span><?}?>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -165,7 +166,6 @@
             </div>
         </div>
     </section>
-</main>
 <?php $this->load->view('web-site/includes/footer'); ?>
 <?php $this->load->view('web-site/includes/foot-load'); ?>
 <script type="text/javascript" src="<?= base_url(); ?>assets/web-site/js/phone-input.js"></script>

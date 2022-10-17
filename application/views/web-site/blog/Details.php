@@ -113,9 +113,9 @@ if ($image_name_webp == '') {
 }
 ?>
     <section id="bread-crumbs">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col red-text py-3 text-center text-md-left">
+                <div class="col offset-md-1  red-text py-3 text-center text-md-left">
                     <span class="mx-2">
                         <i class="fas fa-home"></i>
                     </span>
@@ -138,8 +138,8 @@ if ($image_name_webp == '') {
     </section>
     <section id="room-brief">
         <div class="container-fluid">
-            <div class="row justify-content-around">
-                <div class="col-md-7 text-center text-md-left py-2">
+            <div class="row ">
+                <div class="col-md-7 offset-md-1 text-center text-md-left py-2">
                     <div class="head text-center text-md-left py-2">
                         <h1 style="font-size: 2rem"><?= $result->Blog_Title; ?></h1>
                     </div>
@@ -175,8 +175,8 @@ if ($image_name_webp == '') {
     </section>
     <section id="content">
         <div class="container-fluid my-3">
-            <div class="row justify-content-center">
-                <div class="col-md-7 details">
+            <div class="row">
+                <div class="col-md-7 offset-md-1 details">
                     <div class="card my-2">
                         <div class="card-body">
                             <div class="rate-star">

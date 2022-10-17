@@ -19,7 +19,6 @@
 </head>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>
-<main>
     <section id="theme-background">
         <div class="header-image-wrapper">
             <div class="bg" id="privacy-policy-BG"></div>
@@ -153,8 +152,19 @@
                         <div class="card-body">
                             <div class="useful px-4 py-2">
                                 <strong> Did You Find This Useful ? </strong>
-                                <a href="<?= base_url();?>Like/privacy" <? if(is_privacyDisliked()){?>style="pointer-events: none;"<?}?>  rel="nofollow" ><? if(is_privacyLiked()){?><span class="pl-2"><i class="fas fa-thumbs-up"></i></span><?}else{?><span class="pl-2"><i class="far fa-thumbs-up"></i></span><?}?></a>
-                                <a href="<?= base_url();?>Dislike/privacy" <? if(is_privacyLiked()){?>style="pointer-events: none;"<?}?>  rel="nofollow"><? if (is_privacyDisliked()){ ?><span class="pl-2"  ><i class="fas fa-thumbs-down"></i></span><?} ?><span class="pl-2"  ><i class="far fa-thumbs-down"></i></span></a>
+                                <button id="like_button"
+                                        <? if (is_privacyDisliked()){ ?>style="pointer-events: none;border: 0;background-color: transparent;"
+                                        <? }else{ ?>style="border: 0;background-color: transparent;" <?}?>
+                                ><? if (is_privacyLiked()) { ?><span class="pl-2"><i
+                                                class="fas fa-thumbs-up"></i></span><? } else { ?><span class="pl-2"><i
+                                                class="far fa-thumbs-up"></i></span><? } ?>
+                                </button>
+                                <button id="Dislike_button"
+                                        <? if (is_privacyLiked()){ ?>style="pointer-events: none;border: 0;background-color: transparent;"
+                                        <? }else{ ?>style="border: 0;background-color: transparent;"<?}?> ><? if (is_privacyDisliked()) { ?>
+                                        <span class="pl-2"><i class="fas fa-thumbs-down"></i></span><? }else{ ?><span
+                                            class="pl-2"><i class="far fa-thumbs-down"></i></span><?}?>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -167,9 +177,42 @@
             </div>
         </div>
     </section>
-</main>
 <?php $this->load->view('web-site/includes/footer'); ?>
 <?php $this->load->view('web-site/includes/foot-load'); ?>
 <script type="text/javascript" src="<?= base_url();?>assets/web-site/js/phone-input.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#like_button").on("click", function () {
+            $.ajax({
+                url: '<?= base_url();?>Like/privacy',
+                method: 'POST',
+                data: {value_data_posted: 'fag'},
+                dataType: 'json',
+                success: function (response) {
+                    if (response) {
+                        location.reload();
+                    } else {
+                        location.reload();
+                    }
+                }
+            });
+        });
+        $("#Dislike_button").on("click", function () {
+            $.ajax({
+                url: '<?= base_url();?>Dislike/privacy',
+                method: 'POST',
+                data: {value_data_posted: 'fag'},
+                dataType: 'json',
+                success: function (response) {
+                    if (response) {
+                        location.reload();
+                    } else {
+                        location.reload();
+                    }
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>

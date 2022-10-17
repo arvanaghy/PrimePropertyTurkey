@@ -1,12 +1,12 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <?php $this->load->view('web-site/includes/head-load'); ?>
+<meta name="robots" content="noindex, nofollow">
 <link rel="stylesheet" href="<?= base_url();?>assets/web-site/css/login.css">
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <title>Forget Password | Prime Property turkey</title>
 </head>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>
-<main>
     <section id="login">
         <div class="container-fluid my-md-5 my-3">
             <div class="row justify-content-center">
@@ -54,7 +54,7 @@
             </div>
         </div>
     </section>
-</main>
+
 <?php $this->load->view('web-site/includes/footer'); ?>
 <?php $this->load->view('web-site/includes/foot-load'); ?>
 </body>

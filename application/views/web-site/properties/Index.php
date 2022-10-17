@@ -3,7 +3,6 @@
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/find-property.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/cities-property.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/header-image-wrapper.css">
-
 <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
@@ -121,7 +120,6 @@
 } ?>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>
-<main>
     <section id="theme-background">
         <div class="header-image-wrapper">
             <div class="bg" id="search-property-BG"></div>
@@ -263,17 +261,17 @@
                                                     </span>
                                                 <? } ?>
                                                 <span class="card-favorite">
-                                                <? if (is_favored($value->Property_id)) { ?>
-                                                    <a href="<?= base_url(); ?>Favorite/del_favorite/<?= $value->Property_id; ?>"
-                                                       class="red-text" rel="nofollow">
-                                                        <i class="fas fa-heart red-text"></i>
-                                                    </a>
-                                                <? } else { ?>
-                                                    <a href="<?= base_url(); ?>Favorite/set_favorite/<?= $value->Property_id; ?>"
-                                                       class="text-reset" rel="nofollow">
-                                                        <i class="far fa-heart"></i>
-                                                    </a>
-                                                <? } ?>
+                                                   <? if (is_favored($value->Property_id)) { ?>
+                                                       <button onclick="delete_favorite('<?= $value->Property_id; ?>');" style="background-color: transparent !important;padding: 0; border: 0"
+                                                               class="red-text" >
+                                                                <i class="fas fa-heart red-text"></i>
+                                                            </button>
+                                                   <? } else { ?>
+                                                       <button onclick="set_favorite('<?= $value->Property_id; ?>');" style="background-color: transparent !important;padding: 0;border: 0"
+                                                               class="text-reset">
+                                                                <i class="far fa-heart"></i>
+                                                            </button>
+                                                   <? } ?>
                                             </span>
                                             </div>
                                             <div id="title-section" >
@@ -440,8 +438,6 @@
             </div>
         </div>
     </section>
-</main>
-<!-- Modal -->
 <div class="modal fade" id="quickEnquireModal" tabindex="-1" aria-labelledby="quickEnquireModalLabel"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -508,50 +504,6 @@
 </div>
 <?php $this->load->view('web-site/includes/footer'); ?>
 <?php $this->load->view('web-site/includes/foot-load'); ?>
-<script type="text/javascript">
-    $('#quickEnquireModal').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget);
-        var recipient = button.data('whatever');
-        var modal = $(this);
-        modal.find('#modal_reference_id').val(recipient)
-    });
-</script>
-<script type="text/javascript">
-    function ModalEnquireFormValidation() {
-        let modalEnquireFormFlag = true;
-        let modalEnquireForm_info_error = document.getElementById('modalEnquireForm_info_error');
-        let modalEnquireForm_phone_error = document.getElementById('modalEnquireForm_phone_error');
-        modalEnquireForm_info_error.style.display = 'none';
-        modalEnquireForm_phone_error.style.display = 'none';
-        let modalEnquireForm_info = document.getElementById('modalEnquireForm_info').value;
-        let modalEnquireForm_phone = document.getElementById('modal_phone').value;
-        let modalEnquireForm_info_regex = new RegExp(/^\w+\s+\w+/i);
-        let modalEnquireForm_phone_regex = new RegExp(/\d{5,20}/g);
-
-        if (modalEnquireForm_info_regex.test(modalEnquireForm_info) != true) {
-            modalEnquireFormFlag = false;
-            modalEnquireForm_info_error.style.display = 'block';
-        }
-        if (modalEnquireForm_phone_regex.test(modalEnquireForm_phone) != true) {
-            modalEnquireFormFlag = false;
-            modalEnquireForm_phone_error.style.display = 'block';
-        }
-        return modalEnquireFormFlag;
-    }
-
-    const phoneInputFieldModalPROVal = document.querySelector("#modal_phone");
-    const phoneInputModalPROVal = window.intlTelInput(phoneInputFieldModalPROVal, {
-        separateDialCode: true,
-        preferredCountries: ["<? if (isset($geolocation)) {
-            echo $geolocation;
-        } else {
-            echo 'us';
-        } ?>"],
-        hiddenInput: "full",
-        utilsScript:
-            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-    });
-</script>
 <script type="text/javascript">
     $(document).ready(function () {
         $('#city_value').change(function () {
@@ -707,7 +659,70 @@
                 }
             }
         });
+        function ModalEnquireFormValidation() {
+            let modalEnquireFormFlag = true;
+            let modalEnquireForm_info_error = document.getElementById('modalEnquireForm_info_error');
+            let modalEnquireForm_phone_error = document.getElementById('modalEnquireForm_phone_error');
+            modalEnquireForm_info_error.style.display = 'none';
+            modalEnquireForm_phone_error.style.display = 'none';
+            let modalEnquireForm_info = document.getElementById('modalEnquireForm_info').value;
+            let modalEnquireForm_phone = document.getElementById('modal_phone').value;
+            let modalEnquireForm_info_regex = new RegExp(/^\w+\s+\w+/i);
+            let modalEnquireForm_phone_regex = new RegExp(/\d{5,20}/g);
+
+            if (modalEnquireForm_info_regex.test(modalEnquireForm_info) != true) {
+                modalEnquireFormFlag = false;
+                modalEnquireForm_info_error.style.display = 'block';
+            }
+            if (modalEnquireForm_phone_regex.test(modalEnquireForm_phone) != true) {
+                modalEnquireFormFlag = false;
+                modalEnquireForm_phone_error.style.display = 'block';
+            }
+            return modalEnquireFormFlag;
+        }
+        const phoneInputFieldModalPROVal = document.querySelector("#modal_phone");
+        const phoneInputModalPROVal = window.intlTelInput(phoneInputFieldModalPROVal, {
+            separateDialCode: true,
+            preferredCountries: ["<? if (isset($geolocation)) {
+                echo $geolocation;
+            } else {
+                echo 'us';
+            } ?>"],
+            hiddenInput: "full",
+            utilsScript:
+                "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        });
+        $('#quickEnquireModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var recipient = button.data('whatever');
+            var modal = $(this);
+            modal.find('#modal_reference_id').val(recipient)
+        });
     });
+</script>
+<script type="text/javascript">
+    function set_favorite(value){
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            if (this.responseText){
+                location.reload();
+            }
+        }
+        xhttp.open("POST", "<?= base_url();?>Favorite/set_favorite");
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("send_value="+value);
+    }
+    function delete_favorite(value){
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            if (this.responseText){
+                location.reload();
+            }
+        }
+        xhttp.open("POST", "<?= base_url();?>Favorite/del_favorite");
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("send_value="+value);
+    }
 </script>
 </body>
 </html>

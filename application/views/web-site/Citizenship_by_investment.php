@@ -9,7 +9,7 @@
 <meta name="MobileOptimized" content="320">
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content=https://www.primepropertyturkey.com/Citizenship-by-investment-in-turkey">
+<meta property="og:url" content=https://www.primepropertyturkey.com/citizenship-by-investment-in-turkey">
 <meta property="og:title" content="Citizenship by investment in turkey">
 <meta property="og:description" content="The Turkey Citizenship by Investment provides citizenship of a country with links to both
 Asia and Europe and access to the markets in both regions">
@@ -17,7 +17,7 @@ Asia and Europe and access to the markets in both regions">
       content="https://www.primepropertyturkey.com/assets/web-site/images/base/Prime-Property-Turkey-build-logo.jpg">
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="https://www.primepropertyturkey.com/Citizenship-by-investment-in-turkey">
+<meta name="twitter:site" content="https://www.primepropertyturkey.com/citizenship-by-investment-in-turkey">
 <meta name="twitter:creator" content="Justin Mays">
 <meta name="twitter:image:alt" content="Citizenship by investment">
 <meta name="twitter:title" content="Citizenship by investment in turkey">
@@ -26,14 +26,14 @@ Asia and Europe and access to the markets in both regions">
 <meta name="twitter:image"
 <meta name="twitter:image"
       content="https://www.primepropertyturkey.com/assets/web-site/images/base/Prime-Property-Turkey-build-logo.jpg">
-<link rel="canonical" href="https://www.primepropertyturkey.com/Citizenship-by-investment-in-turkey"/>
+<link rel="canonical" href="https://www.primepropertyturkey.com/citizenship-by-investment-in-turkey"/>
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://www.primepropertyturkey.com/citizenship_by_investment_in_turkey"
+            "@id": "https://www.primepropertyturkey.com/citizenship-by-investment-in-turkey"
         },
         "headline": "Turkish citizenship by investment",
         "description": "Turkish citizenship by investment",
@@ -982,14 +982,19 @@ Asia and Europe and access to the markets in both regions">
                         <div class="card-body">
                             <div class="useful px-4 py-2">
                                 <strong> Did You Find This Useful ? </strong>
-                                <a href="<?= base_url(); ?>Like/citizenship" rel="nofollow"
-                                   <? if (is_citizenshipDisliked()){ ?>style="pointer-events: none;"<? } ?>><? if (is_citizenshipLiked()) { ?>
-                                        <span class="pl-2"><i class="fas fa-thumbs-up"></i></span><? } else { ?><span
-                                            class="pl-2"><i class="far fa-thumbs-up"></i></span><? } ?></a>
-                                <a href="<?= base_url(); ?>Dislike/citizenship" rel="nofollow"
-                                   <? if (is_citizenshipLiked()){ ?>style="pointer-events: none;"<? } ?>><? if (is_citizenshipDisliked()) { ?>
-                                        <span class="pl-2"><i class="fas fa-thumbs-down"></i></span><? } ?><span
-                                            class="pl-2"><i class="far fa-thumbs-down"></i></span></a>
+                                <button id="like_button"
+                                        <? if (is_citizenshipDisliked()){ ?>style="pointer-events: none;border: 0;background-color: transparent;"
+                                        <? }else{ ?>style="border: 0;background-color: transparent;" <?}?>
+                                ><? if (is_citizenshipLiked()) { ?><span class="pl-2"><i
+                                                class="fas fa-thumbs-up"></i></span><? } else { ?><span class="pl-2"><i
+                                                class="far fa-thumbs-up"></i></span><? } ?>
+                                </button>
+                                <button id="Dislike_button"
+                                        <? if (is_citizenshipLiked()){ ?>style="pointer-events: none;border: 0;background-color: transparent;"
+                                        <? }else{ ?>style="border: 0;background-color: transparent;"<?}?> ><? if (is_citizenshipDisliked()) { ?>
+                                        <span class="pl-2"><i class="fas fa-thumbs-down"></i></span><? }else{ ?><span
+                                            class="pl-2"><i class="far fa-thumbs-down"></i></span><?}?>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -1146,6 +1151,40 @@ Asia and Europe and access to the markets in both regions">
             hiddenInput: "full",
             utilsScript:
                 "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#like_button").on("click", function () {
+            $.ajax({
+                url: '<?= base_url(); ?>Like/citizenship',
+                method: 'POST',
+                data: {value_data_posted: 'fag'},
+                dataType: 'json',
+                success: function (response) {
+                    if (response) {
+                        location.reload();
+                    } else {
+                        location.reload();
+                    }
+                }
+            });
+        });
+        $("#Dislike_button").on("click", function () {
+            $.ajax({
+                url: '<?= base_url(); ?>Dislike/citizenship',
+                method: 'POST',
+                data: {value_data_posted: 'fag'},
+                dataType: 'json',
+                success: function (response) {
+                    if (response) {
+                        location.reload();
+                    } else {
+                        location.reload();
+                    }
+                }
+            });
         });
     });
 </script>

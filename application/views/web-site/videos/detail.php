@@ -11,7 +11,6 @@
     echo strip_tags($result->description);
   endif; ?>
 ">
-
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="<?= current_url(); ?>">
@@ -20,7 +19,6 @@
 <meta property="og:image" content="<?= base_url(); ?>assets/web-site/images/youtube-cover/<?= $result->cover_image; ?>">
 <meta property="og:image:width" content="300"/>
 <meta property="og:image:height" content="300"/>
-
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="<?= current_url(); ?>">
@@ -31,7 +29,6 @@
 <meta name="twitter:image"
       content="<?= base_url(); ?><?= "assets/web-site/images/youtube-cover/" . $result->cover_image; ?> ">
 <link rel="canonical" href="<?= base_url(); ?>prime-videos/<?= $result->url_slug; ?>"/>
-
 <style type="text/css">
     .social-share ul li {
         border: none;
@@ -75,7 +72,6 @@
 </head>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>
-<main>
     <section id="bread-crumbs">
         <div class="container">
             <div class="row">
@@ -188,7 +184,6 @@
             </div>
         </div>
     </section>
-</main>
 <div class="modal fade" id="ShareModal" tabindex="-1" aria-labelledby="share-modal-label" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
@@ -244,7 +239,6 @@
         </div>
     </div>
 </div>
-
 <?php $this->load->view('web-site/includes/footer'); ?>
 <?php $this->load->view('web-site/includes/foot-load'); ?>
 </body>

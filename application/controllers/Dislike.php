@@ -45,7 +45,7 @@ class Dislike extends CI_Controller
             }
         }else{
             $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Something went wrong </div>");
-            return $this->likeRefer();
+            return $this->DislikeRefer();
         }
     }
 
@@ -73,99 +73,133 @@ class Dislike extends CI_Controller
             }
         }else{
             $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Something went wrong </div>");
-            return $this->likeRefer();
+            return $this->DislikeRefer();
+        }
+    }
+
+    public function buying_online()
+    {
+        $value_data = $this->input->post('value_data_posted');
+        if ($value_data != '') {
+            $prev_dislike = get_cookie('dislike_buying_online');
+            if ($prev_dislike != null and $prev_dislike = 'True') {
+                $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> You Voted This Blog Before </div>");
+                echo json_encode(false);
+            } else {
+                echo json_encode(true);
+                set_cookie('dislike_buying_online', 'True', '2592000');
+                $this->Like_model->doDislikeContent('buying_online');
+                $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
+            }
+        } else {
+            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Something went Wrong </div>");
+            return $this->DislikeRefer();
         }
     }
 
     public function after_sale()
     {
-        $prev_dislike = get_cookie('dislike_after_sale');
-        if ($prev_dislike != null and $prev_dislike = 'True') {
-            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> You Voted This Blog Before </div>");
+        $value_data = $this->input->post('value_data_posted');
+        if ($value_data != '') {
+            $prev_dislike = get_cookie('dislike_after_sale');
+            if ($prev_dislike != null and $prev_dislike = 'True') {
+                $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> You Voted This Blog Before </div>");
+                echo json_encode(false);
+            } else {
+                echo json_encode(true);
+                set_cookie('dislike_after_sale', 'True', '2592000');
+                $this->Like_model->doDislikeContent('after_sale');
+                $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
+            }
+        } else {
+            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Something went Wrong </div>");
             return $this->DislikeRefer();
         }
-        set_cookie('dislike_after_sale', 'True', '2592000');
-        $this->Like_model->doDislikeContent('after_sale');
-        $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
-        return $this->DislikeRefer();
     }
 
     public function area_guide()
     {
-        $prev_dislike = get_cookie('dislike_area_guide');
-        if ($prev_dislike != null and $prev_dislike = 'True') {
-            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> You Voted This Blog Before </div>");
-            return $this->DislikeRefer();
-        }
-        set_cookie('dislike_area_guide', 'True', '2592000');
-        $this->Like_model->doDislikeContent('area_guide');
-        $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
-        return $this->DislikeRefer();
-    }
 
-    public function citizenship()
-    {
-        $prev_dislike = get_cookie('dislike_citizenship');
-        if ($prev_dislike != null and $prev_dislike = 'True') {
-            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> You Voted This Blog Before </div>");
+        $value_data = $this->input->post('value_data_posted');
+        if ($value_data != '') {
+            $prev_dislike = get_cookie('dislike_area_guide');
+            if ($prev_dislike != null and $prev_dislike = 'True') {
+                $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> You Voted This Blog Before </div>");
+                echo json_encode(false);
+            } else {
+                echo json_encode(true);
+                set_cookie('dislike_area_guide', 'True', '2592000');
+                $this->Like_model->doDislikeContent('area_guide');
+                $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
+            }
+        } else {
+            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Something went Wrong </div>");
             return $this->DislikeRefer();
         }
-        set_cookie('dislike_citizenship', 'True', '2592000');
-        $this->Like_model->doDislikeContent('citizenship');
-        $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
-        return $this->DislikeRefer();
+
     }
 
     public function buyer_guide()
     {
-        $prev_dislike = get_cookie('dislike_buyer_guide');
-        if ($prev_dislike != null and $prev_dislike = 'True') {
-            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> You Voted This Blog Before </div>");
+        $value_data = $this->input->post('value_data_posted');
+        if ($value_data != '') {
+            $prev_dislike = get_cookie('dislike_buyer_guide');
+            if ($prev_dislike != null and $prev_dislike = 'True') {
+                $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> You Voted This Blog Before </div>");
+                echo json_encode(false);
+            } else {
+                echo json_encode(true);
+                set_cookie('dislike_buyer_guide', 'True', '2592000');
+                $this->Like_model->doDislikeContent('buyer_guide');
+                $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
+            }
+        } else {
+            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Something went Wrong </div>");
             return $this->DislikeRefer();
         }
-        set_cookie('dislike_buyer_guide', 'True', '2592000');
-        $this->Like_model->doDislikeContent('buyer_guide');
-        $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
-        return $this->DislikeRefer();
+
     }
 
-    public function buying_online()
+    public function citizenship()
     {
-        $prev_dislike = get_cookie('dislike_buying_online');
-        if ($prev_dislike != null and $prev_dislike = 'True') {
-            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> You Voted This Blog Before </div>");
-            return $this->DislikeRefer();
-        }
-        set_cookie('dislike_buying_online', 'True', '2592000');
-        $this->Like_model->doDislikeContent('buying_online');
-        $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
-        return $this->DislikeRefer();
-    }
 
-    public function privacy()
-    {
-        $prev_dislike = get_cookie('dislike_privacy');
-        if ($prev_dislike != null and $prev_dislike = 'True') {
-            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> You Voted This Blog Before </div>");
+        $value_data = $this->input->post('value_data_posted');
+        if ($value_data != '') {
+            $prev_dislike = get_cookie('dislike_citizenship');
+            if ($prev_dislike != null and $prev_dislike = 'True') {
+                $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> You Voted This Blog Before </div>");
+                echo json_encode(false);
+            } else {
+                echo json_encode(true);
+                set_cookie('dislike_citizenship', 'True', '2592000');
+                $this->Like_model->doDislikeContent('citizenship');
+                $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
+            }
+        } else {
+            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Something went Wrong </div>");
             return $this->DislikeRefer();
         }
-        set_cookie('dislike_privacy', 'True', '2592000');
-        $this->Like_model->doDislikeContent('privacy');
-        $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
-        return $this->DislikeRefer();
+
     }
 
     public function permit()
     {
-        $prev_dislike = get_cookie('dislike_permit');
-        if ($prev_dislike != null and $prev_dislike = 'True') {
-            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> You Voted This Blog Before </div>");
+        $value_data = $this->input->post('value_data_posted');
+        if ($value_data != '') {
+            $prev_dislike = get_cookie('dislike_permit');
+            if ($prev_dislike != null and $prev_dislike = 'True') {
+                $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> You Voted This Blog Before </div>");
+                echo json_encode(false);
+            } else {
+                echo json_encode(true);
+                set_cookie('dislike_permit', 'True', '2592000');
+                $this->Like_model->doDislikeContent('permit');
+                $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
+            }
+        } else {
+            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Something went Wrong </div>");
             return $this->DislikeRefer();
         }
-        set_cookie('dislike_permit', 'True', '2592000');
-        $this->Like_model->doDislikeContent('permit');
-        $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
-        return $this->DislikeRefer();
     }
 
     public function extension()
@@ -200,6 +234,26 @@ class Dislike extends CI_Controller
                 echo json_encode(true);
                 set_cookie('dislike_faq', 'True', '2592000');
                 $this->Like_model->doDislikeContent('faq');
+                $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
+            }
+        } else {
+            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> Something went Wrong </div>");
+            return $this->DislikeRefer();
+        }
+    }
+
+    public function privacy()
+    {
+        $value_data = $this->input->post('value_data_posted');
+        if ($value_data != '') {
+            $prev_dislike = get_cookie('dislike_privacy');
+            if ($prev_dislike != null and $prev_dislike = 'True') {
+                $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> You Voted This Blog Before </div>");
+                echo json_encode(false);
+            } else {
+                echo json_encode(true);
+                set_cookie('dislike_privacy', 'True', '2592000');
+                $this->Like_model->doDislikeContent('privacy');
                 $this->session->set_flashdata('message', "<div id='toast_message' class='success'> Thanks To Share Your Point With US </div>");
             }
         } else {

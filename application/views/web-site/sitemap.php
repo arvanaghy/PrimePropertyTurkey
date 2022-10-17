@@ -6,7 +6,7 @@
         <priority>0.5</priority>
     </url>
     <url>
-        <loc><?= base_url();?>Citizenship-by-investment-in-turkey</loc>
+        <loc><?= base_url();?>citizenship-by-investment-in-turkey</loc>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
