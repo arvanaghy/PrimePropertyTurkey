@@ -107,6 +107,7 @@
                                 </label>
                                 <input type="number" name="USD" id="USD" placeholder="Price" required class="form-control" value="<?= $results->Property_price; ?>">
                                 <input type="hidden" name="property_id"  required  value="<?= $results->Property_id; ?>">
+                                <input type="hidden" name="past_status"  required  value="<?= $results->status; ?>">
                                 <div class="mx-1 font-weight-bold" id="price_comma"></div>
                             </div>
                             <div class="form-group col-sm-3">
@@ -260,7 +261,7 @@
                                     </small>
                                 </label>
                                 <br>
-                                <input type="checkbox" name="recommended" value="2" class="form-check-input" style="width: 30px;height: 30px" <?php if($results->recommended=='2'){echo"checked";} ?>>
+                                <input type="checkbox" name="recommended" value="2" class="form-check-input" style="width: 30px;height: 30px" <?php if($results->recommended=='9'){echo"checked";} ?>>
                             </div>
                         </div>
                         <div class="row">

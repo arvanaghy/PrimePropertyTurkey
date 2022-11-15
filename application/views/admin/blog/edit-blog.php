@@ -35,9 +35,16 @@
                     <div class="row align-items-center">
                         <div class="page-title col-md-6">
                              <span class="mx-2">
-                                <a href="<?= base_url();?>blog/<?= $results->url_slug; ?>" target="_blank" class="show_site_details" >
+                                 <? if ($results->language == 'ru'): ?>
+                                     <a href="<?= base_url();?>ru/blog/<?= $results->url_slug; ?>" target="_blank" class="show_site_details" >
                                       <i class="fas fa-eye"></i>
-                                </a>
+                                     </a>
+                                 <? elseif ($results->language == 'en'): ?>
+                                     <a href="<?= base_url();?>blog/<?= $results->url_slug; ?>" target="_blank" class="show_site_details" >
+                                              <i class="fas fa-eye"></i>
+                                     </a>
+                                 <? endif; ?>
+
                             </span>
                             <b>
                                 Edit Blog
@@ -57,86 +64,178 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-body">
-                        <?php echo form_open_multipart(base_url().'Admin/Blog_Content_Update_Submit');?>
-                        <div class="row">
-                            <div class="form-group col-sm-4">
-                                <label style="padding:5px;" class="control-label">
-                                    <small>
-                                        <strong>
-                                            Meta Title
-                                        </strong>
-                                    </small>
-                                </label>
-                                <textarea name="meta_title" class="form-control" required><?= $results->Blog_Meta_Title ; ?></textarea>
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <button class="nav-link active" id="nav-eng-tab" data-toggle="tab" data-target="#nav-eng" type="button" role="tab" aria-controls="nav-eng" aria-selected="true">Eng</button>
+                                <button class="nav-link" id="nav-rus-tab" data-toggle="tab" data-target="#nav-rus" type="button" role="tab" aria-controls="nav-rus" aria-selected="false">Rus</button>
                             </div>
-                            <div class="form-group col-sm-4">
-                                <label style="padding:5px;" class="control-label">
-                                    <small>
-                                        <strong>
-                                            Meta Keyword
-                                        </strong>
-                                    </small>
-                                </label>
-                                <textarea name="meta_keyword" class="form-control" required><?= $results->Blog_Meta_Keyword ; ?></textarea>
-                            </div>
-                            <div class="form-group col-sm-4">
-                                <label style="padding:5px;" class="control-label">
-                                    <small>
-                                        <strong>
-                                            Meta Description
-                                        </strong>
-                                    </small>
-                                </label>
-                                <textarea name="meta_description" class="form-control" required ><?= $results->Blog_Meta_Description; ?></textarea>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-sm-5">
-                                <label style="padding-top:20px;padding-bottom:5px;" class="control-label">
-                                    <small>
-                                        <strong>
-                                            Image Alt
-                                        </strong>
-                                    </small>
-                                </label>
-                                <input name="image_alt" type="text" placeholder="Image Alt" required class="form-control" value="<?= $results->Blog_Image_Alt ; ?>">
-                            </div>
-                            <div class="form-group col-sm-7">
-                                <label style="padding-top:20px;padding-bottom:5px;" class="control-label">
-                                    <small>
-                                        <strong>
-                                            Title
-                                        </strong>
-                                    </small>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-eng" role="tabpanel" aria-labelledby="nav-eng-tab">
+                                <?php echo form_open_multipart(base_url().'Admin/Blog_Content_Update_Submit');?>
+                                <div class="row">
+                                    <div class="form-group col-sm-4">
+                                        <label style="padding:5px;" class="control-label">
+                                            <small>
+                                                <strong>
+                                                    Meta Title
+                                                </strong>
+                                            </small>
+                                        </label>
+                                        <textarea name="meta_title" class="form-control" required><?= $results->Blog_Meta_Title ; ?></textarea>
+                                    </div>
+                                    <div class="form-group col-sm-4">
+                                        <label style="padding:5px;" class="control-label">
+                                            <small>
+                                                <strong>
+                                                    Meta Keyword
+                                                </strong>
+                                            </small>
+                                        </label>
+                                        <textarea name="meta_keyword" class="form-control" required><?= $results->Blog_Meta_Keyword ; ?></textarea>
+                                    </div>
+                                    <div class="form-group col-sm-4">
+                                        <label style="padding:5px;" class="control-label">
+                                            <small>
+                                                <strong>
+                                                    Meta Description
+                                                </strong>
+                                            </small>
+                                        </label>
+                                        <textarea name="meta_description" class="form-control" required ><?= $results->Blog_Meta_Description; ?></textarea>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-sm-5">
+                                        <label style="padding-top:20px;padding-bottom:5px;" class="control-label">
+                                            <small>
+                                                <strong>
+                                                    Image Alt
+                                                </strong>
+                                            </small>
+                                        </label>
+                                        <input name="image_alt" type="text" placeholder="Image Alt" required class="form-control" value="<?= $results->Blog_Image_Alt ; ?>">
+                                    </div>
+                                    <div class="form-group col-sm-7">
+                                        <label style="padding-top:20px;padding-bottom:5px;" class="control-label">
+                                            <small>
+                                                <strong>
+                                                    Title
+                                                </strong>
+                                            </small>
 
-                                </label>
-                                <input name="blog_title" type="text" placeholder="Title" required class="form-control" value="<?= $results->Blog_Title ; ?>">
-                                <input name="blog_id" type="hidden" required value="<?= $results->Blog_ID ; ?>">
+                                        </label>
+                                        <input name="blog_title" type="text" placeholder="Title" required class="form-control" value="<?= $results->Blog_Title ; ?>">
+                                        <input name="blog_id" type="hidden" required value="<?= $results->Blog_ID ; ?>">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-sm-12">
+                                        <label style="margin-top:10px;padding:5px;" class="control-label">
+                                            <small>
+                                                <strong>
+                                                    Blog Content
+                                                </strong>
+                                            </small>
+                                        </label>
+                                        <textarea name="blog_description" type="text" required class="form-control summernote"><?= $results->Blog_Content ; ?></textarea>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12 text-right">
+                                        <button type="reset" name="submitBtn" class="btn btn-warning ">
+                                            Reset Form
+                                        </button>
+                                        <button type="submit" name="submitBtn" class="btn btn-primary ">
+                                            Update Blog
+                                        </button>
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="nav-rus" role="tabpanel" aria-labelledby="nav-rus-tab">
+                                <?php echo form_open_multipart(base_url().'Admin/Blog_Content_Update_Submit_ru');?>
+                                <div class="row">
+                                    <div class="form-group col-sm-4">
+                                        <label style="padding:5px;" class="control-label">
+                                            <small>
+                                                <strong>
+                                                    Meta Title
+                                                </strong>
+                                            </small>
+                                        </label>
+                                        <textarea name="meta_title_ru" class="form-control" required><?= $results->ru_meta_title ; ?></textarea>
+                                    </div>
+                                    <div class="form-group col-sm-4">
+                                        <label style="padding:5px;" class="control-label">
+                                            <small>
+                                                <strong>
+                                                    Meta Keyword
+                                                </strong>
+                                            </small>
+                                        </label>
+                                        <textarea name="meta_keyword_ru" class="form-control" required><?= $results->ru_meta_keyword ; ?></textarea>
+                                    </div>
+                                    <div class="form-group col-sm-4">
+                                        <label style="padding:5px;" class="control-label">
+                                            <small>
+                                                <strong>
+                                                    Meta Description
+                                                </strong>
+                                            </small>
+                                        </label>
+                                        <textarea name="meta_description_ru" class="form-control" required ><?= $results->ru_meta_description; ?></textarea>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-sm-5">
+                                        <label style="padding-top:20px;padding-bottom:5px;" class="control-label">
+                                            <small>
+                                                <strong>
+                                                    Image Alt
+                                                </strong>
+                                            </small>
+                                        </label>
+                                        <input name="image_alt_ru" type="text" placeholder="Image Alt" required class="form-control" value="<?= $results->ru_image_alt ; ?>">
+                                    </div>
+                                    <div class="form-group col-sm-7">
+                                        <label style="padding-top:20px;padding-bottom:5px;" class="control-label">
+                                            <small>
+                                                <strong>
+                                                    Title
+                                                </strong>
+                                            </small>
+
+                                        </label>
+                                        <input name="blog_title_ru" type="text" placeholder="Title" required class="form-control" value="<?= $results->ru_title ; ?>">
+                                        <input name="blog_id_ru" type="hidden" required value="<?= $results->Blog_ID ; ?>">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-sm-12">
+                                        <label style="margin-top:10px;padding:5px;" class="control-label">
+                                            <small>
+                                                <strong>
+                                                    Blog Content
+                                                </strong>
+                                            </small>
+                                        </label>
+                                        <textarea name="blog_description_ru" type="text" required class="form-control summernote"><?= $results->ru_content ; ?></textarea>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12 text-right">
+                                        <button type="reset" name="submitBtn_ru" class="btn btn-warning ">
+                                            Reset Form
+                                        </button>
+                                        <button type="submit" name="submitBtn_ru" class="btn btn-primary ">
+                                            Update Blog
+                                        </button>
+                                    </div>
+                                </div>
+                                </form>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="form-group col-sm-12">
-                                <label style="margin-top:10px;padding:5px;" class="control-label">
-                                    <small>
-                                        <strong>
-                                            Blog Content
-                                        </strong>
-                                    </small>
-                                </label>
-                                <textarea name="blog_description" type="text" required class="form-control summernote"><?= $results->Blog_Content ; ?></textarea>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-12 text-right">
-                                <button type="reset" name="submitBtn" class="btn btn-warning ">
-                                    Reset Form
-                                </button>
-                                <button type="submit" name="submitBtn" class="btn btn-primary ">
-                                    Update Blog
-                                </button>
-                            </div>
-                        </div>
-                        </form>
                     </div>
                 </div>
             </div>

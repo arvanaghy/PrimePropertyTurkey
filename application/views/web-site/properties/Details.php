@@ -1,4 +1,11 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
+<?php if (isset($_GET['reference']) and $_GET['reference']='newsletter'){
+    $myfile = fopen("newsletter-statistics.txt", "a+") or die("Unable to open file!");
+    $date = date('m/d/Y h:i:s a', time());
+    $txt = $date."\n";
+    fwrite($myfile, $txt);
+    fclose($myfile);
+} ?>
 <?php header('Cache-Control: no cache'); //disable validation of form by the browser ?>
 <?php $this->load->view('web-site/includes/head-load'); ?>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/find-property.css">
@@ -9,7 +16,7 @@
 />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/phone-input.css">
-<title>Property For Sale In <?= $this->uri->segment(2); ?> - <?= $this->uri->segment(2); ?> Real Estate</title>
+<title>Properties For Sale In <?= $this->uri->segment(2); ?> - <?= $this->uri->segment(2); ?> Real Estate</title>
 <meta name="description" content="the best suggestion about Properties for sale in  <?= $this->uri->segment(2); ?><? if ($this->uri->segment(2)!='Istanbul' and $cityValue == 'Istanbul' ): ?>, Istanbul <? endif; ?> in prime property turkey, pick your future real estate with Prime Property Turkey">
 <? if (isset($page_id)) {
     $page_id = $page_id;
@@ -476,18 +483,18 @@
                                 <nav aria-label="Page navigation example">
                                     <ul class="pagination justify-content-center">
                                         <li class="page-item">
-                                            <a class="page-link" rel="nofollow" href="<?= base_url(); ?>Properties/<?= $cityValue; ?>" tabindex="-1" title="FIRST"> <i
+                                            <a class="page-link"  href="<?= base_url(); ?>Properties/<?= $cityValue; ?>" tabindex="-1" title="FIRST"> <i
                                                         class="fas fa-angle-double-left"></i> </a>
                                         </li>
                                         <? if ($page_id < 2) { ?>
                                             <? for ($i = 0; $i <= $page_id+2; $i++) { ?>
                                                 <? if ($i>$pages){ break; } ?>
                                                 <? if ((int)$page_id == $i) { ?>
-                                                    <li class="page-item text-danger"><a rel="nofollow" class="page-link text-danger"
+                                                    <li class="page-item text-danger"><a  class="page-link text-danger"
                                                                                          href="<?= base_url(); ?>properties/<?= $cityValue; ?>/<?= $i; ?>"><?= $i + 1; ?></a>
                                                     </li>
                                                 <? } else { ?>
-                                                    <li class="page-item"><a class="page-link" rel="nofollow"
+                                                    <li class="page-item"><a class="page-link"
                                                                              href="<?= base_url(); ?>properties/<?= $cityValue; ?>/<?= $i; ?>"><?= $i + 1; ?></a>
                                                     </li>
                                                 <? } ?>
@@ -496,11 +503,11 @@
                                             <? for ($i = (int)$page_id-2; $i <= $pages; $i++) { ?>
                                                 <? if ($i>$pages){ break; } ?>
                                                 <? if ((int)$page_id == $i) { ?>
-                                                    <li class="page-item text-danger"><a class="page-link text-danger" rel="nofollow"
+                                                    <li class="page-item text-danger"><a class="page-link text-danger"
                                                                                          href="<?= base_url(); ?>properties/<?= $cityValue; ?>/<?= $i; ?>"><?= $i + 1; ?></a>
                                                     </li>
                                                 <? } else { ?>
-                                                    <li class="page-item"><a class="page-link" rel="nofollow"
+                                                    <li class="page-item"><a class="page-link"
                                                                              href="<?= base_url(); ?>properties/<?= $cityValue; ?>/<?= $i; ?>"><?= $i + 1; ?></a>
                                                     </li>
                                                 <? } ?>
@@ -509,18 +516,18 @@
                                             <? for ($i = (int)$page_id-2; $i <= $page_id+2; $i++) { ?>
                                                 <? if ($i>$pages){ break; } ?>
                                                 <? if ((int)$page_id == $i) { ?>
-                                                    <li class="page-item text-danger"><a class="page-link text-danger" rel="nofollow"
+                                                    <li class="page-item text-danger"><a class="page-link text-danger"
                                                                                          href="<?= base_url(); ?>properties/<?= $cityValue; ?>/<?= $i; ?>"><?= $i + 1; ?></a>
                                                     </li>
                                                 <? } else { ?>
-                                                    <li class="page-item"><a class="page-link" rel="nofollow"
+                                                    <li class="page-item"><a class="page-link"
                                                                              href="<?= base_url(); ?>properties/<?= $cityValue; ?>/<?= $i; ?>"><?= $i + 1; ?></a>
                                                     </li>
                                                 <? } ?>
                                             <? } ?>
                                         <? } ?>
                                         <li class="page-item">
-                                            <a class="page-link" rel="nofollow" href="<?= base_url(); ?>properties/<?= $cityValue; ?>/<?= $pages; ?>" title="LAST"> <i
+                                            <a class="page-link"  href="<?= base_url(); ?>properties/<?= $cityValue; ?>/<?= $pages; ?>" title="LAST"> <i
                                                         class="fas fa-angle-double-right"></i> </a>
                                         </li>
                                     </ul>

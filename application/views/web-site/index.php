@@ -212,6 +212,51 @@
             </div>
         </div>
     </section>
+    <section id="Main-inquiry" class="Main-inquiry m-3">
+        <div class="container-fluid">
+            <div class="row justify-content-between px-md-4 pr-md-5 align-items-center my-2 py-3">
+                <div class="find-title">
+                         <span class="pre">
+                              Quick
+                         </span>
+                    <span class="pro">
+                             Enquiry
+                        </span>
+                </div>
+                <div class="find-form">
+                    <form action="<?= base_url(); ?>Post/enquire" method="post"
+                          class="justify-content-end text-right">
+                        <div class="row my-2 justify-content-around text-right">
+                            <div class="col-lg-3 my-1" >
+                                <input type="text" class="form-control" id="info" name="info" placeholder="Full Name">
+                            </div>
+                            <div class="col-lg-2 my-1" >
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                            </div>
+                            <div class="col-lg-3 my-1" >
+                                <input type="text" id="modal_phone" class="form-control" placeholder="Phone Number"
+                                       name="phone[main]">
+                            </div>
+                            <div class="col-lg-2 my-1" >
+                                <select class="form-control" id="budget" name="budget">
+                                    <option value="6" selected>Max Budget</option>
+                                    <option value="1">Up to &#36; 100.000</option>
+                                    <option value="2">Up to &#36; 200.000</option>
+                                    <option value="3">Up to &#36; 300.000</option>
+                                    <option value="4">Up to &#36; 500.000</option>
+                                    <option value="5">&#36; 1 M</option>
+                                    <option value="6">&#36; 1+ M</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-2 justify-content-center my-1">
+                                <input type="submit" class="btn red-button btn-block" value="Submit Enquiry">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="Recommended-Properties" class="Recommended-Properties py-3 py-md-5">
         <div class="container-fluid">
             <div class="row justify-content-center">

@@ -1,4 +1,11 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
+<?php if (isset($_GET['reference']) and $_GET['reference']='newsletter'){
+    $myfile = fopen("newsletter-statistics.txt", "a+") or die("Unable to open file!");
+    $date = date('m/d/Y h:i:s a', time());
+    $txt = $date."\n";
+    fwrite($myfile, $txt);
+    fclose($myfile);
+} ?>
 <?php $this->load->view('web-site/includes/head-load'); ?>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/blog.css">
 <title><?= $result->Blog_Meta_Title; ?></title>
@@ -98,6 +105,10 @@
         border-top-left-radius: 20px !important;
         border-top-right-radius: 20px !important;
     }
+    #side-contact-us {
+        position: unset !important;
+        top: unset !important;
+    }
 
 </style>
 </head>
@@ -120,7 +131,7 @@ if ($image_name_webp == '') {
                         <i class="fas fa-home"></i>
                     </span>
                     <span class="mx-2">
-                        <a href="<?= base_url(); ?>blog" class="red-text" rel="nofollow">
+                        <a href="<?= base_url(); ?>blog" class="red-text" >
                            Blog
                         </a>
                     </span>
@@ -128,7 +139,7 @@ if ($image_name_webp == '') {
                         <i class="fas fa-chevron-right"></i>
                     </span>
                     <span class="mx-2">
-                        <a class="red-text" rel="nofollow">
+                        <a class="red-text" >
                           <?= $result->Blog_Title; ?>
                         </a>
                     </span>
@@ -158,15 +169,15 @@ if ($image_name_webp == '') {
                 </div>
                 <div class="col-md-2 buttons py-2">
                     <div class="row justify-content-center justify-content-md-end">
-                        <div class="col-4" style="cursor: pointer">
-                            <a data-toggle="modal" data-target="#ShareModal" class="text-center" rel="nofollow">
+                        <div class="col-4" style="cursor: pointer;text-align: center">
+                            <button data-toggle="modal" data-target="#ShareModal" class="text-center" style="border: 0;background-color: transparent;padding: 0">
                                 <span class="ico d-block">
                                     <i class="fas fa-share-alt fa-2x"></i>
                                 </span>
                                 <span class="text d-block">
                                     Share
                                 </span>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -313,6 +324,8 @@ if ($image_name_webp == '') {
                 </div>
                 <div class="col-md-3">
                     <? $this->load->view('web-site/includes/side-recommended-properties'); ?>
+                        <? $passed_data['reference_id'] = 'blog';  ?>
+                    <? $this->load->view('web-site/includes/side-enquire',$passed_data); ?>
                     <?php $this->load->view('web-site/includes/side-popular-post'); ?>
                     <?php $this->load->view('web-site/includes/side-latest-news'); ?>
                 </div>
@@ -331,40 +344,40 @@ if ($image_name_webp == '') {
             <div class="modal-body social-share">
                 <ul class="list-group list-group-horizontal-sm justify-content-center align-items-center">
                     <li class="list-group-item">
-                        <a rel="nofollow"
+                        <a 
                            href="https://www.facebook.com/sharer.php?u=<?= current_url(); ?>&t=<?= $result->Blog_Title; ?>&p=<?= base_url(); ?><?= "assets/web-site/images/blog/whatsapp/" . str_replace('assets/blog/', '', $result->Blog_Image); ?>"
                            target="_blank" class="btn btn-primary btn-block">
                             <i class="fab fa-facebook"></i>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a rel="nofollow"
+                        <a 
                            href="https://twitter.com/intent/tweet?text=<?= current_url(); ?><?= substr(strip_tags($result->Blog_Content), 0, 200); ?>"
                            target="_blank" class="btn btn-info btn-block">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a rel="nofollow"
+                        <a 
                            href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?= current_url(); ?>&amp;title=<?= $result->Blog_Title; ?>&amp;ro=false&amp;summary=<?= strip_tags($result->Blog_Content); ?>&amp;source="
                            target="_blank" class="btn btn-primary btn-block">
                             <i class="fab fa-linkedin"></i>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a rel="nofollow"
+                        <a 
                            href="https://pinterest.com/pin/create/button/?url=<?= current_url(); ?>&amp;description=<?= strip_tags($result->Blog_Content); ?>"
                            target="_blank" class="btn btn-danger btn-block">
                             <i class="fab fa-pinterest"></i>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a rel="nofollow" href="https://www.instagram.com/primepropertyturkey/" target="_blank"
+                        <a  href="https://www.instagram.com/primepropertyturkey/" target="_blank"
                            class="btn btn-danger btn-block">
                             <i class="fab fa-instagram"></i>
                         </a></li>
                     <li class="list-group-item">
-                        <a rel="nofollow" href="https://api.whatsapp.com/send?text=<?= current_url(); ?>"
+                        <a  href="https://api.whatsapp.com/send?text=<?= current_url(); ?>"
                            target="_blank" class="btn btn-success btn-block">
                             <i class="fab fa-whatsapp"></i>
                         </a>

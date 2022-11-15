@@ -7,12 +7,22 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['blog/(:any)'] = 'blog/details/$1';
 $route['news/(:any)'] = 'news/details/$1';
+$route['BlogFind/(:any)'] = 'BlogFind/details/$1';
 //$route['Like/blog/(:any)'] = 'Like/blog/$1';
 //$route['Dislike/blog/(:any)'] = 'Dislike/blog/$1';
 //$route['Like/news/(:any)'] = 'Like/news/$1';
 //$route['Dislike/news/(:any)'] = 'Dislike/news/$1';
-$route['ru/blog/Турция-становится-безопасным-раем-для-российских-инвесторов'] = 'Ru/Blog/$1';
-$route['BlogFind/(:any)'] = 'BlogFind/details/$1';
+
+
+$route['ru/blog'] = 'Ru/blogIndex';
+$route['ru/blog/(:any)'] = 'Ru/blog/$1';
+$route['ru/'] = 'Ru/index';
+$route['ru/citizenship-by-investment-in-turkey'] = 'Ru/CitizenshipByInvestment';
+$route['ru/short-term-residency-permit'] = 'Ru/ShortTermResidency';
+$route['ru/about-us'] = 'Ru/AboutUS';
+$route['ru/contact-us'] = 'Ru/ContactUs';
+$route['ru/How-To-Buy-Property-In-Turkey'] = 'Ru/BuyerGuide';
+$route['ru/buying-online'] = 'Ru/BuyingOnline';
 
 $route['about-us'] = 'about_us';
 $route['contact-us'] = 'contact_us';
@@ -25,6 +35,7 @@ $route['short-term-residency-permit'] = 'short_term_residency_permit';
 $route['short-term-residency-extension'] = 'short_term_residency_extension';
 $route['frequently-asked-questions-faq'] = 'frequently_asked_questions_faq';
 $route['after-sales'] = 'after_sales';
+$route['Apartment-for-investment-in-turkey'] = 'ApartmentForInvestment/index';
 
 $route['Resale/Preview/(:any)'] = 'Resale/Preview/$1';
 $route['Resale/PreviewPublishedResale/(:any)'] = 'Resale/PreviewPublishedResale/$1';

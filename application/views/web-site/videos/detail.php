@@ -80,7 +80,7 @@
                         <i class="fas fa-home"></i>
                     </span>
                     <span class="mx-2">
-                        <a href="<?= base_url(); ?>prime-videos" class="red-text" rel="nofollow">
+                        <a href="<?= base_url(); ?>prime-videos" class="red-text" >
                            Videos
                         </a>
                     </span>
@@ -88,7 +88,7 @@
                         <i class="fas fa-chevron-right"></i>
                     </span>
                     <span class="mx-2">
-                        <a class="red-text" rel="nofollow">
+                        <a class="red-text" >
                           <?= $result->title; ?>
                         </a>
                     </span>
@@ -119,7 +119,7 @@
                 <div class="col-md-3 buttons py-2">
                     <div class="row justify-content-center justify-content-md-end">
                         <div class="col-4" style="cursor: pointer">
-                            <a data-toggle="modal" data-target="#ShareModal" class="text-center" rel="nofollow">
+                            <a data-toggle="modal" data-target="#ShareModal" class="text-center" >
                                 <span class="ico d-block">
                                     <i class="fas fa-share-alt fa-2x"></i>
                                 </span>
@@ -196,40 +196,40 @@
             <div class="modal-body social-share">
                 <ul class="list-group list-group-horizontal-sm justify-content-center align-items-center">
                     <li class="list-group-item">
-                        <a rel="nofollow"
+                        <a 
                            href="https://www.facebook.com/sharer.php?u=<?= current_url(); ?>&t=<?= $result->title; ?>&p=<?= base_url(); ?>assets/web-site/images/youtube-cover/<?= $result->cover_image; ?>"
                            target="_blank" class="btn btn-primary btn-block">
                             <i class="fab fa-facebook"></i>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a rel="nofollow"
+                        <a 
                            href="https://twitter.com/intent/tweet?text=<?= current_url(); ?><?= substr(strip_tags($result->description), 0, 200); ?>"
                            target="_blank" class="btn btn-info btn-block">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a rel="nofollow"
+                        <a 
                            href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?= current_url(); ?>&amp;title=<?= $result->title; ?>&amp;ro=false&amp;summary=<?= strip_tags($result->description); ?>&amp;source="
                            target="_blank" class="btn btn-primary btn-block">
                             <i class="fab fa-linkedin"></i>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a rel="nofollow"
+                        <a 
                            href="https://pinterest.com/pin/create/button/?url=<?= current_url(); ?>&amp;description=<?= strip_tags($result->description); ?>"
                            target="_blank" class="btn btn-danger btn-block">
                             <i class="fab fa-pinterest"></i>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a rel="nofollow" href="https://www.instagram.com/primepropertyturkey/" target="_blank"
+                        <a  href="https://www.instagram.com/primepropertyturkey/" target="_blank"
                            class="btn btn-danger btn-block">
                             <i class="fab fa-instagram"></i>
                         </a></li>
                     <li class="list-group-item">
-                        <a rel="nofollow" href="https://api.whatsapp.com/send?text=<?= current_url(); ?>"
+                        <a  href="https://api.whatsapp.com/send?text=<?= current_url(); ?>"
                            target="_blank" class="btn btn-success btn-block">
                             <i class="fab fa-whatsapp"></i>
                         </a>

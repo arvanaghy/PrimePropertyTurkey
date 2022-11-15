@@ -143,15 +143,15 @@
                                             </span>
                                             <span class="card-favorite">
                                                 <? if (is_favored($recommended_property->Property_id)) { ?>
-                                                    <a href="<?= base_url(); ?>Favorite/del_favorite/<?= $recommended_property->Property_id; ?>"
-                                                       class="red-text" rel="nofollow">
+                                                    <button onclick="delete_favorite('<?= $recommended_property->Property_id; ?>');" style="background-color: transparent !important;padding: 0"
+                                                            class="red-text" >
                                                         <i class="fas fa-heart red-text"></i>
-                                                    </a>
+                                                    </button>
                                                 <? } else { ?>
-                                                    <a href="<?= base_url(); ?>Favorite/set_favorite/<?= $recommended_property->Property_id; ?>"
-                                                       class="text-reset" rel="nofollow">
+                                                    <button onclick="set_favorite('<?= $recommended_property->Property_id; ?>');" style="background-color: transparent !important;padding: 0"
+                                                            class="text-reset">
                                                         <i class="far fa-heart"></i>
-                                                    </a>
+                                                    </button>
                                                 <? } ?>
                                            </span>
                                             <div id="item-card-title">
@@ -230,12 +230,12 @@
                                                    Contact US
                                                <? } ?>
                                             </span>
-                                            <a class="btn btn-danger btn-sm d-flex font-weight-bold"
+                                            <button class="btn btn-danger btn-sm d-flex font-weight-bold"
                                                data-toggle="modal" data-target="#quickEnquireModal"
                                                data-whatever="<?= $recommended_property->Property_referenceID; ?>"
-                                               rel="nofollow">
+                                               >
                                                 Quick Enquiry
-                                            </a>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -247,3 +247,27 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function set_favorite(value){
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            if (this.responseText){
+                location.reload();
+            }
+        }
+        xhttp.open("POST", "<?= base_url();?>Favorite/set_favorite");
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("send_value="+value);
+    }
+    function delete_favorite(value){
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            if (this.responseText){
+                location.reload();
+            }
+        }
+        xhttp.open("POST", "<?= base_url();?>Favorite/del_favorite");
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("send_value="+value);
+    }
+</script>

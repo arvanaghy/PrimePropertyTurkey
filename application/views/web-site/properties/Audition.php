@@ -181,11 +181,6 @@ if ($image_name_webp == '') {
 </head>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>
-    <?
-    $IIG = array();
-    foreach ($property_image_gallery as $key=>$image_in_gallery) {
-        $IIG[$key]=$image_in_gallery->gallery_image; }
-    ?>
     <section id="bread-crumbs">
         <div class="container">
             <div class="row">
@@ -197,7 +192,7 @@ if ($image_name_webp == '') {
                         <i class="fas fa-chevron-right"></i>
                     </span>
                     <span class="mx-2">
-                        <a href="<?= base_url(); ?>properties" class="red-text" rel="nofollow">
+                        <a href="<?= base_url(); ?>properties" class="red-text" >
                             Properties
                         </a>
                     </span>
@@ -339,15 +334,15 @@ if ($image_name_webp == '') {
                                 </button>
                             <? } ?>
                         </div>
-                        <div class="col" style="cursor: pointer">
-                            <a class="text-center" data-toggle="modal" data-target="#ShareModal" rel="nofollow">
+                        <div class="col" style="cursor: pointer;text-align: center">
+                            <button class="text-center" data-toggle="modal" data-target="#ShareModal" style="border: 0;background-color: transparent;padding: 0;text-align: center;font-size: 0.8rem">
                                 <span class="ico d-block">
                                     <i class="fas fa-share-alt fa-2x"></i>
                                 </span>
                                 <span class="text d-block">
                                     Share
                                 </span>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -358,85 +353,95 @@ if ($image_name_webp == '') {
         <div class="container my-3">
             <div class="row justify-content-center">
                 <div class="col-lg-8 details">
-                    <div class="slider mb-2">
-                        <div class="carousel-container position-relative row">
-                            <!-- Sorry! Lightbox doesn't work - yet. -->
-                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                                <div class="carousel-inner">
-                                    <? $i=0; ?>
-                                    <? foreach ($property_image_gallery as $image_gallery){ ?>
-                                        <? $image_name = str_replace('assets/uploads/', '', $IIG[$i]);
-                                        $image_name_webp = substr($image_name,0,strpos($image_name,'.jpg')).".webp";
-                                        if ($image_name_webp==''){
-                                            $image_name_webp = substr($image_name,0,strpos($image_name,'.png')).".webp";
-                                        }
-                                        if ($image_name_webp==''){
-                                            $image_name_webp = substr($image_name,0,strpos($image_name,'.jpeg')).".webp";
-                                        }
-                                        ?>
-                                        <div class="carousel-item <? if($i==0){ echo 'active'; } ?>" data-slide-number="<?= $i; ?>">
-                                            <img alt="<?= $data_array->Property_title.' '.$i; ?>"
-                                                 src="<?= base_url(); ?><?= "assets/web-site/images/properties/watermark/".$image_name_webp; ?>"
-                                                 class="d-block w-100"
-                                                 data-remote="https://source.unsplash.com/Pn6iimgM-wo/" data-type="image"
-                                                 data-toggle="lightbox" data-gallery="example-gallery">
-                                        </div>
-                                        <?
-                                        $i++;
-                                    } ?>
-                                </div>
-                                <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-                            <!-- Carousel Navigation -->
-                            <div id="carousel-thumbs" class="carousel slide" data-ride="carousel">
-                                <?
-                                $gallery_image_count = count($property_image_gallery)-1;
-                                $gallery_image_array = range(0,$gallery_image_count);
-                                $gallery_image_chunk =  array_chunk($gallery_image_array,6);
-                                ?>
-                                <div class="carousel-inner">
-                                    <? foreach ($gallery_image_chunk as $key=> $value ){ ?>
-                                        <div class="carousel-item <? if ($key==0){echo 'active';} ?>">
-                                            <div class="row mx-0 justify-content-center">
-                                                <?foreach ($value as $v){ ?>
-                                                    <? $image_name = str_replace('assets/uploads/', '', $IIG[$v]);
-                                                    $image_name_webp = substr($image_name,0,strpos($image_name,'.jpg')).".webp";
-                                                    if ($image_name_webp==''){
-                                                        $image_name_webp = substr($image_name,0,strpos($image_name,'.png')).".webp";
-                                                    }
-                                                    if ($image_name_webp==''){
-                                                        $image_name_webp = substr($image_name,0,strpos($image_name,'.jpeg')).".webp";
-                                                    }
-                                                    ?>
-                                                    <div id="carousel-selector-<?= $v; ?>" class="thumb col-4 col-sm-2 py-2 px-2 "
-                                                         data-target="#myCarousel" data-slide-to="<?= $v; ?>">
-                                                        <img alt="<?= $data_array->Property_title.' '.$v; ?>"
-                                                             src="<?= base_url(); ?><?= "assets/web-site/images/properties/whatsapp/".$image_name_webp; ?>"
-                                                             class="img-fluid" loading="lazy">
-                                                    </div>
-                                                <? } ?>
+                    <? if ($property_image_gallery): ?>
+                        <?
+                        $IIG = array();
+                        foreach ($property_image_gallery as $key=>$image_in_gallery) {
+                            $IIG[$key]=$image_in_gallery->gallery_image; }
+                        ?>
+                        <div class="slider mb-2">
+                            <div class="carousel-container position-relative row">
+                                <!-- Sorry! Lightbox doesn't work - yet. -->
+                                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <? $i=0; ?>
+                                        <? foreach ($property_image_gallery as $image_gallery){ ?>
+                                            <? $image_name = str_replace('assets/uploads/', '', $IIG[$i]);
+                                            $image_name_webp = substr($image_name,0,strpos($image_name,'.jpg')).".webp";
+                                            if ($image_name_webp==''){
+                                                $image_name_webp = substr($image_name,0,strpos($image_name,'.png')).".webp";
+                                            }
+                                            if ($image_name_webp==''){
+                                                $image_name_webp = substr($image_name,0,strpos($image_name,'.jpeg')).".webp";
+                                            }
+                                            ?>
+                                            <div class="carousel-item <? if($i==0){ echo 'active'; } ?>" data-slide-number="<?= $i; ?>">
+                                                <img alt="<?= $data_array->Property_title.' '.$i; ?>"
+                                                     src="<?= base_url(); ?><?= "assets/web-site/images/properties/watermark/".$image_name_webp; ?>"
+                                                     class="d-block w-100"
+                                                     data-remote="https://source.unsplash.com/Pn6iimgM-wo/" data-type="image"
+                                                     data-toggle="lightbox" data-gallery="example-gallery">
                                             </div>
-                                        </div>
-                                    <? } ?>
+                                            <?
+                                            $i++;
+                                        } ?>
+                                    </div>
+                                    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
                                 </div>
-                                <a class="carousel-control-prev" href="#carousel-thumbs" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carousel-thumbs" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-                        </div> <!-- /row -->
-                    </div>
+                                <!-- Carousel Navigation -->
+                                <div id="carousel-thumbs" class="carousel slide" data-ride="carousel">
+                                    <?
+                                    $gallery_image_count = count($property_image_gallery)-1;
+                                    $gallery_image_array = range(0,$gallery_image_count);
+                                    $gallery_image_chunk =  array_chunk($gallery_image_array,6);
+                                    ?>
+                                    <div class="carousel-inner">
+                                        <? foreach ($gallery_image_chunk as $key=> $value ){ ?>
+                                            <div class="carousel-item <? if ($key==0){echo 'active';} ?>">
+                                                <div class="row mx-0 justify-content-center">
+                                                    <? if ($value):
+                                                        foreach ($value as $v){ ?>
+                                                            <? $image_name = str_replace('assets/uploads/', '', $IIG[$v]);
+                                                            $image_name_webp = substr($image_name,0,strpos($image_name,'.jpg')).".webp";
+                                                            if ($image_name_webp==''){
+                                                                $image_name_webp = substr($image_name,0,strpos($image_name,'.png')).".webp";
+                                                            }
+                                                            if ($image_name_webp==''){
+                                                                $image_name_webp = substr($image_name,0,strpos($image_name,'.jpeg')).".webp";
+                                                            }
+                                                            ?>
+                                                            <div id="carousel-selector-<?= $v; ?>" class="thumb col-4 col-sm-2 py-2 px-2 "
+                                                                 data-target="#myCarousel" data-slide-to="<?= $v; ?>">
+                                                                <img alt="<?= $data_array->Property_title.' '.$v; ?>"
+                                                                     src="<?= base_url(); ?><?= "assets/web-site/images/properties/whatsapp/".$image_name_webp; ?>"
+                                                                     class="img-fluid" loading="lazy">
+                                                            </div>
+                                                        <? }
+                                                    endif;
+                                                    ?>
+                                                </div>
+                                            </div>
+                                        <? } ?>
+                                    </div>
+                                    <a class="carousel-control-prev" href="#carousel-thumbs" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carousel-thumbs" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                            </div> <!-- /row -->
+                        </div>
+                    <? endif; ?>
                     <? if ($data_array->SoldOut){ ?>
                             <div class="SoldOut text-center">
                                 <span class="badge badge-danger text-center p-3">SOLD OUT !</span>
@@ -623,15 +628,18 @@ if ($image_name_webp == '') {
                                             <span class="card-type-badge">
                                                  <?= $Neighborhood_Properties->Property_type; ?>
                                             </span>
-                                                    <span class="card-favorite">
-                                                <? if (is_favored($Neighborhood_Properties->Property_id)){ ?>
-                                                    <a rel="nofollow" href="<?= base_url();?>Favorite/del_favorite/<?= $Neighborhood_Properties->Property_id; ?>" class="red-text">
-                                                        <i class="fas fa-heart red-text" ></i>
-                                                    </a>
-                                                <?}else{?>
-                                                    <a  rel="nofollow" href="<?= base_url();?>Favorite/set_favorite/<?= $Neighborhood_Properties->Property_id; ?>" class="text-reset">
-                                                        <i class="far fa-heart" ></i>
-                                                    </a>
+                                            <span class="card-favorite">
+
+                                                <? if (is_favored($Neighborhood_Properties->Property_id)) { ?>
+                                                    <button onclick="delete_favorite('<?= $Neighborhood_Properties->Property_id; ?>');" style="background-color: transparent !important;padding: 0;border: 0"
+                                                            class="red-text" >
+                                                <i class="fas fa-heart red-text"></i>
+                                            </button>
+                                                <? } else { ?>
+                                                    <button onclick="set_favorite('<?= $Neighborhood_Properties->Property_id; ?>');" style="background-color: transparent !important;padding: 0;border: 0"
+                                                            class="text-reset">
+                                                <i class="far fa-heart"></i>
+                                            </button>
                                                 <? } ?>
                                            </span>
                                                     <div id="item-card-title">
@@ -708,10 +716,10 @@ if ($image_name_webp == '') {
                                                     Contact US
                                                 <?} ?>
                                             </span>
-                                                    <a class="btn btn-danger btn-sm font-weight-bold d-flex" data-toggle="modal"
-                                                       data-whatever="<?= $Neighborhood_Properties->Property_referenceID; ?>" data-target="#quickEnquireModal" rel="nofollow">
+                                                    <button class="btn btn-danger btn-sm font-weight-bold d-flex" data-toggle="modal"
+                                                       data-whatever="<?= $Neighborhood_Properties->Property_referenceID; ?>" data-target="#quickEnquireModal">
                                                         Quick Enquiry
-                                                    </a>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -745,15 +753,17 @@ if ($image_name_webp == '') {
                                             <span class="card-type-badge">
                                                  <?= $Neighborhood_Properties->Property_type; ?>
                                             </span>
-                                                    <span class="card-favorite">
-                                                <? if (is_favored($Neighborhood_Properties->Property_id)){ ?>
-                                                    <a rel="nofollow" href="<?= base_url();?>Favorite/del_favorite/<?= $Neighborhood_Properties->Property_id; ?>" class="red-text">
-                                                        <i class="fas fa-heart red-text" ></i>
-                                                    </a>
-                                                <?}else{?>
-                                                    <a  rel="nofollow" href="<?= base_url();?>Favorite/set_favorite/<?= $Neighborhood_Properties->Property_id; ?>" class="text-reset">
-                                                        <i class="far fa-heart" ></i>
-                                                    </a>
+                                            <span class="card-favorite">
+                                                <? if (is_favored($Neighborhood_Properties->Property_id)) { ?>
+                                                    <button onclick="delete_favorite('<?= $Neighborhood_Properties->Property_id; ?>');" style="background-color: transparent !important;padding: 0;border: 0"
+                                                            class="red-text" >
+                                                <i class="fas fa-heart red-text"></i>
+                                            </button>
+                                                <? } else { ?>
+                                                    <button onclick="set_favorite('<?= $Neighborhood_Properties->Property_id; ?>');" style="background-color: transparent !important;padding: 0;border: 0"
+                                                            class="text-reset">
+                                                <i class="far fa-heart"></i>
+                                            </button>
                                                 <? } ?>
                                            </span>
                                                     <div id="item-card-title">
@@ -830,10 +840,10 @@ if ($image_name_webp == '') {
                                                   Contact US
                                               <?} ?>
                                             </span>
-                                                    <a class="btn btn-danger btn-sm font-weight-bold d-flex" data-toggle="modal"
-                                                       data-whatever="<?= $Neighborhood_Properties->Property_referenceID; ?>" data-target="#quickEnquireModal" rel="nofollow">
+                                                    <button class="btn btn-danger btn-sm font-weight-bold d-flex" data-toggle="modal"
+                                                       data-whatever="<?= $Neighborhood_Properties->Property_referenceID; ?>" data-target="#quickEnquireModal">
                                                         Quick Enquiry
-                                                    </a>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -867,15 +877,17 @@ if ($image_name_webp == '') {
                                             <span class="card-type-badge">
                                                  <?= $recently_properties->Property_type; ?>
                                             </span>
-                                                    <span class="card-favorite">
-                                                <? if (is_favored($recently_properties->Property_id)){ ?>
-                                                    <a rel="nofollow" href="<?= base_url();?>Favorite/del_favorite/<?= $recently_properties->Property_id; ?>" class="red-text">
-                                                        <i class="fas fa-heart red-text" ></i>
-                                                    </a>
-                                                <?}else{?>
-                                                    <a  rel="nofollow" href="<?= base_url();?>Favorite/set_favorite/<?= $recently_properties->Property_id; ?>" class="text-reset">
-                                                        <i class="far fa-heart" ></i>
-                                                    </a>
+                                            <span class="card-favorite">
+                                                <? if (is_favored($recently_properties->Property_id)) { ?>
+                                                    <button onclick="delete_favorite('<?= $recently_properties->Property_id; ?>');" style="background-color: transparent !important;padding: 0;border: 0"
+                                                            class="red-text" >
+                                                <i class="fas fa-heart red-text"></i>
+                                            </button>
+                                                <? } else { ?>
+                                                    <button onclick="set_favorite('<?= $recently_properties->Property_id; ?>');" style="background-color: transparent !important;padding: 0;border: 0"
+                                                            class="text-reset">
+                                                <i class="far fa-heart"></i>
+                                            </button>
                                                 <? } ?>
                                            </span>
                                                     <div id="item-card-title">
@@ -952,10 +964,10 @@ if ($image_name_webp == '') {
                                                     Contact US
                                                 <?} ?>
                                             </span>
-                                                    <a class="btn btn-danger btn-sm d-flex font-weight-bold" data-toggle="modal"
-                                                       data-whatever="<?= $recently_properties->Property_referenceID; ?>" data-target="#quickEnquireModal" rel="nofollow">
+                                                    <button class="btn btn-danger btn-sm d-flex font-weight-bold" data-toggle="modal"
+                                                       data-whatever="<?= $recently_properties->Property_referenceID; ?>" data-target="#quickEnquireModal">
                                                         Quick Enquiry
-                                                    </a>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -988,7 +1000,7 @@ if ($image_name_webp == '') {
                 </div>
                 <div class="row justify-content-center my-2">
                     <div class="col-12">
-                        <a class="text-center btn btn-danger btn-block" id="reformRunner" rel="nofollow"> Reservation Form </a>
+                        <button class="text-center btn btn-danger btn-block" id="reformRunner"> Reservation Form </button>
                     </div>
                 </div>
             </div>
@@ -1098,32 +1110,32 @@ if ($image_name_webp == '') {
             <div class="modal-body social-share">
                 <ul class="list-group list-group-horizontal-sm justify-content-center align-items-center">
                     <li class="list-group-item">
-                        <a rel="nofollow" href="https://www.facebook.com/sharer.php?u=<?= current_url(); ?>&t=<?= $data_array->Property_title; ?>&p=<?= base_url(); ?><?= "assets/web-site/images/properties/P_Thumb/".str_replace('assets/thumbnail/','',$data_array->Property_thumbnail); ?>"
+                        <a  href="https://www.facebook.com/sharer.php?u=<?= current_url(); ?>&t=<?= $data_array->Property_title; ?>&p=<?= base_url(); ?><?= "assets/web-site/images/properties/P_Thumb/".str_replace('assets/thumbnail/','',$data_array->Property_thumbnail); ?>"
                            target="_blank" class="btn btn-primary btn-block">
                             <i class="fab fa-facebook"></i>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a rel="nofollow" href="https://twitter.com/intent/tweet?text=<?= current_url(); ?><?= substr(strip_tags($data_array->Property_overview),0,200); ?>" target="_blank" class="btn btn-info btn-block">
+                        <a  href="https://twitter.com/intent/tweet?text=<?= current_url(); ?><?= substr(strip_tags($data_array->Property_overview),0,200); ?>" target="_blank" class="btn btn-info btn-block">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a rel="nofollow" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?= current_url(); ?>&amp;title=<?= $data_array->Property_title; ?>&amp;ro=false&amp;summary=<?= strip_tags($data_array->Property_overview); ?>&amp;source=" target="_blank" class="btn btn-primary btn-block">
+                        <a  href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?= current_url(); ?>&amp;title=<?= $data_array->Property_title; ?>&amp;ro=false&amp;summary=<?= strip_tags($data_array->Property_overview); ?>&amp;source=" target="_blank" class="btn btn-primary btn-block">
                             <i class="fab fa-linkedin"></i>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a rel="nofollow" href="https://pinterest.com/pin/create/button/?url=<?= current_url(); ?>&amp;description=<?= strip_tags($data_array->Property_overview); ?>" target="_blank" class="btn btn-danger btn-block">
+                        <a href="https://pinterest.com/pin/create/button/?url=<?= current_url(); ?>&amp;description=<?= strip_tags($data_array->Property_overview); ?>" target="_blank" class="btn btn-danger btn-block">
                             <i class="fab fa-pinterest"></i>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a rel="nofollow" href="https://www.instagram.com/primepropertyturkey/" target="_blank" class="btn btn-danger btn-block">
+                        <a  href="https://www.instagram.com/primepropertyturkey/" target="_blank" class="btn btn-danger btn-block">
                             <i class="fab fa-instagram"></i>
                         </a></li>
                     <li class="list-group-item">
-                        <a rel="nofollow" href="https://api.whatsapp.com/send?text=<?= current_url(); ?>" target="_blank" class="btn btn-success btn-block">
+                        <a  href="https://api.whatsapp.com/send?text=<?= current_url(); ?>" target="_blank" class="btn btn-success btn-block">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </li>
@@ -1192,7 +1204,6 @@ if ($image_name_webp == '') {
 <? $whatsapp_passed['property_title'] = $data_array->Property_title; ?>
 <?php $this->load->view('web-site/includes/footer',$whatsapp_passed); ?>
 <?php $this->load->view('web-site/includes/foot-load'); ?>
-<!--<script type="text/javascript" src="--><?//= base_url(); ?><!--assets/web-site/js/property-more-details.js"></script>-->
 <script type="text/javascript">
     $(document).ready(function (){
         setTimeout(function (){

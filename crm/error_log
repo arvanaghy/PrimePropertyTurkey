@@ -1,0 +1,5 @@
+[15-Nov-2022 07:00:01 UTC] PHP Notice:  Undefined index: log_path in /home/nu1k5sii5jqz/public_html/crm/system/core/Log.php on line 127
+[15-Nov-2022 07:00:01 UTC] PHP Notice:  Undefined index: log_path in /home/nu1k5sii5jqz/public_html/crm/system/core/Log.php on line 127
+[15-Nov-2022 07:00:01 UTC] PHP Warning:  mkdir(): Invalid path in /home/nu1k5sii5jqz/public_html/crm/system/core/Log.php on line 131
+[15-Nov-2022 07:00:01 UTC] PHP Notice:  Undefined index: log_threshold in /home/nu1k5sii5jqz/public_html/crm/system/core/Log.php on line 138
+[15-Nov-2022 07:00:01 UTC] PHP Notice:  Undefined index: log_threshold in /home/nu1k5sii5jqz/public_html/crm/system/core/Log.php on line 142

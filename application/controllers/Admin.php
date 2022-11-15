@@ -433,10 +433,10 @@ class Admin extends CI_Controller
         if (strip_tags($this->input->post('status'))) {
             $status = 3;
         } else {
-            $status = 5;
+            $status = $this->input->post('past_status');
         }
         if (strip_tags($this->input->post('recommended'))) {
-            $recommended = 2;
+            $recommended = 9;
         } else {
             $recommended = 1;
         }
@@ -578,6 +578,7 @@ class Admin extends CI_Controller
         $postData = array(
             'Blog_Title' => strip_tags($this->input->post('blog_title')),
             'Blog_Content' => $this->input->post('blog_description'),
+            'language' => $this->input->post('language'),
             'Blog_Image' => "assets/blog/" . $picture_filename,
             'Blog_Image_Alt' => strip_tags($this->input->post('image_alt')),
             'Blog_Meta_Title' => strip_tags($this->input->post('meta_title')),
@@ -633,7 +634,7 @@ class Admin extends CI_Controller
         $meta_description = strip_tags($this->input->post('meta_description'));
         $image_alt = strip_tags($this->input->post('image_alt'));
         $blog_title = strip_tags($this->input->post('blog_title'));
-        $blog_content = strip_tags($_POST['blog_description'],["p","a","b","u","h2","h3","h4","h5","img","ul","ol"]);
+        $blog_content = strip_tags($_POST['blog_description'],["p","a","b","u","h2","h3","h4","h5","img","ul","ol","li","iframe"]);
         $data = array(
             'Blog_Title' => $blog_title,
             'Blog_Content' => $blog_content,
@@ -641,6 +642,30 @@ class Admin extends CI_Controller
             'Blog_Meta_Title' => $meta_title,
             'Blog_Meta_Keyword' => $meta_keyword,
             'Blog_Meta_Description' => $meta_description,
+            "Blog_Update_Date" => date('Y-m-d H:i:s')
+        );
+        $this->load->model('Admin_model');
+        $this->Admin_model->Blog_Update($id, $data);
+        $this->load->library('user_agent');
+        redirect($this->agent->referrer());
+    }
+    public function Blog_Content_Update_Submit_ru()
+    {
+        $this->checkUser();
+        $id = strip_tags($this->input->post('blog_id_ru'));
+        $meta_title = strip_tags($this->input->post('meta_title_ru'));
+        $meta_keyword = strip_tags($this->input->post('meta_keyword_ru'));
+        $meta_description = strip_tags($this->input->post('meta_description_ru'));
+        $image_alt = strip_tags($this->input->post('image_alt_ru'));
+        $blog_title = strip_tags($this->input->post('blog_title_ru'));
+        $blog_content = strip_tags($_POST['blog_description_ru'],["p","a","b","u","h2","h3","h4","h5","img","ul","ol","li","iframe"]);
+        $data = array(
+            'ru_title' => $blog_title,
+            'ru_content' => $blog_content,
+            'ru_image_alt' => $image_alt,
+            'ru_meta_title' => $meta_title,
+            'ru_meta_keyword' => $meta_keyword,
+            'ru_meta_description' => $meta_description,
             "Blog_Update_Date" => date('Y-m-d H:i:s')
         );
         $this->load->model('Admin_model');
@@ -712,7 +737,6 @@ class Admin extends CI_Controller
         $date = date('Y-m-d');
         $this->Admin_model->publishBlogPostOnDate($date);
     }
-
 
     public function Manage_News()
     {
@@ -862,7 +886,6 @@ class Admin extends CI_Controller
             echo json_encode($this->Admin_model->getNewsTitleAjax($posted_data));
         }
     }
-
 
     public function Manage_Videos()
     {

@@ -195,17 +195,17 @@
                             <nav aria-label="Page navigation example">
                                 <ul class="pagination justify-content-center">
                                     <li class="page-item">
-                                        <a class="page-link" rel="nofollow" href="<?= base_url(); ?>blog" tabindex="-1" title="FIRST"> <i
+                                        <a class="page-link"  href="<?= base_url(); ?>blog" tabindex="-1" title="FIRST"> <i
                                                     class="fas fa-angle-double-left"></i> </a>
                                     </li>
                                     <? if ($page_id < 2) { ?>
                                         <? for ($i = 0; $i <= $page_id+3; $i++) { ?>
                                             <? if ((int)$page_id == $i) { ?>
-                                                <li class="page-item text-danger"><a class="page-link text-danger" rel="nofollow"
+                                                <li class="page-item text-danger"><a class="page-link text-danger" 
                                                                                      href="<?= base_url(); ?>blog/<?= $i; ?>"><?= $i + 1; ?></a>
                                                 </li>
                                             <? } else { ?>
-                                                <li class="page-item"><a class="page-link" rel="nofollow"
+                                                <li class="page-item"><a class="page-link" 
                                                                          href="<?= base_url(); ?>blog/<?= $i; ?>"><?= $i + 1; ?></a>
                                                 </li>
                                             <? } ?>
@@ -217,7 +217,7 @@
                                                                                      href="<?= base_url(); ?>blog/<?= $i; ?>"><?= $i + 1; ?></a>
                                                 </li>
                                             <? } else { ?>
-                                                <li class="page-item"><a class="page-link" rel="nofollow"
+                                                <li class="page-item"><a class="page-link" 
                                                                          href="<?= base_url(); ?>blog/<?= $i; ?>"><?= $i + 1; ?></a>
                                                 </li>
                                             <? } ?>
@@ -229,14 +229,14 @@
                                                                                      href="<?= base_url(); ?>blog/<?= $i; ?>"><?= $i + 1; ?></a>
                                                 </li>
                                             <? } else { ?>
-                                                <li class="page-item"><a class="page-link" rel="nofollow"
+                                                <li class="page-item"><a class="page-link" 
                                                                          href="<?= base_url(); ?>blog/<?= $i; ?>"><?= $i + 1; ?></a>
                                                 </li>
                                             <? } ?>
                                         <? } ?>
                                     <? } ?>
                                     <li class="page-item">
-                                        <a class="page-link" rel="nofollow" href="<?= base_url(); ?>blog/<?= $pages; ?>" title="LAST">
+                                        <a class="page-link"  href="<?= base_url(); ?>blog/<?= $pages; ?>" title="LAST">
                                             <i class="fas fa-angle-double-right"></i> </a>
                                     </li>
                                 </ul>

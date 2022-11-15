@@ -27,11 +27,22 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="dropdown mx-2">
+                        <button class="btn btn-sm btn-light dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                            Language
+                        </button>
+                        <div class="dropdown-menu" style="z-index: 9999;">
+                            <? if ($this->uri->segment(1)=='ru'){ ?><a class="dropdown-item" href="<?= base_url();?><? if ($this->uri->segment(1)){echo "/".str_replace("/","",$this->uri->segment(1));if ($this->uri->segment(2)){echo "/".str_replace("/","",$this->uri->segment(2));if ($this->uri->segment(3)){echo "/".str_replace("/","",$this->uri->segment(3));}}} ?>">English</a>
+                            <? }elseif ($this->uri->segment(1)!='ru'){ ?><a class="dropdown-item" href="<?= base_url();?>ru<? if ($this->uri->segment(1)){ echo "/".str_replace("/","",$this->uri->segment(1));if ($this->uri->segment(2)){ echo "/".str_replace("/","",$this->uri->segment(2));if ($this->uri->segment(3)){echo "/".str_replace("/","",$this->uri->segment(3));}}} ?>">Russian</a>
+                            <? } ?>
+                        </div>
+                    </div>
                     <span class="top-Buying mx-1 d-block d-md-none">
                         <a href="<?= base_url();?>buying-online" class="btn red-button">
                         BUYING ONLINE
                         </a>
                     </span>
+
                 </div>
             </div>
             <div class="col-md-4 justify-content-center text-center d-none d-md-inline">

@@ -3,42 +3,50 @@
     #topEnquireModal {
         z-index: 1050 !important;
     }
-    .iti-mobile .iti__country-list{
+
+    .iti-mobile .iti__country-list {
         max-width: 250px;
     }
-    .iti-mobile .iti--container{
+
+    .iti-mobile .iti--container {
         left: 70px !important;
     }
 }
-#tops{
+
+#tops {
     margin-top: 10px;
     font-size: 25px;
     font-weight: 700;
     color: #F4470B;
-    text-shadow: 1px 1px 3px black;
+    text-shadow: 3px 1px 3px black;
     line-height: 30px;
 }
-#tops p{
-    margin-bottom: 0 ;
+
+#tops p {
+    margin-bottom: 0;
 }
 
-#YouTubeVideos .card-body{
+#YouTubeVideos .card-body {
     padding: 0 !important;
 }
-#YouTubeVideos .card-body a i{
+
+#YouTubeVideos .card-body a i {
     position: absolute;
     bottom: 80px;
     left: 40%;
     font-size: 65px;
     text-shadow: 1px 1px 2px black;
 }
-#YouTubeVideos .card-body a{
+
+#YouTubeVideos .card-body a {
     color: red !important;
 }
-#YouTubeVideos .card-body a:hover{
+
+#YouTubeVideos .card-body a:hover {
     color: white !important;
 }
-.resale-badge{
+
+.resale-badge {
     background: #012169;
     color: white;
 
@@ -53,11 +61,13 @@
     top: 9%;
     right: 3%;
 }
-#home-top-slider .carousel-caption button{
+
+#home-top-slider .carousel-caption button {
     animation: MoveUpDown 1.5s linear infinite;
     position: relative;
     font-weight: bold;
 }
+
 @keyframes MoveUpDown {
     0%, 100% {
         bottom: 0px;
@@ -66,11 +76,51 @@
         bottom: 5px;
     }
 }
+
 #home-top-slider .carousel-caption {
     bottom: 5% !important;
 }
-#home-top-slider .carousel-caption h3{
+
+#home-top-slider .carousel-caption h3 {
     font-weight: 800;
     color: darkblue !important;
     text-shadow: rgb(255, 255, 255) 2px 0px 0px, rgb(255, 255, 255) 1.75517px 0.958851px 0px, rgb(255, 255, 255) 1.0806px 1.68294px 0px, rgb(255, 255, 255) 0.141474px 1.99499px 0px, rgb(255, 255, 255) -0.832294px 1.81859px 0px, rgb(255, 255, 255) -1.60229px 1.19694px 0px, rgb(255, 255, 255) -1.97998px 0.28224px 0px, rgb(255, 255, 255) -1.87291px -0.701566px 0px, rgb(255, 255, 255) -1.30729px -1.5136px 0px, rgb(255, 255, 255) -0.421592px -1.95506px 0px, rgb(255, 255, 255) 0.567324px -1.91785px 0px, rgb(255, 255, 255) 1.41734px -1.41108px 0px, rgb(255, 255, 255) 1.92034px -0.558831px 0px;
+}
+
+.Main-inquiry > .container-fluid > .row {
+    border-radius: 30px;
+    background: #efefef;
+    border-bottom: 5px solid #cf1717;
+}
+
+.Main-inquiry > .container-fluid > .row > .col-md-3 {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.Main-inquiry form > .row > .col-lg-1 {
+    padding-right: 3px !important;
+    padding-left: 3px !important;
+}
+
+.Main-inquiry form > .row > .col-lg-2 {
+    padding-right: 3px !important;
+    padding-left: 3px !important;
+}
+.Main-inquiry form > .row > .col-lg-3 {
+    padding-right: 3px !important;
+    padding-left: 3px !important;
+}
+.Main-inquiry form > .row > .col-lg-4 {
+    padding-right: 3px !important;
+    padding-left: 3px !important;
+}
+.Main-inquiry .find-title {
+    width: 14%;
+    margin-right: 1%;
+    margin-left: 1%;
+}
+.Main-inquiry .find-title .pro {
+    font-weight: 600;
+    font-size: 1.2rem;
 }

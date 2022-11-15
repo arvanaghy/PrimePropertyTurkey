@@ -358,20 +358,20 @@ class Post extends CI_Controller
         if ($this->form_validation->run('enquire') != FALSE AND $captcha_response!='') {
             if ($this->reCaptcha_Curl($this->input->post('g-recaptcha-response'))){
                 if ($this->input->post('reference_id')){
-                    $reference_id = $this->input->post('reference_id');
+                    $reference_id = strip_tags($this->input->post('reference_id'));
                 }else{
                     $reference_id = 'undefined';
                 }
-                $data['email'] = $this->input->post('email');
-                $data['name'] = $this->input->post('info');
-                $data['phone'] = $this->input->post('phone')['full'];
+                $data['email'] = strip_tags($this->input->post('email'));
+                $data['name'] = strip_tags($this->input->post('info'));
+                $data['phone'] = strip_tags($this->input->post('phone')['full']);
                 if ($this->input->post('budget')){
-                    $data['budget_id'] = $this->input->post('budget');
+                    $data['budget_id'] = strip_tags($this->input->post('budget'));
                 }else{
                     $data['budget_id'] = 'undefined';
                 }
                 if ($this->input->post('note')){
-                    $data['note'] = $this->input->post('note');
+                    $data['note'] = strip_tags($this->input->post('note'));
                 }else{
                     $data['note'] = 'undefined';
                 }

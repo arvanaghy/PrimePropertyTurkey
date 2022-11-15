@@ -128,7 +128,9 @@
                               <i class="fas fa-phone-square-alt"></i>
                         </span>
                         <span>
+                            <a href="tel:+905527544493" style="color: white !important;text-decoration: none">
                               (+90) 552 754 44 93
+                            </a>
                     </span>
                     </div>
                     <div class="mail px-3 my-3 align-items-center">
@@ -136,7 +138,7 @@
                             <i class="fas fa-envelope-open-text"></i>
                         </span>
                         <span id="mail-text">
-                        <a href="mailto:info@PrimePropertyTurkey.com" style="color: white;">
+                        <a href="mailto:info@PrimePropertyTurkey.com" style="color: white;text-decoration: none">
                             info@PrimePropertyTurkey.com
                         </a>
                     </span>
@@ -376,6 +378,20 @@
 
         </div>
     </div>
+    <div class="nz-phone-phone nz-phone-green nz-phone-show" id="nz-phone-phoneIcon1">
+        <div class="nz-phone-ph-circle"></div>
+        <div class="nz-phone-ph-circle-fill"></div>
+        <div class="nz-phone-ph-img-circle_1">
+            <? if (isset($property_reference) and isset($property_title)){ ?>
+                <a href="https://t.me/PrimePropertyTurkey"
+               target="_blank" rel="nofollow">
+            <? }else{ ?>
+                <a href="https://t.me/PrimePropertyTurkey" target="_blank" rel="nofollow">
+            <? } ?>
+                <span class="round" style="font-size: 1.2rem"><i class="fa fa-paper-plane faa-ring faa-slow animated"></i></span>
+            </a>
+        </div>
+    </div>
     <!-- Yandex.Metrika counter -->
 <!--    <script type="text/javascript">-->
 <!--        (function (m, e, t, r, i, k, a) {-->
@@ -410,8 +426,8 @@
         </a>
     <?php } ?>
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N243V5Z"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!--<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N243V5Z"-->
+<!--                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>-->
 <!-- End Google Tag Manager (noscript) -->
 
     <!-- Google Tag Manager (noscript) -->

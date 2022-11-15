@@ -14,6 +14,15 @@ class Blog_model extends CI_Model
     public function blog($limit = null, $offset = null)
     {
         $this->db->where('status', 0);
+        $this->db->where('language', 'en');
+        $this->db->order_by('Blog_ID', 'DESC');
+        $query = $this->db->get('blog', $limit, $offset);
+        return $query->result();
+    }
+    public function blog_ru($limit = null, $offset = null)
+    {
+        $this->db->where('status', 0);
+        $this->db->where('ru_title!=', null);
         $this->db->order_by('Blog_ID', 'DESC');
         $query = $this->db->get('blog', $limit, $offset);
         return $query->result();
@@ -21,6 +30,18 @@ class Blog_model extends CI_Model
     public function popular_blog($limit = 5)
     {
         $offset = rand(0,8);
+        $this->db->where('language', 'en');
+        $this->db->where('status', 0);
+        $this->db->order_by('(likeCount+dislikeCount)', 'DESC');
+        $query = $this->db->get('blog', $limit, $offset);
+        return $query->result();
+    }
+    public function popular_blog_ru($limit = 5)
+    {
+        $offset = rand(0,8);
+        $offset = 0;
+        $this->db->where('ru_title!=', null);
+        $this->db->where('status', 0);
         $this->db->order_by('(likeCount+dislikeCount)', 'DESC');
         $query = $this->db->get('blog', $limit, $offset);
         return $query->result();
@@ -31,6 +52,13 @@ class Blog_model extends CI_Model
             $this->db->where($where_array);
         }
         $this->db->where('status', 0);
+        $this->db->from($table);
+        return $this->db->count_all_results();
+    }
+    public function BN_record_count_ru($table)
+    {
+        $this->db->where('status', 0);
+        $this->db->where('ru_title!=', null);
         $this->db->from($table);
         return $this->db->count_all_results();
     }

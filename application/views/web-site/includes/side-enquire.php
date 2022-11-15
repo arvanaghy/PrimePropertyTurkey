@@ -1,9 +1,10 @@
+<div class="card side contact my-2" id="side-contact-us">
 <div class="card-title mt-3 mb-1 text-center font-weight-bold text-white">
     <? if ($reference_id == 'Citizenship by investment') {?>
         Enquire About <br>
         Citizenship By
         <br>Investment Program
-    <? }elseif($reference_id == 'after sale' or $reference_id == 'area guide'){ ?>
+    <? }elseif($reference_id == 'after sale' or $reference_id == 'area guide' or $reference_id == 'blog' ){ ?>
         Contact Us For Free
         <br>Consultation
     <?} else {?>
@@ -51,6 +52,7 @@
             <input type="submit"  class="btn btn-block red-button" value="<? if ($reference_id == 'after sale' or $reference_id == 'area guide'){echo 'REQUEST DETAIL';}else{echo 'SEND';} ?>">
         </div>
     </form>
+</div>
 </div>
 <script type="text/javascript">
     function sideEnquireFormValidation(){

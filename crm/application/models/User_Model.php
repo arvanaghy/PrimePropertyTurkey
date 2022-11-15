@@ -2324,7 +2324,7 @@ class User_Model extends CI_Model
     public function countNormalLeads()
     {
         $this->db->distinct();
-        $this->db->select('DISTINCT(email)');
+        $this->db->select('email');
         $this->db->where('source_of_enquiry!=','dubai_pool');
         $query = $this->db->get('crm_leads');
         return $query->num_rows();
@@ -2332,7 +2332,7 @@ class User_Model extends CI_Model
     public function countDubaiLeads()
     {
         $this->db->distinct();
-        $this->db->select('DISTINCT(email)');
+        $this->db->select('email');
         $this->db->where('source_of_enquiry','dubai_pool');
         $query = $this->db->get('crm_leads');
         return $query->num_rows();
@@ -2340,17 +2340,43 @@ class User_Model extends CI_Model
 
     public function GetNewsLettersInfo($type)
     {
-        $this->db->select('DISTINCT(email),first_name,second_name,mobile');
+        $this->db->select('DISTINCT(email),first_name,second_name,Lead_id');
+        $this->db->group_by('email');
         if ($type=='Dubai'){
             $this->db->where('source_of_enquiry','dubai_pool');
         }elseif ($type=='Normal'){
             $this->db->where('source_of_enquiry!=','dubai_pool');
         }
-        $this->db->order_by('email','DESC');
+        $this->db->order_by('Lead_created_date','DESC');
         $query = $this->db->get('crm_leads');
 
         return $query->result();
 
     }
+    public function UpdateLeadsNewsLetterStatus($lead,$value)
+    {
+        $this->db->set('newsletterCheck',$value);
+        $this->db->where('Lead_id', $lead);
+        $this->db->update('crm_leads');
+    }
 
+    public function insertNewsLetterContext($subject,$context,$attachment)
+    {
+        $this->db->set('subject',$subject);
+        $this->db->set('context',$context);
+        $this->db->set('attachmentFile',$attachment);
+        $this->db->where('id', 1);
+        $this->db->update('newsletterContent');
+    }
+
+    public function disableNewsLeadsCheck()
+    {
+        $this->db->where('newsletterCheck',1);
+        $query = $this->db->get('crm_leads');
+        if ($query->result()){
+            return "Disable";
+        }else{
+            return "Enable";
+        }
+    }
 }

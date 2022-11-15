@@ -107,7 +107,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="form-group col-sm-8">
+                                <div class="form-group col-sm-7">
                                     <label for="URL">
                                         <small>
                                             <strong>
@@ -119,7 +119,7 @@
                                     <div id="URL_Duplicate_Error" class="text-danger"></div>
                                     <div id="url_length_error" class="text-danger"></div>
                                 </div>
-                                <div class="col-sm-4 form-group">
+                                <div class="col-sm-3 form-group">
                                     <label for="datepicker">
                                         <small>
                                             <strong>
@@ -128,6 +128,19 @@
                                         </small>
                                     </label>
                                     <input type="text" name="publish_date" id="datepicker" class="form-control" required>
+                                </div>
+                                <div class="col-sm-2 form-group">
+                                    <label for="language">
+                                        <small>
+                                            <strong>
+                                                language
+                                            </strong>
+                                        </small>
+                                    </label>
+                                    <select name="language" id="language" class="form-control">
+                                        <option value="en">English</option>
+                                        <option value="ru">Russian</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="row">

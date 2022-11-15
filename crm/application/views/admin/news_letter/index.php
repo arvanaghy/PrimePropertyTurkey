@@ -24,14 +24,16 @@
                         <div class="row">
                             <div class="col-lg-12 my-2">
                                 <div class="card">
-                                    <div class="card-body">
-                                        <h2 class="font-weight-bold m-3 text-danger">
+                                    <div class="card-body d-flex justify-content-between align-items-center">
+                                        <h2 class="d-inline py-2 font-weight-bold m-3 text-danger">
                                             Manage News Letter
                                         </h2>
+                                        <a href="https://www.primepropertyturkey.com/newsletter-statistics.txt" class="mx-3 btn btn-lg btn-info" download="logfile.txt">Download Log File</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <? if ($DisableCheck!="Disable"): ?>
                         <?php
                         $params = array('class'=>'mb-3 mt-1');
                         echo form_open_multipart('User/SendNewsLetterSubmit',$params);?>
@@ -83,6 +85,13 @@
                                 </div>
                             </div>
                         </form>
+                        <? else: ?>
+                        <div class="row justify-content-center align-items-center">
+                            <div class="col">
+                                the last request is not completed yet !
+                            </div>
+                        </div>
+                        <? endif; ?>
     				</div>
                 </div>
             </div>

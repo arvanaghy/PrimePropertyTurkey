@@ -18,6 +18,13 @@ class Home_model extends CI_Model
         $query = $this->db->get('blog', $limit, $offset);
         return $query->result();
     }
+    public function popular_blog_ru($limit = 6)
+    {
+        $this->db->where('ru_title!=', null);
+        $this->db->order_by('(likeCount+dislikeCount)', 'DESC');
+        $query = $this->db->get('blog', $limit);
+        return $query->result();
+    }
     public function fetchCityNames()
     {
         $this->db->select('Property_location');

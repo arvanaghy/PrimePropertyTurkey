@@ -109,7 +109,7 @@ if ($image_name_webp==''){
                         <i class="fas fa-home"></i>
                     </span>
                     <span class="mx-2">
-                        <a href="<?= base_url();?>news" class="red-text" rel="nofollow">
+                        <a href="<?= base_url();?>news" class="red-text" >
                            News
                         </a>
                     </span>
@@ -117,7 +117,7 @@ if ($image_name_webp==''){
                         <i class="fas fa-chevron-right"></i>
                     </span>
                     <span class="mx-2">
-                        <a class="red-text" rel="nofollow">
+                        <a class="red-text" >
                             <?= $result->News_Title; ?>
                         </a>
                     </span>
@@ -319,32 +319,32 @@ if ($image_name_webp==''){
             <div class="modal-body social-share">
                 <ul class="list-group list-group-horizontal-sm justify-content-center align-items-center">
                     <li class="list-group-item">
-                        <a rel="nofollow" href="https://www.facebook.com/sharer.php?u=<?= current_url(); ?>&t=<?= $result->News_Title; ?>&p=<?= base_url();?><?= "assets/web-site/images/news/whatsapp/".str_replace('assets/news/','',$result->News_Image); ?>"
+                        <a  href="https://www.facebook.com/sharer.php?u=<?= current_url(); ?>&t=<?= $result->News_Title; ?>&p=<?= base_url();?><?= "assets/web-site/images/news/whatsapp/".str_replace('assets/news/','',$result->News_Image); ?>"
                            target="_blank" class="btn btn-primary btn-block">
                             <i class="fab fa-facebook"></i>
                         </a>
                     </li>
                     <li  class="list-group-item">
-                        <a rel="nofollow" href="https://twitter.com/intent/tweet?text=<?= current_url(); ?><?= substr(strip_tags($result->News_Content),0,200); ?>" target="_blank" class="btn btn-info btn-block">
+                        <a  href="https://twitter.com/intent/tweet?text=<?= current_url(); ?><?= substr(strip_tags($result->News_Content),0,200); ?>" target="_blank" class="btn btn-info btn-block">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a rel="nofollow" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?= current_url(); ?>&amp;title=<?= $result->News_Title; ?>&amp;ro=false&amp;summary=<?= strip_tags($result->News_Content); ?>&amp;source=" target="_blank" class="btn btn-primary btn-block">
+                        <a  href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?= current_url(); ?>&amp;title=<?= $result->News_Title; ?>&amp;ro=false&amp;summary=<?= strip_tags($result->News_Content); ?>&amp;source=" target="_blank" class="btn btn-primary btn-block">
                             <i class="fab fa-linkedin"></i>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a rel="nofollow" href="https://pinterest.com/pin/create/button/?url=<?= current_url(); ?>&amp;description=<?= strip_tags($result->News_Content); ?>" target="_blank" class="btn btn-danger btn-block">
+                        <a  href="https://pinterest.com/pin/create/button/?url=<?= current_url(); ?>&amp;description=<?= strip_tags($result->News_Content); ?>" target="_blank" class="btn btn-danger btn-block">
                             <i class="fab fa-pinterest"></i>
                         </a>
                     </li>
                     <li  class="list-group-item">
-                        <a rel="nofollow" href="https://www.instagram.com/primepropertyturkey/" target="_blank" class="btn btn-danger btn-block">
+                        <a  href="https://www.instagram.com/primepropertyturkey/" target="_blank" class="btn btn-danger btn-block">
                             <i class="fab fa-instagram"></i>
                         </a></li>
                     <li class="list-group-item">
-                        <a rel="nofollow" href="https://api.whatsapp.com/send?text=<?= current_url(); ?>" target="_blank" class="btn btn-success btn-block">
+                        <a  href="https://api.whatsapp.com/send?text=<?= current_url(); ?>" target="_blank" class="btn btn-success btn-block">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </li>

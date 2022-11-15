@@ -99,7 +99,7 @@
                                             </p>
                                         </div>
                                         <div class="row justify-content-end align-items-center my-2 buttons">
-                                            <a rel="nofollow" href="<?= base_url(); ?>news/<?= $value->url_slug; ?>"
+                                            <a  href="<?= base_url(); ?>news/<?= $value->url_slug; ?>"
                                                class="d-flex my-1 mx-1 red-text font-weight-bold">
                                                 Read More
                                             </a>
@@ -142,7 +142,7 @@
                                                 </p>
                                             </div>
                                             <div class="row justify-content-end align-items-center my-2 buttons">
-                                                <a rel="nofollow" href="<?= base_url(); ?>news/<?= $value->url_slug; ?>"
+                                                <a  href="<?= base_url(); ?>news/<?= $value->url_slug; ?>"
                                                    class="d-flex my-1 mx-1 red-text font-weight-bold">
                                                     Read More
                                                 </a>
@@ -158,19 +158,19 @@
                             <nav aria-label="Page navigation example">
                                 <ul class="pagination justify-content-center">
                                     <li class="page-item">
-                                        <a rel="nofollow" class="page-link" href="<?= base_url(); ?>news" tabindex="-1"
+                                        <a  class="page-link" href="<?= base_url(); ?>news" tabindex="-1"
                                            title="FIRST"> <i
                                                     class="fas fa-angle-double-left"></i> </a>
                                     </li>
                                     <? if ($page_id < 2) { ?>
                                         <? for ($i = 0; $i <= $page_id + 3; $i++) { ?>
                                             <? if ((int)$page_id == $i) { ?>
-                                                <li class="page-item text-danger"><a rel="nofollow"
+                                                <li class="page-item text-danger"><a
                                                                                      class="page-link text-danger"
                                                                                      href="<?= base_url(); ?>news/<?= $i; ?>"><?= $i + 1; ?></a>
                                                 </li>
                                             <? } else { ?>
-                                                <li class="page-item"><a rel="nofollow" class="page-link"
+                                                <li class="page-item"><a  class="page-link"
                                                                          href="<?= base_url(); ?>news/<?= $i; ?>"><?= $i + 1; ?></a>
                                                 </li>
                                             <? } ?>
@@ -178,12 +178,12 @@
                                     <? } elseif ($page_id > $pages - 2) { ?>
                                         <? for ($i = (int)$page_id - 2; $i <= $pages; $i++) { ?>
                                             <? if ((int)$page_id == $i) { ?>
-                                                <li class="page-item text-danger"><a rel="nofollow"
+                                                <li class="page-item text-danger"><a
                                                                                      class="page-link text-danger"
                                                                                      href="<?= base_url(); ?>news/<?= $i; ?>"><?= $i + 1; ?></a>
                                                 </li>
                                             <? } else { ?>
-                                                <li class="page-item"><a rel="nofollow" class="page-link"
+                                                <li class="page-item"><a  class="page-link"
                                                                          href="<?= base_url(); ?>news/<?= $i; ?>"><?= $i + 1; ?></a>
                                                 </li>
                                             <? } ?>
@@ -191,19 +191,19 @@
                                     <? } else { ?>
                                         <? for ($i = (int)$page_id - 2; $i <= $page_id + 2; $i++) { ?>
                                             <? if ((int)$page_id == $i) { ?>
-                                                <li class="page-item text-danger"><a rel="nofollow"
+                                                <li class="page-item text-danger"><a
                                                                                      class="page-link text-danger"
                                                                                      href="<?= base_url(); ?>news/<?= $i; ?>"><?= $i + 1; ?></a>
                                                 </li>
                                             <? } else { ?>
-                                                <li class="page-item"><a rel="nofollow" class="page-link"
+                                                <li class="page-item"><a  class="page-link"
                                                                          href="<?= base_url(); ?>news/<?= $i; ?>"><?= $i + 1; ?></a>
                                                 </li>
                                             <? } ?>
                                         <? } ?>
                                     <? } ?>
                                     <li class="page-item">
-                                        <a class="page-link" rel="nofollow" href="<?= base_url(); ?>news/<?= $pages; ?>"
+                                        <a class="page-link"  href="<?= base_url(); ?>news/<?= $pages; ?>"
                                            title="LAST"> <i
                                                     class="fas fa-angle-double-right"></i> </a>
                                     </li>

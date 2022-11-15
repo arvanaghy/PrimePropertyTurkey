@@ -124,6 +124,14 @@ class Fetch_m extends CI_Model
         $query = $this->db->get('property', $limit, $offset);
         return $query->result();
     }
+    public function findInvestProperty()
+    {
+        $this->db->like('Property_title','investment');
+        $this->db->where('status > ', 1);
+        $this->db->order_by('Property_id', 'DESC');
+        $query = $this->db->get('property', 20, 0);
+        return $query->result();
+    }
     public function findPropertyCommercial($limit = null, $offset = null)
     {
         $this->db->group_start();
