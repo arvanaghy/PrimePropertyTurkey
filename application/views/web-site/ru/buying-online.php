@@ -8,9 +8,8 @@
 />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <link rel="stylesheet" href="<?= base_url();?>assets/web-site/css/phone-input.css">
-<title>Buying Online</title>
-<meta name="description" content="In the twenty-first century where the internet provides us with direct access,
-                                purchasing a property overseas and becoming a property owner has become much easier.">
+<title>Покупка онлайн</title>
+<meta name="description" content="В XXI веке, когда интернет предоставляет нам прямой доступ, приобрести недвижимость за рубежом и стать владельцем недвижимости стало намного проще.">
 <link rel="canonical" href="https://www.primepropertyturkey.com/buying-online"/>
 
 </head>
@@ -21,7 +20,7 @@
         <div class="bg" id="Buying-Online-BG"></div>
         <div class="mask"></div>
         <div class="header-image-content offset-bottom">
-            <h1 class="title text-center font-weight-bold">Buying Online</h1>
+            <h1 class="title text-center font-weight-bold">Покупка онлайн</h1>
         </div>
     </div>
 </section>
@@ -34,46 +33,20 @@
                         <img src="<?= base_url();?>assets/web-site/images/base/buy-online/buy property online 1.jpg" alt="buy property online"
                              class="img-fluid">
                         <p class="p-2 text-justify">
-                            In the twenty-first century where the internet provides us with direct access,
-                            purchasing a property overseas and becoming a property owner has become much easier.
-                            Prime Property Turkey is ready and honored to provide you with virtual real estate
-                            services. Our virtual tour is an interactive program designed for you to explore and
-                            visit properties in Turkey from the comfort of your home. In six simple steps, you can
-                            become a property owner and have the option to become a Turkish citizen by investment in
-                            a property in a matter of a few clicks.
+                            В двадцать первом веке, когда интернет предоставляет нам прямой доступ, приобрести недвижимость за рубежом и стать владельцем недвижимости стало намного проще. Prime Property Turkey готова и имеет честь предоставить вам услуги виртуального тура по недвижимости. Наш виртуальный тур - это интерактивная программа, разработанная для того, чтобы вы могли изучить и посетить объекты недвижимости в Турции, не выходя из дома. За шесть простых шагов вы можете стать владельцем недвижимости и получить возможность стать гражданином Турции, инвестировав в недвижимость всего за несколько кликов.
                         </p>
                         <h4 class="content-tile p-2">
-                            Step One: Introduction
+                            Шаг первый: Введение
                         </h4>
                         <p class="p-2 text-justify">
-                            Let's get to know each other!
-                            After you submit your inquiry, a representative at Prime Property Turkey will reach out
-                            to discuss your goals. During our chat, we will have the opportunity to get to know you
-                            and discuss your real estate goals in Turkey. Whether it is property for personal use or
-                            investment, we are ready to guide you every step of the way!
-                            Our team members are expats themselves and have resided in Turkey for a reasonable
-                            amount of time, so they understand the ins and outs of the market and culture. How 's
-                            the lifestyle? What are common cultural practices? What is the rental return on
-                            properties? All questions and concerns will be answered with our sincere interest for
-                            our clients.
-                            Our team members at Prime Property Turkey are well trained and ready to provide
-                            one-on-one guidance to ensure compliance with all applicable laws. Whether you plan to
-                            relocate, have a holiday home, or invest in one of the leading financial and cultural
-                            hubs in Europe and Asia, we are ready to help!
+                            Давайте познакомимся поближе! После того, как вы отправите запрос, представитель Prime Property Turkey свяжется с вами, чтобы обсудить ваши цели. Во время нашей беседы у нас будет возможность познакомиться с вами и обсудить ваши цели в области недвижимости в Турции. Будь то недвижимость для личного пользования или для инвестиций, мы готовы сопровождать вас на каждом шагу! Члены нашей команды сами являются экспатами и прожили в Турции достаточное количество времени, поэтому они понимают все тонкости и нюансы рынка и культуры. Каков стиль жизни? Каковы общие культурные традиции? Какова доходность от аренды недвижимости? На все вопросы и проблемы мы ответим с искренней заинтересованностью в наших клиентах. Члены нашей команды в Prime Property Turkey хорошо обучены и готовы предоставить индивидуальное руководство для обеспечения соблюдения всех применимых законов. Планируете ли вы переехать, иметь дом для отдыха или инвестировать в один из ведущих финансовых и культурных центров Европы и Азии, мы готовы помочь!
                         </p>
                         <img src="<?= base_url();?>assets/web-site/images/base/buy-online/buy-property-online-2.jpg" alt="buy property online 2" class="img-fluid">
                         <h4 class="content-tile p-2">
-                            Step Two: Time to Schedule
+                            Шаг второй: время планировать
                         </h4>
                         <p class="p-2 text-justify">
-                            Once we understand your needs, one of our investment consultants at Prime Property
-                            Turkey will guide you through the market in the location of your choice. The consultant
-                            is a person with expertise in specific properties and obtains all around knowledge on
-                            the market's performance and availability. Based on the information provided during our
-                            'introduction call,' our team members at Prime Property Turkey will tailor options
-                            suitable to your criteria.
-
-                            And then, we are all ready to begin the process.
+                            Как только мы поймем ваши потребности, один из наших инвестиционных консультантов в Prime Property Turkey проведет вас по рынку в выбранном вами месте. Консультант - это человек, обладающий опытом работы с конкретными объектами недвижимости и получающий всесторонние знания о состоянии и доступности рынка. На основе информации, предоставленной во время нашего "ознакомительного звонка", члены команды Prime Property Turkey подберут варианты, соответствующие вашим критериям. После этого мы готовы приступить к процессу.
                         </p>
                     </div>
                 </div>
@@ -101,7 +74,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="card side contact my-2" id="side-contact-us">
-                    <?php $this->load->view('web-site/includes/side-contact-us'); ?>
+                    <?php $this->load->view('web-site/ru/includes/side-contact-us'); ?>
                 </div>
             </div>
         </div>

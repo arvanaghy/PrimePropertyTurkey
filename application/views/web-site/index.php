@@ -70,9 +70,19 @@
                 <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
                 <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
+
+                <div class="carousel-item active ">
+                    <a href="https://www.primepropertyturkey.com/properties/apartment-beyoglu-PPTV0056">
+                        <img src="<?= base_url(); ?>assets/web-site/images/2022_12_06_16_29_12.webp" class="d-block w-100" alt="Fethiye"  >
+                    </a>
+                    <div class="carousel-caption d-block">
+                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW ! </button>
+                    </div>
+                </div>
+                <div class="carousel-item ">
                     <a href="https://www.primepropertyturkey.com/properties/luxury-living-homes-move-in-ready-in-uskudar">
                         <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_41_43.webp" class="d-block w-100" alt="Istanbul"   >
                     </a>

@@ -56,7 +56,8 @@ class Seo extends CI_Controller
             'Arnavutkoy',
             'Adalar'
         );
-        $data['Blog'] = $this->Seo_Model->listBlogUrl();
+        $data['Blog'] = $this->Seo_Model->listENBlogUrl();
+        $data['RUBlog'] = $this->Seo_Model->listRUBlogUrl();
         $data['News'] = $this->Seo_Model->listNewsUrl();
         $data['Videos'] = $this->Seo_Model->listVideoUrl();
         $data['Property_pages'] = $this->Seo_Model->listPropertyPagesUrl();

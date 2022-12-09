@@ -9,7 +9,7 @@
 />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/phone-input.css">
-<title>Frequently Asked Questions-FAQ's</title>
+<title>Turkish citizenship by investment FAQ's</title>
 <meta name="description" content="Can I apply for Turkish citizenship with a preliminary contract for
                                                 sale">
 <link rel="canonical" href="https://www.primepropertyturkey.com/frequently-asked-questions-faq"/>
@@ -27,7 +27,7 @@
             <div class="bg" id="short_term_residency-BG"></div>
             <div class="mask"></div>
             <div class="header-image-content offset-bottom">
-                <h1 class="title text-center px-1 font-weight-bold">Frequently Asked Questions-FAQ's</h1>
+                <h1 class="title text-center px-1 font-weight-bold">Turkish citizenship by investment FAQ's</h1>
             </div>
         </div>
     </section>

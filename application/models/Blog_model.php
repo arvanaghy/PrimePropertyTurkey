@@ -14,7 +14,7 @@ class Blog_model extends CI_Model
     public function blog($limit = null, $offset = null)
     {
         $this->db->where('status', 0);
-        $this->db->where('language', 'en');
+        $this->db->where('Blog_Title!=', null);
         $this->db->order_by('Blog_ID', 'DESC');
         $query = $this->db->get('blog', $limit, $offset);
         return $query->result();
@@ -30,8 +30,8 @@ class Blog_model extends CI_Model
     public function popular_blog($limit = 5)
     {
         $offset = rand(0,8);
-        $this->db->where('language', 'en');
         $this->db->where('status', 0);
+        $this->db->where('Blog_Title!=', null);
         $this->db->order_by('(likeCount+dislikeCount)', 'DESC');
         $query = $this->db->get('blog', $limit, $offset);
         return $query->result();
@@ -51,6 +51,7 @@ class Blog_model extends CI_Model
         if ($where_array != null) {
             $this->db->where($where_array);
         }
+        $this->db->where('Blog_Title!=', null);
         $this->db->where('status', 0);
         $this->db->from($table);
         return $this->db->count_all_results();
@@ -68,7 +69,6 @@ class Blog_model extends CI_Model
         $this->db->select('Property_referenceID,Property_id,Property_type,Property_title,url_slug,Property_location,Property_Bedrooms,Property_Bathrooms,Property_living_space,Property_overview,Property_price,Property_thumbnail,SoldOut');
         $this->db->where('Property_location', 'istanbul');
         $this->db->where('status > ', 1);
-        $this->db->where('recommended', 2);
         $this->db->order_by('recommended_sort', 'ASC');
         $query = $this->db->get('property', 5);
         if ($query->result()) {
@@ -78,7 +78,6 @@ class Blog_model extends CI_Model
         }
         $this->db->select('Property_referenceID,Property_id,Property_type,Property_title,url_slug,Property_location,Property_Bedrooms,Property_Bathrooms,Property_living_space,Property_overview,Property_price,Property_thumbnail,SoldOut');
         $this->db->where('Property_location', 'gocek');
-        $this->db->where('recommended', 2);
         $this->db->where('status > ', 1);
         $this->db->order_by('recommended_sort', 'ASC');
         $query = $this->db->get('property', 5);
@@ -89,7 +88,6 @@ class Blog_model extends CI_Model
         }
         $this->db->select('Property_referenceID,Property_id,Property_type,Property_title,url_slug,Property_location,Property_Bedrooms,Property_Bathrooms,Property_living_space,Property_overview,Property_price,Property_thumbnail,SoldOut');
         $this->db->where('Property_location', 'kas');
-        $this->db->where('recommended', 2);
         $this->db->where('status > ', 1);
         $this->db->order_by('recommended_sort', 'ASC');
         $query = $this->db->get('property', 5);
@@ -100,7 +98,6 @@ class Blog_model extends CI_Model
         }
         $this->db->select('Property_referenceID,Property_id,Property_type,Property_title,url_slug,Property_location,Property_Bedrooms,Property_Bathrooms,Property_living_space,Property_overview,Property_price,Property_thumbnail,SoldOut');
         $this->db->where('Property_location', 'kalkan');
-        $this->db->where('recommended', 2);
         $this->db->where('status > ', 1);
         $this->db->order_by('recommended_sort', 'ASC');
         $query = $this->db->get('property', 5);
@@ -111,7 +108,6 @@ class Blog_model extends CI_Model
         }
         $this->db->select('Property_referenceID,Property_id,Property_type,Property_title,url_slug,Property_location,Property_Bedrooms,Property_Bathrooms,Property_living_space,Property_overview,Property_price,Property_thumbnail,SoldOut');
         $this->db->where('Property_location', 'fethiye');
-        $this->db->where('recommended', 2);
         $this->db->where('status > ', 1);
         $this->db->order_by('recommended_sort', 'ASC');
         $query = $this->db->get('property', 5);
@@ -122,7 +118,6 @@ class Blog_model extends CI_Model
         }
         $this->db->select('Property_referenceID,Property_id,Property_type,Property_title,url_slug,Property_location,Property_Bedrooms,Property_Bathrooms,Property_living_space,Property_overview,Property_price,Property_thumbnail,SoldOut');
         $this->db->where('Property_location', 'antalya');
-        $this->db->where('recommended', 2);
         $this->db->where('status > ', 1);
         $this->db->order_by('recommended_sort', 'ASC');
         $query = $this->db->get('property', 5);
@@ -136,6 +131,7 @@ class Blog_model extends CI_Model
     public function fetch_post_by_url_BN($table, $url)
     {
         $this->db->where('url_slug', $url);
+        $this->db->where('Blog_Title!=', '');
         $this->db->group_start();
         $this->db->where('status', 0);
         $this->db->or_where('status', 3);
@@ -144,6 +140,19 @@ class Blog_model extends CI_Model
         $query = $this->db->get($table);
         return $query->row();
     }
+    public function fetch_post_by_url_BN_RU($table, $url)
+    {
+        $this->db->where('url_slug', $url);
+        $this->db->where('ru_title!=', '');
+        $this->db->group_start();
+        $this->db->where('status', 0);
+        $this->db->or_where('status', 3);
+        $this->db->group_end();
+
+        $query = $this->db->get($table);
+        return $query->row();
+    }
+
     public function currencyExchange()
     {
         $query = $this->db->get('currencyExchange');

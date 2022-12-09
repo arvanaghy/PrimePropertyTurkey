@@ -42,7 +42,7 @@
                 <div class="card">
                     <div class="card-body">
                         <?php echo form_open_multipart(base_url().'Admin/Add_Blog_Submit');?>
-                         <div class="row">
+                            <div class="row">
                                 <div class="form-group col-sm-4">
                                     <label style="padding:5px;" class="control-label">
                                         <small>

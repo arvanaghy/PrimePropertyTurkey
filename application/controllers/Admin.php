@@ -455,6 +455,11 @@ class Admin extends CI_Controller
         } else {
             $formattingDone = 0;
         }
+        if (strip_tags($this->input->post('Istanbul_Penthouse'))) {
+            $Istanbul_Penthouse = 1;
+        } else {
+            $Istanbul_Penthouse = 0;
+        }
         $id = strip_tags($this->input->post('property_id'));
         $postData = array(
             "Property_Meta_Title" => strip_tags($this->input->post('meta_title')),
@@ -479,7 +484,8 @@ class Admin extends CI_Controller
             "updated_time" => date('Y-m-d H:i:s'),
             "mapLocationURL" => $this->input->post('mapLocationURL'),
             "formattingDone" => $formattingDone,
-            "is_commercial" => $Commercial
+            "is_commercial" => $Commercial,
+            "Istanbul_Penthouse" => $Istanbul_Penthouse,
         );
 
         $this->load->model('Admin_model');
@@ -575,18 +581,31 @@ class Admin extends CI_Controller
         $upload_data['path'] = './assets/web-site/images/blog/old/original/';
         $upload_data['input'] = 'user_file';
         $picture_filename = $this->uploadPictures($upload_data, 'Blog');
-        $postData = array(
-            'Blog_Title' => strip_tags($this->input->post('blog_title')),
-            'Blog_Content' => $this->input->post('blog_description'),
-            'language' => $this->input->post('language'),
-            'Blog_Image' => "assets/blog/" . $picture_filename,
-            'Blog_Image_Alt' => strip_tags($this->input->post('image_alt')),
-            'Blog_Meta_Title' => strip_tags($this->input->post('meta_title')),
-            'Blog_Meta_Keyword' => strip_tags($this->input->post('meta_keyword')),
-            'Blog_Meta_Description' => strip_tags($this->input->post('meta_description')),
-            'publish_date' => strip_tags($this->input->post('publish_date')),
-            'status' => $status
-        );
+        if ($this->input->post('language') == 'ru'){
+            $postData = array(
+                'ru_title' => strip_tags($this->input->post('blog_title')),
+                'ru_content' => $this->input->post('blog_description'),
+                'Blog_Image' => "assets/blog/" . $picture_filename,
+                'ru_image_alt' => strip_tags($this->input->post('image_alt')),
+                'ru_meta_title' => strip_tags($this->input->post('meta_title')),
+                'ru_meta_keyword' => strip_tags($this->input->post('meta_keyword')),
+                'ru_meta_description' => strip_tags($this->input->post('meta_description')),
+                'publish_date' => strip_tags($this->input->post('publish_date')),
+                'status' => $status
+            );
+        }elseif ($this->input->post('language') == 'en'){
+            $postData = array(
+                'Blog_Title' => strip_tags($this->input->post('blog_title')),
+                'Blog_Content' => $this->input->post('blog_description'),
+                'Blog_Image' => "assets/blog/" . $picture_filename,
+                'Blog_Image_Alt' => strip_tags($this->input->post('image_alt')),
+                'Blog_Meta_Title' => strip_tags($this->input->post('meta_title')),
+                'Blog_Meta_Keyword' => strip_tags($this->input->post('meta_keyword')),
+                'Blog_Meta_Description' => strip_tags($this->input->post('meta_description')),
+                'publish_date' => strip_tags($this->input->post('publish_date')),
+                'status' => $status
+            );
+        }
         $postData['url_slug'] = url_title(strip_tags($this->input->post('URL')), "-", True);
         $this->load->model('Admin_model');
         $this->Admin_model->insertBlog($postData);
@@ -634,7 +653,8 @@ class Admin extends CI_Controller
         $meta_description = strip_tags($this->input->post('meta_description'));
         $image_alt = strip_tags($this->input->post('image_alt'));
         $blog_title = strip_tags($this->input->post('blog_title'));
-        $blog_content = strip_tags($_POST['blog_description'],["p","a","b","u","h2","h3","h4","h5","img","ul","ol","li","iframe"]);
+//        $blog_content = strip_tags($_POST['blog_description'],["p","a","b","u","h2","h3","h4","h5","img","ul","ol","li","iframe"]);
+        $blog_content = $_POST['blog_description'];
         $data = array(
             'Blog_Title' => $blog_title,
             'Blog_Content' => $blog_content,
@@ -754,6 +774,11 @@ class Admin extends CI_Controller
     public function Add_News_Submit()
     {
         $this->checkUser();
+        if ($this->input->post('publish_date') == date('Y-m-d')){
+            $status = 0;
+        }else{
+            $status = 3;
+        }
         $upload_data['path'] = './assets/web-site/images/news/old/original/';
         $upload_data['input'] = 'user_file';
         $picture_filename = $this->uploadPictures($upload_data, 'News');
@@ -765,7 +790,9 @@ class Admin extends CI_Controller
             'News_Meta_Title' => strip_tags($this->input->post('meta_title')),
             'News_Meta_Keyword' => strip_tags($this->input->post('meta_keyword')),
             'News_Meta_Description' => strip_tags($this->input->post('meta_description')),
-            'url_slug' => url_title(strip_tags($this->input->post('URL')),"-",True)
+            'publish_date' => strip_tags($this->input->post('publish_date')),
+            'url_slug' => url_title(strip_tags($this->input->post('URL')),"-",True),
+            'status' => $status
         );
         $this->load->model('Admin_model');
         $this->Admin_model->insertNews($postData);
@@ -886,6 +913,13 @@ class Admin extends CI_Controller
             echo json_encode($this->Admin_model->getNewsTitleAjax($posted_data));
         }
     }
+    public function PublishNewsByDate()
+    {
+        $this->load->model('Admin_model');
+        $date = date('Y-m-d');
+        $this->Admin_model->publishNewsPostOnDate($date);
+    }
+
 
     public function Manage_Videos()
     {

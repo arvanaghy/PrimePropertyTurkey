@@ -349,6 +349,12 @@
                                 Mansion
                             </a>
                         </li>
+                        <li>
+                            <i class="fas fa-chevron-right red-text mx-1"></i>
+                            <a href="https://www.primepropertyturkey.com/Turkey/Istanbul/Penthouse/All-bedroom/0-5000000">
+                                Istanbul Penthouses
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

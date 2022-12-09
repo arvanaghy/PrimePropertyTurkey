@@ -1974,3 +1974,68 @@ div#nz-phone-phoneIcon1 {
 .nz-phone-ph-img-circle_1 a {
     text-decoration: none !important;
 }
+
+.Main-inquiry > .container-fluid > .row {
+    border-radius: 30px;
+    background: #efefef;
+    border-top: 5px solid #cf1717;
+}
+
+.Main-inquiry .find-title {
+    width: 14%;
+    margin-right: 1%;
+    margin-left: 1%;
+}
+
+.Main-inquiry .find-title .pro {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.Main-inquiry .find-form {
+    width: 80%;
+    margin-right: 1%;
+}
+
+.Main-inquiry .find-form .col-md-2 {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+@media screen and (max-width: 992px) {
+    .Main-inquiry .find-title {
+        text-align: center;
+        width: 100%;
+        margin-right: 1%;
+        margin-left: 1%;
+    }
+
+    .Main-inquiry .find-form {
+        width: 100%;
+        margin-right: 1%;
+        margin-left: 1%;
+        padding-right: 4%;
+        padding-left: 4%;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .Main-inquiry .find-title {
+        text-align: center;
+        width: 100% !important;
+        margin-right: 1%;
+        margin-left: 1%;
+    }
+
+    .Main-inquiry .find-form {
+        width: 100%;
+        margin-right: 1%;
+        margin-left: 1%;
+        padding-right: 10%;
+        padding-left: 10%;
+        justify-content: center;
+        text-align: center;
+    }
+}

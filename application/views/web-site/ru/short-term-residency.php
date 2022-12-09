@@ -9,7 +9,7 @@
 />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/phone-input.css">
-<title>Short-Term Residency Permit in turkey</title>
+<title>Краткосрочный вид на жительство</title>
 <meta name="description"
       content="краткосрочный вид на жительство в принципе выдается максимум на два года. (Примечание: Вид на жительство считается недействительным, если он не используется в течение шести месяцев).">
 <style type="text/css">
@@ -23,7 +23,7 @@
         border-top-right-radius: 20px !important;
     }
 </style>
-<link rel="canonical" href="https://www.primepropertyturkey.com/short-term-residency-permit"/>
+<link rel="canonical" href="https://www.primepropertyturkey.com/ru/short-term-residency-permit"/>
 </head>
 <body>
 <?php $this->load->view('web-site/ru/includes/top-section'); ?>
@@ -32,7 +32,7 @@
         <div class="bg" id="short_term_residency-BG"></div>
         <div class="mask"></div>
         <div class="header-image-content offset-bottom">
-            <h1 class="title text-center px-1 font-weight-bold">Short-Term Residency Permit</h1>
+            <h1 class="title text-center px-1 font-weight-bold">Краткосрочный вид на жительство</h1>
         </div>
     </div>
 </section>
@@ -51,7 +51,7 @@
                             Вид на жительство в Турции не позволяет работать, но дает право проживать в стране в течение предоставленного периода времени.
                         </p>
                         <img src="<?= base_url(); ?>assets/web-site/images/residencepermit.webp"
-                             alt="short term residential permit"
+                             alt="Краткосрочный вид на жительство"
                              class="img-fluid p-3">
                         <h2 class="content-tile pt-4 pb-2 px-4">
                             Кто может подать заявление на получение турецкого краткосрочного вида на жительство?
@@ -116,10 +116,10 @@
             <div class="col-lg-4">
                 <div class="card my-3">
                     <? $passed_data['type'] = 'permit'; ?>
-                    <? $this->load->view('web-site/includes/suitable-citizenship', $passed_data); ?>
+                    <? $this->load->view('web-site/ru/includes/suitable-citizenship', $passed_data); ?>
                 </div>
                 <div class="card side contact my-2" id="side-contact-us">
-                    <?php $this->load->view('web-site/includes/side-contact-us'); ?>
+                    <?php $this->load->view('web-site/ru/includes/side-contact-us'); ?>
                 </div>
             </div>
         </div>

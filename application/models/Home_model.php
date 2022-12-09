@@ -15,6 +15,7 @@ class Home_model extends CI_Model
     {
         $offset = rand(0,8);
         $this->db->order_by('(likeCount+dislikeCount)', 'DESC');
+        $this->db->where('Blog_Title!=', null);
         $query = $this->db->get('blog', $limit, $offset);
         return $query->result();
     }
@@ -67,7 +68,7 @@ class Home_model extends CI_Model
         $this->db->where('status > ', 1);
         $this->db->where('recommended', 9);
         $this->db->order_by('recommended_sort', 'ASC');
-        $query = $this->db->get('property', 5);
+        $query = $this->db->get('property');
         if ($query->result()) {
             return $query->result();
         } else {

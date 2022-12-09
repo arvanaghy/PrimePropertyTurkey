@@ -234,7 +234,7 @@ Asia and Europe and access to the markets in both regions">
                                 advance the economy of the nation.
                             </p>
                             <div class="embed-responsive embed-responsive-16by9 mb-3">
-                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/2--d9PGVfuI"
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/WD3HRDN_mUA"
                                         allowfullscreen loading="lazy"
                                         srcdoc="
                                              <style>
@@ -266,8 +266,8 @@ Asia and Europe and access to the markets in both regions">
                                                     transform: scale(1.2);
                                                   }
                                          </style>
-                                                 <a href='https://www.youtube.com/embed/2--d9PGVfuI?autoplay=1'>
-                                                  <img src='https://img.youtube.com/vi/2--d9PGVfuI/hqdefault.jpg' alt='Citizenship By Investment In Turkey'>
+                                                 <a href='https://www.youtube.com/embed/WD3HRDN_mUA?autoplay=1'>
+                                                  <img src='https://img.youtube.com/vi/WD3HRDN_mUA/hqdefault.jpg' alt='Citizenship By Investment In Turkey'>
                                                   <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='#ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-play-circle'><circle cx='12' cy='12' r='10'></circle><polygon points='10 8 16 12 10 16 10 8'></polygon></svg>
                                                 </a>
                                         "

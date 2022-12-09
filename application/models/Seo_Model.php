@@ -10,10 +10,19 @@ class Seo_Model extends CI_Model
         $query = $this->db->get('news');
         return $query->result();
     }
-    public function listBlogUrl()
+    public function listENBlogUrl()
     {
         $this->db->select('url_slug');
         $this->db->where('status',0);
+        $this->db->where('Blog_Title!=','');
+        $query = $this->db->get('blog');
+        return $query->result();
+    }
+    public function listRUBlogUrl()
+    {
+        $this->db->select('url_slug');
+        $this->db->where('status',0);
+        $this->db->where('ru_title!=','');
         $query = $this->db->get('blog');
         return $query->result();
     }

@@ -80,7 +80,7 @@
                                         <img src="<?= base_url();?>assets/web-site/images/blog/whatsapp/<?= $image_name_webp; ?>" class="img-fluid">
                                     </td>
                                     <td>
-                                        <?= $row->Blog_Title; ?>
+                                        <?= ($row->Blog_Title=='')? $row->ru_title : $row->Blog_Title; ?>
                                         <? if ($this->Admin_model->countAllComments($row->Blog_ID,'blog') > 0): ?>
                                             <span class="badge badge-pill badge-primary"><?= $this->Admin_model->countAllComments($row->Blog_ID,'blog'); ?></span>
                                         <? endif; ?>
@@ -89,7 +89,7 @@
                                         <? endif; ?>
 
                                     </td>
-                                    <td><?= substr(strip_tags($row->Blog_Content),0,200); ?></td>
+                                    <td><?= ($row->Blog_Content=='')? substr(strip_tags($row->ru_content),0,200) : substr(strip_tags($row->Blog_Content),0,200) ; ?></td>
                                     <td>
                                         <? if ($row->publish_date and $row->publish_date!='0000-00-00') {
                                                  echo $row->publish_date;

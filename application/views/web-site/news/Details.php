@@ -138,10 +138,15 @@ if ($image_name_webp==''){
                         </span>
                         <span class="red-text font-weight-bold"> Created :  </span>
                         <span class="font-weight-bold">
-                           <? $unix_time= mysql_to_unix($result->News_Created_date);
-                           $date_string = '%d %M %Y';
-                           echo mdate($date_string, $unix_time);
-                           ?>
+                            <? if ($result->publish_date and $result->publish_date!='0000-00-00') {
+                                $date_string = '%d %M %Y';
+                                echo mdate($date_string, strtotime($result->publish_date));
+                            }elseif($result->status ==0){
+                                $unix_time = mysql_to_unix($result->News_Created_date);
+                                $date_string = '%d %M %Y';
+                                echo mdate($date_string, $unix_time);
+                            }
+                            ?>
                         </span>
                     </div>
                 </div>

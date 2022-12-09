@@ -43,9 +43,7 @@
                                 <th>Title</th>
                                 <th>Description</th>
                                 <th>Public Date</th>
-                                <th>Meta Title</th>
-                                <th>Meta keyword</th>
-                                <th>Meta Description</th>
+                                <th>URL</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -79,12 +77,10 @@
                                     ?>
 
                                     <td> <img src="<?= base_url();?>assets/web-site/images/blog/whatsapp/<?= $image_name_webp; ?>" class="img-fluid"></td>
-                                    <td><?= $row->Blog_Title; ?></td>
-                                    <td><?= substr(strip_tags($row->Blog_Content),0,200); ?></td>
+                                    <td><?= ($row->Blog_Title=='')? $row->ru_title : $row->Blog_Title; ?></td>
+                                    <td><?= ($row->Blog_Content=='')? substr(strip_tags($row->ru_content),0,200) : substr(strip_tags($row->Blog_Content),0,200) ; ?></td>
                                     <td><?= $row->Blog_Created_date; ?></td>
-                                    <td><?= $row->Blog_Meta_Title; ?></td>
-                                    <td><?= $row->Blog_Meta_Keyword; ?></td>
-                                    <td><?= $row->Blog_Meta_Description; ?></td>
+                                    <td><?= $row->url_slug; ?></td>
                                 </tr>
                             <?}
                             }?>

@@ -65,6 +65,7 @@ RewriteRule /blog/how_to_get_a_turkish_drivers_license_as_a_foreigner$ https://w
 RewriteRule /blog/why_invest_now_in_tr_citizenship_advantages_and_investment$ https://www.primepropertyturkey.com/blog/why-invest-now-in-tr [R=301,L]
 RewriteRule /blog/business_districts_of_istanbul_maslak_kazyatagi_altunizade_sisli_beyoglu_basin_express$ https://www.primepropertyturkey.com/blog/business-districts-of-istanbul [R=301,L]
 RewriteRule /blog/uskudar_-_from_the_coast_to_the_hills$ https://www.primepropertyturkey.com/blog/uskudar-from-the-coast-to-the-hills [R=301,L]
+RewriteRule /blog/bringing_pets_to_turkey$ https://www.primepropertyturkey.com/blog/bringing-pets-turkey [R=301,L]
 
 RewriteRule /properties/fully_furnished_apartments_for_sale_-_colony_coliving$ https://www.primepropertyturkey.com/properties/apartments-colony-coliving [R=301,L]
 RewriteRule /properties/apartments_with_amazing_golden_horn_view_-_forev_modern_halic$ https://www.primepropertyturkey.com/properties/spectacular-Istanbul-Halic [R=301,L]
@@ -106,6 +107,7 @@ RewriteRule /properties/elegant_and_affordable_apartments_blue_garden_sancaktepe
 RewriteRule /properties/lifestyle-apartments-for-sale-in-istanbul-aston-levent$ https://www.primepropertyturkey.com/properties/apartment-istanbul-aston-levent [R=301,L]
 RewriteRule /properties/brand_new_apartments_in_bagcilar_-_gunesli_homes_basin_express$ https://www.primepropertyturkey.com/properties/apartments-bagcilar-gunesli [R=301,L]
 RewriteRule /properties/tranquil_apartments_with_wide_balconies_-_basakport$ https://www.primepropertyturkey.com/properties/Apartment-Istanbul-Basakport [R=301,L]
+RewriteRule /properties/ready-to-move-apartments-for-sale-in-istanbul-diamond-residence$ https://www.primepropertyturkey.com/properties/apartments-istanbul-diamond-residence [R=301,L]
 #RewriteRule /properties/apartments-for-sale-in-pendik-oksijen-park$ https://www.primepropertyturkey.com/properties/apartments-for-sale-in-pendik-oksijen-park [R=301,L]
 
 RewriteRule /Properties/Hotel$ https://www.primepropertyturkey.com/properties [R=301]

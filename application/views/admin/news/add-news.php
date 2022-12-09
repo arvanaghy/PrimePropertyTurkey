@@ -13,6 +13,7 @@
         display: none !important;
     }
 </style>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 </head>
 <body>
 <?php $this->load->view('admin/include/top-menu');?>
@@ -42,107 +43,117 @@
                 <div class="card">
                     <div class="card-body">
                         <?php echo form_open_multipart(base_url().'Admin/Add_News_Submit');?>
-                         <div class="row">
-                                <div class="form-group col-sm-4">
-                                    <label style="padding:5px;" class="control-label">
-                                        <small>
-                                            <strong>
-                                                Meta Title
-                                            </strong>
-                                        </small>
-                                    </label>
-                                    <textarea name="meta_title" placeholder="Meta Title" class="form-control" required></textarea>
-                                </div>
-                                <div class="form-group col-sm-4">
-                                    <label style="padding:5px;" class="control-label">
-                                        <small>
-                                            <strong>
-                                                Meta Keyword
-                                            </strong>
-                                        </small>
-                                    </label>
-                                    <textarea name="meta_keyword" placeholder="Meta Keyword" class="form-control" required></textarea>
-                                </div>
-                                <div class="form-group col-sm-4">
-                                    <label style="padding:5px;" class="control-label">
-                                        <small>
-                                            <strong>
-                                                Meta Description
-                                            </strong>
-                                        </small>
-                                    </label>
-                                    <textarea name="meta_description" placeholder="Meta Description" class="form-control" required></textarea>
-                                </div>
-                            </div>
                             <div class="row">
-                                <div class="form-group col-sm-3">
-                                    <label style="padding-top:20px;padding-bottom:5px;" class="control-label">
-                                        <small>
-                                            <strong>
-                                                Image
-                                            </strong>
-                                        </small>
-                                    </label>
-                                    <input type="file" name="user_file" accept=".jpg" required class="form-control"/>
+                                    <div class="form-group col-sm-4">
+                                        <label style="padding:5px;" class="control-label">
+                                            <small>
+                                                <strong>
+                                                    Meta Title
+                                                </strong>
+                                            </small>
+                                        </label>
+                                        <textarea name="meta_title" placeholder="Meta Title" class="form-control" required></textarea>
+                                    </div>
+                                    <div class="form-group col-sm-4">
+                                        <label style="padding:5px;" class="control-label">
+                                            <small>
+                                                <strong>
+                                                    Meta Keyword
+                                                </strong>
+                                            </small>
+                                        </label>
+                                        <textarea name="meta_keyword" placeholder="Meta Keyword" class="form-control" required></textarea>
+                                    </div>
+                                    <div class="form-group col-sm-4">
+                                        <label style="padding:5px;" class="control-label">
+                                            <small>
+                                                <strong>
+                                                    Meta Description
+                                                </strong>
+                                            </small>
+                                        </label>
+                                        <textarea name="meta_description" placeholder="Meta Description" class="form-control" required></textarea>
+                                    </div>
                                 </div>
-                                <div class="form-group col-sm-4">
-                                    <label style="padding-top:20px;padding-bottom:5px;" class="control-label">
-                                        <small>
-                                            <strong>
-                                                Image Alt
-                                            </strong>
-                                        </small>
-                                    </label>
-                                    <input name="image_alt" type="text" placeholder="Image Alt" required class="form-control">
-                                </div>
-                                <div class="form-group col-sm-5">
-                                    <label style="padding-top:20px;padding-bottom:5px;" class="control-label">
-                                        <small>
-                                            <strong>
-                                                Title
-                                            </strong>
-                                        </small>
+                            <div class="row">
+                                    <div class="form-group col-sm-3">
+                                        <label style="padding-top:20px;padding-bottom:5px;" class="control-label">
+                                            <small>
+                                                <strong>
+                                                    Image
+                                                </strong>
+                                            </small>
+                                        </label>
+                                        <input type="file" name="user_file" accept=".jpg" required class="form-control"/>
+                                    </div>
+                                    <div class="form-group col-sm-4">
+                                        <label style="padding-top:20px;padding-bottom:5px;" class="control-label">
+                                            <small>
+                                                <strong>
+                                                    Image Alt
+                                                </strong>
+                                            </small>
+                                        </label>
+                                        <input name="image_alt" type="text" placeholder="Image Alt" required class="form-control">
+                                    </div>
+                                    <div class="form-group col-sm-5">
+                                        <label style="padding-top:20px;padding-bottom:5px;" class="control-label">
+                                            <small>
+                                                <strong>
+                                                    Title
+                                                </strong>
+                                            </small>
 
-                                    </label>
-                                    <input name="news_title" type="text" placeholder="Title" required class="form-control">
+                                        </label>
+                                        <input name="news_title" type="text" placeholder="Title" required class="form-control">
+                                    </div>
                                 </div>
-                            </div>
-                        <div class="row">
-                            <div class="form-group col-sm-12">
-                                <label for="URL">
-                                    <small>
-                                        <strong>
-                                            URL
-                                        </strong>
-                                    </small>
-                                </label>
-                                <input type="text" name="URL" id="URL" class="form-control" required>
-                                <div id="URL_Duplicate_Error" class="text-danger"></div>
-                                <div id="url_length_error" class="text-danger"></div>
-                            </div>
-                        </div>
-                         <div class="row">
-                                <div class="form-group col-sm-12">
-                                    <label style="margin-top:10px;padding:5px;" class="control-label">
+                            <div class="row">
+                                <div class="form-group col-sm-9">
+                                    <label for="URL">
                                         <small>
                                             <strong>
-                                                News Description
+                                                URL
                                             </strong>
                                         </small>
                                     </label>
-                                    <textarea name="news_description" type="text" placeholder="Property Description" required class="form-control summernote"></textarea>
+                                    <input type="text" name="URL" id="URL" class="form-control" required>
+                                    <div id="URL_Duplicate_Error" class="text-danger"></div>
+                                    <div id="url_length_error" class="text-danger"></div>
+                                </div>
+                                <div class="col-sm-3 form-group">
+                                    <label for="datepicker">
+                                        <small>
+                                            <strong>
+                                                Publish Date
+                                            </strong>
+                                        </small>
+                                    </label>
+                                    <input type="text" name="publish_date" id="datepicker" class="form-control" required>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-12 text-right">
-                                    <button type="reset" name="submitBtn" class="btn btn-warning ">
-                                        Reset Form
-                                    </button>
-                                    <button type="submit" name="submitBtn" class="btn btn-primary ">
-                                        Add News
-                                    </button>
+                                    <div class="form-group col-sm-12">
+                                        <label style="margin-top:10px;padding:5px;" class="control-label">
+                                            <small>
+                                                <strong>
+                                                    News Description
+                                                </strong>
+                                            </small>
+                                        </label>
+                                        <textarea name="news_description" type="text" placeholder="Property Description" required class="form-control summernote"></textarea>
+                                    </div>
                                 </div>
-                            </div>
+                            <div class="row">
+                                    <div class="col-sm-12 text-right">
+                                        <button type="reset" name="submitBtn" class="btn btn-warning ">
+                                            Reset Form
+                                        </button>
+                                        <button type="submit" name="submitBtn" class="btn btn-primary ">
+                                            Add News
+                                        </button>
+                                    </div>
+                                </div>
                         </form>
                     </div>
                 </div>
@@ -150,13 +161,11 @@
         </div>
     </div>
 </section>
-
 <?php $this->load->view('admin/include/footer'); ?>
 <?php $this->load->view('admin/include/foot-load'); ?>
-
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
-
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <script>
     $(document).ready(function() {
         $('.summernote').summernote({
@@ -199,6 +208,10 @@
                 $("#submitBtn").prop("disabled", true);
             }
         });
+
+        $( function() {
+            $( "#datepicker" ).datepicker({ dateFormat: 'yy-mm-dd' });
+        } );
 
     });
     var postForm = function() {

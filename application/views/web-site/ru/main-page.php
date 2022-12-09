@@ -77,39 +77,40 @@
             <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
             <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
         </ol>
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <a href="https://www.primepropertyturkey.com/properties/luxury-living-homes-move-in-ready-in-uskudar">
-                    <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_41_43.webp" class="d-block w-100"
-                         alt="Istanbul">
+
+            <div class="carousel-item active ">
+                <a href="https://www.primepropertyturkey.com/ru/properties/apartment-beyoglu-PPTV0056">
+                    <img src="<?= base_url(); ?>assets/web-site/images/2022_12_06_16_29_12.webp" class="d-block w-100" alt="Fethiye"  >
                 </a>
                 <div class="carousel-caption d-block">
-                    <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal">
-                        запросить сейчас !
-                    </button>
+                    <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >запросить сейчас ! </button>
+                </div>
+            </div>
+            <div class="carousel-item ">
+                <a href="https://www.primepropertyturkey.com/ru/properties/luxury-living-homes-move-in-ready-in-uskudar">
+                    <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_41_43.webp" class="d-block w-100" alt="Istanbul"   >
+                </a>
+                <div class="carousel-caption d-block">
+                    <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >запросить сейчас ! </button>
                 </div>
             </div>
             <div class="carousel-item">
-                <a href="https://www.primepropertyturkey.com/properties/Five-star-apartments-Istanbul">
-                    <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_41_57.webp" class="d-block w-100"
-                         alt="Fethiye">
+                <a href="https://www.primepropertyturkey.com/ru/properties/Five-star-apartments-Istanbul">
+                    <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_41_57.webp" class="d-block w-100" alt="Fethiye"  >
                 </a>
                 <div class="carousel-caption d-block">
-                    <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal">
-                        запросить сейчас !
-                    </button>
+                    <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >запросить сейчас ! </button>
                 </div>
             </div>
             <div class="carousel-item">
-                <a href="https://www.primepropertyturkey.com/properties/duplexes-therra-park">
-                    <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_42_09.webp" class="d-block w-100"
-                         alt="Fethiye">
+                <a href="https://www.primepropertyturkey.com/ru/properties/duplexes-therra-park">
+                    <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_42_09.webp" class="d-block w-100" alt="Fethiye"  >
                 </a>
                 <div class="carousel-caption d-block">
-                    <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal">
-                        запросить сейчас !
-                    </button>
+                    <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >запросить сейчас ! </button>
                 </div>
             </div>
         </div>
@@ -181,7 +182,7 @@
                         </div>
                         <div class="col-lg-2 my-1" id="bedroom">
                             <select class="form-control" name="bedroom" id="property_bed">
-                                <option value="All" selected>спальные комнаты</option>
+                                <option value="All" selected>количество спален</option>
                                 <? foreach ($proBed as $value) { ?>
                                     <option value="<?= $value; ?>"><?= $value; ?></option>
                                 <? } ?>
@@ -297,7 +298,7 @@
                             <div class="item">
                                 <div class="slide-owl-wrap">
                                     <div class="card">
-                                        <a href="<?= base_url(); ?>properties/<?= $city->url_slug; ?>">
+                                        <a href="<?= base_url(); ?>ru/properties/<?= $city->url_slug; ?>">
                                             <img class="card-img-top img-fluid"
                                                  src="<?= base_url(); ?><?= "assets/web-site/images/properties/P_Thumb/" . $image_name_webp; ?>"
                                                  alt="<?= $city->Property_title; ?>"
@@ -325,7 +326,7 @@
                                             <? } ?>
                                           </span>
                                                     <div id="item-card-title">
-                                                        <a href="<?= base_url(); ?>properties/<?= $city->url_slug; ?>"
+                                                        <a href="<?= base_url(); ?>ru/properties/<?= $city->url_slug; ?>"
                                                            class="text-reset font-weight-bold blue-text">
                                                             <?= $city->Property_title; ?>
                                                         </a>

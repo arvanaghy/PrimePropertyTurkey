@@ -72,10 +72,9 @@
                             Язык
                         </button>
                         <div class="dropdown-menu" style="z-index: 9999;">
-                            <? if ($this->uri->segment(1)=='ru'){ ?><a class="dropdown-item" href="<?= base_url();?><? if ($this->uri->segment(2)){echo str_replace("/","",$this->uri->segment(2));if ($this->uri->segment(3)){echo "/".str_replace("/","",$this->uri->segment(3));}}?>">Английский</a>
-                            <? }elseif ($this->uri->segment(1)!='ru'){ ?>
-                                <a class="dropdown-item" href="<?= base_url();?><? if($this->uri->segment(1)){echo "/".str_replace("/","",$this->uri->segment(1));if ($this->uri->segment(2)){echo "/".str_replace("/","",$this->uri->segment(2));if ($this->uri->segment(3)){echo "/".str_replace("/","",$this->uri->segment(3));}}}?>">Русский</a>
-                            <? } ?>
+                            <? if ($this->uri->segment(1)=='ru'){ ?>
+                                <button onclick="ChangeToEnglish();" class="dropdown-item">Английский</button>
+                           <? } ?>
                         </div>
                     </div>
                     <span class="top-Buying mx-1 d-block d-md-none">
@@ -110,25 +109,6 @@
             </div>
             <div class="col-md-4">
                 <div class="row justify-content-md-end justify-content-center align-items-center">
-                    <? if ($this->session->has_userdata('username') && $this->session->has_userdata('user_info')) { ?>
-                        <span class="user-top-login mx-1">
-                        <a href="<?= base_url(); ?>user" class="">
-                            <i class="fas fa-users"></i>
-                            <span class="d-none d-md-inline">
-                                    <?= $this->session->userdata('user_info'); ?>
-                            </span>
-                        </a>
-                    </span>
-                    <? } else { ?>
-                        <span class="user-top-login mx-1">
-                        <a href="<?= base_url(); ?>User/UserLogin" class="">
-                            <i class="fas fa-users"></i>
-                            <span class="d-none d-md-inline">
-                                    Вход / Регистрация
-                            </span>
-                        </a>
-                    </span>
-                    <? } ?>
                     <div class="crypto d-md-none d-inline mx-1">
                         <ul class="list-group list-group-horizontal">
                             <li class="list-group-item text-warning">
@@ -197,7 +177,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
                    aria-expanded="false">
-                    Параметры
+                    недвижимость
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="<?= base_url(); ?>Properties/Istanbul">Istanbul</a>
@@ -229,7 +209,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
                    aria-expanded="false">
-                    Гиды
+                    гиды
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="<?= base_url(); ?>ru/How-To-Buy-Property-In-Turkey">Руководство покупателя</a>
@@ -238,16 +218,10 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url(); ?>ru/after-sales">После продажи</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url(); ?>ru/Resale">Перепродажа</a>
+                <a class="nav-link" href="<?= base_url(); ?>ru/after-sales">Пост-продажа</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url(); ?>ru/blog">Блог</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url(); ?>ru/news">Новости</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -257,7 +231,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="<?= base_url(); ?>ru/about-us">О нас</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="<?= base_url(); ?>ru/contact-us">Свяжитесь с нами</a>
+                    <a class="dropdown-item" href="<?= base_url(); ?>ru/contact-us">контакты</a>
                 </div>
             </li>
         </ul>
@@ -284,5 +258,13 @@ if ($this->session->flashdata('googleSuccess') == 'OK') { ?>
         xhttp.open("POST", "<?= base_url();?>Currency/set_session");
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send("send_value=" + value);
+    }
+</script>
+<!--href="--><?//= base_url();?><!----><?// if($this->uri->segment(1)){echo "/".str_replace("/","",$this->uri->segment(1));if ($this->uri->segment(2)){echo "/".str_replace("/","",$this->uri->segment(2));if ($this->uri->segment(3)){echo "/".str_replace("/","",$this->uri->segment(3));}}}?><!--"-->
+<script type="text/javascript">
+    function ChangeToEnglish(){
+        let pathname = window.location.pathname;
+        let confirmPath = pathname.replace('/ru','');
+        window.location.href = "https://www.primepropertyturkey.com"+confirmPath;
     }
 </script>

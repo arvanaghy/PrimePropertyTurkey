@@ -42,23 +42,41 @@
         border: none;
         padding: 2%;
     }
+    #blog_detail_content {
+        font-family: 'Open Sans' !important;
+    }
 
     #blog_detail_content img {
         width: 100% !important;
         height: auto !important;
+        margin-top: 1% !important;
+        margin-bottom: 1% !important;
+
     }
 
     #blog_detail_content p span {
         font-family: 'Open Sans' !important;
+        font-size: 16px !important;
     }
 
     #blog_detail_content p {
         font-family: 'Open Sans' !important;
+        font-size: 16px !important;
+        margin-top: 1% !important;
+        margin-bottom: 1% !important;
+    }
+    #blog_detail_content li {
+        font-family: 'Open Sans' !important;
+        font-size: 16px !important;
+        margin-top: 1% !important;
+        margin-bottom: 1% !important;
     }
 
     #blog_detail_content iframe {
         width: 100% !important;
         height: 380px !important;
+        margin-top: 1% !important;
+        margin-bottom: 1% !important;
     }
 
     #blog_detail_content h2 {

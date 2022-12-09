@@ -33,7 +33,6 @@ class News_model extends CI_Model
         $this->db->select('Property_referenceID,Property_id,Property_type,Property_title,url_slug,Property_location,Property_Bedrooms,Property_Bathrooms,Property_living_space,Property_overview,Property_price,Property_thumbnail,SoldOut');
         $this->db->where('Property_location', 'istanbul');
         $this->db->where('status > ', 1);
-        $this->db->where('recommended', 2);
         $this->db->order_by('recommended_sort', 'ASC');
         $query = $this->db->get('property', 5);
         if ($query->result()) {
@@ -43,7 +42,6 @@ class News_model extends CI_Model
         }
         $this->db->select('Property_referenceID,Property_id,Property_type,Property_title,url_slug,Property_location,Property_Bedrooms,Property_Bathrooms,Property_living_space,Property_overview,Property_price,Property_thumbnail,SoldOut');
         $this->db->where('Property_location', 'gocek');
-        $this->db->where('recommended', 2);
         $this->db->where('status > ', 1);
         $this->db->order_by('recommended_sort', 'ASC');
         $query = $this->db->get('property', 5);
@@ -54,7 +52,6 @@ class News_model extends CI_Model
         }
         $this->db->select('Property_referenceID,Property_id,Property_type,Property_title,url_slug,Property_location,Property_Bedrooms,Property_Bathrooms,Property_living_space,Property_overview,Property_price,Property_thumbnail,SoldOut');
         $this->db->where('Property_location', 'kas');
-        $this->db->where('recommended', 2);
         $this->db->where('status > ', 1);
         $this->db->order_by('recommended_sort', 'ASC');
         $query = $this->db->get('property', 5);
@@ -65,7 +62,6 @@ class News_model extends CI_Model
         }
         $this->db->select('Property_referenceID,Property_id,Property_type,Property_title,url_slug,Property_location,Property_Bedrooms,Property_Bathrooms,Property_living_space,Property_overview,Property_price,Property_thumbnail,SoldOut');
         $this->db->where('Property_location', 'kalkan');
-        $this->db->where('recommended', 2);
         $this->db->where('status > ', 1);
         $this->db->order_by('recommended_sort', 'ASC');
         $query = $this->db->get('property', 5);
@@ -76,7 +72,6 @@ class News_model extends CI_Model
         }
         $this->db->select('Property_referenceID,Property_id,Property_type,Property_title,url_slug,Property_location,Property_Bedrooms,Property_Bathrooms,Property_living_space,Property_overview,Property_price,Property_thumbnail,SoldOut');
         $this->db->where('Property_location', 'fethiye');
-        $this->db->where('recommended', 2);
         $this->db->where('status > ', 1);
         $this->db->order_by('recommended_sort', 'ASC');
         $query = $this->db->get('property', 5);
@@ -87,7 +82,6 @@ class News_model extends CI_Model
         }
         $this->db->select('Property_referenceID,Property_id,Property_type,Property_title,url_slug,Property_location,Property_Bedrooms,Property_Bathrooms,Property_living_space,Property_overview,Property_price,Property_thumbnail,SoldOut');
         $this->db->where('Property_location', 'antalya');
-        $this->db->where('recommended', 2);
         $this->db->where('status > ', 1);
         $this->db->order_by('recommended_sort', 'ASC');
         $query = $this->db->get('property', 5);

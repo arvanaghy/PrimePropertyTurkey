@@ -22,6 +22,10 @@
         display: inline-block;
         align-content: center !important;
     }
+    .form-check-input{
+        position: relative;
+        margin-left: unset;
+    }
 </style>
 </head>
 <body>
@@ -231,7 +235,7 @@
                                 </label>
                                 <input name="pool" type="text" placeholder="Pool" class="form-control" value="<?= $results->Property_pool; ?>">
                             </div>
-                            <div class="form-group col-sm-8">
+                            <div class="form-group col-sm-10">
                                 <label style="padding-top:20px;padding-bottom:5px;" class="control-label">
                                     <small>
                                         <strong>
@@ -241,31 +245,9 @@
                                 </label>
                                 <input name="title" type="text" placeholder="Title" required class="form-control" value="<?= $results->Property_title; ?>">
                             </div>
-                            <div class="form-group col-sm-1">
-                                <label style="padding-top:20px;padding-bottom:5px;margin-left: -1.1rem" class="control-label">
-                                    <small>
-                                        <strong>
-                                            Featured
-                                        </strong>
-                                    </small>
-                                </label>
-                                <br>
-                                <input type="checkbox" name="status" value="3" class="form-check-input" style="width: 30px;height: 30px" <?php if($results->status=='3'){echo"checked";} ?>>
-                            </div>
-                            <div class="form-group col-sm-1">
-                                <label style="padding-top:20px;padding-bottom:5px;margin-left: -1.1rem" class="control-label">
-                                    <small>
-                                        <strong>
-                                            recommended
-                                        </strong>
-                                    </small>
-                                </label>
-                                <br>
-                                <input type="checkbox" name="recommended" value="2" class="form-check-input" style="width: 30px;height: 30px" <?php if($results->recommended=='9'){echo"checked";} ?>>
-                            </div>
                         </div>
                         <div class="row">
-                            <div class="col-10">
+                            <div class="col-12">
                                 <div class="form-group">
                                     <label for="mapLocationURL">
                                         <small>
@@ -277,27 +259,57 @@
                                     <input type="text" name="mapLocationURL" id="mapLocationURL" class="form-control" value="<?= $results->mapLocationURL; ?>">
                                 </div>
                             </div>
-                            <div class="form-group col-sm-1">
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-2">
                                 <label class="control-label">
+                                    <input type="checkbox" name="status" value="3" class="form-check-input" <?php if($results->status=='3'){echo"checked";} ?>>
+                                    <small>
+                                        <strong>
+                                            Featured
+                                        </strong>
+                                    </small>
+                                </label>
+                            </div>
+                            <div class="form-group col-sm-3">
+                                <label class="control-label">
+                                    <input type="checkbox" name="recommended" value="9" class="form-check-input" <?php if($results->recommended=='9'){echo"checked";} ?>>
+                                    <small>
+                                        <strong>
+                                            recommended
+                                        </strong>
+                                    </small>
+                                </label>
+                            </div>
+                            <div class="form-group col-sm-2">
+                                <label class="control-label">
+                                    <input type="checkbox" name="SoldOut" value="1" class="form-check-input" <?php if($results->SoldOut=='1'){echo"checked";} ?>>
                                     <small>
                                         <strong>
                                             SoldOut
                                         </strong>
                                     </small>
                                 </label>
-                                <br>
-                                <input type="checkbox" name="SoldOut" value="1" class="form-check-input" style="width: 30px;height: 30px" <?php if($results->SoldOut=='1'){echo"checked";} ?>>
                             </div>
-                            <div class="form-group col-sm-1">
+                            <div class="form-group col-sm-2">
                                 <label class="control-label">
+                                    <input type="checkbox" name="Commercial" value="1" class="form-check-input" <?php if($results->is_commercial=='1'){echo"checked";} ?>>
                                     <small>
                                         <strong>
                                             Commercial
                                         </strong>
                                     </small>
                                 </label>
-                                <br>
-                                <input type="checkbox" name="Commercial" value="1" class="form-check-input" style="width: 30px;height: 30px" <?php if($results->is_commercial=='1'){echo"checked";} ?>>
+                            </div>
+                            <div class="form-group col-sm-3">
+                                <label class="control-label">
+                                    <input type="checkbox" name="Istanbul_Penthouse" value="1" class="form-check-input" <?php if($results->Istanbul_Penthouse=='1'){echo"checked";} ?>>
+                                    <small>
+                                        <strong>
+                                            Istanbul Penthouse
+                                        </strong>
+                                    </small>
+                                </label>
                             </div>
                         </div>
                         <div class="row">

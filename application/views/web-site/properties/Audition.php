@@ -1206,9 +1206,9 @@ if ($image_name_webp == '') {
 <?php $this->load->view('web-site/includes/foot-load'); ?>
 <script type="text/javascript">
     $(document).ready(function (){
-        setTimeout(function (){
-            $('#reserveModal').modal('show');
-        }, 17000);
+        // setTimeout(function (){
+        //     $('#reserveModal').modal('show');
+        // }, 17000);
         $('#reformRunner').on('click',function () {
             $('#reserveModal').modal('hide');
             $('#ReformModalModal').modal('show');

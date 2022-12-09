@@ -10,8 +10,8 @@
 } ?>
 <meta name="description"
       content="Read latest news by Prime Property Turkey, find exciting news and updates from Turkish Real estate market, newest properties for sale and much more. ">
-<link rel="canonical" href="https://www.primepropertyturkey.com/news/<? if ($page_id != 0) {
-    echo $page_id . '/';
+<link rel="canonical" href="https://www.primepropertyturkey.com/news<? if ($page_id != 0) {
+    echo "/".$page_id ;
 } ?>"/>
 <style type="text/css">
     .Find-Your-Property .find-title {
@@ -52,6 +52,34 @@
             </div>
         </div>
     </section>
+    <section id="Find-Your-Property" class="Find-Your-Property m-3">
+        <div class="container">
+            <div class="row justify-content-center align-items-center my-2 py-3">
+                <div class="find-title">
+                     <span class="pre">
+                          Find  In
+                     </span>
+                    <span class="pro">
+                         Prime Property Turkey News
+                    </span>
+                </div>
+                <div class="find-form">
+                    <form action="https://www.primepropertyturkey.com/NewsFind" method="post" class="justify-content-around text-right">
+                        <div class="row my-2 justify-content-end text-right">
+
+                            <div class="col-lg-7 my-1">
+                                <input type="text" placeholder="Please write your search words" class="form-control" name="searchWord" required>
+                            </div>
+                            <div class="col-lg-3 justify-content-center my-1">
+                                <input type="submit" class="btn red-button btn-block" value="SEARCH">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="content-blogs">
         <div class="container">
             <div class="row justify-content-center py-2">
@@ -79,9 +107,14 @@
                                                     <i class="far fa-clock"></i>
                                                 </span>
                                             <span class="blue-text">
-                                               <? $unix_time = mysql_to_unix($value->News_Created_date);
-                                               $date_string = '%d %M %Y';
-                                               echo mdate($date_string, $unix_time);
+                                               <? if ($value->publish_date and $value->publish_date!='0000-00-00') {
+                                                   $date_string = '%d %M %Y';
+                                                   echo mdate($date_string, strtotime($value->publish_date));
+                                               }elseif($value->status ==0){
+                                                   $unix_time = mysql_to_unix($value->News_Created_date);
+                                                   $date_string = '%d %M %Y';
+                                                   echo mdate($date_string, $unix_time);
+                                               }
                                                ?>
                                             </span>
                                         </div>
@@ -122,9 +155,14 @@
                                                         <i class="far fa-clock"></i>
                                                     </span>
                                                 <span class="blue-text">
-                                                   <? $unix_time = mysql_to_unix($value->News_Created_date);
-                                                   $date_string = '%d %M %Y';
-                                                   echo mdate($date_string, $unix_time);
+                                                   <? if ($value->publish_date and $value->publish_date!='0000-00-00') {
+                                                       $date_string = '%d %M %Y';
+                                                       echo mdate($date_string, strtotime($value->publish_date));
+                                                   }elseif($value->status == 0){
+                                                       $unix_time = mysql_to_unix($value->News_Created_date);
+                                                       $date_string = '%d %M %Y';
+                                                       echo mdate($date_string, $unix_time);
+                                                   }
                                                    ?>
                                                 </span>
                                             </div>

@@ -32,8 +32,8 @@
                             Language
                         </button>
                         <div class="dropdown-menu" style="z-index: 9999;">
-                            <? if ($this->uri->segment(1)=='ru'){ ?><a class="dropdown-item" href="<?= base_url();?><? if ($this->uri->segment(1)){echo "/".str_replace("/","",$this->uri->segment(1));if ($this->uri->segment(2)){echo "/".str_replace("/","",$this->uri->segment(2));if ($this->uri->segment(3)){echo "/".str_replace("/","",$this->uri->segment(3));}}} ?>">English</a>
-                            <? }elseif ($this->uri->segment(1)!='ru'){ ?><a class="dropdown-item" href="<?= base_url();?>ru<? if ($this->uri->segment(1)){ echo "/".str_replace("/","",$this->uri->segment(1));if ($this->uri->segment(2)){ echo "/".str_replace("/","",$this->uri->segment(2));if ($this->uri->segment(3)){echo "/".str_replace("/","",$this->uri->segment(3));}}} ?>">Russian</a>
+                            <? if ($this->uri->segment(1)!='ru' and $this->uri->segment(1)!='Turkey' and $this->uri->segment(1)!='User' and $this->uri->segment(1)!='news' and $this->uri->segment(1)!='Resale' and $this->uri->segment(1)!='Properties' and $this->uri->segment(1)!='privacy-policy' and $this->uri->segment(1)!='career' and $this->uri->segment(1)!='prime-videos' ){ ?>
+                                <button onclick="ChangeToRussian()" class="dropdown-item">Russian</button>
                             <? } ?>
                         </div>
                     </div>
@@ -194,6 +194,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url();?>Resale">Resale</a>
             </li>
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link" href="--><?//= base_url();?><!--legal-team">Legal Team</a>-->
+<!--            </li>-->
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url();?>blog">Blog</a>
             </li>
@@ -235,5 +238,12 @@
         xhttp.open("POST", "<?= base_url();?>Currency/set_session");
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send("send_value="+value);
+    }
+</script>
+<!--href="--><?//= base_url();?><!--ru--><?// if ($this->uri->segment(1)){ echo "/".str_replace("/","",$this->uri->segment(1));if ($this->uri->segment(2)){ echo "/".str_replace("/","",$this->uri->segment(2));if ($this->uri->segment(3)){echo "/".str_replace("/","",$this->uri->segment(3));}}} ?><!--"-->
+<script type="text/javascript">
+    function ChangeToRussian(){
+        let pathname = window.location.pathname;
+        window.location.href = "https://www.primepropertyturkey.com/ru"+pathname;
     }
 </script>

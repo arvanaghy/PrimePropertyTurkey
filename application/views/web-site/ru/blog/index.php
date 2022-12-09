@@ -85,14 +85,13 @@
                                             </span>
                                         </div>
                                         <div class="row mt-2 mx-3 mb-4 justify-content-center">
-                                            <a href="<?= base_url();?>blog/<?= $value->url_slug;?>" class="text-reset font-weight-bold">
+                                            <a href="<?= base_url();?>ru/blog/<?= $value->url_slug;?>" class="text-reset font-weight-bold">
                                                 <?= $value->ru_title; ?>
                                             </a>
                                         </div>
                                         <div class="row my-2">
                                             <p class="text-justify mx-3 px-3 blog-summarize">
-                                                <b>By Justin Mays:</b> <br>
-                                                <?= str_replace('By. Justin Mays','',str_replace('By Justin Mays', '', str_replace('By Justin Mays:', '', substr(strip_tags($value->ru_content), 0, 300)))); ?>
+                                                <?= substr(strip_tags($value->ru_content), 0, 300); ?>
                                                 ...
                                             </p>
                                         </div>
@@ -140,14 +139,13 @@
                                                 </span>
                                             </div>
                                             <div class="row mt-5 mb-4 justify-content-start p-1">
-                                                <a href="<?= base_url();?>blog/<?= $value->url_slug;?>" class="text-reset font-weight-bold blog-title-text">
+                                                <a href="<?= base_url();?>ru/blog/<?= $value->url_slug;?>" class="text-reset font-weight-bold blog-title-text">
                                                     <?= $value->ru_title; ?>
                                                 </a>
                                             </div>
                                             <div class="row my-2">
                                                 <p class="text-justify mx-3 px-3 blog-summarize">
-                                                    <b>By Justin Mays:</b> <br>
-                                                    <?= str_replace('By. Justin Mays','',str_replace('By Justin Mays', '', str_replace('By Justin Mays:', '', substr(strip_tags($value->ru_content), 0, 300)))); ?>
+                                                    <?= substr(strip_tags($value->ru_content), 0, 300); ?>
                                                     ...
                                                 </p>
                                             </div>

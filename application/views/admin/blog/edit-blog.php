@@ -34,18 +34,6 @@
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="page-title col-md-6">
-                             <span class="mx-2">
-                                 <? if ($results->language == 'ru'): ?>
-                                     <a href="<?= base_url();?>ru/blog/<?= $results->url_slug; ?>" target="_blank" class="show_site_details" >
-                                      <i class="fas fa-eye"></i>
-                                     </a>
-                                 <? elseif ($results->language == 'en'): ?>
-                                     <a href="<?= base_url();?>blog/<?= $results->url_slug; ?>" target="_blank" class="show_site_details" >
-                                              <i class="fas fa-eye"></i>
-                                     </a>
-                                 <? endif; ?>
-
-                            </span>
                             <b>
                                 Edit Blog
                             </b>
@@ -72,6 +60,17 @@
                         </nav>
                         <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-eng" role="tabpanel" aria-labelledby="nav-eng-tab">
+                                <div class="row my-3">
+                                    <div class="col-12">
+                                        <? if ($results->Blog_Title!=''){ ?>
+                                            <span class="mx-2">
+                                                    <a href="<?= base_url();?>blog/<?= $results->url_slug; ?>" target="_blank" class="show_site_details" >
+                                                      <i class="fas fa-eye"></i>
+                                                     </a>
+                                             </span>
+                                        <? } ?>
+                                    </div>
+                                </div>
                                 <?php echo form_open_multipart(base_url().'Admin/Blog_Content_Update_Submit');?>
                                 <div class="row">
                                     <div class="form-group col-sm-4">
@@ -154,6 +153,17 @@
                                 </form>
                             </div>
                             <div class="tab-pane fade" id="nav-rus" role="tabpanel" aria-labelledby="nav-rus-tab">
+                                <div class="row my-3">
+                                    <div class="col-12">
+                                        <? if ($results->ru_title!=''){ ?>
+                                            <span class="mx-2">
+                                                    <a href="<?= base_url();?>ru/blog/<?= $results->url_slug; ?>" target="_blank" class="show_site_details" >
+                                                      <i class="fas fa-eye"></i>
+                                                     </a>
+                                             </span>
+                                        <? } ?>
+                                    </div>
+                                </div>
                                 <?php echo form_open_multipart(base_url().'Admin/Blog_Content_Update_Submit_ru');?>
                                 <div class="row">
                                     <div class="form-group col-sm-4">
@@ -325,6 +335,7 @@
                 ['table', ['table']],
                 ['insert', ['link', 'picture', 'video']],
                 ['fontsize', ['fontsize']],
+                ['view', ['fullscreen', 'codeview']]
             ]
         });
     });

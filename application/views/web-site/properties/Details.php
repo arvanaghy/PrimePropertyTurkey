@@ -20,9 +20,16 @@
 <meta name="description" content="the best suggestion about Properties for sale in  <?= $this->uri->segment(2); ?><? if ($this->uri->segment(2)!='Istanbul' and $cityValue == 'Istanbul' ): ?>, Istanbul <? endif; ?> in prime property turkey, pick your future real estate with Prime Property Turkey">
 <? if (isset($page_id)) {
     $page_id = $page_id;
+    if ($page_id!=0){ ?>
+        <link rel="canonical" href="https://www.primepropertyturkey.com/properties/<?= $this->uri->segment(2); ?><? if ($page_id!=0){ echo '/'.$page_id;}?>"/>
+    <?php }else{ ?>
+        <link rel="canonical" href="https://www.primepropertyturkey.com/Properties/<?= $this->uri->segment(2); ?>"/>
+    <?php } ?>
+<?php
 } else {
-    $page_id = 0;
-} ?>
+    $page_id = 0; ?>
+    <link rel="canonical" href="https://www.primepropertyturkey.com/Properties/<?= $this->uri->segment(2); ?>"/>
+<?php } ?>
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.primepropertyturkey.com/Properties/<?= $this->uri->segment(2); ?>/<? if ($page_id!=0){ echo $page_id.'/';}?>">
@@ -35,7 +42,7 @@
 <meta property="twitter:title" content="Properties For Sale <?= $cityValue; ?> - Prime Property Turkey">
 <meta property="twitter:description" content="the best suggestion about Property in  <?= $cityValue; ?> for sale in prime property turkey, pick your future real estate with Prime Property Turkey">
 <meta property="og:image" content="https://www.primepropertyturkey.com/assets/web-site/images/base/Prime-Property-Turkey-build-logo.jpg">
-<link rel="canonical" href="https://www.primepropertyturkey.com/Properties/<?= $this->uri->segment(2); ?><? if ($page_id!=0){ echo '/'.$page_id;}?>"/>
+
 <script src="https://www.google.com/recaptcha/api.js" ></script>
 <style type="text/css">
     svg {
@@ -285,7 +292,7 @@
                                 </p>
                                 <? if ($CityIntroduce['moreDescription']){ ?>
                                 <button class="py-1 px-3 pb-3" id="read-more" style="position: absolute;right: 10px;bottom: 0px;">
-                                    Read More About <span class="red-text"><?= $cityValue; ?></span>
+                                    Read More About <span class="red-text"><?= $this->uri->segment(2); ?></span>
                                 </button>
                                 <? } ?>
                             </div>
@@ -541,7 +548,7 @@
                     <div class="card">
                         <div class="card-body">
                                 <? if (isset($CityIntroduce) and $CityIntroduce['moreDescription']): ?>
-                                    <h2 class="px-3 py-2"> More Information About <span class="red-text"> <?= $cityValue;?> </span> :</h2>
+                                    <h2 class="px-3 py-2"> More Information About <span class="red-text"> <?= $this->uri->segment(2);?> </span> :</h2>
                                      <p class="px-3 text-justify">
                                          <?= $CityIntroduce['moreDescription']; ?>
                                      </p>

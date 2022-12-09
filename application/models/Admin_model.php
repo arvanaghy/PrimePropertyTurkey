@@ -281,6 +281,16 @@ class Admin_model extends CI_Model
             return $data['News_ID'] = null;
         }
     }
+    public function publishNewsPostOnDate($date)
+    {
+        $this->db->set('status',0);
+        $this->db->group_start();
+        $this->db->where('publish_date',$date);
+        $this->db->where('status',3);
+        $this->db->group_end();
+        $this->db->update('news');
+    }
+
 
     public function fetchVideos()
     {

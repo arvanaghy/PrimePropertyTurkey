@@ -10,7 +10,7 @@
 }else{
     $page_id =0;
 } ?>
-<link rel="canonical" href="https://www.primepropertyturkey.com/blog/<? if ($page_id !=0){echo $page_id.'/';} ?>"/>
+<link rel="canonical" href="https://www.primepropertyturkey.com/blog<? if ($page_id !=0){echo "/".$page_id;} ?>"/>
 <script src="https://www.google.com/recaptcha/api.js" ></script>
 <link
         rel="stylesheet"

@@ -13,13 +13,10 @@ class NewsLetterCron extends CI_Controller
                     $i=0;
                     foreach ($restMail as $clientsInfo):
                         $i++;
-                        if ($i==200):
+                        if ($i==8):
                             break;
                         endif;
                         $this->load->library('email');
-                        if ($data['attachmentFile']){
-                            $this->email->attach('./uploads/mailAttachment/'.$data['attachmentFile']);
-                        }
                         $this->email->to($clientsInfo->email);
                         $this->email->from('admin@primepropertyturkey.com');
                         $this->email->subject($clientsInfo->first_name.' '.$clientsInfo->second_name.' | '.$data['subject']);
@@ -125,7 +122,7 @@ class NewsLetterCron extends CI_Controller
                                         src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/YouTube_social_red_square_%282017%29.svg/2048px-YouTube_social_red_square_%282017%29.svg.png'
                                         width='25' height='25' border='0' class='CToWUd' data-bit='iit'
                                         style='text-align: right; float: left; border-width: initial; border-color: initial;'></a>
-                                    <a href='https://t.me/PrimePropertyTurkeyprime' target='_blank'
+                                    <a href='https://t.me/PrimePropertyTurkey' target='_blank'
                                        data-saferedirecturl='https://www.google.com/url?q=https://t.me/PrimePropertyTurkey&amp;source=gmail&amp;ust=1668267506725000&amp;usg=AOvVaw0Ca1bj9z_pgeQz2_TIoyOb'
                                        style='color: rgb(17, 85, 204);'><img
                                             src='https://cdn-icons-png.flaticon.com/512/124/124019.png'
@@ -145,7 +142,7 @@ class NewsLetterCron extends CI_Controller
                         $this->email->set_mailtype("html");
                         $this->email->send();
                         $this->email->clear(TRUE);
-                        $this->User_Model->UpdateLeadsNewsLetterStatus($clientsInfo->Lead_id,2);
+                        $this->NewsLetterCronModel->UpdateLeadsNewsLetterStatus($clientsInfo->Lead_id,2);
                     endforeach;
                 }else{
                     $this->NewsLetterCronModel->resetAllToZero();
