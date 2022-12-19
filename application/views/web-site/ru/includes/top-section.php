@@ -79,7 +79,7 @@
                     </div>
                     <span class="top-Buying mx-1 d-block d-md-none">
                         <a href="<?= base_url(); ?>ru/buying-online" class="btn red-button">
-                        покупка онлайн
+                        Покупка онлайн
                         </a>
                     </span>
                 </div>
@@ -101,7 +101,7 @@
                                      alt="litecoin" class="img-fluid" width="17px">
                             </li>
                             <li class="list-group-item">
-                                <span>Принять здесь</span>
+                                <span>Оплата биткоинами</span>
                             </li>
                         </ul>
                     </div>
@@ -130,14 +130,14 @@
                                 </a>
                             </li>
                             <li class="list-group-item">
-                                <span>Принять здесь</span>
+                                <span>Оплата биткоинами</span>
                             </li>
                         </ul>
                     </div>
 
                     <span class="top-Buying d-none d-md-inline mx-1">
                         <a href="<?= base_url(); ?>ru/buying-online" class="btn red-button">
-                        покупка онлайн
+                        Покупка онлайн
                         </a>
                     </span>
                     <span class="top-search mx-1">
@@ -145,11 +145,11 @@
                             <i class="fas fa-search"></i>
                         </button>
                         <span id="toggle-search">
-                            <form action="<?= base_url(); ?>Properties/Search" method="POST"
+                            <form action="<?= base_url(); ?>Ru/Search" method="POST"
                                   class="form-inline justify-content-around">
                                  <input type="text" autocomplete="off" name="search" id="search" required
                                         placeholder="Enter Search Data" class="form-control-sm" autofocus>
-                                 <input type="submit" class="btn red-button btn-sm" value="поиск">
+                                 <input type="submit" class="btn red-button btn-sm" value="Поиск">
                            </form>
                         </span>
                     </span>
@@ -177,18 +177,18 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
                    aria-expanded="false">
-                    недвижимость
+                    Недвижимость
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="<?= base_url(); ?>Properties/Istanbul">Istanbul</a>
+                    <a class="dropdown-item" href="<?= base_url(); ?>ru/Properties/Istanbul">Стамбул</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="<?= base_url(); ?>Properties/Fethiye">Fethiye</a>
+                    <a class="dropdown-item" href="<?= base_url(); ?>ru/Properties/Fethiye">Фетхие</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="<?= base_url(); ?>Properties/Kalkan">Kalkan</a>
+                    <a class="dropdown-item" href="<?= base_url(); ?>ru/Properties/Kalkan">Калкан</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="<?= base_url(); ?>Properties/Kas">Kas</a>
+                    <a class="dropdown-item" href="<?= base_url(); ?>ru/Properties/Kas">Каш</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="<?= base_url(); ?>Properties/Gocek">Gocek</a>
+                    <a class="dropdown-item" href="<?= base_url(); ?>ru/Properties/Gocek">Гечек</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -197,11 +197,11 @@
                     Турецкое гражданство
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="<?= base_url(); ?>ru/citizenship-by-investment-in-turkey">Гражданство по инвестициям</a>
+                    <a class="dropdown-item" href="<?= base_url(); ?>ru/citizenship-by-investment-in-turkey">Гражданство за инвестиции</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="<?= base_url(); ?>ru/short-term-residency-permit">Краткосрочный вид на жительство</a>
+                    <a class="dropdown-item" href="<?= base_url(); ?>ru/short-term-residency-permit">Краткосрочный ВНЖ</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="<?= base_url(); ?>ru/short-term-residency-extension">Краткосрочное продление срока проживания</a>
+                    <a class="dropdown-item" href="<?= base_url(); ?>ru/short-term-residency-extension">Продление краткосрочного ВНЖ</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="<?= base_url(); ?>ru/frequently-asked-questions-faq">Вопросы и ответы</a>
                 </div>
@@ -209,16 +209,16 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
                    aria-expanded="false">
-                    гиды
+                    Полезные гайды
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="<?= base_url(); ?>ru/How-To-Buy-Property-In-Turkey">Руководство покупателя</a>
+                    <a class="dropdown-item" href="<?= base_url(); ?>ru/How-To-Buy-Property-In-Turkey">Руководство для покупателя</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="<?= base_url(); ?>ru/area-guide">Путеводитель по району</a>
+                    <a class="dropdown-item" href="<?= base_url(); ?>ru/area-guide">Путеводитель по Стамбулу</a>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url(); ?>ru/after-sales">Пост-продажа</a>
+                <a class="nav-link" href="<?= base_url(); ?>ru/after-sales">После покупки</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url(); ?>ru/blog">Блог</a>
@@ -226,12 +226,12 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
                    aria-expanded="false">
-                    Контакт
+                    Контакты
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="<?= base_url(); ?>ru/about-us">О нас</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="<?= base_url(); ?>ru/contact-us">контакты</a>
+                    <a class="dropdown-item" href="<?= base_url(); ?>ru/contact-us">Свяжитесь с нами</a>
                 </div>
             </li>
         </ul>

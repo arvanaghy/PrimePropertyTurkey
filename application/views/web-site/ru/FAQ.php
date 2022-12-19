@@ -10,15 +10,23 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/phone-input.css">
 <title>Часто задаваемые вопросы-FAQ's</title>
-<meta name="description" content="Can I apply for Turkish citizenship with a preliminary contract for
-                                                sale">
-<link rel="canonical" href="https://www.primepropertyturkey.com/frequently-asked-questions-faq"/>
+<meta name="description" content="ЧАВО по программе инвестиций в недвижимость для гражданства">
+<link rel="canonical" href="https://www.primepropertyturkey.com/ru/frequently-asked-questions-faq"/>
 <style type="text/css">
     .content .card-title {
         font-size: 1rem !important;
         font-weight: 800 !important;
     }
 </style>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="https://www.primepropertyturkey.com/ru/frequently-asked-questions-faq">
+<meta name="twitter:creator" content="Justin Mays">
+<meta name="twitter:image:alt" content="Часто задаваемые вопросы-FAQ's">
+<meta name="twitter:title"
+      content="Часто задаваемые вопросы-FAQ's">
+<meta name="twitter:description"
+      content="ЧАВО по программе инвестиций в недвижимость для гражданства">
+<meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
 </head>
 <body>
 <?php $this->load->view('web-site/ru/includes/top-section'); ?>

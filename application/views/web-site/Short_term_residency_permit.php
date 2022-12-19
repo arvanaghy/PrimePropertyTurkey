@@ -24,6 +24,15 @@
     }
 </style>
 <link rel="canonical" href="https://www.primepropertyturkey.com/short-term-residency-permit"/>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="https://www.primepropertyturkey.com/short-term-residency-permit">
+<meta name="twitter:creator" content="Justin Mays">
+<meta name="twitter:image:alt" content="Short-Term Residency Permit in turkey">
+<meta name="twitter:title"
+      content="Short-Term Residency Permit in turkey">
+<meta name="twitter:description"
+      content="short-term residence permits are issued for a maximum of two years as a principle. (Note: A residence permit is invalidated if it is not used within six months.)">
+<meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
 </head>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>

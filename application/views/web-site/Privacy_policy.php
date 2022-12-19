@@ -15,7 +15,17 @@
                                 (www.primepropertyturkey.com) or engage in any of our services.">
 <link rel="canonical" href="https://www.primepropertyturkey.com/privacy-policy" />
 
-
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="https://www.primepropertyturkey.com/privacy-policy">
+<meta name="twitter:creator" content="Justin Mays">
+<meta name="twitter:image:alt" content="Privacy Policy | Prime Property Turkey">
+<meta name="twitter:title"
+      content="Privacy Policy | Prime Property Turkey">
+<meta name="twitter:description"
+      content="This privacy policy sets out how Prime Property Turkey uses and protects any information
+                                that you give Prime Property Turkey with your consent, when you use this website
+                                (www.primepropertyturkey.com) or engage in any of our services.">
+<meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
 </head>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>

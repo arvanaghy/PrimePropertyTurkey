@@ -9,9 +9,21 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/phone-input.css">
 <title>Contact prime Property Turkey - Property Turkey</title>
-<meta name="description" content="Contact Us, Having more than 10+ years of real estate experience, Prime Property Turkey delivers knowledge and expertise second to none in Turkey's ever evolving market.">
+<meta name="description"
+      content="Contact Us, Having more than 10+ years of real estate experience, Prime Property Turkey delivers knowledge and expertise second to none in Turkey's ever evolving market.">
 <link rel="canonical" href="https://www.primepropertyturkey.com/contact-us"/>
-<script src="https://www.google.com/recaptcha/api.js" ></script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="https://www.primepropertyturkey.com/contact-us">
+<meta name="twitter:creator" content="Justin Mays">
+<meta name="twitter:image:alt" content="Contact prime Property Turkey - Property Turkey">
+<meta name="twitter:title"
+      content="Contact prime Property Turkey - Property Turkey">
+<meta name="twitter:description"
+      content="Contact Us, Having more than 10+ years of real estate experience, Prime Property Turkey delivers knowledge and expertise second to none in Turkey's ever evolving market.">
+<meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
+
 
 <style type="text/css">
     .contact-card {
@@ -132,14 +144,16 @@
                                 </div>
                                 <div class="border"></div>
                             </div>
-                            <form action="<?= base_url(); ?>/Post/contact_us" method="post" onsubmit="return sideContactFormValidation();">
+                            <form action="<?= base_url(); ?>/Post/contact_us" method="post"
+                                  onsubmit="return sideContactFormValidation();">
                                 <div class="col-12">
                                     <div class="row px-2 justify-content-center">
                                         <div class="col-md-4 justify-content-center">
                                             <div class="form-group">
                                                 <input type="text" class="form-control" placeholder="Full Name" required
                                                        name="info" id="sideContactForm_info">
-                                                <span id="sideContactForm_info_error" style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
+                                                <span id="sideContactForm_info_error"
+                                                      style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
                                                       class="vision">
                                                         Please enter your first and last name separated by a space (e.g. Jane Miller)
                                                 </span>
@@ -155,7 +169,8 @@
                                             <div class="form-group">
                                                 <input type="tel" class="form-control" placeholder="Phone" id="phone"
                                                        name="phone[main]" required>
-                                                <span id="sideContactForm_phone_error" style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
+                                                <span id="sideContactForm_phone_error"
+                                                      style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
                                                       class="vision">
                                                        Please Write Your Full PhoneNumber
                                                 </span>
@@ -204,7 +219,7 @@
 <?php $this->load->view('web-site/includes/footer'); ?>
 <?php $this->load->view('web-site/includes/foot-load'); ?>
 <script type="text/javascript">
-    function sideContactFormValidation(){
+    function sideContactFormValidation() {
         let sideContactFormFlag = true;
         let sideContactForm_info_error = document.getElementById('sideContactForm_info_error');
         let sideContactForm_phone_error = document.getElementById('sideContactForm_phone_error');
@@ -225,10 +240,15 @@
         }
         return sideContactFormFlag;
     }
+
     const phoneInputFieldModalVal = document.querySelector("#phone");
     const phoneInputModalVal = window.intlTelInput(phoneInputFieldModalVal, {
         separateDialCode: true,
-        preferredCountries:["<? if (isset($geolocation)){echo $geolocation;}else{echo 'us';} ?>"],
+        preferredCountries: ["<? if (isset($geolocation)) {
+            echo $geolocation;
+        } else {
+            echo 'us';
+        } ?>"],
         hiddenInput: "full",
         utilsScript:
             "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",

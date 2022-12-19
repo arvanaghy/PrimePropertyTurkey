@@ -14,6 +14,18 @@
                                 within sixty days prior to its expiration, but under no circumstances should this be
                                 done after the expiry date.">
 <link rel="canonical" href="https://www.primepropertyturkey.com/short-term-residency-extension" />
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="https://www.primepropertyturkey.com/short-term-residency-extension">
+<meta name="twitter:creator" content="Justin Mays">
+<meta name="twitter:image:alt" content="Short-Term Residency Extension in turkey">
+<meta name="twitter:title"
+      content="Short-Term Residency Extension in turkey">
+<meta name="twitter:description"
+      content="Applications for an extension of the residence permit may be made to Governors’ Offices
+                                within sixty days prior to its expiration, but under no circumstances should this be
+                                done after the expiry date.">
+<meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
 <style type="text/css">
     h2{
         font-size: 1.3rem;

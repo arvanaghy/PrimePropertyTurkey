@@ -10,7 +10,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/phone-input.css">
 <title>Turkish Properties | Prime Property Turkey</title>
-<link rel="canonical" href="https://www.primepropertyturkey.com/Properties"/>
+<? if (isset($page_id)) {
+    $page_id = $page_id;
+    if ($page_id!=0){ ?>
+        <link rel="canonical" href="https://www.primepropertyturkey.com/properties<?  echo '/'.$page_id; ?>"/>
+    <?php }else{ ?>
+        <link rel="canonical" href="https://www.primepropertyturkey.com/properties"/>
+    <?php } ?>
+    <?php
+} else {
+    $page_id = 0; ?>
+    <link rel="canonical" href="https://www.primepropertyturkey.com/properties"/>
+<?php } ?>
 <meta name="description"
       content="Prime Property Turkey the best place to search for Turkish Properties, offers best deals for Istanbul real estate and some of the most attractive offers in Fethiye , Kalkan , Kas , Gocek">
 <script src="https://www.google.com/recaptcha/api.js"></script>
@@ -113,11 +124,6 @@
     }
 </style>
 </head>
-<? if (isset($page_id)) {
-    $page_id = $page_id;
-} else {
-    $page_id = 0;
-} ?>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>
     <section id="theme-background">

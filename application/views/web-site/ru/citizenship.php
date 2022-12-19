@@ -4,39 +4,36 @@
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/citizenship_by_investment.css">
 <title>Гражданство Турции за инвестиции | Prime Property Turkey</title>
 <meta name="description"
-      content="Программа "Гражданство Турции за инвестиции была запущена в 2017 году. Она позволяет иностранным инвесторам получить турецкий паспорт в течение трех-шести месяцев.">
+      content="Программа "Вся информация о получении турецкого гражданства через инвестиции тут. Сроки, документы и возможности турецкого паспорта читайте тут.">
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content=https://www.primepropertyturkey.com/citizenship-by-investment-in-turkey">
-<meta property="og:title" content="Citizenship by investment in turkey">
-<meta property="og:description" content="The Turkey Citizenship by Investment provides citizenship of a country with links to both
-Asia and Europe and access to the markets in both regions">
+<meta property="og:url" content=https://www.primepropertyturkey.com/ru/citizenship-by-investment-in-turkey">
+<meta property="og:title" content="Гражданство Турции за инвестиции | Prime Property Turkey">
+<meta property="og:description" content="Вся информация о получении турецкого гражданства через инвестиции тут. Сроки, документы и возможности турецкого паспорта читайте тут.">
 <meta property="og:image"
       content="https://www.primepropertyturkey.com/assets/web-site/images/base/Prime-Property-Turkey-build-logo.jpg">
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="https://www.primepropertyturkey.com/citizenship-by-investment-in-turkey">
 <meta name="twitter:creator" content="Justin Mays">
-<meta name="twitter:image:alt" content="Citizenship by investment">
-<meta name="twitter:title" content="Citizenship by investment in turkey">
-<meta name="twitter:description" content="The Turkey Citizenship by Investment provides citizenship of a country with links to both
-Asia and Europe and access to the markets in both regions">
-<meta name="twitter:image"
+<meta name="twitter:image:alt" content="Гражданство Турции за инвестиции | Prime Property Turkey">
+<meta name="twitter:title" content="Гражданство Турции за инвестиции | Prime Property Turkey">
+<meta name="twitter:description" content="Вся информация о получении турецкого гражданства через инвестиции тут. Сроки, документы и возможности турецкого паспорта читайте тут.">
 <meta name="twitter:image"
       content="https://www.primepropertyturkey.com/assets/web-site/images/base/Prime-Property-Turkey-build-logo.jpg">
-<link rel="canonical" href="https://www.primepropertyturkey.com/citizenship-by-investment-in-turkey"/>
+<link rel="canonical" href="https://www.primepropertyturkey.com/ru/citizenship-by-investment-in-turkey"/>
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://www.primepropertyturkey.com/citizenship-by-investment-in-turkey"
+            "@id": "https://www.primepropertyturkey.com/ru/citizenship-by-investment-in-turkey"
         },
-        "headline": "Turkish citizenship by investment",
-        "description": "Turkish citizenship by investment",
+        "headline": "Гражданство Турции за инвестиции | Prime Property Turkey",
+        "description": "Вся информация о получении турецкого гражданства через инвестиции тут. Сроки, документы и возможности турецкого паспорта читайте тут.",
         "image": "https://www.primepropertyturkey.com/assets/web-site/images/base/citizenshipbyinvestment/citizenship_by_investment_in_turkey_1.webp",
         "author": {
             "@type": "Organization",

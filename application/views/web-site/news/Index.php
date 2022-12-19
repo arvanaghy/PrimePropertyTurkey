@@ -31,6 +31,18 @@
         border-top: 5px solid #cf1717;
     }
 </style>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="https://www.primepropertyturkey.com/news<? if ($page_id != 0) {
+    echo "/".$page_id ;
+} ?>">
+<meta name="twitter:creator" content="Justin Mays">
+<meta name="twitter:image:alt" content="Turkish Properties News | Prime Property Turkey">
+<meta name="twitter:title"
+      content="Turkish Properties News | Prime Property Turkey">
+<meta name="twitter:description"
+      content="Read latest news by Prime Property Turkey, find exciting news and updates from Turkish Real estate market, newest properties for sale and much more.">
+<meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
+
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <link
         rel="stylesheet"

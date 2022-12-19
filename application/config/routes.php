@@ -31,6 +31,153 @@ $route['ru/area-guide'] = 'Ru/AreaGuide';
 $route['ru/properties/(:any)'] = 'RU_Properties/index/$1';
 $route['ru/properties'] = 'RU_Properties/index';
 
+$route['ru/Properties/Istanbul'] = 'RU_Properties/Istanbul';
+$route['ru/properties/Istanbul/(:any)'] = 'RU_Properties/Istanbul/$1';
+
+$route['ru/Properties/Fethiye'] = 'RU_Properties/Fethiye';
+$route['ru/properties/Fethiye/(:any)'] = 'RU_Properties/Fethiye/$1';
+
+$route['ru/Properties/Bursa'] = 'RU_Properties/Bursa';
+$route['ru/properties/Bursa/(:any)'] = 'RU_Properties/Bursa/$1';
+
+$route['ru/Properties/Kalkan'] = 'RU_Properties/Kalkan';
+$route['ru/properties/Kalkan/(:any)'] = 'RU_Properties/Kalkan/$1';
+
+$route['ru/Properties/Kas'] = 'RU_Properties/Kas';
+$route['ru/properties/Kas/(:any)'] = 'RU_Properties/Kas/$1';
+
+$route['ru/Properties/Gocek'] = 'RU_Properties/Gocek';
+$route['ru/properties/Gocek/(:any)'] = 'RU_Properties/Gocek/$1';
+
+$route['ru/Properties/Izmir'] = 'RU_Properties/Izmir';
+$route['ru/properties/Izmir/(:any)'] = 'RU_Properties/Izmir/$1';
+
+$route['ru/Properties/Antalya'] = 'RU_Properties/Antalya';
+$route['ru/properties/Antalya/(:any)'] = 'RU_Properties/Antalya/$1';
+
+$route['ru/Properties/Yalova'] = 'RU_Properties/Yalova';
+$route['ru/properties/Yalova/(:any)'] = 'RU_Properties/Yalova/$1';
+
+$route['ru/Properties/Trabzon'] = 'RU_Properties/Trabzon';
+$route['ru/properties/Trabzon/(:any)'] = 'RU_Properties/Trabzon/$1';
+
+$route['ru/Properties/Adalar'] = 'RU_Properties/Adalar';
+$route['ru/properties/Adalar/(:any)'] = 'RU_Properties/Adalar/$1';
+
+$route['ru/Properties/Arnavutkoy'] = 'RU_Properties/Arnavutkoy';
+$route['ru/properties/Arnavutkoy/(:any)'] = 'RU_Properties/ArnavutkoyAdalar/$1';
+
+$route['ru/Properties/Atasehir'] = 'RU_Properties/Atasehir';
+$route['ru/properties/Atasehir/(:any)'] = 'RU_Properties/Atasehir/$1';
+
+$route['ru/Properties/Avcilar'] = 'RU_Properties/Avcilar';
+$route['ru/properties/Avcilar/(:any)'] = 'RU_Properties/Avcilar/$1';
+
+$route['ru/Properties/Bagcilar'] = 'RU_Properties/Bagcilar';
+$route['ru/properties/Bagcilar/(:any)'] = 'RU_Properties/Bagcilar/$1';
+
+$route['ru/Properties/Bahcelievler'] = 'RU_Properties/Bahcelievler';
+$route['ru/properties/Bahcelievler/(:any)'] = 'RU_Properties/Bahcelievler/$1';
+
+$route['ru/Properties/Bakirkoy'] = 'RU_Properties/Bakirkoy';
+$route['ru/properties/Bakirkoy/(:any)'] = 'RU_Properties/Bakirkoy/$1';
+
+$route['ru/Properties/Basaksehir'] = 'RU_Properties/Basaksehir';
+$route['ru/properties/Basaksehir/(:any)'] = 'RU_Properties/Basaksehir/$1';
+
+$route['ru/Properties/Beylikduzu'] = 'RU_Properties/Beylikduzu';
+$route['ru/properties/Beylikduzu/(:any)'] = 'RU_Properties/Beylikduzu/$1';
+
+$route['ru/Properties/Beykoz'] = 'RU_Properties/Beykoz';
+$route['ru/properties/Beykoz/(:any)'] = 'RU_Properties/Beykoz/$1';
+
+$route['ru/Properties/Besiktas'] = 'RU_Properties/Besiktas';
+$route['ru/properties/Besiktas/(:any)'] = 'RU_Properties/Besiktas/$1';
+
+$route['ru/Properties/Bayrampasa'] = 'RU_Properties/Bayrampasa';
+$route['ru/properties/Bayrampasa/(:any)'] = 'RU_Properties/Bayrampasa/$1';
+
+$route['ru/Properties/Beyoglu'] = 'RU_Properties/Beyoglu';
+$route['ru/properties/Beyoglu/(:any)'] = 'RU_Properties/Beyoglu/$1';
+
+$route['ru/Properties/Esenler'] = 'RU_Properties/Esenler';
+$route['ru/properties/Esenler/(:any)'] = 'RU_Properties/Esenler/$1';
+
+$route['ru/Properties/Cekmekoy'] = 'RU_Properties/Cekmekoy';
+$route['ru/properties/Cekmekoy/(:any)'] = 'RU_Properties/Cekmekoy/$1';
+
+$route['ru/Properties/Catalca'] = 'RU_Properties/Catalca';
+$route['ru/properties/Catalca/(:any)'] = 'RU_Properties/Catalca/$1';
+
+$route['ru/Properties/Buyukcekmece'] = 'RU_Properties/Buyukcekmece';
+$route['ru/properties/Buyukcekmece/(:any)'] = 'RU_Properties/Buyukcekmece/$1';
+
+$route['ru/Properties/Gaziosmanpasa'] = 'RU_Properties/Gaziosmanpasa';
+$route['ru/properties/Gaziosmanpasa/(:any)'] = 'RU_Properties/Gaziosmanpasa/$1';
+
+$route['ru/Properties/Eyup'] = 'RU_Properties/Eyup';
+$route['ru/properties/Eyup/(:any)'] = 'RU_Properties/Eyup/$1';
+
+$route['ru/Properties/Fatih'] = 'RU_Properties/Fatih';
+$route['ru/properties/Fatih/(:any)'] = 'RU_Properties/Fatih/$1';
+
+$route['ru/Properties/Esenyurt'] = 'RU_Properties/Esenyurt';
+$route['ru/properties/Esenyurt/(:any)'] = 'RU_Properties/Esenyurt/$1';
+
+$route['ru/Properties/Kartal'] = 'RU_Properties/Kartal';
+$route['ru/properties/Kartal/(:any)'] = 'RU_Properties/Kartal/$1';
+
+$route['ru/Properties/Kagithane'] = 'RU_Properties/Kagithane';
+$route['ru/properties/Kagithane/(:any)'] = 'RU_Properties/Kagithane/$1';
+
+$route['ru/Properties/Kadikoy'] = 'RU_Properties/Kadikoy';
+$route['ru/properties/Kadikoy/(:any)'] = 'RU_Properties/Kadikoy/$1';
+
+$route['ru/Properties/Gungoren'] = 'RU_Properties/Gungoren';
+$route['ru/properties/Gungoren/(:any)'] = 'RU_Properties/Gungoren/$1';
+
+$route['ru/Properties/Maltepe'] = 'RU_Properties/Maltepe';
+$route['ru/properties/Maltepe/(:any)'] = 'RU_Properties/Maltepe/$1';
+
+$route['ru/Properties/Kucukcekmece'] = 'RU_Properties/Kucukcekmece';
+$route['ru/properties/Kucukcekmece/(:any)'] = 'RU_Properties/Kucukcekmece/$1';
+
+$route['ru/Properties/Sile'] = 'RU_Properties/Sile';
+$route['ru/properties/Sile/(:any)'] = 'RU_Properties/Sile/$1';
+
+$route['ru/Properties/Sariyer'] = 'RU_Properties/Sariyer';
+$route['ru/properties/Sariyer/(:any)'] = 'RU_Properties/Sariyer/$1';
+
+$route['ru/Properties/Sancaktepe'] = 'RU_Properties/Sancaktepe';
+$route['ru/properties/Sancaktepe/(:any)'] = 'RU_Properties/Sancaktepe/$1';
+
+$route['ru/Properties/Pendik'] = 'RU_Properties/Pendik';
+$route['ru/properties/Pendik/(:any)'] = 'RU_Properties/Pendik/$1';
+
+$route['ru/Properties/Tuzla'] = 'RU_Properties/Tuzla';
+$route['ru/properties/Tuzla/(:any)'] = 'RU_Properties/Tuzla/$1';
+
+$route['ru/Properties/Sultangazi'] = 'RU_Properties/Sultangazi';
+$route['ru/properties/Sultangazi/(:any)'] = 'RU_Properties/Sultangazi/$1';
+
+$route['ru/Properties/Sultanbeyli'] = 'RU_Properties/Sultanbeyli';
+$route['ru/properties/Sultanbeyli/(:any)'] = 'RU_Properties/Sultanbeyli/$1';
+
+$route['ru/Properties/Sisli'] = 'RU_Properties/Sisli';
+$route['ru/properties/Sisli/(:any)'] = 'RU_Properties/Sisli/$1';
+
+$route['ru/Properties/Silivri'] = 'RU_Properties/Silivri';
+$route['ru/properties/Silivri/(:any)'] = 'RU_Properties/Silivri/$1';
+
+$route['ru/Properties/Umraniye'] = 'RU_Properties/Umraniye';
+$route['ru/properties/Umraniye/(:any)'] = 'RU_Properties/Umraniye/$1';
+
+$route['ru/Properties/Uskudar'] = 'RU_Properties/Uskudar';
+$route['ru/properties/Uskudar/(:any)'] = 'RU_Properties/Uskudar/$1';
+
+$route['ru/Properties/Zeytinburnu'] = 'RU_Properties/Zeytinburnu';
+$route['ru/properties/Zeytinburnu/(:any)'] = 'RU_Properties/Zeytinburnu/$1';
+
 $route['about-us'] = 'about_us';
 $route['contact-us'] = 'contact_us';
 $route['buying-online'] = 'buying_online';
@@ -72,7 +219,7 @@ $route['properties/Gocek/(:any)'] = 'properties/Gocek/$1';
 $route['properties/Izmir/(:any)'] = 'properties/Izmir/$1';
 $route['properties/Apartment/(:any)'] = 'properties/Apartment/$1';
 $route['properties/Bungalow/(:any)'] = 'properties/Bungalow/$1';
-$route['properties/Hotel/(:any)'] = 'properties/Hotel/$1';
+//$route['properties/Hotel'] = 'properties/Hotel/$1';
 $route['properties/Duplex/(:any)'] = 'properties/Duplex/$1';
 $route['properties/Mansion/(:any)'] = 'properties/Mansion/$1';
 $route['properties/Land_for_sale/(:any)'] = 'properties/Land_for_sale/$1';

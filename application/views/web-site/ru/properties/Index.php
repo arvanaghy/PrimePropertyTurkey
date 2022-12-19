@@ -14,6 +14,7 @@
 <meta name="description"
       content="Prime Property Turkey the best place to search for Turkish Properties, offers best deals for Istanbul real estate and some of the most attractive offers in Fethiye , Kalkan , Kas , Gocek">
 <script src="https://www.google.com/recaptcha/api.js"></script>
+
 <style type="text/css">
     .sold-out {
         position: absolute;
@@ -377,15 +378,27 @@
                         <nav aria-label="Page navigation example">
                             <ul class="pagination justify-content-center">
                                 <li class="page-item">
-                                    <a class="page-link"  href="<?= base_url(); ?>ru/properties"
-                                       tabindex="-1" title="FIRST"> <i
-                                            class="fas fa-angle-double-left"></i> </a>
+                                    <a class="page-link"  href="<?= base_url(); ?>ru/properties" tabindex="-1" title="FIRST"> <i
+                                                class="fas fa-angle-double-left"></i> </a>
                                 </li>
                                 <? if ($page_id < 2) { ?>
-                                    <? for ($i = 0; $i <= $page_id + 3; $i++) { ?>
+                                    <? for ($i = 0; $i <= $page_id+2; $i++) { ?>
+                                        <? if ($i>$pages){ break; } ?>
+                                        <? if ((int)$page_id == $i) { ?>
+                                            <li class="page-item text-danger"><a  class="page-link text-danger"
+                                                                                  href="<?= base_url(); ?>ru/properties/<?= $i; ?>"><?= $i + 1; ?></a>
+                                            </li>
+                                        <? } else { ?>
+                                            <li class="page-item"><a class="page-link"
+                                                                     href="<?= base_url(); ?>ru/properties/<?= $i; ?>"><?= $i + 1; ?></a>
+                                            </li>
+                                        <? } ?>
+                                    <? } ?>
+                                <? }elseif ($page_id > $pages-2){ ?>
+                                    <? for ($i = (int)$page_id-2; $i <= $pages; $i++) { ?>
+                                        <? if ($i>$pages){ break; } ?>
                                         <? if ((int)$page_id == $i) { ?>
                                             <li class="page-item text-danger"><a class="page-link text-danger"
-
                                                                                  href="<?= base_url(); ?>ru/properties/<?= $i; ?>"><?= $i + 1; ?></a>
                                             </li>
                                         <? } else { ?>
@@ -394,21 +407,9 @@
                                             </li>
                                         <? } ?>
                                     <? } ?>
-                                <? } elseif ($page_id > $pages - 2) { ?>
-                                    <? for ($i = (int)$page_id - 2; $i <= $pages; $i++) { ?>
-                                        <? if ((int)$page_id == $i) { ?>
-                                            <li class="page-item text-danger"><a class="page-link text-danger"
-
-                                                                                 href="<?= base_url(); ?>ru/properties/<?= $i; ?>"><?= $i + 1; ?></a>
-                                            </li>
-                                        <? } else { ?>
-                                            <li class="page-item"><a class="page-link"
-                                                                     href="<?= base_url(); ?>ru/properties/<?= $i; ?>"><?= $i + 1; ?></a>
-                                            </li>
-                                        <? } ?>
-                                    <? } ?>
-                                <? } else { ?>
-                                    <? for ($i = (int)$page_id - 2; $i <= $page_id + 2; $i++) { ?>
+                                <? } else {?>
+                                    <? for ($i = (int)$page_id-2; $i <= $page_id+2; $i++) { ?>
+                                        <? if ($i>$pages){ break; } ?>
                                         <? if ((int)$page_id == $i) { ?>
                                             <li class="page-item text-danger"><a class="page-link text-danger"
                                                                                  href="<?= base_url(); ?>ru/properties/<?= $i; ?>"><?= $i + 1; ?></a>
@@ -421,9 +422,8 @@
                                     <? } ?>
                                 <? } ?>
                                 <li class="page-item">
-                                    <a class="page-link"
-                                       href="<?= base_url(); ?>ru/properties/<?= $pages; ?>" title="LAST"> <i
-                                            class="fas fa-angle-double-right"></i> </a>
+                                    <a class="page-link"  href="<?= base_url(); ?>ru/properties/<?= $pages; ?>" title="LAST"> <i
+                                                class="fas fa-angle-double-right"></i> </a>
                                 </li>
                             </ul>
                         </nav>

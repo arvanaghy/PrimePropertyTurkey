@@ -13,6 +13,18 @@
 <meta name="description" content="apartment for investment in turkey">
 <link rel="canonical" href="https://www.primepropertyturkey.com/apartment-for-investment-in-turkey"/>
 <script src="https://www.google.com/recaptcha/api.js" ></script>
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="https://www.primepropertyturkey.com/apartment-for-investment-in-turkey">
+<meta name="twitter:creator" content="Justin Mays">
+<meta name="twitter:image:alt" content="Apartment for investment in turkey">
+<meta name="twitter:title"
+      content="Apartment for investment in turkey">
+<meta name="twitter:description"
+      content="apartment for investment in turkey">
+<meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
+
+
 <style type="text/css">
     svg {
         cursor: pointer;

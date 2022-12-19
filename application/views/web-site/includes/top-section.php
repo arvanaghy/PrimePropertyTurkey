@@ -27,7 +27,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="dropdown mx-2">
+                    <div class="dropdown mx-1 mx-md-2">
                         <button class="btn btn-sm btn-light dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
                             Language
                         </button>
@@ -194,9 +194,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url();?>Resale">Resale</a>
             </li>
-<!--            <li class="nav-item">-->
-<!--                <a class="nav-link" href="--><?//= base_url();?><!--legal-team">Legal Team</a>-->
-<!--            </li>-->
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url();?>Legal-Team">Legal Team</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url();?>blog">Blog</a>
             </li>

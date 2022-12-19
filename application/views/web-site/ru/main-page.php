@@ -1,27 +1,27 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php $this->load->view('web-site/includes/head-load'); ?>
-<title>Продажа недвижимости в Турции | Prime Property Turkey</title>
+<title>Элитная недвижимость на продажу в Турции | Prime Property Turkey</title>
 <meta name="description"
-      content="Найдите свою идеальную недвижимость в Турции на Prime Property Turkey. У нас есть широкий выбор недвижимости для продажи в Турции. Если вы ищете или имеете недвижимость на продажу в Стамбуле, Алтинкуме, Бодруме, Фетхие, Калкане в Турции.">
+      content="Найдите свою идеальную недвижимость в Турции в Prime Property Turkey. Мы предлагаем широкий выбор недвижимости для продажи в Турции. Если вы хотите купить или продать недвижимость в Стамбуле, Алтынкуме, Бодруме, Фетхие, Калкане, свяжитесь с нами.">
 <meta name="keywords"
-      content="Продажа недвижимости в Турции, покупка недвижимости в Турции, гражданство по инвестициям в Турции, программа гражданства по инвестициям для получения турецкого гражданства.">
+      content="Продажа недвижимости в Турции, Купить недвижимость в Турции, Гражданство за инвестиции в Турции, Программа для получения гражданства Турции по инвестициям.">
 <link rel="canonical" href="https://www.primepropertyturkey.com/ru"/>
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.primepropertyturkey.com/ru">
-<meta property="og:title" content="Продажа недвижимости в Турции | Prime Property Turkey">
+<meta property="og:title" content="Элитная недвижимость на продажу в Турции | Prime Property Turkey">
 <meta property="og:description"
-      content="Find your perfect property in Turkey at Prime Property Turkey. We have a wide range of properties for sale in Turkey. If you are looking for or have property for sale Istanbul, Altinkum, Bodrum, Fethiye, Kalkan in Turkey.">
+      content="Найдите свою идеальную недвижимость в Турции в Prime Property Turkey. Мы предлагаем широкий выбор недвижимости для продажи в Турции. Если вы хотите купить или продать недвижимость в Стамбуле, Алтынкуме, Бодруме, Фетхие, Калкане, свяжитесь с нами.">
 <meta property="og:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="https://www.primepropertyturkey.com/ru">
 <meta name="twitter:creator" content="Justin Mays">
-<meta name="twitter:image:alt" content="Продажа недвижимости в Турции | Prime Property Turkey">
+<meta name="twitter:image:alt" content="Элитная недвижимость на продажу в Турции | Prime Property Turkey">
 <meta name="twitter:title"
-      content="Продажа недвижимости в Турции | Prime Property Turkey">
+      content="Элитная недвижимость на продажу в Турции | Prime Property Turkey">
 <meta name="twitter:description"
-      content="Найдите свою идеальную недвижимость в Турции на Prime Property Turkey. У нас есть широкий выбор недвижимости для продажи в Турции. Если вы ищете или имеете недвижимость на продажу в Стамбуле, Алтинкуме, Бодруме, Фетхие, Калкане в Турции.">
+      content="Найдите свою идеальную недвижимость в Турции в Prime Property Turkey. Мы предлагаем широкий выбор недвижимости для продажи в Турции. Если вы хотите купить или продать недвижимость в Стамбуле, Алтынкуме, Бодруме, Фетхие, Калкане, свяжитесь с нами.">
 <meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <link
@@ -83,34 +83,46 @@
 
             <div class="carousel-item active ">
                 <a href="https://www.primepropertyturkey.com/ru/properties/apartment-beyoglu-PPTV0056">
-                    <img src="<?= base_url(); ?>assets/web-site/images/2022_12_06_16_29_12.webp" class="d-block w-100" alt="Fethiye"  >
+                    <img src="<?= base_url(); ?>assets/web-site/images/2022_12_06_16_29_12.webp" class="d-block w-100"
+                         alt="Fethiye">
                 </a>
                 <div class="carousel-caption d-block">
-                    <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >запросить сейчас ! </button>
+                    <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal">
+                        УЗНАТЬ БОЛЬШЕ !
+                    </button>
                 </div>
             </div>
             <div class="carousel-item ">
                 <a href="https://www.primepropertyturkey.com/ru/properties/luxury-living-homes-move-in-ready-in-uskudar">
-                    <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_41_43.webp" class="d-block w-100" alt="Istanbul"   >
+                    <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_41_43.webp" class="d-block w-100"
+                         alt="Istanbul">
                 </a>
                 <div class="carousel-caption d-block">
-                    <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >запросить сейчас ! </button>
+                    <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal">
+                        УЗНАТЬ БОЛЬШЕ !
+                    </button>
                 </div>
             </div>
             <div class="carousel-item">
                 <a href="https://www.primepropertyturkey.com/ru/properties/Five-star-apartments-Istanbul">
-                    <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_41_57.webp" class="d-block w-100" alt="Fethiye"  >
+                    <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_41_57.webp" class="d-block w-100"
+                         alt="Fethiye">
                 </a>
                 <div class="carousel-caption d-block">
-                    <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >запросить сейчас ! </button>
+                    <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal">
+                        УЗНАТЬ БОЛЬШЕ !
+                    </button>
                 </div>
             </div>
             <div class="carousel-item">
                 <a href="https://www.primepropertyturkey.com/ru/properties/duplexes-therra-park">
-                    <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_42_09.webp" class="d-block w-100" alt="Fethiye"  >
+                    <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_42_09.webp" class="d-block w-100"
+                         alt="Fethiye">
                 </a>
                 <div class="carousel-caption d-block">
-                    <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >запросить сейчас ! </button>
+                    <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal">
+                        УЗНАТЬ БОЛЬШЕ !
+                    </button>
                 </div>
             </div>
         </div>
@@ -128,12 +140,9 @@
     <div class="container-fluid">
         <div class="row justify-content-center align-items-center my-2 py-3">
             <div class="find-title">
-                     <span class="pre">
-                         Найдите свою
-                     </span>
-                <span class="pro">
-                        недвижимость
-                    </span>
+                 <span class="pre">
+                     Найти подходящий объект
+                 </span>
             </div>
             <div class="find-form">
                 <form action="<?= base_url(); ?>Find" method="post"
@@ -141,7 +150,7 @@
                     <div class="row my-2 justify-content-around text-right">
                         <div class="col-lg-2 my-1" id="City">
                             <select name="City" id="city_value" class="form-control">
-                                <option value="All" selected>город</option>
+                                <option value="All" selected>Город</option>
                                 <option value="All">All</option>
                                 <? foreach ($cityNames as $value) { ?>
                                     <option value="<?= $value; ?>"><?= $value; ?></option>
@@ -150,7 +159,7 @@
                         </div>
                         <div class="col-lg-1 my-1" id="Type">
                             <select name="Type" id="property_type" class="form-control ">
-                                <option value="All" selected>тип</option>
+                                <option value="All" selected>Вид недвижимости</option>
                                 <option value="All">All</option>
                                 <? foreach ($ProType as $value) { ?>
                                     <option value="<?= $value; ?>"><?= $value; ?></option>
@@ -159,7 +168,7 @@
                         </div>
                         <div class="col-lg-2 my-1" id="min_price">
                             <select name="min_price" class="form-control ">
-                                <option value="min" selected>минимальная цена</option>
+                                <option value="min" selected>Минимальная стоимость</option>
                                 <option value="100000">&#36; 100.000</option>
                                 <option value="200000">&#36; 200.000</option>
                                 <option value="300000">&#36; 300.000</option>
@@ -170,7 +179,7 @@
                         </div>
                         <div class="col-lg-2 my-1" id="max_price">
                             <select class="form-control" name="max_price">
-                                <option value="5000000" selected>максимальная цена</option>
+                                <option value="5000000" selected>Максимальная стоимость</option>
                                 <option value="100000">&#36; 100.000</option>
                                 <option value="200000">&#36; 200.000</option>
                                 <option value="300000">&#36; 300.000</option>
@@ -182,17 +191,17 @@
                         </div>
                         <div class="col-lg-2 my-1" id="bedroom">
                             <select class="form-control" name="bedroom" id="property_bed">
-                                <option value="All" selected>количество спален</option>
+                                <option value="All" selected>Комнат</option>
                                 <? foreach ($proBed as $value) { ?>
                                     <option value="<?= $value; ?>"><?= $value; ?></option>
                                 <? } ?>
                             </select>
                         </div>
                         <div class="col-lg-2 my-1">
-                            <input type="text" placeholder="Reference id" class="form-control" name="referenceID">
+                            <input type="text" placeholder="ID объекта" class="form-control" name="referenceID">
                         </div>
                         <div class="col-lg-1 justify-content-center my-1">
-                            <input type="submit" class="btn red-button btn-block" value="поиск">
+                            <input type="submit" class="btn red-button btn-block" value="Поиск">
                         </div>
                     </div>
                 </form>
@@ -213,17 +222,16 @@
                         </span>
                 </h1>
                 <p id="slogan" class="mt-2 font-italic">
-                    " Делайте это правильно "
+                    " Делайте Правильно "
                 </p>
                 <p class="text-justify mx-md-5 px-md-5 my-md-5 my-1 py-1">
-                    Prime Property Turkey была создана для удовлетворения постоянно растущей потребности в турецкой
-                    компании по недвижимости, которая просто делает все правильно. Как Prime Property Turkey, мы
-                    стремимся к максимальной прозрачности и коммуникации на протяжении всего процесса покупки и продажи
-                    недвижимости. гарантируя, что наши клиенты будут заботиться о том уровне, который они заслуживают.
-                    Решение о недвижимости является сложным, независимо от того, где вы находитесь в мире. Наши знания и
-                    опыт на турецком рынке обеспечат защиту и оценку каждой покупки, будь то на праздник, полный рабочий
-                    день или инвестиции. Мы здесь, в Prime Property Turkey, стараемся "делать это правильно" каждый раз,
-                    когда мы говорим, встречаем и покупаем .
+                    Мы создали агентство Prime Property Turkey, чтобы работать на растущем турецком рынке недвижимости
+                    правильно и эффективно. Наша компания стремится к максимально прозрачности всего процесса покупки и
+                    послепродажного обслуживания. Мы гарантируем нашим клиентам заботу, которой они достойны. Покупая
+                    недвижимость, мы принимаем довольно сложное решение, незасисимо от того, в какой точке мира мы
+                    находимся. Наш опыт и знание турецкого рынка гарантируют Вам, что каждая покупка (совершаете ли вы
+                    её для инвестиций или своего отдыха), будет полностью защищена. Мы в Prime Property Turkey стремимся
+                    "делать это правильно" каждый раз, когда встречаемся, обсуждаем и помогаем Вам заключить сделку.
                 </p>
             </div>
         </div>
@@ -233,30 +241,28 @@
     <div class="container-fluid">
         <div class="row justify-content-between px-md-4 pr-md-5 align-items-center my-2 py-3">
             <div class="find-title">
-                         <span class="pre">
-                              Quick
-                         </span>
-                <span class="pro">
-                             Enquiry
-                        </span>
+                 <span class="pre">
+                      Оставить Заявку
+                 </span>
             </div>
             <div class="find-form">
                 <form action="<?= base_url(); ?>Post/enquire" method="post"
                       class="justify-content-end text-right">
                     <div class="row my-2 justify-content-around text-right">
                         <div class="col-lg-3 my-1">
-                            <input type="text" class="form-control" id="info" name="info" placeholder="полное имя">
+                            <input type="text" class="form-control" id="info" name="info" placeholder="Имя и фамилия">
                         </div>
                         <div class="col-lg-2 my-1">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="эл. адрес">
+                            <input type="email" class="form-control" id="email" name="email"
+                                   placeholder="Электронная почта">
                         </div>
                         <div class="col-lg-3 my-1">
-                            <input type="text" id="modal_phone" class="form-control" placeholder="телефон"
+                            <input type="text" id="modal_phone" class="form-control" placeholder="Номер телефона"
                                    name="phone[main]">
                         </div>
                         <div class="col-lg-2 my-1">
                             <select class="form-control" id="budget" name="budget">
-                                <option value="6" selected>Max Budget</option>
+                                <option value="6" selected>Бюджет</option>
                                 <option value="1">Up to &#36; 100.000</option>
                                 <option value="2">Up to &#36; 200.000</option>
                                 <option value="3">Up to &#36; 300.000</option>
@@ -266,7 +272,7 @@
                             </select>
                         </div>
                         <div class="col-lg-2 justify-content-center my-1">
-                            <input type="submit" class="btn red-button btn-block" value="отправить Enquiry">
+                            <input type="submit" class="btn red-button btn-block" value="Оставить заявку">
                         </div>
                     </div>
                 </form>
@@ -278,7 +284,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <h2 class="text-center font-weight-bold my-3 blue-text px-3">
-                Рекомендуемая турецкая недвижимость
+                Рекомендуемые Турецкие Объекты
             </h2>
         </div>
         <div id="all_recommended" class="mt-4">
@@ -404,7 +410,7 @@
                                                             data-toggle="modal"
                                                             data-whatever="<?= $city->Property_referenceID; ?>"
                                                             data-target="#quickEnquireModal">
-                                                        Quick Enquiry
+                                                        Оставить Заявку
                                                     </button>
                                                 </div>
                                             </div>
@@ -425,22 +431,21 @@
             <div class="col-md-8 text-center">
                 <h3 class="mx-md-5 px-md-5 mx-1 px-1 my-1 py-1 text-center">
                     <span class="font-weight-bold">
-                        Программа "Гражданство Турции за инвестиции"
+                        Программа получения гражданства Турции за инвестиции
                     </span>
                 </h3>
-                <div class="m-1 mx-md-5 text-center text-danger" style="font-size: 1.5rem;">Приобретите инвестиции в
-                    недвижимость на сумму не менее $400.000 и получите возможность получить турецкое гражданство
+                <div class="m-1 mx-md-5 text-center text-danger" style="font-size: 1.5rem;">
+                    Инвестируйте в недвижимость не менее $400.000 и получите всю выгоду от турецкого гражданства
                 </div>
                 <p class="mx-1 px-1 mx-md-5 px-md-5 my-md-3 my-2 py-2 text-justify">
-                    Гражданство Турции является выгодным вариантом для тех, кто хочет инвестировать в Турцию $400K и
-                    более. Вместо того чтобы инвестировать или купить дом своей мечты на Бирюзовом побережье Турции,
-                    программа "Гражданство за инвестиции" позволяет вам гибко строить свою жизнь в качестве гражданина
-                    Турции. Кроме того, как гражданин Турции, вы можете бесплатно пользоваться медицинскими и
-                    образовательными услугами страны. Свяжитесь с нами сегодня, чтобы узнать, как вы можете стать частью
-                    будущего Турции.
+                    Получение Турецкого гражданства - это очень выгодный вариант для тех, кто хочет инвестировать в
+                    Турцию $400.000 и более. Благодаря программе гражданства через инвестиции, Вы не только покупаете
+                    дом Вашей мечты на Бирюзовом побережье, но также сможете пользоваться привилегиями гражданина
+                    Турции. Кроме того, вы будете бесплатно пользоваться медицинскими и образовательными услугами нашей
+                    страны. Свяжитесь с нами уже сегодня, чтобы узнать, как Вы можете стать частью будущего Турции.
                 </p>
-                <a href="<?= base_url(); ?>ru/citizenship-by-investment-in-turkey" class="btn red-button mb-1 mt-md-3">ЧИТАТЬ
-                    ДАЛЕЕ </a>
+                <a href="<?= base_url(); ?>ru/citizenship-by-investment-in-turkey" class="btn red-button mb-1 mt-md-3">
+                    Подробнее </a>
             </div>
             <div class="col-md-4 text-center d-flex">
                 <img src="<?= base_url(); ?>assets/web-site/images/base/masters/PASSAPORT.webp"
@@ -452,9 +457,7 @@
 <section class="YouTubeVideos" id="YouTubeVideos">
     <div class="container-fluid my-3 ">
         <div class="row justify-content-center">
-            <h4 class="text-center blue-text font-weight-bold">
-                YouTube - Прайм видео
-            </h4>
+            <h4 class="text-center blue-text font-weight-bold"> Prime-Видео на YouTube </h4>
         </div>
         <div class="row mt-3 mt-md-5 justify-content-around">
             <div class="col-11">
@@ -486,7 +489,7 @@
             <div class="col-md-4 text-white text-center"
                  style="background-image: linear-gradient(90deg, #3a5cc4,#092976);height: 60px">
                 <div class="testimonial-header h5">
-                    ОТ НАШИХ КЛИЕНТОВ
+                    Отзывы наших клиентов
                 </div>
             </div>
         </div>
@@ -500,7 +503,7 @@
                                     <div class="testimonial-title">
                                             <span class="mx-1"><i
                                                         class="fas fa-quote-left fa-3x text-danger"></i></span><span
-                                                style="font-size: 1.5rem;font-weight: 600; ">Полезные, надежные и объективные советы ...</span>
+                                                style="font-size: 1.5rem;font-weight: 600; ">Заслуживающие доверия и всегда объективны в своих советах...</span>
                                     </div>
                                 </div>
                                 <div class="col-md-2 text-right">
@@ -514,13 +517,13 @@
                             <div class="row justify-content-around pt-3 pb-2 ml-md-5 mx-md-3 mr-1 align-items-center">
                                 <div class="col">
                                     <p class="text-justify mx-1 ml-4 font-italic">
-                                        Я воспользовался услугами Prime Property Turkey для поиска вариантов инвестиций
-                                        в жилье в Стамбуле и нашел их очень информированными, полезными, заслуживающими
-                                        доверия и объективными в своих советах по различным вариантам в городе. Я имею с
-                                        ними дело уже более 6 месяцев на постоянной основе, и мое мнение об их
-                                        профессионализме остается неизменным. Если вы рассматриваете Турцию для
-                                        приобретения недвижимости, я бы рекомендовал компанию Prime Property, которая
-                                        поможет вам сориентироваться в этой экосистеме.
+                                        Я обратился в агентство Prime Property Turkey для поиска вариантов
+                                        инвестирования в жилье Стамбула и нашел их очень информированными, полезными,
+                                        заслуживающими доверия и объективными в своих советах по различным вариантам по
+                                        всему городу. Я сотрудничаю с ними более 6 месяцев на постоянной основе, и мое
+                                        мнение об их профессионализме не изменилось. Если вы ищете недвижимость в
+                                        Турции, я бы порекомендовал Prime Property, чтобы помочь вам ориентироваться в
+                                        экосистеме турецкой недвижимости.
                                     </p>
                                 </div>
                             </div>
@@ -556,7 +559,7 @@
                                     <div class="testimonial-title">
                                             <span class="mx-1"><i
                                                         class="fas fa-quote-left fa-3x text-danger"></i></span><span
-                                                style="font-size: 1.5rem;font-weight: 900 ">Беспроблемный опыт инвестирования в недвижимость ...</span>
+                                                style="font-size: 1.5rem;font-weight: 900 ">Безупречный опыт инвестиций в недвижимость...</span>
                                     </div>
                                 </div>
                                 <div class="col-md-2 text-right">
@@ -570,14 +573,16 @@
                             <div class="row justify-content-around pt-3 pb-2 ml-md-5 mx-md-3 mr-1 align-items-center">
                                 <div class="col">
                                     <p class="text-justify mx-1 ml-4 font-italic">
-                                        В XXI веке, когда интернет предоставляет нам прямой доступ, приобрести
-                                        недвижимость за рубежом и стать владельцем недвижимости стало намного проще.
-                                        Prime Property Turkey готова и имеет честь предоставить вам услуги виртуальной
-                                        недвижимости. Наш виртуальный тур - это интерактивная программа, разработанная
-                                        для того, чтобы вы могли изучить и посетить объекты недвижимости в Турции, не
-                                        выходя из дома. За шесть простых шагов вы можете стать владельцем недвижимости и
-                                        получить возможность стать гражданином Турции, инвестировав в недвижимость всего
-                                        за несколько кликов.
+                                        Компания Prime Property сопровождала наш процесс инвестирования в недвижимость,
+                                        с момента выбора объекта и до самой продажи, Омран заботился буквально обо всем.
+                                        Нам должным образом помогли ознакомиться со всеми документами, необходимыми для
+                                        успешной обработки нашего заявления на получение гражданства. Сотрудники
+                                        агентства показали нам ряд вариантов недвижимости, которые соответствовали нашим
+                                        критериям, а также другие аналогичные объекты для сравнения. Мы даже не ожидали
+                                        такого личного и профессионального обслуживания, и внимательного отношения к нам
+                                        после продажи, нам даже дали контакт дизайнера интерьеров. Я настоятельно
+                                        рекомендую это агентство любому иностранному покупателю, который хочет разумно
+                                        инвестировать в турецкую недвижимость.
                                     </p>
                                 </div>
                             </div>
@@ -613,7 +618,7 @@
                                     <div class="testimonial-title">
                                             <span class="mx-1"><i
                                                         class="fas fa-quote-left fa-3x text-danger"></i></span><span
-                                                style="font-size: 1.5rem;font-weight: 900 ">Мне повезло, что я наткнулся на агентство Prime Property ...</span>
+                                                style="font-size: 1.5rem;font-weight: 900 ">Мне повезло встретить на своем пути агентство недвижимости Prime Property...</span>
                                     </div>
                                 </div>
                                 <div class="col-md-2 text-right">
@@ -627,12 +632,11 @@
                             <div class="row justify-content-around pt-3 pb-2 ml-md-5 mx-md-3 mr-1 align-items-center">
                                 <div class="col">
                                     <p class="text-justify mx-1 ml-4 font-italic">
-                                        Мне повезло, что я наткнулся на агентство Prime Property, они значительно
-                                        облегчили мои поиски квартиры. Я бы рекомендовал всем работать с этим
-                                        агентством.
-                                        Они прекрасные профессионалы, они оказали мне любую помощь, и они дружелюбны во
-                                        всех отношениях. Я бы рекомендовал это агентство всем. Благодаря этому агентству
-                                        я смогла найти квартиру, которую искала долгое время.
+                                        Мне повезло найти агентство Prime Property, которое значительно облегчило мой
+                                        поиск квартиры. Они большие профессионалы! Сотрудники оказали мне всестороннюю
+                                        помощь, к тому же они дружелюбны во всех отношениях. Я бы порекомендовала это
+                                        агентство всем и каждому. Благодаря Prime Property я смогла найти квартиру,
+                                        которую давно искала.
                                     </p>
                                 </div>
                             </div>
@@ -685,16 +689,14 @@
                         </span>
                 </h3>
                 <p class="text-justify py-2">
-                    В XXI веке, когда интернет предоставляет нам прямой доступ, приобрести недвижимость за рубежом и
-                    стать владельцем недвижимости стало намного проще. Prime Property Turkey готова и имеет честь
-                    предоставить вам услуги виртуальной недвижимости. Наш виртуальный тур - это интерактивная программа,
-                    разработанная для того, чтобы вы могли изучить и посетить объекты недвижимости в Турции, не выходя
-                    из дома. За шесть простых шагов вы можете стать владельцем недвижимости и получить возможность стать
-                    гражданином Турции, инвестировав в недвижимость всего за несколько кликов.
+                    В 21 веке, когда мы имеем свободный доступ в Интернет, стать владельцем недвижимости в другой стране
+                    стало намного проще. Prime Property Turkey готова предоставить Вам услугу виртуального подбора
+                    недвижимости. Наш виртуальный тур - это интерактивная программа, позволяющая Вам знакомиться с
+                    объектами недвижимости в Турции, не выходя из дома. За шесть простых шагов Вы можете не только стать
+                    владельцем квартиры или дома, но и получить гражданство Турции, совершив покупку онлайн.
                 </p>
                 <a href="<?= base_url(); ?>ru/buying-online" class="btn red-button"
-                   style="display: block;width: 175px;text-align: center;border-radius: 20px;margin-bottom: 30px;">
-                    Узнать больше </a>
+                   style="display: block;width: 175px;text-align: center;border-radius: 20px;margin-bottom: 30px;"> Узнать больше </a>
 
             </div>
             <div class="col-md-5 d-flex">
@@ -748,7 +750,7 @@
                     <? } ?>
                 </div>
                 <div class="row justify-content-center">
-                    <a href="<?= base_url(); ?>ru/blog" class="btn red-button"> посмотреть все </a>
+                    <a href="<?= base_url(); ?>ru/blog" class="btn red-button"> Посмотреть все </a>
                 </div>
             </div>
         </div>
@@ -770,7 +772,7 @@
                     <div class="row align-items-center">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Full Name" required form="enquiry"
+                                <input type="text" class="form-control" placeholder="Имя и фамилия" required form="enquiry"
                                        name="info" id="modalEnquireForm_info">
                                 <span id="modalEnquireForm_info_error"
                                       style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
@@ -781,7 +783,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" id="modal_phone" class="form-control" placeholder="Phone"
+                                <input type="text" id="modal_phone" class="form-control" placeholder="Номер телефона"
                                        name="phone[main]" form="enquiry" required>
                                 <span id="modalEnquireForm_phone_error"
                                       style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
@@ -792,7 +794,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email" name="email"
+                                <input type="email" class="form-control" placeholder="Электронная почта" name="email"
                                        form="enquiry" required>
                             </div>
                         </div>

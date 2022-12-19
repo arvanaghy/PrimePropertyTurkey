@@ -66,6 +66,7 @@ RewriteRule /blog/why_invest_now_in_tr_citizenship_advantages_and_investment$ ht
 RewriteRule /blog/business_districts_of_istanbul_maslak_kazyatagi_altunizade_sisli_beyoglu_basin_express$ https://www.primepropertyturkey.com/blog/business-districts-of-istanbul [R=301,L]
 RewriteRule /blog/uskudar_-_from_the_coast_to_the_hills$ https://www.primepropertyturkey.com/blog/uskudar-from-the-coast-to-the-hills [R=301,L]
 RewriteRule /blog/bringing_pets_to_turkey$ https://www.primepropertyturkey.com/blog/bringing-pets-turkey [R=301,L]
+RewriteRule /blog/$ https://www.primepropertyturkey.com/blog [R=301,L]
 
 RewriteRule /properties/fully_furnished_apartments_for_sale_-_colony_coliving$ https://www.primepropertyturkey.com/properties/apartments-colony-coliving [R=301,L]
 RewriteRule /properties/apartments_with_amazing_golden_horn_view_-_forev_modern_halic$ https://www.primepropertyturkey.com/properties/spectacular-Istanbul-Halic [R=301,L]
@@ -113,9 +114,45 @@ RewriteRule /properties/ready-to-move-apartments-for-sale-in-istanbul-diamond-re
 RewriteRule /Properties/Hotel$ https://www.primepropertyturkey.com/properties [R=301]
 RewriteRule /Properties/Penthouse$ https://www.primepropertyturkey.com/properties [R=301,L]
 RewriteRule /Properties/Bursa$ https://www.primepropertyturkey.com/properties [R=301,L]
+
+RewriteRule /Properties/Duplex$ https://www.primepropertyturkey.com/Turkey/All-cities/Duplex/All-bedroom/0-5000000 [R=301,L]
+RewriteRule /properties/Duplex/0$ https://www.primepropertyturkey.com/Turkey/All-cities/Duplex/All-bedroom/0-5000000 [R=301,L]
+
 RewriteRule /Properties/Bungalow$ https://www.primepropertyturkey.com/Turkey/All-cities/Bungalow/All-bedroom/0-5000000 [R=301,L]
+RewriteRule /properties/Bungalow/0$ https://www.primepropertyturkey.com/Turkey/All-cities/Bungalow/All-bedroom/0-5000000 [R=301,L]
+
 RewriteRule /Properties/Commercial$ https://www.primepropertyturkey.com/Turkey/All-cities/Commercial/All-bedroom/0-5000000 [R=301,L]
+RewriteRule /properties/Commercial/0$ https://www.primepropertyturkey.com/Turkey/All-cities/Commercial/All-bedroom/0-5000000 [R=301,L]
+RewriteRule /properties/Commercial/1$ https://www.primepropertyturkey.com/Turkey/All-cities/Commercial/All-bedroom/0-5000000 [R=301,L]
+
+RewriteRule /Properties/Mansion$ https://www.primepropertyturkey.com/Turkey/All-cities/Mansion/All-bedroom/0-5000000 [R=301,L]
+RewriteRule /properties/Mansion/0$ https://www.primepropertyturkey.com/Turkey/All-cities/Mansion/All-bedroom/0-5000000 [R=301,L]
+
+RewriteRule /Properties/Villa$ https://www.primepropertyturkey.com/Turkey/All-cities/Villa/All-bedroom/0-5000000 [R=301,L]
+RewriteRule /properties/Villa/0$ https://www.primepropertyturkey.com/Turkey/All-cities/Villa/All-bedroom/0-5000000 [R=301,L]
+RewriteRule /properties/Villa/1$ https://www.primepropertyturkey.com/Turkey/All-cities/Villa/All-bedroom/0-5000000 [R=301,L]
+RewriteRule /properties/Villa/2$ https://www.primepropertyturkey.com/Turkey/All-cities/Villa/All-bedroom/0-5000000 [R=301,L]
+RewriteRule /properties/Villa/3$ https://www.primepropertyturkey.com/Turkey/All-cities/Villa/All-bedroom/0-5000000 [R=301,L]
+RewriteRule /properties/Villa/4$ https://www.primepropertyturkey.com/Turkey/All-cities/Villa/All-bedroom/0-5000000 [R=301,L]
+RewriteRule /properties/Villa/5$ https://www.primepropertyturkey.com/Turkey/All-cities/Villa/All-bedroom/0-5000000 [R=301,L]
+
 RewriteRule /Properties/Apartment$ https://www.primepropertyturkey.com/Turkey/All-cities/Apartment/All-bedroom/0-5000000 [R=301,L]
+RewriteRule /properties/Apartment/0$ https://www.primepropertyturkey.com/Turkey/All-cities/Apartment/All-bedroom/0-5000000 [R=301,L]
+RewriteRule /properties/Apartment/1$ https://www.primepropertyturkey.com/Turkey/All-cities/Apartment/All-bedroom/0-5000000 [R=301,L]
+RewriteRule /properties/Apartment/2$ https://www.primepropertyturkey.com/Turkey/All-cities/Apartment/All-bedroom/0-5000000 [R=301,L]
+RewriteRule /properties/Apartment/3$ https://www.primepropertyturkey.com/Turkey/All-cities/Apartment/All-bedroom/0-5000000 [R=301,L]
+RewriteRule /properties/Apartment/4$ https://www.primepropertyturkey.com/Turkey/All-cities/Apartment/All-bedroom/0-5000000 [R=301,L]
+RewriteRule /properties/Apartment/5$ https://www.primepropertyturkey.com/Turkey/All-cities/Apartment/All-bedroom/0-5000000 [R=301,L]
+RewriteRule /properties/Apartment/6$ https://www.primepropertyturkey.com/Turkey/All-cities/Apartment/All-bedroom/0-5000000 [R=301,L]
+RewriteRule /properties/Apartment/7$ https://www.primepropertyturkey.com/Turkey/All-cities/Apartment/All-bedroom/0-5000000 [R=301,L]
+RewriteRule /properties/Apartment/8$ https://www.primepropertyturkey.com/Turkey/All-cities/Apartment/All-bedroom/0-5000000 [R=301,L]
+RewriteRule /properties/Apartment/9$ https://www.primepropertyturkey.com/Turkey/All-cities/Apartment/All-bedroom/0-5000000 [R=301,L]
+RewriteRule /properties/Apartment/10$ https://www.primepropertyturkey.com/Turkey/All-cities/Apartment/All-bedroom/0-5000000 [R=301,L]
+RewriteRule /properties/Apartment/11$ https://www.primepropertyturkey.com/Turkey/All-cities/Apartment/All-bedroom/0-5000000 [R=301,L]
+RewriteRule /properties/Apartment/12$ https://www.primepropertyturkey.com/Turkey/All-cities/Apartment/All-bedroom/0-5000000 [R=301,L]
+RewriteRule /properties/Apartment/13$ https://www.primepropertyturkey.com/Turkey/All-cities/Apartment/All-bedroom/0-5000000 [R=301,L]
+RewriteRule /properties/Apartment/14$ https://www.primepropertyturkey.com/Turkey/All-cities/Apartment/All-bedroom/0-5000000 [R=301,L]
+RewriteRule /properties/Apartment/15$ https://www.primepropertyturkey.com/Turkey/All-cities/Apartment/All-bedroom/0-5000000 [R=301,L]
 RewriteRule /properties/Istanbul/Apartment$ https://www.primepropertyturkey.com/Turkey/Istanbul/Apartment/All-bedroom/0-5000000 [R=301,L]
 
 RewriteRule /citizenship_by_investment$ https://www.primepropertyturkey.com/citizenship-by-investment-in-turkey [R=301,L]

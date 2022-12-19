@@ -10,7 +10,7 @@
 }else{
     $page_id =0;
 } ?>
-<link rel="canonical" href="https://www.primepropertyturkey.com/ru/blog/<? if ($page_id !=0){echo $page_id.'/';} ?>"/>
+<link rel="canonical" href="https://www.primepropertyturkey.com/ru/blog<? if ($page_id !=0){echo "/".$page_id;} ?>"/>
 <script src="https://www.google.com/recaptcha/api.js" ></script>
 <link
     rel="stylesheet"
@@ -33,6 +33,15 @@
         border-top: 5px solid #cf1717;
     }
 </style>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="https://www.primepropertyturkey.com/ru/blog/<? if ($page_id !=0){echo $page_id.'/';} ?>">
+<meta name="twitter:creator" content="Justin Mays">
+<meta name="twitter:image:alt" content="Блог о турецкой недвижимости | Prime Property Turkey">
+<meta name="twitter:title"
+      content="Блог о турецкой недвижимости | Prime Property Turkey">
+<meta name="twitter:description"
+      content="Читайте наши интересные блоги о недвижимости, образе жизни и отдыхе, последних новостях о турецкой недвижимости, советах по инвестициям, руководствах по покупке дома в Турции.">
+<meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
 </head>
 <body>
 <?php $this->load->view('web-site/ru/includes/top-section'); ?>

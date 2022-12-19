@@ -82,19 +82,19 @@
                         <li>
                             <i class="fas fa-chevron-right red-text mx-1"></i>
                             <a href="<?= base_url(); ?>ru/blog">
-                                блог
+                                Блог
                             </a>
                         </li>
                         <li>
                             <i class="fas fa-chevron-right red-text mx-1"></i>
                             <a href="<?= base_url(); ?>ru/How-To-Buy-Property-In-Turkey">
-                                Руководство покупателя
+                                Руководство для покупателя
                             </a>
                         </li>
                         <li>
                             <i class="fas fa-chevron-right red-text mx-1"></i>
                             <a href="<?= base_url(); ?>ru/citizenship-by-investment-in-turkey">
-                                Гражданство по инвестициям в Турции
+                                Турецкое гражданство за инвестиции
                             </a>
                         </li>
                     </ul>
@@ -102,62 +102,62 @@
                 <div class="col-md-2 my-4 my-md-0 justify-content-center" id="locationFooter">
                     <div>
                         <b>
-                            Местоположение
+                            Регион
                         </b>
                     </div>
                     <ul>
                         <li>
                             <i class="fas fa-chevron-right red-text mx-1"></i>
-                            <a href="<?= base_url(); ?>Properties/Istanbul">
-                                Istanbul
+                            <a href="<?= base_url(); ?>ru/Properties/Istanbul">
+                                Стамбул
                             </a>
                         </li>
                         <li>
                             <i class="fas fa-chevron-right red-text mx-1"></i>
-                            <a href="<?= base_url(); ?>Properties/Fethiye">
-                                Fethiye
+                            <a href="<?= base_url(); ?>ru/Properties/Fethiye">
+                                Фетхие
                             </a>
                         </li>
                         <li>
                             <i class="fas fa-chevron-right red-text mx-1"></i>
-                            <a href="<?= base_url(); ?>Properties/Kalkan">
-                                Kalkan
+                            <a href="<?= base_url(); ?>ru/Properties/Kalkan">
+                                Калкан
                             </a>
                         </li>
                         <li>
                             <i class="fas fa-chevron-right red-text mx-1"></i>
-                            <a href="<?= base_url(); ?>Properties/Kas">
-                                Kas
+                            <a href="<?= base_url(); ?>ru/Properties/Kas">
+                                Каш
                             </a>
                         </li>
                         <li>
                             <i class="fas fa-chevron-right red-text mx-1"></i>
-                            <a href="<?= base_url(); ?>Properties/Gocek">
-                                Gocek
+                            <a href="<?= base_url(); ?>ru/Properties/Gocek">
+                                Гечек
                             </a>
                         </li>
                         <li>
                             <i class="fas fa-chevron-right red-text mx-1"></i>
-                            <a href="<?= base_url(); ?>Properties/Antalya">
-                                Antalya
+                            <a href="<?= base_url(); ?>ru/Properties/Antalya">
+                                Анталья
                             </a>
                         </li>
                         <li>
                             <i class="fas fa-chevron-right red-text mx-1"></i>
                             <a href="<?= base_url(); ?>Properties/Izmir">
-                                Izmir
+                                Измир
                             </a>
                         </li>
                         <li>
                             <i class="fas fa-chevron-right red-text mx-1"></i>
-                            <a href="<?= base_url(); ?>Properties/Yalova">
-                                Yalova
+                            <a href="<?= base_url(); ?>ru/Properties/Yalova">
+                                Ялова
                             </a>
                         </li>
                         <li>
                             <i class="fas fa-chevron-right red-text mx-1"></i>
-                            <a href="<?= base_url(); ?>Properties/Trabzon">
-                                Trabzon
+                            <a href="<?= base_url(); ?>ru/Properties/Trabzon">
+                                Трабзон
                             </a>
                         </li>
 
@@ -166,14 +166,14 @@
                 <div class="col-md-3 my-4 my-md-0 justify-content-center" id="TypesFooter">
                     <div>
                         <b>
-                            тип
+                            Виды
                         </b>
                     </div>
                     <ul>
                         <li>
                             <i class="fas fa-chevron-right red-text mx-1"></i>
                             <a href="https://www.primepropertyturkey.com/Turkey/All-cities/Apartment/All-bedroom/0-5000000">
-                                Апартаменты
+                                Квартира
                             </a>
                         </li>
                         <li>
@@ -191,7 +191,7 @@
                         <li>
                             <i class="fas fa-chevron-right red-text mx-1"></i>
                             <a href="https://www.primepropertyturkey.com/Turkey/All-cities/Commercial/All-bedroom/0-5000000">
-                                Коммерческое
+                                Коммерческая
                             </a>
                         </li>
                         <li>

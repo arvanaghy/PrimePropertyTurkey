@@ -13,6 +13,16 @@
 <link rel="canonical" href="https://www.primepropertyturkey.com/prime-videos"/>
 <meta name="description"
       content="">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="https://www.primepropertyturkey.com/prime-videos">
+<meta name="twitter:creator" content="Justin Mays">
+<meta name="twitter:image:alt" content="YouTube Videos | Prime Property Turkey">
+<meta name="twitter:title"
+      content="YouTube Videos | Prime Property Turkey">
+<meta name="twitter:description"
+      content="">
+<meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <style type="text/css">
     .sold-out {

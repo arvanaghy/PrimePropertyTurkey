@@ -26,6 +26,15 @@
 <meta name="twitter:image"
       content="https://www.primepropertyturkey.com/assets/web-site/images/base/Prime-Property-Turkey-build-logo.jpg">
 <style type="text/css">
+    @font-face {
+        font-family: 'Miller-TextBoldItalic';
+        src: url('https://landing.primepropertyturkey.com/fonts/Miller-TextBoldItalic.ttf');
+        font-style: normal;
+        font-weight: normal;
+    }
+    .header-image-content h1 {
+        font-family: 'Miller-TextBoldItalic' !important;
+    }
     #enquire-gradiant {
         color: white;
         background-image: linear-gradient(140deg, #466ad8, #012169);
@@ -95,11 +104,16 @@
         padding-left: 1% !important;
     }
 
-    #theme-background .header-image-wrapper .header-image-content.offset-bottom .title {
-        font-size: 30px;
-        text-transform: unset;
-        line-height: 30px;
-        padding-bottom: 40px;
+    #theme-background .title {
+        font-size: 3rem !important;
+        line-height: 3.7rem !important;
+        color: darkblue;
+        font-weight: 800;
+    }
+    #theme-background p{
+        font-size: 1.7rem !important;
+        line-height: 1.8rem !important;
+        color: black;
     }
 
     #theme-background .header-image-wrapper .header-image-content.offset-bottom {
@@ -114,6 +128,110 @@
         margin-top: unset;
         padding-top: 36px;
     }
+
+    #theme-background #Citizenship-by-investment-BG {
+        background: url(./assets/web-site/images/legal-team/main-bg.webp) center !important;
+    }
+
+    #main-intro {
+        background-color: #f5f4f2;
+        font-family: 'Roboto-Regular' !important;
+    }
+
+    .features .icons-sec {
+        text-align: center;
+    }
+
+    .features .icons-sec ul {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+    }
+
+    .features .icons-sec ul li {
+        width: 25%;
+        float: left;
+        list-style: none;
+    }
+
+    .features .icons-sec ul li .icon-img {
+        margin: 0 0 28px;
+        position: relative;
+    }
+
+    .features .icons-sec ul li p {
+        font-family: 'Roboto-Regular';
+        font-size: 19px;
+        color: #4f5256;
+        line-height: 30px;
+        padding: 0 14px;
+    }
+
+    .features .icons-sec ul li .icon-img:after {
+        content: "";
+        position: absolute;
+        right: -50px;
+        top: 50px;
+        width: 100px;
+        height: 2px;
+        background-color: white;
+    }
+
+    .features .icons-sec ul li:last-child .icon-img:after {
+        content: "";
+        right: 0px;
+        top: 0px;
+        width: 0px;
+        height: 0px;
+        background-color: #f5f4f2;
+    }
+
+    .our-service .icon{
+        position: relative;
+        right: 0;
+        left: 0;
+        top: -50px;
+    }
+    .our-service .icon img{
+        background-color: white;
+        border-radius: 50%;
+    }
+    .our-service .btn-secondary:hover{
+        background-color: blue;
+        transition: 1s;
+    }
+    .icon-img img{
+        background-color: white;
+        border-radius: 50%;
+    }
+    .embed-responsive {
+        height: 245px;
+    }
+
+    #Citizenship-by-investment-content .col-lg-3{
+        padding-right: 5px !important;
+        padding-left: 5px !important;
+    }
+    @media screen and (max-width: 600px){
+        .features .icons-sec ul li {
+            width: 100%;
+            float: none;
+            list-style: none;
+        }
+        .features .icons-sec ul li .icon-img {
+            margin: unset;
+            position: unset;
+        }
+        .features .icons-sec ul li .icon-img:after {
+            content: "";
+            position: absolute;
+            right: unset;
+            top: unset;
+            width: 0;
+            height: 0;
+            background-color: unset;
+        }
+    }
 </style>
 </head>
 <body>
@@ -121,129 +239,168 @@
 <section id="theme-background">
     <div class="header-image-wrapper">
         <div class="bg" id="Citizenship-by-investment-BG"></div>
-        <div class="mask"></div>
         <div class="header-image-content offset-bottom">
-            <h1 class="title text-center font-weight-bold" style="padding-bottom: 20px !important;">Obtain Citizenship by Investment In Turkey</h1>
-            <p class="pb-5">Purchase Real Estate Worth At least 400.000 USD & Acquire Turkish Citizenship</p>
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-3">
+                    <img src="<?= base_url(); ?>assets/web-site/images/legal-team/Damla ozkan.webp" class="img-fluid" alt="damla-ozkan" style="-webkit-transform: scaleX(-1);transform: scaleX(-1);">
+                </div>
+                <div class="col col-md-6">
+                    <h1 class="title text-center font-weight-bold mb-5" >Obtain Citizenship by Investment In Turkey</h1>
+                    <p class="pb-5 text-center">Purchase Real Estate Worth At least 400.000 USD & Acquire Turkish Citizenship</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 <section id="Citizenship-by-investment-content">
-    <div class="container py-4">
-        <div class="row">
-            <div class="col-lg-8">
+    <div class="container-fluid py-4 px-xl-2">
+        <div class="row px-xl-2">
+            <div class="col-lg-9">
                 <div class="card" style="background-color: #eaeaea">
                     <div class="card-body">
-                        <div class="card-title">
+                        <div class="card-title h3 text-center font-weight-bold my-4 pb-4">
+                            Steps to Obtain Turkish Citizenship Through Real Estate Investment
+                        </div>
+                        <div class="features mt-5">
+                            <div class="icons-sec">
+                                <div class="container">
+                                    <ul>
+                                        <li>
+                                            <div class="icon-img"><img src="<?= base_url(); ?>assets/web-site/images/legal-team/upico1.webp" alt="obligation" width="103"
+                                                                       height="101"></div>
+                                            <p>Invest at least 400.000 USD in a property</p></li>
+                                        <li>
+                                            <div class="icon-img"><img src="<?= base_url(); ?>assets/web-site/images/legal-team/upico2.webp" alt="obligation" width="103"
+                                                                       height="101"></div>
+                                            <p>Acquire the Conformity Report</p></li>
+                                        <li>
+                                            <div class="icon-img"><img src="<?= base_url(); ?>assets/web-site/images/legal-team/upico3.webp" alt="obligation" width="103"
+                                                                       height="101"></div>
+                                            <p>Residence permit application</p></li>
+                                        <li>
+                                            <div class="icon-img"><img src="<?= base_url(); ?>assets/web-site/images/legal-team/upico4.webp" alt="obligation" width="103"
+                                                                       height="101"></div>
+                                            <p>Citizenship Application</p></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body our-service m-2">
+                        <h3 class="text-center font-weight-bold my-5">
+                            Our Services
+                        </h3>
+                        <div class="row justify-content-center align-items-center px-2">
+                            <div class="col-lg-4 my-2">
+                                <div class="card h-100">
+                                    <img src="<?= base_url(); ?>assets/web-site/images/legal-team/consultant.webp"
+                                         class="card-img-top">
+                                    <div class="icon text-center">
+                                        <img src="<?= base_url(); ?>assets/web-site/images/legal-team/downico1.webp" alt="" class="img-fluid">
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title pb-3 fw-bold">Real Estate Consultancy Services</h5>
+                                        <p class="card-text pb-4 px-3 justify-content-all">Our knowledgeable team of experts can
+                                            help you make a secure real estate investment to help open doors for you to acquire
+                                            Turkish Citizenship.</p>
+                                        <a href="https://www.primepropertyturkey.com" target="_blank" class="btn btn-secondary">Get
+                                            More Info
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 my-2">
+                                <div class="card">
+                                    <img src="<?= base_url(); ?>assets/web-site/images/legal-team/aftersale.webp"
+                                         class="card-img-top">
+                                    <div class="icon text-center">
+                                        <img src="<?= base_url(); ?>assets/web-site/images/legal-team/downico2.webp" alt="" class="img-fluid">
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title pb-3 fw-bold">After-Sales Services</h5>
+                                        <p class="card-text pb-4 px-3 justify-content-all">We have after-sales service for our
+                                            clients that include finding tenants for our clients’ rentals through our channels,
+                                            assisting in property resale via Power of attorney, property maintenance and interior
+                                            design.</p>
+                                        <a href="https://www.primepropertyturkey.com/after-sales" target="_blank"
+                                           class="btn btn-secondary">Get More Info
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 my-2">
+                                <div class="card">
+                                    <img src="<?= base_url(); ?>assets/web-site/images/legal-team/resale.webp"
+                                         class="card-img-top">
+                                    <div class="icon text-center">
+                                        <img src="<?= base_url(); ?>assets/web-site/images/legal-team/downico3.webp" alt="" class="img-fluid">
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title pb-3 fw-bold">Resale Services</h5>
+                                        <p class="card-text pb-4 px-3 justify-content-all">Prime Property Turkey also offers resale
+                                            services to clients and allows them to use its platform to upload and advertise their
+                                            property for hassle-free selling.</p>
+                                        <a href="https://www.primepropertyturkey.com/Resale" target="_blank"
+                                           class="btn btn-secondary">Get More Info
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body about-prime m-2 bg-white">
+                        <div class="row justify-content-center align-items-center px-2">
+                            <div class="col-lg-6">
+                                <div class="title h3 py-2 fw-bold text-center text-lg-left">
+                                    About Prime Property Turkey
+                                </div>
+                                <div class="description pb-3 text-danger fst-italic">
+                                    With over 10+ years of working in the Turkish real estate market, Prime Property Turkey caters to
+                                    foreign investors who are interested in living or investing in Turkey. We offer quality and
+                                    personalized real estate consultancy services to cater to our diverse clientele.
+                                </div>
+                                <div class="post-description pb-3">
+                                    No matter what your preferences are, Prime Property Turkey will help you find the property of your
+                                    dreams.
 
-                        </div>
-                        <div class="card my-3" id="1-section">
-                            <div class="card-body text-center">
-                                <div class="card-title h2 my-2 text-left">
-                                    Rentals
                                 </div>
-                                <img src="<?= base_url(); ?>assets/web-site/images/base/after-sales/RENTAL.webp"
-                                     class="img-fluid mt-2 mb-4" alt="after sales">
-                                <div class="content  text-justify my-2">
-                                    As Prime Property Turkey, we help you enjoy the benefits of your
-                                    investments. A large number of people are moving to Turkey because of
-                                    the peaceful environment and perfect weather and some deciding to move
-                                    because most companies have turned to remote working.
+                                <div class="signature">
                                 </div>
-                                <div class="content text-justify my-2">
-                                    If you decide to rent your property. Our company will help you with the
-                                    assurance that any maintenance needed is reported to the owner in time
-                                    so that the property remains profitable at all times. We will help you
-                                    get tenants that pay monthly rentals in time whether you prefer
-                                    students, small families, or individuals. We will advertise your
-                                    property through all channels and vet the potential tenants before they
-                                    move in.
-                                </div>
-                                <div class="content text-justify my-2">
-                                    The percentage of rental income in Turkey ranges from 6% to 9% per year
-                                    depending on the location of your property, whether it is in the city
-                                    center or a holiday district.
+                            </div>
+                            <div class="col-lg-6 text-center">
+                                <div class="embed-responsive embed-responsive-21by9">
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/WD3HRDN_mUA"
+                                            allowfullscreen></iframe>
                                 </div>
                             </div>
                         </div>
-                        <div class="card my-3" id="2-section">
-                            <div class="card-body text-center">
-                                <div class="card-title h2 my-2 text-left">
-                                    Resales
-                                </div>
-                                <img src="<?= base_url(); ?>assets/web-site/images/base/after-sales/RESALE.webp"
-                                     class="img-fluid mt-2 mb-4" alt="Resales">
-                                <div class="content  text-justify my-2">
-                                    Whether it's a villa or an apartment, resales should not give you a
-                                    headache. After buying property in Turkey, you might decide to sell your
-                                    property, look no further. Our company has a positive track record of
-                                    making sales in a short period of time with prices that will make both
-                                    the seller and the buyer happy.
-                                </div>
-                                <div class="content text-justify my-2">
-                                    Whether you are in Turkey or elsewhere, we will help you sell your
-                                    property through Power of Attorney (POA). All the processes that are
-                                    needed to make your sale necessary, we are here to help you. Prime
-                                    Property Turkey will assist you to sell your property through all our
-                                    media platforms. We will make sure that your property reaches the
-                                    potential buyers at the right time, wherever they are.
-                                </div>
-                                <div class="content text-justify my-2">
-                                    All you need to do is to submit the pictures of the property, the
-                                    listing price, and the cash price and we would be glad to resell your
-                                    property.
+                    </div>
+                    <div class="card-body Attorney m-2 bg-white">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-md-8">
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-md-2 text-center text-lg-left">
+                                        <img src="<?= base_url(); ?>assets/web-site/images/legal-team/downico1.webp" class="img-fluid d-md-block my-1" alt="">
+                                        <img src="<?= base_url(); ?>assets/web-site/images/legal-team/downico2.webp" class="img-fluid d-md-block my-1" alt="">
+                                        <img src="<?= base_url(); ?>assets/web-site/images/legal-team/downico3.webp" class="img-fluid d-md-block my-1" alt="">
+                                    </div>
+                                    <div class="col-md-10">
+                                        <h3 class="my-5 text-center text-lg-left">
+                                            Meet Our Attorney <span class="text-danger fw-bold"> Damla Ozkan </span>
+                                        </h3>
+                                        <p class="px-3">
+                                            Our attorney, Damla, is fluent in English and Turkish and has catered to Prime Property
+                                            Turkey’s diverse
+                                            clientele from all over the world. With 50+ citizenship applications completed, Damla can
+                                            take care of
+                                            your Turkish citizenship process and ensure proper document arrangement for a successful
+                                            application.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-
-                        </div>
-                        <div class="card my-3" id="3-section">
-                            <div class="card-body text-center">
-                                <div class="card-title h2 my-2 text-left">
-                                    Property Management
-                                </div>
-                                <img src="<?= base_url(); ?>assets/web-site/images/base/after-sales/PMANAGEMENT.webp"
-                                     class="img-fluid mt-2 mb-4"
-                                     alt="Property Management">
-                                <div class="content text-justify  my-2">
-                                    Cleaning services and landscape maintenance are also part of the
-                                    after-sale service that we provide. You can also trust us with meet and
-                                    greet services at your property for times you are not around or when you
-                                    have events going on special days.
-                                </div>
-                                <div class="content text-justify  my-2">
-                                    You might also wish to boost your security to 24/7 with guards or CCVT
-                                    installation, Prime Property Turkey's After-Sales team will assist you
-                                    in connecting with the reputable security companies in the city and
-                                    neighborhood your property.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card my-3" id="4-section">
-                            <div class="card-body">
-                                <div class="card-title h2 my-2 text-left">
-                                    Interior Design
-                                </div>
-                                <img src="<?= base_url(); ?>assets/web-site/images/base/after-sales/IDESIGN.webp"
-                                     class="img-fluid mt-2 mb-4" alt="Interior Design">
-                                <div class="content  text-justify  my-2">
-                                    Be it a home or a business that you buy, giving it furniture makes it
-                                    complete. But when you are out of Turkey and you want this need to be
-                                    met, that is where we come in.
-                                </div>
-                                <div class="content  text-justify  my-2">
-                                    Prime Property Turkey helps you purchase quality furniture for your
-                                    property. We will help you define the design of each room and create
-                                    focal points that give your home definitions. We are always in touch
-                                    with famous brand furniture distributors who are always well aware of
-                                    seasonal designs, keeping us in the niche of what is trending yet of
-                                    good prices.
-                                </div>
-                                <div class="content  text-justify  my-2">
-                                    If you wish for any renovations to be done in your home, our team will
-                                    assist you with all that you need to be remodeled whether it's a
-                                    brand-new apartment or a resale. All the aesthetics that you ever wished
-                                    for that makes your house a home will come to reality.
-                                </div>
+                            <div class="col-md-4">
+                                <img src="<?= base_url(); ?>assets/web-site/images/legal-team/Damla ozkan.webp" alt="" class="img-fluid">
                             </div>
                         </div>
                     </div>
@@ -269,7 +426,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="card side contact mb-2" id="enquire-gradiant">
                     <? $passed_data['reference_id'] = 'after sale'; ?>
                     <?php $this->load->view('web-site/includes/side-enquire', $passed_data); ?>

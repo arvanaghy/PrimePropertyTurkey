@@ -24,6 +24,17 @@
     }
 </style>
 <link rel="canonical" href="https://www.primepropertyturkey.com/ru/short-term-residency-permit"/>
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="https://www.primepropertyturkey.com/ru/short-term-residency-permit">
+<meta name="twitter:creator" content="Justin Mays">
+<meta name="twitter:image:alt" content="Краткосрочный вид на жительство">
+<meta name="twitter:title"
+      content="Краткосрочный вид на жительство">
+<meta name="twitter:description"
+      content="краткосрочный вид на жительство в принципе выдается максимум на два года. (Примечание: Вид на жительство считается недействительным, если он не используется в течение шести месяцев).">
+<meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
+
 </head>
 <body>
 <?php $this->load->view('web-site/ru/includes/top-section'); ?>

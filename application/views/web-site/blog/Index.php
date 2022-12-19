@@ -17,6 +17,17 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
 />
 <link rel="stylesheet" href="<?= base_url();?>assets/web-site/css/phone-input.css">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="https://www.primepropertyturkey.com/blog<? if ($page_id !=0){echo "/".$page_id;} ?>">
+<meta name="twitter:creator" content="Justin Mays">
+<meta name="twitter:image:alt" content="Turkish Properties Blog | Prime Property Turkey">
+<meta name="twitter:title"
+      content="Turkish Properties Blog | Prime Property Turkey">
+<meta name="twitter:description"
+      content="Read our interesting blogs about properties lifestyle and leisure, latest updates on Turkish real estate, investment tips, guides to buying a home in Turkey">
+<meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
+
 <style type="text/css">
     .Find-Your-Property .find-title {
         width: 40%;

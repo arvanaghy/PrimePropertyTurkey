@@ -23,6 +23,7 @@
 <meta name="twitter:description"
       content="Find your perfect property in Turkey at Prime Property Turkey. We have a wide range of properties for sale in Turkey. If you are looking for or have property for sale Istanbul, Altinkum, Bodrum, Fethiye, Kalkan in Turkey.">
 <meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
+
 <script src="https://www.google.com/recaptcha/api.js" ></script>
 <link
         rel="stylesheet"
@@ -32,6 +33,18 @@
 <link rel="stylesheet" href="<?= base_url();?>assets/web-site/css/homePage.css">
 </head>
 <style type="text/css">
+    #video video{
+        position: relative;
+        width: 100%;
+    }
+    .top-button{
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        opacity: 0.8;
+    }
     @media screen and (min-width: 1400px){
         #PRIME-Property-Turkey .col-12 {
             height: 300px !important;
@@ -39,9 +52,14 @@
         #Recommended-Properties .item a > img{
             height: 250px !important;
         }
+
+    }
+    @media screen and (min-width: 2001px){
+        .top-button{
+            top: 990px !important;
+        }
     }
     @media screen and (min-width: 1200px) and (max-width:1399px){
-
         #PRIME-Property-Turkey .col-12{
             height: 300px !important;
         }
@@ -61,62 +79,105 @@
     @media screen and (max-width:575px){
 
     }
+    @media screen and (max-width:320px){
+        .top-button{
+            top: 300px !important;
+        }
+    }
+    @media screen and (min-width: 321px) and (max-width:375px){
+        .top-button{
+            top: 275px !important;
+        }
+    }
+    @media screen and (min-width: 376px) and (max-width:425px){
+        .top-button{
+            top: 280px !important;
+        }
+    }
+    @media screen and (min-width: 426px) and (max-width:768px){
+        .top-button{
+            top:405px !important;
+        }
+    }
+    @media screen and (min-width: 769px) and (max-width:1024px){
+        .top-button{
+            top: 460px !important;
+        }
+    }
+    @media screen and (min-width: 1025px) and (max-width:1440px){
+        .top-button{
+            top: 600px !important;
+        }
+    }
+    @media screen and (min-width: 1441px) and (max-width:2000px){
+        .top-button{
+            top: 680px !important;
+        }
+    }
 </style>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>
-    <section id="home-top-slider">
-        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators d-none d-md-flex">
-                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
-            </ol>
-            <div class="carousel-inner">
+<div id="video">
+    <video id="bgvid" autoplay loop muted playsinline>
+        <source src="<?= base_url();?>assets/web-site/slider2.mp4" type="video/mp4">
+    </video>
+    <div class="top-button">
+        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW ! </button>
+    </div>
+</div>
 
-                <div class="carousel-item active ">
-                    <a href="https://www.primepropertyturkey.com/properties/apartment-beyoglu-PPTV0056">
-                        <img src="<?= base_url(); ?>assets/web-site/images/2022_12_06_16_29_12.webp" class="d-block w-100" alt="Fethiye"  >
-                    </a>
-                    <div class="carousel-caption d-block">
-                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW ! </button>
-                    </div>
-                </div>
-                <div class="carousel-item ">
-                    <a href="https://www.primepropertyturkey.com/properties/luxury-living-homes-move-in-ready-in-uskudar">
-                        <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_41_43.webp" class="d-block w-100" alt="Istanbul"   >
-                    </a>
-                    <div class="carousel-caption d-block">
-                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW ! </button>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <a href="https://www.primepropertyturkey.com/properties/Five-star-apartments-Istanbul">
-                        <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_41_57.webp" class="d-block w-100" alt="Fethiye"  >
-                    </a>
-                    <div class="carousel-caption d-block">
-                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW ! </button>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <a href="https://www.primepropertyturkey.com/properties/duplexes-therra-park">
-                        <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_42_09.webp" class="d-block w-100" alt="Fethiye"  >
-                    </a>
-                    <div class="carousel-caption d-block">
-                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW ! </button>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </button>
-        </div>
-    </section>
+<!--    <section id="home-top-slider">-->
+<!--        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">-->
+<!--            <ol class="carousel-indicators d-none d-md-flex">-->
+<!--                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>-->
+<!--                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>-->
+<!--                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>-->
+<!--                <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>-->
+<!--            </ol>-->
+<!--            <div class="carousel-inner">-->
+<!--                <div class="carousel-item active ">-->
+<!--                    <a href="https://www.primepropertyturkey.com/properties/apartment-beyoglu-PPTV0056">-->
+<!--                        <img src="--><?//= base_url(); ?><!--assets/web-site/images/2022_12_06_16_29_12.webp" class="d-block w-100" alt="Fethiye"  >-->
+<!--                    </a>-->
+<!--                    <div class="carousel-caption d-block">-->
+<!--                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW ! </button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="carousel-item ">-->
+<!--                    <a href="https://www.primepropertyturkey.com/properties/luxury-living-homes-move-in-ready-in-uskudar">-->
+<!--                        <img src="--><?//= base_url(); ?><!--assets/web-site/images/2022_10_07_15_41_43.webp" class="d-block w-100" alt="Istanbul"   >-->
+<!--                    </a>-->
+<!--                    <div class="carousel-caption d-block">-->
+<!--                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW ! </button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="carousel-item">-->
+<!--                    <a href="https://www.primepropertyturkey.com/properties/Five-star-apartments-Istanbul">-->
+<!--                        <img src="--><?//= base_url(); ?><!--assets/web-site/images/2022_10_07_15_41_57.webp" class="d-block w-100" alt="Fethiye"  >-->
+<!--                    </a>-->
+<!--                    <div class="carousel-caption d-block">-->
+<!--                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW ! </button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="carousel-item">-->
+<!--                    <a href="https://www.primepropertyturkey.com/properties/duplexes-therra-park">-->
+<!--                        <img src="--><?//= base_url(); ?><!--assets/web-site/images/2022_10_07_15_42_09.webp" class="d-block w-100" alt="Fethiye"  >-->
+<!--                    </a>-->
+<!--                    <div class="carousel-caption d-block">-->
+<!--                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW ! </button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">-->
+<!--                <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+<!--                <span class="sr-only">Previous</span>-->
+<!--            </button>-->
+<!--            <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">-->
+<!--                <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+<!--                <span class="sr-only">Next</span>-->
+<!--            </button>-->
+<!--        </div>-->
+<!--    </section>-->
     <section id="Find-Your-Property" class="Find-Your-Property m-3">
         <div class="container-fluid">
             <div class="row justify-content-center align-items-center my-2 py-3">

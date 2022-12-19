@@ -28,6 +28,7 @@ class Blog extends CI_Controller
         $data['all'] = $this->Blog_model->BN_record_count('blog');
         $pages = (int)ceil($data['all'] / 5);
         $data['pages'] = $pages - 1;
+
         $this->load->view('web-site/blog/Index', $data);
     }
 
@@ -36,6 +37,7 @@ class Blog extends CI_Controller
         $data['geolocation'] = fetch_geolocation();
         $data['currency_exchange_data'] = $this->Blog_model->currencyExchange();
         $recommended_properties = $this->Blog_model->recommendedProperties();
+
         if (strtoupper($passed_url) == 'INDEX' or $passed_url == '' or $passed_url == 'blogs') {
             redirect(base_url() . 'Blog');
         }

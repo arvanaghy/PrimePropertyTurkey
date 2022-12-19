@@ -7,6 +7,17 @@
 <title>Istanbul Area Guide | Prime Property Turkey</title>
 <meta name="description" content="Napoleon once stated, “if earth was a single state, then Istanbul would be its capital.“
                                 For those who have visited or lived in Istanbul, Napoleon’s words ring even truer today.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="https://www.primepropertyturkey.com/area-guide">
+<meta name="twitter:creator" content="Justin Mays">
+<meta name="twitter:image:alt" content="Istanbul Area Guide | Prime Property Turkey">
+<meta name="twitter:title"
+      content="Istanbul Area Guide | Prime Property Turkey">
+<meta name="twitter:description"
+      content="Napoleon once stated, “if earth was a single state, then Istanbul would be its capital.“
+                                For those who have visited or lived in Istanbul, Napoleon’s words ring even truer today.">
+<meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
+
 <link rel="canonical" href="https://www.primepropertyturkey.com/area-guide"/>
 <style type="text/css">
     #enquire-gradiant {

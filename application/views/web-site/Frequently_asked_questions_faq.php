@@ -19,6 +19,18 @@
         font-weight: 800 !important;
     }
 </style>
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="https://www.primepropertyturkey.com/frequently-asked-questions-faq">
+<meta name="twitter:creator" content="Justin Mays">
+<meta name="twitter:image:alt" content="Turkish citizenship by investment FAQ's">
+<meta name="twitter:title"
+      content="Turkish citizenship by investment FAQ's">
+<meta name="twitter:description"
+      content="Can I apply for Turkish citizenship with a preliminary contract for
+                                                sale">
+<meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
+
 </head>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>

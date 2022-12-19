@@ -810,55 +810,55 @@ class Properties extends CI_Controller
         }
     }
 
-    public function Hotel($passed_url = '')
-    {
-        $data['geolocation'] = fetch_geolocation();
-
-        $cityNames = $this->Fetch_m->fetchCityNames();
-        $data['cityNames'] = array();
-        foreach ($cityNames as $value) {
-            array_push($data['cityNames'], $value["Property_location"]);
-        }
-        $ProType = $this->Fetch_m->fetchPropertyTypes();
-        $data['ProType'] = array();
-        foreach ($ProType as $value) {
-            array_push($data['ProType'], $value["Property_type"]);
-        }
-        $proBed = $this->Fetch_m->fetchPropertyBed();
-        $data['proBed'] = array();
-        foreach ($proBed as $value) {
-            array_push($data['proBed'], $value["Property_Bedrooms"]);
-        }
-
-
-        $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
-
-
-        $where_array = array('Property_type' => 'Hotel');
-        $data['all'] = $this->Fetch_m->record_count('property', $where_array);
-        $pages = (int)ceil($data['all'] / 20);
-        $data['pages'] = $pages - 1;
-
-        $data['cityValue'] = 'Hotel';
-        $data['city_description_show'] = False;
-        $find_array = array('Property_type' => $data['cityValue']);
-
-        if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
-            $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20);
-            $this->load->view('web-site/properties/Details', $data);
-        } elseif (preg_match("/^\d+$/", $passed_url)) {
-            if ($passed_url > $data['pages']) {
-                $this->output->set_status_header('404');
-                $this->load->view('web-site/Custom404');
-            }
-            $data['page_id'] = (int)$passed_url;
-            $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
-            $this->load->view('web-site/properties/Details', $data);
-        } else {
-            $this->output->set_status_header('404');
-            $this->load->view('web-site/Custom404');
-        }
-    }
+//    public function Hotel($passed_url = '')
+//    {
+//        $data['geolocation'] = fetch_geolocation();
+//
+//        $cityNames = $this->Fetch_m->fetchCityNames();
+//        $data['cityNames'] = array();
+//        foreach ($cityNames as $value) {
+//            array_push($data['cityNames'], $value["Property_location"]);
+//        }
+//        $ProType = $this->Fetch_m->fetchPropertyTypes();
+//        $data['ProType'] = array();
+//        foreach ($ProType as $value) {
+//            array_push($data['ProType'], $value["Property_type"]);
+//        }
+//        $proBed = $this->Fetch_m->fetchPropertyBed();
+//        $data['proBed'] = array();
+//        foreach ($proBed as $value) {
+//            array_push($data['proBed'], $value["Property_Bedrooms"]);
+//        }
+//
+//
+//        $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
+//
+//
+//        $where_array = array('Property_type' => 'Hotel');
+//        $data['all'] = $this->Fetch_m->record_count('property', $where_array);
+//        $pages = (int)ceil($data['all'] / 20);
+//        $data['pages'] = $pages - 1;
+//
+//        $data['cityValue'] = 'Hotel';
+//        $data['city_description_show'] = False;
+//        $find_array = array('Property_type' => $data['cityValue']);
+//
+//        if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
+//            $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20);
+//            $this->load->view('web-site/properties/Details', $data);
+//        } elseif (preg_match("/^\d+$/", $passed_url)) {
+//            if ($passed_url > $data['pages']) {
+//                $this->output->set_status_header('404');
+//                $this->load->view('web-site/Custom404');
+//            }
+//            $data['page_id'] = (int)$passed_url;
+//            $data['property_result'] = $this->Fetch_m->findProperty($find_array, 20, $data['page_id'] * 20);
+//            $this->load->view('web-site/properties/Details', $data);
+//        } else {
+//            $this->output->set_status_header('404');
+//            $this->load->view('web-site/Custom404');
+//        }
+//    }
 
     public function Land_for_sale($passed_url = '')
     {
@@ -2625,7 +2625,7 @@ class Properties extends CI_Controller
 
         $data['cityValue'] = 'Istanbul';
         $find_array = array('Property_location' => $data['cityValue']);
-        $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Istanbul');
+        $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Kucukcekmece');
         $find_array = array('Property_location_city' => 'Kucukcekmece');
 
         if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
@@ -2675,7 +2675,7 @@ class Properties extends CI_Controller
 
         $data['cityValue'] = 'Istanbul';
         $find_array = array('Property_location' => $data['cityValue']);
-        $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Istanbul');
+        $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Maltepe');
         $find_array = array('Property_location_city' => 'Maltepe');
 
         if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
@@ -2725,7 +2725,7 @@ class Properties extends CI_Controller
 
         $data['cityValue'] = 'Istanbul';
         $find_array = array('Property_location' => $data['cityValue']);
-        $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Istanbul');
+        $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Pendik');
         $find_array = array('Property_location_city' => 'Pendik');
 
         if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
@@ -2775,7 +2775,7 @@ class Properties extends CI_Controller
 
         $data['cityValue'] = 'Istanbul';
         $find_array = array('Property_location' => $data['cityValue']);
-        $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Istanbul');
+        $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Sancaktepe');
         $find_array = array('Property_location_city' => 'Sancaktepe');
 
         if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
@@ -2825,7 +2825,7 @@ class Properties extends CI_Controller
 
         $data['cityValue'] = 'Istanbul';
         $find_array = array('Property_location' => $data['cityValue']);
-        $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Istanbul');
+        $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Sariyer');
         $find_array = array('Sariyer', 'maslak', 'emirgan', 'zekeriyakoy');
 
         if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {

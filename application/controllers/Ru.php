@@ -297,4 +297,80 @@ class Ru extends CI_Controller
         $data['geolocation']=fetch_geolocation();
         $this->load->view('web-site/ru/buying-online',$data);
     }
+
+    public function Search($passed_url = '')
+    {
+        $this->load->model('Fetch_m');
+
+        $data['geolocation'] = fetch_geolocation();
+
+        $cityNames = $this->Fetch_m->fetchCityNames();
+        $data['cityNames'] = array();
+        foreach ($cityNames as $value) {
+            array_push($data['cityNames'], $value["Property_location"]);
+        }
+        $ProType = $this->Fetch_m->fetchPropertyTypes();
+        $data['ProType'] = array();
+        foreach ($ProType as $value) {
+            array_push($data['ProType'], $value["Property_type"]);
+        }
+        $proBed = $this->Fetch_m->fetchPropertyBed();
+        $data['proBed'] = array();
+        foreach ($proBed as $value) {
+            array_push($data['proBed'], $value["Property_Bedrooms"]);
+        }
+        if (!$this->input->post('search') and !$this->session->has_userdata('search_phrase')) {
+            redirect(base_url());
+        }
+
+        $data['currency_exchange_data'] = $this->Fetch_m->currencyExchange();
+
+        if ($this->input->post('search')) {
+            $this->session->set_userdata('search_phrase', $this->input->post('search'));
+        }
+
+        $data['cityValue'] = 'Search';
+        $data['city_description_show'] = False;
+
+        $this->load->library('user_agent');
+        $this->load->library('form_validation');
+
+        if ($this->form_validation->run('search') != FALSE or $this->session->has_userdata('search_phrase')) {
+            $data['search'] = $this->session->userdata('search_phrase');
+            $data['all'] = $this->Fetch_m->record_count_search($data['search']);
+            $pages = (int)ceil($data['all'] / 20);
+            $data['pages'] = $pages - 1;
+
+            $search_result = $this->Fetch_m->search($data['search']);
+            if ($search_result) {
+                if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
+                    $data['property_result'] = $this->Fetch_m->search($data['search']);
+                    $this->session->set_flashdata('message', "<div id='toast_message' class='success'>  We find " . $data['all'] . " results to according your search data </div>");
+                    $this->load->view('web-site/ru/properties/Index', $data);
+                } elseif (preg_match("/^\d+$/", $passed_url)) {
+                    if ($passed_url > $data['pages']) {
+                        $this->output->set_status_header('404');
+                        $this->load->view('web-site/ru/Custom404');
+                    }
+                    $data['page_id'] = (int)$passed_url;
+                    $data['property_result'] = $this->Fetch_m->search($data['search'], 20, $data['page_id'] * 20);
+                    $this->load->view('web-site/ru/properties/Index', $data);
+                } else {
+                    $this->output->set_status_header('404');
+                    $this->load->view('web-site/ru/Custom404');
+                }
+            } else {
+                $this->session->set_flashdata('message', "<div id='toast_message' class='warning'> Your Search Has No Result </div>");
+                redirect($this->agent->referrer());
+            }
+        } else {
+            $this->session->set_flashdata('message', "<div id='toast_message' class='danger'> According to the following Errors
+                                                        <br>
+                                                        " . validation_errors() . "
+                                                        <br>
+                                                        search engine <b>NOT</b> work  </div>");
+            redirect($this->agent->referrer());
+        }
+    }
+
 }
