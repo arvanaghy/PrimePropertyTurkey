@@ -980,33 +980,6 @@ if ($image_name_webp == '') {
             </div>
         </div>
     </section>
-<div class="modal fade" id="reserveModal" tabindex="-1" aria-labelledby="share-modal-label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title text-center" id="share-modal-label">
-                    Are you interested in this Property</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col">
-                        <p class="text-center">
-                            Get a 24 Hour Quote for this Property
-                        </p>
-                    </div>
-                </div>
-                <div class="row justify-content-center my-2">
-                    <div class="col-12">
-                        <button class="text-center btn btn-danger btn-block" id="reformRunner"> Reservation Form </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="modal fade" id="ReformModalModal" tabindex="-1" aria-labelledby="share-modal-label" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
@@ -1206,9 +1179,6 @@ if ($image_name_webp == '') {
 <?php $this->load->view('web-site/includes/foot-load'); ?>
 <script type="text/javascript">
     $(document).ready(function (){
-        setTimeout(function (){
-            $('#reserveModal').modal('show');
-        }, 17000);
         $('#reformRunner').on('click',function () {
             $('#reserveModal').modal('hide');
             $('#ReformModalModal').modal('show');

@@ -145,7 +145,7 @@
                             <i class="fas fa-search"></i>
                         </button>
                         <span id="toggle-search">
-                            <form action="<?= base_url(); ?>Ru/Search" method="POST"
+                            <form action="<?= base_url(); ?>ru/Search" method="POST"
                                   class="form-inline justify-content-around">
                                  <input type="text" autocomplete="off" name="search" id="search" required
                                         placeholder="Enter Search Data" class="form-control-sm" autofocus>
@@ -260,7 +260,6 @@ if ($this->session->flashdata('googleSuccess') == 'OK') { ?>
         xhttp.send("send_value=" + value);
     }
 </script>
-<!--href="--><?//= base_url();?><!----><?// if($this->uri->segment(1)){echo "/".str_replace("/","",$this->uri->segment(1));if ($this->uri->segment(2)){echo "/".str_replace("/","",$this->uri->segment(2));if ($this->uri->segment(3)){echo "/".str_replace("/","",$this->uri->segment(3));}}}?><!--"-->
 <script type="text/javascript">
     function ChangeToEnglish(){
         let pathname = window.location.pathname;

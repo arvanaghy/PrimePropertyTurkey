@@ -204,7 +204,7 @@
                     <div class="map-card">
                         <div class="row">
                             <div class="col-12 py-3">
-                                <iframe src="https://www.google.com/maps?q=41.0761786,28.9724042&hl=es;z=15&amp;output=embed"
+                                <iframe src="https://www.google.com/maps?q=Prime+Property+Turkey&hl=es;z=15&amp;output=embed"
                                         width="100%" height="350" style="border:0;" allowfullscreen=""
                                         loading="lazy"></iframe>
                             </div>

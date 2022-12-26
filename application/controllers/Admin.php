@@ -945,6 +945,7 @@ class Admin extends CI_Controller
             'status' => 2,
             'primeType' => $this->input->post('type'),
             'sequence' => $this->input->post('Sequence'),
+            'language' => $this->input->post('language')
         );
 
         $config['upload_path'] = './assets/web-site/images/youtube-cover/Original/';

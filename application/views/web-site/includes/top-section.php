@@ -32,7 +32,7 @@
                             Language
                         </button>
                         <div class="dropdown-menu" style="z-index: 9999;">
-                            <? if ($this->uri->segment(1)!='ru' and $this->uri->segment(1)!='Turkey' and $this->uri->segment(1)!='User' and $this->uri->segment(1)!='news' and $this->uri->segment(1)!='Resale' and $this->uri->segment(1)!='Properties' and $this->uri->segment(1)!='privacy-policy' and $this->uri->segment(1)!='career' and $this->uri->segment(1)!='prime-videos' ){ ?>
+                            <? if ($this->uri->segment(1)!='ru' and $this->uri->segment(1)!='User' and $this->uri->segment(1)!='news' and $this->uri->segment(1)!='Resale' and $this->uri->segment(1)!='privacy-policy' and $this->uri->segment(1)!='career'){ ?>
                                 <button onclick="ChangeToRussian()" class="dropdown-item">Russian</button>
                             <? } ?>
                         </div>

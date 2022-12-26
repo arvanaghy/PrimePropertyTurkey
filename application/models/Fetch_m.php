@@ -154,7 +154,7 @@ class Fetch_m extends CI_Model
         }
         return $result;
     }
-    public function getFavorites($favorite_list, $limit = 18, $offset = 0)
+    public function getFavorites($favorite_list, $limit = 20, $offset = 0)
     {
 
         $favorite_list = explode(',', $favorite_list);
@@ -176,7 +176,7 @@ class Fetch_m extends CI_Model
         }
         return $favorite_properties;
     }
-    public function search($data, $limit = 18, $offset = 0)
+    public function search($data, $limit = 20, $offset = 0)
     {
         $search_array = explode(" ", $data);
         $this->db->group_start();
@@ -216,7 +216,7 @@ class Fetch_m extends CI_Model
         $query = $this->db->get('property');
         return $query->result();
     }
-    public function searchProperty($value, $limit = 18, $offset = 0)
+    public function searchProperty($value, $limit = 20, $offset = 0)
     {
         if ($value['City'] != 'All') {
             $this->db->where('Property_location', $value['City']);
@@ -245,7 +245,7 @@ class Fetch_m extends CI_Model
         $query = $this->db->get('property', $limit, $offset);
         return $query->result();
     }
-    public function searchPropertyAll($value,$limit = 18, $offset = 0)
+    public function searchPropertyAll($value,$limit = 20, $offset = 0)
     {
         if ($value['City'] != 'All') {
             $this->db->where('Property_location', $value['City']);
@@ -274,7 +274,7 @@ class Fetch_m extends CI_Model
         $query = $this->db->get('property', $limit, $offset);
         return $query->result();
     }
-    public function searchPropertyAllCommercial($value,$limit = 18, $offset = 0)
+    public function searchPropertyAllCommercial($value,$limit = 20, $offset = 0)
     {
         if ($value['City'] != 'All') {
             $this->db->where('Property_location', $value['City']);
@@ -359,7 +359,7 @@ class Fetch_m extends CI_Model
         $this->db->from('property');
         return $this->db->count_all_results();
     }
-    public function findFeaturedProperty($limit = 18, $offset = null)
+    public function findFeaturedProperty($limit = 20, $offset = null)
     {
         $this->db->select('Property_referenceID,Property_id,Property_type,Property_title,url_slug,Property_location,Property_Bedrooms,Property_Bathrooms,Property_living_space,Property_overview,Property_price,Property_thumbnail');
         $this->db->where('status', 3);

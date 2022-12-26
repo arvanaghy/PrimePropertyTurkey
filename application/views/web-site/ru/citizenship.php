@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/citizenship_by_investment.css">
 <title>Гражданство Турции за инвестиции | Prime Property Turkey</title>
 <meta name="description"
-      content="Программа "Вся информация о получении турецкого гражданства через инвестиции тут. Сроки, документы и возможности турецкого паспорта читайте тут.">
+      content="Программа Вся информация о получении турецкого гражданства через инвестиции тут. Сроки, документы и возможности турецкого паспорта читайте тут.">
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <!-- Open Graph / Facebook -->
@@ -899,11 +899,11 @@
             </div>
             <div class="col-lg-4">
                 <div class="card my-3">
-                    <? $this->load->view('web-site/includes/suitable-citizenship'); ?>
+                    <? $this->load->view('web-site/ru/includes/suitable-citizenship'); ?>
                 </div>
                 <div class="card side contact mb-2" id="enquire-gradiant">
                     <? $passed_data['reference_id'] = 'Citizenship by investment'; ?>
-                    <?php $this->load->view('web-site/includes/side-enquire', $passed_data); ?>
+                    <?php $this->load->view('web-site/ru/includes/side-enquire', $passed_data); ?>
                 </div>
             </div>
         </div>

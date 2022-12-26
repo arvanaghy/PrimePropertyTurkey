@@ -15,7 +15,6 @@ class Ru extends CI_Controller
         $this->load->model('Home_model');
         $this->load->helper(array('favorite','geolocation_helper'));
         $data['geolocation'] = fetch_geolocation();
-//        $data['news_recent'] = $this->Home_model->news(2);
         $data['blog_recent'] = $this->Home_model->popular_blog_ru(6);
         $cityNames = $this->Home_model->fetchCityNames();
         $data['cityNames']=array();
@@ -34,7 +33,7 @@ class Ru extends CI_Controller
         }
         $data['recommended_properties_all'] = $this->Home_model->recommendedProperties();
         $data['currency_exchange_data'] = $this->Home_model->currencyExchange();
-        $data['YoutubeVideos'] = $this->Home_model->YoutubeVideos();
+        $data['YoutubeVideos'] = $this->Home_model->YoutubeVideosRu();
         $this->load->view('web-site/ru/main-page', $data);
     }
 
@@ -346,7 +345,7 @@ class Ru extends CI_Controller
                 if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
                     $data['property_result'] = $this->Fetch_m->search($data['search']);
                     $this->session->set_flashdata('message', "<div id='toast_message' class='success'>  We find " . $data['all'] . " results to according your search data </div>");
-                    $this->load->view('web-site/ru/properties/Index', $data);
+                    $this->load->view('web-site/ru/properties/Details', $data);
                 } elseif (preg_match("/^\d+$/", $passed_url)) {
                     if ($passed_url > $data['pages']) {
                         $this->output->set_status_header('404');
@@ -354,7 +353,7 @@ class Ru extends CI_Controller
                     }
                     $data['page_id'] = (int)$passed_url;
                     $data['property_result'] = $this->Fetch_m->search($data['search'], 20, $data['page_id'] * 20);
-                    $this->load->view('web-site/ru/properties/Index', $data);
+                    $this->load->view('web-site/ru/properties/Details', $data);
                 } else {
                     $this->output->set_status_header('404');
                     $this->load->view('web-site/ru/Custom404');

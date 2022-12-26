@@ -73,7 +73,7 @@
                                 </label>
                                 <input type="file" name="Cover-image" id="Cover-image" class="form-control" accept=".jpg">
                             </div>
-                            <div class="form-group col-sm-4">
+                            <div class="form-group col-sm-3">
                                 <label for="type">
                                     <small>
                                         <b>Type</b>
@@ -86,11 +86,22 @@
                                     <option value="4">Prime Project</option>
                                 </select>
                             </div>
-                            <div class="form-group col-sm-4">
+                            <div class="form-group col-sm-3">
+                                <label for="type">
+                                    <small>
+                                        <b>Language</b>
+                                    </small>
+                                </label>
+                                <select name="language" id="language" class="form-control">
+                                    <option value="en">English</option>
+                                    <option value="ru">Russian</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-2">
                                 <label for="Sequence">
                                     <small><b>Sequence</b></small>
                                 </label>
-                                <input type="nuber" name="Sequence" id="Sequence" class="form-control">
+                                <input type="number" name="Sequence" id="Sequence" class="form-control">
                             </div>
                         </div>
                          <div class="row">

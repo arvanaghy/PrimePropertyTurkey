@@ -16,23 +16,25 @@
 />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/phone-input.css">
+<? if ($cityValue!='Search'){ ?>
 <title>Properties For Sale In <?= $this->uri->segment(3); ?> - <?= $this->uri->segment(3); ?> Real Estate</title>
+
 <meta name="description" content="the best suggestion about Properties for sale in  <?= $this->uri->segment(3); ?><? if ($this->uri->segment(3)!='Istanbul' and $cityValue == 'Istanbul' ): ?>, Istanbul <? endif; ?> in prime property turkey, pick your future real estate with Prime Property Turkey">
 <? if (isset($page_id)) {
     $page_id = $page_id;
     if ($page_id!=0){ ?>
-        <link rel="canonical" href="https://www.primepropertyturkey.com/properties/<?= $this->uri->segment(3); ?><? if ($page_id!=0){ echo '/'.$page_id;}?>"/>
+        <link rel="canonical" href="https://www.primepropertyturkey.com/ru/properties/<?= $this->uri->segment(3); ?><? if ($page_id!=0){ echo '/'.$page_id;}?>"/>
     <?php }else{ ?>
-        <link rel="canonical" href="https://www.primepropertyturkey.com/Properties/<?= $this->uri->segment(3); ?>"/>
+        <link rel="canonical" href="https://www.primepropertyturkey.com/ru/Properties/<?= $this->uri->segment(3); ?>"/>
     <?php } ?>
 <?php
 } else {
     $page_id = 0; ?>
-    <link rel="canonical" href="https://www.primepropertyturkey.com/Properties/<?= $this->uri->segment(3); ?>"/>
+    <link rel="canonical" href="https://www.primepropertyturkey.com/ru/Properties/<?= $this->uri->segment(3); ?>"/>
 <?php } ?>
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.primepropertyturkey.com/Properties/<?= $this->uri->segment(3); ?>/<? if ($page_id!=0){ echo $page_id.'/';}?>">
+<meta property="og:url" content="https://www.primepropertyturkey.com/ru/Properties/<?= $this->uri->segment(3); ?>/<? if ($page_id!=0){ echo $page_id.'/';}?>">
 <meta property="og:title" content="Properties For Sale <?= $cityValue; ?> - Prime Property Turkey">
 <meta property="og:description" content="the best suggestion about Property in  <?= $cityValue; ?> for sale in prime property turkey, pick your future real estate with Prime Property Turkey">
 <meta property="og:image" content="https://www.primepropertyturkey.com/assets/web-site/images/base/Prime-Property-Turkey-build-logo.jpg">
@@ -42,7 +44,22 @@
 <meta property="twitter:title" content="Properties For Sale <?= $cityValue; ?> - Prime Property Turkey">
 <meta property="twitter:description" content="the best suggestion about Property in  <?= $cityValue; ?> for sale in prime property turkey, pick your future real estate with Prime Property Turkey">
 <meta property="og:image" content="https://www.primepropertyturkey.com/assets/web-site/images/base/Prime-Property-Turkey-build-logo.jpg">
+<?php }else{ ?>
+    <title>Properties For Sale In  Samaneh -  Real Estate</title>
 
+    <meta name="description" content="the best suggestion about Properties for sale in in prime property turkey, pick your future real estate with Prime Property Turkey">
+    <? if (isset($page_id)) {
+        $page_id = $page_id;
+        if ($page_id!=0){ ?>
+        <?php }else{ ?>
+            <link rel="canonical" href="https://www.primepropertyturkey.com/ru/Properties/"/>
+        <?php } ?>
+        <?php
+    } else {
+        $page_id = 0; ?>
+        <link rel="canonical" href="https://www.primepropertyturkey.com/ru/Properties/"/>
+    <?php } ?>
+<?php } ?>
 <script src="https://www.google.com/recaptcha/api.js" ></script>
 <style type="text/css">
     svg {
@@ -165,7 +182,7 @@
                         </small>
                     </div>
                     <div class="find-form">
-                        <form action="<?= base_url(); ?>Find" method="post"
+                        <form action="<?= base_url(); ?>Ru_Find" method="post"
                               class="justify-content-around text-right">
                             <div class="row my-2 justify-content-around text-right">
                                 <div class="col-lg-2 my-1" id="City">
@@ -472,7 +489,11 @@
                                     </div>
                                 </div>
                             <? } ?>
-                            <? $cityValue = $this->uri->segment(3); ?>
+                            <?
+                            if ($cityValue!='Search'){
+                                $cityValue = $this->uri->segment(3);
+                            }
+                            ?>
                         <? }else { ?>
                             <div class="card">
                                 <div class="card-body text-center">
@@ -485,6 +506,7 @@
                         <? } ?>
                     </div>
                     <? if ($pages>0){ ?>
+
                         <div class="row py-3 px-1 text-center justify-content-center">
                             <div class="col">
                                 <nav aria-label="Page navigation example">
@@ -629,7 +651,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $('#quickEnquireModal').on('show.bs.modal', function (event) {
-            var button = $(event.relatedTarget); 
+            var button = $(event.relatedTarget);
             var recipient = button.data('whatever');
             var modal = $(this);
             modal.find('#modal_reference_id').val(recipient);

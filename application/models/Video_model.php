@@ -6,6 +6,7 @@ class Video_model extends CI_Model
     public function fetchVideoByURL($data)
     {
         $this->db->where('url_slug',$data);
+        $this->db->where('language','en');
         $this->db->where('status',2);
         $query = $this->db->get('youtubeVideos');
         return $query->row();
@@ -14,6 +15,24 @@ class Video_model extends CI_Model
     public function fetchSideVideos($limit = '')
     {
         $this->db->where('status',2);
+        $this->db->where('language','en');
+        $this->db->order_by('insertDate','DESC');
+        $query = $this->db->get('youtubeVideos',$limit);
+        return $query->result();
+    }
+    public function fetchVideoByURLRU($data)
+    {
+        $this->db->where('url_slug',$data);
+        $this->db->where('language','ru');
+        $this->db->where('status',2);
+        $query = $this->db->get('youtubeVideos');
+        return $query->row();
+    }
+
+    public function fetchSideVideosRU($limit = '')
+    {
+        $this->db->where('status',2);
+        $this->db->where('language','ru');
         $this->db->order_by('insertDate','DESC');
         $query = $this->db->get('youtubeVideos',$limit);
         return $query->result();

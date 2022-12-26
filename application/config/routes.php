@@ -202,8 +202,18 @@ $route['Signup/Verification/(:any)'] ='Signup/Verification/$1';
 $route['Turkey/(:any)/(:any)/(:any)/(:any)'] = 'Turkey/index/$1_$2_$3_$4';
 $route['Turkey/(:any)/(:any)/(:any)/(:any)/(:any)'] = 'Turkey/pagination/$1_$2_$3_$4_$5';
 
+$route['ru/Turkey/(:any)/(:any)/(:any)/(:any)'] = 'Ru_TF/index/$1_$2_$3_$4';
+$route['ru/Turkey/(:any)/(:any)/(:any)/(:any)/(:any)'] = 'Ru_TF/pagination/$1_$2_$3_$4_$5';
+
 $route['prime-videos'] = 'Prime_Videos/index/';
 $route['prime-videos/(:any)'] = 'Prime_Videos/details/$1';
+
+$route['ru/prime-videos'] = 'Ru_PV/index/';
+$route['ru/prime-videos/(:any)'] = 'Ru_PV/details/$1';
+
+$route['ru/properties/Search/(:any)'] = 'Ru/Search/$1';
+$route['ru/Properties/Search'] = 'Ru/Search';
+
 
 $route['seo/sitemap\.xml'] = "seo/sitemap";
 

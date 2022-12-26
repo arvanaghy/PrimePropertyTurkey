@@ -12,7 +12,7 @@
 <title>YouTube Videos | Prime Property Turkey</title>
 <link rel="canonical" href="https://www.primepropertyturkey.com/prime-videos"/>
 <meta name="description"
-      content="">
+      content="Check out Prime Property Turkey’s extensive collection of videos on all matters regarding real estate and moving to Turkey. You will find a variety of content that showcases what we do through our experts, who have been in the real estate industry for decades.">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="https://www.primepropertyturkey.com/prime-videos">
@@ -124,6 +124,15 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row">
+                        <div class="card mx-4 mb-5">
+                            <div class="card-body mx-4 p-2">
+                                Check out Prime Property Turkey’s extensive collection of videos on all matters regarding real estate and moving to Turkey. You will find a variety of content that showcases what we do through our experts, who have been in the real estate industry for decades.
+                                Whether you are a seasoned investor or a first-time buyer, our videos will provide you with regular news regarding residency and Turkish citizenship and keep you informed on the Turkish property market.
+                                Our video content also includes steps to buy property in Turkey and customer testimonials.
+                                Stay up to date with our services by subscribing to our <a href="https://www.youtube.com/@primepropertyturkey/videos" target="_blank">channel</a> and following us on
+                                <a href="https://www.instagram.com/primepropertyturkey/" target="_blank">Instagram</a>.
+                            </div>
+                        </div>
                         <? foreach ($results as $value) { ?>
                             <div class="col-md-3">
                                 <div class="item my-2">

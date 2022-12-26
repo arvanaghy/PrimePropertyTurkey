@@ -62,8 +62,8 @@
     #blog_detail_content p {
         font-family: 'Open Sans' !important;
         font-size: 16px !important;
-        margin-top: 1% !important;
-        margin-bottom: 1% !important;
+        margin-top: 1.5% !important;
+        margin-bottom: 2.5% !important;
     }
     #blog_detail_content li {
         font-family: 'Open Sans' !important;
@@ -82,11 +82,13 @@
     #blog_detail_content h2 {
         font-size: 16px !important;
         font-weight: bold !important;
+        margin-top: 3% !important;
     }
 
     #blog_detail_content h3 {
         font-size: 14px !important;
         font-weight: bold !important;
+        margin-top: 3% !important;
     }
     #divider {
         content: '';

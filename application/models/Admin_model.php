@@ -216,6 +216,7 @@ class Admin_model extends CI_Model
         $this->db->order_by('News_ID', 'DESC');
         $this->db->group_start();
         $this->db->where('status',0);
+        $this->db->or_where('status',3);
         $this->db->group_end();
         $query = $this->db->get('news');
         if ($query->result()){

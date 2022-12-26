@@ -77,8 +77,20 @@ class Home_model extends CI_Model
     }
     public function YoutubeVideos(){
         $this->db->where('status', 2);
+        $this->db->where('language', 'en');
         $this->db->order_by('sequence', 'ASC');
         $query = $this->db->get('youtubeVideos',3);
+        if ($query->result()){
+            return $query->result();
+        }else{
+            return false;
+        }
+    }
+    public function YoutubeVideosRu(){
+        $this->db->where('status', 2);
+        $this->db->where('language', 'ru');
+        $this->db->order_by('sequence', 'ASC');
+        $query = $this->db->get('youtubeVideos',4);
         if ($query->result()){
             return $query->result();
         }else{

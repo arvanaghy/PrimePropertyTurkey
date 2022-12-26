@@ -95,7 +95,10 @@ class News_model extends CI_Model
     public function fetch_post_by_url_BN($table, $url)
     {
         $this->db->where('url_slug', $url);
+        $this->db->group_start();
         $this->db->where('status', 0);
+        $this->db->or_where('status', 3);
+        $this->db->group_end();
         $query = $this->db->get($table);
         return $query->row();
     }

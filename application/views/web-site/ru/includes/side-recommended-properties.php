@@ -112,7 +112,7 @@
                         <div class="item">
                             <div class="slide-owl-wrap">
                                 <div class="card">
-                                <a href="<?= base_url(); ?>properties/<?= $recommended_property->url_slug; ?>" title="<?= $recommended_property->Property_Bedrooms.' Bedroom '.$recommended_property->Property_type.' For Sale In '.$recommended_property->Property_location; ?>">
+                                <a href="<?= base_url(); ?>ru/properties/<?= $recommended_property->url_slug; ?>" title="<?= $recommended_property->Property_Bedrooms.' Bedroom '.$recommended_property->Property_type.' For Sale In '.$recommended_property->Property_location; ?>">
                                     <img class="card-img-top img-fluid"
 
                                          src="<?= base_url(); ?><?= "assets/web-site/images/properties/P_Thumb/" . $image_name_webp; ?>"
@@ -138,7 +138,7 @@
                                                 <? } ?>
                                            </span>
                                             <div id="item-card-title">
-                                                <a href="<?= base_url(); ?>properties/<?= $recommended_property->url_slug; ?>"
+                                                <a href="<?= base_url(); ?>ru/properties/<?= $recommended_property->url_slug; ?>"
                                                    class="text-reset font-weight-bold blue-text"
                                                 >
                                                     <?= $recommended_property->Property_title; ?>

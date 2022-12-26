@@ -172,37 +172,37 @@
                     <ul>
                         <li>
                             <i class="fas fa-chevron-right red-text mx-1"></i>
-                            <a href="https://www.primepropertyturkey.com/Turkey/All-cities/Apartment/All-bedroom/0-5000000">
+                            <a href="https://www.primepropertyturkey.com/ru/Turkey/All-cities/Apartment/All-bedroom/0-5000000">
                                 Квартира
                             </a>
                         </li>
                         <li>
                             <i class="fas fa-chevron-right red-text mx-1"></i>
-                            <a href="https://www.primepropertyturkey.com/Turkey/All-cities/Bungalow/All-bedroom/0-5000000">
+                            <a href="https://www.primepropertyturkey.com/ru/Turkey/All-cities/Bungalow/All-bedroom/0-5000000">
                                 Бунгало
                             </a>
                         </li>
                         <li>
                             <i class="fas fa-chevron-right red-text mx-1"></i>
-                            <a href="https://www.primepropertyturkey.com/Turkey/All-cities/Villa/All-bedroom/0-5000000">
+                            <a href="https://www.primepropertyturkey.com/ru/Turkey/All-cities/Villa/All-bedroom/0-5000000">
                                 Вилла
                             </a>
                         </li>
                         <li>
                             <i class="fas fa-chevron-right red-text mx-1"></i>
-                            <a href="https://www.primepropertyturkey.com/Turkey/All-cities/Commercial/All-bedroom/0-5000000">
+                            <a href="https://www.primepropertyturkey.com/ru/Turkey/All-cities/Commercial/All-bedroom/0-5000000">
                                 Коммерческая
                             </a>
                         </li>
                         <li>
                             <i class="fas fa-chevron-right red-text mx-1"></i>
-                            <a href="https://www.primepropertyturkey.com/Turkey/All-cities/Duplex/All-bedroom/0-5000000">
+                            <a href="https://www.primepropertyturkey.com/ru/Turkey/All-cities/Duplex/All-bedroom/0-5000000">
                                 Дуплекс
                             </a>
                         </li>
                         <li>
                             <i class="fas fa-chevron-right red-text mx-1"></i>
-                            <a href="https://www.primepropertyturkey.com/Turkey/All-cities/Mansion/All-bedroom/0-5000000">
+                            <a href="https://www.primepropertyturkey.com/ru/Turkey/All-cities/Mansion/All-bedroom/0-5000000">
                                 Особняк
                             </a>
                         </li>

@@ -32,6 +32,13 @@
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/homePage.css">
 </head>
 <style type="text/css">
+    #YouTubeVideos .card-body a i {
+        position: absolute;
+        bottom: 130px;
+        left: 42%;
+        font-size: 65px;
+        text-shadow: 1px 1px 2px black;
+    }
     @media screen and (min-width: 1400px) {
         #PRIME-Property-Turkey .col-12 {
             height: 300px !important;
@@ -145,7 +152,7 @@
                  </span>
             </div>
             <div class="find-form">
-                <form action="<?= base_url(); ?>Find" method="post"
+                <form action="<?= base_url(); ?>Ru_Find" method="post"
                       class="justify-content-around text-right">
                     <div class="row my-2 justify-content-around text-right">
                         <div class="col-lg-2 my-1" id="City">
@@ -467,7 +474,7 @@
                             <div class="slide-owl-wrap">
                                 <div class="card">
                                     <div class="card-body">
-                                        <a href="<?= base_url(); ?>prime-videos/<?= $Video->url_slug; ?>"
+                                        <a href="<?= base_url(); ?>ru/prime-videos/<?= $Video->url_slug; ?>"
                                            title="<?= strip_tags($Video->description); ?>">
                                             <img src="<?= base_url(); ?>assets/web-site/images/youtube-cover/<?= $Video->cover_image; ?>"
                                                  alt="<?= $Video->title; ?>">

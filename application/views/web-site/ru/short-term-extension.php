@@ -121,10 +121,10 @@
             <div class="col-lg-4">
                 <div class="card my-3">
                     <? $passed_data['type']='permit'; ?>
-                    <? $this->load->view('web-site/includes/suitable-citizenship',$passed_data); ?>
+                    <? $this->load->view('web-site/ru/includes/suitable-citizenship',$passed_data); ?>
                 </div>
                 <div class="card side contact my-2" id="side-contact-us">
-                    <?php $this->load->view('web-site/includes/side-contact-us'); ?>
+                    <?php $this->load->view('web-site/ru/includes/side-contact-us'); ?>
                 </div>
             </div>
         </div>
