@@ -10,7 +10,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/phone-input.css">
 <title>Apartment for investment in turkey</title>
-<meta name="description" content="apartment for investment in turkey">
+<meta name="description" content="Investing in real estate is an excellent idea. Let us help you with the best apartments for investment in Turkey for rental income and future resale.">
 <link rel="canonical" href="https://www.primepropertyturkey.com/apartment-for-investment-in-turkey"/>
 <script src="https://www.google.com/recaptcha/api.js" ></script>
 
@@ -259,20 +259,20 @@
                                                 <div class="col-7">
                                                     <div class="row justify-content-around align-items-center">
                                                         <div class="col-7 card-speciality">
-                                                            <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp" class="img-fluid">
+                                                            <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp" class="img-fluid" alt=" home location | Prime Property Turkey">
                                                             <span class="mx-1"> <?= $value->Property_location; ?></span></div>
                                                         <div class="col-5 card-speciality">
-                                                            <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico3.webp" class="img-fluid">
+                                                            <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico3.webp" class="img-fluid" alt=" bedroom location | Prime Property Turkey">
                                                             <span class="mx-1"><?= $value->Property_Bedrooms; ?></span>
                                                         </div>
                                                     </div>
                                                     <div class="row justify-content-around align-items-center">
                                                         <div class="col-7 card-speciality">
-                                                            <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp" class="img-fluid">
+                                                            <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp" class="img-fluid" alt=" bathroom location | Prime Property Turkey">
                                                             <span class="mx-1"><?= $value->Property_Bathrooms; ?></span>
                                                         </div>
                                                         <div class="col-5 card-speciality">
-                                                            <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp" class="img-fluid" >
+                                                            <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp" class="img-fluid" alt=" living space location | Prime Property Turkey">
                                                             <span><?= $value->Property_living_space; ?></span>
                                                         </div>
                                                     </div>
@@ -307,7 +307,7 @@
                                 <p>
                                     "Please get in touch with us to get consultation about properties in this neighborhood"
                                 </p>
-                                <a href="<?= base_url(); ?>contact_us" class="btn btn-primary">Contact Us</a>
+                                <a href="<?= base_url(); ?>contact-us" class="btn btn-primary">Contact Us</a>
                             </div>
                         </div>
                     <? } ?>

@@ -60,6 +60,7 @@ class Seo extends CI_Controller
         $data['RUBlog'] = $this->Seo_Model->listRUBlogUrl();
         $data['News'] = $this->Seo_Model->listNewsUrl();
         $data['Videos'] = $this->Seo_Model->listVideoUrl();
+        $data['RUVideos'] = $this->Seo_Model->listRUVideoUrl();
         $data['Property_pages'] = $this->Seo_Model->listPropertyPagesUrl();
         $data['Property_Types'] = $this->Seo_Model->listPropertyTypesUrl();
         $data['Property_Bedrooms'] = $this->Seo_Model->listPropertyBedroomsUrl();

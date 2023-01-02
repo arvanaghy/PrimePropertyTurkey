@@ -448,20 +448,20 @@
                                                     <div class="col-7">
                                                         <div class="row justify-content-around align-items-center">
                                                             <div class="col-7 card-speciality">
-                                                                <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp" class="img-fluid">
+                                                                <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp" alt="Property_location" class="img-fluid">
                                                                 <span class="mx-1"> <?= $value->Property_location; ?></span></div>
                                                             <div class="col-5 card-speciality">
-                                                                <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico3.webp" class="img-fluid">
+                                                                <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico3.webp" alt="Property_Bedrooms" class="img-fluid">
                                                                 <span class="mx-1"><?= $value->Property_Bedrooms; ?></span>
                                                             </div>
                                                         </div>
                                                         <div class="row justify-content-around align-items-center">
                                                             <div class="col-7 card-speciality">
-                                                                <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp" class="img-fluid">
+                                                                <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp" alt="Property_Bathrooms" class="img-fluid">
                                                                 <span class="mx-1"><?= $value->Property_Bathrooms; ?></span>
                                                             </div>
                                                             <div class="col-5 card-speciality">
-                                                                <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp" class="img-fluid" >
+                                                                <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp" alt="Property_living_space" class="img-fluid" >
                                                                 <span><?= $value->Property_living_space; ?></span>
                                                             </div>
                                                         </div>

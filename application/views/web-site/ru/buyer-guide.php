@@ -12,8 +12,8 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="<?= current_url(); ?>">
-<meta property="og:title" content="how to buy property in turkey | Prime Property Turkey">
+<meta property="og:url" content="https://www.primepropertyturkey.com/ru/How-To-Buy-Property-In-Turkey">
+<meta property="og:title" content="Как купить недвижимость в Турции | Prime Property Turkey">
 <meta property="og:description" content="One of the most asked questions by our clients is the process to buy. So, we here at
                                 Prime Property Turkey decided to take the time to list the process from step 1 to
                                 completion.">
@@ -21,13 +21,13 @@
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="<?= current_url(); ?>">
-<meta property="twitter:title" content="how to buy property in turkey | Prime Property Turkey">
+<meta property="twitter:url" content="https://www.primepropertyturkey.com/ru/How-To-Buy-Property-In-Turkey">
+<meta property="twitter:title" content="Как купить недвижимость в Турции | Prime Property Turkey">
 <meta property="twitter:description" content="One of the most asked questions by our clients is the process to buy. So, we here at
       Prime Property Turkey decided to take the time to list the process from step 1 to
       completion.">
 <meta property="og:image" content="<?= base_url(); ?>assets/web-site/images/base/finilasim_whatsapp.jpg">
-<link rel="canonical" href="https://www.primepropertyturkey.com/How-To-Buy-Property-In-Turkey"/>
+<link rel="canonical" href="https://www.primepropertyturkey.com/ru/How-To-Buy-Property-In-Turkey"/>
 <style type="text/css">
     @media screen and (min-width: 1400px) {
         .header-image-wrapper {

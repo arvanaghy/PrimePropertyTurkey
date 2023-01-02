@@ -4,7 +4,7 @@
 <title>404 СТРАНИЦА НЕ НАЙДЕНА | Prime Property Turkey</title>
 <meta name="description" content="404 СТРАНИЦА НЕ НАЙДЕНА, Возможно, страница, которую вы ищете, была удалена или временно недоступна.
 ">
-<link rel="canonical" href="https://www.primepropertyturkey.com/Custom404"/>
+<link rel="canonical" href="https://www.primepropertyturkey.com/ru/Custom404"/>
 </head>
 <body class="d-flex justify-content-center align-items-center">
 <section class="d-flex justify-content-center align-items-center">

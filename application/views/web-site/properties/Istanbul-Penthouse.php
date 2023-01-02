@@ -246,20 +246,20 @@
                                                 <div class="col-7">
                                                     <div class="row justify-content-around align-items-center">
                                                         <div class="col-7 card-speciality">
-                                                            <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp" class="img-fluid">
+                                                            <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp" class="img-fluid" alt=" home location | Prime Property Turkey">
                                                             <span class="mx-1"> <?= $value->Property_location; ?></span></div>
                                                         <div class="col-5 card-speciality">
-                                                            <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico3.webp" class="img-fluid">
+                                                            <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico3.webp" class="img-fluid" alt=" bedroom location | Prime Property Turkey">
                                                             <span class="mx-1"><?= $value->Property_Bedrooms; ?></span>
                                                         </div>
                                                     </div>
                                                     <div class="row justify-content-around align-items-center">
                                                         <div class="col-7 card-speciality">
-                                                            <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp" class="img-fluid">
+                                                            <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp" class="img-fluid" alt=" bathroom location | Prime Property Turkey">
                                                             <span class="mx-1"><?= $value->Property_Bathrooms; ?></span>
                                                         </div>
                                                         <div class="col-5 card-speciality">
-                                                            <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp" class="img-fluid" >
+                                                            <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp" class="img-fluid" alt=" living space location | Prime Property Turkey">
                                                             <span><?= $value->Property_living_space; ?></span>
                                                         </div>
                                                     </div>

@@ -29,7 +29,7 @@ if ($image_name_webp == '') {
 <link rel="canonical" href="https://www.primepropertyturkey.com/ru/properties/<?= $data_array->url_slug;?>" />
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.primepropertyturkey.com/properties/<?= $data_array->url_slug;?>">
+<meta property="og:url" content="https://www.primepropertyturkey.com/ru/properties/<?= $data_array->url_slug;?>">
 <meta property="og:title" content="<?= $data_array->Property_title; ?>">
 <meta property="og:description" content="<?= $data_array->Property_Meta_Description; ?>">
 <meta property="og:image:width" content="300" />
@@ -39,7 +39,7 @@ if ($image_name_webp == '') {
 <meta property="og:image:height" content="300" />
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="https://www.primepropertyturkey.com/properties/<?= $data_array->url_slug;?>">
+<meta name="twitter:site" content="https://www.primepropertyturkey.com/ru/properties/<?= $data_array->url_slug;?>">
 <meta name="twitter:creator" content="Justin Mays">
 <meta name="twitter:image:alt" content="<?= $data_array->Property_title; ?>">
 <meta name="twitter:title" content="<?= $data_array->Property_title; ?>">
@@ -476,39 +476,39 @@ if ($image_name_webp == '') {
                                         <div class="col-md-6">
                                             <span class="d-block my-2 align-items-center justify-content-center">
                                                 <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico5.webp"
-                                                     class="img-fluid" alt="">
+                                                     class="img-fluid" alt="Property_type">
                                                 <b>Тип:</b>  <?= $data_array->Property_type; ?> <? if ($data_array->Property_type!='Commercial' AND $data_array->is_commercial=='1'){ ?> - Commercial <? } ?>
                                             </span>
                                             <span class="d-block my-2 align-items-center">
                                                 <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp"
-                                                     alt="">
+                                                     alt="Property_location_city">
                                                 <b>Местоположение:</b> <?= $data_array->Property_location_city; ?>
                                             </span>
                                             <span class="d-block my-2 align-items-center">
                                                  <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp"
-                                                      alt="">
+                                                      alt="Property_location">
                                                  <b>Город:</b> <?= $data_array->Property_location; ?>
                                             </span>
                                             <span class="d-block  my-2 align-items-center">
                                                 <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp"
-                                                     alt="">
+                                                     alt="Property_Bathrooms">
                                                   <b>Ванные комнаты:</b> <?= $data_array->Property_Bathrooms; ?>
                                             </span>
                                         </div>
                                         <div class="col-md-6">
                                             <span class="d-block  my-2 align-items-center">
                                                   <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp"
-                                                       alt="">
+                                                       alt="Property_living_space">
                                                  <b>Пространство:</b> <?= $data_array->Property_living_space; ?> Sq.m
                                             </span>
                                             <span class="d-block my-2 align-items-center">
                                                  <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico6.webp"
-                                                      alt="">
+                                                      alt="Property_pool">
                                                  <b>Бассейн:</b> <?= $data_array->Property_pool; ?>
                                             </span>
                                             <span class="d-block my-2 align-items-center">
                                                  <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico3.webp"
-                                                      alt="">
+                                                      alt="Property_Bedrooms">
                                                   <b>Спальни:</b> <?= $data_array->Property_Bedrooms; ?>
                                             </span>
                                         </div>
@@ -653,25 +653,25 @@ if ($image_name_webp == '') {
                                                 <div class="row my-2 justify-content-around align-items-center" id="card-speciality">
                                                     <div  class="d-flex align-items-center">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp"
-                                                             alt=""
+                                                             alt="Property_location"
                                                              class="img-fluid">
                                                         <span class="mx-1"><?= $Neighborhood_Properties->Property_location; ?></span>
                                                     </div>
                                                     <div  class="d-flex align-items-center ">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico3.webp"
-                                                             alt=""
+                                                             alt="Property_Bedrooms"
                                                              class="img-fluid">
                                                         <span class="mx-1"><?= $Neighborhood_Properties->Property_Bedrooms; ?></span>
                                                     </div>
                                                     <div class="d-flex align-items-center">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp"
-                                                             alt=""
+                                                             alt="Property_Bathrooms"
                                                              class="img-fluid">
                                                         <span class="mx-1"><?= $Neighborhood_Properties->Property_Bathrooms; ?></span>
                                                     </div>
                                                     <div  class="d-flex align-items-center">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp"
-                                                             alt="" class="img-fluid"
+                                                             alt="Property_living_space" class="img-fluid"
                                                         >
                                                         <span class="mx-1"><?= $Neighborhood_Properties->Property_living_space; ?></span>
                                                     </div>
@@ -777,25 +777,25 @@ if ($image_name_webp == '') {
                                                 <div class="row my-2 justify-content-around align-items-center" id="card-speciality">
                                                     <div  class="d-flex align-items-center">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp"
-                                                             alt=""
+                                                             alt="Property_location"
                                                              class="img-fluid">
                                                         <span class="mx-1"><?= $Neighborhood_Properties->Property_location; ?></span>
                                                     </div>
                                                     <div  class="d-flex align-items-center ">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico3.webp"
-                                                             alt=""
+                                                             alt="Property_Bedrooms"
                                                              class="img-fluid">
                                                         <span class="mx-1"><?= $Neighborhood_Properties->Property_Bedrooms; ?></span>
                                                     </div>
                                                     <div class="d-flex align-items-center">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp"
-                                                             alt=""
+                                                             alt="Property_Bathrooms"
                                                              class="img-fluid">
                                                         <span class="mx-1"><?= $Neighborhood_Properties->Property_Bathrooms; ?></span>
                                                     </div>
                                                     <div  class="d-flex align-items-center">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp"
-                                                             alt="" class="img-fluid"
+                                                             alt="Property_living_space" class="img-fluid"
                                                         >
                                                         <span class="mx-1"><?= $Neighborhood_Properties->Property_living_space; ?></span>
                                                     </div>
@@ -901,25 +901,25 @@ if ($image_name_webp == '') {
                                                 <div class="row my-2 justify-content-around align-items-center" id="card-speciality">
                                                     <div  class="d-flex align-items-center">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp"
-                                                             alt=""
+                                                             alt="Property_location"
                                                              class="img-fluid">
                                                         <span class="mx-1"><?= $recently_properties->Property_location; ?></span>
                                                     </div>
                                                     <div  class="d-flex align-items-center ">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico3.webp"
-                                                             alt=""
+                                                             alt="Property_Bedrooms"
                                                              class="img-fluid">
                                                         <span class="mx-1"><?= $recently_properties->Property_Bedrooms; ?></span>
                                                     </div>
                                                     <div class="d-flex align-items-center">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp"
-                                                             alt=""
+                                                             alt="Property_Bathrooms"
                                                              class="img-fluid">
                                                         <span class="mx-1"><?= $recently_properties->Property_Bathrooms; ?></span>
                                                     </div>
                                                     <div  class="d-flex align-items-center">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp"
-                                                             alt="" class="img-fluid"
+                                                             alt="Property_living_space" class="img-fluid"
                                                         >
                                                         <span class="mx-1"><?= $recently_properties->Property_living_space; ?></span>
                                                     </div>

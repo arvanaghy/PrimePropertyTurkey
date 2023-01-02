@@ -8,9 +8,18 @@
 />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <link rel="stylesheet" href="<?= base_url();?>assets/web-site/css/phone-input.css">
-<title>Покупка онлайн</title>
+<title>Покупка онлайн | Prime Property Turkey</title>
 <meta name="description" content="В XXI веке, когда интернет предоставляет нам прямой доступ, приобрести недвижимость за рубежом и стать владельцем недвижимости стало намного проще.">
-<link rel="canonical" href="https://www.primepropertyturkey.com/buying-online"/>
+<link rel="canonical" href="https://www.primepropertyturkey.com/ru/buying-online"/>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="https://www.primepropertyturkey.com/ru/buying-online">
+<meta name="twitter:creator" content="Justin Mays">
+<meta name="twitter:image:alt" content="Покупка онлайн | Prime Property Turkey">
+<meta name="twitter:title"
+      content="Покупка онлайн | Prime Property Turkey">
+<meta name="twitter:description"
+      content="В XXI веке, когда интернет предоставляет нам прямой доступ, приобрести недвижимость за рубежом и стать владельцем недвижимости стало намного проще.">
+<meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
 
 </head>
 <body>

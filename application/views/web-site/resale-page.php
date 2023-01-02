@@ -60,7 +60,8 @@
                                 </p>
                                 <div class="row justify-content-center align-items-center px-2">
                                     <div class="col-md-4 text-center">
-                                            <img src="https://www.primepropertyturkey.com/assets/web-site/images/base/icon1.svg" class="img-fluid" style="width: 60%" alt="">
+                                            <img src="https://www.primepropertyturkey.com/assets/web-site/images/base/icon1.svg" class="img-fluid"
+                                                 style="width: 60%" alt="add property">
                                     </div>
                                     <div class="col-md-7 text-left">
                                         As users, you have the availability to add your property and after it is validated by
@@ -73,7 +74,8 @@
                                         This platform will give you the ability to add your property, edit, sell and delete your advertisement whenever you want
                                     </div>
                                     <div class="col-md-4 text-center">
-                                        <img src="https://www.primepropertyturkey.com/assets/web-site/images/base/icon2.svg" class="img-fluid" style="width: 60%" alt="">
+                                        <img src="https://www.primepropertyturkey.com/assets/web-site/images/base/icon2.svg" class="img-fluid"
+                                             style="width: 60%" alt="manage property">
                                     </div>
                                 </div>
                                 <div class="row justify-content-center align-items-center px-2 py-2 mb-4">

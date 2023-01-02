@@ -10,7 +10,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/phone-input.css">
 <title>Часто задаваемые вопросы-FAQ's</title>
-<meta name="description" content="ЧАВО по программе инвестиций в недвижимость для гражданства">
+<meta name="description" content="Часто задаваемые вопросы и ответы по программе инвестиций в недвижимость для получения гражданства">
 <link rel="canonical" href="https://www.primepropertyturkey.com/ru/frequently-asked-questions-faq"/>
 <style type="text/css">
     .content .card-title {

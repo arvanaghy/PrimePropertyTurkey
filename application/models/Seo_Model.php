@@ -30,6 +30,15 @@ class Seo_Model extends CI_Model
     {
         $this->db->select('url_slug');
         $this->db->where('status',2);
+        $this->db->where('language','en');
+        $query = $this->db->get('youtubeVideos');
+        return $query->result();
+    }
+    public function listRUVideoUrl()
+    {
+        $this->db->select('url_slug');
+        $this->db->where('status',2);
+        $this->db->where('language','ru');
         $query = $this->db->get('youtubeVideos');
         return $query->result();
     }

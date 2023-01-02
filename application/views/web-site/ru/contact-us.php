@@ -10,8 +10,18 @@
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/phone-input.css">
 <title>Contact prime Property Turkey - Property Turkey</title>
 <meta name="description" content="Contact Us, Having more than 10+ years of real estate experience, Prime Property Turkey delivers knowledge and expertise second to none in Turkey's ever evolving market.">
-<link rel="canonical" href="https://www.primepropertyturkey.com/contact-us"/>
+<link rel="canonical" href="https://www.primepropertyturkey.com/ru/contact-us"/>
 <script src="https://www.google.com/recaptcha/api.js" ></script>
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="https://www.primepropertyturkey.com/ru/contact-us">
+<meta name="twitter:creator" content="Justin Mays">
+<meta name="twitter:image:alt" content="Contact prime Property Turkey - Property Turkey">
+<meta name="twitter:title"
+      content="Contact prime Property Turkey - Property Turkey">
+<meta name="twitter:description"
+      content="Contact Us, Having more than 10+ years of real estate experience, Prime Property Turkey delivers knowledge and expertise second to none in Turkey's ever evolving market.">
+<meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
 
 <style type="text/css">
     .contact-card {

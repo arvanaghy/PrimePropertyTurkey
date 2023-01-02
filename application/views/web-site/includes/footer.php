@@ -218,7 +218,7 @@
                         </li>
                         <li>
                             <i class="fas fa-chevron-right red-text mx-1"></i>
-                            <a href="<?= base_url(); ?>Citizenship-by-investment-in-turkey">
+                            <a href="<?= base_url(); ?>citizenship-by-investment-in-turkey">
                                 Citizenship by investment in Turkey
                             </a>
                         </li>

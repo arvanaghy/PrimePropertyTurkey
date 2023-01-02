@@ -261,25 +261,25 @@
                                         <div class="row justify-content-around align-items-center card-speciality mx-1">
                                             <div class="d-flex align-items-center">
                                                 <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp"
-                                                     alt=""
+                                                     alt=" location"
                                                      class="img-fluid">
                                                 <span class="mx-1"> <?= $value->location; ?></span>
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico3.webp"
-                                                     alt=""
+                                                     alt="bedroom"
                                                      class="img-fluid">
                                                 <span class="mx-1"><?= $value->bedroom; ?></span>
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp"
-                                                     alt=""
+                                                     alt="bathroom"
                                                      class="img-fluid">
                                                 <span class="mx-1"><?= $value->bathroom; ?></span>
                                             </div>
                                             <div class="align-items-center">
                                                 <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp"
-                                                     alt="" class="img-fluid"
+                                                     alt="living space" class="img-fluid"
                                                 >
                                                 <span><?= $value->living_space; ?></span>
                                             </div>
@@ -374,7 +374,7 @@
                                             <div class="row my-2 justify-content-center align-items-center card-speciality">
                                                 <div class="d-flex align-items-center mx-2">
                                                     <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp"
-                                                         alt=""
+                                                         alt="location"
                                                          class="img-fluid">
                                                     <span class="mx-1">
                                                         <?= $value->location; ?>
@@ -382,19 +382,19 @@
                                                 </div>
                                                 <div class="d-flex align-items-center mx-2">
                                                     <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico3.webp"
-                                                         alt=""
+                                                         alt="bedroom"
                                                          class="img-fluid">
                                                     <span class="mx-1"><?= $value->bedroom; ?></span>
                                                 </div>
                                                 <div class="d-flex align-items-center mx-2">
                                                     <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp"
-                                                         alt=""
+                                                         alt="bathroom"
                                                          class="img-fluid">
                                                     <span class="mx-1"><?= $value->bathroom; ?></span>
                                                 </div>
                                                 <div class="align-items-center mx-2">
                                                     <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp"
-                                                         alt="" class="img-fluid">
+                                                         alt="living_space" class="img-fluid">
                                                     <span class="mx-1"><?= $value->living_space; ?></span>
                                                 </div>
                                             </div>

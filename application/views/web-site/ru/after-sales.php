@@ -6,17 +6,17 @@
 <meta name="description" content="Those who obtain a residence permit further to (j) of the first
                                                 paragraph of Article 31 of the Law No. 6458, by investing within the
                                                 scope and amount determined by the President">
-<link rel="canonical" href="https://www.primepropertyturkey.com/after-sales"/>
+<link rel="canonical" href="https://www.primepropertyturkey.com/ru/after-sales"/>
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content=https://www.primepropertyturkey.com/after-sales">
+<meta property="og:url" content=https://www.primepropertyturkey.com/ru/after-sales">
 <meta property="og:title" content="After Sales | Prime Property Turkey">
 <meta property="og:description" content="Our real estate services do not only end when you sign contracts, but also extend to after sales services.">
 <meta property="og:image"
       content="https://www.primepropertyturkey.com/assets/web-site/images/base/Prime-Property-Turkey-build-logo.jpg">
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="https://www.primepropertyturkey.com/after-sales">
+<meta name="twitter:site" content="https://www.primepropertyturkey.com/ru/after-sales">
 <meta name="twitter:creator" content="Justin Mays">
 <meta name="twitter:image:alt" content="After Sales | Prime Property Turkey">
 <meta name="twitter:title" content="After Sales | Prime Property Turkey">

@@ -10,8 +10,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/phone-input.css">
 <title>Turkish citizenship by investment FAQ's</title>
-<meta name="description" content="Can I apply for Turkish citizenship with a preliminary contract for
-                                                sale">
+<meta name="description" content="Having questions in mind about getting Turkish citizenship by investment in Turkey? Here we have answered a few common questions.">
 <link rel="canonical" href="https://www.primepropertyturkey.com/frequently-asked-questions-faq"/>
 <style type="text/css">
     .content .card-title {
@@ -27,8 +26,7 @@
 <meta name="twitter:title"
       content="Turkish citizenship by investment FAQ's">
 <meta name="twitter:description"
-      content="Can I apply for Turkish citizenship with a preliminary contract for
-                                                sale">
+      content="Having questions in mind about getting Turkish citizenship by investment in Turkey? Here we have answered a few common questions.">
 <meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
 
 </head>

@@ -166,25 +166,26 @@
                                              id="card-speciality">
                                             <div class="d-flex align-items-center">
                                                 <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp"
-                                                     alt=""
+                                                     alt=" home location | Prime Property Turkey"
                                                      class="img-fluid">
                                                 <span class="mx-1"><?= $recommended_property->Property_location; ?></span>
                                             </div>
                                             <div class="d-flex align-items-center ">
                                                 <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico3.webp"
-                                                     alt=""
+                                                     alt=" bedroom location | Prime Property Turkey"
                                                      class="img-fluid">
                                                 <span class="mx-1"><?= $recommended_property->Property_Bedrooms; ?></span>
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp"
-                                                     alt=""
+                                                     alt=" bathroom location | Prime Property Turkey"
                                                      class="img-fluid">
                                                 <span class="mx-1"><?= $recommended_property->Property_Bathrooms; ?></span>
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp"
-                                                     alt="" class="img-fluid"
+                                                     alt=" living space location | Prime Property Turkey"
+                                                      class="img-fluid"
                                                 >
                                                 <span class="mx-1"><?= $recommended_property->Property_living_space; ?></span>
                                             </div>

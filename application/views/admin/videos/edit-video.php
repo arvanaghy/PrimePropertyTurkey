@@ -25,6 +25,11 @@
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="page-title col-md-6">
+                            <span class="mx-2">
+                                    <a href="<?= base_url();?>prime-videos/<?= $results->url_slug; ?>" target="_blank" class="show_site_details" >
+                                      <i class="fas fa-eye"></i>
+                                     </a>
+                             </span>
                             <b>
                                 Edit Video
                             </b>
@@ -95,6 +100,19 @@
                                        value="<?= $results->sequence; ?>">
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="form-group col-sm-12">
+                                <label style="margin-top:10px;padding:5px;" class="control-label">
+                                    <small>
+                                        <strong>
+                                            Meta Description
+                                        </strong>
+                                    </small>
+                                </label>
+                                <textarea name="meta_description" placeholder="Meta Description" required class="form-control"><?= $results->meta_description; ?></textarea>
+                            </div>
+                        </div>
+
                         <div class="row">
                             <div class="form-group col-sm-12">
                                 <label style="margin-top:10px;padding:5px;" class="control-label">
@@ -172,7 +190,29 @@
             height: 200,
             minHeight: null,
             maxHeight: null,
-            focus: false
+            focus: false,
+            fontNames: ['Open Sans'],
+            fontNamesIgnoreCheck: ['Open Sans'],
+            addDefaultFonts: false,
+            followingToolbar: false,
+            lang: 'en-US',
+            fontSizes: ['10', '11', '12', '14', '15','16','17','18', '24', '36', '48'],
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['fontname', ['fontname']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+                ['fontsize', ['fontsize']],
+                ['view', ['fullscreen', 'codeview']]
+            ],
+            styleTags: [
+                'p',
+                { title: 'ilyas', tag: 'ilyas', className: 'ilyas', value: 'font-size:120px' },
+                'pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'
+            ]
         });
     });
     var postForm = function () {

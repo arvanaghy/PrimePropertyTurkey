@@ -24,6 +24,17 @@
 <?php } ?>
 <meta name="description"
       content="Prime Property Turkey the best place to search for Turkish Properties, offers best deals for Istanbul real estate and some of the most attractive offers in Fethiye , Kalkan , Kas , Gocek">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="https://www.primepropertyturkey.com/properties<? echo '/'.$page_id; ?>">
+<meta name="twitter:creator" content="Justin Mays">
+<meta name="twitter:image:alt" content="Turkish Properties | Prime Property Turkey">
+<meta name="twitter:title"
+      content="Turkish Properties | Prime Property Turkey">
+<meta name="twitter:description"
+      content="Prime Property Turkey the best place to search for Turkish Properties, offers best deals for Istanbul real estate and some of the most attractive offers in Fethiye , Kalkan , Kas , Gocek">
+<meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
+
+
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <style type="text/css">
     .sold-out {
@@ -332,24 +343,24 @@
                                                     <div class="row justify-content-around align-items-center">
                                                         <div class="col-7 card-speciality">
                                                             <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp"
-                                                                 class="img-fluid">
+                                                                 class="img-fluid" alt=" home location | Prime Property Turkey">
                                                             <span class="mx-1"><?= $value->Property_location; ?></span>
                                                         </div>
                                                         <div class="col-5 card-speciality">
                                                             <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico3.webp"
-                                                                 class="img-fluid">
+                                                                 class="img-fluid" alt=" bedroom location | Prime Property Turkey">
                                                             <span class="mx-1"><?= $value->Property_Bedrooms; ?></span>
                                                         </div>
                                                     </div>
                                                     <div class="row justify-content-around align-items-center">
                                                         <div class="col-7 card-speciality">
                                                             <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp"
-                                                                 class="img-fluid">
+                                                                 class="img-fluid" alt=" bathroom location | Prime Property Turkey">
                                                             <span class="mx-1"><?= $value->Property_Bathrooms; ?></span>
                                                         </div>
                                                         <div class="col-5 card-speciality">
                                                             <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp"
-                                                                 class="img-fluid">
+                                                                 class="img-fluid" alt=" living space location | Prime Property Turkey">
                                                             <span><?= $value->Property_living_space; ?></span>
                                                         </div>
                                                     </div>

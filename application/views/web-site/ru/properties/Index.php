@@ -15,6 +15,16 @@
       content="Prime Property Turkey the best place to search for Turkish Properties, offers best deals for Istanbul real estate and some of the most attractive offers in Fethiye , Kalkan , Kas , Gocek">
 <script src="https://www.google.com/recaptcha/api.js"></script>
 
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="https://www.primepropertyturkey.com/ru/properties">
+<meta name="twitter:creator" content="Justin Mays">
+<meta name="twitter:image:alt" content="Turkish Properties | Prime Property Turkey">
+<meta name="twitter:title"
+      content="Turkish Properties | Prime Property Turkey">
+<meta name="twitter:description"
+      content="Prime Property Turkey the best place to search for Turkish Properties, offers best deals for Istanbul real estate and some of the most attractive offers in Fethiye , Kalkan , Kas , Gocek">
+<meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
+
 <style type="text/css">
     .sold-out {
         position: absolute;
@@ -326,24 +336,24 @@
                                             <div class="col-7">
                                                 <div class="row justify-content-around align-items-center">
                                                     <div class="col-7 card-speciality">
-                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp"
+                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp" alt="Property_location"
                                                              class="img-fluid">
                                                         <span class="mx-1"><?= $value->Property_location; ?></span>
                                                     </div>
                                                     <div class="col-5 card-speciality">
-                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico3.webp"
+                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico3.webp" alt="Property_Bedrooms"
                                                              class="img-fluid">
                                                         <span class="mx-1"><?= $value->Property_Bedrooms; ?></span>
                                                     </div>
                                                 </div>
                                                 <div class="row justify-content-around align-items-center">
                                                     <div class="col-7 card-speciality">
-                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp"
+                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp" alt="Property_Bathrooms"
                                                              class="img-fluid">
                                                         <span class="mx-1"><?= $value->Property_Bathrooms; ?></span>
                                                     </div>
                                                     <div class="col-5 card-speciality">
-                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp"
+                                                        <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp" alt="Property_living_space"
                                                              class="img-fluid">
                                                         <span><?= $value->Property_living_space; ?></span>
                                                     </div>

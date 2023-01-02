@@ -945,7 +945,8 @@ class Admin extends CI_Controller
             'status' => 2,
             'primeType' => $this->input->post('type'),
             'sequence' => $this->input->post('Sequence'),
-            'language' => $this->input->post('language')
+            'language' => $this->input->post('language'),
+            'meta_description' => $this->input->post('meta_description')
         );
 
         $config['upload_path'] = './assets/web-site/images/youtube-cover/Original/';
@@ -1019,12 +1020,14 @@ class Admin extends CI_Controller
         $type = strip_tags($this->input->post('type'));
         $sequence = strip_tags($this->input->post('sequence'));
         $video_description = $this->input->post('video_description');
+        $meta_description = $this->input->post('meta_description');
         $data = array(
             'title' => $title,
             'url' => $url,
             'description' => $video_description,
             'sequence' => $sequence,
             'primeType' => $type,
+            'meta_description' => $meta_description
         );
         $this->load->model('Admin_model');
         $this->Admin_model->Videos_Update($id, $data);

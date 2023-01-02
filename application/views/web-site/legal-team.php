@@ -293,10 +293,10 @@
                         <div class="row justify-content-center align-items-center px-2">
                             <div class="col-lg-4 my-2">
                                 <div class="card h-100">
-                                    <img src="<?= base_url(); ?>assets/web-site/images/legal-team/consultant.webp"
+                                    <img src="<?= base_url(); ?>assets/web-site/images/legal-team/consultant.webp" alt="consultant"
                                          class="card-img-top">
                                     <div class="icon text-center">
-                                        <img src="<?= base_url(); ?>assets/web-site/images/legal-team/downico1.webp" alt="" class="img-fluid">
+                                        <img src="<?= base_url(); ?>assets/web-site/images/legal-team/downico1.webp" alt="downico1" class="img-fluid">
                                     </div>
                                     <div class="card-body text-center">
                                         <h5 class="card-title pb-3 fw-bold">Real Estate Consultancy Services</h5>
@@ -311,10 +311,10 @@
                             </div>
                             <div class="col-lg-4 my-2">
                                 <div class="card">
-                                    <img src="<?= base_url(); ?>assets/web-site/images/legal-team/aftersale.webp"
+                                    <img src="<?= base_url(); ?>assets/web-site/images/legal-team/aftersale.webp" alt="aftersale"
                                          class="card-img-top">
                                     <div class="icon text-center">
-                                        <img src="<?= base_url(); ?>assets/web-site/images/legal-team/downico2.webp" alt="" class="img-fluid">
+                                        <img src="<?= base_url(); ?>assets/web-site/images/legal-team/downico2.webp" alt="downico2" class="img-fluid">
                                     </div>
                                     <div class="card-body text-center">
                                         <h5 class="card-title pb-3 fw-bold">After-Sales Services</h5>
@@ -330,10 +330,10 @@
                             </div>
                             <div class="col-lg-4 my-2">
                                 <div class="card">
-                                    <img src="<?= base_url(); ?>assets/web-site/images/legal-team/resale.webp"
+                                    <img src="<?= base_url(); ?>assets/web-site/images/legal-team/resale.webp" alt="resale"
                                          class="card-img-top">
                                     <div class="icon text-center">
-                                        <img src="<?= base_url(); ?>assets/web-site/images/legal-team/downico3.webp" alt="" class="img-fluid">
+                                        <img src="<?= base_url(); ?>assets/web-site/images/legal-team/downico3.webp" alt="downico3" class="img-fluid">
                                     </div>
                                     <div class="card-body text-center">
                                         <h5 class="card-title pb-3 fw-bold">Resale Services</h5>
@@ -380,9 +380,9 @@
                             <div class="col-md-8">
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-md-2 text-center text-lg-left">
-                                        <img src="<?= base_url(); ?>assets/web-site/images/legal-team/downico1.webp" class="img-fluid d-md-block my-1" alt="">
-                                        <img src="<?= base_url(); ?>assets/web-site/images/legal-team/downico2.webp" class="img-fluid d-md-block my-1" alt="">
-                                        <img src="<?= base_url(); ?>assets/web-site/images/legal-team/downico3.webp" class="img-fluid d-md-block my-1" alt="">
+                                        <img src="<?= base_url(); ?>assets/web-site/images/legal-team/downico1.webp" class="img-fluid d-md-block my-1" alt="downico1">
+                                        <img src="<?= base_url(); ?>assets/web-site/images/legal-team/downico2.webp" class="img-fluid d-md-block my-1" alt="downico2">
+                                        <img src="<?= base_url(); ?>assets/web-site/images/legal-team/downico3.webp" class="img-fluid d-md-block my-1" alt="downico3">
                                     </div>
                                     <div class="col-md-10">
                                         <h3 class="my-5 text-center text-lg-left">
@@ -400,7 +400,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <img src="<?= base_url(); ?>assets/web-site/images/legal-team/Damla ozkan.webp" alt="" class="img-fluid">
+                                <img src="<?= base_url(); ?>assets/web-site/images/legal-team/Damla ozkan.webp" alt="Damla ozkan" class="img-fluid">
                             </div>
                         </div>
                     </div>

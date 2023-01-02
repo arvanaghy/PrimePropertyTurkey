@@ -2875,7 +2875,7 @@ class Properties extends CI_Controller
 
         $data['cityValue'] = 'Istanbul';
         $find_array = array('Property_location' => $data['cityValue']);
-        $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Istanbul');
+        $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Sile');
         $find_array = array('Property_location_city' => 'Sile');
 
         if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
@@ -2975,7 +2975,7 @@ class Properties extends CI_Controller
 
         $data['cityValue'] = 'Istanbul';
         $find_array = array('Property_location' => $data['cityValue']);
-        $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Istanbul');
+        $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Sultanbeyli');
         $find_array = array('Property_location_city' => 'Sultanbeyli');
 
         if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
@@ -3025,7 +3025,7 @@ class Properties extends CI_Controller
 
         $data['cityValue'] = 'Istanbul';
         $find_array = array('Property_location' => $data['cityValue']);
-        $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Istanbul');
+        $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Sultangazi');
         $find_array = array('Property_location_city' => 'Sultangazi');
 
         if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
@@ -3075,7 +3075,7 @@ class Properties extends CI_Controller
 
         $data['cityValue'] = 'Istanbul';
         $find_array = array('Property_location' => $data['cityValue']);
-        $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Istanbul');
+        $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Tuzla');
         $find_array = array('Property_location_city' => 'Tuzla');
 
         if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
@@ -3125,7 +3125,7 @@ class Properties extends CI_Controller
 
         $data['cityValue'] = 'Istanbul';
         $find_array = array('Property_location' => $data['cityValue']);
-        $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Istanbul');
+        $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Umraniye');
         $find_array = array('Property_location_city' => 'Umraniye');
 
         if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
@@ -3175,7 +3175,7 @@ class Properties extends CI_Controller
 
         $data['cityValue'] = 'Istanbul';
         $find_array = array('Property_location' => $data['cityValue']);
-        $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Istanbul');
+        $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Silivri');
         $find_array = array('Property_location_city' => 'Silivri');
 
         if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
@@ -3225,7 +3225,7 @@ class Properties extends CI_Controller
 
         $data['cityValue'] = 'Istanbul';
         $find_array = array('Property_location' => $data['cityValue']);
-        $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Istanbul');
+        $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Uskudar');
         $find_array = array('Property_location_city' => 'Uskudar');
 
         if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {
@@ -3275,7 +3275,7 @@ class Properties extends CI_Controller
 
         $data['cityValue'] = 'Istanbul';
         $find_array = array('Property_location' => $data['cityValue']);
-        $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Istanbul');
+        $data['CityIntroduce'] = $this->Fetch_m->fetchCityIntroduce('Zeytinburnu');
         $find_array = array('Property_location_city' => 'Zeytinburnu');
 
         if (strtoupper($passed_url) == 'INDEX' or $passed_url == '') {

@@ -349,25 +349,25 @@
                                                      id="card-speciality">
                                                     <div class="d-flex align-items-center">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp"
-                                                             alt=""
+                                                             alt="Property_location"
                                                              class="img-fluid">
                                                         <span class="mx-1"><?= $city->Property_location; ?></span>
                                                     </div>
                                                     <div class="d-flex align-items-center ">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico3.webp"
-                                                             alt=""
+                                                             alt="Property_Bedrooms"
                                                              class="img-fluid">
                                                         <span class="mx-1"><?= $city->Property_Bedrooms; ?></span>
                                                     </div>
                                                     <div class="d-flex align-items-center">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp"
-                                                             alt=""
+                                                             alt="Property_Bathrooms"
                                                              class="img-fluid">
                                                         <span class="mx-1"><?= $city->Property_Bathrooms; ?></span>
                                                     </div>
                                                     <div class="d-flex align-items-center">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp"
-                                                             alt="" class="img-fluid"
+                                                             alt="Property_living_space" class="img-fluid"
                                                         >
                                                         <span class="mx-1"><?= $city->Property_living_space; ?></span>
                                                     </div>
@@ -768,7 +768,7 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-center" id="quickEnquireModalLabel">PROPERTY ENQUIRY</h5>
+                <h5 class="modal-title text-center" id="quickEnquireModalLabel">ЗАПРОС НЕДВИЖИМОСТИ</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -808,7 +808,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <textarea name="note" id="note" cols="30" rows="3" class="form-control"
-                                          placeholder="Note" form="enquiry"></textarea>
+                                          placeholder="Сообщение" form="enquiry"></textarea>
                             </div>
                         </div>
                         <div class="col-md-12 d-flex justify-content-center">
@@ -822,7 +822,7 @@
             </div>
             <div class="modal-footer">
                 <input type="hidden" name="reference_id" id="modal_reference_id" form="enquiry">
-                <input type="submit" class="btn red-button btn-block" form="enquiry">
+                <input type="submit" class="btn red-button btn-block" form="enquiry" value="представить">
             </div>
         </div>
     </div>
@@ -832,8 +832,7 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-center" id="topEnquireModalLabel">CONTACT US FOR FREE EXPERT
-                    CONSULTATION</h5>
+                <h5 class="modal-title text-center" id="topEnquireModalLabel">СВЯЖИТЕСЬ С НАМИ ДЛЯ БЕСПЛАТНОЙ КОНСУЛЬТАЦИИ ЭКСПЕРТА</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -844,7 +843,7 @@
                     <div class="row align-items-center">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Full Name" required
+                                <input type="text" class="form-control" placeholder="Имя и фамилия" required
                                        form="enquiryit"
                                        name="info" id="TopEnquireForm_info">
                                 <span id="TopEnquireForm_info_error"
@@ -856,7 +855,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" id="modal_phone_cover" class="form-control" placeholder="Phone"
+                                <input type="text" id="modal_phone_cover" class="form-control" placeholder="Номер телефона"
                                        name="phone[main]" form="enquiryit" required>
                                 <span id="TopEnquireForm_phone_error"
                                       style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
@@ -867,14 +866,14 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email" name="email"
+                                <input type="email" class="form-control" placeholder="Электронная почта" name="email"
                                        form="enquiryit" required>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <textarea name="note" id="note" cols="30" rows="3" class="form-control"
-                                          placeholder="Note" form="enquiry"></textarea>
+                                          placeholder="Сообщение" form="enquiry"></textarea>
                             </div>
                         </div>
                         <div class="col-md-12 d-flex justify-content-center">
@@ -888,7 +887,7 @@
             </div>
             <div class="modal-footer">
                 <input type="hidden" name="reference_id" value="mainPageTopCover" form="enquiryit">
-                <input type="submit" class="btn red-button btn-block" form="enquiryit">
+                <input type="submit" class="btn red-button btn-block" form="enquiryit" value="представить">
             </div>
         </div>
     </div>
@@ -1070,10 +1069,10 @@
             let modalEnquireForm_info_regex = new RegExp(/^\w+\s+\w+/i);
             let modalEnquireForm_phone_regex = new RegExp(/\d{5,20}/g);
 
-            if (modalEnquireForm_info_regex.test(modalEnquireForm_info) != true) {
-                modalEnquireFormFlag = false;
-                modalEnquireForm_info_error.style.display = 'block';
-            }
+            // if (modalEnquireForm_info_regex.test(modalEnquireForm_info) != true) {
+            //     modalEnquireFormFlag = false;
+            //     modalEnquireForm_info_error.style.display = 'block';
+            // }
             if (modalEnquireForm_phone_regex.test(modalEnquireForm_phone) != true) {
                 modalEnquireFormFlag = false;
                 modalEnquireForm_phone_error.style.display = 'block';
@@ -1105,10 +1104,10 @@
             let TopEnquireForm_info_regex = new RegExp(/^\w+\s+\w+/i);
             let TopEnquireForm_phone_regex = new RegExp(/\d{5,20}/g);
 
-            if (TopEnquireForm_info_regex.test(TopEnquireForm_info) != true) {
-                TopEnquireFormFlag = false;
-                TopEnquireForm_info_error.style.display = 'block';
-            }
+            // if (TopEnquireForm_info_regex.test(TopEnquireForm_info) != true) {
+            //     TopEnquireFormFlag = false;
+            //     TopEnquireForm_info_error.style.display = 'block';
+            // }
             if (TopEnquireForm_phone_regex.test(TopEnquireForm_phone) != true) {
                 TopEnquireFormFlag = false;
                 TopEnquireForm_phone_error.style.display = 'block';

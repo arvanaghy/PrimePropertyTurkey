@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/frequently_asked_questions_faq.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/area_guide.css">
 <title>Career - Work With Prime Property Turkey </title>
-<meta name="description" content="">
+<meta name="description" content="You may apply to our company with friendly people from different cultures.we are Real Estate Sales Agent.">
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="<?= current_url(); ?>">

@@ -4,13 +4,7 @@
 <title><?= $result->title; ?></title>
 
 <meta name="keywords" content="<?= $result->title; ?>">
-<meta name="description" content="
-  <? if ($this->uri->segment(2) == "Turkish-Citizenship-by-Real-Estate-Investment-Prime-Talks-Ep4"): ?>
-    The Turkish government has recently made changes to the Turkish Citizenship by Investment Program, by changing the minimum amount of investment from $250,000 USD to $400,000 USD in Turkish Real Estate.
-  <? else:
-    echo strip_tags($result->description);
-  endif; ?>
-">
+<meta name="description" content="<?= $result->meta_description; ?>">
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="<?= current_url(); ?>">
@@ -35,31 +29,54 @@
         padding: 2%;
     }
 
+    #blog_detail_content {
+        font-family: 'Open Sans' !important;
+    }
+
     #blog_detail_content img {
         width: 100% !important;
+        height: auto !important;
+        margin-top: 1% !important;
+        margin-bottom: 1% !important;
+
+    }
+
+    #blog_detail_content span {
+        font-family: 'Open Sans' !important;
+        font-size: 16px !important;
+        margin-top: 1.5% !important;
+        margin-bottom: 2.5% !important;
+        display: inline-block;
     }
 
     #blog_detail_content p span {
         font-family: 'Open Sans' !important;
+        font-size: 16px !important;
     }
 
     #blog_detail_content p {
         font-family: 'Open Sans' !important;
+        font-size: 16px !important;
+        margin-top: 1.5% !important;
+        margin-bottom: 2.5% !important;
     }
-
-    #blog_detail_content iframe {
-        width: 100% !important;
-        height: 380px !important;
+    #blog_detail_content li {
+        font-family: 'Open Sans' !important;
+        font-size: 16px !important;
+        margin-top: 1% !important;
+        margin-bottom: 1% !important;
     }
 
     #blog_detail_content h2 {
         font-size: 16px !important;
         font-weight: bold !important;
+        margin-top: 3% !important;
     }
 
     #blog_detail_content h3 {
         font-size: 14px !important;
         font-weight: bold !important;
+        margin-top: 3% !important;
     }
 
     @media screen and (max-width: 430px) {

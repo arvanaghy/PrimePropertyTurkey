@@ -15,6 +15,15 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <link rel="icon" href="<?= base_url(); ?>assets/web-site/images/fab.ico"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style> @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700;800&display=swap'); </style>
+    <style type="text/css">
+        * {
+            font-family: 'Open Sans', sans-serif;
+        }
+    </style>
 
 
 

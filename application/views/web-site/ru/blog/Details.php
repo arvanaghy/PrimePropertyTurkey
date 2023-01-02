@@ -57,12 +57,24 @@
 
     #blog_detail_content h2 {
         font-size: 16px !important;
-        font-weight: bold !important;
+        font-weight: 600 !important;
+        font-family: 'Open Sans', sans-serif !important;
+    }
+    #blog_detail_content h2 span{
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        font-family: 'Open Sans', sans-serif !important;
     }
 
     #blog_detail_content h3 {
         font-size: 14px !important;
-        font-weight: bold !important;
+        font-weight: 600 !important;
+        font-family: 'Open Sans', sans-serif !important;
+    }
+    #blog_detail_content h3 span{
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        font-family: 'Open Sans', sans-serif !important;
     }
     #divider {
         content: '';

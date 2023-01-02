@@ -36,13 +36,23 @@ Asia and Europe and access to the markets in both regions">
             "@id": "https://www.primepropertyturkey.com/citizenship-by-investment-in-turkey"
         },
         "headline": "Turkish citizenship by investment",
-        "description": "Turkish citizenship by investment",
+        "description": "The Turkish citizenship by investment program was launched in 2017. It allows foreign investors to obtain a Turkish passport within three to six months.",
         "image": "https://www.primepropertyturkey.com/assets/web-site/images/base/citizenshipbyinvestment/citizenship_by_investment_in_turkey_1.webp",
         "author": {
             "@type": "Organization",
-            "name": ""
+            "name": "Justin T. Mays"
         },
-        "datePublished": ""
+        "datePublished": "2022/12/20",
+        "name": "PRIME Property Turkey",
+        "sameAs" : [
+            "https://www.facebook.com/primepropertyturkeyistanbul",
+            "https://twitter.com/turkey_prime",
+            "https://www.instagram.com/primepropertyturkey",
+            "https://www.linkedin.com/company/prime-property-turkey",
+            "https://tr.pinterest.com/primepropertyturkey"
+        ],
+        "telephone": "(+90) 552 754 44 93",
+        "email": "info@primepropertyturkey"
     }
 </script>
 <style type="text/css">

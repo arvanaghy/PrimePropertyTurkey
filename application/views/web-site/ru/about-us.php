@@ -6,6 +6,15 @@
 <meta name="description"
       content="Prime Property Turkey предоставляет непревзойденные знания и опыт на постоянно развивающемся рынке Турции. Видя необходимость в агентстве, которое просто делает все правильно, три лучших международных консультанта отрасли объединили свои усилия, чтобы создать идеальную суперкоманду для своих клиентов.">
 <link rel="canonical" href="https://www.primepropertyturkey.com/ru/about-us"/>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="https://www.primepropertyturkey.com/ru/about-us">
+<meta name="twitter:creator" content="Justin Mays">
+<meta name="twitter:image:alt" content="О компании Prime Property Turkey - Property Turkey">
+<meta name="twitter:title"
+      content="О компании Prime Property Turkey - Property Turkey">
+<meta name="twitter:description"
+      content="Prime Property Turkey предоставляет непревзойденные знания и опыт на постоянно развивающемся рынке Турции. Видя необходимость в агентстве, которое просто делает все правильно, три лучших международных консультанта отрасли объединили свои усилия, чтобы создать идеальную суперкоманду для своих клиентов.">
+<meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
 </head>
 <body>
 <?php $this->load->view('web-site/ru/includes/top-section'); ?>

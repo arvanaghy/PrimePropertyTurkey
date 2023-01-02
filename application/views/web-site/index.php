@@ -144,24 +144,24 @@
                     </div>
                 </div>
                 <div class="carousel-item ">
-                    <a href="https://www.primepropertyturkey.com/properties/luxury-living-homes-move-in-ready-in-uskudar">
-                        <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_41_43.webp" class="d-block w-100" alt="Istanbul"   >
+                    <a href="https://www.primepropertyturkey.com/properties/apartments-istanbul-pptv0622">
+                        <img src="<?= base_url(); ?>assets/web-site/images/2022_12_30_19_55_45.webp" class="d-block w-100" alt="Istanbul"   >
                     </a>
                     <div class="carousel-caption d-block">
                         <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW ! </button>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <a href="https://www.primepropertyturkey.com/properties/Five-star-apartments-Istanbul">
-                        <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_41_57.webp" class="d-block w-100" alt="Fethiye"  >
+                    <a href="https://www.primepropertyturkey.com/properties/apartment-eyup-PPTV0127">
+                        <img src="<?= base_url(); ?>assets/web-site/images/2022_12_30_17_06_03.webp" class="d-block w-100" alt="Fethiye"  >
                     </a>
                     <div class="carousel-caption d-block">
                         <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW ! </button>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <a href="https://www.primepropertyturkey.com/properties/duplexes-therra-park">
-                        <img src="<?= base_url(); ?>assets/web-site/images/2022_10_07_15_42_09.webp" class="d-block w-100" alt="Fethiye"  >
+                    <a href="https://www.primepropertyturkey.com/properties/elite-completed-apartments-in-the-desired-fikirtepe">
+                        <img src="<?= base_url(); ?>assets/web-site/images/2022_12_30_17_07_02.webp" class="d-block w-100" alt="Fethiye"  >
                     </a>
                     <div class="carousel-caption d-block">
                         <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW ! </button>
@@ -387,25 +387,26 @@
                                                      id="card-speciality">
                                                     <div class="d-flex align-items-center">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp"
-                                                             alt=""
+                                                             alt=" home location | Prime Property Turkey"
                                                              class="img-fluid">
                                                         <span class="mx-1"><?= $city->Property_location; ?></span>
                                                     </div>
                                                     <div class="d-flex align-items-center ">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico3.webp"
-                                                             alt=""
+                                                             alt=" bedroom location | Prime Property Turkey"
                                                              class="img-fluid">
                                                         <span class="mx-1"><?= $city->Property_Bedrooms; ?></span>
                                                     </div>
                                                     <div class="d-flex align-items-center">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp"
-                                                             alt=""
+                                                             alt=" bathroom location | Prime Property Turkey"
                                                              class="img-fluid">
                                                         <span class="mx-1"><?= $city->Property_Bathrooms; ?></span>
                                                     </div>
                                                     <div class="d-flex align-items-center">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp"
-                                                             alt="" class="img-fluid"
+                                                             alt=" living space location | Prime Property Turkey"
+                                                              class="img-fluid"
                                                         >
                                                         <span class="mx-1"><?= $city->Property_living_space; ?></span>
                                                     </div>

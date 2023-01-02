@@ -168,7 +168,7 @@
                     Turkish Citizenship
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="<?= base_url();?>Citizenship-by-investment-in-turkey">Citizenship By Investment</a>
+                    <a class="dropdown-item" href="<?= base_url();?>citizenship-by-investment-in-turkey">Citizenship By Investment</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="<?= base_url();?>short-term-residency-permit">Short - Term Residency Permit</a>
                     <div class="dropdown-divider"></div>
@@ -240,7 +240,6 @@
         xhttp.send("send_value="+value);
     }
 </script>
-<!--href="--><?//= base_url();?><!--ru--><?// if ($this->uri->segment(1)){ echo "/".str_replace("/","",$this->uri->segment(1));if ($this->uri->segment(2)){ echo "/".str_replace("/","",$this->uri->segment(2));if ($this->uri->segment(3)){echo "/".str_replace("/","",$this->uri->segment(3));}}} ?><!--"-->
 <script type="text/javascript">
     function ChangeToRussian(){
         let pathname = window.location.pathname;

@@ -9,7 +9,11 @@
 <?php $this->load->view('web-site/includes/head-load'); ?>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/blog.css">
 <title><?= $result->Blog_Meta_Title; ?></title>
-
+<?php $image_address = base_url()."assets/web-site/images/blog/old/original/" . str_replace('assets/blog/', '', $result->Blog_Image); ?>
+<? $unix_time = mysql_to_unix($result->Blog_Created_date);
+$date_string = '%d %M %Y';
+$creat_date =  mdate($date_string, $unix_time);
+?>
 <meta name="keywords" content="<?= $result->Blog_Meta_Keyword; ?>">
 <meta name="description" content="<?= $result->Blog_Meta_Description; ?>">
 
@@ -18,7 +22,7 @@
 <meta property="og:title" content="<?= $result->Blog_Meta_Title; ?>">
 <meta property="og:description" content="<?= $result->Blog_Meta_Description; ?>">
 <meta property="og:image"
-      content="<?= base_url(); ?><?= "assets/web-site/images/blog/old/whatsapp/" . str_replace('assets/blog/', '', $result->Blog_Image); ?>">
+      content="<?= $image_address; ?>">
 <meta property="og:image:width" content="300"/>
 <meta property="og:image:height" content="300"/>
 
@@ -29,7 +33,7 @@
 <meta name="twitter:title" content="<?= $result->Blog_Meta_Title; ?>">
 <meta name="twitter:description" content="<?= $result->Blog_Meta_Description; ?>">
 <meta name="twitter:image"
-      content="<?= base_url(); ?><?= "assets/web-site/images/blog/old/original/" . str_replace('assets/blog/', '', $result->Blog_Image); ?>">
+      content="<?= $image_address; ?>">
 <link rel="canonical" href="<?= base_url(); ?>blog/<?= $result->url_slug; ?>"/>
 <script src="https://www.google.com/recaptcha/api.js" ></script>
 <link
@@ -131,6 +135,34 @@
     }
 
 </style>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "<?= base_url(); ?>blog/<?= $result->url_slug; ?>"
+        },
+        "headline": "<?= $result->Blog_Meta_Title; ?>",
+        "description": "<?= $result->Blog_Meta_Description; ?>",
+        "image": "<?= $image_address; ?>",
+        "author": {
+            "@type": "Organization",
+            "name": "Justin T. Mays"
+        },
+        "datePublished": "<?= $creat_date; ?>",
+        "name": "PRIME Property Turkey",
+        "sameAs" : [
+            "https://www.facebook.com/primepropertyturkeyistanbul",
+            "https://twitter.com/turkey_prime",
+            "https://www.instagram.com/primepropertyturkey",
+            "https://www.linkedin.com/company/prime-property-turkey",
+            "https://tr.pinterest.com/primepropertyturkey"
+        ],
+        "telephone": "(+90) 552 754 44 93",
+        "email": "info@primepropertyturkey"
+    }
+</script>
 </head>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>
@@ -180,10 +212,7 @@ if ($image_name_webp == '') {
                         </span>
                         <span class="red-text font-weight-bold"> Created :  </span>
                         <span class="font-weight-bold">
-                           <? $unix_time = mysql_to_unix($result->Blog_Created_date);
-                           $date_string = '%d %M %Y';
-                           echo mdate($date_string, $unix_time);
-                           ?>
+                            <?= $creat_date; ?>
                         </span>
                     </div>
                 </div>

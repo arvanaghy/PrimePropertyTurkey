@@ -104,6 +104,18 @@
                                 <input type="number" name="Sequence" id="Sequence" class="form-control">
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="form-group col-sm-12">
+                                <label style="margin-top:10px;padding:5px;" class="control-label">
+                                    <small>
+                                        <strong>
+                                            Meta Description
+                                        </strong>
+                                    </small>
+                                </label>
+                                <textarea name="meta_description" placeholder="Meta Description" required class="form-control"></textarea>
+                            </div>
+                        </div>
                          <div class="row">
                             <div class="form-group col-sm-12">
                                 <label style="margin-top:10px;padding:5px;" class="control-label">
@@ -143,7 +155,10 @@
             height: 200,
             minHeight: null,
             maxHeight: null,
-            focus: false
+            focus: false,
+            fontNames: ['Open Sans'],
+            fontNamesIgnoreCheck: ['Open Sans'],
+            addDefaultFonts: false
         });
     });
     var postForm = function() {

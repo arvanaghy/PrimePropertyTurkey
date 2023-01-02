@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/citizenship_by_investment.css">
 <title>Гражданство Турции за инвестиции | Prime Property Turkey</title>
 <meta name="description"
-      content="Программа Вся информация о получении турецкого гражданства через инвестиции тут. Сроки, документы и возможности турецкого паспорта читайте тут.">
+      content="Вся информация о получении турецкого гражданства через инвестиции тут. Мы адресуем вопросы сроков, документов, преимуществ и возможностей турецкого паспорта.">
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <!-- Open Graph / Facebook -->
@@ -33,7 +33,7 @@
             "@id": "https://www.primepropertyturkey.com/ru/citizenship-by-investment-in-turkey"
         },
         "headline": "Гражданство Турции за инвестиции | Prime Property Turkey",
-        "description": "Вся информация о получении турецкого гражданства через инвестиции тут. Сроки, документы и возможности турецкого паспорта читайте тут.",
+        "description": "Вся информация о получении турецкого гражданства через инвестиции тут. Мы адресуем вопросы сроков, документов, преимуществ и возможностей турецкого паспорта.",
         "image": "https://www.primepropertyturkey.com/assets/web-site/images/base/citizenshipbyinvestment/citizenship_by_investment_in_turkey_1.webp",
         "author": {
             "@type": "Organization",

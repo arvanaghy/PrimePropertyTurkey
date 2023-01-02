@@ -188,6 +188,9 @@
             minHeight: null,
             maxHeight: null,
             focus: false,
+            fontNames: ['Open Sans'],
+            fontNamesIgnoreCheck: ['Open Sans'],
+            addDefaultFonts: false,
             fontSizes: ['10', '11', '12', '14', '15','16','17','18', '24', '36', '48'],
             popover: {
                 image: [

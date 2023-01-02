@@ -7,6 +7,17 @@
 <title>Путеводитель по Стамбулу | Prime Property Turkey</title>
 <meta name="description" content="Наполеон однажды заявил: Если бы Земля была единым государством, то ее столицей был бы Стамбул. ">
 <link rel="canonical" href="https://www.primepropertyturkey.com/ru/area-guide"/>
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="https://www.primepropertyturkey.com/ru/area-guide">
+<meta name="twitter:creator" content="Justin Mays">
+<meta name="twitter:image:alt" content="Путеводитель по Стамбулу | Prime Property Turkey">
+<meta name="twitter:title"
+      content="Путеводитель по Стамбулу | Prime Property Turkey">
+<meta name="twitter:description"
+      content="Наполеон однажды заявил: Если бы Земля была единым государством, то ее столицей был бы Стамбул. ">
+<meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
+
 <style type="text/css">
     #enquire-gradiant {
         color: white;
