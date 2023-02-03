@@ -7,7 +7,7 @@
 </style>
 <div class="card side latest-news my-2">
     <div class="card-title my-3 text-center font-weight-bold">
-        Prime Videos
+        Prime-Видео
     </div>
     <div class="border"></div>
     <div class="card-body">

@@ -101,7 +101,7 @@
                                      alt="litecoin" class="img-fluid" width="17px">
                             </li>
                             <li class="list-group-item">
-                                <span>Оплата биткоинами</span>
+                                <span>оплата криптовалютой</span>
                             </li>
                         </ul>
                     </div>
@@ -130,7 +130,7 @@
                                 </a>
                             </li>
                             <li class="list-group-item">
-                                <span>Оплата биткоинами</span>
+                                <span>оплата криптовалютой</span>
                             </li>
                         </ul>
                     </div>
@@ -148,7 +148,7 @@
                             <form action="<?= base_url(); ?>ru/Search" method="POST"
                                   class="form-inline justify-content-around">
                                  <input type="text" autocomplete="off" name="search" id="search" required
-                                        placeholder="Enter Search Data" class="form-control-sm" autofocus>
+                                        placeholder="Введите данные для поиска" class="form-control-sm" autofocus>
                                  <input type="submit" class="btn red-button btn-sm" value="Поиск">
                            </form>
                         </span>

@@ -22,13 +22,22 @@
     $page_id = $page_id;
     if ($page_id!=0){ ?>
         <link rel="canonical" href="https://www.primepropertyturkey.com/properties/<?= $this->uri->segment(2); ?><? if ($page_id!=0){ echo '/'.$page_id;}?>"/>
+        <link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/properties/<?= $this->uri->segment(2); ?><? if ($page_id!=0){ echo '/'.$page_id;}?>" />
+        <link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/properties/<?= $this->uri->segment(2); ?><? if ($page_id!=0){ echo '/'.$page_id;}?>" />
+        <link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/properties/<?= $this->uri->segment(2); ?><? if ($page_id!=0){ echo '/'.$page_id;}?>" />
     <?php }else{ ?>
         <link rel="canonical" href="https://www.primepropertyturkey.com/Properties/<?= $this->uri->segment(2); ?>"/>
+        <link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/Properties/<?= $this->uri->segment(2); ?>" />
+        <link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/Properties/<?= $this->uri->segment(2); ?>" />
+        <link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/Properties/<?= $this->uri->segment(2); ?>" />
     <?php } ?>
 <?php
 } else {
     $page_id = 0; ?>
     <link rel="canonical" href="https://www.primepropertyturkey.com/Properties/<?= $this->uri->segment(2); ?>"/>
+    <link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/Properties/<?= $this->uri->segment(2); ?>" />
+    <link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/Properties/<?= $this->uri->segment(2); ?>" />
+    <link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/Properties/<?= $this->uri->segment(2); ?>" />
 <?php } ?>
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
@@ -143,6 +152,37 @@
     }
     .hide-mah-element{
         display: none;
+    }
+    @media screen and (max-width:575px){
+        #more_information h2{
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+            text-align: center;
+        }
+        #about-city  h1 {
+            font-size: 1.7rem !important;
+            font-weight: 600 !important;
+        }
+        .border {
+            width: 65% !important;
+        }
+        #about-city p {
+            font-size: 0.8rem;
+            text-align: left;
+        }
+        #more_information p {
+            font-size: 0.8rem;
+            text-align: left !important;
+        }
+        .item h2{
+            text-align: center;
+        }
+        .card-speciality {
+            font-size: 0.6rem;
+        }
+    }
+    @media screen and (max-width:320px){
+
     }
 </style>
 </head>
@@ -441,12 +481,12 @@
                                                             </div>
                                                         </div>
                                                         <div class="row justify-content-around align-items-center">
-                                                            <div class="col-7 card-speciality">
+                                                            <div class="col-md-7 col-5 card-speciality">
                                                                 <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp" class="img-fluid"
                                                                      alt=" bathroom location | Prime Property Turkey">
                                                                 <span class="mx-1"><?= $value->Property_Bathrooms; ?></span>
                                                             </div>
-                                                            <div class="col-5 card-speciality">
+                                                            <div class="col-md-5 col-7 card-speciality">
                                                                 <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp" class="img-fluid"
                                                                      alt=" living space location | Prime Property Turkey">
                                                                 <span><?= $value->Property_living_space; ?></span>
@@ -548,7 +588,7 @@
                     <? } ?>
                 </div>
                 <div class="col-lg-12 mb-3" id="collapse"></div>
-                <div class="col-lg-12">
+                <div class="col-lg-12" id="more_information">
                     <div class="card">
                         <div class="card-body">
                                 <? if (isset($CityIntroduce) and $CityIntroduce['moreDescription']): ?>

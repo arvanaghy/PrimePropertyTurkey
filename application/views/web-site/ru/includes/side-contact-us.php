@@ -6,31 +6,31 @@
 <div class="card-body">
     <form action="<?= base_url();?>Post/contact_us" method="post" onsubmit="return sideContactFormValidation();">
         <div class="form-group">
-            <input type="text" class="form-control" required name="info" placeholder="Full Name" id="sideContactForm_info">
+            <input type="text" class="form-control" required name="info" placeholder="Ваше имя" id="sideContactForm_info">
             <span id="sideContactForm_info_error" style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
                   class="vision">
-               Please enter your first and last name separated by a space (e.g. Jane Miller)
+               Ваше Имя и Фамилия, разделенные пробелом (например Джейн Миллер)
             </span>
         </div>
         <div class="form-group">
-            <input type="email" class="form-control"  name="email" placeholder="Email" required>
+            <input type="email" class="form-control"  name="email" placeholder="Ваша электронная почта" required>
         </div>
         <div class="form-group">
-            <input type="tel" id="phone_contactus" class="form-control" name="phone[main]" placeholder="Phone" required>
+            <input type="tel" id="phone_contactus" class="form-control" name="phone[main]" placeholder="Ваш номер телефона" required>
             <span id="sideContactForm_phone_error" style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
                   class="vision">
-               Please Write Your Full PhoneNumber
+               Напишите ваш номер телефона
             </span>
         </div>
         <div class="form-group" id="message">
-            <textarea type="text" class="form-control" name="message" placeholder="Message" required></textarea>
+            <textarea type="text" class="form-control" name="message" placeholder="Ваше сообщение" required></textarea>
         </div>
         <div class="form-group d-flex justify-content-center">
             <div class="g-recaptcha"
                  data-sitekey="6Leb_6MgAAAAALtcAlJS98nLXgm8RSA22-JzfnXN"></div>
         </div>
         <div class="form-group">
-            <input type="submit"  class="btn btn-block red-button" value="REQUEST DETAIL">
+            <input type="submit"  class="btn btn-block red-button" value="Запросить подробности">
         </div>
     </form>
 </div>

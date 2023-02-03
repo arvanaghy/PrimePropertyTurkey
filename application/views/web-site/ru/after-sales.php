@@ -1,29 +1,32 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php $this->load->view('web-site/includes/head-load'); ?>
+<?php $this->load->view('web-site/ru/includes/head-load'); ?>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/header-image-wrapper.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/citizenship_by_investment.css">
-<title>Real Estate After-Sales Service | Prime Property Turkey</title>
+<title>Послепродажное обслуживание | Prime Property Turkey</title>
 <meta name="description" content="Those who obtain a residence permit further to (j) of the first
                                                 paragraph of Article 31 of the Law No. 6458, by investing within the
                                                 scope and amount determined by the President">
 <link rel="canonical" href="https://www.primepropertyturkey.com/ru/after-sales"/>
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content=https://www.primepropertyturkey.com/ru/after-sales">
-<meta property="og:title" content="After Sales | Prime Property Turkey">
-<meta property="og:description" content="Our real estate services do not only end when you sign contracts, but also extend to after sales services.">
+<meta property="og:url" content="https://www.primepropertyturkey.com/ru/after-sales">
+<meta property="og:title" content="Послепродажное обслуживание | Prime Property Turkey">
+<meta property="og:description" content="После подписания контракта мы продолжаем поддерживать наших клиентов. ">
 <meta property="og:image"
       content="https://www.primepropertyturkey.com/assets/web-site/images/base/Prime-Property-Turkey-build-logo.jpg">
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="https://www.primepropertyturkey.com/ru/after-sales">
 <meta name="twitter:creator" content="Justin Mays">
-<meta name="twitter:image:alt" content="After Sales | Prime Property Turkey">
-<meta name="twitter:title" content="After Sales | Prime Property Turkey">
-<meta name="twitter:description" content="Our real estate services do not only end when you sign contracts, but also extend to after sales services.">
+<meta name="twitter:image:alt" content="Послепродажное обслуживание | Prime Property Turkey">
+<meta name="twitter:title" content="Послепродажное обслуживание | Prime Property Turkey">
+<meta name="twitter:description" content="После подписания контракта мы продолжаем поддерживать наших клиентов. ">
 <meta name="twitter:image"
 <meta name="twitter:image"
       content="https://www.primepropertyturkey.com/assets/web-site/images/base/Prime-Property-Turkey-build-logo.jpg">
+<link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/after-sales" />
+<link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/after-sales" />
+<link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/after-sales" />
 <style type="text/css">
     #enquire-gradiant {
         color: white;
@@ -122,9 +125,9 @@
         <div class="bg" id="Citizenship-by-investment-BG"></div>
         <div class="mask"></div>
         <div class="header-image-content offset-bottom">
-            <h1 class="title text-center font-weight-bold" style="padding-bottom: 20px !important;">Real Estate After-Sales Service</h1>
+            <h1 class="title text-center font-weight-bold" style="padding-bottom: 20px !important;">Послепродажное обслуживание</h1>
             <p class="pb-5">
-                Our real estate services do not only end when you sign contracts, but also extend to after sales services.
+                После подписания контракта мы продолжаем поддерживать наших клиентов.
             </p>
         </div>
     </div>
@@ -167,58 +170,42 @@
                         <div class="card my-3" id="1-section">
                             <div class="card-body text-center">
                                 <div class="card-title h2 my-2 text-left">
-                                    Rentals
+                                    Аренда
                                 </div>
                                 <img src="<?= base_url(); ?>assets/web-site/images/base/after-sales/RENTAL.webp"
                                      class="img-fluid mt-2 mb-4" alt="after sales">
                                 <div class="content  text-justify my-2">
-                                    As Prime Property Turkey, we help you enjoy the benefits of your
-                                    investments. A large number of people are moving to Turkey because of
-                                    the peaceful environment and perfect weather and some deciding to move
-                                    because most companies have turned to remote working.
+                                    Компания Prime Property Turkey поможет вам воспользоваться всеми инвестиционными преимуществами.
                                 </div>
                                 <div class="content text-justify my-2">
-                                    If you decide to rent your property. Our company will help you with the
-                                    assurance that any maintenance needed is reported to the owner in time
-                                    so that the property remains profitable at all times. We will help you
-                                    get tenants that pay monthly rentals in time whether you prefer
-                                    students, small families, or individuals. We will advertise your
-                                    property through all channels and vet the potential tenants before they
-                                    move in.
+                                    Многие переезжают в Турцию из-за спокойной обстановки и мягкого климата, а некоторые решают переехать, потому что большинство компаний перешли на дистанционную работу.
                                 </div>
                                 <div class="content text-justify my-2">
-                                    The percentage of rental income in Turkey ranges from 6% to 9% per year
-                                    depending on the location of your property, whether it is in the city
-                                    center or a holiday district.
+                                    Если вы хотите сдавать свою недвижимость в аренду, наша компания может гарантировать, что необходимое техническое обслуживание будет произведено своевременно, чтобы недвижимость оставалась прибыльной для вас в любое время. Мы поможем найти арендаторов, которые будут оплачивать ежемесячную аренду точно в срок независимо от того, предпочитаете ли вы сдавать жилье студентам, молодым семьям или отдельному лицу. Мы будем рекламировать ваш объект по всем каналам и проверять потенциальных арендаторов до того, как они заселятся в вашу недвижимость.
+
+                                </div>
+                                <div class="content text-justify my-2">
+                                    Процент арендного дохода в Турции колеблется от 6% до 9% в год в зависимости от местоположения вашего имущества, будь то в центре города или в спальном районе.
                                 </div>
                             </div>
                         </div>
                         <div class="card my-3" id="2-section">
                             <div class="card-body text-center">
                                 <div class="card-title h2 my-2 text-left">
-                                    Resales
+                                    Перепродажа
                                 </div>
                                 <img src="<?= base_url(); ?>assets/web-site/images/base/after-sales/RESALE.webp"
                                      class="img-fluid mt-2 mb-4" alt="Resales">
                                 <div class="content  text-justify my-2">
-                                    Whether it's a villa or an apartment, resales should not give you a
-                                    headache. After buying property in Turkey, you might decide to sell your
-                                    property, look no further. Our company has a positive track record of
-                                    making sales in a short period of time with prices that will make both
-                                    the seller and the buyer happy.
+                                    Владеете ли вы виллой или квартирой, её перепродажа не должна вызывать у вас головную боль. После покупки недвижимости в Турции вы можете решить перепродать её. Наша компания имеет большой опыт перепродажи недвижимости в кратчайшие сроки по тем ценам, которые выгодны и продавцу, и покупателю.
+
                                 </div>
                                 <div class="content text-justify my-2">
-                                    Whether you are in Turkey or elsewhere, we will help you sell your
-                                    property through Power of Attorney (POA). All the processes that are
-                                    needed to make your sale necessary, we are here to help you. Prime
-                                    Property Turkey will assist you to sell your property through all our
-                                    media platforms. We will make sure that your property reaches the
-                                    potential buyers at the right time, wherever they are.
+                                    Где бы вы не находились, мы поможем вам продать вашу собственность через доверенность (РОА). Мы организуем все процессы, необходимые для успешной перепродажи. Prime Property Turkey будет максимально использовать все медиа-платформы и позаботится о том, чтобы Ваша недвижимость попала на глаза к потенциальным покупателям в нужное время, где бы они ни находились.
                                 </div>
                                 <div class="content text-justify my-2">
-                                    All you need to do is to submit the pictures of the property, the
-                                    listing price, and the cash price and we would be glad to resell your
-                                    property.
+                                    Все, что вам нужно сделать -  это представить фотографии собственности, указать желаемую стоимость, и мы с радостью займемся перепродажей вашей собственности.
+
                                 </div>
                             </div>
 
@@ -226,50 +213,43 @@
                         <div class="card my-3" id="3-section">
                             <div class="card-body text-center">
                                 <div class="card-title h2 my-2 text-left">
-                                    Property Management
+                                    Управление недвижимостью
                                 </div>
                                 <img src="<?= base_url(); ?>assets/web-site/images/base/after-sales/PMANAGEMENT.webp"
                                      class="img-fluid mt-2 mb-4"
                                      alt="Property Management">
                                 <div class="content text-justify  my-2">
-                                    Cleaning services and landscape maintenance are also part of the
-                                    after-sale service that we provide. You can also trust us with meet and
-                                    greet services at your property for times you are not around or when you
-                                    have events going on special days.
+
+                                    Услуги по уборке и уходу за придомовым участком также являются частью нашего послепродажного обслуживания.
+
                                 </div>
                                 <div class="content text-justify  my-2">
-                                    You might also wish to boost your security to 24/7 with guards or CCVT
-                                    installation, Prime Property Turkey's After-Sales team will assist you
-                                    in connecting with the reputable security companies in the city and
-                                    neighborhood your property.
+                                    Вы также можете доверить нам показ вашей собственности в те дни, когда вы не сможете там находиться.
+
+                                </div>
+                                <div class="content text-justify  my-2">
+                                    Наша компания поможет вам связаться с лучшими охранными компаниями в городе, чтобы ваша недвижимость была в безопасности 24/7.
+
                                 </div>
                             </div>
                         </div>
                         <div class="card my-3" id="4-section">
                             <div class="card-body">
                                 <div class="card-title h2 my-2 text-left">
-                                    Interior Design
+                                    Дизайн интерьера
                                 </div>
                                 <img src="<?= base_url(); ?>assets/web-site/images/base/after-sales/IDESIGN.webp"
                                      class="img-fluid mt-2 mb-4" alt="Interior Design">
                                 <div class="content  text-justify  my-2">
-                                    Be it a home or a business that you buy, giving it furniture makes it
-                                    complete. But when you are out of Turkey and you want this need to be
-                                    met, that is where we come in.
+                                    В любой недвижимости, будь то дом или офис, важно правильно подобрать мебель. Даже если вы не находитесь в Турции, наша компания всегда готова прийти на помощь в этом вопросе.
+
                                 </div>
                                 <div class="content  text-justify  my-2">
-                                    Prime Property Turkey helps you purchase quality furniture for your
-                                    property. We will help you define the design of each room and create
-                                    focal points that give your home definitions. We are always in touch
-                                    with famous brand furniture distributors who are always well aware of
-                                    seasonal designs, keeping us in the niche of what is trending yet of
-                                    good prices.
+                                    Prime Property Turkey поможет вам приобрести качественную мебель. Мы поможем создать уникальный дизайн каждой комнаты и создать фокусные точки, которые будут притягивать взгляд каждого входящего. Мы всегда в контакте с дистрибьюторами известных брендов мебели, которые готовы предложить лучшие варианты по хорошим ценам.
+
                                 </div>
                                 <div class="content  text-justify  my-2">
-                                    If you wish for any renovations to be done in your home, our team will
-                                    assist you with all that you need to be remodeled whether it's a
-                                    brand-new apartment or a resale. All the aesthetics that you ever wished
-                                    for that makes your house a home will come to reality.
+                                    Если вы планируете сделать ремонт, наша команда поможет решить все важные вопросы, будь то совершенно новая квартира или вторичная недвижимость. Любые мечты, которые сделают ваш дом по-настоящему вашим, станут реальностью.
                                 </div>
                             </div>
                         </div>
@@ -299,7 +279,7 @@
             <div class="col-lg-4">
                 <div class="card side contact mb-2" id="enquire-gradiant">
                     <? $passed_data['reference_id'] = 'after sale'; ?>
-                    <?php $this->load->view('web-site/includes/side-enquire', $passed_data); ?>
+                    <?php $this->load->view('web-site/ru/includes/side-enquire', $passed_data); ?>
                 </div>
             </div>
         </div>

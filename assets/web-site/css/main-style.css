@@ -35,8 +35,8 @@
 
 #btn-back-to-top {
     position: fixed;
-    bottom: 20px;
-    right: 30px;
+    bottom: 84px;
+    right: 34px;
     display: none;
     padding: 15px;
     border-radius: 50%;
@@ -957,6 +957,15 @@
     #YouTubeVideos .item iframe {
         height: 245px !important;
     }
+    div#nz-phone-phoneIcon {
+        right: 0 !important;
+    }
+    div#nz-phone-phoneIcon1 {
+        right: 0 !important;
+    }
+    #btn-back-to-top {
+        right: 20px;
+    }
 }
 
 .card-favorite {
@@ -1041,14 +1050,14 @@
 #toast_message {
     visibility: hidden;
     min-width: 250px;
-    max-width: 320px;
+    max-width: 260px;
     margin-left: -125px;
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
     position: fixed;
-    right: 50px;
+    right: 10px;
     bottom: 2%;
     font-size: 17px;
     z-index: 99999999;
@@ -1087,7 +1096,7 @@
         opacity: 0;
     }
     to {
-        right: 50px;
+        right: 10px;
         opacity: 1;
     }
 }
@@ -1098,14 +1107,14 @@
         opacity: 0;
     }
     to {
-        right: 50px;
+        right: 10px;
         opacity: 1;
     }
 }
 
 @-webkit-keyframes fadeout {
     from {
-        right: 50px;
+        right: 10px;
         opacity: 1;
     }
     to {
@@ -1116,7 +1125,7 @@
 
 @keyframes fadeout {
     from {
-        right: 50px;
+        right: 10px;
         opacity: 1;
     }
     to {
@@ -1137,8 +1146,8 @@ span.round {
 }
 
 div#nz-phone-phoneIcon {
-    bottom: 60px;
-    right: 10px;
+    bottom: 120px;
+    right: 15px;
 }
 
 .nz-phone-phone {
@@ -1788,10 +1797,9 @@ div#nz-hot-hotIcon {
 
 /* asd asd asd asd */
 
-
 div#nz-phone-phoneIcon1 {
-    bottom: 132px;
-    right: 10px;
+    bottom: 195px;
+    right: 15px;
 }
 
 .nz-phone-phone {

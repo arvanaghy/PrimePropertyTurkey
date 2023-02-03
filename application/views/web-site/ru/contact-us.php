@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php $this->load->view('web-site/includes/head-load'); ?>
+<?php $this->load->view('web-site/ru/includes/head-load'); ?>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/header-image-wrapper.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/contact-us.css">
 <link
@@ -8,9 +8,12 @@
 />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/phone-input.css">
-<title>Contact prime Property Turkey - Property Turkey</title>
+<title>Свяжитесь с Prime Property Turkey прямо сейчас - Property Turkey</title>
 <meta name="description" content="Contact Us, Having more than 10+ years of real estate experience, Prime Property Turkey delivers knowledge and expertise second to none in Turkey's ever evolving market.">
 <link rel="canonical" href="https://www.primepropertyturkey.com/ru/contact-us"/>
+<link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/contact-us" />
+<link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/contact-us" />
+<link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/contact-us" />
 <script src="https://www.google.com/recaptcha/api.js" ></script>
 
 <meta name="twitter:card" content="summary_large_image">
@@ -53,7 +56,7 @@
             <div class="bg" id="contact-us-BG"></div>
             <div class="mask"></div>
             <div class="header-image-content offset-bottom">
-                <h1 class="title text-center font-weight-bold">Contact Prime Property Turkey</h1>
+                <h1 class="title text-center font-weight-bold">Свяжитесь с Prime Property Turkey прямо сейчас</h1>
             </div>
         </div>
     </section>
@@ -67,13 +70,13 @@
                                 <i class="fas fa-home"></i>
                             </div>
                             <div class="col-12 red-text my-1 text-center title">
-                                ADDRESS :
+                                Адрес :
                             </div>
                             <div class="col-12 font-weight-bold my-1 text-center">
-                                Istanbul Office
+                                офиса в Стамбуле
                             </div>
                             <p class="text-justify my-1 py-2 px-5">
-                                DAP Vadi, S-Blok, Ofis No:108-109, Merkez Mah, KAĞITHANE / İSTANBUL
+                                Долина Дап, Блок S, Офис108-109, Меркез Мах, Кагитане / СТАМБУЛ
                             </p>
                         </div>
                     </div>
@@ -83,7 +86,7 @@
                                 <i class="fas fa-phone fa-flip-horizontal"></i>
                             </div>
                             <div class="col-12 red-text my-1 text-center title">
-                                PHONES :
+                                Наш телефон в Турции :
                             </div>
                             <p class="text-justify my-1 py-2 px-5">
                                 (+90) 552 754 44 93
@@ -96,7 +99,7 @@
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div class="col-12 red-text my-1 text-center title">
-                                E-MAIL :
+                                Наша почта :
                             </div>
                             <p class="text-justify my-1 py-2 px-5">
                                 info[at]PrimePropertyTurkey.com
@@ -109,13 +112,13 @@
                                 <i class="fas fa-home"></i>
                             </div>
                             <div class="col-12 red-text my-1 text-center title">
-                                ADDRESS :
+                                Адрес :
                             </div>
                             <div class="col-12 font-weight-bold my-1 text-center">
-                                US Office
+                                нашего офиса в США
                             </div>
                             <p class="text-justify my-1 py-2 px-5">
-                                125 Helmsman Dr Wilmington, NC 28412
+                                125 Хелмсмен, Др Вилмингтон, Северная Каролина 28412
                             </p>
                         </div>
                     </div>
@@ -125,7 +128,7 @@
                                 <i class="fas fa-phone fa-flip-horizontal"></i>
                             </div>
                             <div class="col-12 red-text my-1 text-center title">
-                                PHONES :
+                                Наш телефон в США :
                             </div>
                             <p class="text-justify my-1 py-2 px-5">
                                 (+1) 910 747 3755
@@ -138,7 +141,7 @@
                         <div class="row">
                             <div class="col-12 py-3">
                                 <div class="title text-center">
-                                    Contact Us For Free Consultation
+                                    Свяжитесь с нами для бесплатной консультации
                                 </div>
                                 <div class="border"></div>
                             </div>
@@ -147,7 +150,7 @@
                                     <div class="row px-2 justify-content-center">
                                         <div class="col-md-4 justify-content-center">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Full Name" required
+                                                <input type="text" class="form-control" placeholder="Ваше имя" required
                                                        name="info" id="sideContactForm_info">
                                                 <span id="sideContactForm_info_error" style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
                                                       class="vision">
@@ -157,13 +160,13 @@
                                         </div>
                                         <div class="col-md-4 justify-content-center">
                                             <div class="form-group">
-                                                <input type="email" class="form-control" placeholder="Email" required
+                                                <input type="email" class="form-control" placeholder="Ваша электронная почта" required
                                                        name="email">
                                             </div>
                                         </div>
                                         <div class="col-md-4 justify-content-center">
                                             <div class="form-group">
-                                                <input type="tel" class="form-control" placeholder="Phone" id="phone"
+                                                <input type="tel" class="form-control" placeholder="Ваш номер телефона" id="phone"
                                                        name="phone[main]" required>
                                                 <span id="sideContactForm_phone_error" style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
                                                       class="vision">
@@ -176,7 +179,7 @@
                                         <div class="col-12">
                                             <textarea name="message" id="message" cols="30" rows="4"
                                                       class="form-control"
-                                                      placeholder="Message" required></textarea>
+                                                      placeholder="Ваше сообщение" required></textarea>
                                         </div>
                                         <div class="my-2">
                                             <div class="g-recaptcha"
@@ -187,7 +190,7 @@
                                     <div class="row px-2 py-2 justify-content-center align-items-center">
                                         <div class="col-md-5">
                                             <div class="form-group">
-                                                <input type="submit" class="btn red-button btn-block" value="SUBMIT"/>
+                                                <input type="submit" class="btn red-button btn-block" value="ОТПРАВИТЬ"/>
                                             </div>
                                         </div>
                                     </div>

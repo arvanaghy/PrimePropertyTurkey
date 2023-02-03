@@ -27,6 +27,9 @@ Asia and Europe and access to the markets in both regions">
 <meta name="twitter:image"
       content="https://www.primepropertyturkey.com/assets/web-site/images/base/Prime-Property-Turkey-build-logo.jpg">
 <link rel="canonical" href="https://www.primepropertyturkey.com/citizenship-by-investment-in-turkey"/>
+<link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/citizenship-by-investment-in-turkey" />
+<link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/citizenship-by-investment-in-turkey" />
+<link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/citizenship-by-investment-in-turkey" />
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -191,21 +194,53 @@ Asia and Europe and access to the markets in both regions">
         margin: 1% auto;
         border: 0px solid darkred !important;
     }
+    .header-desc{font-size: 1.5rem}
 
     @media screen and (max-width: 540px) {
         h2 {
-            font-size: 3vh;
+            font-size: 2rem;
         }
 
         .scroll-links {
             line-height: 1.3rem;
         }
+        #theme-background .header-image-wrapper .header-image-content.offset-bottom .title {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+        .header-desc{
+            font-size: 0.9rem;
+        }
+        #Citizenship-by-investment-content p {
+            font-size: 0.8rem;
+        }
+        .number {
+            font-size: 1rem;
+        }
+        .No-number {
+            font-size: 0.6rem;
+        }
+        h3{
+            font-size: 1.1rem;
+            line-height: 1.7rem;
+        }
+        li{
+            font-size: 0.9rem;
+        }
+
+        .after-border-h2 {
+            margin-bottom:5%;
+        }
+        .useful {
+            font-size: 0.6rem;
+        }
+        .side .card-title{
+            font-size: 1.1rem;
+        }
     }
 
-    @media screen and (max-width: 425px) {
-        h2 {
-            font-size: 2vh;
-        }
+    @media screen and (max-width: 320px) {
+
     }
 
     .side-recommended-owl .item .card img {
@@ -222,7 +257,7 @@ Asia and Europe and access to the markets in both regions">
         <div class="mask"></div>
         <div class="header-image-content offset-bottom">
             <h1 class="title text-center">Turkish Citizenship by Investment</h1>
-            <div class="m-1 text-center" style="font-size: 1.5rem;"> Acquire Real Estate Investment worth at least
+            <div class="m-1 text-center header-desc"> Acquire Real Estate Investment worth at least
                 $400.000 and get the benefit of obtaining the Turkish Citizenship
             </div>
         </div>

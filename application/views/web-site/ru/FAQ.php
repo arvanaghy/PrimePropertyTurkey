@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php $this->load->view('web-site/includes/head-load'); ?>
+<?php $this->load->view('web-site/ru/includes/head-load'); ?>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/header-image-wrapper.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/short_term_residency_permit.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/frequently_asked_questions_faq.css">
@@ -27,6 +27,11 @@
 <meta name="twitter:description"
       content="ЧАВО по программе инвестиций в недвижимость для гражданства">
 <meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
+<link rel="canonical" href="https://www.primepropertyturkey.com/ru/frequently-asked-questions-faq"/>
+
+<link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/frequently-asked-questions-faq" />
+<link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/frequently-asked-questions-faq" />
+<link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/frequently-asked-questions-faq" />
 </head>
 <body>
 <?php $this->load->view('web-site/ru/includes/top-section'); ?>

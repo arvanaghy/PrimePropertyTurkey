@@ -24,6 +24,9 @@
 <meta name="twitter:image"
 <meta name="twitter:image"
       content="https://www.primepropertyturkey.com/assets/web-site/images/base/Prime-Property-Turkey-build-logo.jpg">
+<link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/after-sales" />
+<link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/after-sales" />
+<link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/after-sales" />
 <style type="text/css">
     #enquire-gradiant {
         color: white;
@@ -113,6 +116,27 @@
         margin-top: unset;
         padding-top: 36px;
     }
+    @media screen and (max-width: 570px){
+        .header-image-content p{
+            text-align: center;
+            margin: 0 25px;
+        }
+        .header-image-content h1{
+            font-size: 1.5rem !important;
+        }
+        .content{
+            font-size: 0.8rem;
+            text-align: left !important;
+        }
+        .useful{
+            font-size: 0.7rem;
+        }
+        .h2{
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+    }
 </style>
 </head>
 <body>
@@ -137,26 +161,26 @@
                     <div class="card-body">
                         <div class="card-title">
                             <div class="row p-4">
-                                <div class="col">
+                                <div class="col-md-3 col-6 my-3">
                                     <a onclick="scrollToAfterSection(this)" id="1" style="cursor: pointer">
                                         <img src="<?= base_url(); ?>assets/web-site/images/base/after-sales/x1.webp"
                                              class="img-fluid" alt="thumbnail rentals">
                                     </a>
                                 </div>
-                                <div class="col">
+                                <div class="col-md-3 col-6 my-3">
                                     <a onclick="scrollToAfterSection(this)" id="2" style="cursor: pointer">
                                         <img src="<?= base_url(); ?>assets/web-site/images/base/after-sales/x2.webp"
                                              class="img-fluid" alt="thumbnail resales">
                                     </a>
                                 </div>
-                                <div class="col">
+                                <div class="col-md-3 col-6 my-3">
                                     <a onclick="scrollToAfterSection(this)" id="3" style="cursor: pointer">
                                         <img src="<?= base_url(); ?>assets/web-site/images/base/after-sales/x3.webp"
                                              class="img-fluid" alt="thumbnail property management">
                                     </a>
 
                                 </div>
-                                <div class="col">
+                                <div class="col-md-3 col-6 my-3">
                                     <a onclick="scrollToAfterSection(this)" id="4" style="cursor: pointer">
                                         <img src="<?= base_url(); ?>assets/web-site/images/base/after-sales/x4.webp"
                                              class="img-fluid" alt="thumbnail interior design">
@@ -277,7 +301,7 @@
                 </div>
                 <div class="card my-3" style="background-color: #eaeaea">
                     <div class="card-body">
-                        <div class="useful px-4 py-2">
+                        <div class="useful px-1 px-md-4 py-2">
                             <strong> Did You Find This Useful ? </strong>
                             <button id="like_button"
                                     <? if (is_afterSaleLiked()){ ?>style="pointer-events: none;border: 0;background-color: transparent;"

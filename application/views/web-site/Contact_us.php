@@ -23,6 +23,9 @@
 <meta name="twitter:description"
       content="Contact Us, Having more than 10+ years of real estate experience, Prime Property Turkey delivers knowledge and expertise second to none in Turkey's ever evolving market.">
 <meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
+<link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/contact-us" />
+<link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/contact-us" />
+<link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/contact-us" />
 
 
 <style type="text/css">

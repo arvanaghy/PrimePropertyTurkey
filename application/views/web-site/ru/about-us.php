@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php $this->load->view('web-site/includes/head-load'); ?>
+<?php $this->load->view('web-site/ru/includes/head-load'); ?>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/header-image-wrapper.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/about-us.css">
 <title>О компании Prime Property Turkey - Property Turkey</title>
@@ -15,6 +15,9 @@
 <meta name="twitter:description"
       content="Prime Property Turkey предоставляет непревзойденные знания и опыт на постоянно развивающемся рынке Турции. Видя необходимость в агентстве, которое просто делает все правильно, три лучших международных консультанта отрасли объединили свои усилия, чтобы создать идеальную суперкоманду для своих клиентов.">
 <meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
+<link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/about-us" />
+<link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/about-us" />
+<link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/about-us" />
 </head>
 <body>
 <?php $this->load->view('web-site/ru/includes/top-section'); ?>
@@ -95,9 +98,9 @@
                     </div>
                     <div class="content">
                         <h4>
-                            Питер ТаханС
+                            Питер Тахан
                             <small class="font-weight-bold my-2">
-                                оучредитель Prime Property Turkey
+                                Соучредитель Prime Property Turkey
                             </small>
                         </h4>
                         <p class="text-justify">

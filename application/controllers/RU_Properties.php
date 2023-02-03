@@ -13,9 +13,6 @@ class RU_Properties extends CI_Controller
 
     public function index($passed_url= '')
     {
-        $this->load->helper('geolocation_helper');
-        $this->load->helper('favorite');
-        $this->load->model('Fetch_m');
         $this->load->helper('form');
         $cityNames = $this->Fetch_m->fetchCityNames();
         $data['cityNames'] = array();

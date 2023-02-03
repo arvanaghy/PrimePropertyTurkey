@@ -30,6 +30,21 @@
             width: 100% !important;
         }
     }
+    @media screen and (max-width: 320px){
+        .side .card-img-left {
+            width: 95px !important;
+        }
+    }
+    @media screen and (max-width: 570px){
+        h1{
+            font-size: 25px;
+            line-height: 35px;
+        }
+        h4{
+            font-size: 1.2rem;
+            line-height: 30px;
+        }
+    }
 </style>
 </head>
 <body>

@@ -117,6 +117,17 @@
 <!--        </div>-->
 <!--    </div>-->
 <!-- End of BrandPush Trust Badge -->
+<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="69546338-e190-4cb2-a0ff-d65c86a1b8b3";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+<style type="text/css">
+    @media screen and (max-width: 320px){
+        #mail-text{
+            font-size: 0.8rem;
+        }
+        .Copyright{
+            font-size: 0.5rem;
+        }
+    }
+</style>
     <section class="footer" id="footer">
         <div class="container-fluid py-3 py-md-5">
             <div class="row text-white">

@@ -219,14 +219,14 @@
                                                        <?= number_format($recommended_property->Property_price); ?>
                                                    <? }
                                                } else { ?>
-                                                   Contact US
+                                                   Свяжитесь с нами
                                                <? } ?>
                                             </span>
                                             <button class="btn btn-danger btn-sm d-flex font-weight-bold"
                                                data-toggle="modal" data-target="#quickEnquireModal"
                                                data-whatever="<?= $recommended_property->Property_referenceID; ?>"
                                                >
-                                                Quick Enquiry
+                                                Оставить Заявку
                                             </button>
                                         </div>
                                     </div>

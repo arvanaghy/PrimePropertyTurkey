@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php $this->load->view('web-site/includes/head-load'); ?>
+<?php $this->load->view('web-site/ru/includes/head-load'); ?>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/header-image-wrapper.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/short_term_residency_permit.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/frequently_asked_questions_faq.css">
@@ -17,7 +17,9 @@
 <meta name="twitter:description"
       content="Наполеон однажды заявил: Если бы Земля была единым государством, то ее столицей был бы Стамбул. ">
 <meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
-
+<link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/area-guide" />
+<link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/area-guide" />
+<link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/area-guide" />
 <style type="text/css">
     #enquire-gradiant {
         color: white;

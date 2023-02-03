@@ -76,6 +76,9 @@ header('Cache-Control: no cache'); //disable validation of form by the browser
 <meta property="og:image"
       content="https://www.primepropertyturkey.com/assets/web-site/images/base/Prime-Property-Turkey-build-logo.jpg">
 <link rel="canonical" href="<?= $page_url; ?>"/>
+<link rel="alternate" hreflang="x-default" href="<?= $page_url; ?>" />
+<link rel="alternate" hreflang="en" href="<?= $page_url; ?>" />
+<link rel="alternate" hreflang="ru" href="<?= "https://www.primepropertyturkey.com/ru/".str_replace("https://www.primepropertyturkey.com/","",$page_url); ?>" />
 <style type="text/css">
     .sold-out {
         position: absolute;
@@ -155,7 +158,7 @@ header('Cache-Control: no cache'); //disable validation of form by the browser
 
     #title-section {
         position: absolute;
-        top: 188px;
+        top: 175px;
         left: 1%;
         right: 1%;
         background: rgba(255, 255, 255, 0.8);
@@ -172,6 +175,12 @@ header('Cache-Control: no cache'); //disable validation of form by the browser
     #description-section p {
         margin-bottom: 0;
         padding-bottom: 0;
+    }
+    @media screen and (max-width: 570px){
+        .card-speciality{
+            padding-left: 5px !important;
+            padding-right: 5px !important;
+        }
     }
 </style>
 <style>

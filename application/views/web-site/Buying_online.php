@@ -23,7 +23,16 @@
                                 purchasing a property overseas and becoming a property owner has become much easier.">
 <meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
 <link rel="canonical" href="https://www.primepropertyturkey.com/buying-online"/>
-
+<link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/buying-online" />
+<link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/buying-online" />
+<link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/buying-online" />
+<style type="text/css">
+    @media screen and (max-width: 320px) {
+        .useful {
+            font-size: 0.8rem;
+        }
+    }
+</style>
 </head>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>

@@ -12,6 +12,9 @@
 <title>Turkish citizenship by investment FAQ's</title>
 <meta name="description" content="Having questions in mind about getting Turkish citizenship by investment in Turkey? Here we have answered a few common questions.">
 <link rel="canonical" href="https://www.primepropertyturkey.com/frequently-asked-questions-faq"/>
+<link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/frequently-asked-questions-faq" />
+<link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/frequently-asked-questions-faq" />
+<link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/frequently-asked-questions-faq" />
 <style type="text/css">
     .content .card-title {
         font-size: 1rem !important;
@@ -28,7 +31,21 @@
 <meta name="twitter:description"
       content="Having questions in mind about getting Turkish citizenship by investment in Turkey? Here we have answered a few common questions.">
 <meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
-
+<style type="text/css">
+    @media screen  and (max-width: 570px){
+        h1{
+            margin: 0 20px;
+            line-height: 35px;
+        }
+        .h2{
+            line-height: 25px;
+            font-size: 0.9rem !important;
+        }
+        .content .card-body{
+            font-size: 0.8rem;
+        }
+    }
+</style>
 </head>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>

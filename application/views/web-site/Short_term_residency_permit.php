@@ -22,6 +22,26 @@
         border-top-left-radius: 20px !important;
         border-top-right-radius: 20px !important;
     }
+    @media screen and (max-width: 540px) {
+        h1{
+            font-size: 25px !important;
+            text-transform: unset;
+            line-height: 35px !important;
+        }
+        h2{
+            font-size: 1.1rem !important;
+            line-height: 30px !important;
+        }
+        .useful{
+            font-size: 0.7rem;
+        }
+        #content-buy-online .card-title {
+            font-size: 1.2rem;
+        }
+        .content p,.content li{
+            text-align: left !important;
+        }
+    }
 </style>
 <link rel="canonical" href="https://www.primepropertyturkey.com/short-term-residency-permit"/>
 <meta name="twitter:card" content="summary_large_image">
@@ -33,6 +53,9 @@
 <meta name="twitter:description"
       content="short-term residence permits are issued for a maximum of two years as a principle. (Note: A residence permit is invalidated if it is not used within six months.)">
 <meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
+<link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/short-term-residency-permit" />
+<link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/short-term-residency-permit" />
+<link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/short-term-residency-permit" />
 </head>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>

@@ -19,6 +19,9 @@
 <meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
 
 <link rel="canonical" href="https://www.primepropertyturkey.com/area-guide"/>
+<link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/area-guide" />
+<link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/area-guide" />
+<link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/area-guide" />
 <style type="text/css">
     #enquire-gradiant {
         color: white;
@@ -50,6 +53,14 @@
 
     .side .card-title {
         font-size: 1.5rem;
+    }
+    @media screen and (max-width: 320px){
+        .useful{
+            font-size: 0.7rem !important;
+        }
+        h2{
+            font-size: 1.7rem;
+        }
     }
 </style>
 </head>

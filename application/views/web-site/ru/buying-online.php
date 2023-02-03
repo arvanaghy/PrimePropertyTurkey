@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-<?php $this->load->view('web-site/includes/head-load'); ?>
+<?php $this->load->view('web-site/ru/includes/head-load'); ?>
 <link rel="stylesheet" href="<?= base_url();?>assets/web-site/css/header-image-wrapper.css">
 <link rel="stylesheet" href="<?= base_url();?>assets/web-site/css/Buying-Online.css">
 <link
@@ -20,6 +20,9 @@
 <meta name="twitter:description"
       content="В XXI веке, когда интернет предоставляет нам прямой доступ, приобрести недвижимость за рубежом и стать владельцем недвижимости стало намного проще.">
 <meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
+<link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/buying-online" />
+<link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/buying-online" />
+<link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/buying-online" />
 
 </head>
 <body>

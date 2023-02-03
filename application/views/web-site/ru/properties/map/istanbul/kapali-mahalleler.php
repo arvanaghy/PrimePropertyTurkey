@@ -5,8 +5,8 @@
       style="fill:#ff8c00;display: none "
       id="4-mah-2"  class="mah_4"></rect>
 <text transform="matrix(1 0 0 1 600 43)"
-      style="font-family:'Open Sans'; font-size:20px;font-weight:900;display: none"
-      fill="#ffffff" id="4-mah-3" class="mah_4">Closed Area Avcılar
+      style="font-family:'Open Sans'; font-size:15px;font-weight:900;display: none"
+      fill="#ffffff" id="4-mah-3" class="mah_4">Недоступный район Avcılar
 </text>
 <text transform="matrix(1 0 0 1 600 70)"
       style="font-family:'Open Sans'; font-size:10px;font-weight:900;display: none"
@@ -28,8 +28,8 @@
       style="fill:#ff8c00;display: none "
       id="6-mah-2"  class="mah_6"></rect>
 <text transform="matrix(1 0 0 1 600 43)"
-      style="font-family:'Open Sans'; font-size:20px;font-weight:900;display: none"
-      fill="#ffffff" id="6-mah-3" class="mah_6">Closed Area Bahçelievler
+      style="font-family:'Open Sans'; font-size:15px;font-weight:900;display: none"
+      fill="#ffffff" id="6-mah-3" class="mah_6">Недоступный район Bahçelievler
 </text>
 <text transform="matrix(1 0 0 1 600 70)"
       style="font-family:'Open Sans'; font-size:10px;font-weight:900;display: none"
@@ -44,8 +44,8 @@
       style="fill:#ff8c00;display: none "
       id="8-mah-2"  class="mah_8"></rect>
 <text transform="matrix(1 0 0 1 600 43)"
-      style="font-family:'Open Sans'; font-size:20px;font-weight:900;display: none"
-      fill="#ffffff" id="8-mah-3" class="mah_8">Closed Area Başakşehir
+      style="font-family:'Open Sans'; font-size:15px;font-weight:900;display: none"
+      fill="#ffffff" id="8-mah-3" class="mah_8">Недоступный район Başakşehir
 </text>
 <text transform="matrix(1 0 0 1 600 70)"
       style="font-family:'Open Sans'; font-size:10px;font-weight:900;display: none"
@@ -63,8 +63,8 @@
       style="fill:#ff8c00;display: none "
       id="10-mah-2"  class="mah_10"></rect>
 <text transform="matrix(1 0 0 1 600 43)"
-      style="font-family:'Open Sans'; font-size:20px;font-weight:900;display: none"
-      fill="#ffffff" id="10-mah-3" class="mah_10">Closed Area Beşiktaş
+      style="font-family:'Open Sans'; font-size:15px;font-weight:900;display: none"
+      fill="#ffffff" id="10-mah-3" class="mah_10">Недоступный район Beşiktaş
 </text>
 <text transform="matrix(1 0 0 1 600 70)"
       style="font-family:'Open Sans'; font-size:10px;font-weight:900;display: none"
@@ -78,8 +78,8 @@
       style="fill:#ff8c00;display: none "
       id="12-mah-2"  class="mah_12"></rect>
 <text transform="matrix(1 0 0 1 600 43)"
-      style="font-family:'Open Sans'; font-size:20px;font-weight:900;display: none"
-      fill="#ffffff" id="12-mah-3" class="mah_12">Closed Area Beylikdüzü
+      style="font-family:'Open Sans'; font-size:15px;font-weight:900;display: none"
+      fill="#ffffff" id="12-mah-3" class="mah_12">Недоступный район Beylikdüzü
 </text>
 <text transform="matrix(1 0 0 1 600 70)"
       style="font-family:'Open Sans'; font-size:10px;font-weight:900;display: none"
@@ -93,8 +93,8 @@
       style="fill:#ff8c00;display: none "
       id="13-mah-2"  class="mah_13"></rect>
 <text transform="matrix(1 0 0 1 600 43)"
-      style="font-family:'Open Sans'; font-size:20px;font-weight:900;display: none"
-      fill="#ffffff" id="13-mah-3" class="mah_13">Closed Area Beyoğlu
+      style="font-family:'Open Sans'; font-size:15px;font-weight:900;display: none"
+      fill="#ffffff" id="13-mah-3" class="mah_13">Недоступный район Beyoğlu
 </text>
 <text transform="matrix(1 0 0 1 600 70)"
       style="font-family:'Open Sans'; font-size:10px;font-weight:900;display: none"
@@ -144,8 +144,8 @@
       style="fill:#ff8c00;display: none "
       id="18-mah-2"  class="mah_18"></rect>
 <text transform="matrix(1 0 0 1 600 43)"
-      style="font-family:'Open Sans'; font-size:20px;font-weight:900;display: none"
-      fill="#ffffff" id="18-mah-3" class="mah_18">Closed Area Esenyurt
+      style="font-family:'Open Sans'; font-size:15px;font-weight:900;display: none"
+      fill="#ffffff" id="18-mah-3" class="mah_18">Недоступный район Esenyurt
 </text>
 <text transform="matrix(1 0 0 1 600 70)"
       style="font-family:'Open Sans'; font-size:10px;font-weight:900;display: none"
@@ -187,8 +187,8 @@
       style="fill:#ff8c00;display: none "
       id="20-mah-2"  class="mah_20"></rect>
 <text transform="matrix(1 0 0 1 600 43)"
-      style="font-family:'Open Sans'; font-size:20px;font-weight:900;display: none"
-      fill="#ffffff" id="20-mah-3" class="mah_20">Closed Area Fatih
+      style="font-family:'Open Sans'; font-size:15px;font-weight:900;display: none"
+      fill="#ffffff" id="20-mah-3" class="mah_20">Недоступный район Fatih
 </text>
 <text transform="matrix(1 0 0 1 600 70)"
       style="font-family:'Open Sans'; font-size:10px;font-weight:900;display: none"
@@ -246,8 +246,8 @@
       style="fill:#ff8c00;display: none "
       id="26-mah-2"  class="mah_26"></rect>
 <text transform="matrix(1 0 0 1 600 43)"
-      style="font-family:'Open Sans'; font-size:20px;font-weight:900;display: none"
-      fill="#ffffff" id="26-mah-3" class="mah_26">Closed Area Küçükçekmece
+      style="font-family:'Open Sans'; font-size:15px;font-weight:900;display: none"
+      fill="#ffffff" id="26-mah-3" class="mah_26">Недоступный район Küçükçekmece
 </text>
 <text transform="matrix(1 0 0 1 600 70)"
       style="font-family:'Open Sans'; font-size:10px;font-weight:900;display: none"
@@ -269,8 +269,8 @@
       style="fill:#ff8c00;display: none "
       id="30-mah-2"  class="mah_30"></rect>
 <text transform="matrix(1 0 0 1 600 43)"
-      style="font-family:'Open Sans'; font-size:20px;font-weight:900;display: none"
-      fill="#ffffff" id="30-mah-3" class="mah_30">Closed Area Sarıyer
+      style="font-family:'Open Sans'; font-size:15px;font-weight:900;display: none"
+      fill="#ffffff" id="30-mah-3" class="mah_30">Недоступный район Sarıyer
 </text>
 <text transform="matrix(1 0 0 1 600 70)"
       style="font-family:'Open Sans'; font-size:10px;font-weight:900;display: none"
@@ -284,8 +284,8 @@
       style="fill:#ff8c00;display: none "
       id="31-mah-2"  class="mah_31"></rect>
 <text transform="matrix(1 0 0 1 600 43)"
-      style="font-family:'Open Sans'; font-size:20px;font-weight:900;display: none"
-      fill="#ffffff" id="31-mah-3" class="mah_31">Closed Area Şile
+      style="font-family:'Open Sans'; font-size:15px;font-weight:900;display: none"
+      fill="#ffffff" id="31-mah-3" class="mah_31">Недоступный район Şile
 </text>
 <text transform="matrix(1 0 0 1 600 70)"
       style="font-family:'Open Sans'; font-size:10px;font-weight:900;display: none"
@@ -299,8 +299,8 @@
       style="fill:#ff8c00;display: none "
       id="32-mah-2"  class="mah_32"></rect>
 <text transform="matrix(1 0 0 1 600 43)"
-      style="font-family:'Open Sans'; font-size:20px;font-weight:900;display: none"
-      fill="#ffffff" id="32-mah-3" class="mah_32">Closed Area Şişli
+      style="font-family:'Open Sans'; font-size:15px;font-weight:900;display: none"
+      fill="#ffffff" id="32-mah-3" class="mah_32">Недоступный район Şişli
 </text>
 <text transform="matrix(1 0 0 1 600 70)"
       style="font-family:'Open Sans'; font-size:10px;font-weight:900;display: none"
@@ -326,8 +326,8 @@
       style="fill:#ff8c00;display: none "
       id="35-mah-2"  class="mah_35"></rect>
 <text transform="matrix(1 0 0 1 600 43)"
-      style="font-family:'Open Sans'; font-size:20px;font-weight:900;display: none"
-      fill="#ffffff" id="35-mah-3" class="mah_35">Closed Area Tuzla
+      style="font-family:'Open Sans'; font-size:15px;font-weight:900;display: none"
+      fill="#ffffff" id="35-mah-3" class="mah_35">Недоступный район Tuzla
 </text>
 <text transform="matrix(1 0 0 1 600 70)"
       style="font-family:'Open Sans'; font-size:10px;font-weight:900;display: none"
@@ -341,8 +341,8 @@
       style="fill:#ff8c00;display: none "
       id="36-mah-2"  class="mah_36"></rect>
 <text transform="matrix(1 0 0 1 600 43)"
-      style="font-family:'Open Sans'; font-size:20px;font-weight:900;display: none"
-      fill="#ffffff" id="36-mah-3" class="mah_36">Closed Area Ümraniye
+      style="font-family:'Open Sans'; font-size:15px;font-weight:900;display: none"
+      fill="#ffffff" id="36-mah-3" class="mah_36">Недоступный район Ümraniye
 </text>
 <text transform="matrix(1 0 0 1 600 70)"
       style="font-family:'Open Sans'; font-size:10px;font-weight:900;display: none"
@@ -356,8 +356,8 @@
       style="fill:#ff8c00;display: none "
       id="39-mah-2"  class="mah_39"></rect>
 <text transform="matrix(1 0 0 1 600 43)"
-      style="font-family:'Open Sans'; font-size:20px;font-weight:900;display: none"
-      fill="#ffffff" id="39-mah-3" class="mah_39">Closed Area Zeytinburnu
+      style="font-family:'Open Sans'; font-size:15px;font-weight:900;display: none"
+      fill="#ffffff" id="39-mah-3" class="mah_39">Недоступный район Zeytinburnu
 </text>
 <text transform="matrix(1 0 0 1 600 70)"
       style="font-family:'Open Sans'; font-size:10px;font-weight:900;display: none"
@@ -375,5 +375,3 @@
       style="font-family:'Open Sans'; font-size:10px;font-weight:900;display: none"
       fill="#ffffff" id="39-mah-6" class="mah_39">YEŞİLTEPE MAHALLESİ
 </text>
-
-

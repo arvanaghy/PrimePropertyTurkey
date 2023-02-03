@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-<?php $this->load->view('web-site/includes/head-load'); ?>
+<?php $this->load->view('web-site/ru/includes/head-load'); ?>
 <link rel="stylesheet" href="<?= base_url();?>assets/web-site/css/header-image-wrapper.css">
 <link rel="stylesheet" href="<?= base_url();?>assets/web-site/css/short_term_residency_permit.css">
 <link
@@ -13,6 +13,9 @@
                                 within sixty days prior to its expiration, but under no circumstances should this be
                                 done after the expiry date.">
 <link rel="canonical" href="https://www.primepropertyturkey.com/ru/short-term-residency-extension" />
+<link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/short-term-residency-extension" />
+<link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/short-term-residency-extension" />
+<link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/short-term-residency-extension" />
 <style type="text/css">
     h2{
         font-size: 1.3rem;

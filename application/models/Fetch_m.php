@@ -96,7 +96,7 @@ class Fetch_m extends CI_Model
     }
     public function fetchCityIntroduce($value)
     {
-        $this->db->select('introduce,moreDescription');
+        $this->db->select('introduce,moreDescription,RUintroduce,RUmoreDescription');
         $this->db->where('value', $value);
         $query = $this->db->get('city');
         $data = array('introduce' => '', 'moreDescription' => '');
@@ -104,6 +104,8 @@ class Fetch_m extends CI_Model
             foreach ($query->result() as $value) {
                 $data['introduce'] = $value->introduce;
                 $data['moreDescription'] = $value->moreDescription;
+                $data['RUintroduce'] = $value->RUintroduce;
+                $data['RUmoreDescription'] = $value->RUmoreDescription;
             }
         }
         return $data;

@@ -30,6 +30,22 @@
         background: #efefef;
         border-top: 5px solid #cf1717;
     }
+    @media screen and (max-width: 320px){
+        .side .card-img-left{
+            width: 95px !important;
+        }
+    }
+    @media screen and (max-width: 570px){
+        .header-image-content h1{
+            line-height: 45px;
+        }
+        .header-image-content h4{
+            font-size: 1.2rem;
+            line-height: 30px;
+        }
+        .Find-Your-Property .find-title{width: 90%}
+        .Find-Your-Property .find-form{width: 100%}
+    }
 </style>
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="https://www.primepropertyturkey.com/news<? if ($page_id != 0) {

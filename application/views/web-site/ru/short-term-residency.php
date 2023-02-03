@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php $this->load->view('web-site/includes/head-load'); ?>
+<?php $this->load->view('web-site/ru/includes/head-load'); ?>
 
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/header-image-wrapper.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/short_term_residency_permit.css">
@@ -12,6 +12,7 @@
 <title>Краткосрочный вид на жительство</title>
 <meta name="description"
       content="краткосрочный вид на жительство в принципе выдается максимум на два года. (Примечание: Вид на жительство считается недействительным, если он не используется в течение шести месяцев).">
+
 <style type="text/css">
     h2 {
         font-size: 1.3rem;
@@ -24,7 +25,9 @@
     }
 </style>
 <link rel="canonical" href="https://www.primepropertyturkey.com/ru/short-term-residency-permit"/>
-
+<link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/short-term-residency-permit" />
+<link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/short-term-residency-permit" />
+<link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/short-term-residency-permit" />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="https://www.primepropertyturkey.com/ru/short-term-residency-permit">
 <meta name="twitter:creator" content="Justin Mays">

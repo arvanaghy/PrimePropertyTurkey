@@ -28,6 +28,9 @@
       completion.">
 <meta property="og:image" content="<?= base_url(); ?>assets/web-site/images/base/finilasim_whatsapp.jpg">
 <link rel="canonical" href="https://www.primepropertyturkey.com/How-To-Buy-Property-In-Turkey"/>
+<link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/How-To-Buy-Property-In-Turkey" />
+<link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/How-To-Buy-Property-In-Turkey" />
+<link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/How-To-Buy-Property-In-Turkey" />
 <style type="text/css">
     @media screen and (min-width: 1400px){
         .header-image-wrapper {
@@ -51,6 +54,20 @@
     }
     @media screen and (max-width:575px){
 
+    }
+    @media screen and (max-width: 320px){
+        .useful{
+            font-size: 0.7rem !important;
+        }
+        h3{
+            font-size: 35px;
+            line-height: 30px;
+        }
+        h2{
+            font-size: 1.3rem !important;
+            font-weight: bold;
+            line-height: 30px;
+        }
     }
 </style>
 </head>

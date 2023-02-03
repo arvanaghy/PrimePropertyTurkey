@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php $this->load->view('web-site/includes/head-load'); ?>
+<?php $this->load->view('web-site/ru/includes/head-load'); ?>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/property-details.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/property-details-carousal.css">
 <link
@@ -27,6 +27,9 @@ if ($image_name_webp == '') {
 <meta name="keywords" content="<?= $data_array->Property_Meta_Keyword; ?>">
 <meta name="description" content="<?= $data_array->Property_Meta_Description; ?>">
 <link rel="canonical" href="https://www.primepropertyturkey.com/ru/properties/<?= $data_array->url_slug;?>" />
+<link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/properties/<?= $data_array->url_slug;?>" />
+<link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/properties/<?= $data_array->url_slug;?>" />
+<link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/properties/<?= $data_array->url_slug;?>" />
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.primepropertyturkey.com/ru/properties/<?= $data_array->url_slug;?>">
@@ -1075,7 +1078,7 @@ if ($image_name_webp == '') {
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-center" id="share-modal-label">Share Property In Social Media</h5>
+                <h5 class="modal-title text-center" id="share-modal-label">Делитесь недвижимостью в социальных сетях</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -1121,7 +1124,7 @@ if ($image_name_webp == '') {
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-center" id="quickEnquireModalLabel">PROPERTY ENQUIRY</h5>
+                <h5 class="modal-title text-center" id="quickEnquireModalLabel">Запрос о недвижимости</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -1131,30 +1134,30 @@ if ($image_name_webp == '') {
                     <div class="row align-items-center">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Full Name" required  form="enquiry" name="info"  id="modalEnquireForm_info">
+                                <input type="text" class="form-control" placeholder="Ваше имя" required  form="enquiry" name="info"  id="modalEnquireForm_info">
                                 <span id="modalEnquireForm_info_error" style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
                                       class="vision">
-                                   Please enter your first and last name separated by a space (e.g. Jane Miller)
+                                   Ваше Имя и Фамилия, разделенные пробелом (например Джейн Миллер)
                                 </span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" id="modal_phone" class="form-control" placeholder="Phone" name="phone[main]"  form="enquiry" required>
+                                <input type="text" id="modal_phone" class="form-control" placeholder="Ваш номер телефона" name="phone[main]"  form="enquiry" required>
                                 <span id="modalEnquireForm_phone_error" style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
                                       class="vision">
-                                      Please Write Your Full PhoneNumber
+                                       Напишите ваш номер телефона
                                 </span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email" name="email" form="enquiry" required>
+                                <input type="email" class="form-control" placeholder="Ваша электронная почта" name="email" form="enquiry" required>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <textarea name="note" id="note" cols="30" rows="3" class="form-control" placeholder="Note" form="enquiry"></textarea>
+                                <textarea name="note" id="note" cols="30" rows="3" class="form-control" placeholder="Ваше сообщение" form="enquiry"></textarea>
                             </div>
                         </div>
                         <div class="col-md-12 d-flex justify-content-center">
@@ -1168,7 +1171,7 @@ if ($image_name_webp == '') {
             </div>
             <div class="modal-footer">
                 <input type="hidden" name="reference_id" id="modal_reference_id"  form="enquiry">
-                <input type="submit" class="btn red-button btn-block" form="enquiry">
+                <input type="submit" class="btn red-button btn-block" form="enquiry" value="ОТПРАВИТЬ">
             </div>
         </div>
     </div>

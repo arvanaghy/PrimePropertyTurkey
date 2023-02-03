@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php $this->load->view('web-site/includes/head-load'); ?>
+<?php $this->load->view('web-site/ru/includes/head-load'); ?>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/find-property.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/cities-property.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/header-image-wrapper.css">
@@ -24,6 +24,9 @@
       content="">
 <meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
 <script src="https://www.google.com/recaptcha/api.js"></script>
+<link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/prime-videos" />
+<link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/prime-videos" />
+<link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/prime-videos" />
 <style type="text/css">
     .sold-out {
         position: absolute;

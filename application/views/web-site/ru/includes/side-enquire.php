@@ -1,15 +1,11 @@
 <div class="card side contact my-2" id="side-contact-us">
 <div class="card-title mt-3 mb-1 text-center font-weight-bold text-white">
     <? if ($reference_id == 'Citizenship by investment') {?>
-        Enquire About <br>
-        Citizenship By
-        <br>Investment Program
+        Узнайте больше о программе инвестиционного гражданства
     <? }elseif($reference_id == 'after sale' or $reference_id == 'area guide' or $reference_id == 'blog' ){ ?>
         Свяжитесь с нами для бесплатной консультации
     <?} else {?>
-    Enquire About
-    <br />
-    This Property
+        Отправить запрос на эту недвижимость
     <? } ?>
 </div>
 <link
@@ -23,24 +19,24 @@
 <div class="card-body" id="side-garde">
     <form action="<?= base_url(); ?>Post/enquire" method="post" onsubmit="return sideEnquireFormValidation();">
         <div class="form-group">
-            <input type="text" class="form-control" required placeholder="Full Name" name="info" id="sideContactForm_info">
+            <input type="text" class="form-control" required placeholder="Email" name="info" id="sideContactForm_info">
             <span id="sideContactForm_info_error" style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
                   class="vision">
-               Please enter your first and last name separated by a space (e.g. Jane Miller)
+               Ваше Имя и Фамилия, разделенные пробелом (например Джейн Миллер)
             </span>
         </div>
         <div class="form-group">
-            <input type="email" class="form-control" required placeholder="Email" name="email">
+            <input type="email" class="form-control" required placeholder="Ваша электронная почта" name="email">
         </div>
         <div class="form-group">
-            <input type="tel" id="SideEnquirePhone" class="form-control" placeholder="Phone" name="phone[main]" required>
+            <input type="tel" id="SideEnquirePhone" class="form-control" placeholder="Ваш номер телефона" name="phone[main]" required>
             <span id="sideContactForm_phone_error" style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
                   class="vision">
-               Please Write Your Full PhoneNumber
+               Напишите ваш номер телефона
             </span>
         </div>
         <div class="form-group" id="note">
-            <textarea class="form-control" placeholder="Note" name="note" ></textarea>
+            <textarea class="form-control" placeholder="Ваше сообщение" name="note" ></textarea>
         </div>
         <div class="form-group d-flex justify-content-center">
             <div class="g-recaptcha"
@@ -48,7 +44,7 @@
         </div>
         <div class="form-group">
             <input type="hidden" value="<?= $reference_id; ?>" name="reference_id">
-            <input type="submit"  class="btn btn-block red-button" value="<? if ($reference_id == 'after sale' or $reference_id == 'area guide'){echo 'REQUEST DETAIL';}else{echo 'SEND';} ?>">
+            <input type="submit"  class="btn btn-block red-button" value="<? if ($reference_id == 'after sale' or $reference_id == 'area guide'){echo 'Запросить подробности';}else{echo 'Отправить';} ?>">
         </div>
     </form>
 </div>
@@ -65,10 +61,10 @@
         let sideContactForm_info_regex = new RegExp(/^\w+\s+\w+/i);
         let sideContactForm_phone_regex = new RegExp(/\d{5,20}/g);
 
-        if (sideContactForm_info_regex.test(sideContactForm_info) != true) {
-            sideContactFormFlag = false;
-            sideContactForm_info_error.style.display = 'block';
-        }
+        // if (sideContactForm_info_regex.test(sideContactForm_info) != true) {
+        //     sideContactFormFlag = false;
+        //     sideContactForm_info_error.style.display = 'block';
+        // }
         if (sideContactForm_phone_regex.test(sideContactForm_phone) != true) {
             sideContactFormFlag = false;
             sideContactForm_phone_error.style.display = 'block';

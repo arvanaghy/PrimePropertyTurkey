@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php $this->load->view('web-site/includes/head-load'); ?>
+<?php $this->load->view('web-site/ru/includes/head-load'); ?>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/find-property.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/cities-property.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/header-image-wrapper.css">
@@ -9,7 +9,7 @@
 />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/phone-input.css">
-<title>Turkish Properties | Prime Property Turkey</title>
+<title>Найти турецкую недвижимость | Prime Property Turkey</title>
 <link rel="canonical" href="https://www.primepropertyturkey.com/ru/properties"/>
 <meta name="description"
       content="Prime Property Turkey the best place to search for Turkish Properties, offers best deals for Istanbul real estate and some of the most attractive offers in Fethiye , Kalkan , Kas , Gocek">
@@ -136,7 +136,7 @@
         <div class="bg" id="search-property-BG"></div>
         <div class="mask"></div>
         <div class="header-image-content offset-bottom">
-            <h1 class="title text-center px-1 font-weight-bold">Search Turkish Properties</h1>
+            <h1 class="title text-center px-1 font-weight-bold">Искать недвижимость в Турции</h1>
         </div>
     </div>
 </section>
@@ -146,23 +146,23 @@
             <div class="find-title">
                 <small>
                         <span class="pre">
-                          Find
+                            Найти
                         </span>
                     <span class="pro red-text">
-                          Turkey
+                          турецкую
                         </span>
                     <span class="pre">
-                          properties
+                          недвижимость
                         </span>
                 </small>
             </div>
             <div class="find-form">
-                <form action="<?= base_url(); ?>Find" method="post"
+                <form action="<?= base_url(); ?>Ru_Find" method="post"
                       class="justify-content-around text-right">
                     <div class="row my-2 justify-content-around text-right">
                         <div class="col-lg-2 my-1" id="City">
                             <select name="City" id="city_value" class="form-control">
-                                <option value="All" selected>City</option>
+                                <option value="All" selected>Город</option>
                                 <option value="All">All</option>
                                 <? foreach ($cityNames as $value) { ?>
                                     <option value="<?= $value; ?>"><?= $value; ?></option>
@@ -171,7 +171,7 @@
                         </div>
                         <div class="col-lg-1 my-1" id="Type">
                             <select name="Type" id="property_type" class="form-control ">
-                                <option value="All" selected>Type</option>
+                                <option value="All" selected>Вид недвижимости</option>
                                 <option value="All">All</option>
                                 <? foreach ($ProType as $value) { ?>
                                     <option value="<?= $value; ?>"><?= $value; ?></option>
@@ -180,7 +180,7 @@
                         </div>
                         <div class="col-lg-2 my-1" id="min_price">
                             <select name="min_price" class="form-control ">
-                                <option value="min" selected>Min Price</option>
+                                <option value="min" selected>Минимальная стоимость</option>
                                 <option value="100000">&#36; 100.000</option>
                                 <option value="200000">&#36; 200.000</option>
                                 <option value="300000">&#36; 300.000</option>
@@ -191,7 +191,7 @@
                         </div>
                         <div class="col-lg-2 my-1" id="max_price">
                             <select class="form-control" name="max_price">
-                                <option value="5000000" selected>Max Price</option>
+                                <option value="5000000" selected>Максимальная стоимость</option>
                                 <option value="100000">&#36; 100.000</option>
                                 <option value="200000">&#36; 200.000</option>
                                 <option value="300000">&#36; 300.000</option>
@@ -203,17 +203,17 @@
                         </div>
                         <div class="col-lg-2 my-1" id="bedroom">
                             <select class="form-control" name="bedroom" id="property_bed">
-                                <option value="All" selected>Bedrooms</option>
+                                <option value="All" selected>Комнат</option>
                                 <? foreach ($proBed as $value) { ?>
                                     <option value="<?= $value; ?>"><?= $value; ?></option>
                                 <? } ?>
                             </select>
                         </div>
                         <div class="col-lg-2 my-1">
-                            <input type="text" placeholder="Reference id" class="form-control" name="referenceID">
+                            <input type="text" placeholder="ID объекта" class="form-control" name="referenceID">
                         </div>
                         <div class="col-lg-1 justify-content-center my-1">
-                            <input type="submit" class="btn red-button btn-block" value="SEARCH">
+                            <input type="submit" class="btn red-button btn-block" value="Поиск">
                         </div>
                     </div>
                 </form>
@@ -368,13 +368,13 @@
                                         <div class="row justify-content-around align-items-center py-2">
                                             <a href="<?= base_url(); ?>ru/properties/<?= $value->url_slug; ?>"
                                                class="btn btn-outline-danger btn-sm  d-flex my-1">
-                                                View Details
+                                                Показать детали
                                             </a>
                                             <button class="btn btn-danger btn-sm d-flex font-weight-bold my-1"
                                                     data-toggle="modal"
                                                     data-whatever="<?= $value->Property_referenceID; ?>"
                                                     data-target="#quickEnquireModal" >
-                                                Quick Enquiry
+                                                Оставить Заявку
                                             </button>
                                         </div>
                                     </div>
@@ -447,7 +447,7 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-center" id="quickEnquireModalLabel">PROPERTY ENQUIRY</h5>
+                <h5 class="modal-title text-center" id="quickEnquireModalLabel">Запрос о недвижимости</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -458,7 +458,7 @@
                     <div class="row align-items-center">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Full Name" required form="enquiry"
+                                <input type="text" class="form-control" placeholder="Имя и фамилия" required form="enquiry"
                                        name="info" id="modalEnquireForm_info">
                                 <span id="modalEnquireForm_info_error"
                                       style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
@@ -469,7 +469,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="tel" id="modal_phone" class="form-control" placeholder="Phone"
+                                <input type="tel" id="modal_phone" class="form-control" placeholder="Номер телефона"
                                        name="phone[main]" form="enquiry" required>
                                 <span id="modalEnquireForm_phone_error"
                                       style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
@@ -480,13 +480,13 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email" name="email"
+                                <input type="email" class="form-control" placeholder="Электронная почта" name="email"
                                        form="enquiry" required>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <textarea name="note" id="note" cols="30" rows="3" class="form-control"
+                                <textarea name="Примечание" id="note" cols="30" rows="3" class="form-control"
                                           placeholder="Note" form="enquiry"></textarea>
                             </div>
                         </div>
@@ -501,7 +501,7 @@
             </div>
             <div class="modal-footer">
                 <input type="hidden" name="reference_id" id="modal_reference_id" form="enquiry">
-                <input type="submit" class="btn red-button btn-block" form="enquiry">
+                <input type="submit" class="btn red-button btn-block" form="enquiry" value="Отправить">
             </div>
         </div>
     </div>

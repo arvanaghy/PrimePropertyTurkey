@@ -14,6 +14,9 @@
 <meta name="twitter:description"
       content=" Prime Property Turkey is an online real estate with a sincere and direct approach and you can Find your perfect property in Turkey, search a wide range of properties for sale in Turkey.">
 <meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
+<link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/about-us" />
+<link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/about-us" />
+<link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/about-us" />
 </head>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>
@@ -29,7 +32,7 @@
 <section id="content-about-us">
     <div class="container">
         <div class="row justify-content-center py-2 py-md-5">
-            <div class="content">
+            <div class="content col">
                 <div class="card my-2">
                     <div class="card-title my-3 py-2">
                         <h1 class="text-center font-weight-bold">
@@ -42,7 +45,7 @@
                     </div>
                     <div class="border"></div>
                     <div class="card-body justify-content-center">
-                        <p class="text-justify mx-2 my-2">
+                        <p class="text-left text-md-justify  mx-2 my-2">
                             Prime Property Turkey was founded to deliver personalized and professional real estate
                             consultancy services to those looking to invest, live , or a combination of both in
                             Turkey. Having more than 10+ years of real estate experience, Prime Property Turkey
@@ -77,7 +80,7 @@
                             <small class="font-weight-bold my-2">
                                 Co-Founder Prime Property Turkey</small>
                         </h4>
-                        <p class="text-justify"> Justin comes to Prime Property Turkey from one of Turkey’s largest
+                        <p class="text-left text-md-justify"> Justin comes to Prime Property Turkey from one of Turkey’s largest
                             international real estate companies. There he served as the Sr. Investment for the North
                             American and European markets. Devising key marketing campaigns and sourcing a portfolio
                             of some of Turkey’s most premium properties, Justin has delivered the highest level of
@@ -98,7 +101,7 @@
                             <small class="font-weight-bold my-2">
                                 Co-Founder Prime Property Turkey</small>
                         </h4>
-                        <p class="text-justify"> Peter brings 10+ years of International Real Estate experience to
+                        <p class="text-left text-md-justify"> Peter brings 10+ years of International Real Estate experience to
                             Prime Property Turkey clients. Having been one of the longest top advisors in the
                             industry, Peter is well versed in all facets of real estate in Turkey. Rather investing
                             or purchasing for pleasure, Peter can advise and guide no matter the situation. Peter
@@ -119,7 +122,7 @@
                             <small class="font-weight-bold my-2">
                                 Co-Founder Prime Property Turkey</small>
                         </h4>
-                        <p class="text-justify"> With 10+ years of experience in the Turkish real estate market and
+                        <p class="text-left text-md-justify"> With 10+ years of experience in the Turkish real estate market and
                             having helped and served 1000+ clients in this time, Omran is one of the most
                             experienced and well-known advisors in the International market. Omran specializes in
                             assisting clients who are looking to make investment and lifestyle purchases. Omran is

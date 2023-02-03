@@ -1,8 +1,8 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<?php $this->load->view('web-site/includes/head-load'); ?>
+<?php $this->load->view('web-site/ru/includes/head-load'); ?>
 <title>Элитная недвижимость на продажу в Турции | Prime Property Turkey</title>
 <meta name="description"
-      content="Найдите свою идеальную недвижимость в Турции в Prime Property Turkey. Мы предлагаем широкий выбор недвижимости для продажи в Турции. Если вы хотите купить или продать недвижимость в Стамбуле, Алтынкуме, Бодруме, Фетхие, Калкане, свяжитесь с нами.">
+      content="Найдите свою идеальную недвижимость в Турции c Prime Property Turkey. Если вы хотите купить или продать недвижимость в Стамбуле, Фетхие, Калкане, свяжитесь с нами.">
 <meta name="keywords"
       content="Продажа недвижимости в Турции, Купить недвижимость в Турции, Гражданство за инвестиции в Турции, Программа для получения гражданства Турции по инвестициям.">
 <link rel="canonical" href="https://www.primepropertyturkey.com/ru"/>
@@ -12,7 +12,7 @@
 <meta property="og:url" content="https://www.primepropertyturkey.com/ru">
 <meta property="og:title" content="Элитная недвижимость на продажу в Турции | Prime Property Turkey">
 <meta property="og:description"
-      content="Найдите свою идеальную недвижимость в Турции в Prime Property Turkey. Мы предлагаем широкий выбор недвижимости для продажи в Турции. Если вы хотите купить или продать недвижимость в Стамбуле, Алтынкуме, Бодруме, Фетхие, Калкане, свяжитесь с нами.">
+      content="Найдите свою идеальную недвижимость в Турции c Prime Property Turkey. Если вы хотите купить или продать недвижимость в Стамбуле, Фетхие, Калкане, свяжитесь с нами.">
 <meta property="og:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="https://www.primepropertyturkey.com/ru">
@@ -21,7 +21,7 @@
 <meta name="twitter:title"
       content="Элитная недвижимость на продажу в Турции | Prime Property Turkey">
 <meta name="twitter:description"
-      content="Найдите свою идеальную недвижимость в Турции в Prime Property Turkey. Мы предлагаем широкий выбор недвижимости для продажи в Турции. Если вы хотите купить или продать недвижимость в Стамбуле, Алтынкуме, Бодруме, Фетхие, Калкане, свяжитесь с нами.">
+      content="Найдите свою идеальную недвижимость в Турции c Prime Property Turkey. Если вы хотите купить или продать недвижимость в Стамбуле, Фетхие, Калкане, свяжитесь с нами.">
 <meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <link
@@ -30,6 +30,9 @@
 />
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/phone-input.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/homePage.css">
+<link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com" />
+<link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com" />
+<link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru" />
 </head>
 <style type="text/css">
     #YouTubeVideos .card-body a i {
@@ -233,7 +236,7 @@
                 </p>
                 <p class="text-justify mx-md-5 px-md-5 my-md-5 my-1 py-1">
                     Мы создали агентство Prime Property Turkey, чтобы работать на растущем турецком рынке недвижимости
-                    правильно и эффективно. Наша компания стремится к максимально прозрачности всего процесса покупки и
+                    правильно и эффективно. Наша компания стремится к максимальной прозрачности всего процесса покупки и
                     послепродажного обслуживания. Мы гарантируем нашим клиентам заботу, которой они достойны. Покупая
                     недвижимость, мы принимаем довольно сложное решение, незасисимо от того, в какой точке мира мы
                     находимся. Наш опыт и знание турецкого рынка гарантируют Вам, что каждая покупка (совершаете ли вы
@@ -784,7 +787,7 @@
                                 <span id="modalEnquireForm_info_error"
                                       style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
                                       class="vision">
-                                   Please enter your first and last name separated by a space (e.g. Jane Miller)
+                                   Ваше Имя и Фамилия, разделенные пробелом (например Джейн Миллер)
                                 </span>
                             </div>
                         </div>
@@ -795,7 +798,7 @@
                                 <span id="modalEnquireForm_phone_error"
                                       style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
                                       class="vision">
-                                      Please Write Your Full PhoneNumber
+                                      Напишите ваш номер телефона
                                 </span>
                             </div>
                         </div>
@@ -849,7 +852,7 @@
                                 <span id="TopEnquireForm_info_error"
                                       style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
                                       class="vision">
-                                   Please enter your first and last name separated by a space (e.g. Jane Miller)
+                                   Ваше Имя и Фамилия, разделенные пробелом (например Джейн Миллер)
                                 </span>
                             </div>
                         </div>
@@ -860,7 +863,7 @@
                                 <span id="TopEnquireForm_phone_error"
                                       style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
                                       class="vision">
-                                      Please Write Your Full PhoneNumber
+                                      Напишите ваш номер телефона
                                 </span>
                             </div>
                         </div>

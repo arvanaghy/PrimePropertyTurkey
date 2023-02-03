@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-<?php $this->load->view('web-site/includes/head-load'); ?>
+<?php $this->load->view('web-site/ru/includes/head-load'); ?>
 <link rel="stylesheet" href="<?= base_url();?>assets/web-site/css/header-image-wrapper.css">
 <link rel="stylesheet" href="<?= base_url();?>assets/web-site/css/blogs.css">
 <title>Блог о турецкой недвижимости | Prime Property Turkey</title>

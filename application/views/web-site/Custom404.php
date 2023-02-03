@@ -4,6 +4,9 @@
 <title>404 Page Not Found | Prime Property Turkey</title>
 <meta name="description" content="404 Page Not Found, The page you are looking for might have been removed or is temporarily unavailable">
 <link rel="canonical" href="https://www.primepropertyturkey.com/Custom404"/>
+<link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/Custom404" />
+<link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/Custom404" />
+<link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/Custom404" />
 </head>
 <body class="d-flex justify-content-center align-items-center">
 <section class="d-flex justify-content-center align-items-center">

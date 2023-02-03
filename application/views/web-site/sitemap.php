@@ -159,7 +159,6 @@
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
-
     <? foreach($Property_pages as $url) { ?>
         <url>
             <loc><?= base_url().'Properties/'.$url->Property_location; ?></loc>

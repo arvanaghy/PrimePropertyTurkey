@@ -7,7 +7,7 @@
     fclose($myfile);
 } ?>
 <?php header('Cache-Control: no cache'); //disable validation of form by the browser ?>
-<?php $this->load->view('web-site/includes/head-load'); ?>
+<?php $this->load->view('web-site/ru/includes/head-load'); ?>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/find-property.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/cities-property.css">
 <link
@@ -17,20 +17,29 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/phone-input.css">
 <? if ($cityValue!='Search'){ ?>
-<title>Properties For Sale In <?= $this->uri->segment(3); ?> - <?= $this->uri->segment(3); ?> Real Estate</title>
+<title>Объекты недвижимости на продажу в <?= $this->uri->segment(3); ?> - <?= $this->uri->segment(3); ?> Real Estate</title>
 
-<meta name="description" content="the best suggestion about Properties for sale in  <?= $this->uri->segment(3); ?><? if ($this->uri->segment(3)!='Istanbul' and $cityValue == 'Istanbul' ): ?>, Istanbul <? endif; ?> in prime property turkey, pick your future real estate with Prime Property Turkey">
+<meta name="description" content="Лучшее предложение  продажа недвижимости в  <?= $this->uri->segment(3); ?><? if ($this->uri->segment(3)!='Istanbul' and $cityValue == 'Istanbul' ): ?>, Istanbul <? endif; ?> выбирайте вашу будущую недвижимость с Prime Property Turkey">
 <? if (isset($page_id)) {
     $page_id = $page_id;
     if ($page_id!=0){ ?>
         <link rel="canonical" href="https://www.primepropertyturkey.com/ru/properties/<?= $this->uri->segment(3); ?><? if ($page_id!=0){ echo '/'.$page_id;}?>"/>
+        <link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/properties/<?= $this->uri->segment(3); ?><? if ($page_id!=0){ echo '/'.$page_id;}?>" />
+        <link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/properties/<?= $this->uri->segment(3); ?><? if ($page_id!=0){ echo '/'.$page_id;}?>"" />
+        <link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/properties/<?= $this->uri->segment(3); ?><? if ($page_id!=0){ echo '/'.$page_id;}?>" />
     <?php }else{ ?>
         <link rel="canonical" href="https://www.primepropertyturkey.com/ru/Properties/<?= $this->uri->segment(3); ?>"/>
+        <link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/Properties/<?= $this->uri->segment(3); ?>" />
+        <link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/Properties/<?= $this->uri->segment(3); ?>" />
+        <link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/Properties/<?= $this->uri->segment(3); ?>" />
     <?php } ?>
 <?php
 } else {
     $page_id = 0; ?>
     <link rel="canonical" href="https://www.primepropertyturkey.com/ru/Properties/<?= $this->uri->segment(3); ?>"/>
+        <link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/Properties/<?= $this->uri->segment(3); ?>" />
+        <link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/Properties/<?= $this->uri->segment(3); ?>" />
+        <link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/Properties/<?= $this->uri->segment(3); ?>" />
 <?php } ?>
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
@@ -45,7 +54,7 @@
 <meta property="twitter:description" content="the best suggestion about Property in  <?= $cityValue; ?> for sale in prime property turkey, pick your future real estate with Prime Property Turkey">
 <meta property="og:image" content="https://www.primepropertyturkey.com/assets/web-site/images/base/Prime-Property-Turkey-build-logo.jpg">
 <?php }else{ ?>
-    <title>Properties For Sale In  Samaneh -  Real Estate</title>
+    <title>Объекты недвижимости на продажу в <?= $this->uri->segment(3); ?> -  Недвижимость</title>
 
     <meta name="description" content="the best suggestion about Properties for sale in in prime property turkey, pick your future real estate with Prime Property Turkey">
     <? if (isset($page_id)) {
@@ -165,87 +174,87 @@
 </head>
 <body>
 <?php $this->load->view('web-site/ru/includes/top-section'); ?>
-    <section id="Find-Your-Property" class="Find-Your-Property m-3">
-            <div class="container-fluid">
-                <div class="row justify-content-center align-items-center my-2 py-3">
-                    <div class="find-title">
-                        <small>
+<section id="Find-Your-Property" class="Find-Your-Property m-3">
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-center my-2 py-3">
+            <div class="find-title">
+                <small>
                         <span class="pre">
-                          Find
+                            Найти
                         </span>
-                        <span class="pro red-text">
-                            Turkey
+                    <span class="pro red-text">
+                          турецкую
                         </span>
-                        <span class="pre">
-                           properties
+                    <span class="pre">
+                          недвижимость
                         </span>
-                        </small>
-                    </div>
-                    <div class="find-form">
-                        <form action="<?= base_url(); ?>Ru_Find" method="post"
-                              class="justify-content-around text-right">
-                            <div class="row my-2 justify-content-around text-right">
-                                <div class="col-lg-2 my-1" id="City">
-                                    <select name="City" id="city_value" class="form-control">
-                                        <option value="All" selected>City</option>
-                                        <option value="All">All</option>
-                                        <? foreach ($cityNames as $value){ ?>
-                                            <option value="<?= $value;?>"><?= $value;?></option>
-                                        <? } ?>
-                                    </select>
-                                </div>
-                                <div class="col-lg-1 my-1" id="Type">
-                                    <select name="Type" id="property_type" class="form-control ">
-                                        <option value="All" selected>Type</option>
-                                        <option value="All">All</option>
-                                        <? foreach ($ProType as $value){ ?>
-                                            <option value="<?= $value;?>"><?= $value;?></option>
-                                        <? } ?>
-                                    </select>
-                                </div>
-                                <div class="col-lg-2 my-1" id="min_price">
-                                    <select name="min_price" class="form-control ">
-                                        <option value="min" selected>Min Price</option>
-                                        <option value="100000">&#36; 100.000 </option>
-                                        <option value="200000">&#36; 200.000  </option>
-                                        <option value="300000">&#36; 300.000 </option>
-                                        <option value="400000">&#36; 400.000</option>
-                                        <option value="500000">&#36; 500.000 </option>
-                                        <option value="1000000">&#36; 1 M </option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-2 my-1" id="max_price">
-                                    <select class="form-control" name="max_price">
-                                        <option value="5000000" selected>Max Price</option>
-                                        <option value="100000">&#36; 100.000 </option>
-                                        <option value="200000">&#36; 200.000  </option>
-                                        <option value="300000">&#36; 300.000  </option>
-                                        <option value="400000">&#36; 400.000</option>
-                                        <option value="500000">&#36; 500.000 </option>
-                                        <option value="1000000">&#36; 1 M </option>
-                                        <option value="5000000">&#36; 1 M+ </option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-2 my-1" id="bedroom">
-                                    <select class="form-control" name="bedroom" id="property_bed">
-                                        <option value="All" selected>Bedrooms</option>
-                                        <? foreach ($proBed as $value){ ?>
-                                            <option value="<?= $value;?>"><?= $value;?></option>
-                                        <? } ?>
-                                    </select>
-                                </div>
-                                <div class="col-lg-2 my-1">
-                                    <input type="text" placeholder="Reference id" class="form-control" name="referenceID">
-                                </div>
-                                <div class="col-lg-1 justify-content-center my-1">
-                                    <input type="submit" class="btn red-button btn-block" value="SEARCH">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+                </small>
             </div>
-        </section>
+            <div class="find-form">
+                <form action="<?= base_url(); ?>Ru_Find" method="post"
+                      class="justify-content-around text-right">
+                    <div class="row my-2 justify-content-around text-right">
+                        <div class="col-lg-2 my-1" id="City">
+                            <select name="City" id="city_value" class="form-control">
+                                <option value="All" selected>Город</option>
+                                <option value="All">All</option>
+                                <? foreach ($cityNames as $value) { ?>
+                                    <option value="<?= $value; ?>"><?= $value; ?></option>
+                                <? } ?>
+                            </select>
+                        </div>
+                        <div class="col-lg-1 my-1" id="Type">
+                            <select name="Type" id="property_type" class="form-control ">
+                                <option value="All" selected>Вид недвижимости</option>
+                                <option value="All">All</option>
+                                <? foreach ($ProType as $value) { ?>
+                                    <option value="<?= $value; ?>"><?= $value; ?></option>
+                                <? } ?>
+                            </select>
+                        </div>
+                        <div class="col-lg-2 my-1" id="min_price">
+                            <select name="min_price" class="form-control ">
+                                <option value="min" selected>Минимальная стоимость</option>
+                                <option value="100000">&#36; 100.000</option>
+                                <option value="200000">&#36; 200.000</option>
+                                <option value="300000">&#36; 300.000</option>
+                                <option value="400000">&#36; 400.000</option>
+                                <option value="500000">&#36; 500.000</option>
+                                <option value="1000000">&#36; 1 M</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-2 my-1" id="max_price">
+                            <select class="form-control" name="max_price">
+                                <option value="5000000" selected>Максимальная стоимость</option>
+                                <option value="100000">&#36; 100.000</option>
+                                <option value="200000">&#36; 200.000</option>
+                                <option value="300000">&#36; 300.000</option>
+                                <option value="400000">&#36; 400.000</option>
+                                <option value="500000">&#36; 500.000</option>
+                                <option value="1000000">&#36; 1 M</option>
+                                <option value="5000000">&#36; 1 M+</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-2 my-1" id="bedroom">
+                            <select class="form-control" name="bedroom" id="property_bed">
+                                <option value="All" selected>Комнат</option>
+                                <? foreach ($proBed as $value) { ?>
+                                    <option value="<?= $value; ?>"><?= $value; ?></option>
+                                <? } ?>
+                            </select>
+                        </div>
+                        <div class="col-lg-2 my-1">
+                            <input type="text" placeholder="ID объекта" class="form-control" name="referenceID">
+                        </div>
+                        <div class="col-lg-1 justify-content-center my-1">
+                            <input type="submit" class="btn red-button btn-block" value="Поиск">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
     <? if ($city_description_show){ ?>
         <? if ($cityValue == 'Istanbul') { ?>
             <section id="istanbulMap" class="istanbulMap " style="background-color: white;margin-left: 15px;margin-right: 15px">
@@ -301,15 +310,16 @@
                         <div class="card py-3 city-card">
                             <div class="card-body py-2 px-1">
                                 <h1 class="text-center py-3 px-2">
-                                    Properties For Sale In <span class="red-text"><?= $this->uri->segment(3); ?></span><span class="blue-text"><? if ($this->uri->segment(3)!='Istanbul' and $cityValue == 'Istanbul' ): ?>, Istanbul <? endif; ?></span>, Turkey
+                                    Недвижимость в <span class="red-text"><?= $this->uri->segment(3); ?></span><span class="blue-text"><? if ($this->uri->segment(3)!='Istanbul' and $cityValue == 'Istanbul' ): ?>, Istanbul <? endif; ?></span>, Turkey
                                 </h1>
                                 <div class="border"></div>
                                 <p class="px-3 pt-2 text-justify">
-                                    <?= $CityIntroduce['introduce']; ?>
+                                    <?= $CityIntroduce['RUintroduce']; ?>
                                 </p>
-                                <? if ($CityIntroduce['moreDescription']){ ?>
+
+                                <? if ($CityIntroduce['RUmoreDescription']){ ?>
                                 <button class="py-1 px-3 pb-3" id="read-more" style="position: absolute;right: 10px;bottom: 0px;">
-                                    Read More About <span class="red-text"><?= $this->uri->segment(3); ?></span>
+                                    Читайте также о <span class="red-text"><?= $this->uri->segment(3); ?></span>
                                 </button>
                                 <? } ?>
                             </div>
@@ -337,7 +347,7 @@
                    <div class="card col-12">
                        <div class="card-body text-center">
                            <h2 class="text-center">
-                              Buy <? if ($SEO_BAR['bedroom']!=null){ ?><?= $SEO_BAR['bedroom']; ?> Bedroom <? } ?> <?= $SEO_BAR['Type']; ?> In <?= $SEO_BAR['City']; ?> Under <?= $SEO_BAR['max_price']; ?>
+                               Покупайте <? if ($SEO_BAR['bedroom']!=null){ ?><?= $SEO_BAR['bedroom']; ?> спален <? } ?> <?= $SEO_BAR['Type']; ?> в <?= $SEO_BAR['City']; ?> по цене <?= $SEO_BAR['max_price']; ?>
                            </h2>
                        </div>
                    </div>
@@ -441,7 +451,7 @@
                                                               <?= number_format($value->Property_price); ?>
                                                           <? }
                                                       } else {
-                                                          echo "Contact Us";
+                                                          echo "Свяжитесь с нами";
                                                       } ?>
                                                  </span>
                                                     </div>
@@ -475,7 +485,7 @@
                                                 <div class="row justify-content-around align-items-center py-2">
                                                     <a href="<?= base_url(); ?>ru/properties/<?= $value->url_slug; ?>"
                                                        class="btn btn-outline-danger btn-sm  d-flex my-1">
-                                                        View Details
+                                                        Показать детали
                                                     </a>
                                                     <button class="btn btn-danger btn-sm d-flex font-weight-bold my-1"
                                                        data-toggle="modal"
@@ -498,9 +508,9 @@
                             <div class="card">
                                 <div class="card-body text-center">
                                     <p>
-                                        "Please get in touch with us to get consultation about properties in this neighborhood"
+                                        "Свяжитесь с нами, чтобы получить консультацию по недвижимости в этом районе"
                                     </p>
-                                    <a href="<?= base_url(); ?>contact_us" class="btn btn-primary">Contact Us</a>
+                                    <a href="<?= base_url(); ?>contact_us" class="btn btn-primary">Свяжитесь с нами</a>
                                 </div>
                             </div>
                         <? } ?>
@@ -569,10 +579,10 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                                <? if (isset($CityIntroduce) and $CityIntroduce['moreDescription']): ?>
-                                    <h2 class="px-3 py-2"> More Information About <span class="red-text"> <?= $this->uri->segment(3);?> </span> :</h2>
+                                <? if (isset($CityIntroduce) and $CityIntroduce['RUmoreDescription']): ?>
+                                    <h2 class="px-3 py-2"> Больше информации о <span class="red-text"> <?= $this->uri->segment(3);?> </span> :</h2>
                                      <p class="px-3 text-justify">
-                                         <?= $CityIntroduce['moreDescription']; ?>
+                                         <?= $CityIntroduce['RUmoreDescription']; ?>
                                      </p>
                                 <? endif; ?>
                         </div>
@@ -585,7 +595,7 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-center" id="quickEnquireModalLabel">PROPERTY ENQUIRY</h5>
+                <h5 class="modal-title text-center" id="quickEnquireModalLabel">Запрос о недвижимости</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -595,30 +605,30 @@
                     <div class="row align-items-center">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Full Name" required  form="enquiry" name="info"  id="modalEnquireForm_info">
+                                <input type="text" class="form-control" placeholder="Ваше имя" required  form="enquiry" name="info"  id="modalEnquireForm_info">
                                 <span id="modalEnquireForm_info_error" style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
                                       class="vision">
-                                   Please enter your first and last name separated by a space (e.g. Jane Miller)
+                                   Ваше Имя и Фамилия, разделенные пробелом (например Джейн Миллер)
                                 </span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" id="modal_phone" class="form-control" placeholder="Phone" name="phone[main]"  form="enquiry" required>
+                                <input type="text" id="modal_phone" class="form-control" placeholder="Ваш номер телефона" name="phone[main]"  form="enquiry" required>
                                 <span id="modalEnquireForm_phone_error" style="display:none;font-size: 0.6rem;padding-top: 5px;color: white;text-shadow: 1px 1px 5px red;"
                                       class="vision">
-                                      Please Write Your Full PhoneNumber
+                                      Напишите ваш номер телефона
                                 </span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email" name="email" form="enquiry" required>
+                                <input type="email" class="form-control" placeholder="Ваша электронная почта" name="email" form="enquiry" required>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <textarea name="note" id="note" cols="30" rows="3" class="form-control" placeholder="Note" form="enquiry"></textarea>
+                                <textarea name="note" id="note" cols="30" rows="3" class="form-control" placeholder="Ваше сообщение" form="enquiry"></textarea>
                             </div>
                         </div>
                         <div class="col-md-12 text-center d-flex justify-content-center">
@@ -632,7 +642,7 @@
             </div>
             <div class="modal-footer">
                 <input type="hidden" name="reference_id" id="modal_reference_id"  form="enquiry">
-                <input type="submit" class="btn red-button btn-block" form="enquiry">
+                <input type="submit" class="btn red-button btn-block" form="enquiry" value="ОТПРАВИТЬ">
             </div>
         </div>
     </div>

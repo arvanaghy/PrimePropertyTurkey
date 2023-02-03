@@ -1,10 +1,13 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-<?php $this->load->view('web-site/includes/head-load'); ?>
+<?php $this->load->view('web-site/ru/includes/head-load'); ?>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/404.css">
 <title>404 СТРАНИЦА НЕ НАЙДЕНА | Prime Property Turkey</title>
 <meta name="description" content="404 СТРАНИЦА НЕ НАЙДЕНА, Возможно, страница, которую вы ищете, была удалена или временно недоступна.
 ">
 <link rel="canonical" href="https://www.primepropertyturkey.com/ru/Custom404"/>
+<link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/Custom404" />
+<link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/Custom404" />
+<link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/Custom404" />
 </head>
 <body class="d-flex justify-content-center align-items-center">
 <section class="d-flex justify-content-center align-items-center">

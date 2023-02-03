@@ -27,7 +27,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="dropdown mx-1 mx-md-2">
+                    <div class="dropdown mx-md-2">
                         <button class="btn btn-sm btn-light dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
                             Language
                         </button>

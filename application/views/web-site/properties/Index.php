@@ -133,6 +133,12 @@
         border-top-right-radius: 20px;
         min-height: 90px;
     }
+    @media screen and (max-width: 570px){
+        .card-speciality{
+            padding-left: 5px !important;
+            padding-right: 5px !important;
+        }
+    }
 </style>
 </head>
 <body>

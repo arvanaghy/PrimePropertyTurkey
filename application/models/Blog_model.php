@@ -15,7 +15,7 @@ class Blog_model extends CI_Model
     {
         $this->db->where('status', 0);
         $this->db->where('Blog_Title!=', null);
-        $this->db->order_by('Blog_ID', 'DESC');
+        $this->db->order_by('publish_date', 'DESC');
         $query = $this->db->get('blog', $limit, $offset);
         return $query->result();
     }
@@ -23,7 +23,7 @@ class Blog_model extends CI_Model
     {
         $this->db->where('status', 0);
         $this->db->where('ru_title!=', null);
-        $this->db->order_by('Blog_ID', 'DESC');
+        $this->db->order_by('publish_date', 'DESC');
         $query = $this->db->get('blog', $limit, $offset);
         return $query->result();
     }

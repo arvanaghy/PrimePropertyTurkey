@@ -231,6 +231,32 @@
             height: 0;
             background-color: unset;
         }
+        #theme-background .title {
+            font-size: 2rem !important;
+            line-height: 2rem !important;
+            margin-bottom: 25px !important;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        #theme-background p {
+             font-size: 1rem !important;
+             line-height: 1.3rem !important;
+             color: black;
+             margin: 0 20px;
+         }
+        .h3{
+            font-size: 1.3rem;
+            line-height: 38px;
+        }
+        .card-body{
+            padding: 0.5rem !important;
+        }
+        .useful{
+            font-size: 0.7rem !important;
+        }
+        .embed-responsive {
+            height: 188px;
+        }
     }
 </style>
 </head>
@@ -241,10 +267,10 @@
         <div class="bg" id="Citizenship-by-investment-BG"></div>
         <div class="header-image-content offset-bottom">
             <div class="row justify-content-center align-items-center">
-                <div class="col-md-3">
-                    <img src="<?= base_url(); ?>assets/web-site/images/legal-team/Damla ozkan.webp" class="img-fluid" alt="damla-ozkan" style="-webkit-transform: scaleX(-1);transform: scaleX(-1);">
-                </div>
-                <div class="col col-md-6">
+<!--                <div class="col-md-3">-->
+<!--                    <img src="--><?//= base_url(); ?><!--assets/web-site/images/legal-team/Damla ozkan.webp" class="img-fluid" alt="damla-ozkan" style="-webkit-transform: scaleX(-1);transform: scaleX(-1);">-->
+<!--                </div>-->
+                <div class="col col-md-9">
                     <h1 class="title text-center font-weight-bold mb-5" >Obtain Citizenship by Investment In Turkey</h1>
                     <p class="pb-5 text-center">Purchase Real Estate Worth At least 400.000 USD & Acquire Turkish Citizenship</p>
                 </div>
@@ -377,21 +403,21 @@
                     </div>
                     <div class="card-body Attorney m-2 bg-white">
                         <div class="row align-items-center justify-content-center">
-                            <div class="col-md-8">
+                            <div class="col-md-12">
                                 <div class="row justify-content-center align-items-center">
                                     <div class="col-md-2 text-center text-lg-left">
-                                        <img src="<?= base_url(); ?>assets/web-site/images/legal-team/downico1.webp" class="img-fluid d-md-block my-1" alt="downico1">
-                                        <img src="<?= base_url(); ?>assets/web-site/images/legal-team/downico2.webp" class="img-fluid d-md-block my-1" alt="downico2">
-                                        <img src="<?= base_url(); ?>assets/web-site/images/legal-team/downico3.webp" class="img-fluid d-md-block my-1" alt="downico3">
+                                        <img src="<?= base_url(); ?>assets/web-site/images/legal-team/downico1.webp" class="img-fluid d-md-block my-1" alt="downico1" style="margin: 1px auto !important;">
+                                        <img src="<?= base_url(); ?>assets/web-site/images/legal-team/downico2.webp" class="img-fluid d-md-block my-1" alt="downico2" style="margin: 1px auto !important;">
+                                        <img src="<?= base_url(); ?>assets/web-site/images/legal-team/downico3.webp" class="img-fluid d-md-block my-1" alt="downico3" style="margin: 1px auto !important;">
                                     </div>
                                     <div class="col-md-10">
                                         <h3 class="my-5 text-center text-lg-left">
-                                            Meet Our Attorney <span class="text-danger fw-bold"> Damla Ozkan </span>
+                                            Meet Our  <span class="text-danger fw-bold"> Attorneys </span>
                                         </h3>
                                         <p class="px-3">
-                                            Our attorney, Damla, is fluent in English and Turkish and has catered to Prime Property
+                                            Our attorneys are fluent in English and Turkish and has catered to Prime Property
                                             Turkey’s diverse
-                                            clientele from all over the world. With 50+ citizenship applications completed, Damla can
+                                            clientele from all over the world. With 50+ citizenship applications completed, We can
                                             take care of
                                             your Turkish citizenship process and ensure proper document arrangement for a successful
                                             application.
@@ -400,7 +426,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <img src="<?= base_url(); ?>assets/web-site/images/legal-team/Damla ozkan.webp" alt="Damla ozkan" class="img-fluid">
+<!--                                <img src="--><?//= base_url(); ?><!--assets/web-site/images/legal-team/Damla ozkan.webp" alt="Damla ozkan" class="img-fluid">-->
                             </div>
                         </div>
                     </div>

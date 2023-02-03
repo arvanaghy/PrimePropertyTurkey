@@ -47,6 +47,9 @@ if ($image_name_webp == '') {
 <meta name="twitter:image" content="https://www.primepropertyturkey.com/assets/web-site/images/properties/P_Thumb/<?= $image_name_webp; ?>">
 <meta property="twitter:image:width" content="300" />
 <meta property="twitter:image:height" content="300" />
+<link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com/properties/<?= $data_array->url_slug;?>" />
+<link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com/properties/<?= $data_array->url_slug;?>" />
+<link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru/properties/<?= $data_array->url_slug;?>" />
 <style type="text/css">
     #Property-Features-icon .col-md-6 , #Property-Features-icon .col-md-3{
         padding-right: 2px !important;
@@ -122,6 +125,13 @@ if ($image_name_webp == '') {
     .thumb img {
         height: 100px !important;
     }
+    #price-in-tl{
+        font-size: 0.8rem;
+        color: darkred;
+    }
+    #RecentlyAddedProperties h4{
+        line-height: 2.5rem;
+    }
 
     @media screen and (min-width: 1400px){
         .slider {
@@ -176,6 +186,74 @@ if ($image_name_webp == '') {
     }
     @media screen and (max-width:575px){
 
+        #bread-crumbs {
+            font-size: 0.7rem !important;
+        }
+        #room-brief .head h1 {
+            font-size: 1rem;
+            line-height: 1.8rem;
+            text-align: center !important;
+            margin: 1px auto;
+        }
+        .sub-head{
+            font-size: 0.8rem !important;
+        }
+
+    }
+    @media screen and (max-width:320px){
+        .top-button{
+            top: 300px !important;
+        }
+        #Recommended-Properties h2::after {
+            bottom: -15%;
+        }
+        #testimonials p {
+            height: 445px;
+        }
+        #BuyingOnline a {
+            margin: 30px auto;
+        }
+        .navbar-brand {width: 70%;}
+        .navbar-brand img{max-width: 80%;}
+        #recent .card-img-left {
+            width: 90px;
+        }
+    }
+    @media screen and (max-width:320px){
+        #bread-crumbs {
+            font-size: 0.7rem !important;
+        }
+        #room-brief .head h1 {
+            font-size: 1rem;
+            line-height: 1.8rem;
+            text-align: center !important;
+            margin: 1px auto;
+        }
+        .sub-head{
+            font-size: 0.7rem !important;
+        }
+        #price-in-tl{
+            font-size: 0.5rem;
+        }
+        #RecentlyAddedProperties #item-card-title{
+            text-align: center !important;
+            font-size: 0.9rem;
+            line-height: 1.45rem;
+        }
+        #RecentlyAddedProperties .item-card-description{
+            text-align: center !important;
+            margin-top: 5%;
+        }
+        #RecentlyAddedProperties #price_neighborhood{
+            font-size: 0.8rem;
+        }
+
+    }
+    #item-card-title {
+        min-height: 75px !important;
+        height: 75px !important;
+        max-height: 80px !important;
+        overflow: hidden;
     }
 </style>
 </head>
@@ -185,21 +263,21 @@ if ($image_name_webp == '') {
         <div class="container">
             <div class="row">
                 <div class="col red-text py-3 text-center text-md-left">
-                    <span class="mx-2">
+                    <span class="mx-md-2">
                         <i class="fas fa-home"></i>
                     </span>
-                    <span class="mx-2">
+                    <span class="mx-md-2">
                         <i class="fas fa-chevron-right"></i>
                     </span>
-                    <span class="mx-2">
+                    <span class="mx-md-2">
                         <a href="<?= base_url(); ?>properties" class="red-text" >
                             Properties
                         </a>
                     </span>
-                    <span class="mx-2">
+                    <span class="mx-md-2">
                         <i class="fas fa-chevron-right"></i>
                     </span>
-                    <span class="mx-2">
+                    <span class="mx-md-2">
                         <a class="red-text" >
                             <?= $data_array->Property_title; ?>
                         </a>
@@ -250,7 +328,7 @@ if ($image_name_webp == '') {
                             } else { ?>
                                 <i class="fas fa-dollar-sign"></i>
                                 <?= number_format((int)ceil($data_array->Property_price)); ?>
-                                <span class="mx-2" style="font-size: 0.8rem;color: darkred; ">
+                                <span class="mx-md-2" id="price-in-tl">
                                      ( price in TL
                                  <?= number_format((int)ceil($data_array->Property_price) * $currency_exchange_data->try); ?> )
                                  </span>
@@ -259,7 +337,7 @@ if ($image_name_webp == '') {
                              echo "Contact Us ";
                          } ?>
                         </span>
-                        <span class="red-text ml-2 font-weight-bold">  Ref :  </span>
+                        <span class="red-text ml-md-2 font-weight-bold">  Ref :  </span>
                         <span class="font-weight-bold"> <?= $data_array->Property_referenceID; ?> </span>
                         <? $passed_data=array();
                         $passed_data['reference_id']= $data_array->Property_referenceID;
@@ -378,9 +456,27 @@ if ($image_name_webp == '') {
                                             <div class="carousel-item <? if($i==0){ echo 'active'; } ?>" data-slide-number="<?= $i; ?>">
                                                 <img alt="<?= $data_array->Property_title.' '.$i; ?>"
                                                      src="<?= base_url(); ?><?= "assets/web-site/images/properties/watermark/".$image_name_webp; ?>"
-                                                     class="d-block w-100"
+                                                     class="d-block w-100" data-toggle="modal"
+                                                     data-target="#ImagePopUpModal_<?= $i; ?>"
                                                      data-remote="https://source.unsplash.com/Pn6iimgM-wo/" data-type="image"
                                                      data-toggle="lightbox" data-gallery="example-gallery">
+                                            </div>
+                                            <div class="modal fade" id="ImagePopUpModal_<?= $i; ?>" tabindex="-1"
+                                                 role="dialog" aria-labelledby="ImagePopUpModalLabel"
+                                                 aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-body">
+                                                            <img src="<?= base_url(); ?><?= "assets/web-site/images/properties/watermark/".$image_name_webp; ?>"  class="img-fluid" />
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-danger"
+                                                                    data-dismiss="modal">
+                                                                Close
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <?
                                             $i++;
@@ -651,25 +747,25 @@ if ($image_name_webp == '') {
                                                     </div>
                                                 </div>
                                                 <div class="row my-2 justify-content-around align-items-center" id="card-speciality">
-                                                    <div  class="d-flex align-items-center">
+                                                    <div  class="d-flex col-5 col-md-4 align-items-center text-center justify-content-center my-1 mx-1">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp"
                                                              alt="location"
                                                              class="img-fluid">
                                                         <span class="mx-1"><?= $Neighborhood_Properties->Property_location; ?></span>
                                                     </div>
-                                                    <div  class="d-flex align-items-center ">
+                                                    <div  class="d-flex col-5 col-md-2 align-items-center text-center justify-content-center my-1 mx-1 ">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico3.webp"
                                                              alt="bedroom"
                                                              class="img-fluid">
                                                         <span class="mx-1"><?= $Neighborhood_Properties->Property_Bedrooms; ?></span>
                                                     </div>
-                                                    <div class="d-flex align-items-center">
+                                                    <div class="d-flex col-5 col-md-2 align-items-center text-center justify-content-center my-1 mx-1">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp"
                                                              alt="bathroom"
                                                              class="img-fluid">
                                                         <span class="mx-1"><?= $Neighborhood_Properties->Property_Bathrooms; ?></span>
                                                     </div>
-                                                    <div  class="d-flex align-items-center">
+                                                    <div  class="d-flex col-5 col-md-2 align-items-center text-center justify-content-center my-1 mx-1">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp"
                                                              alt="living space" class="img-fluid"
                                                         >
@@ -682,7 +778,7 @@ if ($image_name_webp == '') {
                                                     </p>
                                                 </div>
                                                 <div class="row justify-content-around align-items-center mx-1" style="font-size: 1.2rem">
-                                             <span class="red-text font-weight-bold">
+                                             <span class="red-text font-weight-bold" id="price_neighborhood">
                                               <? if (!$Neighborhood_Properties->SoldOut and $Neighborhood_Properties->Property_price!=0){ ?>
                                                     <? if ($this->session->has_userdata('currency')){
                                                     switch ($this->session->userdata('currency')){
@@ -775,25 +871,25 @@ if ($image_name_webp == '') {
                                                     </div>
                                                 </div>
                                                 <div class="row my-2 justify-content-around align-items-center" id="card-speciality">
-                                                    <div  class="d-flex align-items-center">
+                                                    <div  class="d-flex col-5 col-md-4 align-items-center text-center justify-content-center my-1 mx-1">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp"
                                                              alt="location"
                                                              class="img-fluid">
                                                         <span class="mx-1"><?= $Neighborhood_Properties->Property_location; ?></span>
                                                     </div>
-                                                    <div  class="d-flex align-items-center ">
+                                                    <div  class="d-flex col-5 col-md-2 align-items-center text-center justify-content-center my-1 mx-1 ">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico3.webp"
                                                              alt="bedroom"
                                                              class="img-fluid">
                                                         <span class="mx-1"><?= $Neighborhood_Properties->Property_Bedrooms; ?></span>
                                                     </div>
-                                                    <div class="d-flex align-items-center">
+                                                    <div class="d-flex col-5 col-md-2 align-items-center text-center justify-content-center my-1 mx-1">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp"
                                                              alt="bathroom"
                                                              class="img-fluid">
                                                         <span class="mx-1"><?= $Neighborhood_Properties->Property_Bathrooms; ?></span>
                                                     </div>
-                                                    <div  class="d-flex align-items-center">
+                                                    <div  class="d-flex col-5 col-md-2 align-items-center text-center justify-content-center my-1 mx-1">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp"
                                                              alt="living space" class="img-fluid"
                                                         >
@@ -806,7 +902,7 @@ if ($image_name_webp == '') {
                                                     </p>
                                                 </div>
                                                 <div class="row justify-content-around align-items-center mx-1" style="font-size: 1.2rem">
-                                             <span class="red-text font-weight-bold">
+                                             <span class="red-text font-weight-bold" id="price_neighborhood">
                                               <? if (!$Neighborhood_Properties->SoldOut and $Neighborhood_Properties->Property_price!=0){ ?>
                                                   <? if ($this->session->has_userdata('currency')){
                                                       switch ($this->session->userdata('currency')){
@@ -899,25 +995,25 @@ if ($image_name_webp == '') {
                                                     </div>
                                                 </div>
                                                 <div class="row my-2 justify-content-around align-items-center" id="card-speciality">
-                                                    <div  class="d-flex align-items-center">
+                                                    <div  class="d-flex col-5 col-md-4 align-items-center text-center justify-content-center my-1 mx-1">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico2.webp"
                                                              alt="location"
                                                              class="img-fluid">
                                                         <span class="mx-1"><?= $recently_properties->Property_location; ?></span>
                                                     </div>
-                                                    <div  class="d-flex align-items-center ">
+                                                    <div  class="d-flex col-5 col-md-2 align-items-center text-center justify-content-center my-1 mx-1 ">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico3.webp"
                                                              alt="bedrrom"
                                                              class="img-fluid">
                                                         <span class="mx-1"><?= $recently_properties->Property_Bedrooms; ?></span>
                                                     </div>
-                                                    <div class="d-flex align-items-center">
+                                                    <div class="d-flex col-5 col-md-2 align-items-center text-center justify-content-center my-1 mx-1">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico4.webp"
                                                              alt="bathroom"
                                                              class="img-fluid">
                                                         <span class="mx-1"><?= $recently_properties->Property_Bathrooms; ?></span>
                                                     </div>
-                                                    <div  class="d-flex align-items-center">
+                                                    <div  class="d-flex col-5 col-md-2 align-items-center text-center justify-content-center my-1 mx-1">
                                                         <img src="<?= base_url(); ?>assets/web-site/images/base/audition-svg/ico1.webp"
                                                              alt="living space" class="img-fluid"
                                                         >
@@ -930,7 +1026,7 @@ if ($image_name_webp == '') {
                                                     </p>
                                                 </div>
                                                 <div class="row justify-content-around align-items-center mx-1" style="font-size: 1.2rem">
-                                             <span class="red-text font-weight-bold">
+                                             <span class="red-text font-weight-bold" id="price_neighborhood">
                                                <? if (!$recently_properties->SoldOut and $recently_properties->Property_price!=0){ ?>
                                                             <? if ($this->session->has_userdata('currency')){
                                                     switch ($this->session->userdata('currency')){
@@ -1102,7 +1198,7 @@ if ($image_name_webp == '') {
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-center" id="share-modal-label">Share Property In Social Media</h5>
+                <h5 class="modal-title text-center" id="share-modal-label">Share Property On Social Media</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

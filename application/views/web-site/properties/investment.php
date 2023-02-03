@@ -9,7 +9,7 @@
 />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/phone-input.css">
-<title>Apartment for investment in turkey</title>
+<title>Real estate investment in Turkey 2023</title>
 <meta name="description" content="Investing in real estate is an excellent idea. Let us help you with the best apartments for investment in Turkey for rental income and future resale.">
 <link rel="canonical" href="https://www.primepropertyturkey.com/apartment-for-investment-in-turkey"/>
 <script src="https://www.google.com/recaptcha/api.js" ></script>
@@ -17,14 +17,12 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="https://www.primepropertyturkey.com/apartment-for-investment-in-turkey">
 <meta name="twitter:creator" content="Justin Mays">
-<meta name="twitter:image:alt" content="Apartment for investment in turkey">
+<meta name="twitter:image:alt" content="Real estate investment in Turkey 2023">
 <meta name="twitter:title"
-      content="Apartment for investment in turkey">
+      content="Real estate investment in Turkey 2023">
 <meta name="twitter:description"
-      content="apartment for investment in turkey">
+      content="Investing in real estate is an excellent idea. Let us help you with the best apartments for investment in Turkey for rental income and future resale.">
 <meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
-
-
 <style type="text/css">
     svg {
         cursor: pointer;

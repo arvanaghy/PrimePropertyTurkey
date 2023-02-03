@@ -5,17 +5,17 @@
       content="Find your perfect property in Turkey at Prime Property Turkey. We have a wide range of properties for sale in Turkey. If you are looking for or have property for sale Istanbul, Altinkum, Bodrum, Fethiye, Kalkan in Turkey.">
 <meta name="keywords"
       content="Property for Sale in Turkey, Buy Property in Turkey, Citizenship By Investments in Turkey, Citizenship By Investments Program for Turkish citizenship.">
-<link rel="canonical" href="https://www.primepropertyturkey.com/"/>
+<link rel="canonical" href="https://www.primepropertyturkey.com"/>
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.primepropertyturkey.com/">
+<meta property="og:url" content="https://www.primepropertyturkey.com">
 <meta property="og:title" content="Prime Property for Sale in Turkey | Prime Property Turkey">
 <meta property="og:description"
       content="Find your perfect property in Turkey at Prime Property Turkey. We have a wide range of properties for sale in Turkey. If you are looking for or have property for sale Istanbul, Altinkum, Bodrum, Fethiye, Kalkan in Turkey.">
 <meta property="og:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="https://www.primepropertyturkey.com/">
+<meta name="twitter:site" content="https://www.primepropertyturkey.com">
 <meta name="twitter:creator" content="Justin Mays">
 <meta name="twitter:image:alt" content="Luxurious Property for Sale in Turkey | Prime Property Turkey">
 <meta name="twitter:title"
@@ -31,6 +31,10 @@
 />
 <link rel="stylesheet" href="<?= base_url();?>assets/web-site/css/phone-input.css">
 <link rel="stylesheet" href="<?= base_url();?>assets/web-site/css/homePage.css">
+
+<link rel="alternate" hreflang="x-default" href="https://www.primepropertyturkey.com" />
+<link rel="alternate" hreflang="en" href="https://www.primepropertyturkey.com" />
+<link rel="alternate" hreflang="ru" href="https://www.primepropertyturkey.com/ru" />
 </head>
 <style type="text/css">
     #video video{
@@ -44,6 +48,38 @@
         bottom: 0;
         text-align: center;
         opacity: 0.8;
+    }
+    #Recommended-Properties h2 {
+        line-height: 3rem;
+    }
+    #Recommended-Properties h2::after {
+        bottom: -30%;
+    }
+    .Main-inquiry > .container-fluid > .row {
+        border-top: 0 !important;
+    }
+    #Turkish-Citizenship a {
+        display: block;
+        width: 175px;
+        text-align: center;
+        border-radius: 20px;
+        margin: 3% auto;
+    }
+    #home-top-slider-mobile img {
+        height: 67vh;
+    }
+    #BuyingOnline h3{
+        line-height: 3rem;
+    }
+    #BuyingOnline a{
+        display: block;
+        width: 175px;
+        text-align: center;
+        border-radius: 20px;
+        margin-bottom: 30px;
+    }
+    #home-top-slider-mobile .carousel-caption{
+        bottom: 5%;
     }
     @media screen and (min-width: 1400px){
         #PRIME-Property-Turkey .col-12 {
@@ -83,20 +119,76 @@
         .top-button{
             top: 300px !important;
         }
+        #Recommended-Properties h2::after {
+            bottom: -15%;
+        }
+        #testimonials p {
+            height: 445px;
+        }
+        #BuyingOnline a {
+            margin: 30px auto;
+        }
+        .navbar-brand {width: 70%;}
+        .navbar-brand img{max-width: 80%;}
+        #recent .card-img-left {
+            width: 90px;
+        }
+        #YouTubeVideos .card-body a i {
+            bottom: 40px !important;
+        }
     }
     @media screen and (min-width: 321px) and (max-width:375px){
         .top-button{
             top: 275px !important;
+        }
+        #PRIME-Property-Turkey h1{
+            font-size: 1.7rem;
+        }
+        #Recommended-Properties h2::after {
+            bottom: -15%;
+        }
+        #testimonials p {
+            height: 445px;
+        }
+        #BuyingOnline a {
+            margin: 30px auto;
+        }
+        #recent .card-img-left {
+            width: 90px;
         }
     }
     @media screen and (min-width: 376px) and (max-width:425px){
         .top-button{
             top: 280px !important;
         }
+        #PRIME-Property-Turkey h1{
+            font-size: 1.7rem;
+        }
+        #Recommended-Properties h2::after {
+            bottom: -15%;
+        }
+        #testimonials p {
+            height: 445px;
+        }
+        #BuyingOnline a {
+            margin: 30px auto;
+        }
     }
     @media screen and (min-width: 426px) and (max-width:768px){
         .top-button{
             top:405px !important;
+        }
+        #PRIME-Property-Turkey h1{
+            font-size: 1.7rem;
+        }
+        #Recommended-Properties h2::after {
+            bottom: -15%;
+        }
+        #testimonials p {
+            height: 445px;
+        }
+        #BuyingOnline a {
+            margin: 30px auto;
         }
     }
     @media screen and (min-width: 769px) and (max-width:1024px){
@@ -114,6 +206,13 @@
             top: 680px !important;
         }
     }
+    @media screen and (max-width: 320px) {
+        #testimonials p {
+            height: 445px;
+            max-height: 445px;
+            overflow: scroll;
+        }
+    }
 </style>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>
@@ -126,7 +225,7 @@
 <!--    </div>-->
 <!--</div>-->
 
-    <section id="home-top-slider">
+    <section id="home-top-slider" class="d-none d-md-block">
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators d-none d-md-flex">
                 <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -137,34 +236,35 @@
             <div class="carousel-inner">
                 <div class="carousel-item active ">
                     <a href="https://www.primepropertyturkey.com/properties/apartment-beyoglu-PPTV0056">
-                        <img src="<?= base_url(); ?>assets/web-site/images/2022_12_06_16_29_12.webp" class="d-block w-100" alt="Fethiye"  >
+                        <img src="<?= base_url(); ?>assets/web-site/images/2023_02_02_14_58_06.webp" class="d-block w-100" alt="apartment beyoglu">
+<!--                        <img src="--><?//= base_url(); ?><!--assets/web-site/images/2022_12_06_16_29_12.webp" class="d-block w-100" alt="apartment beyoglu">-->
                     </a>
                     <div class="carousel-caption d-block">
-                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW ! </button>
+                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW !</button>
                     </div>
                 </div>
                 <div class="carousel-item ">
-                    <a href="https://www.primepropertyturkey.com/properties/apartments-istanbul-pptv0622">
-                        <img src="<?= base_url(); ?>assets/web-site/images/2022_12_30_19_55_45.webp" class="d-block w-100" alt="Istanbul"   >
+                    <a href="https://www.primepropertyturkey.com/properties/apartment-Benesta-Acibadem">
+                        <img src="<?= base_url(); ?>assets/web-site/images/2022_12_30_19_55_45.webp" class="d-block w-100" alt="apartment Benesta Acibadem">
                     </a>
                     <div class="carousel-caption d-block">
-                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW ! </button>
+                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW !</button>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <a href="https://www.primepropertyturkey.com/properties/apartment-eyup-PPTV0127">
-                        <img src="<?= base_url(); ?>assets/web-site/images/2022_12_30_17_06_03.webp" class="d-block w-100" alt="Fethiye"  >
+                    <a href="https://www.primepropertyturkey.com/properties/villas-kalkan-pptv0629">
+                        <img src="<?= base_url(); ?>assets/web-site/images/2022_12_30_17_06_03.webp" class="d-block w-100" alt="Kayra Villa Luxurious Villa for Citizenship in Kalkan">
                     </a>
                     <div class="carousel-caption d-block">
-                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW ! </button>
+                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW !</button>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <a href="https://www.primepropertyturkey.com/properties/elite-completed-apartments-in-the-desired-fikirtepe">
-                        <img src="<?= base_url(); ?>assets/web-site/images/2022_12_30_17_07_02.webp" class="d-block w-100" alt="Fethiye"  >
+                    <a href="https://www.primepropertyturkey.com/properties/four-towers-family-residences-with-seaview-in-kadikoy">
+                        <img src="<?= base_url(); ?>assets/web-site/images/2022_12_30_17_07_02.webp" class="d-block w-100" alt="Four Winds Four Towers Family Residences with Seaview in Kadikoy"  >
                     </a>
                     <div class="carousel-caption d-block">
-                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW ! </button>
+                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW !</button>
                     </div>
                 </div>
             </div>
@@ -173,6 +273,59 @@
                 <span class="sr-only">Previous</span>
             </button>
             <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </button>
+        </div>
+    </section>
+    <section id="home-top-slider-mobile" class="d-md-none">
+        <div id="carouselExampleCaptionsMobile" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators d-none d-md-flex">
+                <li data-target="#carouselExampleCaptionsMobile" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptionsMobile" data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptionsMobile" data-slide-to="2"></li>
+                <li data-target="#carouselExampleCaptionsMobile" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="https://www.primepropertyturkey.com/properties/four-towers-family-residences-with-seaview-in-kadikoy">
+                        <img src="<?= base_url(); ?>assets/web-site/images/2023_01_13_11_03_45.webp" class="d-block w-100" alt="four-towers-family-residences-with-seaview-in-kadikoy"  >
+                    </a>
+                    <div class="carousel-caption d-block">
+                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW !</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="https://www.primepropertyturkey.com/properties/apartment-beyoglu-PPTV0056">
+                        <img src="<?= base_url(); ?>assets/web-site/images/2023_02_02_14_58_20.webp" class="d-block w-100" alt="apartment beyoglu">
+<!--                        <img src="--><?//= base_url(); ?><!--assets/web-site/images/2023_01_13_11_04_21.webp" class="d-block w-100" alt="apartment beyoglu">-->
+                    </a>
+                    <div class="carousel-caption d-block">
+                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW ! </button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="https://www.primepropertyturkey.com/properties/apartment-Benesta-Acibadem">
+                        <img src="<?= base_url(); ?>assets/web-site/images/2023_01_13_11_04_13.webp" class="d-block w-100" alt="apartment Benesta Acibadem">
+                    </a>
+                    <div class="carousel-caption d-block">
+                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW !</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="https://www.primepropertyturkey.com/properties/villas-kalkan-pptv0629">
+                        <img src="<?= base_url(); ?>assets/web-site/images/2023_01_13_11_04_06.webp" class="d-block w-100" alt="Kayra Villa Luxurious Villa for Citizenship in Kalkan">
+                    </a>
+                    <div class="carousel-caption d-block">
+                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW !</button>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptionsMobile" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptionsMobile" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </button>
@@ -473,7 +626,7 @@
     </section>
     <section id="Turkish-Citizenship" class="Turkish-Citizenship">
         <div class="container-fluid py-md-5">
-            <div class="row py-2 py-md-5">
+            <div class="row py-4 py-md-5">
                 <div class="col-md-8 text-center">
                     <h3 class="mx-md-5 px-md-5 mx-1 px-1 my-1 py-1 text-center">
                             <span class="font-weight-bold">
@@ -483,7 +636,7 @@
                              by Investment Programme
                         </span>
                     </h3>
-                    <div class="m-1 mx-md-5 text-center text-danger" style="font-size: 1.5rem;">Acquire Real estate
+                    <div class="m-1 mx-md-5 px-md-5 my-3 text-center text-danger" style="font-size: 1.3rem;">Acquire Real estate
                         Investment worth at least $400.000 and get the benefit of obtaining the Turkish Citizenship
                     </div>
                     <p class="mx-1 px-1 mx-md-5 px-md-5 my-md-3 my-2 py-2 text-justify">
@@ -496,7 +649,7 @@
                     </p>
                     <a href="<?= base_url(); ?>citizenship-by-investment-in-turkey" class="btn red-button mb-1 mt-md-3"> READ MORE </a>
                 </div>
-                <div class="col-md-4 text-center d-flex">
+                <div class="col-md-4 text-center my-5 my-md-0 d-none d-md-flex">
                     <img src="<?= base_url(); ?>assets/web-site/images/base/masters/PASSAPORT.webp"
                          alt="prime property turkey passport" class="img-fluid" title="prime property turkey passport">
                 </div>
@@ -705,7 +858,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-3 ">
+                                        <div class="col-3">
                                             <img src="<?= base_url(); ?>assets/web-site/images/base/masters/a3.webp"
                                                  alt="Bosnia's buy porperty in turkey" class="img-fluid"
                                                  title="Bosnia's buy porperty in turkey">
@@ -745,15 +898,14 @@
                         of your home. In six simple steps, you can become a property owner and have the option to become
                         a Turkish citizen by investment in a property in a matter of a few clicks.
                     </p>
-                    <a href="<?= base_url(); ?>buying-online" class="btn red-button"
-                       style="display: block;width: 175px;text-align: center;border-radius: 20px;margin-bottom: 30px;">
+                    <a href="<?= base_url(); ?>buying-online" class="btn red-button">
                         Get to know more </a>
 
                 </div>
-                <div class="col-md-5 d-flex">
+                <div class="col-md-5 d-none d-md-flex">
                     <img src="<?= base_url(); ?>assets/web-site/images/base/masters/buyingonlineproperty.webp"
                          alt="Buying Online Property in Turkey" title="Buying Online Property in Turkey"
-                         class="img-fluid my-3 py-2 my-sm-0">
+                         class="img-fluid my-3 py-2 my-sm-0 ">
                 </div>
             </div>
         </div>
@@ -804,7 +956,7 @@
                         <a href="<?= base_url(); ?>blog" class="btn red-button"> VIEW ALL </a>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 d-none d-md-block">
                     <div class="my-5 recent-title-after">
                         Recent in our News
                     </div>
@@ -1216,6 +1368,25 @@
         xhttp.open("POST", "<?= base_url();?>Favorite/del_favorite");
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send("send_value="+value);
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "Prime Property Turkey",
+        "url": "https://primepropertyturkey.com",
+        "logo": "https://www.primepropertyturkey.com/assets/web-site/images/PrimePropertyTurkeybuildlogo.webp",
+        "email": "info@PrimePropertyTurkey.com",
+        "telephone": "(+90) 552 754 44 93",
+        "sameAs": [
+            "https://www.facebook.com/primepropertyturkeyistanbul",
+            "https://twitter.com/turkey_prime",
+            "https://www.instagram.com/primepropertyturkey",
+            "https://www.youtube.com/channel/UC4TpjIKGt7Yj8ykGKpQ6GOQ",
+            "https://tr.pinterest.com/primepropertyturkey",
+            "https://www.linkedin.com/company/prime-property-turkey"
+        ]
     }
 </script>
 </body>

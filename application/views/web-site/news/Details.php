@@ -75,6 +75,39 @@ if ($image_name_webp==''){
         text-align: center;
         margin: 2% 1% 2% 2% ;
     }
+    @media screen and (max-width: 320px){
+        .useful{
+            font-size: 0.8rem;
+        }
+        #comment-form .card-title{
+            font-size: 0.8rem;
+        }
+        .side .card-title {
+            font-size: 1.2rem;
+        }
+        .side .card-img-left{
+            width: 95px !important;
+        }
+    }
+    @media screen and (max-width: 570px){
+        #room-brief h1{
+            font-size: 1.4rem !important;
+            line-height: 35px;
+            font-weight: 700;
+        }
+        .sub-head{
+            font-size: 0.7rem !important;
+        }
+        #blog_detail_content h2{
+            line-height: 30px !important;
+        }
+        #blog_detail_content p{
+            font-size: 0.8rem !important;
+        }
+        #bread-crumbs{
+            font-size: 0.8rem;
+        }
+    }
     @media  screen and (max-width: 430px){
 
         #blog_detail_content iframe{
@@ -105,18 +138,18 @@ if ($image_name_webp==''){
         <div class="container">
             <div class="row">
                 <div class="col red-text py-3 text-center text-md-left">
-                    <span class="mx-2">
+                    <span class="mx-md-2">
                         <i class="fas fa-home"></i>
                     </span>
-                    <span class="mx-2">
+                    <span class="mx-md-2">
                         <a href="<?= base_url();?>news" class="red-text" >
                            News
                         </a>
                     </span>
-                    <span class="mx-2">
+                    <span class="mx-md-2">
                         <i class="fas fa-chevron-right"></i>
                     </span>
-                    <span class="mx-2">
+                    <span class="mx-md-2">
                         <a class="red-text" >
                             <?= $result->News_Title; ?>
                         </a>
