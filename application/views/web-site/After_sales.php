@@ -147,7 +147,7 @@
         <div class="mask"></div>
         <div class="header-image-content offset-bottom">
             <h1 class="title text-center font-weight-bold" style="padding-bottom: 20px !important;">Real Estate After-Sales Service</h1>
-            <p class="pb-5">
+            <p class="pb-5 text-center">
                 Our real estate services do not only end when you sign contracts, but also extend to after sales services.
             </p>
         </div>

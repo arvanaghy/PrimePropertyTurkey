@@ -153,7 +153,12 @@
     .hide-mah-element{
         display: none;
     }
-    @media screen and (max-width:575px){
+    @media screen and (min-width: 570px) and (max-width:768px) {
+        h1{
+            font-size: 1.8rem;
+        }
+    }
+    @media screen and (max-width:570px){
         #more_information h2{
             font-size: 1.5rem;
             line-height: 2.5rem;
@@ -208,7 +213,7 @@
                         <form action="<?= base_url(); ?>Find" method="post"
                               class="justify-content-around text-right">
                             <div class="row my-2 justify-content-around text-right">
-                                <div class="col-lg-2 my-1" id="City">
+                                <div class="col-lg-2 col-md-3 my-1" id="City">
                                     <select name="City" id="city_value" class="form-control">
                                         <option value="All" selected>City</option>
                                         <option value="All">All</option>
@@ -217,7 +222,7 @@
                                         <? } ?>
                                     </select>
                                 </div>
-                                <div class="col-lg-1 my-1" id="Type">
+                                <div class="col-lg-1 col-md-3 my-1" id="Type">
                                     <select name="Type" id="property_type" class="form-control ">
                                         <option value="All" selected>Type</option>
                                         <option value="All">All</option>
@@ -226,7 +231,7 @@
                                         <? } ?>
                                     </select>
                                 </div>
-                                <div class="col-lg-2 my-1" id="min_price">
+                                <div class="col-lg-2 col-md-3 my-1" id="min_price">
                                     <select name="min_price" class="form-control ">
                                         <option value="min" selected>Min Price</option>
                                         <option value="100000">&#36; 100.000 </option>
@@ -237,7 +242,7 @@
                                         <option value="1000000">&#36; 1 M </option>
                                     </select>
                                 </div>
-                                <div class="col-lg-2 my-1" id="max_price">
+                                <div class="col-lg-2 col-md-3 my-1" id="max_price">
                                     <select class="form-control" name="max_price">
                                         <option value="5000000" selected>Max Price</option>
                                         <option value="100000">&#36; 100.000 </option>
@@ -249,7 +254,7 @@
                                         <option value="5000000">&#36; 1 M+ </option>
                                     </select>
                                 </div>
-                                <div class="col-lg-2 my-1" id="bedroom">
+                                <div class="col-lg-2 col-md-4 my-1" id="bedroom">
                                     <select class="form-control" name="bedroom" id="property_bed">
                                         <option value="All" selected>Bedrooms</option>
                                         <? foreach ($proBed as $value){ ?>
@@ -257,10 +262,10 @@
                                         <? } ?>
                                     </select>
                                 </div>
-                                <div class="col-lg-2 my-1">
+                                <div class="col-lg-2 col-md-4 my-1">
                                     <input type="text" placeholder="Reference id" class="form-control" name="referenceID">
                                 </div>
-                                <div class="col-lg-1 justify-content-center my-1">
+                                <div class="col-lg-1 col-md-4 justify-content-center my-1">
                                     <input type="submit" class="btn red-button btn-block" value="SEARCH">
                                 </div>
                             </div>
@@ -378,7 +383,7 @@
                                     $image_name_webp = substr($image_name,0,strpos($image_name,'.jpeg')).".webp";
                                 }
                                 ?>
-                                <div class="col-md-3">
+                                <div class="col-lg-3 col-md-6">
                                     <div class="item my-2">
                                         <div class="card feature-sm-back">
                                             <div class="card-body">

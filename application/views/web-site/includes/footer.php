@@ -131,7 +131,7 @@
     <section class="footer" id="footer">
         <div class="container-fluid py-3 py-md-5">
             <div class="row text-white">
-                <div class="col-md-4 pl-md-5 px-md-0 px-2 justify-content-center text-white" id="footerDescription">
+                <div class="col-md-6 col-lg-4 pl-md-5 px-md-0 px-2 justify-content-center text-white" id="footerDescription">
                     <img src="<?= base_url(); ?>assets/web-site/images/logo-new kopya.png"
                          alt=" prime property turkey logo " class="px-3 img-fluid">
                     <div class="call px-3 my-3 align-items-center">
@@ -190,7 +190,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="col-md-3 my-4 my-md-0 justify-content-center" id="UsefulLinksFooter">
+                <div class="col-md-6 col-lg-3 my-4 my-md-0 justify-content-center" id="UsefulLinksFooter">
                     <div>
                         <b>
                             Useful Links
@@ -253,7 +253,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-md-2 my-4 my-md-0 justify-content-center" id="locationFooter">
+                <div class="col-md-6 col-lg-2  pl-md-5  my-4 my-md-0 justify-content-center" id="locationFooter">
                     <div>
                         <b>
                             Location
@@ -317,7 +317,7 @@
 
                     </ul>
                 </div>
-                <div class="col-md-3 my-4 my-md-0 justify-content-center" id="TypesFooter">
+                <div class="col-md-6 col-lg-3 my-4 my-md-0 justify-content-center" id="TypesFooter">
                     <div>
                         <b>
                             Types

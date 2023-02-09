@@ -1,7 +1,7 @@
 <section id="top-bar">
     <div class="container-fluid">
         <div class="row py-2">
-            <div class="col-md-4 d-flex justify-content-md-start justify-content-around">
+            <div class="col-md-4 col-lg-4 d-flex justify-content-md-start justify-content-around">
                 <div class="row mb-2 mb-md-0" style="display: inline-flex">
                     <div class="currency d-inline pl-md-3 mx-1">
                         <ul class="list-group list-group-horizontal">
@@ -45,7 +45,7 @@
 
                 </div>
             </div>
-            <div class="col-md-4 justify-content-center text-center d-none d-md-inline">
+            <div class="col-md-3 col-lg-4 justify-content-center text-center d-none d-md-inline">
                 <div class="row mb-2 mb-md-0  justify-content-center" style="display: inline-flex">
                     <div class="crypto d-md-inline d-none mx-1">
                         <ul class="list-group list-group-horizontal">
@@ -65,7 +65,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-5 col-lg-4">
                 <div class="row justify-content-md-end justify-content-center align-items-center">
                     <? if ($this->session->has_userdata('username') && $this->session->has_userdata('user_info'))   { ?>
                     <span class="user-top-login mx-1">

@@ -258,6 +258,11 @@
             height: 188px;
         }
     }
+    @media screen and (min-width: 426px) and (max-width:768px) {
+        .embed-responsive {
+            height: 372px;
+        }
+    }
 </style>
 </head>
 <body>

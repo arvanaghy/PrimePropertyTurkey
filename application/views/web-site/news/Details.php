@@ -130,6 +130,15 @@ if ($image_name_webp==''){
         border-top-left-radius: 20px !important;
         border-top-right-radius: 20px !important;
     }
+    @media screen and (min-width: 570px) and (max-width:768px) {
+        h1{
+            font-size: 1.4rem !important;
+            font-weight: bold !important;
+        }
+    }
+    h1{
+        font-size: 2rem;
+    }
 </style>
 </head>
 <body>
@@ -163,7 +172,7 @@ if ($image_name_webp==''){
             <div class="row">
                 <div class="col-md-9 text-center text-md-left py-2">
                     <div class="head text-center text-md-left py-2">
-                        <h1 style="font-size: 2rem;"><?= $result->News_Title; ?></h1>
+                        <h1><?= $result->News_Title; ?></h1>
                     </div>
                     <div class="sub-head text-center text-md-left">
                         <span class="red-text">
@@ -463,7 +472,7 @@ if ($image_name_webp==''){
            nav: !0,
            navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
            responsiveClass: !0,
-           responsive: {0: {items: 1}, 600: {items: 1}, 1000: {items: 1}}
+           responsive: {0: {items: 1}, 600: {items: 2}, 1000: {items: 1}}
        })
        $('#quickEnquireModal').on('show.bs.modal', function (event) {
            var button = $(event.relatedTarget); // Button that triggered the modal

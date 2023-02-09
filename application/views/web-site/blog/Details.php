@@ -166,6 +166,12 @@ $creat_date =  mdate($date_string, $unix_time);
         position: unset !important;
         top: unset !important;
     }
+    @media screen and (min-width: 426px) and (max-width:768px) {
+        h1{font-size: 1.2rem !important;}
+    }
+    h1{
+        font-size: 2rem
+    }
 
 </style>
 <script type="application/ld+json">
@@ -235,9 +241,9 @@ if ($image_name_webp == '') {
     <section id="room-brief">
         <div class="container-fluid">
             <div class="row ">
-                <div class="col-md-7 offset-md-1 text-center text-md-left py-2">
+                <div class="col-md-9 col-lg-7 offset-lg-1 text-center text-md-left py-2">
                     <div class="head text-center text-md-left py-2">
-                        <h1 style="font-size: 2rem"><?= $result->Blog_Title; ?></h1>
+                        <h1 ><?= $result->Blog_Title; ?></h1>
                     </div>
                     <div class="sub-head text-center text-md-left">
                         <span class="red-text">
@@ -249,7 +255,7 @@ if ($image_name_webp == '') {
                         </span>
                     </div>
                 </div>
-                <div class="col-md-2 buttons py-2">
+                <div class="col-md-3 col-lg-2 buttons py-2">
                     <div class="row justify-content-center justify-content-md-end">
                         <div class="col-4" style="cursor: pointer;text-align: center">
                             <button data-toggle="modal" data-target="#ShareModal" class="text-center" style="border: 0;background-color: transparent;padding: 0">
@@ -269,7 +275,7 @@ if ($image_name_webp == '') {
     <section id="content">
         <div class="container-fluid my-3">
             <div class="row">
-                <div class="col-md-7 offset-md-1 details">
+                <div class="col-lg-7 offset-lg-1 details">
                     <div class="card my-2">
                         <div class="card-body">
                             <div class="rate-star">
@@ -404,7 +410,7 @@ if ($image_name_webp == '') {
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-lg-3">
                     <? $this->load->view('web-site/includes/side-recommended-properties'); ?>
                         <? $passed_data['reference_id'] = 'blog';  ?>
                     <? $this->load->view('web-site/includes/side-enquire',$passed_data); ?>
@@ -576,7 +582,7 @@ if ($image_name_webp == '') {
             nav: !0,
             navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
             responsiveClass: !0,
-            responsive: {0: {items: 1}, 600: {items: 1}, 1000: {items: 1}}
+            responsive: {0: {items: 1}, 600: {items: 2}, 1000: {items: 1}}
         });
         $("#like_button").on("click", function () {
             $.ajax({

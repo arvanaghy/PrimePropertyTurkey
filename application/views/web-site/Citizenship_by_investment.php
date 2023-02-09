@@ -1156,7 +1156,7 @@ Asia and Europe and access to the markets in both regions">
             nav: !0,
             navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
             responsiveClass: !0,
-            responsive: {0: {items: 1}, 600: {items: 1}, 1000: {items: 1}}
+            responsive: {0: {items: 1}, 600: {items: 2}, 1000: {items: 1}}
         })
         $('#Link1').on('click', function () {
             $([document.documentElement, document.body]).animate({

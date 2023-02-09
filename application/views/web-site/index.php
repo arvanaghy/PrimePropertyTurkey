@@ -110,7 +110,10 @@
 
     }
     @media screen and (min-width: 576px) and (max-width:766px){
-
+        #top-bar .col-md-4{
+            padding-right: 5px !important;
+            padding-left: 5px !important;
+        }
     }
     @media screen and (max-width:575px){
 
@@ -185,10 +188,20 @@
             bottom: -15%;
         }
         #testimonials p {
-            height: 445px;
+            height: 200px;
         }
         #BuyingOnline a {
             margin: 30px auto;
+        }
+        #YouTubeVideos .card-body a i {
+            position: absolute;
+            bottom: 55px;
+        }
+        #home-top-slider img {
+            height: 450px;
+        }
+        .Main-inquiry .find-title {
+            width: 100%;
         }
     }
     @media screen and (min-width: 769px) and (max-width:1024px){
@@ -227,7 +240,7 @@
 
     <section id="home-top-slider" class="d-none d-md-block">
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators d-none d-md-flex">
+            <ol class="carousel-indicators d-none d-lg-flex">
                 <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
                 <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
@@ -346,7 +359,7 @@
                     <form action="<?= base_url(); ?>Find" method="post"
                           class="justify-content-around text-right">
                         <div class="row my-2 justify-content-around text-right">
-                            <div class="col-lg-2 my-1" id="City">
+                            <div class="col-lg-2 col-md-3 my-1" id="City">
                                 <select name="City" id="city_value" class="form-control">
                                     <option value="All" selected>City</option>
                                     <option value="All">All</option>
@@ -355,7 +368,7 @@
                                     <? } ?>
                                 </select>
                             </div>
-                            <div class="col-lg-1 my-1" id="Type">
+                            <div class="col-lg-1 col-md-3 my-1" id="Type">
                                 <select name="Type" id="property_type" class="form-control ">
                                     <option value="All" selected>Type</option>
                                     <option value="All">All</option>
@@ -364,7 +377,7 @@
                                     <? } ?>
                                 </select>
                             </div>
-                            <div class="col-lg-2 my-1" id="min_price">
+                            <div class="col-lg-2 col-md-3 my-1" id="min_price">
                                 <select name="min_price" class="form-control ">
                                     <option value="min" selected>Min Price</option>
                                     <option value="100000">&#36; 100.000</option>
@@ -375,7 +388,7 @@
                                     <option value="1000000">&#36; 1 M</option>
                                 </select>
                             </div>
-                            <div class="col-lg-2 my-1" id="max_price">
+                            <div class="col-lg-2 col-md-3 my-1" id="max_price">
                                 <select class="form-control" name="max_price">
                                     <option value="5000000" selected>Max Price</option>
                                     <option value="100000">&#36; 100.000</option>
@@ -387,7 +400,7 @@
                                     <option value="5000000">&#36; 1 M+</option>
                                 </select>
                             </div>
-                            <div class="col-lg-2 my-1" id="bedroom">
+                            <div class="col-lg-2 col-md-4 my-1" id="bedroom">
                                 <select class="form-control" name="bedroom" id="property_bed">
                                     <option value="All" selected>Bedrooms</option>
                                     <? foreach ($proBed as $value) { ?>
@@ -395,10 +408,10 @@
                                     <? } ?>
                                 </select>
                             </div>
-                            <div class="col-lg-2 my-1">
+                            <div class="col-lg-2 col-md-4 my-1">
                                 <input type="text" placeholder="Reference id" class="form-control" name="referenceID">
                             </div>
-                            <div class="col-lg-1 justify-content-center my-1">
+                            <div class="col-lg-1 col-md-4 justify-content-center my-1">
                                 <input type="submit" class="btn red-button btn-block" value="SEARCH">
                             </div>
                         </div>
@@ -451,17 +464,17 @@
                     <form action="<?= base_url(); ?>Post/enquire" method="post"
                           class="justify-content-end text-right">
                         <div class="row my-2 justify-content-around text-right">
-                            <div class="col-lg-3 my-1" >
+                            <div class="col-lg-3 col-md-6 my-1" >
                                 <input type="text" class="form-control" id="info" name="info" placeholder="Full Name">
                             </div>
-                            <div class="col-lg-2 my-1" >
+                            <div class="col-lg-2 col-md-6 my-1" >
                                 <input type="email" class="form-control" id="email" name="email" placeholder="Email">
                             </div>
-                            <div class="col-lg-3 my-1" >
+                            <div class="col-lg-3 col-md-4 my-1" >
                                 <input type="text" id="modal_phone" class="form-control" placeholder="Phone Number"
                                        name="phone[main]">
                             </div>
-                            <div class="col-lg-2 my-1" >
+                            <div class="col-lg-2 col-md-4 my-1" >
                                 <select class="form-control" id="budget" name="budget">
                                     <option value="6" selected>Max Budget</option>
                                     <option value="1">Up to &#36; 100.000</option>
@@ -472,7 +485,7 @@
                                     <option value="6">&#36; 1+ M</option>
                                 </select>
                             </div>
-                            <div class="col-lg-2 justify-content-center my-1">
+                            <div class="col-lg-2 col-md-4 justify-content-center my-1">
                                 <input type="submit" class="btn red-button btn-block" value="Submit Enquiry">
                             </div>
                         </div>
@@ -627,7 +640,7 @@
     <section id="Turkish-Citizenship" class="Turkish-Citizenship">
         <div class="container-fluid py-md-5">
             <div class="row py-4 py-md-5">
-                <div class="col-md-8 text-center">
+                <div class="col-lg-8 text-center">
                     <h3 class="mx-md-5 px-md-5 mx-1 px-1 my-1 py-1 text-center">
                             <span class="font-weight-bold">
                                 Turkish Citizenship
@@ -649,7 +662,7 @@
                     </p>
                     <a href="<?= base_url(); ?>citizenship-by-investment-in-turkey" class="btn red-button mb-1 mt-md-3"> READ MORE </a>
                 </div>
-                <div class="col-md-4 text-center my-5 my-md-0 d-none d-md-flex">
+                <div class="col-lg-4 text-center my-5 my-md-0 d-none d-lg-flex">
                     <img src="<?= base_url(); ?>assets/web-site/images/base/masters/PASSAPORT.webp"
                          alt="prime property turkey passport" class="img-fluid" title="prime property turkey passport">
                 </div>
@@ -884,7 +897,7 @@
     <section class="BuyingOnline" id="BuyingOnline">
         <div class="container pb-3 ">
             <div class="row px-md-3 justify-content-around" style="border-radius: 20px;background-color: white;">
-                <div class="col-md-7 text-center py-2">
+                <div class="col-lg-7 text-center py-2">
                     <h3 class="font-weight-bold mt-3 text-center">
                         <span class="red-text" style="font-weight: 900">
                             Buying Property in Turkey Online
@@ -902,7 +915,7 @@
                         Get to know more </a>
 
                 </div>
-                <div class="col-md-5 d-none d-md-flex">
+                <div class="col-lg-5 d-none d-lg-flex">
                     <img src="<?= base_url(); ?>assets/web-site/images/base/masters/buyingonlineproperty.webp"
                          alt="Buying Online Property in Turkey" title="Buying Online Property in Turkey"
                          class="img-fluid my-3 py-2 my-sm-0 ">
@@ -913,7 +926,7 @@
     <section class="recent" id="recent">
         <div class="container-fluid py-2 my-2 mb-md-4 pb-md-4">
             <div class="row mx-2 mx-md-5 px-1 px-md-3">
-                <div class="col-md-8">
+                <div class="col-lg-8">
                     <div class="my-5 recent-title-after">
                         Popular Posts
                     </div>
@@ -956,13 +969,13 @@
                         <a href="<?= base_url(); ?>blog" class="btn red-button"> VIEW ALL </a>
                     </div>
                 </div>
-                <div class="col-md-4 d-none d-md-block">
+                <div class="col-lg-4 d-none d-md-block">
                     <div class="my-5 recent-title-after">
                         Recent in our News
                     </div>
                     <div class="row">
                         <? foreach ($news_recent as $news) { ?>
-                            <div class="col-md-12 px-2 px-lg-5 mx-xl-4 ">
+                            <div class="col-md-6 col-lg-12 px-2 px-lg-5 mx-xl-4 ">
                                 <a href="<?= base_url(); ?>news/<?= $news->url_slug; ?>" class="blog-item"
                                    title="<?= $news->News_Title; ?>">
                                     <? $image_name = str_replace('assets/news/', '', $news->News_Image);

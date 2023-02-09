@@ -23,7 +23,7 @@
     <div class="card-body">
         <div class="row mx-1 mx-md-0">
             <? foreach ($blog_side as $blog) { ?>
-                <div class="col-md-12 px-2" >
+                <div class="col-md-6 col-lg-12 px-2" >
                     <a href="<?= base_url(); ?>blog/<?= $blog->url_slug; ?>" class="blog-item"
                        title="<?= $blog->Blog_Title; ?>" >
                         <? $image_name = str_replace('assets/blog/', '', $blog->Blog_Image);

@@ -47,6 +47,11 @@
     .border {
         border: none !important;
     }
+    @media screen and (min-width: 426px) and (max-width:768px) {
+        .info-card{
+            font-size: 0.7rem;
+        }
+    }
 
 </style>
 </head>
@@ -151,7 +156,7 @@
                                   onsubmit="return sideContactFormValidation();">
                                 <div class="col-12">
                                     <div class="row px-2 justify-content-center">
-                                        <div class="col-md-4 justify-content-center">
+                                        <div class="col-lg-4 justify-content-center">
                                             <div class="form-group">
                                                 <input type="text" class="form-control" placeholder="Full Name" required
                                                        name="info" id="sideContactForm_info">
@@ -162,13 +167,13 @@
                                                 </span>
                                             </div>
                                         </div>
-                                        <div class="col-md-4 justify-content-center">
+                                        <div class="col-lg-4 justify-content-center">
                                             <div class="form-group">
                                                 <input type="email" class="form-control" placeholder="Email" required
                                                        name="email">
                                             </div>
                                         </div>
-                                        <div class="col-md-4 justify-content-center">
+                                        <div class="col-lg-4 justify-content-center">
                                             <div class="form-group">
                                                 <input type="tel" class="form-control" placeholder="Phone" id="phone"
                                                        name="phone[main]" required>

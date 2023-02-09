@@ -917,7 +917,7 @@
     position: fixed;
     bottom: 155px;
     display: flex;
-    z-index: 9999;
+    z-index: 500;
     right: 30px;
     text-align: center;
     background: #fff !important;
@@ -1790,8 +1790,8 @@ div#nz-hot-hotIcon {
 }
 
 #goto_favorite_page {
-    right: 30px;
-    bottom: 225px;
+    right: 19px;
+    bottom: 290px;
     left: unset;
 }
 

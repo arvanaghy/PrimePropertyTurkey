@@ -15,7 +15,7 @@
                     $image_name_webp = substr($image_name,0,strpos($image_name,'.jpeg')).".webp";
                 }
                 ?>
-                <div class="col-md-12 px-2">
+                <div class="col-md-6 col-lg-12 px-2">
                     <a href="<?= base_url(); ?>news/<?= $news->url_slug; ?>" class="blog-item"
                        title="<?= $news->News_Title; ?>">
                         <img class="card-img-left"
