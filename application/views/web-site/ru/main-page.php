@@ -36,52 +36,208 @@
 </head>
 <style type="text/css">
     #YouTubeVideos .card-body a i {
-        position: absolute;
-        bottom: 130px;
-        left: 42%;
-        font-size: 65px;
-        text-shadow: 1px 1px 2px black;
+        bottom: 135px;
     }
-    @media screen and (min-width: 1400px) {
+    #Turkish-Citizenship .sub-slogan{
+        font-size: 1.5rem;
+    }
+    #video video{
+        position: relative;
+        width: 100%;
+    }
+    .top-button{
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        opacity: 0.8;
+    }
+    #Recommended-Properties h2 {
+        line-height: 3rem;
+    }
+    #Recommended-Properties h2::after {
+        bottom: -30%;
+    }
+    .Main-inquiry > .container-fluid > .row {
+        border-top: 0 !important;
+    }
+    #Turkish-Citizenship a {
+        display: block;
+        width: 175px;
+        text-align: center;
+        border-radius: 20px;
+        margin: 3% auto;
+    }
+    #home-top-slider-mobile img {
+        height: 67vh;
+    }
+    #BuyingOnline h3{
+        line-height: 3rem;
+    }
+    #BuyingOnline a{
+        display: block;
+        width: 175px;
+        text-align: center;
+        border-radius: 20px;
+        margin-bottom: 30px;
+    }
+    #home-top-slider-mobile .carousel-caption{
+        bottom: 5%;
+    }
+    @media screen and (min-width: 1400px){
         #PRIME-Property-Turkey .col-12 {
             height: 300px !important;
         }
-
-        #Recommended-Properties .item a > img {
+        #Recommended-Properties .item a > img{
             height: 250px !important;
         }
+
     }
-
-    @media screen and (min-width: 1200px) and (max-width: 1399px) {
-
-        #PRIME-Property-Turkey .col-12 {
+    @media screen and (min-width: 2001px){
+        .top-button{
+            top: 990px !important;
+        }
+    }
+    @media screen and (min-width: 1200px) and (max-width:1399px){
+        #PRIME-Property-Turkey .col-12{
             height: 300px !important;
         }
-
-        #Recommended-Properties .item a > img {
+        #Recommended-Properties .item a > img{
             height: 200px !important;
         }
     }
-
-    @media screen and (min-width: 992px) and (max-width: 1199px) {
-
+    @media screen and (min-width: 576px) and (max-width:766px){
+        #top-bar .col-md-4{
+            padding-right: 5px !important;
+            padding-left: 5px !important;
+        }
+    }
+    @media screen and (max-width:575px){
+        #Turkish-Citizenship h3 {
+            font-size: 1.2rem !important;
+            line-height: 35px !important;
+        }
+        #Turkish-Citizenship p {
+            font-size: 0.9rem !important;
+        }
+        #Turkish-Citizenship .sub-slogan{
+            font-size: 1rem !important;
+        }
+    }
+    @media screen and (max-width:320px){
+        .top-button{
+            top: 300px !important;
+        }
+        #Recommended-Properties h2::after {
+            bottom: -15%;
+        }
+        #testimonials p {
+            height: 445px;
+        }
+        #BuyingOnline a {
+            margin: 30px auto;
+        }
+        .navbar-brand {width: 70%;}
+        .navbar-brand img{max-width: 80%;}
+        #recent .card-img-left {
+            width: 90px;
+        }
+        #YouTubeVideos .card-body a i {
+            bottom: 50px !important;
+        }
+    }
+    @media screen and (min-width: 321px) and (max-width:375px){
+        .top-button{
+            top: 275px !important;
+        }
+        #PRIME-Property-Turkey h1{
+            font-size: 1.7rem;
+        }
+        #Recommended-Properties h2::after {
+            bottom: -15%;
+        }
+        #testimonials p {
+            height: 445px;
+        }
+        #BuyingOnline a {
+            margin: 30px auto;
+        }
+        #recent .card-img-left {
+            width: 90px;
+        }
+    }
+    @media screen and (min-width: 376px) and (max-width:425px){
+        .top-button{
+            top: 280px !important;
+        }
+        #PRIME-Property-Turkey h1{
+            font-size: 1.7rem;
+        }
+        #Recommended-Properties h2::after {
+            bottom: -15%;
+        }
+        #testimonials p {
+            height: 445px;
+        }
+        #BuyingOnline a {
+            margin: 30px auto;
+        }
+    }
+    @media screen and (min-width: 426px) and (max-width:768px){
+        .top-button{
+            top:405px !important;
+        }
+        #PRIME-Property-Turkey h1{
+            font-size: 1.7rem;
+        }
+        #Recommended-Properties h2::after {
+            bottom: -15%;
+        }
+        #testimonials p {
+            height: 200px;
+        }
+        #BuyingOnline a {
+            margin: 30px auto;
+        }
+        #YouTubeVideos .card-body a i {
+            position: absolute;
+            bottom: 55px;
+        }
+        #home-top-slider img {
+            height: 450px;
+        }
+        .Main-inquiry .find-title {
+            width: 100%;
+        }
+    }
+    @media screen and (min-width: 769px) and (max-width:1024px){
+        .top-button{
+            top: 460px !important;
+        }
+    }
+    @media screen and (min-width: 1025px) and (max-width:1440px){
+        .top-button{
+            top: 600px !important;
+        }
+    }
+    @media screen and (min-width: 1441px) and (max-width:2000px){
+        .top-button{
+            top: 680px !important;
+        }
+    }
+    @media screen and (max-width: 320px) {
+        #testimonials p {
+            height: 445px;
+            max-height: 445px;
+            overflow: scroll;
+        }
     }
 
-    @media screen and (min-width: 768px) and (max-width: 991px) {
-
-    }
-
-    @media screen and (min-width: 576px) and (max-width: 766px) {
-
-    }
-
-    @media screen and (max-width: 575px) {
-
-    }
 </style>
 <body>
 <?php $this->load->view('web-site/ru/includes/top-section'); ?>
-<section id="home-top-slider">
+<section id="home-top-slider" class="d-none d-md-block">
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators d-none d-md-flex">
             <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -141,6 +297,58 @@
             <span class="sr-only">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </button>
+    </div>
+</section>
+<section id="home-top-slider-mobile" class="d-md-none">
+    <div id="carouselExampleCaptionsMobile" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators d-none d-md-flex">
+            <li data-target="#carouselExampleCaptionsMobile" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptionsMobile" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptionsMobile" data-slide-to="2"></li>
+            <li data-target="#carouselExampleCaptionsMobile" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <a href="https://www.primepropertyturkey.com/ru/properties/four-towers-family-residences-with-seaview-in-kadikoy">
+                    <img src="<?= base_url(); ?>assets/web-site/images/2023_01_13_11_03_45.webp" class="d-block w-100" alt="four-towers-family-residences-with-seaview-in-kadikoy"  >
+                </a>
+                <div class="carousel-caption d-block">
+                    <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >УЗНАТЬ БОЛЬШЕ !</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <a href="https://www.primepropertyturkey.com/ru/properties/apartment-beyoglu-PPTV0056">
+                    <img src="<?= base_url(); ?>assets/web-site/images/2023_02_02_14_58_20.webp" class="d-block w-100" alt="apartment beyoglu">
+                </a>
+                <div class="carousel-caption d-block">
+                    <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >УЗНАТЬ БОЛЬШЕ ! </button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <a href="https://www.primepropertyturkey.com/ru/properties/apartment-Benesta-Acibadem">
+                    <img src="<?= base_url(); ?>assets/web-site/images/2023_01_13_11_04_13.webp" class="d-block w-100" alt="apartment Benesta Acibadem">
+                </a>
+                <div class="carousel-caption d-block">
+                    <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >УЗНАТЬ БОЛЬШЕ !</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <a href="https://www.primepropertyturkey.com/ru/properties/villas-kalkan-pptv0629">
+                    <img src="<?= base_url(); ?>assets/web-site/images/2023_01_13_11_04_06.webp" class="d-block w-100" alt="Kayra Villa Luxurious Villa for Citizenship in Kalkan">
+                </a>
+                <div class="carousel-caption d-block">
+                    <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >УЗНАТЬ БОЛЬШЕ !</button>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptionsMobile" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptionsMobile" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </button>
@@ -438,13 +646,13 @@
 <section id="Turkish-Citizenship" class="Turkish-Citizenship">
     <div class="container-fluid py-md-5">
         <div class="row py-2 py-md-5">
-            <div class="col-md-8 text-center">
+            <div class="col-lg-8 text-center">
                 <h3 class="mx-md-5 px-md-5 mx-1 px-1 my-1 py-1 text-center">
                     <span class="font-weight-bold">
                         Программа получения гражданства Турции за инвестиции
                     </span>
                 </h3>
-                <div class="m-1 mx-md-5 text-center text-danger" style="font-size: 1.5rem;">
+                <div class="m-1 mx-md-5 text-center text-danger sub-slogan">
                     Инвестируйте в недвижимость не менее $400.000 и получите всю выгоду от турецкого гражданства
                 </div>
                 <p class="mx-1 px-1 mx-md-5 px-md-5 my-md-3 my-2 py-2 text-justify">
@@ -457,7 +665,7 @@
                 <a href="<?= base_url(); ?>ru/citizenship-by-investment-in-turkey" class="btn red-button mb-1 mt-md-3">
                     Подробнее </a>
             </div>
-            <div class="col-md-4 text-center d-flex">
+            <div class="col-lg-4 d-none text-center d-lg-flex">
                 <img src="<?= base_url(); ?>assets/web-site/images/base/masters/PASSAPORT.webp"
                      alt="prime property turkey passport" class="img-fluid" title="prime property turkey passport">
             </div>
@@ -692,7 +900,7 @@
 <section class="BuyingOnline" id="BuyingOnline">
     <div class="container pb-3 ">
         <div class="row px-md-3 justify-content-around" style="border-radius: 20px;background-color: white;">
-            <div class="col-md-7 text-center py-2">
+            <div class="col-lg-7 text-center py-2">
                 <h3 class="font-weight-bold mt-3 text-center">
                         <span class="red-text" style="font-weight: 900">
                             Покупка недвижимости в Турции онлайн
@@ -709,7 +917,7 @@
                    style="display: block;width: 175px;text-align: center;border-radius: 20px;margin-bottom: 30px;"> Узнать больше </a>
 
             </div>
-            <div class="col-md-5 d-flex">
+            <div class="col-lg-5 d-none d-lg-flex">
                 <img src="<?= base_url(); ?>assets/web-site/images/base/masters/buyingonlineproperty.webp"
                      alt="Buying Online Property in Turkey" title="Buying Online Property in Turkey"
                      class="img-fluid my-3 py-2 my-sm-0">

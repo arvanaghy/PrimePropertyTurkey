@@ -69,7 +69,7 @@
                 <div class="row justify-content-md-end justify-content-center align-items-center">
                     <? if ($this->session->has_userdata('username') && $this->session->has_userdata('user_info'))   { ?>
                     <span class="user-top-login mx-1">
-                        <a href="<?= base_url();?>user" class="">
+                        <a href="<?= base_url();?>user">
                             <i class="fas fa-users"></i>
                             <span class="d-none d-md-inline">
                                     <?= $this->session->userdata('user_info');  ?>
@@ -89,19 +89,19 @@
                     <div class="crypto d-md-none d-inline mx-1">
                         <ul class="list-group list-group-horizontal">
                             <li class="list-group-item text-warning">
-                                <a  class="text-reset" >
+                                <span  class="text-reset" >
                                     <img src="<?= base_url();?>assets/web-site/images/base/currency/3838998_bitcoin_cryptocurrency_currency_money_finance_icon.webp" alt="bitcoin" class="img-fluid" width="17px">
-                                </a>
+                                </span>
                             </li>
                             <li class="list-group-item">
-                                <a  class="text-reset" >
+                                <span  class="text-reset" >
                                     <img src="<?= base_url();?>assets/web-site/images/base/currency/4373172_ethereum_logo_logos_icon.webp" alt="ethereum" class="img-fluid" width="17px">
-                                </a>
+                                </span>
                             </li>
                             <li class="list-group-item">
-                                <a>
+                                <span>
                                     <img src="<?= base_url();?>assets/web-site/images/base/currency/2785456_blockchain_litecoin_icon.webp" alt="litecoin" class="img-fluid" width="17px">
-                                </a>
+                                </span>
                             </li>
                             <li class="list-group-item">
                                 <span>Accepted Here</span>

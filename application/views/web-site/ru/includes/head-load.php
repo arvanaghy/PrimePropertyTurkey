@@ -15,14 +15,7 @@
     <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/main-style.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/find-property.css">
     <link rel="icon" href="<?= base_url(); ?>assets/web-site/images/fab.ico"/>
-    <!-- Google Tag Manager -->
-<!--    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':-->
-<!--                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],-->
-<!--            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=-->
-<!--            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);-->
-<!--        })(window,document,'script','dataLayer','GTM-N243V5Z');</script>-->
-    <!-- End Google Tag Manager -->
-    <!-- Google tag (gtag.js) -->
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RWY2KYGKQQ"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -31,3 +24,13 @@
 
         gtag('config', 'G-RWY2KYGKQQ');
     </script>
+    <style type="text/css">
+        @media screen and (max-width:320px){
+            .navbar-brand {width: 70%;}
+            .navbar-brand img{max-width: 80%;}
+        }
+        .navbar-dark .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+            opacity: 1 !important; ;
+        }
+    </style>
