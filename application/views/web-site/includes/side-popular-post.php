@@ -17,7 +17,7 @@
 </style>
 <div class="card side Popular-Posts my-2">
     <div class="card-title my-3 text-center font-weight-bold">
-        Popular Posts
+        Recent Blogs
     </div>
     <div class="border"></div>
     <div class="card-body">

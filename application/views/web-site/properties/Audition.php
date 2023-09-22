@@ -343,38 +343,38 @@ if ($image_name_webp == '') {
                         $passed_data['reference_id']= $data_array->Property_referenceID;
                         ?>
                     </div>
-                    <div class="sub-head text-center text-md-left mt-2">
-                        <span class="red-text">
-                            <i class="far fa-clock"></i>
-                        </span>
-                        <span class="red-text font-weight-bold"> Created :  </span>
-                        <span class="font-weight-bold">
-                           <? $unix_time= mysql_to_unix($data_array->created);
-                           $date_string = '%d %M %Y';
-                           $created_date = mdate($date_string, $unix_time);
-                            echo $created_date;
-                           ?>
-                        </span>
-                        <? $update_date= null;
-                        if ($data_array->updated_time){
-                            $unix_time= mysql_to_unix($data_array->updated_time);
-                            $date_string = '%d %M %Y';
-                            $update_date = mdate($date_string, $unix_time);
-                        }
-                        ?>
-                        <? if ($data_array->updated_time and $created_date != $update_date) {?>
-                            <span class="red-text">
-                               <i class="fas fa-calendar-check"></i>
-                            </span>
-                            <span class="red-text font-weight-bold"> Updated :  </span>
-                            <span class="font-weight-bold">
-                               <? $unix_time= mysql_to_unix($data_array->updated_time);
-                               $date_string = '%d %M %Y';
-                               echo mdate($date_string, $unix_time);
-                               ?>
-                            </span>
-                        <? } ?>
-                    </div>
+<!--                    <div class="sub-head text-center text-md-left mt-2">-->
+<!--                        <span class="red-text">-->
+<!--                            <i class="far fa-clock"></i>-->
+<!--                        </span>-->
+<!--                        <span class="red-text font-weight-bold"> Created :  </span>-->
+<!--                        <span class="font-weight-bold">-->
+<!--                           --><?// $unix_time= mysql_to_unix($data_array->created);
+//                           $date_string = '%d %M %Y';
+//                           $created_date = mdate($date_string, $unix_time);
+//                            echo $created_date;
+//                           ?>
+<!--                        </span>-->
+<!--                        --><?// $update_date= null;
+//                        if ($data_array->updated_time){
+//                            $unix_time= mysql_to_unix($data_array->updated_time);
+//                            $date_string = '%d %M %Y';
+//                            $update_date = mdate($date_string, $unix_time);
+//                        }
+//                        ?>
+<!--                        --><?// if ($data_array->updated_time and $created_date != $update_date) {?>
+<!--                            <span class="red-text">-->
+<!--                               <i class="fas fa-calendar-check"></i>-->
+<!--                            </span>-->
+<!--                            <span class="red-text font-weight-bold"> Updated :  </span>-->
+<!--                            <span class="font-weight-bold">-->
+<!--                               --><?// $unix_time= mysql_to_unix($data_array->updated_time);
+//                               $date_string = '%d %M %Y';
+//                               echo mdate($date_string, $unix_time);
+//                               ?>
+<!--                            </span>-->
+<!--                        --><?// } ?>
+<!--                    </div>-->
                 </div>
                 <div class="col-md-3 buttons py-2">
                     <div class="row">

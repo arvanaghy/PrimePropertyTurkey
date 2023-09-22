@@ -14,7 +14,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title text-center font-weight-bold">
-                                LOGIN
+                                LOGIN 1
                             </div>
                             <form action="<?= base_url(); ?>Post/login" class="mx-1 px-1" method="post">
                                 <div class="form-group">

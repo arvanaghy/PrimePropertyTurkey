@@ -44,10 +44,11 @@
                                 <th>Reference ID</th>
                                 <th>Type</th>
                                 <th>City</th>
-                                <th>Bedrooms</th>
-                                <th>Bathrooms</th>
-                                <th>Living space (sqm)</th>
-                                <th>Pool</th>
+                                <th>Url</th>
+<!--                                <th>Bedrooms</th>-->
+<!--                                <th>Bathrooms</th>-->
+<!--                                <th>Living space (sqm)</th>-->
+<!--                                <th>Pool</th>-->
                             </tr>
                             </thead>
                             <tbody>
@@ -75,10 +76,11 @@
                                     <td><?= $row->Property_referenceID; ?></td>
                                     <td><?= $row->Property_type; ?></td>
                                     <td><?= $row->Property_location_city; ?></td>
-                                    <td><?= $row->Property_Bedrooms; ?></td>
-                                    <td><?= $row->Property_Bathrooms; ?></td>
-                                    <td><?= $row->Property_living_space; ?></td>
-                                    <td><?= $row->Property_pool; ?></td>
+                                    <td><?= $row->url_slug; ?></td>
+<!--                                    <td>--><?//= $row->Property_Bedrooms; ?><!--</td>-->
+<!--                                    <td>--><?//= $row->Property_Bathrooms; ?><!--</td>-->
+<!--                                    <td>--><?//= $row->Property_living_space; ?><!--</td>-->
+<!--                                    <td>--><?//= $row->Property_pool; ?><!--</td>-->
                                 </tr>
                             <?}
                             }?>

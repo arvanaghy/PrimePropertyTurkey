@@ -2,9 +2,9 @@
 <?php $this->load->view('web-site/includes/head-load'); ?>
 <title>Prime Property for Sale in Turkey | Prime Property Turkey</title>
 <meta name="description"
-      content="Find your perfect property in Turkey at Prime Property Turkey. We have a wide range of properties for sale in Turkey. If you are looking for or have property for sale Istanbul, Altinkum, Bodrum, Fethiye, Kalkan in Turkey.">
+      content="Find Your Ideal Property in Turkey at Prime Property Turkey">
 <meta name="keywords"
-      content="Property for Sale in Turkey, Buy Property in Turkey, Citizenship By Investments in Turkey, Citizenship By Investments Program for Turkish citizenship.">
+      content="Property for Sale in Turkey, Buy Property in Turkey, Citizenship By Investments in Turkey, Citizenship By Investments Program for Turkish citlizenship.">
 <link rel="canonical" href="https://www.primepropertyturkey.com"/>
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
@@ -229,194 +229,90 @@
 </style>
 <body>
 <?php $this->load->view('web-site/includes/top-section'); ?>
-<!--<div id="video">-->
-<!--    <video id="bgvid" autoplay loop muted playsinline>-->
-<!--        <source src="--><?//= base_url();?><!--assets/web-site/slider2.mp4" type="video/mp4">-->
-<!--    </video>-->
-<!--    <div class="top-button">-->
-<!--        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW ! </button>-->
-<!--    </div>-->
-<!--</div>-->
 
-    <section id="home-top-slider" class="d-none d-md-block">
-        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators d-none d-lg-flex">
-                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active ">
-                    <a href="https://www.primepropertyturkey.com/properties/apartment-beyoglu-PPTV0056">
-                        <img src="<?= base_url(); ?>assets/web-site/images/2023_02_02_14_58_06.webp" class="d-block w-100" alt="apartment beyoglu">
-<!--                        <img src="--><?//= base_url(); ?><!--assets/web-site/images/2022_12_06_16_29_12.webp" class="d-block w-100" alt="apartment beyoglu">-->
-                    </a>
-                    <div class="carousel-caption d-block">
-                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW !</button>
+    <section id="home-top-slider">
+        <div class="" style="background-image: url('<?= base_url(); ?>assets/landing-page/img/shutterstock1.webp');
+                background-size: cover;
+                background-repeat: no-repeat;
+                padding-top: 25%;
+                padding-bottom: 6%;">
+            <div class="" style="
+                    margin-left: 5%;
+                    margin-right: 5%;
+                    ">
+                <div class="rounded-lg shadow " style="background-color: rgba(239, 239, 239, 0.7);
+                                    padding: 2%;
+                    ">
+                    <div class="my-2 text-center h6 d-lg-none" style="font-weight: bolder">
+                        Find Your Ideal Property
                     </div>
-                </div>
-                <div class="carousel-item ">
-                    <a href="https://www.primepropertyturkey.com/properties/apartment-Benesta-Acibadem">
-                        <img src="<?= base_url(); ?>assets/web-site/images/2022_12_30_19_55_45.webp" class="d-block w-100" alt="apartment Benesta Acibadem">
-                    </a>
-                    <div class="carousel-caption d-block">
-                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW !</button>
+                    <div class="my-3 text-left h4 d-none d-lg-block" style="font-weight: bolder">
+                        Find Your Ideal Property
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <a href="https://www.primepropertyturkey.com/properties/villas-kalkan-pptv0629">
-                        <img src="<?= base_url(); ?>assets/web-site/images/2022_12_30_17_06_03.webp" class="d-block w-100" alt="Kayra Villa Luxurious Villa for Citizenship in Kalkan">
-                    </a>
-                    <div class="carousel-caption d-block">
-                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW !</button>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <a href="https://www.primepropertyturkey.com/properties/four-towers-family-residences-with-seaview-in-kadikoy">
-                        <img src="<?= base_url(); ?>assets/web-site/images/2022_12_30_17_07_02.webp" class="d-block w-100" alt="Four Winds Four Towers Family Residences with Seaview in Kadikoy"  >
-                    </a>
-                    <div class="carousel-caption d-block">
-                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW !</button>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </button>
-        </div>
-    </section>
-    <section id="home-top-slider-mobile" class="d-md-none">
-        <div id="carouselExampleCaptionsMobile" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators d-none d-md-flex">
-                <li data-target="#carouselExampleCaptionsMobile" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleCaptionsMobile" data-slide-to="1"></li>
-                <li data-target="#carouselExampleCaptionsMobile" data-slide-to="2"></li>
-                <li data-target="#carouselExampleCaptionsMobile" data-slide-to="3"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <a href="https://www.primepropertyturkey.com/properties/four-towers-family-residences-with-seaview-in-kadikoy">
-                        <img src="<?= base_url(); ?>assets/web-site/images/2023_01_13_11_03_45.webp" class="d-block w-100" alt="four-towers-family-residences-with-seaview-in-kadikoy"  >
-                    </a>
-                    <div class="carousel-caption d-block">
-                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW !</button>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <a href="https://www.primepropertyturkey.com/properties/apartment-beyoglu-PPTV0056">
-                        <img src="<?= base_url(); ?>assets/web-site/images/2023_02_02_14_58_20.webp" class="d-block w-100" alt="apartment beyoglu">
-<!--                        <img src="--><?//= base_url(); ?><!--assets/web-site/images/2023_01_13_11_04_21.webp" class="d-block w-100" alt="apartment beyoglu">-->
-                    </a>
-                    <div class="carousel-caption d-block">
-                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW ! </button>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <a href="https://www.primepropertyturkey.com/properties/apartment-Benesta-Acibadem">
-                        <img src="<?= base_url(); ?>assets/web-site/images/2023_01_13_11_04_13.webp" class="d-block w-100" alt="apartment Benesta Acibadem">
-                    </a>
-                    <div class="carousel-caption d-block">
-                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW !</button>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <a href="https://www.primepropertyturkey.com/properties/villas-kalkan-pptv0629">
-                        <img src="<?= base_url(); ?>assets/web-site/images/2023_01_13_11_04_06.webp" class="d-block w-100" alt="Kayra Villa Luxurious Villa for Citizenship in Kalkan">
-                    </a>
-                    <div class="carousel-caption d-block">
-                        <button class="btn red-button" id="topCover" data-toggle="modal" data-target="#topEnquireModal" >ENQUIRE NOW !</button>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptionsMobile" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptionsMobile" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </button>
-        </div>
-    </section>
-    <section id="Find-Your-Property" class="Find-Your-Property m-3">
-        <div class="container-fluid">
-            <div class="row justify-content-center align-items-center my-2 py-3">
-                <div class="find-title">
-                     <span class="pre">
-                          Find Your
-                     </span>
-                    <span class="pro">
-                         Property
-                    </span>
-                </div>
-                <div class="find-form">
-                    <form action="<?= base_url(); ?>Find" method="post"
-                          class="justify-content-around text-right">
-                        <div class="row my-2 justify-content-around text-right">
-                            <div class="col-lg-2 col-md-3 my-1" id="City">
-                                <select name="City" id="city_value" class="form-control">
-                                    <option value="All" selected>City</option>
-                                    <option value="All">All</option>
-                                    <? foreach ($cityNames as $value) { ?>
-                                        <option value="<?= $value; ?>"><?= $value; ?></option>
-                                    <? } ?>
-                                </select>
+                    <div class="find-form">
+                        <form action="<?= base_url(); ?>Find" method="post"
+                              class="justify-content-around text-right">
+                            <div class="row my-2 justify-content-around text-right">
+                                <div class="col-lg-2 col-5 my-0 mx-2 mx-lg-0 mr-lg-1 px-0" id="City">
+                                    <select name="City" id="city_value" class="form-control">
+                                        <option value="All" selected>City</option>
+                                        <option value="All">All</option>
+                                        <? foreach ($cityNames as $value) { ?>
+                                            <option value="<?= $value; ?>"><?= $value; ?></option>
+                                        <? } ?>
+                                    </select>
+                                </div>
+                                <div class="col-lg-1 col-5  my-0 mx-2 mx-lg-0 mr-lg-1 px-0" id="Type">
+                                    <select name="Type" id="property_type" class="form-control ">
+                                        <option value="All" selected>Type</option>
+                                        <option value="All">All</option>
+                                        <? foreach ($ProType as $value) { ?>
+                                            <option value="<?= $value; ?>"><?= $value; ?></option>
+                                        <? } ?>
+                                    </select>
+                                </div>
+                                <div class="col-lg-2 col-5  my-0 mx-2 mx-lg-0 mr-lg-1  px-0" id="min_price">
+                                    <select name="min_price" class="form-control ">
+                                        <option value="min" selected>Min Price</option>
+                                        <option value="100000">&#36; 100.000</option>
+                                        <option value="200000">&#36; 200.000</option>
+                                        <option value="300000">&#36; 300.000</option>
+                                        <option value="400000">&#36; 400.000</option>
+                                        <option value="500000">&#36; 500.000</option>
+                                        <option value="1000000">&#36; 1 M</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-2 col-5  my-0 mx-2 mx-lg-0 mr-lg-1 px-0" id="max_price">
+                                    <select class="form-control" name="max_price">
+                                        <option value="5000000" selected>Max Price</option>
+                                        <option value="100000">&#36; 100.000</option>
+                                        <option value="200000">&#36; 200.000</option>
+                                        <option value="300000">&#36; 300.000</option>
+                                        <option value="400000">&#36; 400.000</option>
+                                        <option value="500000">&#36; 500.000</option>
+                                        <option value="1000000">&#36; 1 M</option>
+                                        <option value="5000000">&#36; 1 M+</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-2 col-5  my-0 mx-2 mx-lg-0 mr-lg-1 px-0" id="bedroom">
+                                    <select class="form-control" name="bedroom" id="property_bed">
+                                        <option value="All" selected>Bedrooms</option>
+                                        <? foreach ($proBed as $value) { ?>
+                                            <option value="<?= $value; ?>"><?= $value; ?></option>
+                                        <? } ?>
+                                    </select>
+                                </div>
+                                <div class="col-lg-2 col-5 my-0 mx-2 mx-lg-0 mr-lg-1 px-0">
+                                    <input type="text" placeholder="Reference id" class="form-control" name="referenceID">
+                                </div>
+                                <div class="col-lg-1 my-0 mx-4 mx-lg-0 mr-lg-1 px-0 justify-content-center my-1">
+                                    <input type="submit" class="btn red-button btn-block" value="SEARCH">
+                                </div>
                             </div>
-                            <div class="col-lg-1 col-md-3 my-1" id="Type">
-                                <select name="Type" id="property_type" class="form-control ">
-                                    <option value="All" selected>Type</option>
-                                    <option value="All">All</option>
-                                    <? foreach ($ProType as $value) { ?>
-                                        <option value="<?= $value; ?>"><?= $value; ?></option>
-                                    <? } ?>
-                                </select>
-                            </div>
-                            <div class="col-lg-2 col-md-3 my-1" id="min_price">
-                                <select name="min_price" class="form-control ">
-                                    <option value="min" selected>Min Price</option>
-                                    <option value="100000">&#36; 100.000</option>
-                                    <option value="200000">&#36; 200.000</option>
-                                    <option value="300000">&#36; 300.000</option>
-                                    <option value="400000">&#36; 400.000</option>
-                                    <option value="500000">&#36; 500.000</option>
-                                    <option value="1000000">&#36; 1 M</option>
-                                </select>
-                            </div>
-                            <div class="col-lg-2 col-md-3 my-1" id="max_price">
-                                <select class="form-control" name="max_price">
-                                    <option value="5000000" selected>Max Price</option>
-                                    <option value="100000">&#36; 100.000</option>
-                                    <option value="200000">&#36; 200.000</option>
-                                    <option value="300000">&#36; 300.000</option>
-                                    <option value="400000">&#36; 400.000</option>
-                                    <option value="500000">&#36; 500.000</option>
-                                    <option value="1000000">&#36; 1 M</option>
-                                    <option value="5000000">&#36; 1 M+</option>
-                                </select>
-                            </div>
-                            <div class="col-lg-2 col-md-4 my-1" id="bedroom">
-                                <select class="form-control" name="bedroom" id="property_bed">
-                                    <option value="All" selected>Bedrooms</option>
-                                    <? foreach ($proBed as $value) { ?>
-                                        <option value="<?= $value; ?>"><?= $value; ?></option>
-                                    <? } ?>
-                                </select>
-                            </div>
-                            <div class="col-lg-2 col-md-4 my-1">
-                                <input type="text" placeholder="Reference id" class="form-control" name="referenceID">
-                            </div>
-                            <div class="col-lg-1 col-md-4 justify-content-center my-1">
-                                <input type="submit" class="btn red-button btn-block" value="SEARCH">
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -773,7 +669,7 @@
                                         <div class="testimonial-title">
                                             <span class="mx-1"><i
                                                         class="fas fa-quote-left fa-3x text-danger"></i></span><span
-                                                    style="font-size: 1.5rem;font-weight: 900 ">Seamlessly smooth property investment experience ...</span>
+                                                    style="font-size: 1.5rem;font-weight: 900 ">Highly recommended agency at all levels. ...</span>
                                         </div>
                                     </div>
                                     <div class="col-md-2 text-right">
@@ -787,16 +683,7 @@
                                 <div class="row justify-content-around pt-3 pb-2 ml-md-5 mx-md-3 mr-1 align-items-center">
                                     <div class="col">
                                         <p class="text-justify mx-1 ml-4 font-italic">
-                                            Prime Property has provided us a seamlessly smooth property investment
-                                            experience. From the time we were exploring options to the actual sale,
-                                            Omran took care of everything. We were properly guided about all the
-                                            paperwork that was needed to ensure efficient processing of our citizenship
-                                            application. They gave us a range of options and showed us properties that
-                                            met our criteria and other similar ones for comparison. We never expected
-                                            such personalised and professional service, even "after sale" attentiveness,
-                                            including connecting us with an I terror designer. I highly recommend Prime
-                                            Property to any foreign investor who is looking to invest wisely in Turkey.
-
+                                            Bunch of trustworthy international professionals. I have contacted them for buying a property and get the Turkish citizenship. It was the most smooth purchase I have made so far. After sales services are impressive they left nothing to ask for as they took a good care of my property and they helped my family resettle in the apartment while I was away. As such they created for me an investment plan that brought high ROI.
                                         </p>
                                     </div>
                                 </div>
@@ -807,17 +694,17 @@
                                         <div class="col-8">
                                             <div class="row">
                                                 <div class="col font-weight-bold">
-                                                    Sofia Shakil
+                                                    khaled Taljabini
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col">
-                                                    Pakistan
+                                                    Lebanon
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-3">
-                                            <img src="<?= base_url(); ?>assets/web-site/images/base/masters/a1.webp"
+                                            <img src="https://www.flagcolorcodes.com/data/Flag-of-Lebanon.png"
                                                  alt="Pakistan's buy porperty in turkey" class="img-fluid"
                                                  title="Pakistan's buy porperty in turkey">
                                         </div>
@@ -832,7 +719,7 @@
                                         <div class="testimonial-title">
                                             <span class="mx-1"><i
                                                         class="fas fa-quote-left fa-3x text-danger"></i></span><span
-                                                    style="font-size: 1.5rem;font-weight: 900 ">I was lucky to come across the Prime Property agency ...</span>
+                                                    style="font-size: 1.5rem;font-weight: 900 ">I loved working with them ...</span>
                                         </div>
                                     </div>
                                     <div class="col-md-2 text-right">
@@ -846,12 +733,7 @@
                                 <div class="row justify-content-around pt-3 pb-2 ml-md-5 mx-md-3 mr-1 align-items-center">
                                     <div class="col">
                                         <p class="text-justify mx-1 ml-4 font-italic">
-                                            I was lucky to come across the Prime Property agency, they made my search
-                                            for an apartment much easier. I would recommend everyone to work with this
-                                            agency. They are great professionals, they have shown me every kind of help
-                                            and they are friendly in every way. I would recommend this agency to
-                                            everyone. Thanks to this agency, I was able to find the apartment I had been
-                                            looking for for a long time.
+                                            The best property agents for foreigners, in Istanbul! honest and customer conscious and the best thing about them is they don't badger you, influence your decision. I loved working with them.
                                         </p>
                                     </div>
                                 </div>
@@ -862,17 +744,117 @@
                                         <div class="col-8">
                                             <div class="row">
                                                 <div class="col font-weight-bold">
-                                                    Alma Hajdarpasic
+                                                    Khalid Syed
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col">
-                                                    Bosnia
+                                                    USA
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-3">
-                                            <img src="<?= base_url(); ?>assets/web-site/images/base/masters/a3.webp"
+                                            <img src="https://www.flagcolorcodes.com/data/flag-of-the-united-states.png"
+                                                 alt="Bosnia's buy porperty in turkey" class="img-fluid"
+                                                 title="Bosnia's buy porperty in turkey">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item ">
+                            <div class="d-block w-100 px-2" style="min-height: 285px">
+                                <div class="row justify-content-around pt-5 mt-3 mx-3 align-items-center">
+                                    <div class="col-md-10">
+                                        <div class="testimonial-title">
+                                            <span class="mx-1"><i
+                                                        class="fas fa-quote-left fa-3x text-danger"></i></span><span
+                                                    style="font-size: 1.5rem;font-weight: 900 ">Their honesty, integrity, and realistic ...</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 text-right">
+                                        <div class="testimonial-stars text-warning">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                    class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                    class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-around pt-3 pb-2 ml-md-5 mx-md-3 mr-1 align-items-center">
+                                    <div class="col">
+                                        <p class="text-justify mx-1 ml-4 font-italic">
+                                            I flew in from Sydney Australia where I had pre-arranged multiple appointments with various agencies in Istanbul. Within the 1st 2 days of meeting everyone, I sacked all the agencies and dealt with Prime Property only. Their honesty, integrity, and realistic advice wes 2nd to none. Their hospitality, professionalism, and legal team was 2nd to none. Thank you Prime Property for your continual assistance and support whilst I am back in Australia. You guys rock and I can't recommend you guys enough to those I meet.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-end py-2 align-items-center text-right mx-2 mb-3 mr-4">
+                                <div class="col-md-4">
+                                    <div class="row align-items-center">
+                                        <div class="col-8">
+                                            <div class="row">
+                                                <div class="col font-weight-bold">
+                                                    Ferdi Zreika
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    Australia
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <img src="https://www.flagcolorcodes.com/data/flag-of-australia.png"
+                                                 alt="Bosnia's buy porperty in turkey" class="img-fluid"
+                                                 title="Bosnia's buy porperty in turkey">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item ">
+                            <div class="d-block w-100 px-2" style="min-height: 285px">
+                                <div class="row justify-content-around pt-5 mt-3 mx-3 align-items-center">
+                                    <div class="col-md-10">
+                                        <div class="testimonial-title">
+                                            <span class="mx-1"><i
+                                                        class="fas fa-quote-left fa-3x text-danger"></i></span><span
+                                                    style="font-size: 1.5rem;font-weight: 900 ">A fantastic organization ...</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 text-right">
+                                        <div class="testimonial-stars text-warning">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                    class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                    class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-around pt-3 pb-2 ml-md-5 mx-md-3 mr-1 align-items-center">
+                                    <div class="col">
+                                        <p class="text-justify mx-1 ml-4 font-italic" style="line-height: 2.5rem">
+                                            It is really hard to find trustworthy people these days especially when the matter is real estate and you are a foreigner. They provided the best service and were incredibly polite and honest. Truly recommended!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-end py-2 align-items-center text-right mx-2 mb-3 mr-4">
+                                <div class="col-md-4">
+                                    <div class="row align-items-center">
+                                        <div class="col-8">
+                                            <div class="row">
+                                                <div class="col font-weight-bold">
+                                                    Rosie Yaghoubi
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    Iran
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Civil_flag_of_Iran_%281964%E2%80%931980%29.svg/2560px-Civil_flag_of_Iran_%281964%E2%80%931980%29.svg.png"
                                                  alt="Bosnia's buy porperty in turkey" class="img-fluid"
                                                  title="Bosnia's buy porperty in turkey">
                                         </div>
@@ -889,6 +871,8 @@
                         <li data-target="#testimonialsCarousel" data-slide-to="0" class="active"></li>
                         <li data-target="#testimonialsCarousel" data-slide-to="1"></li>
                         <li data-target="#testimonialsCarousel" data-slide-to="2"></li>
+                        <li data-target="#testimonialsCarousel" data-slide-to="3"></li>
+                        <li data-target="#testimonialsCarousel" data-slide-to="4"></li>
                     </ol>
                 </div>
             </div>
@@ -928,7 +912,7 @@
             <div class="row mx-2 mx-md-5 px-1 px-md-3">
                 <div class="col-lg-8">
                     <div class="my-5 recent-title-after">
-                        Popular Posts
+                        Recent Blogs
                     </div>
                     <div class="row">
                         <? foreach ($blog_recent as $blog) { ?>
@@ -971,7 +955,7 @@
                 </div>
                 <div class="col-lg-4 d-none d-md-block">
                     <div class="my-5 recent-title-after">
-                        Recent in our News
+                        Recent News
                     </div>
                     <div class="row">
                         <? foreach ($news_recent as $news) { ?>

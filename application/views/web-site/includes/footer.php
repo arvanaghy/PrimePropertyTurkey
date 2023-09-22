@@ -372,7 +372,7 @@
             <hr id="CopyrightBar">
             <div class="row justify-content-center">
                 <div class="Copyright text-white text-center mx-2 my-2">
-                    Copyright © 2021 Prime Property Turkey Limited. All Rights Reserved.
+                    Copyright © 2023 Prime Property Turkey Limited. All Rights Reserved.
                 </div>
             </div>
         </div>

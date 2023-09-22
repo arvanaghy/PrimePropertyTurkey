@@ -9,7 +9,8 @@ class Home extends CI_Controller
         $this->load->helper(array('favorite','geolocation_helper'));
         $data['geolocation'] = fetch_geolocation();
         $data['news_recent'] = $this->Home_model->news(2);
-        $data['blog_recent'] = $this->Home_model->popular_blog(4);
+//        $data['blog_recent'] = $this->Home_model->popular_blog(4);
+        $data['blog_recent'] = $this->Home_model->blogs(4);
         $cityNames = $this->Home_model->fetchCityNames();
         $data['cityNames']=array();
         foreach ($cityNames as $value){

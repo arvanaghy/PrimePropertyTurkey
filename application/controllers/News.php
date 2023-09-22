@@ -16,7 +16,7 @@ class News extends CI_Controller
         $data['currency_exchange_data'] = $this->News_model->currencyExchange();
         $data['news'] = $this->News_model->news(5);
         $data['news_side'] = $this->News_model->news(2);
-        $data['blog_side'] = $this->News_model->popular_blog(3);
+        $data['blog_side'] = $this->News_model->recent_blogs(3);
         $recommended_properties = $this->News_model->recommendedProperties();
         $data['recommended_properties_all'] = array(
             $recommended_properties['istanbul'][rand(0, count($recommended_properties['istanbul']) - 1)],
@@ -48,7 +48,7 @@ class News extends CI_Controller
                 $recommended_properties['gocek'][rand(0, count($recommended_properties['gocek']) - 1)],
             );
             $data['news_side'] = $this->News_model->news(2);
-            $data['blog_side'] = $this->News_model->popular_blog(3);
+            $data['blog_side'] = $this->News_model->recent_blogs(3);
             $data['page_id'] = (int)$passed_url;
             $data['all'] = $all_count = $this->News_model->BN_record_count('news');
             $pages = (int)ceil($all_count / 5);
@@ -64,7 +64,7 @@ class News extends CI_Controller
             $data['result'] = $this->News_model->fetch_post_by_url_BN('news', $passed_url);
             if ($data['result']) {
                 $data['news_side'] = $this->News_model->news(2);
-                $data['blog_side'] = $this->News_model->popular_blog(3);
+                $data['blog_side'] = $this->News_model->recent_blogs(3);
                 $search_array = array('istanbul', 'fethiye', 'kalkan', 'kas', 'gocek', 'antalya');
                 $target_array = array();
                 foreach ($search_array as $search_phrase) {

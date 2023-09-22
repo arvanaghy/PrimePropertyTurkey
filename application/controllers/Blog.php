@@ -50,7 +50,7 @@ class Blog extends CI_Controller
                 $recommended_properties['gocek'][rand(0, count($recommended_properties['gocek']) - 1)]
             );
             $data['news_side'] = $this->Blog_model->news(3);
-            $data['blog_side'] = $this->Blog_model->popular_blog(2);
+            $data['blog_side'] = $this->Blog_model->recent_blogs(2);
             $data['page_id'] = (int)$passed_url;
             $data['all'] = $this->Blog_model->BN_record_count('blog');
             $pages = (int)ceil($data['all'] / 5);
@@ -66,7 +66,7 @@ class Blog extends CI_Controller
             $data['result'] = $this->Blog_model->fetch_post_by_url_BN('blog', $passed_url);
             if ($data['result']) {
                 $data['news_side'] = $this->Blog_model->news(3);
-                $data['blog_side'] = $this->Blog_model->popular_blog(4);
+                $data['blog_side'] = $this->Blog_model->recent_blogs(4);
                 $search_array = array('istanbul', 'fethiye', 'kalkan', 'kas', 'gocek', 'antalya');
                 $target_array = array();
                 foreach ($search_array as $search_phrase) {

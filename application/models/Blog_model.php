@@ -11,6 +11,14 @@ class Blog_model extends CI_Model
         $query = $this->db->get('news', $limit, $offset);
         return $query->result();
     }
+    public function recent_blogs($limit = 5)
+    {
+        $this->db->order_by('Blog_ID', 'DESC');
+        $this->db->where('Blog_Title!=', null);
+        $query = $this->db->get('blog', $limit);
+        return $query->result();
+    }
+
     public function blog($limit = null, $offset = null)
     {
         $this->db->where('status', 0);

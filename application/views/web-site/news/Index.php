@@ -2,7 +2,7 @@
 <?php $this->load->view('web-site/includes/head-load'); ?>
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/header-image-wrapper.css">
 <link rel="stylesheet" href="<?= base_url(); ?>assets/web-site/css/blogs.css">
-<title>Turkish Properties News | Prime Property Turkey</title>
+<title>Turkish News | Prime Property Turkey</title>
 <? if (isset($page_id)) {
     $page_id = $page_id;
 } else {
@@ -52,9 +52,9 @@
     echo "/".$page_id ;
 } ?>">
 <meta name="twitter:creator" content="Justin Mays">
-<meta name="twitter:image:alt" content="Turkish Properties News | Prime Property Turkey">
+<meta name="twitter:image:alt" content="Turkish  News | Prime Property Turkey">
 <meta name="twitter:title"
-      content="Turkish Properties News | Prime Property Turkey">
+      content="Turkish  News | Prime Property Turkey">
 <meta name="twitter:description"
       content="Read latest news by Prime Property Turkey, find exciting news and updates from Turkish Real estate market, newest properties for sale and much more.">
 <meta name="twitter:image" content="<?= base_url(); ?>assets/web-site/images/PrimePropertyTurkeybuildlogo.webp">
@@ -74,7 +74,7 @@
             <div class="bg" id="blogs-BG"></div>
             <div class="mask"></div>
             <div class="header-image-content offset-bottom">
-                <h1 class="title text-center font-weight-bold px-1">Latest Turkish Properties News</h1>
+                <h1 class="title text-center font-weight-bold px-1">Latest Turkish News</h1>
                 <h4 class="text-center my-2 px-1">Read all recent news about Turkish properties lifestyle and
                     leisure</h4>
             </div>
